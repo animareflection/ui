@@ -50,8 +50,13 @@
   "rules": {
     // allow non-null assertion operators
     "@typescript-eslint/no-non-null-assertion": "off",
-    // warn for TS comments (e.g. `@ts-ignore`)
-    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        // allow `@ts-ignore` if a description is specified
+        "ts-ignore": "allow-with-description"
+      }
+    ],
     // disallow unused variables
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
