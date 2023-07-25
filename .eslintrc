@@ -1,0 +1,113 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    // ! NB: empty object is intentional, mitigates module alias issue
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:jest/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended",
+    "plugin:testing-library/react",
+    "prettier"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "import",
+    "typescript-sort-keys",
+    "unused-imports",
+    "prefer-arrow",
+    "react-hooks",
+    "jest",
+    "jest-dom",
+    "testing-library"
+  ],
+  "rules": {
+    // allow non-null assertion operators
+    "@typescript-eslint/no-non-null-assertion": "off",
+    // warn for TS comments (e.g. `@ts-ignore`)
+    "@typescript-eslint/ban-ts-comment": "warn",
+    // disallow unused variables
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    // suppress errors for missing React import (prefer modern JSX transform)
+    "react/react-in-jsx-scope": "off",
+    // prevent multiple components per file
+    "react/no-multi-comp": "error",
+    // enforce arrow functions for React components
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    // warn on use of type `any`
+    "@typescript-eslint/no-explicit-any": "warn",
+    // explicitly handle promises (e.g. `await`, `void`)
+    "@typescript-eslint/no-floating-promises": "error",
+    // enforce type imports
+    "@typescript-eslint/consistent-type-imports": "error",
+    // prevent duplicate imports
+    "import/no-duplicates": "error",
+    // remove unused imports
+    "unused-imports/no-unused-imports": "warn",
+    // enforce import group order
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        // separate import groups (e.g. external dependencies from internal dependencies)
+        "groups": [
+          "builtin",
+          "external",
+          [
+            "internal",
+            // NB: TS aliased paths fall into `unknown` category. See https://github.com/import-js/eslint-plugin-import/issues/1379
+            "unknown",
+            "parent",
+            "sibling",
+            "index",
+            "object"
+          ],
+          "type"
+        ],
+        "newlines-between": "always"
+      }
+    ]
+  }
+}
