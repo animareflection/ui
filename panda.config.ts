@@ -1,7 +1,10 @@
 import { defineConfig } from "@pandacss/dev";
 
+/**
+ * 🐼 Panda configuration.
+ */
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const config: ReturnType<typeof defineConfig> = defineConfig({
+const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // enable CSS reset
   preflight: true,
   outdir: "src/generated/panda",
@@ -68,4 +71,4 @@ const config: ReturnType<typeof defineConfig> = defineConfig({
   },
 });
 
-export default config;
+export default pandaConfig;
