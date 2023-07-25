@@ -8,7 +8,7 @@ import { app } from "../src/lib/config";
 const storybookTheme = create({
   // set dark theme default
   base: "dark",
-  brandUrl: app.organizationUrl,
+  brandUrl: app.organization.url,
   brandTitle: `<img src="/img/logo.png" width="40px" height="40px"/>`,
   brandTarget: "_self",
 });
