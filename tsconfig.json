@@ -7,7 +7,10 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -18,6 +21,13 @@
     "strict": true,
     "target": "esnext"
   },
-  "include": ["src", "*.config.ts", "*.config.cjs", ".storybook/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "*.config.ts",
+    "*.config.cjs",
+    ".storybook/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
