@@ -41,7 +41,7 @@
   "devDependencies": {
     "@ark-ui/react": "^0.9.0",
     "@jest/globals": "^29.6.1",
-    "@pandacss/dev": "^0.7.0",
+    "@pandacss/dev": "^0.8.0",
     "@storybook/addon-a11y": "^7.1.1",
     "@storybook/addon-essentials": "^7.1.1",
     "@storybook/addon-interactions": "^7.1.1",
@@ -57,7 +57,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/node": "^20.4.4",
+    "@types/node": "^20.4.5",
     "@types/react": "^18.2.16",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
