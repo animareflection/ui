@@ -34,6 +34,9 @@
     "storybook:build": "storybook build",
     "prepare": "husky install"
   },
+  "overrides": {
+    "@zag-js/store": "^0.12.0"
+  },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
