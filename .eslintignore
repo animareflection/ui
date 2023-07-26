@@ -1,0 +1,8 @@
+# node_modules ignored by default
+build
+coverage
+generated
+storybook-static
+
+# see https://github.com/storybookjs/eslint-plugin-storybook#installation
+!.storybook
