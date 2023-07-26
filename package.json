@@ -34,7 +34,7 @@
     "storybook:build": "storybook build",
     "prepare": "husky install"
   },
-  "overrides": {
+  "resolutions": {
     "@zag-js/store": "^0.12.0"
   },
   "peerDependencies": {

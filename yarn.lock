@@ -7317,16 +7317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zag-js/store@npm:0.10.3":
-  version: 0.10.3
-  resolution: "@zag-js/store@npm:0.10.3"
-  dependencies:
-    proxy-compare: 2.5.1
-  checksum: 456596fbe1e119525a2085c771abff25df9775694b16ac3bac566414c55a6e549c94ec1365fc826299d0fde5ad5a8399a6fba466ec285faac1011455996f8cbe
-  languageName: node
-  linkType: hard
-
-"@zag-js/store@npm:0.12.0":
+"@zag-js/store@npm:^0.12.0":
   version: 0.12.0
   resolution: "@zag-js/store@npm:0.12.0"
   dependencies:
