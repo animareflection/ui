@@ -3,7 +3,7 @@
   "description": "Anima Reflection design system and library",
   "version": "0.0.0",
   "license": "MIT",
-  "packageManager": "yarn@3.6.0",
+  "packageManager": "yarn@3.6.1",
   "main": "build/ui.js",
   "module": "build/ui.mjs",
   "types": "build/ui.d.ts",
