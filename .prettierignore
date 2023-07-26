@@ -3,3 +3,4 @@ build
 coverage
 generated
 tsconfig.json
+storybook-static
