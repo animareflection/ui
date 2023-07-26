@@ -26,7 +26,7 @@
     "build": "tsup --onSuccess \"yarn yalc publish\"",
     "format": "prettier . --write",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
-    "test": "jest",
+    "test": "panda codegen && jest",
     "test:coverage": "yarn test --coverage",
     "test:ci": "yarn test --ci",
     "test:watch": "yarn test --watch",
