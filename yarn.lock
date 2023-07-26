@@ -6256,12 +6256,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zag-js/store@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@zag-js/store@npm:0.12.0"
+"@zag-js/store@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "@zag-js/store@npm:0.13.0"
   dependencies:
     proxy-compare: 2.5.1
-  checksum: 003015bfbfd4d46ce8b4ab7d52a1200720ce1b67d8b32eee558ab10ba98830291f264e97cbe04ae57ff41e5248ec8fd240359a4e96d7d42216ed7ab45ba3bb83
+  checksum: acf7a3f109d18189fe954349f8e4fd391b548ef782af4dad41e168c669e846f1b084f96feb423c3b7a8dcf2bddf5e4c9a63908af12cd3a3cec94dd4601a7395f
   languageName: node
   linkType: hard
 
