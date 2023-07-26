@@ -8,6 +8,9 @@ const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // enable CSS reset
   preflight: true,
   outdir: "src/generated/panda",
+  // set JSX factory name
+  jsxFactory: "panda",
+  jsxFramework: "react",
   include: ["./src/**/*.{ts,tsx}"],
   exclude: [],
   theme: {
