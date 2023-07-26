@@ -31,7 +31,7 @@
     "test:ci": "yarn test --ci",
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev --quiet --no-open -p 6006",
-    "storybook:build": "storybook build",
+    "storybook:build": "panda codegen && storybook build",
     "prepare": "husky install"
   },
   "resolutions": {
