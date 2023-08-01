@@ -1,4 +1,4 @@
-name: Release 🦋
+name: Release 🏗️
 
 on:
   push:
@@ -8,7 +8,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    name: Release
+    name: Handle release 🦋
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

@@ -1,4 +1,4 @@
-name: Run tests 🃏
+name: Test 🧪
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   test_unit:
-    name: Run unit tests
+    name: Run unit tests 🃏
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +22,7 @@ jobs:
         run: yarn test:ci
 
   coverage:
-    name: Determine code coverage
+    name: Determine code coverage 📊
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
