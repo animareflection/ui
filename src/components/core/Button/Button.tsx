@@ -1,10 +1,11 @@
 import { Pressable } from "@ark-ui/react";
 
+import { cva } from "generated/panda/css";
 import { panda } from "generated/panda/jsx";
 
 import type { ComponentProps } from "react";
 
-const PandaPressable = panda(Pressable, {
+const recipe = cva({
   base: {
     cursor: "pointer",
     color: "white",
@@ -22,13 +23,11 @@ const PandaPressable = panda(Pressable, {
   },
 });
 
-export type Props = ComponentProps<typeof PandaPressable>;
+export type Props = ComponentProps<typeof Button>;
 
 /**
  * Core UI button.
  */
-const Button = ({ children, ...rest }: Props) => (
-  <PandaPressable {...rest}>{children}</PandaPressable>
-);
+const Button = panda(Pressable, recipe);
 
 export default Button;
