@@ -18,7 +18,8 @@
     ".": {
       "require": "./build/ui.js",
       "import": "./build/ui.mjs"
-    }
+    },
+    "./index.css": "./build/ui.css"
   },
   "scripts": {
     "dev": "panda codegen && concurrently --kill-others -n \"BUILD,PANDA,STORYBOOK\" -c \"#f13334,#ffc83d,#ff4785\" \"yarn build --watch\" \"yarn dev:css\" \"yarn storybook\"",
