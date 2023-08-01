@@ -1,1 +1,2 @@
+/* https://panda-css.com/docs/concepts/cascade-layers */
 @layer reset, base, tokens, recipes, utilities;
