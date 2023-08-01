@@ -14,7 +14,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
-    "outDir": "build/esm",
+    "outDir": "build",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
