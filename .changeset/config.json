@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
+  "access": "public",
+  "baseBranch": "master",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "animareflection/ui" }
+  ],
+  "commit": false
+}
