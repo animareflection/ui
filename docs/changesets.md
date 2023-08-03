@@ -20,9 +20,7 @@ If you're fixing a bug for the Card component, you might write:
 Fix `Card` resizing after initial page load
 ```
 
-After the changeset is created, it will be added to the `.changeset` folder, where it can be safely modified.
-
-Keep changesets atomic and focused on a single change. There is no limit to the number of changesets you can create, even in one PR.
+After the changeset is created, it will be added to the `.changeset` folder, where it can be safely modified and committed. There is no limit to the number of changesets you can create, even in one PR.
 
 ## Learn More
 
