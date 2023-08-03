@@ -57,4 +57,10 @@ Now you are ready to install the library. You can either install it [from the pu
    >  rm yalc.lock && yalc link @animareflection/ui
    > ```
 
+   > 💡 Note: every time you install dependencies (e.g. run `yarn`), the package symlink will be cleared, and will need to be relinked:
+   >
+   > ```sh
+   >  yarn && yalc link @animareflection/ui
+   > ```
+
    > 💡 Note: if the UI library build fails, this will cause trickling errors. Make sure the UI library builds successfully if you are still having issues.
