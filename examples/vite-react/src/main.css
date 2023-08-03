@@ -1,0 +1,6 @@
+@layer reset, base, tokens, recipes, utilities;
+@import url("@animareflection/ui/index.css");
+
+#root {
+  height: 100vh;
+}
