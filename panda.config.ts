@@ -7,7 +7,6 @@ import { defineConfig } from "@pandacss/dev";
 const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // enable CSS reset
   preflight: true,
-  emitPackage: true,
   include: ["src/**/*.{ts,tsx}"],
   outdir: "src/generated/panda",
   // set JSX factory name

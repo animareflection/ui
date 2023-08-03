@@ -13,7 +13,7 @@ const tsupConfig: Options = {
   dts: true,
   splitting: false,
   format: ["cjs", "esm"],
-  external: ["react", "src/generated/panda"],
+  external: ["react"],
   outDir: "build",
   esbuildOptions: (opt, _ctx) => {
     // https://esbuild.github.io/api/#resolve-extensions
