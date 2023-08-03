@@ -1,6 +1,6 @@
 import { Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
 
-import "./main.css";
+import "main.css";
 
 const App = () => (
   <Flex

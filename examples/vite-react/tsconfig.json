@@ -8,6 +8,7 @@
       "ESNext"
     ],
     "allowJs": false,
+    "baseUrl": "src",
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
