@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "panda codegen && concurrently --kill-others -n \"BUILD,PANDA,STORYBOOK\" -c \"#f13334,#ffc83d,#ff4785\" \"yarn build --watch\" \"yarn dev:css\" \"yarn storybook\"",
     "dev:css": "panda --watch",
-    "build": "panda codegen && tsup --onSuccess \"yarn yalc push\"",
+    "build": "panda codegen && tsup --onSuccess \"while [ ! -f ./build/ui.d.ts ]; do sleep 1; done && yarn yalc push\"",
     "format": "prettier . --write",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "test": "panda codegen && jest",
