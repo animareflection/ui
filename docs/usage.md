@@ -4,7 +4,7 @@ Follow these steps to use the ANIREF UI library in your project.
 
 ## Prerequisites
 
-1. Install Panda 🐼: `yarn add -D @pandacss/dev`
+1. Install [Panda 🐼](https://panda-css.com/): `yarn add -D @pandacss/dev`
 
 2. Create a Panda config file similar to this (Panda looks for `panda.config.ts` by default):
 
