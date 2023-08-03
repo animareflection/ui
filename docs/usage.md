@@ -15,6 +15,7 @@ import { defineConfig } from "@pandacss/dev";
 
 const pandaConfig = defineConfig({
   preflight: true,
+  emitPackage: true,
   presets: ["@pandacss/dev/presets", anirefPreset],
   include: ["./src/**/*.{ts,tsx}"],
   outdir: "src/generated/panda",
