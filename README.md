@@ -15,7 +15,7 @@ Follow the [prerequisities](docs/usage.md#prerequisites) to install Panda in you
      - [tsup](https://tsup.egoist.dev/) in watch mode
      - [Storybook](https://storybook.js.org/) in development mode (default port: `6006`, e.g. http://localhost:6006)
 
-If you'd like to develop outside of Storybook, as in a dedicated app, follow the [prerequisities](docs/usage.md#prerequisites), then follow the [local usage instructions](docs/usage.md#locally).
+If you'd like to develop outside of Storybook, as in a dedicated app, follow the [prerequisities](docs/usage.md#prerequisites), then follow the [local usage instructions](docs/usage.md#local).
 
 ## License
 

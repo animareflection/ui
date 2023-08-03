@@ -16,7 +16,7 @@ import { defineConfig } from "@pandacss/dev";
 const pandaConfig = defineConfig({
   preflight: true,
   presets: ["@pandacss/dev/presets", anirefPreset],
-  include: ["./src/**/*.{ts,tsx}"],
+  include: ["src/**/*.{ts,tsx}"],
   outdir: "src/generated/panda",
 });
 
@@ -33,33 +33,38 @@ export default pandaConfig;
 
 ```tsx
 // App.tsx
-import "./main.css";
+import "main.css";
 
 const App = () => <></>;
 ```
 
-Now you are ready to install the library. You can either install it [from the published package](#from-published-package) or from a [local clone](#locally) on your local filesystem. The latter is useful if you are developing the UI library.
+Now you are ready to install the UI library. You can either install it [from the published package](#from-published-package) or from a [local clone](#local) on your local filesystem. The latter is useful if you are developing the library.
 
-## From Published Package
+## Remote
 
-1. Install the package: `yarn add @animareflection/ui`
+Install from remote repository: `yarn add @animareflection/ui`
 
-## Locally
+## Local
 
-1. Install [yalc](https://github.com/wclr/yalc).
+This workflow is ideal for local development.
 
-2. Link the package: `yalc link @animareflection/ui`
+1. Install [yalc](https://github.com/wclr/yalc)
+2. **Within the root UI library directory**, build the UI library: `yarn build` (or `yarn dev` for continuous builds)
+3. **Within the project directory:**
 
-   > 💡 Note: if you receive a `Cannot find module '@animareflection/ui' [...]` error and `yarn && yalc link @animareflection/ui` does not resolve the issue, try removing the `yalc.lock` file and then relink:
-   >
-   > ```sh
-   >  rm yalc.lock && yalc link @animareflection/ui
-   > ```
+   1. Install dependencies: `yarn`
+   2. Link the UI library: `yalc link @animareflection/ui`. Linking will not modify `package.json`, it will just symlink the package into your `node_modules`. Note that the package must be published to the `yalc` store first (this happens automatically after a successful build of the UI library)
 
-   > 💡 Note: every time you install or modify dependencies (e.g. run `yarn` or `yarn add [...]`), the package symlink will be cleared, and will need to be relinked:
-   >
-   > ```sh
-   >  yarn && yalc link @animareflection/ui
-   > ```
+      > 💡 **Note:** if you receive a `Cannot find module '@animareflection/ui' [...]` error and `yarn && yalc link @animareflection/ui` does not resolve the issue, try removing the `yalc.lock` file and then relink:
+      >
+      > ```sh
+      >  rm yalc.lock && yalc link @animareflection/ui
+      > ```
 
-   > 💡 Note: if the UI library build fails, this will cause trickling errors. Make sure the UI library builds successfully if you are still having issues.
+      > 💡 **Note:** every time you install or modify dependencies (e.g. run `yarn` or `yarn add [...]`), the package symlink will be cleared, and will need to be relinked:
+      >
+      > ```sh
+      >  yarn && yalc link @animareflection/ui
+      > ```
+
+      > 💡 **Note:** if the UI library build fails, this will cause trickling errors. Make sure the UI library builds successfully if you are still having issues.
