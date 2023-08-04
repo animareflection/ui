@@ -3,6 +3,7 @@ import { Pressable } from "@ark-ui/react";
 import { cva } from "generated/panda/css";
 import { panda } from "generated/panda/jsx";
 
+import type { PandaComponent } from "generated/panda/types/jsx";
 import type { ComponentProps } from "react";
 
 const recipe = cva({
@@ -28,6 +29,7 @@ export type Props = ComponentProps<typeof Button>;
 /**
  * Core UI button.
  */
-const Button = panda(Pressable, recipe);
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+const Button: PandaComponent<typeof Pressable> = panda(Pressable, recipe);
 
 export default Button;

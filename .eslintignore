@@ -2,6 +2,7 @@
 build
 coverage
 generated
+examples
 storybook-static
 
 # see https://github.com/storybookjs/eslint-plugin-storybook#installation
