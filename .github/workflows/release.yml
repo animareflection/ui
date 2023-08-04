@@ -22,6 +22,7 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: yarn release
+          title: "feature(release): version packages"
           commit: "ci(changesets): version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
