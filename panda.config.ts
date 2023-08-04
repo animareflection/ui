@@ -1,5 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
 
+import anirefPreset from "lib/panda/aniref.preset";
+
 /**
  * 🐼 Panda configuration.
  */
@@ -9,6 +11,7 @@ const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   preflight: true,
   include: ["src/**/*.{ts,tsx}"],
   outdir: "src/generated/panda",
+  presets: ["@pandacss/dev/presets", anirefPreset],
   // set JSX factory name
   jsxFactory: "panda",
   jsxFramework: "react",
