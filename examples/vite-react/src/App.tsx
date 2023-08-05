@@ -1,4 +1,5 @@
 import { Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
+import { Button } from "@animareflection/ui/client";
 
 import "main.css";
 
@@ -59,6 +60,8 @@ const App = () => (
         Circle
       </Circle>
     </Grid>
+
+    <Button>Click me!</Button>
   </Flex>
 );
 
