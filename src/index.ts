@@ -10,4 +10,4 @@ export type { JsxStyleProps } from "generated/panda/types";
 export { default as anirefPreset } from "lib/panda/aniref.preset";
 
 // export components renderable on both server and client
-export * from "./components/universal";
+export * from "components/universal";
