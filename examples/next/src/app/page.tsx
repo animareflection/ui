@@ -1,5 +1,4 @@
 import { Box, Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
-import { Button } from "@animareflection/ui/client";
 import Link from "next/link";
 
 const HomePage = () => (
@@ -50,6 +49,7 @@ const HomePage = () => (
         Circle
       </Circle>
     </Grid>
+
     <Box color="blue" _hover={{ textDecoration: "underline" }}>
       <Link href="/client">Go to client page demo</Link>
     </Box>
