@@ -1,8 +1,5 @@
-"use client";
-
-import { Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
-
-import "main.css";
+import { Box, Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
+import Link from "next/link";
 
 const HomePage = () => (
   <Flex
@@ -52,6 +49,10 @@ const HomePage = () => (
         Circle
       </Circle>
     </Grid>
+
+    <Box color="blue" _hover={{ textDecoration: "underline" }}>
+      <Link href="/client">Go to client page demo</Link>
+    </Box>
   </Flex>
 );
 
