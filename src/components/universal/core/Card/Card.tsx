@@ -49,7 +49,7 @@ const cardHeaderRecipe = cva({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 2,
+    padding: 4,
     fontWeight: "semibold",
   },
 });
@@ -65,7 +65,8 @@ const cardBodyRecipe = cva({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 2,
+    px: 4,
+    py: 2,
   },
 });
 
@@ -80,7 +81,7 @@ const cardFooterRecipe = cva({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 2,
+    padding: 4,
   },
 });
 
