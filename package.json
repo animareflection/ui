@@ -39,6 +39,7 @@
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev --quiet --no-open -p 6006",
     "storybook:build": "panda codegen && storybook build",
+    "changeset": "changeset",
     "release": "yarn build && changeset publish",
     "prepare": "husky install"
   },
