@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.1.2
+
+### Patch Changes
+
+- [#28](https://github.com/animareflection/ui/pull/28) [`5d4641c`](https://github.com/animareflection/ui/commit/5d4641cab03ddfe99e132c1a60d0550c2fe75b01) Thanks [@coopbri](https://github.com/coopbri)! - Fix `use client` directive banner applying to both client and universal export
+
 ## 0.1.1
 
 ### Patch Changes
