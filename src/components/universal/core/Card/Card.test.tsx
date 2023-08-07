@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 
 import { Card, CardHeader, CardBody, CardFooter } from "components/universal";
 
-describe("Text", () => {
+describe("Card", () => {
   // eslint-disable-next-line jest/expect-expect
   it("renders correctly", () => {
     render(
