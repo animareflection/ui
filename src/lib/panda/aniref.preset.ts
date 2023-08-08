@@ -6,6 +6,7 @@ import {
   conditions,
   easings,
   keyframes,
+  recipes,
   zIndex,
 } from "lib/panda";
 
@@ -24,6 +25,7 @@ const anirefPreset: ReturnType<typeof definePreset> = definePreset({
   theme: {
     extend: {
       keyframes,
+      recipes,
       tokens,
     },
   },
