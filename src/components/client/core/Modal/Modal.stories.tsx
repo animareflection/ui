@@ -1,10 +1,13 @@
 import {
+  Button,
   Modal,
   ModalBackdrop,
   ModalContainer,
   ModalContent,
   ModalTitle,
   ModalDescription,
+  ModalCloseTrigger,
+  ModalTrigger,
 } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -14,9 +17,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Modal>
+      <ModalTrigger>
+        <Button>Open Modal</Button>
+      </ModalTrigger>
       <ModalBackdrop />
       <ModalContainer>
         <ModalContent>
+          <ModalCloseTrigger>X</ModalCloseTrigger>
           <ModalTitle>Modal Title</ModalTitle>
           <ModalDescription>Modal Description</ModalDescription>
         </ModalContent>
