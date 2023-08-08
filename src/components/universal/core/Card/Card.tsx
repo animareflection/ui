@@ -37,6 +37,8 @@ const cardRecipe = sva({
   },
 });
 
+const cardClasses = cardRecipe();
+
 export type CardProps = HTMLPandaProps<"div">;
 export type CardHeaderProps = HTMLPandaProps<"div">;
 export type CardBodyProps = HTMLPandaProps<"div">;
@@ -60,7 +62,7 @@ const Card = ({ children, ...rest }: CardProps) => {
   });
 
   return (
-    <panda.div className={cardRecipe().card} {...rest}>
+    <panda.div className={cardClasses.card} {...rest}>
       {cardHeader}
       {cardBody}
       {cardFooter}
@@ -69,7 +71,7 @@ const Card = ({ children, ...rest }: CardProps) => {
 };
 
 export const CardHeader = ({ children, ...rest }: CardHeaderProps) => (
-  <panda.div className={cardRecipe().cardHeader} {...rest}>
+  <panda.div className={cardClasses.cardHeader} {...rest}>
     {children}
   </panda.div>
 );
@@ -77,7 +79,7 @@ export const CardHeader = ({ children, ...rest }: CardHeaderProps) => (
 CardHeader.displayName = "CardHeader";
 
 export const CardBody = ({ children, ...rest }: CardBodyProps) => (
-  <panda.div className={cardRecipe().cardBody} {...rest}>
+  <panda.div className={cardClasses.cardBody} {...rest}>
     {children}
   </panda.div>
 );
@@ -85,7 +87,7 @@ export const CardBody = ({ children, ...rest }: CardBodyProps) => (
 CardBody.displayName = "CardBody";
 
 export const CardFooter = ({ children, ...rest }: CardFooterProps) => (
-  <panda.div className={cardRecipe().cardFooter} {...rest}>
+  <panda.div className={cardClasses.cardFooter} {...rest}>
     {children}
   </panda.div>
 );
