@@ -8,6 +8,7 @@ export {
   ModalContent,
   ModalTitle,
   ModalDescription,
+  ModalBody,
 } from "./Modal/Modal";
 
 export type { Props as ButtonProps } from "./Button/Button";
@@ -20,4 +21,5 @@ export type {
   ModalContentProps,
   ModalTitleProps,
   ModalDescriptionProps,
+  ModalBodyProps,
 } from "./Modal/Modal";

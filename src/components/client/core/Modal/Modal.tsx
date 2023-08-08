@@ -19,12 +19,11 @@ import type { HTMLPandaProps } from "generated/panda/jsx";
 const modalRecipe = sva({
   slots: [
     "modalBackdrop",
-    "modalCloseTrigger",
     "modalContainer",
     "modalContent",
-    "modalDescription",
     "modalTitle",
-    "modalTrigger",
+    "modalDescription",
+    "modalBody",
   ],
   base: {
     modalBackdrop: {
@@ -38,14 +37,6 @@ const modalRecipe = sva({
       position: "fixed",
       zIndex: "overlay",
     },
-    modalCloseTrigger: {
-      cursor: "pointer",
-      position: "absolute",
-      top: 2,
-      right: 2,
-      m: 1,
-      p: 1,
-    },
     modalContainer: {
       alignItems: "center",
       display: "flex",
@@ -55,11 +46,15 @@ const modalRecipe = sva({
       zIndex: "modal",
     },
     modalContent: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 1,
       background: "white",
       borderRadius: "lg",
       boxShadow: "lg",
       minW: "sm",
       position: "relative",
+      margin: 4,
       padding: 4,
       _focus: {
         outline: "none",
@@ -72,6 +67,10 @@ const modalRecipe = sva({
     modalDescription: {
       color: "gray.400",
       textStyle: "sm",
+    },
+    modalBody: {
+      display: "flex",
+      flexDirection: "column",
     },
   },
 });
@@ -107,9 +106,7 @@ const Modal = ({ children }: Props) => {
 
 export const ModalTrigger = ({ children, ...rest }: Props) => (
   <DialogTrigger asChild>
-    <panda.div className={modalClasses.modalTrigger} {...rest}>
-      {children}
-    </panda.div>
+    <panda.div {...rest}>{children}</panda.div>
   </DialogTrigger>
 );
 
@@ -153,6 +150,10 @@ export const ModalContent = ({ children, ...rest }: Props) => {
     children,
     displayName: "ModalDescription",
   });
+  const modalBody = getChildrenOnDisplayName({
+    children,
+    displayName: "ModalBody",
+  });
 
   return (
     <DialogContent lazyMount unmountOnExit asChild>
@@ -160,6 +161,7 @@ export const ModalContent = ({ children, ...rest }: Props) => {
         {modalCloseTrigger}
         {modalTitle}
         {modalDescription}
+        {modalBody}
       </panda.div>
     </DialogContent>
   );
@@ -169,9 +171,7 @@ ModalContent.displayName = "ModalContent";
 
 export const ModalCloseTrigger = ({ children, ...rest }: Props) => (
   <DialogCloseTrigger asChild>
-    <panda.div className={modalClasses.modalCloseTrigger} {...rest}>
-      {children}
-    </panda.div>
+    <panda.div {...rest}>{children}</panda.div>
   </DialogCloseTrigger>
 );
 
@@ -197,6 +197,14 @@ export const ModalDescription = ({ children, ...rest }: Props) => (
 
 ModalDescription.displayName = "ModalDescription";
 
+export const ModalBody = ({ children, ...rest }: Props) => (
+  <panda.div className={modalClasses.modalBody} {...rest}>
+    {children}
+  </panda.div>
+);
+
+ModalBody.displayName = "ModalBody";
+
 export type {
   Props as ModalProps,
   Props as ModalTriggerProps,
@@ -206,6 +214,7 @@ export type {
   Props as ModalContentProps,
   Props as ModalTitleProps,
   Props as ModalDescriptionProps,
+  Props as ModalBodyProps,
 };
 
 export default Modal;

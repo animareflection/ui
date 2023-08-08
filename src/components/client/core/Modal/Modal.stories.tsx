@@ -2,6 +2,7 @@ import {
   Button,
   Modal,
   ModalBackdrop,
+  ModalBody,
   ModalContainer,
   ModalContent,
   ModalTitle,
@@ -23,9 +24,19 @@ export const Default: Story = {
       <ModalBackdrop />
       <ModalContainer>
         <ModalContent>
-          <ModalCloseTrigger>X</ModalCloseTrigger>
+          <ModalCloseTrigger pos="absolute" top={3} right={3}>
+            <Button bgColor="black" py={1}>
+              Close
+            </Button>
+          </ModalCloseTrigger>
           <ModalTitle>Modal Title</ModalTitle>
           <ModalDescription>Modal Description</ModalDescription>
+          <ModalBody maxW={80}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </ModalBody>
         </ModalContent>
       </ModalContainer>
     </Modal>
