@@ -35,6 +35,7 @@ const modalRecipe = sva({
         base: "rgba(250, 250, 250, 0.8)",
         _dark: "rgba(10, 10, 10, 0.8)",
       },
+      opacity: 0.5,
       inset: "0",
       position: "fixed",
       zIndex: "overlay",
@@ -127,7 +128,7 @@ export const ModalContent = ({ children, ...rest }: Props) => {
   });
 
   return (
-    <DialogContent asChild>
+    <DialogContent lazyMount unmountOnExit asChild>
       <panda.div className={modalClasses.modalContent} {...rest}>
         {modalTitle}
         {modalDescription}
