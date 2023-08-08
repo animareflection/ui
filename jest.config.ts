@@ -31,6 +31,9 @@ const jestConfig: JestConfig = {
   errorOnDeprecated: true,
   testEnvironment: "jsdom",
   modulePaths: ["<rootDir>/src"],
+  setupFilesAfterEnv: ["<rootDir>/src/test/jest.setup.ts"],
+  // TODO enable below (don't inject globals) for explicit imports, hacks currently required for `expect` extension of `@testing-library/jest-dom`; track https://github.com/testing-library/jest-dom/issues/426
+  // injectGlobals: false,
   transform: {
     // run tests with`@swc/jest`: https://swc.rs/docs/usage/jest
     "^.+\\.(mjs|ts|tsx)$": [
