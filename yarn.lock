@@ -10230,15 +10230,15 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-jest-dom@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "eslint-plugin-jest-dom@npm:5.0.1"
+  version: 5.0.2
+  resolution: "eslint-plugin-jest-dom@npm:5.0.2"
   dependencies:
     "@babel/runtime": ^7.16.3
     requireindex: ^1.2.0
   peerDependencies:
     "@testing-library/dom": ^8.0.0 || ^9.0.0
     eslint: ^6.8.0 || ^7.0.0 || ^8.0.0
-  checksum: aad1ccae292e8b77be0e034499a62502e074d6d631320efa8b7d9de4a1e484f0ab27480820fb4974cec49101df35c9d4a320643a7c93d2a08778fec283b1e2fd
+  checksum: 83bda8d1f86edfaf4b8e3039f15b73ad8ec035b6afc2403828cea70d4ed792e015406aa58c3dab91235d230f4561f33d26a80064cf7b298fd6edc72a1c27273a
   languageName: node
   linkType: hard
 
