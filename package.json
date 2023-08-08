@@ -39,6 +39,7 @@
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev --quiet --no-open -p 6006",
     "storybook:build": "panda codegen && storybook build",
+    "changeset": "changeset",
     "release": "yarn build && changeset publish",
     "prepare": "husky install"
   },
@@ -54,7 +55,7 @@
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
     "@jest/globals": "^29.6.2",
-    "@pandacss/dev": "^0.9.0",
+    "@pandacss/dev": "^0.10.0",
     "@storybook/addon-a11y": "^7.2.1",
     "@storybook/addon-essentials": "^7.2.1",
     "@storybook/addon-interactions": "^7.2.1",
