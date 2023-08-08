@@ -31,6 +31,7 @@ const jestConfig: JestConfig = {
   errorOnDeprecated: true,
   testEnvironment: "jsdom",
   modulePaths: ["<rootDir>/src"],
+  setupFilesAfterEnv: ["<rootDir>/src/test/jest.setup.ts"],
   transform: {
     // run tests with`@swc/jest`: https://swc.rs/docs/usage/jest
     "^.+\\.(mjs|ts|tsx)$": [
