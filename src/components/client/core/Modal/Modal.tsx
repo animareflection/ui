@@ -13,7 +13,6 @@ import {
 import { sva } from "generated/panda/css";
 import { panda } from "generated/panda/jsx";
 
-// prettier-ignore
 import type { DialogProps } from "@ark-ui/react";
 import type { HTMLPandaProps } from "generated/panda/jsx";
 
