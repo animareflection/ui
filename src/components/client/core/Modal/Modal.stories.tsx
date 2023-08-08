@@ -23,12 +23,7 @@ export const Default: Story = {
       </ModalTrigger>
       <ModalBackdrop />
       <ModalContainer>
-        <ModalContent>
-          <ModalCloseTrigger pos="absolute" top={3} right={3}>
-            <Button bgColor="black" py={1}>
-              Close
-            </Button>
-          </ModalCloseTrigger>
+        <ModalContent lazyMount unmountOnExit>
           <ModalTitle>Modal Title</ModalTitle>
           <ModalDescription>Modal Description</ModalDescription>
           <ModalBody maxW={80}>
@@ -37,6 +32,11 @@ export const Default: Story = {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </ModalBody>
+          <ModalCloseTrigger placeSelf="flex-end">
+            <Button bgColor="black" py={1}>
+              Close
+            </Button>
+          </ModalCloseTrigger>
         </ModalContent>
       </ModalContainer>
     </Modal>

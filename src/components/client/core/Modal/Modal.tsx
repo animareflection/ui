@@ -12,21 +12,23 @@ import {
 
 import { sva } from "generated/panda/css";
 import { panda } from "generated/panda/jsx";
-import { getChildrenOnDisplayName } from "lib/utils";
 
+// prettier-ignore
+import type { DialogProps } from "@ark-ui/react";
 import type { HTMLPandaProps } from "generated/panda/jsx";
 
 const modalRecipe = sva({
   slots: [
-    "modalBackdrop",
-    "modalContainer",
-    "modalContent",
-    "modalTitle",
-    "modalDescription",
-    "modalBody",
+    "backdrop",
+    "container",
+    "content",
+    "title",
+    "description",
+    "body",
+    "closeTrigger",
   ],
   base: {
-    modalBackdrop: {
+    backdrop: {
       backdropFilter: "blur(4px)",
       background: {
         base: "rgba(250, 250, 250, 0.8)",
@@ -37,7 +39,7 @@ const modalRecipe = sva({
       position: "fixed",
       zIndex: "overlay",
     },
-    modalContainer: {
+    container: {
       alignItems: "center",
       display: "flex",
       inset: "0",
@@ -45,7 +47,7 @@ const modalRecipe = sva({
       position: "fixed",
       zIndex: "modal",
     },
-    modalContent: {
+    content: {
       display: "flex",
       flexDirection: "column",
       gap: 1,
@@ -60,17 +62,20 @@ const modalRecipe = sva({
         outline: "none",
       },
     },
-    modalTitle: {
+    title: {
       fontWeight: "semibold",
       textStyle: "lg",
     },
-    modalDescription: {
+    description: {
       color: "gray.400",
       textStyle: "sm",
     },
-    modalBody: {
+    body: {
       display: "flex",
       flexDirection: "column",
+    },
+    closeTrigger: {
+      display: "flex",
     },
   },
 });
@@ -79,29 +84,8 @@ const modalClasses = modalRecipe();
 
 type Props = HTMLPandaProps<"div">;
 
-const Modal = ({ children }: Props) => {
-  const modalTrigger = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalTrigger",
-  });
-  const modalBackdrop = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalBackdrop",
-  });
-  const modalContainer = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalContainer",
-  });
-
-  return (
-    <Dialog>
-      {modalTrigger}
-      <Portal>
-        {modalBackdrop}
-        {modalContainer}
-      </Portal>
-    </Dialog>
-  );
+const Modal = ({ children, ...rest }: DialogProps) => {
+  return <Dialog {...rest}>{children}</Dialog>;
 };
 
 export const ModalTrigger = ({ children, ...rest }: Props) => (
@@ -110,103 +94,68 @@ export const ModalTrigger = ({ children, ...rest }: Props) => (
   </DialogTrigger>
 );
 
-ModalTrigger.displayName = "ModalTrigger";
+export const ModalPortal = ({ children, ...rest }: Props) => (
+  <Portal {...rest}>{children}</Portal>
+);
 
 export const ModalBackdrop = ({ ...rest }: Props) => (
   <DialogBackdrop asChild>
-    <panda.div className={modalClasses.modalBackdrop} {...rest} />
+    <panda.div className={modalClasses.backdrop} {...rest} />
   </DialogBackdrop>
 );
 
-ModalBackdrop.displayName = "ModalBackdrop";
-
 export const ModalContainer = ({ children, ...rest }: Props) => {
-  const modalContent = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalContent",
-  });
-
   return (
     <DialogContainer asChild>
-      <panda.div className={modalClasses.modalContainer} {...rest}>
-        {modalContent}
+      <panda.div className={modalClasses.container} {...rest}>
+        {children}
       </panda.div>
     </DialogContainer>
   );
 };
 
-ModalContainer.displayName = "ModalContainer";
-
 export const ModalContent = ({ children, ...rest }: Props) => {
-  const modalCloseTrigger = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalCloseTrigger",
-  });
-  const modalTitle = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalTitle",
-  });
-  const modalDescription = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalDescription",
-  });
-  const modalBody = getChildrenOnDisplayName({
-    children,
-    displayName: "ModalBody",
-  });
-
   return (
     <DialogContent lazyMount unmountOnExit asChild>
-      <panda.div className={modalClasses.modalContent} {...rest}>
-        {modalCloseTrigger}
-        {modalTitle}
-        {modalDescription}
-        {modalBody}
+      <panda.div className={modalClasses.content} {...rest}>
+        {children}
       </panda.div>
     </DialogContent>
   );
 };
 
-ModalContent.displayName = "ModalContent";
-
 export const ModalCloseTrigger = ({ children, ...rest }: Props) => (
   <DialogCloseTrigger asChild>
-    <panda.div {...rest}>{children}</panda.div>
+    <panda.div className={modalClasses.closeTrigger} {...rest}>
+      {children}
+    </panda.div>
   </DialogCloseTrigger>
 );
 
-ModalCloseTrigger.displayName = "ModalCloseTrigger";
-
 export const ModalTitle = ({ children, ...rest }: Props) => (
   <DialogTitle asChild>
-    <panda.div className={modalClasses.modalTitle} {...rest}>
+    <panda.div className={modalClasses.title} {...rest}>
       {children}
     </panda.div>
   </DialogTitle>
 );
 
-ModalTitle.displayName = "ModalTitle";
-
 export const ModalDescription = ({ children, ...rest }: Props) => (
   <DialogDescription asChild>
-    <panda.div className={modalClasses.modalDescription} {...rest}>
+    <panda.div className={modalClasses.description} {...rest}>
       {children}
     </panda.div>
   </DialogDescription>
 );
 
-ModalDescription.displayName = "ModalDescription";
-
 export const ModalBody = ({ children, ...rest }: Props) => (
-  <panda.div className={modalClasses.modalBody} {...rest}>
+  <panda.div className={modalClasses.body} {...rest}>
     {children}
   </panda.div>
 );
 
-ModalBody.displayName = "ModalBody";
-
 export type {
-  Props as ModalProps,
+  DialogProps as ModalProps,
   Props as ModalTriggerProps,
   Props as ModalBackdropProps,
   Props as ModalCloseTriggerProps,
