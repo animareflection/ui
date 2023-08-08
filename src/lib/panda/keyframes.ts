@@ -1,9 +1,7 @@
 import { defineKeyframes } from "@pandacss/dev";
 
-// !NB: Need to manually add the type for the keyframes object, because it cannot be named without a reference. Tracking: https://github.com/chakra-ui/panda/issues/1122
-type Keyframes = ReturnType<typeof defineKeyframes>;
-
-const keyframes: Keyframes = defineKeyframes({
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+const keyframes: ReturnType<typeof defineKeyframes> = defineKeyframes({
   "fade-in": {
     from: { opacity: "0" },
     to: { opacity: "1" },
