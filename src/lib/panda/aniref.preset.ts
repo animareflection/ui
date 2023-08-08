@@ -1,9 +1,10 @@
 import { definePreset, defineTokens } from "@pandacss/dev";
 
-import { colors, zIndex } from "lib/panda";
+import { colors, keyframes, zIndex } from "lib/panda";
 
 const tokens = defineTokens({
   colors,
+  keyframes,
   zIndex,
 });
 
