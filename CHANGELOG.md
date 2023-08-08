@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.2.0
+
+### Minor Changes
+
+- [#32](https://github.com/animareflection/ui/pull/32) [`baec6f6`](https://github.com/animareflection/ui/commit/baec6f6eaffd3e401695322c1a005c636911453e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Card` component
+
 ## 0.1.2
 
 ### Patch Changes
