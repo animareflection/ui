@@ -69,7 +69,8 @@
     // suppress errors for missing React import (prefer modern JSX transform)
     "react/react-in-jsx-scope": "off",
     // prevent multiple components per file
-    "react/no-multi-comp": "error",
+    // NB: this rule is disabled because it is not compatible with the structure of our library
+    // "react/no-multi-comp": "error",
     // enforce arrow functions for React components
     "react/function-component-definition": [
       "error",

@@ -1,22 +1,46 @@
-import { cva } from "generated/panda/css";
+import { sva } from "generated/panda/css";
 import { panda } from "generated/panda/jsx";
 import { getChildrenOnDisplayName } from "lib/utils";
 
-import type { ComponentProps } from "react";
+import type { HTMLPandaProps } from "generated/panda/jsx";
 
-const cardRecipe = cva({
+const cardRecipe = sva({
+  slots: ["card", "cardHeader", "cardBody", "cardFooter"],
   base: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 2,
-    borderRadius: "md",
-    boxShadow: "sm",
+    card: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 2,
+      borderRadius: "md",
+      boxShadow: "sm",
+    },
+    cardHeader: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: 4,
+      fontWeight: "semibold",
+    },
+    cardBody: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      px: 4,
+      py: 2,
+    },
+    cardFooter: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: 4,
+    },
   },
 });
 
-const StyleCard = panda("div", cardRecipe);
-
-export type CardProps = ComponentProps<typeof StyleCard>;
+export type CardProps = HTMLPandaProps<"div">;
+export type CardHeaderProps = HTMLPandaProps<"div">;
+export type CardBodyProps = HTMLPandaProps<"div">;
+export type CardFooterProps = HTMLPandaProps<"div">;
 
 /**
  * Core UI card.
@@ -36,58 +60,35 @@ const Card = ({ children, ...rest }: CardProps) => {
   });
 
   return (
-    <StyleCard {...rest}>
+    <panda.div className={cardRecipe().card} {...rest}>
       {cardHeader}
       {cardBody}
       {cardFooter}
-    </StyleCard>
+    </panda.div>
   );
 };
 
-const cardHeaderRecipe = cva({
-  base: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 4,
-    fontWeight: "semibold",
-  },
-});
-
-export const CardHeader = panda("div", cardHeaderRecipe);
-
-export type CardHeaderProps = ComponentProps<typeof CardHeader>;
+export const CardHeader = ({ children, ...rest }: CardHeaderProps) => (
+  <panda.div className={cardRecipe().cardHeader} {...rest}>
+    {children}
+  </panda.div>
+);
 
 CardHeader.displayName = "CardHeader";
 
-const cardBodyRecipe = cva({
-  base: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    px: 4,
-    py: 2,
-  },
-});
-
-export const CardBody = panda("div", cardBodyRecipe);
-
-export type CardBodyProps = ComponentProps<typeof CardBody>;
+export const CardBody = ({ children, ...rest }: CardBodyProps) => (
+  <panda.div className={cardRecipe().cardBody} {...rest}>
+    {children}
+  </panda.div>
+);
 
 CardBody.displayName = "CardBody";
 
-const cardFooterRecipe = cva({
-  base: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 4,
-  },
-});
-
-export const CardFooter = panda("div", cardFooterRecipe);
-
-export type CardFooterProps = ComponentProps<typeof CardFooter>;
+export const CardFooter = ({ children, ...rest }: CardFooterProps) => (
+  <panda.div className={cardRecipe().cardFooter} {...rest}>
+    {children}
+  </panda.div>
+);
 
 CardFooter.displayName = "CardFooter";
 
