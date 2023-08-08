@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { Button } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
