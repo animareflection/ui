@@ -18667,7 +18667,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:4.4.8, vite@npm:^4.4.8":
+"vite@npm:4.4.8":
   version: 4.4.8
   resolution: "vite@npm:4.4.8"
   dependencies:
@@ -18707,7 +18707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.4.6":
+"vite@npm:^4.4.6, vite@npm:^4.4.8":
   version: 4.4.9
   resolution: "vite@npm:4.4.9"
   dependencies:
