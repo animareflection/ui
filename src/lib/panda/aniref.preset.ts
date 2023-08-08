@@ -6,7 +6,6 @@ const tokens = defineTokens({
   animations,
   colors,
   easings,
-  keyframes,
   zIndex,
 });
 
@@ -17,6 +16,7 @@ const tokens = defineTokens({
 const anirefPreset: ReturnType<typeof definePreset> = definePreset({
   theme: {
     extend: {
+      keyframes,
       tokens,
     },
   },
