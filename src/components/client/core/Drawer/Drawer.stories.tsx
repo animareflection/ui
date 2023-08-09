@@ -12,8 +12,7 @@ import {
   DrawerTrigger,
   Portal,
 } from "components/client";
-import { Text } from "components/universal";
-import { css } from "generated/panda/css";
+import { Icon, Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -46,11 +45,7 @@ export const Default: Story = {
               asChild
             >
               <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
-                <CloseIcon
-                  className={css({
-                    color: "black",
-                  })}
-                />
+                <Icon as={CloseIcon} color="black" />
               </Button>
             </DrawerCloseTrigger>
           </DrawerContent>
