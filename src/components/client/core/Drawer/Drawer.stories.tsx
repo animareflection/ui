@@ -1,4 +1,4 @@
-import { Portal } from "@ark-ui/react";
+import { FiX as CloseIcon } from "react-icons/fi";
 
 import {
   Button,
@@ -10,8 +10,10 @@ import {
   DrawerDescription,
   DrawerCloseTrigger,
   DrawerTrigger,
+  Portal,
 } from "components/client";
 import { Text } from "components/universal";
+import { css } from "generated/panda/css";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -29,14 +31,26 @@ export const Default: Story = {
           <DrawerContent lazyMount unmountOnExit>
             <DrawerTitle>Drawer Title</DrawerTitle>
             <DrawerDescription>Drawer Description</DrawerDescription>
-            <Text>
+            <Text mt={2}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam.
             </Text>
-            <DrawerCloseTrigger pos="absolute" bottom={2} right={2}>
-              <Button bgColor="black" py={1}>
-                Close
+            <DrawerCloseTrigger
+              pos="absolute"
+              top={2}
+              right={2}
+              _focus={{
+                outline: "none",
+              }}
+              asChild
+            >
+              <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
+                <CloseIcon
+                  className={css({
+                    color: "black",
+                  })}
+                />
               </Button>
             </DrawerCloseTrigger>
           </DrawerContent>

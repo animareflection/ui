@@ -14,7 +14,7 @@ const tsupConfig = defineTsupConfig({
   dts: true,
   splitting: false,
   format: ["cjs", "esm"],
-  external: ["react", "@ark-ui/react"],
+  external: ["react", "@ark-ui/react", "react-icons"],
   outDir: "build",
   esbuildOptions: (opt, _ctx) => {
     // https://esbuild.github.io/api/#resolve-extensions

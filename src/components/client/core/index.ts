@@ -1,3 +1,5 @@
+export { Portal } from "@ark-ui/react";
+
 export { default as Button } from "./Button/Button";
 export {
   default as Drawer,
