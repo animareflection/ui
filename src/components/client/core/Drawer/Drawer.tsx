@@ -24,6 +24,9 @@ import type {
 } from "@ark-ui/react";
 import type { DrawerVariantProps } from "generated/panda/recipes";
 
+/**
+ * Core UI drawer.
+ */
 export type DrawerProps = DialogProps;
 const Drawer = panda(Dialog);
 
