@@ -1,54 +1,58 @@
+import { FiX as CloseIcon } from "react-icons/fi";
+
+import { Button, Icon } from "components/client";
 import {
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContainer,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from "@ark-ui/react";
+  Drawer as PrimitiveDrawer,
+  DrawerBackdrop,
+  DrawerCloseTrigger,
+  DrawerContainer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerTitle,
+  DrawerTrigger,
+  Portal,
+} from "components/primitives";
 
-import { panda } from "generated/panda/jsx";
-import { drawer } from "generated/panda/recipes";
+import type { DrawerProps } from "components/primitives";
+import type { ReactNode } from "react";
 
-import type {
-  DialogBackdropProps,
-  DialogCloseTriggerProps,
-  DialogContainerProps,
-  DialogContentProps,
-  DialogDescriptionProps,
-  DialogProps,
-  DialogTitleProps,
-  DialogTriggerProps,
-} from "@ark-ui/react";
-import type { DrawerVariantProps } from "generated/panda/recipes";
+export interface Props extends DrawerProps {
+  trigger: ReactNode;
+  title?: string;
+  description?: string;
+  children?: ReactNode;
+}
 
 /**
  * Core UI drawer.
  */
-export type DrawerProps = DialogProps;
-const Drawer = panda(Dialog);
-
-export type DrawerTriggerProps = DialogTriggerProps;
-export const DrawerTrigger = panda(DialogTrigger);
-
-export type DrawerBackdropProps = DrawerVariantProps & DialogBackdropProps;
-export const DrawerBackdrop = panda(DialogBackdrop, drawer);
-
-export type DrawerContainerProps = DrawerVariantProps & DialogContainerProps;
-export const DrawerContainer = panda(DialogContainer, drawer);
-
-export type DrawerContentProps = DialogContentProps;
-export const DrawerContent = panda(DialogContent, drawer);
-
-export type DrawerCloseTriggerProps = DialogCloseTriggerProps;
-export const DrawerCloseTrigger = panda(DialogCloseTrigger);
-
-export type DrawerTitleProps = DialogTitleProps;
-export const DrawerTitle = panda(DialogTitle);
-
-export type DrawerDescriptionProps = DialogDescriptionProps;
-export const DrawerDescription = panda(DialogDescription);
+const Drawer = ({ children, trigger, title, description, ...rest }: Props) => (
+  <PrimitiveDrawer {...rest}>
+    <DrawerTrigger asChild>{trigger}</DrawerTrigger>
+    <Portal>
+      <DrawerBackdrop />
+      <DrawerContainer>
+        <DrawerContent lazyMount unmountOnExit>
+          {title && <DrawerTitle>{title}</DrawerTitle>}
+          {description && <DrawerDescription>{description}</DrawerDescription>}
+          {children}
+          <DrawerCloseTrigger
+            pos="absolute"
+            top={2}
+            right={2}
+            _focus={{
+              outline: "none",
+            }}
+            asChild
+          >
+            <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
+              <Icon as={CloseIcon} color="black" />
+            </Button>
+          </DrawerCloseTrigger>
+        </DrawerContent>
+      </DrawerContainer>
+    </Portal>
+  </PrimitiveDrawer>
+);
 
 export default Drawer;

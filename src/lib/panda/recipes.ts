@@ -1,4 +1,4 @@
-import { recipe as drawer } from "components/client/core/Drawer/recipe";
+import { recipe as drawer } from "components/primitives/Drawer/recipe";
 
 const recipes = {
   drawer,
