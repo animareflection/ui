@@ -10,9 +10,10 @@ import {
   DrawerDescription,
   DrawerCloseTrigger,
   DrawerTrigger,
+  Icon,
   Portal,
 } from "components/client";
-import { Icon, Text } from "components/universal";
+import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

@@ -5,7 +5,7 @@ import {
   FiAlertTriangle,
 } from "react-icons/fi";
 
-import { Icon } from "components/universal";
+import { Icon } from "components/client";
 import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";

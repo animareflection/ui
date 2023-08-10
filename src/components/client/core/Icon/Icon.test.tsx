@@ -2,7 +2,7 @@ import { describe, it } from "@jest/globals";
 import { render } from "@testing-library/react";
 import { FiHeart } from "react-icons/fi";
 
-import { Icon } from "components/universal";
+import { Icon } from "components/client";
 
 describe("Icon", () => {
   // eslint-disable-next-line jest/expect-expect

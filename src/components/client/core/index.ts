@@ -11,6 +11,7 @@ export {
   DrawerTitle,
   DrawerDescription,
 } from "./Drawer/Drawer";
+export { default as Icon } from "./Icon/Icon";
 
 export type { Props as ButtonProps } from "./Button/Button";
 export type {
@@ -23,3 +24,4 @@ export type {
   DrawerTitleProps,
   DrawerDescriptionProps,
 } from "./Drawer/Drawer";
+export type { Props as IconProps } from "./Icon/Icon";
