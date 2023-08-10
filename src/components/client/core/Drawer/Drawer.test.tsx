@@ -1,6 +1,5 @@
 import { describe, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
-// import userEvent from "@testing-library/user-event";
 import { FiX as CloseIcon } from "react-icons/fi";
 
 import {
@@ -61,19 +60,4 @@ describe("Drawer", () => {
       screen.getByRole("button", { name: "Open Drawer" }),
     ).toBeInTheDocument();
   });
-
-  // TODO: fix test
-  //   it("renders content correctly", async () => {
-  //     const user = userEvent.setup();
-
-  //     render(<DrawerTest />);
-
-  //     const openDrawerButton = screen.getByRole("button", {
-  //       name: "Open Drawer",
-  //     });
-
-  //     await user.click(openDrawerButton);
-
-  //     expect(screen.getByText("Drawer Title")).toBeInTheDocument();
-  //   });
 });
