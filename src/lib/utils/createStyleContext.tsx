@@ -12,6 +12,7 @@ type AnyRecipe = {
 const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null);
 
+  // !NB: initially T extends {}
   const withProvider = <T extends object>(
     Component: ComponentType<T>,
     part?: string,
@@ -29,6 +30,7 @@ const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
     return Comp;
   };
 
+  // !NB: initially T extends {}
   const withContext = <T extends object>(
     Component: ComponentType<T>,
     part?: string,
