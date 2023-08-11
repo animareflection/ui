@@ -10,59 +10,43 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
-import { drawer } from "generated/panda/recipes";
-import { createStyleContext } from "lib/utils";
 
 import type {
-  DialogProps,
   DialogBackdropProps,
   DialogCloseTriggerProps,
   DialogContainerProps,
   DialogContentProps,
   DialogDescriptionProps,
+  DialogProps,
   DialogTitleProps,
   DialogTriggerProps,
 } from "@ark-ui/react";
-import type { DrawerVariantProps } from "generated/panda/recipes";
-
-const { withProvider, withContext } = createStyleContext(drawer);
 
 /**
  * Core UI drawer primitives.
  */
-export type DrawerProps = DialogProps & DrawerVariantProps;
-export type DrawerBackdropProps = DialogBackdropProps;
-export type DrawerCloseTriggerProps = DialogCloseTriggerProps;
-export type DrawerContainerProps = DialogContainerProps;
-export type DrawerContentProps = DialogContentProps;
-export type DrawerDescriptionProps = DialogDescriptionProps;
-export type DrawerTitleProps = DialogTitleProps;
+export type DrawerProps = DialogProps;
+const Drawer = panda(Dialog);
+
 export type DrawerTriggerProps = DialogTriggerProps;
+export const DrawerTrigger = panda(DialogTrigger);
 
-const DrawerRoot = withProvider(panda(Dialog), "root");
-export const DrawerBackdrop = withContext(panda(DialogBackdrop), "backdrop");
-export const DrawerCloseTrigger = withContext(
-  panda(DialogCloseTrigger),
-  "closeTrigger",
-);
-export const DrawerContainer = withContext(panda(DialogContainer), "container");
-export const DrawerContent = withContext(panda(DialogContent), "content");
-export const DrawerDescription = withContext(
-  panda(DialogDescription),
-  "description",
-);
-export const DrawerTitle = withContext(panda(DialogTitle), "title");
-export const DrawerTrigger = withContext(panda(DialogTrigger), "trigger");
+export type DrawerBackdropProps = DialogBackdropProps;
+export const DrawerBackdrop = panda(DialogBackdrop);
 
-export const Drawer = Object.assign(DrawerRoot, {
-  Root: DrawerRoot,
-  Backdrop: DrawerBackdrop,
-  CloseTrigger: DrawerCloseTrigger,
-  Container: DrawerContainer,
-  Content: DrawerContent,
-  Description: DrawerDescription,
-  Title: DrawerTitle,
-  Trigger: DrawerTrigger,
-});
+export type DrawerContainerProps = DialogContainerProps;
+export const DrawerContainer = panda(DialogContainer);
+
+export type DrawerContentProps = DialogContentProps;
+export const DrawerContent = panda(DialogContent);
+
+export type DrawerCloseTriggerProps = DialogCloseTriggerProps;
+export const DrawerCloseTrigger = panda(DialogCloseTrigger);
+
+export type DrawerTitleProps = DialogTitleProps;
+export const DrawerTitle = panda(DialogTitle);
+
+export type DrawerDescriptionProps = DialogDescriptionProps;
+export const DrawerDescription = panda(DialogDescription);
 
 export default Drawer;

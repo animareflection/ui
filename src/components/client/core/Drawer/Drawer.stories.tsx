@@ -11,6 +11,7 @@ export const Default: Story = {
       trigger={<Button>Open Drawer</Button>}
       title="Drawer Title"
       description="Drawer Description"
+      // placement="left"
     >
       <Text mt={2}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
