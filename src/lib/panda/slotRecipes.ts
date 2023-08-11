@@ -1,7 +1,7 @@
 import { recipe as drawer } from "components/primitives/Drawer/recipe";
 
-const recipes = {
+const slotRecipes = {
   drawer,
 };
 
-export default recipes;
+export default slotRecipes;
