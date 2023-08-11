@@ -5,13 +5,14 @@ import type { ComponentType } from "react";
 type AnyProps = Record<string, unknown>;
 type AnyRecipe = {
   (props?: AnyProps): Record<string, string>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   splitVariantProps: (props: AnyProps) => any;
 };
 
-const useStyleContext = <R extends AnyRecipe>(recipe: R) => {
+const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null);
 
-  const withProvider = <T extends {}>(
+  const withProvider = <T extends object>(
     Component: ComponentType<T>,
     part?: string,
   ) => {
@@ -28,7 +29,7 @@ const useStyleContext = <R extends AnyRecipe>(recipe: R) => {
     return Comp;
   };
 
-  const withContext = <T extends {}>(
+  const withContext = <T extends object>(
     Component: ComponentType<T>,
     part?: string,
   ) => {
@@ -50,4 +51,4 @@ const useStyleContext = <R extends AnyRecipe>(recipe: R) => {
   };
 };
 
-export default useStyleContext;
+export default createStyleContext;

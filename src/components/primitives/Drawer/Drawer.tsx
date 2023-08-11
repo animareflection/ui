@@ -11,7 +11,7 @@ import {
 
 import { panda } from "generated/panda/jsx";
 import { drawer } from "generated/panda/recipes";
-import { useStyleContext } from "lib/hooks";
+import { createStyleContext } from "lib/utils";
 
 import type {
   DialogProps,
@@ -25,7 +25,7 @@ import type {
 } from "@ark-ui/react";
 import type { DrawerVariantProps } from "generated/panda/recipes";
 
-const { withProvider, withContext } = useStyleContext(drawer);
+const { withProvider, withContext } = createStyleContext(drawer);
 
 /**
  * Core UI drawer primitives.
