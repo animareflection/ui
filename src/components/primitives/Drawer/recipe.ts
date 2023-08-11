@@ -1,12 +1,19 @@
-import { dialogAnatomy } from "@ark-ui/react";
-import { defineParts, defineRecipe } from "@pandacss/dev";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-const parts = defineParts(dialogAnatomy.build());
-
-export const recipe = defineRecipe({
+export const recipe = defineSlotRecipe({
   className: "drawer",
   description: "A drawer style",
-  base: parts({
+  slots: [
+    "root",
+    "backdrop",
+    "closeTrigger",
+    "container",
+    "content",
+    "description",
+    "title",
+    "trigger",
+  ],
+  base: {
     backdrop: {
       backdropFilter: "blur(4px)",
       background: {
@@ -53,13 +60,13 @@ export const recipe = defineRecipe({
       color: "gray.400",
       textStyle: "sm",
     },
-  }),
+  },
   defaultVariants: {
     placement: "right",
   },
   variants: {
     placement: {
-      left: parts({
+      left: {
         container: {
           left: 0,
         },
@@ -71,8 +78,8 @@ export const recipe = defineRecipe({
             animation: "drawer-out-left",
           },
         },
-      }),
-      right: parts({
+      },
+      right: {
         container: {
           right: 0,
         },
@@ -84,7 +91,7 @@ export const recipe = defineRecipe({
             animation: "drawer-out-right",
           },
         },
-      }),
+      },
     },
   },
 });

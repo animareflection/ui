@@ -1,3 +1,4 @@
+import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
 import { Button, Icon } from "components/client";
@@ -10,7 +11,6 @@ import {
   DrawerDescription,
   DrawerTitle,
   DrawerTrigger,
-  Portal,
 } from "components/primitives";
 
 import type { DrawerProps } from "components/primitives";

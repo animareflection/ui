@@ -1,5 +1,3 @@
-export { Portal } from "@ark-ui/react";
-
 export {
   default as Drawer,
   DrawerBackdrop,
@@ -13,11 +11,11 @@ export {
 
 export type {
   DrawerProps,
-  DrawerTriggerProps,
   DrawerBackdropProps,
+  DrawerCloseTriggerProps,
   DrawerContainerProps,
   DrawerContentProps,
-  DrawerCloseTriggerProps,
-  DrawerTitleProps,
   DrawerDescriptionProps,
+  DrawerTitleProps,
+  DrawerTriggerProps,
 } from "./Drawer/Drawer";
