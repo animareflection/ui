@@ -1,15 +1,5 @@
-import {
-  Button,
-  Modal,
-  ModalBackdrop,
-  ModalBody,
-  ModalContainer,
-  ModalContent,
-  ModalTitle,
-  ModalDescription,
-  ModalCloseTrigger,
-  ModalTrigger,
-} from "components/client";
+import { Button, Modal } from "components/client";
+import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -17,28 +7,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Modal>
-      <ModalTrigger>
-        <Button>Open Modal</Button>
-      </ModalTrigger>
-      <ModalBackdrop />
-      <ModalContainer>
-        <ModalContent lazyMount unmountOnExit>
-          <ModalTitle>Modal Title</ModalTitle>
-          <ModalDescription>Modal Description</ModalDescription>
-          <ModalBody maxW={80}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </ModalBody>
-          <ModalCloseTrigger placeSelf="flex-end">
-            <Button bgColor="black" py={1}>
-              Close
-            </Button>
-          </ModalCloseTrigger>
-        </ModalContent>
-      </ModalContainer>
+    <Modal
+      trigger={<Button>Open Modal</Button>}
+      title="Modal Title"
+      description="Modal Description"
+    >
+      <Text mt={2}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam.
+      </Text>
     </Modal>
   ),
 };
