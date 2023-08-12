@@ -1,7 +1,7 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import { recipe as drawer } from "./recipe";
+import { recipe as drawer } from "./Drawer.recipe";
 import { Button, Icon } from "components/client";
 import {
   Drawer as PrimitiveDrawer,
@@ -19,7 +19,7 @@ import type { ReactNode } from "react";
 
 export interface Props extends DrawerProps {
   trigger: ReactNode;
-  // TODO: figure out how to not have to hardcode the placements in case we add more to the recipe
+  // TODO: remove hard-coded values
   placement?: "left" | "right";
   title?: string;
   description?: string;

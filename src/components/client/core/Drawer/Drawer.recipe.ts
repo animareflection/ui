@@ -41,7 +41,7 @@ export const recipe = sva({
       background: "white",
       boxShadow: "lg",
       height: "full",
-      width: { base: "xs", sm: "sm" },
+      width: { base: "full", sm: "sm" },
       overflowY: "auto",
       position: "relative",
       px: {
@@ -70,10 +70,10 @@ export const recipe = sva({
         },
         content: {
           _open: {
-            animation: "drawer-in-left",
+            animation: { base: "drawer-in-bottom", sm: "drawer-in-left" },
           },
           _closed: {
-            animation: "drawer-out-left",
+            animation: { base: "drawer-out-bottom", sm: "drawer-out-left" },
           },
         },
       },
@@ -83,10 +83,10 @@ export const recipe = sva({
         },
         content: {
           _open: {
-            animation: "drawer-in-right",
+            animation: { base: "drawer-in-bottom", sm: "drawer-in-right" },
           },
           _closed: {
-            animation: "drawer-out-right",
+            animation: { base: "drawer-out-bottom", sm: "drawer-out-right" },
           },
         },
       },

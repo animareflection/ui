@@ -44,12 +44,12 @@ const keyframes: ReturnType<typeof defineKeyframes> = defineKeyframes({
     "100%": { opacity: 0, transform: "translateY(-4px)" },
   },
   slideInFromBottom: {
-    "0%": { opacity: 0, transform: "translateY(4px)" },
-    "100%": { opacity: 1, transform: "translateY(0)" },
+    "0%": { transform: "translateY(100%)" },
+    "100%": { transform: "translateY(0)" },
   },
   slideOutToBottom: {
-    "0%": { opacity: 1, transform: "translateY(0)" },
-    "100%": { opacity: 0, transform: "translateY(4px)" },
+    "0%": { transform: "translateY(0)" },
+    "100%": { transform: "translateY(100%)" },
   },
 });
 
