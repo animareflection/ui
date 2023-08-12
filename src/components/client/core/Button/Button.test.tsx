@@ -1,11 +1,15 @@
 import { describe, it } from "@jest/globals";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import { Button } from "components/client";
 
 describe("Button", () => {
-  // eslint-disable-next-line jest/expect-expect
   it("renders correctly", () => {
-    render(<Button>Click Me!</Button>);
+    render(<Button color="brand.primary.900">Click Me!</Button>);
+
+    expect(screen.getByText(/click me!/i)).toHaveClass(
+      "text_brand.primary.900",
+      "bg_brand.primary.500",
+    );
   });
 });

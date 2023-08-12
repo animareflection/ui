@@ -1,9 +1,18 @@
 import { definePreset, defineTokens } from "@pandacss/dev";
 
-import { colors, zIndex } from "lib/panda";
+import {
+  animations,
+  colors,
+  conditions,
+  easings,
+  keyframes,
+  zIndex,
+} from "lib/panda";
 
 const tokens = defineTokens({
+  animations,
   colors,
+  easings,
   zIndex,
 });
 
@@ -14,9 +23,11 @@ const tokens = defineTokens({
 const anirefPreset: ReturnType<typeof definePreset> = definePreset({
   theme: {
     extend: {
+      keyframes,
       tokens,
     },
   },
+  conditions,
 });
 
 export default anirefPreset;

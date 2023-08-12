@@ -1,25 +1,7 @@
 export { default as Button } from "./Button/Button";
-export {
-  default as Modal,
-  ModalTrigger,
-  ModalBackdrop,
-  ModalCloseTrigger,
-  ModalContainer,
-  ModalContent,
-  ModalTitle,
-  ModalDescription,
-  ModalBody,
-} from "./Modal/Modal";
+export { default as Drawer } from "./Drawer/Drawer";
+export { default as Icon } from "./Icon/Icon";
 
 export type { Props as ButtonProps } from "./Button/Button";
-export type {
-  ModalProps,
-  ModalTriggerProps,
-  ModalBackdropProps,
-  ModalCloseTriggerProps,
-  ModalContainerProps,
-  ModalContentProps,
-  ModalTitleProps,
-  ModalDescriptionProps,
-  ModalBodyProps,
-} from "./Modal/Modal";
+export type { Props as DrawerProps } from "./Drawer/Drawer";
+export type { Props as IconProps } from "./Icon/Icon";
