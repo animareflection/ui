@@ -20,10 +20,10 @@ const animations = defineTokens.animations({
     value: "slide-out-right 200ms {easings.emphasized-out}",
   },
   "drawer-in-bottom": {
-    value: "slideInFromBottom 400ms {easings.emphasized-in}",
+    value: "slide-in-bottom 400ms {easings.emphasized-in}",
   },
   "drawer-out-bottom": {
-    value: "slideOutToBottom 200ms {easings.emphasized-out}",
+    value: "slide-out-bottom 200ms {easings.emphasized-out}",
   },
 });
 
