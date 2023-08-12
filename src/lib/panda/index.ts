@@ -3,5 +3,4 @@ export { default as colors } from "./colors";
 export { default as conditions } from "./conditions";
 export { default as easings } from "./easings";
 export { default as keyframes } from "./keyframes";
-export { default as recipes } from "./recipes";
 export { default as zIndex } from "./z-index";

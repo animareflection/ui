@@ -1,12 +1,7 @@
 export { default as Button } from "./Button/Button";
-
-export { Root, Item, Trigger, Content } from "./Accordion/Accordion";
-
-export type {
-  AccordionProps,
-  AccordionItemProps,
-  AccordionTriggerProps,
-  AccordionContentProps,
-} from "./Accordion/Accordion";
+export { default as Drawer } from "./Drawer/Drawer";
+export { default as Icon } from "./Icon/Icon";
 
 export type { Props as ButtonProps } from "./Button/Button";
+export type { Props as DrawerProps } from "./Drawer/Drawer";
+export type { Props as IconProps } from "./Icon/Icon";
