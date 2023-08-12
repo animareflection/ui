@@ -19,7 +19,6 @@ import type { ReactNode } from "react";
 
 export interface Props extends DrawerProps {
   trigger: ReactNode;
-  // TODO: remove hard-coded values
   placement?: "left" | "right";
   title?: string;
   description?: string;
