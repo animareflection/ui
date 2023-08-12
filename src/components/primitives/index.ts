@@ -1,3 +1,19 @@
+// Accordion
+export {
+  default as Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "./Accordion/Accordion";
+
+export type {
+  AccordionProps,
+  AccordionItemProps,
+  AccordionTriggerProps,
+  AccordionContentProps,
+} from "./Accordion/Accordion";
+
+// Drawer
 export {
   default as Drawer,
   DrawerBackdrop,

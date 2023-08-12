@@ -1,90 +1,52 @@
+import { recipe as accordion } from "./Accordion.recipe";
 import {
-  Accordion as ArkAccordion,
-  AccordionItem as ArkAccordionItem,
-  AccordionTrigger as ArkAccordionTrigger,
-  AccordionContent as ArkAccordionContent,
-} from "@ark-ui/react/accordion";
-import { forwardRef } from "react";
+  Accordion as PrimitiveAccordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "components/primitives";
 
-import type {
-  AccordionProps,
-  AccordionItemProps,
-  AccordionTriggerProps,
-  AccordionContentProps,
-} from "@ark-ui/react/accordion";
+import type { AccordionProps } from "components/primitives";
+import type { ReactNode } from "react";
+
+export interface Props extends AccordionProps {
+  trigger: ReactNode;
+  children: ReactNode;
+  orientation?: "horizontal" | "vertical";
+  disabled?: boolean;
+  value: string;
+}
 
 // /**
 //  * Core UI Accordion
 //  */
 
-/* -------------------------------------------------------------------------------------------------
- * Accordion
- * -----------------------------------------------------------------------------------------------*/
+const Accordion = ({
+  trigger,
+  children,
+  orientation = "horizontal",
+  value,
+  ...rest
+}: Props) => {
+  const classNames = accordion({});
 
-const ACCORDION_NAME = "Accordion";
-const AccordionRoot = forwardRef<HTMLDivElement, AccordionProps>(
-  ({ children, ...props }, forwardedRef) => (
-    <ArkAccordion {...props} ref={forwardedRef}>
-      {children}
-    </ArkAccordion>
-  ),
-);
-AccordionRoot.displayName = ACCORDION_NAME;
-
-/* -------------------------------------------------------------------------------------------------
- * AccordionItem
- * -----------------------------------------------------------------------------------------------*/
-
-const ITEM_NAME = "AccordionItem";
-const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
-  ({ children, value, ...props }, forwardedRef) => (
-    <ArkAccordionItem value={value} {...props} ref={forwardedRef}>
-      {children}
-    </ArkAccordionItem>
-  ),
-);
-AccordionItem.displayName = ITEM_NAME;
-
-/* -------------------------------------------------------------------------------------------------
- * AccordionTrigger
- * -----------------------------------------------------------------------------------------------*/
-
-const TRIGGER_NAME = "AccordionTrigger";
-const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
-  ({ children, ...props }, forwardedRef) => (
-    <ArkAccordionTrigger {...props} ref={forwardedRef}>
-      {children}
-    </ArkAccordionTrigger>
-  ),
-);
-AccordionTrigger.displayName = TRIGGER_NAME;
-
-/* -------------------------------------------------------------------------------------------------
- * AccordionContent
- * -----------------------------------------------------------------------------------------------*/
-
-const CONTENT_NAME = "AccordionContent";
-const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps>(
-  ({ children, ...props }, forwardedRef) => (
-    <ArkAccordionContent {...props} ref={forwardedRef}>
-      {children}
-    </ArkAccordionContent>
-  ),
-);
-AccordionContent.displayName = CONTENT_NAME;
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Root: any = AccordionRoot;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Item: any = AccordionItem;
-const Trigger = AccordionTrigger;
-const Content = AccordionContent;
-
-export { Root, Item, Trigger, Content };
-
-export type {
-  AccordionProps,
-  AccordionItemProps,
-  AccordionTriggerProps,
-  AccordionContentProps,
+  return (
+    <PrimitiveAccordion
+      collapsible
+      orientation={orientation}
+      className={classNames.root}
+      {...rest}
+    >
+      <AccordionItem value={value}>
+        <AccordionTrigger className={classNames.trigger} asChild>
+          {trigger}
+        </AccordionTrigger>
+        <AccordionContent className={classNames.content}>
+          {children}
+        </AccordionContent>
+      </AccordionItem>
+    </PrimitiveAccordion>
+  );
 };
+
+export default Accordion;
