@@ -60,6 +60,7 @@ __metadata:
     "@types/testing-library__jest-dom": ^5.14.9
     "@typescript-eslint/eslint-plugin": ^6.2.1
     "@typescript-eslint/parser": ^6.2.1
+    "@zag-js/types": ^0.15.0
     concurrently: ^8.2.0
     eslint: ^8.46.0
     eslint-config-prettier: ^8.10.0
@@ -7428,6 +7429,15 @@ __metadata:
   dependencies:
     csstype: 3.1.2
   checksum: e98a6a2cc80d34efee80a824d1ea5129d92b4767d142f8c7d98445670f827a0bcc6edb5789cf9337107a818f90ec31a6c904e4aa8c279b40fb73410ac3f49db8
+  languageName: node
+  linkType: hard
+
+"@zag-js/types@npm:^0.15.0":
+  version: 0.15.0
+  resolution: "@zag-js/types@npm:0.15.0"
+  dependencies:
+    csstype: 3.1.2
+  checksum: 902f178489db02a6128e8952690133699083d18bc18dadbbd299dc2f76d50df1240dd05d6a0f5be0bcf9f197ab507148da083d6c5b9892f68bca89370a3e835d
   languageName: node
   linkType: hard
 
