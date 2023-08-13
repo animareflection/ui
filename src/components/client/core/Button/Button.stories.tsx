@@ -4,21 +4,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   // NB: `render` instead of `args` is a workaround here, since Panda can't detect the need to recompile if story args are set. This has the drawback of less interactivity in corresponding stories (e.g. lack of an interactive Storybook colorpicker for the `color` prop). See https://github.com/chakra-ui/panda/issues/1057
-  render: () => <Button>Click me 🏝️</Button>,
-};
-
-export const Secondary: Story = {
-  render: () => <Button variant="secondary">Click me 🏝️</Button>,
-};
-
-export const Ghost: Story = {
-  render: () => <Button variant="ghost">Click me 🏝️</Button>,
-};
-
-export const Round: Story = {
-  render: () => <Button variant="round">Click me 🏝️</Button>,
+  args: {
+    children: "Click me 🏝️",
+  },
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
@@ -27,6 +17,12 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
+  argTypes: {
+    variant: {
+      options: ["primary", "secondary", "ghost", "round"],
+      control: { type: "radio" },
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
