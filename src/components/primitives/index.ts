@@ -8,6 +8,16 @@ export {
   DrawerTitle,
   DrawerDescription,
 } from "./Drawer/Drawer";
+export {
+  default as Modal,
+  ModalBackdrop,
+  ModalTrigger,
+  ModalContainer,
+  ModalContent,
+  ModalCloseTrigger,
+  ModalTitle,
+  ModalDescription,
+} from "./Modal/Modal";
 
 export type {
   DrawerProps,
@@ -19,3 +29,13 @@ export type {
   DrawerTitleProps,
   DrawerTriggerProps,
 } from "./Drawer/Drawer";
+export type {
+  ModalProps,
+  ModalBackdropProps,
+  ModalCloseTriggerProps,
+  ModalContainerProps,
+  ModalContentProps,
+  ModalDescriptionProps,
+  ModalTitleProps,
+  ModalTriggerProps,
+} from "./Modal/Modal";
