@@ -11,6 +11,7 @@ export interface Props extends ComponentProps<typeof PandaButton> {
 }
 
 const PandaButton: PandaComponent<typeof Pressable> = panda(Pressable, button);
+
 /**
  * Core UI button.
  */
