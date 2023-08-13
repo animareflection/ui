@@ -1,7 +1,7 @@
 import { describe, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 
-import Button from "./Button";
+import { Button } from "components/client";
 
 describe("Button", () => {
   it("renders correctly", () => {
