@@ -29,6 +29,11 @@ export const recipe = cva({
         border: "1px solid",
         borderColor: "brand.primary.500",
         fontWeight: "bold",
+        _hover: {
+          bgColor: "transparent",
+          borderColor: "brand.primary.200",
+          color: "brand.primary.200",
+        },
       },
       ghost: {
         color: "brand.primary.500",
