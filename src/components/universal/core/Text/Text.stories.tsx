@@ -1,4 +1,4 @@
-import Text from "./Text";
+import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
