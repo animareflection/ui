@@ -21,14 +21,12 @@ export const recipe = cva({
       primary: {
         color: "white",
         bgColor: "brand.primary.500",
-        fontWeight: "bold",
       },
       secondary: {
         color: "brand.primary.500",
         bgColor: "transparent",
         border: "1px solid",
         borderColor: "brand.primary.500",
-        fontWeight: "bold",
         _hover: {
           bgColor: "transparent",
           borderColor: "brand.primary.200",
@@ -36,8 +34,8 @@ export const recipe = cva({
         },
       },
       ghost: {
-        color: "brand.primary.500",
         bgColor: "transparent",
+        color: "brand.primary.500",
         _hover: {
           bgColor: "transparent",
           color: "brand.primary.200",
