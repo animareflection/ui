@@ -15,9 +15,6 @@ export const recipe = cva({
   },
   variants: {
     variant: {
-      round: {
-        borderRadius: "full !important",
-      },
       primary: {
         color: "white",
         bgColor: "brand.primary.500",
@@ -48,6 +45,9 @@ export const recipe = cva({
           bgColor: "transparent",
           color: "brand.primary.200",
         },
+      },
+      round: {
+        borderRadius: "full !important",
       },
     },
   },
