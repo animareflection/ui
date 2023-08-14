@@ -21,23 +21,26 @@ export interface Props extends MenuProps {
  */
 const Menu = ({ children, trigger, size, ...rest }: Props) => {
   const classNames = menu({ size });
-  <PrimitiveMenu {...rest}>
-    {(ctx) => (
-      <>
-        <MenuTrigger asChild className={classNames.trigger}>
-          {trigger}
-        </MenuTrigger>
-        <Portal>
-          <MenuPositioner className={classNames.positioner}>
-            <MenuContent className={classNames.content}>
-              {/* forward nested context/state if utilized, otherwise directly render children */}
-              {typeof children === "function" ? children(ctx) : children}
-            </MenuContent>
-          </MenuPositioner>
-        </Portal>
-      </>
-    )}
-  </PrimitiveMenu>;
+
+  return (
+    <PrimitiveMenu {...rest}>
+      {(ctx) => (
+        <>
+          <MenuTrigger asChild className={classNames.trigger}>
+            {trigger}
+          </MenuTrigger>
+          <Portal>
+            <MenuPositioner className={classNames.positioner}>
+              <MenuContent className={classNames.content}>
+                {/* forward nested context/state if utilized, otherwise directly render children */}
+                {typeof children === "function" ? children(ctx) : children}
+              </MenuContent>
+            </MenuPositioner>
+          </Portal>
+        </>
+      )}
+    </PrimitiveMenu>
+  );
 };
 
 export default Menu;
