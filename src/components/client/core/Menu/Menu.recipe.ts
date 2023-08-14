@@ -8,7 +8,7 @@ const itemStyle = {
   fontWeight: "medium",
   textStyle: "sm",
   transitionDuration: "fast",
-  transitionProperty: "background, color",
+  transitionProperty: "background",
   transitionTimingFunction: "default",
   _hover: {
     background: "#f5f5f5",
@@ -43,6 +43,7 @@ export const recipe = sva({
       background: "white",
       borderRadius: "sm",
       borderWidth: "1px",
+      borderColor: "gray.200",
       boxShadow: "lg",
       _hidden: {
         display: "none",
@@ -50,6 +51,9 @@ export const recipe = sva({
       display: "flex",
       flexDirection: "column",
       outline: "none",
+    },
+    separator: {
+      color: "gray.200",
     },
     itemGroup: {
       display: "flex",
