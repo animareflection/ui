@@ -22,7 +22,6 @@ export interface Props extends DrawerProps {
   placement?: "left" | "right";
   title?: string;
   description?: string;
-  children?: ReactNode;
 }
 
 /**
@@ -40,36 +39,49 @@ const Drawer = ({
 
   return (
     <PrimitiveDrawer {...rest}>
-      <DrawerTrigger asChild>{trigger}</DrawerTrigger>
-      <Portal>
-        <DrawerBackdrop className={classNames.backdrop} />
-        <DrawerContainer className={classNames.container}>
-          <DrawerContent lazyMount unmountOnExit className={classNames.content}>
-            {title && (
-              <DrawerTitle className={classNames.title}>{title}</DrawerTitle>
-            )}
-            {description && (
-              <DrawerDescription className={classNames.description}>
-                {description}
-              </DrawerDescription>
-            )}
-            {children}
-            <DrawerCloseTrigger
-              pos="absolute"
-              top={2}
-              right={2}
-              _focus={{
-                outline: "none",
-              }}
-              asChild
-            >
-              <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
-                <Icon as={CloseIcon} color="black" />
-              </Button>
-            </DrawerCloseTrigger>
-          </DrawerContent>
-        </DrawerContainer>
-      </Portal>
+      {(ctx) => (
+        <>
+          <DrawerTrigger asChild>{trigger}</DrawerTrigger>
+          <Portal>
+            <DrawerBackdrop className={classNames.backdrop} />
+            <DrawerContainer className={classNames.container}>
+              <DrawerContent
+                lazyMount
+                unmountOnExit
+                className={classNames.content}
+              >
+                {title && (
+                  <DrawerTitle className={classNames.title}>
+                    {title}
+                  </DrawerTitle>
+                )}
+                {description && (
+                  <DrawerDescription className={classNames.description}>
+                    {description}
+                  </DrawerDescription>
+                )}
+
+                {/* forward nested context/state if utilized, otherwise directly render children */}
+                {typeof children === "function" ? children(ctx) : children}
+
+                <DrawerCloseTrigger
+                  asChild
+                  pos="absolute"
+                  top={2}
+                  right={2}
+                  _focus={{
+                    outline: "none",
+                  }}
+                >
+                  <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
+                    <Icon as={CloseIcon} color="black" />
+                  </Button>
+                </DrawerCloseTrigger>
+              </DrawerContent>
+            </DrawerContainer>
+          </Portal>
+        </>
+      )}
     </PrimitiveDrawer>
   );
 };
