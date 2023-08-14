@@ -7,6 +7,12 @@ const animations = defineTokens.animations({
   "backdrop-out": {
     value: "fade-out 200ms {easings.default}",
   },
+  "modal-in": {
+    value: "slide-in 400ms {easings.emphasized-in}",
+  },
+  "modal-out": {
+    value: "slide-out 200ms {easings.emphasized-out}",
+  },
   "drawer-in-left": {
     value: "slide-in-left 400ms {easings.emphasized-in}",
   },

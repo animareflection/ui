@@ -15,6 +15,7 @@ export const recipe = sva({
     backdrop: {
       backdropFilter: "blur(4px)",
       background: {
+        // TODO: replace when supported in Panda: bg.canvas/80
         base: "rgba(250, 250, 250, 0.8)",
         _dark: "rgba(10, 10, 10, 0.8)",
       },
@@ -31,8 +32,7 @@ export const recipe = sva({
     container: {
       alignItems: "center",
       display: "flex",
-      top: 0,
-      bottom: 0,
+      inset: 0,
       justifyContent: "center",
       position: "fixed",
       zIndex: "modal",
@@ -40,56 +40,29 @@ export const recipe = sva({
     content: {
       background: "white",
       boxShadow: "lg",
-      height: "full",
-      width: { base: "full", sm: "sm" },
-      overflowY: "auto",
+      borderRadius: "md",
+      width: { base: "xs", sm: "sm" },
       position: "relative",
+      mx: 1,
       px: {
         base: 4,
         md: 6,
       },
       py: 6,
+      _open: {
+        animation: "modal-in",
+      },
+      _closed: {
+        animation: "modal-out",
+      },
     },
     title: {
-      fontWeight: "bold",
-      textStyle: "xl",
+      fontWeight: "semibold",
+      textStyle: "lg",
     },
     description: {
       color: "gray.400",
       textStyle: "sm",
-    },
-  },
-  defaultVariants: {
-    placement: "right",
-  },
-  variants: {
-    placement: {
-      left: {
-        container: {
-          left: 0,
-        },
-        content: {
-          _open: {
-            animation: { base: "drawer-in-bottom", sm: "drawer-in-left" },
-          },
-          _closed: {
-            animation: { base: "drawer-out-bottom", sm: "drawer-out-left" },
-          },
-        },
-      },
-      right: {
-        container: {
-          right: 0,
-        },
-        content: {
-          _open: {
-            animation: { base: "drawer-in-bottom", sm: "drawer-in-right" },
-          },
-          _closed: {
-            animation: { base: "drawer-out-bottom", sm: "drawer-out-right" },
-          },
-        },
-      },
     },
   },
 });
