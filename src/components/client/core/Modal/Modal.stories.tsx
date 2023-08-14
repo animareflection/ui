@@ -21,6 +21,18 @@ export const Default: Story = {
   ),
 };
 
+export const WithContext: Story = {
+  render: () => (
+    <Modal
+      trigger={<Button>Open Modal</Button>}
+      title="Modal Title"
+      description="Modal Description"
+    >
+      {({ isOpen }) => <Text mt={2}>Open: {String(isOpen)}</Text>}
+    </Modal>
+  ),
+};
+
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Modal> = {
   title: "Client/Core/Modal",
