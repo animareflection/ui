@@ -42,6 +42,7 @@ __metadata:
     "@storybook/addon-essentials": ^7.2.3
     "@storybook/addon-interactions": ^7.2.3
     "@storybook/addon-links": ^7.2.3
+    "@storybook/blocks": ^7.2.3
     "@storybook/builder-vite": ^7.2.3
     "@storybook/manager-api": ^7.2.3
     "@storybook/react": ^7.2.3
@@ -4141,7 +4142,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/blocks@npm:7.2.3":
+"@storybook/blocks@npm:7.2.3, @storybook/blocks@npm:^7.2.3":
   version: 7.2.3
   resolution: "@storybook/blocks@npm:7.2.3"
   dependencies:
