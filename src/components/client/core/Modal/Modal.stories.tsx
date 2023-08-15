@@ -35,7 +35,7 @@ export const WithContext: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Modal> = {
-  title: "Client/Core/Modal",
+  title: "Components/Client/Core/Modal",
   component: Modal,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
