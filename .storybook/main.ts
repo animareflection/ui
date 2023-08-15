@@ -13,6 +13,11 @@ const storybookConfig: StorybookConfig = {
   },
   framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx|mdx)"],
+  // inject CSS into Storybook UI
+  managerHead: (head) => `
+  ${head}
+  <link rel="stylesheet" href="../src/lib/styles/main.css" />
+`,
   typescript: {
     // typecheck stories during Storybook build
     check: true,
@@ -28,7 +33,7 @@ const storybookConfig: StorybookConfig = {
     // recursively merge Vite options
     mergeConfig(config, {
       plugins: [tsconfigPaths()],
-      // add dependencies to pre-optimization
+      // dependencies to pre-optimize
       optimizeDeps: {
         include: ["storybook-dark-mode"],
       },
