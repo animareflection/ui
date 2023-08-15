@@ -82,8 +82,7 @@ export const recipe = sva({
           gap: 1,
         },
         itemGroupLabel: {
-          py: 1.5,
-          px: 1.5,
+          p: 0.5,
           mx: 1,
         },
         content: {
@@ -112,8 +111,7 @@ export const recipe = sva({
           gap: 1,
         },
         itemGroupLabel: {
-          py: 2,
-          px: 2,
+          p: 1,
           mx: 1,
         },
         content: {
@@ -142,8 +140,7 @@ export const recipe = sva({
           gap: 1,
         },
         itemGroupLabel: {
-          py: 2.5,
-          px: 2.5,
+          p: 1.5,
           mx: 1,
         },
         content: {

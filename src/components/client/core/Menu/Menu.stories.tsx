@@ -45,27 +45,23 @@ const WITH_CONTEXT_GROUPS: MenuItemGroup[] = [
 ];
 
 export const Default: Story = {
-  render: () => (
-    // TODO: use Button component for trigger when `MenuTrigger` asChild works
-    <Menu closeOnSelect={false} trigger="Open Menu" groups={GROUPS} />
-  ),
+  args: {
+    // TODO: update `trigger` when asChild is implemented
+    trigger: "Open Menu",
+    groups: GROUPS,
+  },
 };
 
 export const WithContext: Story = {
-  render: () => (
-    <Menu
-      closeOnSelect={false}
-      // TODO: use Button component for trigger when `MenuTrigger` asChild works
-      trigger="Open Menu"
-      groups={WITH_CONTEXT_GROUPS}
-    >
-      {({ onClose }) => (
-        <Button onClick={onClose} mx={1}>
-          Close Menu
-        </Button>
-      )}
-    </Menu>
-  ),
+  args: {
+    closeOnSelect: false,
+    // TODO: update `trigger` when asChild is implemented
+    trigger: "Open Menu",
+    groups: WITH_CONTEXT_GROUPS,
+    children({ onClose }) {
+      return <Button onClick={onClose}>Close Menu</Button>;
+    },
+  },
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
@@ -74,6 +70,19 @@ const meta: Meta<typeof Menu> = {
   component: Menu,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
+  argTypes: {
+    // TODO: remove when asChild is implemented
+    triggerVariant: {
+      options: ["primary", "secondary", "ghost", "round"],
+      control: { type: "radio" },
+      defaultValue: "primary",
+    },
+    size: {
+      options: ["xs", "sm", "md"],
+      control: { type: "radio" },
+      defaultValue: "md",
+    },
+  },
 } satisfies Meta<typeof Menu>;
 
 export default meta;
