@@ -10,6 +10,7 @@ export const recipe = cva({
     py: 2,
     borderRadius: "md",
     _hover: { bgColor: "brand.primary.200" },
+    _focus: { outline: "none" },
   },
   defaultVariants: {
     variant: "primary",

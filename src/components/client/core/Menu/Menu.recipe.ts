@@ -38,6 +38,10 @@ export const recipe = sva({
     itemGroupLabel: {
       fontWeight: "semibold",
       textStyle: "sm",
+      display: "flex",
+      justifyContent: "center",
+      bgColor: "brand.primary.50",
+      borderRadius: "sm",
     },
     content: {
       background: "white",
@@ -54,6 +58,11 @@ export const recipe = sva({
     },
     separator: {
       color: "gray.200",
+    },
+    trigger: {
+      _focus: {
+        outline: "none",
+      },
     },
     itemGroup: {
       display: "flex",

@@ -8,52 +8,69 @@ import {
   MenuTrigger,
   MenuItem,
   MenuSeparator,
+  MenuItemGroup,
+  MenuItemGroupLabel,
 } from "components/primitives";
 
 import type { MenuProps } from "components/primitives";
 import type { ReactNode } from "react";
 
-interface MenuItem {
+export interface MenuItem {
   id: string;
-  child?: ReactNode;
-  onClick?: () => void;
+  child: ReactNode;
+}
+
+export interface MenuItemGroup {
+  id: string;
+  label?: string;
+  separator?: boolean;
+  items: MenuItem[];
 }
 
 export interface Props extends MenuProps {
   trigger: ReactNode;
   size?: "xs" | "sm" | "md";
-  items?: MenuItem[];
+  groups?: MenuItemGroup[];
 }
 
 /**
  * Core UI menu.
  */
-const Menu = ({ children, trigger, items, size, ...rest }: Props) => {
+const Menu = ({ children, trigger, groups, size, ...rest }: Props) => {
   const classNames = menu({ size });
 
   return (
     <PrimitiveMenu {...rest}>
       {(ctx) => (
         <>
-          <MenuTrigger asChild className={classNames.trigger}>
-            {trigger}
-          </MenuTrigger>
+          <MenuTrigger className={classNames.trigger}>{trigger}</MenuTrigger>
           <Portal>
             <MenuPositioner>
               <MenuContent className={classNames.content}>
-                {items?.map(({ id, child, onClick }) => (
-                  <MenuItem
+                {groups?.map(({ id, label, separator, items }) => (
+                  <MenuItemGroup
                     key={id}
                     id={id}
-                    className={classNames.item}
-                    onClick={onClick}
+                    className={classNames.itemGroup}
                   >
-                    {child}
-                  </MenuItem>
+                    {label && (
+                      <MenuItemGroupLabel
+                        htmlFor={id}
+                        className={classNames.itemGroupLabel}
+                      >
+                        {label}
+                      </MenuItemGroupLabel>
+                    )}
+                    {items.map(({ id, child }) => (
+                      <MenuItem key={id} id={id} className={classNames.item}>
+                        {child}
+                      </MenuItem>
+                    ))}
+                    {separator && (
+                      <MenuSeparator className={classNames.separator} />
+                    )}
+                  </MenuItemGroup>
                 ))}
-                {items && children && (
-                  <MenuSeparator className={classNames.separator} />
-                )}
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
               </MenuContent>

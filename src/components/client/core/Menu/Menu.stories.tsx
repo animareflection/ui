@@ -1,21 +1,55 @@
 import { Button, Menu } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
+import type { MenuItem, MenuItemGroup } from "components/client";
 
 type Story = StoryObj<typeof meta>;
 
-const ITEMS = [
+const ITEMS: MenuItem[] = [
   { id: "item-1", child: "Item 1" },
   { id: "item-2", child: "Item 2" },
   { id: "item-3", child: "Item 3" },
 ];
 
+const SECOND_ITEMS: MenuItem[] = [
+  { id: "item-4", child: "Item 4" },
+  { id: "item-5", child: "Item 5" },
+  { id: "item-6", child: "Item 6" },
+];
+
+const GROUPS: MenuItemGroup[] = [
+  {
+    id: "group-1",
+    label: "Group 1",
+    items: ITEMS,
+  },
+  {
+    id: "group-2",
+    label: "Group 2",
+    items: SECOND_ITEMS,
+  },
+];
+
+const WITH_CONTEXT_GROUPS: MenuItemGroup[] = [
+  {
+    id: "group-1",
+    label: "Group 1",
+    items: ITEMS,
+  },
+  {
+    id: "group-2",
+    label: "Group 2",
+    items: SECOND_ITEMS,
+    separator: true,
+  },
+];
+
 export const Default: Story = {
   render: () => (
     <Menu
-      positioning={{ placement: "bottom-end" }}
+      closeOnSelect={false}
       trigger={<Button>Open Menu</Button>}
-      items={ITEMS}
+      groups={GROUPS}
     />
   ),
 };
@@ -23,9 +57,9 @@ export const Default: Story = {
 export const WithContext: Story = {
   render: () => (
     <Menu
-      positioning={{ placement: "bottom-end" }}
+      closeOnSelect={false}
       trigger={<Button>Open Menu</Button>}
-      items={ITEMS}
+      groups={WITH_CONTEXT_GROUPS}
     >
       {({ onClose }) => (
         <Button onClick={onClose} mx={1}>
