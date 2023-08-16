@@ -64,16 +64,15 @@ const Drawer = ({
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <DrawerCloseTrigger
-                  asChild
-                  pos="absolute"
-                  top={2}
-                  right={2}
-                  _focus={{
-                    outline: "none",
-                  }}
-                >
+                <DrawerCloseTrigger asChild>
                   <Button
+                    pos="absolute"
+                    top={2}
+                    right={2}
+                    _focus={{
+                      outline: "none",
+                    }}
+                    p={3}
                     bgColor={{
                       base: "inherit",
                       _hover: { base: "#f5f5f5", _dark: "brand.primary.900" },
