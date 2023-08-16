@@ -5,7 +5,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Text>Hello world!</Text>,
+  args: {
+    children: "Hello, world!",
+  },
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
