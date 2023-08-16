@@ -1,4 +1,5 @@
 import { Portal } from "@ark-ui/react";
+import { useEffect, useState } from "react";
 
 import { recipe as menu } from "./Menu.recipe";
 import { recipe as button } from "components/client/core/Button/Button.recipe";
@@ -52,6 +53,14 @@ const Menu = ({
 }: Props) => {
   const classNames = menu({ size });
   const triggerClassNames = button({ variant: triggerVariant });
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveMenu {...rest}>
