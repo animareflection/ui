@@ -5,6 +5,8 @@ import {
   colors,
   conditions,
   easings,
+  fonts,
+  globalCss,
   keyframes,
   zIndex,
 } from "lib/panda";
@@ -13,6 +15,7 @@ const tokens = defineTokens({
   animations,
   colors,
   easings,
+  fonts,
   zIndex,
 });
 
@@ -21,13 +24,14 @@ const tokens = defineTokens({
  */
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const anirefPreset: ReturnType<typeof definePreset> = definePreset({
+  conditions,
+  globalCss,
   theme: {
     extend: {
       keyframes,
       tokens,
     },
   },
-  conditions,
 });
 
 export default anirefPreset;
