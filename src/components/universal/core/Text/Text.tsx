@@ -4,6 +4,9 @@ import { panda } from "generated/panda/jsx";
 import type { ComponentProps } from "react";
 
 const recipe = cva({
+  base: {
+    color: "foreground.primary",
+  },
   variants: {
     size: {
       sm: { fontSize: "sm" },

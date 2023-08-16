@@ -73,8 +73,13 @@ const Drawer = ({
                     outline: "none",
                   }}
                 >
-                  <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
-                    <Icon as={CloseIcon} color="black" />
+                  <Button
+                    bgColor={{
+                      base: "inherit",
+                      _hover: { base: "#f5f5f5", _dark: "brand.primary.900" },
+                    }}
+                  >
+                    <Icon as={CloseIcon} color="foreground.secondary" />
                   </Button>
                 </DrawerCloseTrigger>
               </DrawerContent>
