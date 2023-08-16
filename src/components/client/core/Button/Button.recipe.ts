@@ -3,12 +3,9 @@ import { cva } from "generated/panda/css";
 export const recipe = cva({
   base: {
     cursor: "pointer",
-    color: "foreground.inverted",
-    bgColor: "brand.primary.400",
     fontWeight: "bold",
     p: 3,
     borderRadius: "md",
-    _hover: { opacity: 0.8 },
     _focus: { outline: "none" },
   },
   defaultVariants: {
@@ -17,25 +14,53 @@ export const recipe = cva({
   variants: {
     variant: {
       primary: {
-        color: "foreground.inverted",
-        bgColor: "brand.primary.400",
+        color: "accent.fg",
+        bgColor: "accent.default",
+        _hover: {
+          bgColor: "accent.emphasized",
+        },
+        _disabled: {
+          bgColor: "bg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            bgColor: "bg.disabled",
+          },
+        },
       },
       secondary: {
-        color: "brand.primary.400",
-        bgColor: "transparent",
-        border: "1px solid",
-        borderColor: "brand.primary.400",
+        borderWidth: "1px",
+        borderColor: "border.emphasized",
+        bgColor: "bg.default",
+        color: "fg.emphasized",
+        _hover: {
+          color: "fg.default",
+          background: "bg.subtle",
+        },
+        _disabled: {
+          borderColor: "border.disabled",
+          color: "fg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            background: "transparent",
+            borderColor: "border.disabled",
+            color: "fg.disabled",
+          },
+        },
       },
       ghost: {
         bgColor: "transparent",
-        color: "brand.primary.400",
-        _active: {
-          bgColor: "transparent",
-          color: "brand.primary.200",
+        color: "fg.emphasized",
+        _hover: {
+          color: "fg.default",
+          background: "bg.subtle",
         },
-        _focus: {
-          bgColor: "transparent",
-          color: "brand.primary.200",
+        _disabled: {
+          color: "fg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            background: "transparent",
+            color: "fg.disabled",
+          },
         },
       },
       round: {

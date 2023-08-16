@@ -2,7 +2,7 @@ import { cva } from "generated/panda/css";
 
 export const recipe = cva({
   base: {
-    color: "foreground.primary",
+    color: "fg.default",
   },
   variants: {
     size: {

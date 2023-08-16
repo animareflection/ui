@@ -75,10 +75,10 @@ const Drawer = ({
                     p={3}
                     bgColor={{
                       base: "inherit",
-                      _hover: { base: "#f5f5f5", _dark: "brand.primary.900" },
+                      _hover: "bg.subtle",
                     }}
                   >
-                    <Icon as={CloseIcon} color="foreground.secondary" />
+                    <Icon as={CloseIcon} color="fg.default" />
                   </Button>
                 </DrawerCloseTrigger>
               </DrawerContent>

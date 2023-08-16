@@ -38,7 +38,7 @@ export const recipe = sva({
       zIndex: "modal",
     },
     content: {
-      background: "background.primary",
+      background: "bg.default",
       boxShadow: "lg",
       height: "full",
       width: { base: "full", sm: "sm" },
@@ -53,10 +53,10 @@ export const recipe = sva({
     title: {
       fontWeight: "bold",
       textStyle: "xl",
-      color: "foreground.primary",
+      color: "fg.default",
     },
     description: {
-      color: "gray.400",
+      color: "fg.muted",
       textStyle: "sm",
     },
   },

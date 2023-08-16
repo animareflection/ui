@@ -54,17 +54,20 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <ModalCloseTrigger
-                  pos="absolute"
-                  top={2}
-                  right={2}
-                  _focus={{
-                    outline: "none",
-                  }}
-                  asChild
-                >
-                  <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
-                    <Icon as={CloseIcon} color="black" />
+                <ModalCloseTrigger asChild>
+                  <Button
+                    pos="absolute"
+                    top={2}
+                    right={2}
+                    _focus={{
+                      outline: "none",
+                    }}
+                    bgColor={{
+                      base: "inherit",
+                      _hover: "bg.subtle",
+                    }}
+                  >
+                    <Icon as={CloseIcon} color="fg.default" />
                   </Button>
                 </ModalCloseTrigger>
               </ModalContent>

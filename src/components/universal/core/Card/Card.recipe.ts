@@ -9,7 +9,7 @@ export const recipe = sva({
       gap: 2,
       borderRadius: "md",
       boxShadow: "sm",
-      bgColor: { base: "background.primary", _dark: "background.secondary" },
+      bgColor: "bg.default",
     },
     header: {
       display: "flex",
@@ -17,10 +17,10 @@ export const recipe = sva({
       justifyContent: "space-between",
       padding: 4,
       fontWeight: "semibold",
-      color: "foreground.primary",
+      color: "fg.default",
     },
     body: {
-      color: "foreground.primary",
+      color: "fg.default",
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
@@ -28,7 +28,7 @@ export const recipe = sva({
       py: 2,
     },
     footer: {
-      color: "foreground.primary",
+      color: "fg.default",
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",

@@ -4,7 +4,7 @@ const itemStyle = {
   alignItems: "center",
   borderRadius: "xs",
   cursor: "pointer",
-  color: "foreground.primary",
+  color: "fg.default",
   display: "flex",
   mx: 1,
   fontWeight: "medium",
@@ -13,10 +13,12 @@ const itemStyle = {
   transitionProperty: "background",
   transitionTimingFunction: "default",
   _hover: {
-    background: { base: "#f5f5f5", _dark: "brand.primary.900" },
+    color: "fg.default",
+    background: "bg.subtle",
   },
   _highlighted: {
-    background: { base: "#f5f5f5", _dark: "brand.primary.900" },
+    color: "fg.default",
+    background: "bg.subtle",
   },
 } as const;
 
@@ -42,11 +44,11 @@ export const recipe = sva({
       textStyle: "sm",
       display: "flex",
       justifyContent: "center",
-      bgColor: { base: "brand.primary.50", _dark: "brand.primary.700" },
-      color: "foreground.primary",
+      bgColor: "bg.subtle",
+      color: "fg.default",
     },
     content: {
-      background: { base: "background.primary", _dark: "background.secondary" },
+      background: "bg.default",
       borderRadius: "sm",
       boxShadow: "lg",
       _hidden: {
@@ -59,7 +61,7 @@ export const recipe = sva({
       gap: 1,
     },
     separator: {
-      color: { base: "background.secondary", _dark: "background.primary" },
+      color: "bg.subtle",
     },
     trigger: {
       _focus: {
