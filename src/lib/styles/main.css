@@ -3,8 +3,7 @@
 
 @font-face {
   font-family: "Noto Sans Mono";
-  src: url("../assets/fonts/ageo/noto-sans-mono-variable.ttf")
-    format("truetype");
+  src: url("../assets/fonts/noto-sans-mono-variable.ttf") format("truetype");
   font-display: swap;
 }
 
