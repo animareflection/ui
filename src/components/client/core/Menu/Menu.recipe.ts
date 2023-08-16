@@ -14,7 +14,7 @@ const itemStyle = {
   transitionTimingFunction: "default",
   _hover: {
     color: "fg.default",
-    background: "bg.subtle",
+    background: "accent.subtle",
   },
   _highlighted: {
     color: "fg.default",

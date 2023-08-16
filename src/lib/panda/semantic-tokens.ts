@@ -14,8 +14,8 @@ const semanticTokens = defineSemanticTokens({
       },
       subtle: {
         value: {
-          base: "{colors.brand.primary.50}",
-          _dark: "{colors.brand.primary.900}",
+          base: "{colors.gray-palette.50}",
+          _dark: "{colors.gray-palette.900}",
         },
       },
       muted: {
@@ -77,6 +77,12 @@ const semanticTokens = defineSemanticTokens({
         value: {
           base: "{colors.brand.primary.500}",
           _dark: "{colors.brand.primary.300}",
+        },
+      },
+      subtle: {
+        value: {
+          base: "{colors.brand.primary.50}",
+          _dark: "{colors.brand.primary.900}",
         },
       },
       fg: {
