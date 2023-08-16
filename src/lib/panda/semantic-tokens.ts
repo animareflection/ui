@@ -9,6 +9,7 @@ const semanticTokens = defineSemanticTokens({
     foreground: {
       primary: { value: { base: "#000000", _dark: "#ffffff" } },
       secondary: { value: { base: "#161616", _dark: "#eeeeee" } },
+      inverted: { value: { base: "#ffffff", _dark: "#000000" } },
     },
   },
 });

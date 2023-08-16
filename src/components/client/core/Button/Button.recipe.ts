@@ -3,7 +3,7 @@ import { cva } from "generated/panda/css";
 export const recipe = cva({
   base: {
     cursor: "pointer",
-    color: "white",
+    color: "foreground.inverted",
     bgColor: "brand.primary.400",
     fontWeight: "bold",
     p: 3,
@@ -17,7 +17,7 @@ export const recipe = cva({
   variants: {
     variant: {
       primary: {
-        color: "white",
+        color: "foreground.inverted",
         bgColor: "brand.primary.400",
       },
       secondary: {
