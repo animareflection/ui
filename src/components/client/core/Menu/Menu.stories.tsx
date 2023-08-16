@@ -69,7 +69,6 @@ const WITH_CONTEXT_GROUPS: MenuItemGroup[] = [
 
 export const Default: Story = {
   args: {
-    // TODO: update `trigger` when asChild is implemented
     trigger: "Open Menu",
     groups: GROUPS,
   },
@@ -78,7 +77,6 @@ export const Default: Story = {
 export const WithContext: Story = {
   args: {
     closeOnSelect: false,
-    // TODO: update `trigger` when asChild is implemented
     trigger: "Open Menu",
     groups: WITH_CONTEXT_GROUPS,
     children: ({ onClose }) => (

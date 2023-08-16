@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 
 import { recipe as menu } from "./Menu.recipe";
-// TODO: remove when `MenuTrigger` asChild works
 import { recipe as button } from "components/client/core/Button/Button.recipe";
 import {
   Menu as PrimitiveMenu,
@@ -34,7 +33,6 @@ export interface MenuItemGroup {
 export interface Props extends MenuProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
-  // TODO: remove when `MenuTrigger` asChild works
   triggerVariant?: "primary" | "secondary" | "ghost" | "round";
   size?: "xs" | "sm" | "md";
   groups?: MenuItemGroup[];
@@ -47,21 +45,18 @@ const Menu = ({
   children,
   trigger,
   triggerItem,
-  // TODO: remove when `MenuTrigger` asChild works
   triggerVariant,
   groups,
   size,
   ...rest
 }: Props) => {
   const classNames = menu({ size });
-  // TODO: remove when `MenuTrigger` asChild works
   const triggerClassNames = button({ variant: triggerVariant });
 
   return (
     <PrimitiveMenu {...rest}>
       {(ctx) => (
         <>
-          {/* TODO: replace className with classNames.trigger when `MenuTrigger` asChild works */}
           {trigger && (
             <MenuTrigger className={triggerClassNames}>{trigger}</MenuTrigger>
           )}
