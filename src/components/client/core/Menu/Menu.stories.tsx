@@ -82,7 +82,7 @@ const meta: Meta<typeof Menu> = {
     size: {
       options: ["xs", "sm", "md"],
       control: { type: "radio" },
-      defaultValue: "md",
+      defaultValue: "sm",
     },
   },
 } satisfies Meta<typeof Menu>;

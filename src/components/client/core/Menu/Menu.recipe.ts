@@ -6,6 +6,7 @@ const itemStyle = {
   cursor: "pointer",
   color: "foreground.primary",
   display: "flex",
+  mx: 1,
   fontWeight: "medium",
   textStyle: "sm",
   transitionDuration: "fast",
@@ -54,6 +55,8 @@ export const recipe = sva({
       display: "flex",
       flexDirection: "column",
       outline: "none",
+      py: 1,
+      gap: 1,
     },
     separator: {
       color: { base: "background.secondary", _dark: "background.primary" },
@@ -66,98 +69,75 @@ export const recipe = sva({
     itemGroup: {
       display: "flex",
       flexDirection: "column",
+      gap: 1,
     },
     item: itemStyle,
     optionItem: itemStyle,
     triggerItem: itemStyle,
   },
   defaultVariants: {
-    size: "md",
+    size: "sm",
   },
   variants: {
     size: {
       xs: {
-        itemGroup: {
-          gap: 1,
-        },
-        itemGroupLabel: {
-          p: 0.5,
-        },
-        content: {
-          py: 1,
-          gap: 1,
-          minW: 24,
-        },
-        item: {
-          h: 8,
-          px: 1.5,
-          mx: 1,
-        },
-        optionItem: {
-          h: 8,
-          px: 1.5,
-          mx: 1,
-        },
-        triggerItem: {
-          h: 8,
-          px: 1.5,
-          mx: 1.5,
-        },
-      },
-      sm: {
-        itemGroup: {
-          gap: 1,
-        },
         itemGroupLabel: {
           p: 1,
         },
         content: {
-          py: 1,
-          gap: 1,
           minW: 32,
         },
         item: {
           h: 9,
           px: 2,
-          mx: 1,
         },
         optionItem: {
           h: 9,
           px: 2,
-          mx: 1,
         },
         triggerItem: {
           h: 9,
           px: 2,
-          mx: 1.5,
         },
       },
-      md: {
-        itemGroup: {
-          gap: 1,
-        },
+      sm: {
         itemGroupLabel: {
           p: 1.5,
         },
         content: {
-          py: 1,
-          gap: 1,
           minW: 44,
         },
         item: {
           h: 10,
           px: 2.5,
-          mx: 1,
         },
         optionItem: {
           h: 10,
           px: 2.5,
-          mx: 1,
         },
         triggerItem: {
           h: 10,
           px: 2.5,
-          mx: 1.5,
+        },
+      },
+      md: {
+        itemGroupLabel: {
+          p: 2,
+        },
+        content: {
+          minW: 56,
+        },
+        item: {
+          h: 11,
+          px: 3,
+        },
+        optionItem: {
+          h: 11,
+          px: 3,
+        },
+        triggerItem: {
+          h: 11,
+          px: 3,
         },
       },
     },
