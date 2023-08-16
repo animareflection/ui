@@ -9,7 +9,7 @@ describe("Button", () => {
 
     expect(screen.getByText(/click me!/i)).toHaveClass(
       "text_brand.primary.900",
-      "bg_brand.primary.500",
+      "bg_brand.primary.400",
     );
   });
 });
