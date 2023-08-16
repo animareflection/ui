@@ -1,43 +1,10 @@
-import { sva } from "generated/panda/css";
+import { recipe as card } from "./Card.recipe";
 import { panda } from "generated/panda/jsx";
 import { getChildrenOnDisplayName } from "lib/utils";
 
 import type { HTMLPandaProps } from "generated/panda/jsx";
 
-const cardRecipe = sva({
-  slots: ["card", "cardHeader", "cardBody", "cardFooter"],
-  base: {
-    card: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 2,
-      borderRadius: "md",
-      boxShadow: "sm",
-    },
-    cardHeader: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: 4,
-      fontWeight: "semibold",
-    },
-    cardBody: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      px: 4,
-      py: 2,
-    },
-    cardFooter: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: 4,
-    },
-  },
-});
-
-const cardClasses = cardRecipe();
+const cardClasses = card();
 
 type Props = HTMLPandaProps<"div">;
 
@@ -59,7 +26,7 @@ const Card = ({ children, ...rest }: Props) => {
   });
 
   return (
-    <panda.div className={cardClasses.card} {...rest}>
+    <panda.div className={cardClasses.root} {...rest}>
       {cardHeader}
       {cardBody}
       {cardFooter}
@@ -68,7 +35,7 @@ const Card = ({ children, ...rest }: Props) => {
 };
 
 export const CardHeader = ({ children, ...rest }: Props) => (
-  <panda.div className={cardClasses.cardHeader} {...rest}>
+  <panda.div className={cardClasses.header} {...rest}>
     {children}
   </panda.div>
 );
@@ -76,7 +43,7 @@ export const CardHeader = ({ children, ...rest }: Props) => (
 CardHeader.displayName = "CardHeader";
 
 export const CardBody = ({ children, ...rest }: Props) => (
-  <panda.div className={cardClasses.cardBody} {...rest}>
+  <panda.div className={cardClasses.body} {...rest}>
     {children}
   </panda.div>
 );
@@ -84,7 +51,7 @@ export const CardBody = ({ children, ...rest }: Props) => (
 CardBody.displayName = "CardBody";
 
 export const CardFooter = ({ children, ...rest }: Props) => (
-  <panda.div className={cardClasses.cardFooter} {...rest}>
+  <panda.div className={cardClasses.footer} {...rest}>
     {children}
   </panda.div>
 );

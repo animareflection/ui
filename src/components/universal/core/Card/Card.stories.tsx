@@ -6,15 +6,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Card>
-      <CardHeader>This is the Header</CardHeader>
+    <Card maxW="sm">
+      <CardHeader>Card Header</CardHeader>
       <CardBody>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
       </CardBody>
-      <CardFooter>This is the Footer</CardFooter>
+      <CardFooter>Card Footer</CardFooter>
     </Card>
   ),
 };
