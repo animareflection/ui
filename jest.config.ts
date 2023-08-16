@@ -36,7 +36,7 @@ const jestConfig: JestConfig = {
   // injectGlobals: false,
   transform: {
     // run tests with`@swc/jest`: https://swc.rs/docs/usage/jest
-    "^.+\\.(mjs|ts|tsx)$": [
+    "^.+\\.(mjs|js|jsx|ts|tsx)$": [
       "@swc/jest",
       {
         jsc: {
