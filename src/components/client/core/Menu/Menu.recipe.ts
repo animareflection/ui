@@ -44,7 +44,8 @@ export const recipe = sva({
       textStyle: "sm",
       display: "flex",
       justifyContent: "center",
-      bgColor: "bg.subtle",
+      borderBottomWidth: "1px",
+      borderBottomColor: "border.default",
       color: "fg.default",
     },
     content: {
