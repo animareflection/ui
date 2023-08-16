@@ -94,7 +94,6 @@ const meta: Meta<typeof Menu> = {
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
   argTypes: {
-    // TODO: remove when asChild is implemented
     triggerVariant: {
       options: ["primary", "secondary", "ghost", "round"],
       control: { type: "radio" },
