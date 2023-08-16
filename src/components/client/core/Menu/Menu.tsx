@@ -12,6 +12,7 @@ import {
   MenuSeparator,
   MenuItemGroup,
   MenuItemGroupLabel,
+  MenuTriggerItem,
 } from "components/primitives";
 
 import type { MenuProps } from "components/primitives";
@@ -20,6 +21,7 @@ import type { ReactNode } from "react";
 export interface MenuItem {
   id: string;
   child: ReactNode;
+  subMenu?: boolean;
 }
 
 export interface MenuItemGroup {
@@ -30,7 +32,8 @@ export interface MenuItemGroup {
 }
 
 export interface Props extends MenuProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
+  triggerItem?: ReactNode;
   // TODO: remove when `MenuTrigger` asChild works
   triggerVariant?: "primary" | "secondary" | "ghost" | "round";
   size?: "xs" | "sm" | "md";
@@ -43,6 +46,7 @@ export interface Props extends MenuProps {
 const Menu = ({
   children,
   trigger,
+  triggerItem,
   // TODO: remove when `MenuTrigger` asChild works
   triggerVariant,
   groups,
@@ -58,7 +62,14 @@ const Menu = ({
       {(ctx) => (
         <>
           {/* TODO: replace className with classNames.trigger when `MenuTrigger` asChild works */}
-          <MenuTrigger className={triggerClassNames}>{trigger}</MenuTrigger>
+          {trigger && (
+            <MenuTrigger className={triggerClassNames}>{trigger}</MenuTrigger>
+          )}
+          {triggerItem && (
+            <MenuTriggerItem className={classNames.triggerItem}>
+              {triggerItem}
+            </MenuTriggerItem>
+          )}
           <Portal>
             <MenuPositioner>
               <MenuContent className={classNames.content}>
@@ -76,11 +87,17 @@ const Menu = ({
                         {label}
                       </MenuItemGroupLabel>
                     )}
-                    {items.map(({ id, child }) => (
-                      <MenuItem key={id} id={id} className={classNames.item}>
-                        {child}
-                      </MenuItem>
-                    ))}
+                    {items.map(({ id, child, subMenu }) => {
+                      if (subMenu) {
+                        // !NB: don't forget to pass appropriate `key` prop to `Menu` component
+                        return child;
+                      }
+                      return (
+                        <MenuItem key={id} id={id} className={classNames.item}>
+                          {child}
+                        </MenuItem>
+                      );
+                    })}
                     {separator && (
                       <MenuSeparator className={classNames.separator} />
                     )}

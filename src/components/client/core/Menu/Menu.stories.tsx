@@ -5,6 +5,18 @@ import type { MenuItem, MenuItemGroup } from "components/client";
 
 type Story = StoryObj<typeof meta>;
 
+const SUBMENU_GROUP_ITEMS: MenuItem[] = [
+  { id: "item-7", child: "Item 7" },
+  { id: "item-8", child: "Item 8" },
+  { id: "item-9", child: "Item 9" },
+];
+
+const SUBMENU_GROUP: MenuItemGroup = {
+  id: "group-3",
+  label: "Group 3",
+  items: SUBMENU_GROUP_ITEMS,
+};
+
 const GROUP_ONE_ITEMS: MenuItem[] = [
   { id: "item-1", child: "Item 1" },
   { id: "item-2", child: "Item 2" },
@@ -13,7 +25,18 @@ const GROUP_ONE_ITEMS: MenuItem[] = [
 
 const GROUP_TWO_ITEMS: MenuItem[] = [
   { id: "item-4", child: "Item 4" },
-  { id: "item-5", child: "Item 5" },
+  {
+    id: "item-5",
+    subMenu: true,
+    child: (
+      <Menu
+        key="item-5"
+        positioning={{ placement: "right-start", gutter: -2 }}
+        triggerItem="Item 5"
+        groups={[SUBMENU_GROUP]}
+      />
+    ),
+  },
   { id: "item-6", child: "Item 6" },
 ];
 
