@@ -51,6 +51,8 @@ export const recipe = sva({
     content: {
       background: "bg.default",
       borderRadius: "sm",
+      borderWidth: "1px",
+      borderColor: "border.default",
       boxShadow: "lg",
       _hidden: {
         display: "none",
