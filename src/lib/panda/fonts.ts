@@ -1,9 +1,9 @@
-import type { ThemeKey } from "lib/types";
+import { defineTokens } from "@pandacss/dev";
 
 /**
  * Theme font tokens.
  */
-const fonts: ThemeKey<"fonts"> = {
+const fonts = defineTokens.fonts({
   primary: {
     value: `var(--font-primary), "Helvetica Neue", Helvetica, Arial, sans-serif`,
     description: "Primary font",
@@ -12,6 +12,6 @@ const fonts: ThemeKey<"fonts"> = {
     value: `var(--font-code), monospace`,
     description: "Code font",
   },
-} as const;
+});
 
 export default fonts;
