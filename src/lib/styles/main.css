@@ -1,6 +1,12 @@
 /* https://panda-css.com/docs/concepts/cascade-layers */
 @layer reset, base, tokens, recipes, utilities;
 
+:root {
+  /* alias fonts to CSS variables */
+  --font-primary: "Ageo", sans-serif;
+  --font-code: "Noto Sans Mono", monospace;
+}
+
 @font-face {
   font-family: "Noto Sans Mono";
   src: url("../assets/fonts/noto-sans-mono-variable.ttf") format("truetype");

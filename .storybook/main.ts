@@ -16,7 +16,11 @@ const storybookConfig: StorybookConfig = {
   // inject CSS into Storybook UI
   managerHead: (head) => `
   ${head}
-  <link rel="stylesheet" href="../src/lib/styles/main.css" />
+  <link rel="stylesheet" href=${
+    process.env.NODE_ENV === "production"
+      ? "./styles/main.css"
+      : "../src/lib/styles/main.css"
+  } />
 `,
   typescript: {
     // typecheck stories during Storybook build
@@ -28,7 +32,12 @@ const storybookConfig: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
   ],
-  staticDirs: ["../public"],
+  staticDirs: [
+    "../public",
+    // copy static CSS into static Storybook build
+    // NB: this is a hack to get custom styles (e.g. custom fonts) rendering in the Storybook manager UI. This *does* duplicate some static CSS already in the build, but is a convenient workaround
+    { from: "../src/lib/styles", to: "styles" },
+  ],
   viteFinal: (config) =>
     // recursively merge Vite options
     mergeConfig(config, {
