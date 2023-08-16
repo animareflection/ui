@@ -21,7 +21,6 @@ export interface Props extends ModalProps {
   trigger: ReactNode;
   title?: string;
   description?: string;
-  children?: ReactNode;
 }
 
 /**
@@ -32,36 +31,47 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
 
   return (
     <PrimitiveModal {...rest}>
-      <ModalTrigger asChild>{trigger}</ModalTrigger>
-      <Portal>
-        <ModalBackdrop className={classNames.backdrop} />
-        <ModalContainer className={classNames.container}>
-          <ModalContent lazyMount unmountOnExit className={classNames.content}>
-            {title && (
-              <ModalTitle className={classNames.title}>{title}</ModalTitle>
-            )}
-            {description && (
-              <ModalDescription className={classNames.description}>
-                {description}
-              </ModalDescription>
-            )}
-            {children}
-            <ModalCloseTrigger
-              pos="absolute"
-              top={2}
-              right={2}
-              _focus={{
-                outline: "none",
-              }}
-              asChild
-            >
-              <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
-                <Icon as={CloseIcon} color="black" />
-              </Button>
-            </ModalCloseTrigger>
-          </ModalContent>
-        </ModalContainer>
-      </Portal>
+      {(ctx) => (
+        <>
+          <ModalTrigger asChild>{trigger}</ModalTrigger>
+          <Portal>
+            <ModalBackdrop className={classNames.backdrop} />
+            <ModalContainer className={classNames.container}>
+              <ModalContent
+                lazyMount
+                unmountOnExit
+                className={classNames.content}
+              >
+                {title && (
+                  <ModalTitle className={classNames.title}>{title}</ModalTitle>
+                )}
+                {description && (
+                  <ModalDescription className={classNames.description}>
+                    {description}
+                  </ModalDescription>
+                )}
+
+                {/* forward nested context/state if utilized, otherwise directly render children */}
+                {typeof children === "function" ? children(ctx) : children}
+
+                <ModalCloseTrigger
+                  pos="absolute"
+                  top={2}
+                  right={2}
+                  _focus={{
+                    outline: "none",
+                  }}
+                  asChild
+                >
+                  <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
+                    <Icon as={CloseIcon} color="black" />
+                  </Button>
+                </ModalCloseTrigger>
+              </ModalContent>
+            </ModalContainer>
+          </Portal>
+        </>
+      )}
     </PrimitiveModal>
   );
 };
