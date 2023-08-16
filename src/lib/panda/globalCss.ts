@@ -10,7 +10,7 @@ const globalCss: GlobalStyleObject = defineGlobalStyles({
   ":root": {
     // alias fonts to CSS variables
     "--font-primary": `"Ageo", sans-serif`,
-    "--font-code": `"JetBrains Mono", monospace`,
+    "--font-code": `"Noto Sans Mono", monospace`,
   },
   "html,body": {
     fontFamily: fonts.primary.value,

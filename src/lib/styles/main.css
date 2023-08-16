@@ -2,9 +2,16 @@
 @layer reset, base, tokens, recipes, utilities;
 
 @font-face {
+  font-family: "Noto Sans Mono";
+  src: url("../assets/fonts/ageo/noto-sans-mono-variable.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-thin.woff2") format("woff2");
-  font-weight: thin;
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
   ascent-override: 95%;
@@ -13,7 +20,7 @@
 @font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-thin-italic.woff2") format("woff2");
-  font-weight: thin;
+  font-weight: 100;
   font-style: italic;
   font-display: swap;
   ascent-override: 95%;
@@ -22,7 +29,7 @@
 @font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-light.woff2") format("woff2");
-  font-weight: light;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
   ascent-override: 95%;
@@ -31,7 +38,7 @@
 @font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-light-italic.woff2") format("woff2");
-  font-weight: light;
+  font-weight: 300;
   font-style: italic;
   font-display: swap;
   ascent-override: 95%;
@@ -58,7 +65,7 @@
 @font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-medium.woff2") format("woff2");
-  font-weight: medium;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
   ascent-override: 95%;
@@ -67,7 +74,7 @@
 @font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-medium-italic.woff2") format("woff2");
-  font-weight: medium;
+  font-weight: 500;
   font-style: italic;
   font-display: swap;
   ascent-override: 95%;
@@ -94,7 +101,7 @@
 @font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-bold.woff2") format("woff2");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
   ascent-override: 95%;
@@ -103,7 +110,7 @@
 @font-face {
   font-family: "Ageo";
   src: url("../assets/fonts/ageo/ageo-bold-italic.woff2") format("woff2");
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
   font-display: swap;
   ascent-override: 95%;
