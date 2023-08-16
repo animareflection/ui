@@ -22,6 +22,7 @@ const storybookConfig: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "storybook-dark-mode",
   ],
   staticDirs: ["../public"],
   viteFinal: (config) =>

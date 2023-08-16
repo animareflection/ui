@@ -58,7 +58,11 @@ export const WithContext: Story = {
     // TODO: update `trigger` when asChild is implemented
     trigger: "Open Menu",
     groups: WITH_CONTEXT_GROUPS,
-    children: ({ onClose }) => <Button onClick={onClose}>Close Menu</Button>,
+    children: ({ onClose }) => (
+      <Button variant="ghost" p={1} onClick={onClose}>
+        Close
+      </Button>
+    ),
   },
 };
 

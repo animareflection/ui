@@ -4,16 +4,16 @@ import { defineTokens } from "@pandacss/dev";
 const colors = defineTokens.colors({
   brand: {
     primary: {
-      50: { value: "#b3e2f5" },
-      100: { value: "#86d0ef" },
-      200: { value: "#6fc8ec" },
-      300: { value: "#59bfe9" },
-      400: { value: "#42b7e6" },
-      500: { value: "#1da2d8", description: "Primary brand color" },
-      600: { value: "#1780ab" },
-      700: { value: "#146f95" },
-      800: { value: "#115f7e" },
-      900: { value: "#0b3d51" },
+      50: { value: "#f0f9fc" },
+      100: { value: "#c2e6f4" },
+      200: { value: "#8bcfeb" },
+      300: { value: "#42b1de" },
+      400: { value: "#1c9fd4", description: "Primary brand color" },
+      500: { value: "#1886b3" },
+      600: { value: "#147197" },
+      700: { value: "#105b79" },
+      800: { value: "#0e4d66" },
+      900: { value: "#0a384a" },
     },
     secondary: {
       50: { value: "#f2fcf7" },
