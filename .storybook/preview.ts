@@ -1,6 +1,6 @@
-import "../src/lib/styles/main.css";
-
 import type { Preview } from "@storybook/react";
+
+import "lib/styles/main.css";
 
 /**
  * Storybook preview.
