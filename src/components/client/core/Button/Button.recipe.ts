@@ -33,7 +33,6 @@ export const recipe = cva({
         bgColor: "bg.default",
         color: "fg.emphasized",
         _hover: {
-          color: "fg.default",
           background: "bg.subtle",
         },
         _disabled: {
@@ -52,7 +51,7 @@ export const recipe = cva({
         color: "fg.emphasized",
         _hover: {
           color: "fg.default",
-          background: "bg.subtle",
+          background: "accent.subtle",
         },
         _disabled: {
           color: "fg.disabled",
@@ -65,6 +64,18 @@ export const recipe = cva({
       },
       round: {
         borderRadius: "full !important",
+        color: "accent.fg",
+        bgColor: "accent.default",
+        _hover: {
+          bgColor: "accent.emphasized",
+        },
+        _disabled: {
+          bgColor: "bg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            bgColor: "bg.disabled",
+          },
+        },
       },
     },
   },
