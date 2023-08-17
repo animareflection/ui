@@ -1,4 +1,5 @@
 import { recipe as accordion } from "./Accordion.recipe";
+import { Button } from "components/client";
 import {
   Accordion as PrimitiveAccordion,
   AccordionItem,
@@ -12,38 +13,36 @@ import type { ReactNode } from "react";
 export interface Props extends AccordionProps {
   trigger: ReactNode;
   children: ReactNode;
-  orientation?: "horizontal" | "vertical";
   disabled?: boolean;
   value: string;
+  icon: (props: { isOpen: boolean }) => JSX.Element;
 }
 
 // /**
 //  * Core UI Accordion
 //  */
 
-const Accordion = ({
-  trigger,
-  children,
-  orientation = "horizontal",
-  value,
-  ...rest
-}: Props) => {
+const Accordion = ({ trigger, children, value, icon, ...rest }: Props) => {
   const classNames = accordion({});
+  const Icon = icon;
 
   return (
-    <PrimitiveAccordion
-      collapsible
-      orientation={orientation}
-      className={classNames.root}
-      {...rest}
-    >
+    <PrimitiveAccordion collapsible className={classNames.root} {...rest}>
+      {/* pass in array decision needs to be made */}
       <AccordionItem value={value}>
-        <AccordionTrigger className={classNames.trigger} asChild>
-          {trigger}
-        </AccordionTrigger>
-        <AccordionContent className={classNames.content}>
-          {children}
-        </AccordionContent>
+        {({ isOpen }) => (
+          <>
+            <AccordionTrigger className={classNames.trigger} asChild>
+              <Button>
+                {trigger}
+                <Icon isOpen={isOpen} />
+              </Button>
+            </AccordionTrigger>
+            <AccordionContent className={classNames.content}>
+              {children}
+            </AccordionContent>
+          </>
+        )}
       </AccordionItem>
     </PrimitiveAccordion>
   );

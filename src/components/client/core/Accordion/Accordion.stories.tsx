@@ -1,7 +1,7 @@
-import { Accordion, Button } from "components/client";
-import { Text } from "components/universal";
 import { FiChevronDown as ChevronDown } from "react-icons/fi";
-import Icon from "../Icon/Icon";
+
+import { Accordion, Icon } from "components/client";
+import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -13,15 +13,19 @@ export const Default: Story = {
   render: () => (
     <>
       {items.map((item, id) => (
-        <Accordion
-          key={id}
-          value={item}
-          trigger={
-            <Button>
-              {item} <Icon as={ChevronDown} color="white" />
-            </Button>
-          }
-        >
+        <Accordion icon={AccordionIcon} key={id} value={item} trigger={item}>
+          <Text>{item} content</Text>
+        </Accordion>
+      ))}
+    </>
+  ),
+};
+
+export const WithContext: Story = {
+  render: () => (
+    <>
+      {items.map((item, id) => (
+        <Accordion icon={AccordionIcon} key={id} value={item} trigger={item}>
           <Text>{item} content</Text>
         </Accordion>
       ))}
@@ -39,28 +43,11 @@ const meta: Meta<typeof Accordion> = {
 
 export default meta;
 
-// const AccordionIcon = (props: { isOpen: boolean }) => {
-//   const iconStyles = {
-//     transform: props.isOpen ? "rotate(-180deg)" : undefined,
-//     transition: "transform 0.2s",
-//     transformOrigin: "center",
-//   };
-//   return (
-//     <svg
-//       xmlns="http://www.w3.org/2000/svg"
-//       fill="none"
-//       height="16"
-//       width="16"
-//       viewBox="0 0 24 24"
-//       strokeWidth="1.5"
-//       stroke="currentColor"
-//       style={iconStyles}
-//     >
-//       <path
-//         strokeLinecap="round"
-//         strokeLinejoin="round"
-//         d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-//       />
-//     </svg>
-//   );
-// };
+const AccordionIcon = (props: { isOpen: boolean }) => {
+  const iconStyles = {
+    transform: props.isOpen ? "rotate(-180deg)" : undefined,
+    transition: "transform 0.4s",
+    transformOrigin: "center",
+  };
+  return <Icon style={iconStyles} as={ChevronDown} color="white" />;
+};
