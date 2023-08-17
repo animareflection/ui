@@ -23,7 +23,7 @@ const GROUP_ONE_ITEMS: MenuItem[] = [
   {
     id: "item-1",
     child: (
-      <HStack gap="6" justify="space-between" flex="1">
+      <HStack justify="space-between" flex={1}>
         Item 1
         <Text color="fg.subtle" textStyle="xs">
           ⇧⌘P
