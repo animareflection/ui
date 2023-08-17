@@ -1,4 +1,6 @@
 import { Button, Menu } from "components/client";
+import { Text } from "components/universal";
+import { HStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { MenuItem, MenuItemGroup } from "components/client";
@@ -18,7 +20,17 @@ const SUBMENU_GROUP: MenuItemGroup = {
 };
 
 const GROUP_ONE_ITEMS: MenuItem[] = [
-  { id: "item-1", child: "Item 1" },
+  {
+    id: "item-1",
+    child: (
+      <HStack gap="6" justify="space-between" flex="1">
+        Item 1
+        <Text color="fg.subtle" textStyle="xs">
+          ⇧⌘P
+        </Text>
+      </HStack>
+    ),
+  },
   { id: "item-2", child: "Item 2" },
   { id: "item-3", child: "Item 3" },
 ];
