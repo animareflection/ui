@@ -43,8 +43,8 @@ const semanticTokens = defineSemanticTokens({
       },
       emphasized: {
         value: {
-          base: "{colors.brand.primary.500}",
-          _dark: "{colors.brand.primary.300}",
+          base: "{colors.brand.primary.600}",
+          _dark: "{colors.brand.primary.400}",
         },
       },
       muted: {
@@ -69,14 +69,14 @@ const semanticTokens = defineSemanticTokens({
     accent: {
       default: {
         value: {
-          base: "{colors.brand.primary.400}",
-          _dark: "{colors.brand.primary.400}",
+          base: "{colors.brand.primary.500}",
+          _dark: "{colors.brand.primary.500}",
         },
       },
       emphasized: {
         value: {
-          base: "{colors.brand.primary.500}",
-          _dark: "{colors.brand.primary.300}",
+          base: "{colors.brand.primary.600}",
+          _dark: "{colors.brand.primary.400}",
         },
       },
       subtle: {
@@ -99,8 +99,8 @@ const semanticTokens = defineSemanticTokens({
       },
       emphasized: {
         value: {
-          base: "{colors.brand.primary.500}",
-          _dark: "{colors.brand.primary.300}",
+          base: "{colors.brand.primary.600}",
+          _dark: "{colors.brand.primary.400}",
         },
       },
       outline: {
@@ -111,8 +111,8 @@ const semanticTokens = defineSemanticTokens({
       },
       accent: {
         value: {
-          base: "{colors.brand.primary.400}",
-          _dark: "{colors.brand.primary.400}",
+          base: "{colors.brand.primary.500}",
+          _dark: "{colors.brand.primary.500}",
         },
       },
       disabled: {
