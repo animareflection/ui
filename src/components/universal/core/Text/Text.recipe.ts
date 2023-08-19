@@ -1,6 +1,8 @@
-import { cva } from "generated/panda/css";
+import { defineRecipe } from "@pandacss/dev";
 
-export const recipe = cva({
+export const recipe = defineRecipe({
+  className: "text",
+  description: "The styles for the Text component",
   base: {
     color: "fg.default",
   },

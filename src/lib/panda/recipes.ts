@@ -3,9 +3,11 @@ import { recipe as drawer } from "../../components/client/core/Drawer/Drawer.rec
 import { recipe as menu } from "../../components/client/core/Menu/Menu.recipe";
 import { recipe as modal } from "../../components/client/core/Modal/Modal.recipe";
 import { recipe as card } from "../../components/universal/core/Card/Card.recipe";
+import { recipe as text } from "../../components/universal/core/Text/Text.recipe";
 
 export const recipes = {
   button,
+  text,
 };
 
 export const slotRecipes = {
