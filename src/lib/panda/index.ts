@@ -7,4 +7,4 @@ export { default as globalCss } from "./globalCss";
 export { default as keyframes } from "./keyframes";
 export { recipes, slotRecipes } from "./recipes";
 export { default as semanticTokens } from "./semanticTokens";
-export { default as zIndex } from "./z-index";
+export { default as zIndex } from "./zIndex";
