@@ -26,7 +26,7 @@ const GROUP_ONE_ITEMS: MenuItem[] = [
       <HStack justify="space-between" flex={1}>
         Item 1
         <Text color="fg.subtle" textStyle="xs">
-          ⇧⌘P
+          Ctrl+P
         </Text>
       </HStack>
     ),
@@ -80,23 +80,31 @@ const WITH_CONTEXT_GROUPS: MenuItemGroup[] = [
 ];
 
 export const Default: Story = {
-  args: {
-    trigger: "Open Menu",
-    groups: GROUPS,
-  },
+  render: () => <Menu trigger="Open Menu" groups={GROUPS} />,
+};
+
+export const Small: Story = {
+  render: () => <Menu trigger="Open Menu" groups={GROUPS} size="sm" />,
+};
+
+export const Large: Story = {
+  render: () => <Menu trigger="Open Menu" groups={GROUPS} size="lg" />,
 };
 
 export const WithContext: Story = {
-  args: {
-    closeOnSelect: false,
-    trigger: "Open Menu",
-    groups: WITH_CONTEXT_GROUPS,
-    children: ({ onClose }) => (
-      <Button variant="ghost" p={1} onClick={onClose}>
-        Close
-      </Button>
-    ),
-  },
+  render: () => (
+    <Menu
+      closeOnSelect={false}
+      trigger="Open Menu"
+      groups={WITH_CONTEXT_GROUPS}
+    >
+      {({ onClose }) => (
+        <Button mx={1} variant="ghost" onClick={onClose}>
+          Close
+        </Button>
+      )}
+    </Menu>
+  ),
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
@@ -105,18 +113,6 @@ const meta: Meta<typeof Menu> = {
   component: Menu,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
-  argTypes: {
-    triggerVariant: {
-      options: ["primary", "secondary", "ghost", "round"],
-      control: { type: "radio" },
-      defaultValue: "primary",
-    },
-    size: {
-      options: ["xs", "sm", "md"],
-      control: { type: "radio" },
-      defaultValue: "sm",
-    },
-  },
 } satisfies Meta<typeof Menu>;
 
 export default meta;

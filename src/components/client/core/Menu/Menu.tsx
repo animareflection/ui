@@ -1,6 +1,5 @@
 import { Portal } from "@ark-ui/react";
 
-import { recipe as menu } from "./Menu.recipe";
 import {
   Menu as PrimitiveMenu,
   MenuContent,
@@ -12,10 +11,14 @@ import {
   MenuItemGroupLabel,
   MenuTriggerItem,
 } from "components/primitives";
-import { button } from "generated/panda/recipes";
+import { button, menu } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
 import type { MenuProps } from "components/primitives";
+import type {
+  ButtonVariantProps,
+  MenuVariantProps,
+} from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface MenuItem {
@@ -31,11 +34,10 @@ export interface MenuItemGroup {
   items: MenuItem[];
 }
 
-export interface Props extends MenuProps {
+export interface Props extends MenuProps, MenuVariantProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
-  triggerVariant?: "secondary" | "ghost" | "round";
-  size?: "xs" | "sm" | "md";
+  triggerVariant?: ButtonVariantProps["variant"];
   groups?: MenuItemGroup[];
 }
 

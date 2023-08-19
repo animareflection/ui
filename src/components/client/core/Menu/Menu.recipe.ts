@@ -1,4 +1,4 @@
-import { sva } from "generated/panda/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
 const itemStyle = {
   alignItems: "center",
@@ -6,6 +6,8 @@ const itemStyle = {
   cursor: "pointer",
   color: "fg.default",
   display: "flex",
+  h: 10,
+  px: 2.5,
   mx: 1,
   fontWeight: "medium",
   textStyle: "sm",
@@ -22,7 +24,9 @@ const itemStyle = {
   },
 } as const;
 
-export const recipe = sva({
+export const recipe = defineSlotRecipe({
+  className: "menu",
+  description: "The styles for the Menu component",
   slots: [
     "root",
     "arrow",
@@ -47,6 +51,7 @@ export const recipe = sva({
       borderBottomWidth: "1px",
       borderBottomColor: "border.default",
       color: "fg.default",
+      p: 1.5,
     },
     content: {
       background: "bg.default",
@@ -62,6 +67,7 @@ export const recipe = sva({
       outline: "none",
       py: 1,
       gap: 1,
+      minW: 44,
     },
     separator: {
       color: "bg.subtle",
@@ -80,12 +86,9 @@ export const recipe = sva({
     optionItem: itemStyle,
     triggerItem: itemStyle,
   },
-  defaultVariants: {
-    size: "sm",
-  },
   variants: {
     size: {
-      xs: {
+      sm: {
         itemGroupLabel: {
           p: 1,
         },
@@ -105,27 +108,7 @@ export const recipe = sva({
           px: 2,
         },
       },
-      sm: {
-        itemGroupLabel: {
-          p: 1.5,
-        },
-        content: {
-          minW: 44,
-        },
-        item: {
-          h: 10,
-          px: 2.5,
-        },
-        optionItem: {
-          h: 10,
-          px: 2.5,
-        },
-        triggerItem: {
-          h: 10,
-          px: 2.5,
-        },
-      },
-      md: {
+      lg: {
         itemGroupLabel: {
           p: 2,
         },
