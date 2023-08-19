@@ -14,7 +14,7 @@ const PandaButton: PandaComponent<typeof Pressable> = panda(Pressable, button);
 /**
  * Core UI button.
  */
-const Button = ({ variant, children, className, ...rest }: Props) => {
+const Button = ({ variant, children, ...rest }: Props) => {
   return (
     <PandaButton className={button({ variant })} {...rest}>
       {children}
