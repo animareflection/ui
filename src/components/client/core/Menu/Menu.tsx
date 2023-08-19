@@ -34,7 +34,7 @@ export interface MenuItemGroup {
 export interface Props extends MenuProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
-  triggerVariant?: "primary" | "secondary" | "ghost" | "round";
+  triggerVariant?: "secondary" | "ghost" | "round";
   size?: "xs" | "sm" | "md";
   groups?: MenuItemGroup[];
 }
