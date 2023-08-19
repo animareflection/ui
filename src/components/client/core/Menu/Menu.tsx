@@ -54,7 +54,6 @@ const Menu = ({
   ...rest
 }: Props) => {
   const classNames = menu({ size });
-  const triggerClassNames = button({ variant: triggerVariant });
 
   const isMounted = useIsMounted();
 
@@ -65,7 +64,9 @@ const Menu = ({
       {(ctx) => (
         <>
           {trigger && (
-            <MenuTrigger className={triggerClassNames}>{trigger}</MenuTrigger>
+            <MenuTrigger className={button({ variant: triggerVariant })}>
+              {trigger}
+            </MenuTrigger>
           )}
           {triggerItem && (
             <MenuTriggerItem className={classNames.triggerItem}>
