@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import { recipe as modal } from "./Modal.recipe";
 import { Button, Icon } from "components/client";
 import {
   Modal as PrimitiveModal,
@@ -13,6 +12,7 @@ import {
   ModalTitle,
   ModalTrigger,
 } from "components/primitives";
+import { modal } from "generated/panda/recipes";
 
 import type { ModalProps } from "components/primitives";
 import type { ReactNode } from "react";
