@@ -1,6 +1,8 @@
-import { sva } from "generated/panda/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const recipe = sva({
+export const recipe = defineSlotRecipe({
+  className: "card",
+  description: "The styles for the Card component",
   slots: ["root", "header", "body", "footer"],
   base: {
     root: {

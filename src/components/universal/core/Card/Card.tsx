@@ -1,5 +1,5 @@
-import { recipe as card } from "./Card.recipe";
 import { panda } from "generated/panda/jsx";
+import { card } from "generated/panda/recipes";
 import { getChildrenOnDisplayName } from "lib/utils";
 
 import type { HTMLPandaProps } from "generated/panda/jsx";
