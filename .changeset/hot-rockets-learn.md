@@ -2,4 +2,4 @@
 "@animareflection/ui": patch
 ---
 
-Update ANIREF preset colors and semantic tokens
+Update ANIREF preset colors, recipes, semantic tokens
