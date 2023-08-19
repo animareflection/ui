@@ -10,6 +10,7 @@ import {
   keyframes,
   recipes,
   semanticTokens,
+  slotRecipes,
   zIndex,
 } from "lib/panda";
 
@@ -33,6 +34,7 @@ const anirefPreset: ReturnType<typeof definePreset> = definePreset({
       keyframes,
       recipes,
       semanticTokens,
+      slotRecipes,
       tokens,
     },
   },

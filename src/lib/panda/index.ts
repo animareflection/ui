@@ -5,6 +5,6 @@ export { default as easings } from "./easings";
 export { default as fonts } from "./fonts";
 export { default as globalCss } from "./globalCss";
 export { default as keyframes } from "./keyframes";
-export { default as recipes } from "./recipes";
+export { recipes, slotRecipes } from "./recipes";
 export { default as semanticTokens } from "./semantic-tokens";
 export { default as zIndex } from "./z-index";

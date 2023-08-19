@@ -1,6 +1,5 @@
 import { Pressable } from "@ark-ui/react";
 
-import { cx } from "generated/panda/css";
 import { panda } from "generated/panda/jsx";
 import { button } from "generated/panda/recipes";
 
@@ -17,7 +16,7 @@ const PandaButton: PandaComponent<typeof Pressable> = panda(Pressable, button);
  */
 const Button = ({ variant, children, className, ...rest }: Props) => {
   return (
-    <PandaButton className={cx(button({ variant }), className)} {...rest}>
+    <PandaButton className={button({ variant })} {...rest}>
       {children}
     </PandaButton>
   );

@@ -1,6 +1,8 @@
-import { sva } from "generated/panda/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const recipe = sva({
+export const recipe = defineSlotRecipe({
+  className: "drawer",
+  description: "The styles for the Drawer component",
   slots: [
     "root",
     "backdrop",
@@ -33,6 +35,7 @@ export const recipe = sva({
       display: "flex",
       top: 0,
       bottom: 0,
+      right: 0,
       justifyContent: "center",
       position: "fixed",
       zIndex: "modal",
@@ -49,6 +52,12 @@ export const recipe = sva({
         md: 6,
       },
       py: 6,
+      _open: {
+        animation: { base: "drawer-in-bottom", sm: "drawer-in-right" },
+      },
+      _closed: {
+        animation: { base: "drawer-out-bottom", sm: "drawer-out-right" },
+      },
     },
     title: {
       fontWeight: "bold",
@@ -60,14 +69,12 @@ export const recipe = sva({
       textStyle: "sm",
     },
   },
-  defaultVariants: {
-    placement: "right",
-  },
   variants: {
     placement: {
       left: {
         container: {
           left: 0,
+          right: "auto",
         },
         content: {
           _open: {
@@ -75,19 +82,6 @@ export const recipe = sva({
           },
           _closed: {
             animation: { base: "drawer-out-bottom", sm: "drawer-out-left" },
-          },
-        },
-      },
-      right: {
-        container: {
-          right: 0,
-        },
-        content: {
-          _open: {
-            animation: { base: "drawer-in-bottom", sm: "drawer-in-right" },
-          },
-          _closed: {
-            animation: { base: "drawer-out-bottom", sm: "drawer-out-right" },
           },
         },
       },

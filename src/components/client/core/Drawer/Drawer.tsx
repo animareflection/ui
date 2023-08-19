@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import { recipe as drawer } from "./Drawer.recipe";
 import { Button, Icon } from "components/client";
 import {
   Drawer as PrimitiveDrawer,
@@ -13,13 +12,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "components/primitives";
+import { drawer } from "generated/panda/recipes";
 
 import type { DrawerProps } from "components/primitives";
+import type { DrawerVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
-export interface Props extends DrawerProps {
+export interface Props extends DrawerProps, DrawerVariantProps {
   trigger: ReactNode;
-  placement?: "left" | "right";
   title?: string;
   description?: string;
 }
