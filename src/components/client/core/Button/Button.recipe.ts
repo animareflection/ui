@@ -1,54 +1,78 @@
-import { cva } from "generated/panda/css";
+import { defineRecipe } from "@pandacss/dev";
 
-export const recipe = cva({
+export const recipe = defineRecipe({
+  className: "button",
+  description: "The styles for the Button component",
   base: {
+    color: "accent.fg",
+    bgColor: "accent.default",
     cursor: "pointer",
-    color: "white",
-    bgColor: "brand.primary.500",
     fontWeight: "bold",
-    px: 3,
-    py: 2,
+    p: 3,
     borderRadius: "md",
-    _hover: { bgColor: "brand.primary.200" },
-  },
-  defaultVariants: {
-    variant: "primary",
+    _focus: { outline: "none" },
+    _hover: {
+      bgColor: "accent.emphasized",
+    },
+    _disabled: {
+      bgColor: "bg.disabled",
+      cursor: "not-allowed",
+      _hover: {
+        bgColor: "bg.disabled",
+      },
+    },
   },
   variants: {
     variant: {
-      primary: {
-        color: "white",
-        bgColor: "brand.primary.500",
-      },
       secondary: {
-        color: "brand.primary.500",
-        bgColor: "transparent",
-        border: "1px solid",
-        borderColor: "brand.primary.500",
+        borderWidth: "1px",
+        borderColor: "border.emphasized",
+        bgColor: "bg.default",
+        color: "fg.emphasized",
         _hover: {
-          bgColor: "transparent",
-          borderColor: "brand.primary.200",
-          color: "brand.primary.200",
+          background: "bg.subtle",
+        },
+        _disabled: {
+          borderColor: "border.disabled",
+          color: "fg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            background: "transparent",
+            borderColor: "border.disabled",
+            color: "fg.disabled",
+          },
         },
       },
       ghost: {
         bgColor: "transparent",
-        color: "brand.primary.500",
+        color: "fg.emphasized",
         _hover: {
-          bgColor: "transparent",
-          color: "brand.primary.200",
+          color: "fg.default",
+          background: "accent.subtle",
         },
-        _active: {
-          bgColor: "transparent",
-          color: "brand.primary.200",
-        },
-        _focus: {
-          bgColor: "transparent",
-          color: "brand.primary.200",
+        _disabled: {
+          color: "fg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            background: "transparent",
+            color: "fg.disabled",
+          },
         },
       },
       round: {
         borderRadius: "full !important",
+        color: "accent.fg",
+        bgColor: "accent.default",
+        _hover: {
+          bgColor: "accent.emphasized",
+        },
+        _disabled: {
+          bgColor: "bg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            bgColor: "bg.disabled",
+          },
+        },
       },
     },
   },

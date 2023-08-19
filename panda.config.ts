@@ -9,7 +9,7 @@ import anirefPreset from "lib/panda/aniref.preset";
 const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // enable CSS reset
   preflight: true,
-  include: ["src/**/*.{ts,tsx}"],
+  include: ["src/**/*.{ts,tsx,mdx}"],
   outdir: "src/generated/panda",
   presets: ["@pandacss/dev/presets", anirefPreset],
   // set JSX factory name

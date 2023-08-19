@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import { recipe as drawer } from "./Drawer.recipe";
 import { Button, Icon } from "components/client";
 import {
   Drawer as PrimitiveDrawer,
@@ -13,13 +12,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "components/primitives";
+import { drawer } from "generated/panda/recipes";
 
 import type { DrawerProps } from "components/primitives";
+import type { DrawerVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
-export interface Props extends DrawerProps {
+export interface Props extends DrawerProps, DrawerVariantProps {
   trigger: ReactNode;
-  placement?: "left" | "right";
   title?: string;
   description?: string;
 }
@@ -64,17 +64,21 @@ const Drawer = ({
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <DrawerCloseTrigger
-                  asChild
-                  pos="absolute"
-                  top={2}
-                  right={2}
-                  _focus={{
-                    outline: "none",
-                  }}
-                >
-                  <Button bgColor={{ base: "inherit", _hover: "#f5f5f5" }}>
-                    <Icon as={CloseIcon} color="black" />
+                <DrawerCloseTrigger asChild>
+                  <Button
+                    pos="absolute"
+                    top={2}
+                    right={2}
+                    _focus={{
+                      outline: "none",
+                    }}
+                    p={3}
+                    bgColor={{
+                      base: "inherit",
+                      _hover: "bg.subtle",
+                    }}
+                  >
+                    <Icon as={CloseIcon} color="fg.default" />
                   </Button>
                 </DrawerCloseTrigger>
               </DrawerContent>

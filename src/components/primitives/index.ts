@@ -9,6 +9,21 @@ export {
   DrawerDescription,
 } from "./Drawer/Drawer";
 export {
+  default as Menu,
+  MenuArrow,
+  MenuArrowTip,
+  MenuContent,
+  MenuContextTrigger,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemGroupLabel,
+  MenuOptionItem,
+  MenuPositioner,
+  MenuSeparator,
+  MenuTrigger,
+  MenuTriggerItem,
+} from "./Menu/Menu";
+export {
   default as Modal,
   ModalBackdrop,
   ModalTrigger,
@@ -29,6 +44,21 @@ export type {
   DrawerTitleProps,
   DrawerTriggerProps,
 } from "./Drawer/Drawer";
+export type {
+  MenuProps,
+  MenuArrowProps,
+  MenuArrowTipProps,
+  MenuContentProps,
+  MenuContextTriggerProps,
+  MenuItemProps,
+  MenuItemGroupProps,
+  MenuItemGroupLabelProps,
+  MenuOptionItemProps,
+  MenuPositionerProps,
+  MenuSeparatorProps,
+  MenuTriggerProps,
+  MenuTriggerItemProps,
+} from "./Menu/Menu";
 export type {
   ModalProps,
   ModalBackdropProps,

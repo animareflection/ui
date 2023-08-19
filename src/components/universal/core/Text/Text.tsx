@@ -1,22 +1,20 @@
-import { cva } from "generated/panda/css";
 import { panda } from "generated/panda/jsx";
+import { text } from "generated/panda/recipes";
 
+import type { TextVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-const recipe = cva({
-  variants: {
-    size: {
-      sm: { fontSize: "sm" },
-      lg: { fontSize: "lg" },
-    },
-  },
-});
+export type Props = ComponentProps<typeof PandaText> & TextVariantProps;
 
-export type Props = ComponentProps<typeof Text>;
+const PandaText = panda("p", text);
 
 /**
  * Core UI text (typography).
  */
-const Text = panda("p", recipe);
+const Text = ({ size, children, ...rest }: Props) => (
+  <PandaText className={text({ size })} {...rest}>
+    {children}
+  </PandaText>
+);
 
 export default Text;
