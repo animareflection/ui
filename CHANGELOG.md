@@ -1,5 +1,27 @@
 # @animareflection/ui
 
+## 0.3.0
+
+### Minor Changes
+
+- [#47](https://github.com/animareflection/ui/pull/47) [`0fbee1c`](https://github.com/animareflection/ui/commit/0fbee1ccb1b85c227b75ff03fcc146218397a004) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Menu` component
+
+- [#43](https://github.com/animareflection/ui/pull/43) [`4a0989b`](https://github.com/animareflection/ui/commit/4a0989ba03bfde72c63f4ea5909928e301c53930) Thanks [@coopbri](https://github.com/coopbri)! - Add injected primary font (Ageo) and code font (Noto Sans Mono) tokens and styles
+
+- [#39](https://github.com/animareflection/ui/pull/39) [`3e0e57a`](https://github.com/animareflection/ui/commit/3e0e57a9ff1c39e2d65a26c8a7bcec9a0199da74) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Modal` component
+
+- [#35](https://github.com/animareflection/ui/pull/35) [`a388c4a`](https://github.com/animareflection/ui/commit/a388c4a762536a819408d001f499981d7977e964) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Icon` component
+
+- [#35](https://github.com/animareflection/ui/pull/35) [`a388c4a`](https://github.com/animareflection/ui/commit/a388c4a762536a819408d001f499981d7977e964) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Drawer` component
+
+### Patch Changes
+
+- [#40](https://github.com/animareflection/ui/pull/40) [`3e72a1e`](https://github.com/animareflection/ui/commit/3e72a1e073b6c2ad07f5ec8f894d11f9b134b8e4) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add custom variants for `Button` component
+
+- [#47](https://github.com/animareflection/ui/pull/47) [`0fbee1c`](https://github.com/animareflection/ui/commit/0fbee1ccb1b85c227b75ff03fcc146218397a004) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update ANIREF preset colors, recipes, semantic tokens
+
+- [#42](https://github.com/animareflection/ui/pull/42) [`415fae7`](https://github.com/animareflection/ui/commit/415fae76aac73b7e7f48c9ea6c99bb1a5cc98f92) Thanks [@coopbri](https://github.com/coopbri)! - Forward render context in complete `Modal` and `Drawer` components
+
 ## 0.2.0
 
 ### Minor Changes
