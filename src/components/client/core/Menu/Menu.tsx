@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 
 import { recipe as menu } from "./Menu.recipe";
-import { recipe as button } from "components/client/core/Button/Button.recipe";
 import {
   Menu as PrimitiveMenu,
   MenuContent,
@@ -13,6 +12,7 @@ import {
   MenuItemGroupLabel,
   MenuTriggerItem,
 } from "components/primitives";
+import { button } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
 import type { MenuProps } from "components/primitives";

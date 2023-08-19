@@ -1,6 +1,8 @@
-import { cva } from "generated/panda/css";
+import { defineRecipe } from "@pandacss/dev";
 
-export const recipe = cva({
+export const recipe = defineRecipe({
+  className: "button",
+  description: "The styles for the Button component",
   base: {
     cursor: "pointer",
     fontWeight: "bold",
