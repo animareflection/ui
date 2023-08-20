@@ -39,7 +39,7 @@ const Slider = ({ label, markers, maxW, ...rest }: Props) => {
         <SliderThumb className={classNames.thumb} />
       </SliderControl>
       {markers && (
-        <SliderMarkerGroup className={classNames.markerGroup}>
+        <SliderMarkerGroup className={classNames.markerGroup} maxW={maxW}>
           {markers.map(({ id, value, label }) => (
             <SliderMarker key={id} value={value} className={classNames.marker}>
               {label}

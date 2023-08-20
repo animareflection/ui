@@ -45,8 +45,8 @@ export const recipe = defineSlotRecipe({
       borderWidth: "2px",
       boxShadow: "sm",
       outline: "none",
-      height: 6,
-      width: 6,
+      height: 5,
+      width: 5,
       _hover: {
         cursor: "pointer",
       },
@@ -59,6 +59,7 @@ export const recipe = defineSlotRecipe({
     marker: {
       mt: 2,
       textStyle: "sm",
+      color: "fg.default",
     },
   },
 });
