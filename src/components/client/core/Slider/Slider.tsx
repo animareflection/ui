@@ -11,6 +11,7 @@ import {
 import { slider } from "generated/panda/recipes";
 
 import type { SliderProps } from "components/primitives";
+import type { JsxStyleProps } from "generated/panda/types";
 
 export interface SliderMarkerRecord {
   id: string;
@@ -21,16 +22,17 @@ export interface SliderMarkerRecord {
 export interface Props extends SliderProps {
   label?: string;
   markers?: SliderMarkerRecord[];
+  maxW?: JsxStyleProps["maxW"];
 }
 
-const Slider = ({ label, markers, ...rest }: Props) => {
+const Slider = ({ label, markers, maxW, ...rest }: Props) => {
   const classNames = slider();
 
   return (
     <PrimitiveSlider {...rest}>
       {label && <SliderLabel className={classNames.label}>{label}</SliderLabel>}
-      <SliderControl className={classNames.control}>
-        <SliderTrack className={classNames.track}>
+      <SliderControl className={classNames.control} maxW={maxW}>
+        <SliderTrack className={classNames.track} maxW={maxW}>
           <SliderRange className={classNames.range} />
         </SliderTrack>
 

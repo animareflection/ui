@@ -29,6 +29,9 @@ export const recipe = defineSlotRecipe({
       borderRadius: "sm",
       flex: 1,
       height: 2,
+      _hover: {
+        cursor: "pointer",
+      },
     },
     range: {
       background: "accent.default",
@@ -44,6 +47,9 @@ export const recipe = defineSlotRecipe({
       outline: "none",
       height: 6,
       width: 6,
+      _hover: {
+        cursor: "pointer",
+      },
     },
     label: {
       color: "fg.emphasized",
