@@ -21,24 +21,24 @@ import type {
 } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
-export interface MenuItem {
+export interface MenuItemRecord {
   id: string;
   child: ReactNode;
   subMenu?: boolean;
 }
 
-export interface MenuItemGroup {
+export interface MenuItemGroupRecord {
   id: string;
   label?: string;
   separator?: boolean;
-  items: MenuItem[];
+  items: MenuItemRecord[];
 }
 
 export interface Props extends MenuProps, MenuVariantProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
   triggerVariant?: ButtonVariantProps["variant"];
-  groups?: MenuItemGroup[];
+  groups?: MenuItemGroupRecord[];
 }
 
 /**
