@@ -15,24 +15,24 @@ const MockSlider = () => (
   <Slider min={0} max={100} maxW="md" label="Slider Label" markers={MARKERS} />
 );
 
-const { ResizeObserver } = window;
-
-beforeEach(() => {
-  // @ts-ignore TODO add valid description
-  delete window.ResizeObserver;
-  window.ResizeObserver = jest.fn().mockImplementation(() => ({
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-    disconnect: jest.fn(),
-  }));
-});
-
-afterEach(() => {
-  window.ResizeObserver = ResizeObserver;
-  jest.restoreAllMocks();
-});
-
 describe("Slider", () => {
+  const { ResizeObserver } = window;
+
+  beforeEach(() => {
+    // @ts-ignore TS2790: The operand of a 'delete' operator must be optional.
+    delete window.ResizeObserver;
+    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    jest.restoreAllMocks();
+  });
+
   it("renders label correctly", () => {
     render(<MockSlider />);
 
