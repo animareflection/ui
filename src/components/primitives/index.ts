@@ -33,6 +33,17 @@ export {
   ModalTitle,
   ModalDescription,
 } from "./Modal/Modal";
+export {
+  default as Slider,
+  SliderControl,
+  SliderLabel,
+  SliderMarker,
+  SliderMarkerGroup,
+  SliderOutput,
+  SliderRange,
+  SliderThumb,
+  SliderTrack,
+} from "./Slider/Slider";
 
 export type {
   DrawerProps,
@@ -69,3 +80,14 @@ export type {
   ModalTitleProps,
   ModalTriggerProps,
 } from "./Modal/Modal";
+export type {
+  SliderProps,
+  SliderControlProps,
+  SliderLabelProps,
+  SliderMarkerProps,
+  SliderMarkerGroupProps,
+  SliderOutputProps,
+  SliderRangeProps,
+  SliderThumbProps,
+  SliderTrackProps,
+} from "./Slider/Slider";

@@ -3,23 +3,23 @@ import { Text } from "components/universal";
 import { HStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import type { MenuItem, MenuItemGroup } from "components/client";
+import type { MenuItemRecord, MenuItemGroupRecord } from "components/client";
 
 type Story = StoryObj<typeof meta>;
 
-const SUBMENU_GROUP_ITEMS: MenuItem[] = [
+const SUBMENU_GROUP_ITEMS: MenuItemRecord[] = [
   { id: "item-7", child: "Item 7" },
   { id: "item-8", child: "Item 8" },
   { id: "item-9", child: "Item 9" },
 ];
 
-const SUBMENU_GROUP: MenuItemGroup = {
+const SUBMENU_GROUP: MenuItemGroupRecord = {
   id: "group-3",
   label: "Group 3",
   items: SUBMENU_GROUP_ITEMS,
 };
 
-const GROUP_ONE_ITEMS: MenuItem[] = [
+const GROUP_ONE_ITEMS: MenuItemRecord[] = [
   {
     id: "item-1",
     child: (
@@ -35,7 +35,7 @@ const GROUP_ONE_ITEMS: MenuItem[] = [
   { id: "item-3", child: "Item 3" },
 ];
 
-const GROUP_TWO_ITEMS: MenuItem[] = [
+const GROUP_TWO_ITEMS: MenuItemRecord[] = [
   { id: "item-4", child: "Item 4" },
   {
     id: "item-5",
@@ -52,7 +52,7 @@ const GROUP_TWO_ITEMS: MenuItem[] = [
   { id: "item-6", child: "Item 6" },
 ];
 
-const GROUPS: MenuItemGroup[] = [
+const GROUPS: MenuItemGroupRecord[] = [
   {
     id: "group-1",
     label: "Group 1",
@@ -65,7 +65,7 @@ const GROUPS: MenuItemGroup[] = [
   },
 ];
 
-const WITH_CONTEXT_GROUPS: MenuItemGroup[] = [
+const WITH_CONTEXT_GROUPS: MenuItemGroupRecord[] = [
   {
     id: "group-1",
     label: "Group 1",

@@ -68,15 +68,20 @@
     ],
     // suppress errors for missing React import (prefer modern JSX transform)
     "react/react-in-jsx-scope": "off",
-    // prevent multiple components per file
-    // NB: this rule is disabled because it is not compatible with the structure of our library
-    // "react/no-multi-comp": "error",
     // enforce arrow functions for React components
     "react/function-component-definition": [
       "error",
       {
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
+      }
+    ],
+    // enforce array type syntax (e.g. `string[]` instead of `Array<string>`)
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "array",
+        "readonly": "array"
       }
     ],
     // warn on use of type `any`
@@ -114,6 +119,8 @@
         ],
         "newlines-between": "always"
       }
-    ]
+    ],
+    // allow manual imports from __mocks__ directory
+    "jest/no-mocks-import": "off"
   }
 }
