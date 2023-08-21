@@ -31,6 +31,9 @@ const animations = defineTokens.animations({
   "drawer-out-bottom": {
     value: "slide-out-bottom 200ms {easings.emphasized-out}",
   },
+  "infinite-spin": {
+    value: "spin 1s infinite linear",
+  },
 });
 
 export default animations;
