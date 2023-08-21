@@ -1,11 +1,18 @@
 import { Spinner } from "components/universal";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  render: () => <Spinner color="brand.primary.500" h={8} w={8} />,
+export const Sizes: Story = {
+  render: () => (
+    <Flex gap={4}>
+      <Spinner size="sm" />
+      <Spinner />
+      <Spinner size="lg" />
+    </Flex>
+  ),
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
