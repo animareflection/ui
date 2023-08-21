@@ -49,5 +49,11 @@ const AccordionIcon = (props: { isOpen: boolean }) => {
     transition: "transform 0.4s",
     transformOrigin: "center",
   };
-  return <Icon style={iconStyles} as={ChevronDown} color="white" />;
+  return (
+    <Icon
+      style={iconStyles}
+      as={ChevronDown}
+      color={{ base: "white", _dark: "black" }}
+    />
+  );
 };

@@ -1,6 +1,8 @@
-import { sva } from "generated/panda/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const recipe = sva({
+export const recipe = defineSlotRecipe({
+  className: "accordion",
+  description: "The styles for the Accordion component",
   slots: ["root", "trigger", "content"],
   base: {
     root: {
@@ -17,10 +19,8 @@ export const recipe = sva({
       justifyContent: "space-between",
       width: "full",
     },
-    // content radius needs to be adjusted with new accordion button variant
     content: {
-      color: "black",
-      backgroundColor: "gray.200",
+      backgroundColor: "bg.muted",
       borderRadius: "md",
       mt: 2,
       px: 4,
@@ -30,6 +30,4 @@ export const recipe = sva({
       },
     },
   },
-  defaultVariants: {},
-  variants: {},
 });

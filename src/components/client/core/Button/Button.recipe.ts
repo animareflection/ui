@@ -22,7 +22,6 @@ export const recipe = defineRecipe({
       },
     },
   },
-  // TODO: add variants for accordion button: not expanded
   variants: {
     variant: {
       secondary: {
