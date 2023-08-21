@@ -76,6 +76,14 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    // enforce array type syntax (e.g. `string[]` instead of `Array<string>`)
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "array",
+        "readonly": "array"
+      }
+    ],
     // warn on use of type `any`
     "@typescript-eslint/no-explicit-any": "warn",
     // explicitly handle promises (e.g. `await`, `void`)
