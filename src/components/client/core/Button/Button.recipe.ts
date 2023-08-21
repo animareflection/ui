@@ -14,6 +14,7 @@ export const recipe = cva({
   defaultVariants: {
     variant: "primary",
   },
+  // TODO: add variants for accordion button: not expanded
   variants: {
     variant: {
       primary: {
