@@ -114,6 +114,8 @@
         ],
         "newlines-between": "always"
       }
-    ]
+    ],
+    // allow manual imports from __mocks__ directory
+    "jest/no-mocks-import": "off"
   }
 }

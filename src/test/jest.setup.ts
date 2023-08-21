@@ -3,7 +3,7 @@
  */
 
 // inject mocks
-import "test/mocks/resizeObserver.mock";
+import "__mocks__/resizeObserver.mock";
 
 // inject test utilities
 import "@testing-library/jest-dom";
