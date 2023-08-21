@@ -12,6 +12,7 @@ const Spinner = ({ ...props }: Props) => (
     fill="none"
     viewBox="0 0 24 24"
     animation="infinite-spin"
+    role="spinner"
     {...props}
   >
     <panda.path
