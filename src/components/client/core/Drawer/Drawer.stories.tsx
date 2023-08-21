@@ -5,9 +5,27 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const RightPlacement: Story = {
   render: () => (
     <Drawer
+      placement="left"
+      trigger={<Button>Open Drawer</Button>}
+      title="Drawer Title"
+      description="Drawer Description"
+    >
+      <Text mt={2}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam.
+      </Text>
+    </Drawer>
+  ),
+};
+
+export const LeftPlacement: Story = {
+  render: () => (
+    <Drawer
+      placement="left"
       trigger={<Button>Open Drawer</Button>}
       title="Drawer Title"
       description="Drawer Description"

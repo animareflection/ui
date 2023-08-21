@@ -1,6 +1,8 @@
-import { sva } from "generated/panda/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const recipe = sva({
+export const recipe = defineSlotRecipe({
+  className: "modal",
+  description: "The styles for the Modal component",
   slots: [
     "root",
     "backdrop",
@@ -38,9 +40,11 @@ export const recipe = sva({
       zIndex: "modal",
     },
     content: {
-      background: "white",
+      background: "bg.default",
       boxShadow: "lg",
       borderRadius: "md",
+      borderWidth: "1px",
+      borderColor: "border.default",
       width: { base: "xs", sm: "sm" },
       position: "relative",
       mx: 1,
@@ -57,11 +61,12 @@ export const recipe = sva({
       },
     },
     title: {
+      color: "fg.default",
       fontWeight: "semibold",
       textStyle: "lg",
     },
     description: {
-      color: "gray.400",
+      color: "fg.muted",
       textStyle: "sm",
     },
   },
