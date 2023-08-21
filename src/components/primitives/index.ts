@@ -1,4 +1,3 @@
-// Accordion
 export {
   default as Accordion,
   AccordionItem,
@@ -13,7 +12,6 @@ export type {
   AccordionContentProps,
 } from "./Accordion/Accordion";
 
-// Drawer
 export {
   default as Drawer,
   DrawerBackdrop,

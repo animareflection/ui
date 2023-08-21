@@ -19,9 +19,6 @@ import type { PandaComponent } from "generated/panda/types/jsx";
  * Core UI accordion primitives.
  */
 
-// [ERROR]:The inferred type of 'Accordion' cannot be named without a reference to '.store/@zag-js-accordion-npm-0.15.0-e962da3be1/node_modules/@zag-js/accordion'. This is likely not portable. A type annotation is necessary.ts(2742)
-// [FIX]: PandaComponent<typeof "Props">
-
 export type AccordionProps = ArkAccordionProps;
 const Accordion: PandaComponent<typeof ArkAccordion> = panda(ArkAccordion);
 

@@ -17,7 +17,7 @@ const MockAccordion = () => (
   </>
 );
 
-describe("Drawer", () => {
+describe("Accordion", () => {
   it("renders accordion correctly", () => {
     render(<MockAccordion />);
 
@@ -27,7 +27,7 @@ describe("Drawer", () => {
 
 const AccordionIcon = (props: { isOpen: boolean }) => {
   const iconStyles = {
-    transform: props.isOpen ? "rotate(-180deg)" : undefined,
+    transform: props.isOpen && "rotate(-180deg)",
     transition: "transform 0.4s",
     transformOrigin: "center",
   };

@@ -18,9 +18,9 @@ export interface Props extends AccordionProps {
   icon: (props: { isOpen: boolean }) => JSX.Element;
 }
 
-// /**
-//  * Core UI Accordion
-//  */
+/**
+ * Core UI Accordion
+ */
 
 const Accordion = ({ trigger, children, value, icon, ...rest }: Props) => {
   const classNames = accordion();
