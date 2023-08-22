@@ -5,9 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => (
-    <Image src="img/logo.png" alt="A beautiful beach" h={40} w={40} />
-  ),
+  render: () => <Image src="img/logo.png" alt="AR logo" h={40} w={40} />,
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
