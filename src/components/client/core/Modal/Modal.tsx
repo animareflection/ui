@@ -12,7 +12,7 @@ import {
   ModalTitle,
   ModalTrigger,
 } from "components/primitives";
-import { modal } from "generated/panda/recipes";
+import { modalRecipe } from "generated/panda/recipes";
 
 import type { ModalProps } from "components/primitives";
 import type { ReactNode } from "react";
@@ -27,7 +27,7 @@ export interface Props extends ModalProps {
  * Core UI Modal.
  */
 const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
-  const classNames = modal();
+  const classNames = modalRecipe();
 
   return (
     <PrimitiveModal {...rest}>

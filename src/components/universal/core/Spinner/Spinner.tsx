@@ -1,10 +1,11 @@
 import { panda } from "generated/panda/jsx";
-import { spinner } from "generated/panda/recipes";
+import { spinnerRecipe } from "generated/panda/recipes";
 
-import type { SpinnerVariantProps } from "generated/panda/recipes";
+import type { SpinnerRecipeVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export type Props = ComponentProps<typeof PandaSpinner> & SpinnerVariantProps;
+export type Props = ComponentProps<typeof PandaSpinner> &
+  SpinnerRecipeVariantProps;
 
 const PandaSpinner = panda("svg");
 
@@ -16,7 +17,7 @@ const Spinner = ({ size, ...props }: Props) => {
       viewBox="0 0 24 24"
       animation="infinite-spin"
       role="spinner"
-      className={spinner({ size })}
+      className={spinnerRecipe({ size })}
       {...props}
     >
       <panda.path
