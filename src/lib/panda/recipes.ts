@@ -1,3 +1,4 @@
+import { recipe as accordion } from "../../components/client/core/Accordion/Accordion.recipe";
 import { recipe as button } from "../../components/client/core/Button/Button.recipe";
 import { recipe as drawer } from "../../components/client/core/Drawer/Drawer.recipe";
 import { recipe as menu } from "../../components/client/core/Menu/Menu.recipe";
@@ -14,6 +15,7 @@ export const recipes = {
 };
 
 export const slotRecipes = {
+  accordion,
   card,
   drawer,
   menu,
