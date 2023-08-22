@@ -1,6 +1,6 @@
 import { defineRecipe } from "@pandacss/dev";
 
-export const recipe = defineRecipe({
+export const spinnerRecipe = defineRecipe({
   className: "spinner",
   description: "The styles for the Spinner component",
   base: {

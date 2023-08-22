@@ -24,7 +24,7 @@ const itemStyle = {
   },
 } as const;
 
-export const recipe = defineSlotRecipe({
+export const menuRecipe = defineSlotRecipe({
   className: "menu",
   description: "The styles for the Menu component",
   slots: [

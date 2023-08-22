@@ -1,6 +1,6 @@
 import { defineRecipe } from "@pandacss/dev";
 
-export const recipe = defineRecipe({
+export const imageRecipe = defineRecipe({
   className: "Image",
   description: "The styles for the Image component",
   variants: {
