@@ -7,6 +7,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
+type IconProps = {
+  isOpen: boolean;
+};
+
 const items = ["panel-1", "panel-2", "panel-3"];
 
 export const Default: Story = {
@@ -41,9 +45,9 @@ const meta: Meta<typeof Accordion> = {
   decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Accordion>;
 
-const AccordionIcon = (props: { isOpen: boolean }) => {
+const AccordionIcon = ({ isOpen }: IconProps) => {
   const iconStyles = {
-    transform: props.isOpen && "rotate(-180deg)",
+    transform: isOpen && "rotate(-180deg)",
     transition: "transform 0.4s",
     transformOrigin: "center",
   };

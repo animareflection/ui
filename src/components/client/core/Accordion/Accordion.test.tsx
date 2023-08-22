@@ -5,6 +5,10 @@ import { FiChevronDown as ChevronDown } from "react-icons/fi";
 import { Accordion, Icon } from "components/client";
 import { Text } from "components/universal";
 
+type IconProps = {
+  isOpen: boolean;
+};
+
 const items = ["panel-1", "panel-2", "panel-3"];
 
 const MockAccordion = () => (
@@ -25,9 +29,9 @@ describe("Accordion", () => {
   });
 });
 
-const AccordionIcon = (props: { isOpen: boolean }) => {
+const AccordionIcon = ({ isOpen }: IconProps) => {
   const iconStyles = {
-    transform: props.isOpen && "rotate(-180deg)",
+    transform: isOpen && "rotate(-180deg)",
     transition: "transform 0.4s",
     transformOrigin: "center",
   };
