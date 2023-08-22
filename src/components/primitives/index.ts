@@ -5,13 +5,6 @@ export {
   AccordionContent,
 } from "./Accordion/Accordion";
 
-export type {
-  AccordionProps,
-  AccordionItemProps,
-  AccordionTriggerProps,
-  AccordionContentProps,
-} from "./Accordion/Accordion";
-
 export {
   default as Drawer,
   DrawerBackdrop,
@@ -22,6 +15,7 @@ export {
   DrawerTitle,
   DrawerDescription,
 } from "./Drawer/Drawer";
+
 export {
   default as Menu,
   MenuArrow,
@@ -37,6 +31,7 @@ export {
   MenuTrigger,
   MenuTriggerItem,
 } from "./Menu/Menu";
+
 export {
   default as Modal,
   ModalBackdrop,
@@ -47,6 +42,7 @@ export {
   ModalTitle,
   ModalDescription,
 } from "./Modal/Modal";
+
 export {
   default as Slider,
   SliderControl,
@@ -60,6 +56,13 @@ export {
 } from "./Slider/Slider";
 
 export type {
+  AccordionProps,
+  AccordionItemProps,
+  AccordionTriggerProps,
+  AccordionContentProps,
+} from "./Accordion/Accordion";
+
+export type {
   DrawerProps,
   DrawerBackdropProps,
   DrawerCloseTriggerProps,
@@ -69,6 +72,7 @@ export type {
   DrawerTitleProps,
   DrawerTriggerProps,
 } from "./Drawer/Drawer";
+
 export type {
   MenuProps,
   MenuArrowProps,
@@ -84,6 +88,7 @@ export type {
   MenuTriggerProps,
   MenuTriggerItemProps,
 } from "./Menu/Menu";
+
 export type {
   ModalProps,
   ModalBackdropProps,
@@ -94,6 +99,7 @@ export type {
   ModalTitleProps,
   ModalTriggerProps,
 } from "./Modal/Modal";
+
 export type {
   SliderProps,
   SliderControlProps,
