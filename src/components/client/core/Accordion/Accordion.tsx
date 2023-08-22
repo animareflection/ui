@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "components/primitives";
-import { accordion } from "generated/panda/recipes";
+import { accordionRecipe } from "generated/panda/recipes";
 
 import type { AccordionProps } from "components/primitives";
 import type { ReactNode } from "react";
@@ -23,7 +23,7 @@ export interface Props extends AccordionProps {
  */
 
 const Accordion = ({ trigger, children, value, icon, ...rest }: Props) => {
-  const classNames = accordion();
+  const classNames = accordionRecipe();
   const Icon = icon;
 
   return (
