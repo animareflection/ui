@@ -1,6 +1,6 @@
 import { defineSlotRecipe } from "@pandacss/dev";
 
-export const recipe = defineSlotRecipe({
+export const sliderRecipe = defineSlotRecipe({
   className: "slider",
   description: "The styles for the Slider component",
   slots: [

@@ -1,6 +1,6 @@
 import { defineRecipe } from "@pandacss/dev";
 
-export const recipe = defineRecipe({
+export const buttonRecipe = defineRecipe({
   className: "button",
   description: "The styles for the Button component",
   base: {
