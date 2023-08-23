@@ -1,10 +1,10 @@
 import { panda } from "generated/panda/jsx";
-import { cardRecipe } from "generated/panda/recipes";
+import { card } from "generated/panda/recipes";
 import { getChildrenOnDisplayName } from "lib/utils";
 
 import type { HTMLPandaProps } from "generated/panda/jsx";
 
-const cardClasses = cardRecipe();
+const cardClasses = card();
 
 type Props = HTMLPandaProps<"div">;
 

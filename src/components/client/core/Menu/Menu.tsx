@@ -11,13 +11,13 @@ import {
   MenuItemGroupLabel,
   MenuTriggerItem,
 } from "components/primitives";
-import { buttonRecipe, menuRecipe } from "generated/panda/recipes";
+import { button, menu } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
 import type { MenuProps } from "components/primitives";
 import type {
-  ButtonRecipeVariantProps,
-  MenuRecipeVariantProps,
+  ButtonVariantProps,
+  MenuVariantProps,
 } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
@@ -34,10 +34,10 @@ export interface MenuItemGroupRecord {
   items: MenuItemRecord[];
 }
 
-export interface Props extends MenuProps, MenuRecipeVariantProps {
+export interface Props extends MenuProps, MenuVariantProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
-  triggerVariant?: ButtonRecipeVariantProps["variant"];
+  triggerVariant?: ButtonVariantProps["variant"];
   groups?: MenuItemGroupRecord[];
 }
 
@@ -53,7 +53,7 @@ const Menu = ({
   size,
   ...rest
 }: Props) => {
-  const classNames = menuRecipe({ size });
+  const classNames = menu({ size });
 
   const isMounted = useIsMounted();
 
@@ -64,7 +64,7 @@ const Menu = ({
       {(ctx) => (
         <>
           {trigger && (
-            <MenuTrigger className={buttonRecipe({ variant: triggerVariant })}>
+            <MenuTrigger className={button({ variant: triggerVariant })}>
               {trigger}
             </MenuTrigger>
           )}

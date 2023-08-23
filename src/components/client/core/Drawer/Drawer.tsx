@@ -12,13 +12,13 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "components/primitives";
-import { drawerRecipe } from "generated/panda/recipes";
+import { drawer } from "generated/panda/recipes";
 
 import type { DrawerProps } from "components/primitives";
-import type { DrawerRecipeVariantProps } from "generated/panda/recipes";
+import type { DrawerVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
-export interface Props extends DrawerProps, DrawerRecipeVariantProps {
+export interface Props extends DrawerProps, DrawerVariantProps {
   trigger: ReactNode;
   title?: string;
   description?: string;
@@ -35,7 +35,7 @@ const Drawer = ({
   description,
   ...rest
 }: Props) => {
-  const classNames = drawerRecipe({ placement });
+  const classNames = drawer({ placement });
 
   return (
     <PrimitiveDrawer {...rest}>

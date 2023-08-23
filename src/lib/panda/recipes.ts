@@ -10,17 +10,17 @@ import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.r
 import { textRecipe } from "../../components/universal/core/Text/Text.recipe";
 
 export const recipes = {
-  buttonRecipe,
-  imageRecipe,
-  spinnerRecipe,
-  textRecipe,
+  button: buttonRecipe,
+  image: imageRecipe,
+  spinner: spinnerRecipe,
+  text: textRecipe,
 };
 
 export const slotRecipes = {
-  accordionRecipe,
-  cardRecipe,
-  drawerRecipe,
-  menuRecipe,
-  modalRecipe,
-  sliderRecipe,
+  accordion: accordionRecipe,
+  card: cardRecipe,
+  drawer: drawerRecipe,
+  menu: menuRecipe,
+  modal: modalRecipe,
+  slider: sliderRecipe,
 };
