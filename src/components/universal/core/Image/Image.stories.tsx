@@ -7,14 +7,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Image src="img/logo.png" alt="AR logo" height={40} width={40} />
+    <Image src="/img/logo.png" alt="AR logo" height={40} width={40} />
   ),
 };
 
 export const LayoutFill: Story = {
   render: () => (
     <panda.div h={40} w={40}>
-      <Image src="img/logo.png" alt="AR logo" layout="fill" />
+      <Image src="/img/logo.png" alt="AR logo" layout="fill" />
     </panda.div>
   ),
 };
