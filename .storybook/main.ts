@@ -6,6 +6,10 @@ import type { StorybookConfig } from "@storybook/nextjs";
  * Storybook configuration.
  */
 const storybookConfig: StorybookConfig = {
+  core: {
+    builder: "@storybook/builder-webpack5",
+    disableTelemetry: true,
+  },
   framework: {
     name: "@storybook/nextjs",
     options: {},

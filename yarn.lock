@@ -43,6 +43,7 @@ __metadata:
     "@storybook/addon-interactions": ^7.3.2
     "@storybook/addon-links": ^7.3.2
     "@storybook/blocks": ^7.3.2
+    "@storybook/builder-webpack5": ^7.3.2
     "@storybook/manager-api": ^7.3.2
     "@storybook/nextjs": ^7.3.2
     "@storybook/react": ^7.3.2
@@ -4472,7 +4473,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/builder-webpack5@npm:7.3.2":
+"@storybook/builder-webpack5@npm:7.3.2, @storybook/builder-webpack5@npm:^7.3.2":
   version: 7.3.2
   resolution: "@storybook/builder-webpack5@npm:7.3.2"
   dependencies:
