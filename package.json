@@ -120,8 +120,6 @@
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
-    "vite": "^4.4.9",
-    "vite-tsconfig-paths": "^4.2.0",
     "webpack": "^5.88.2",
     "yalc": "^1.0.0-pre.53"
   }

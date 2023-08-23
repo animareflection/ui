@@ -91,8 +91,6 @@ __metadata:
     tsconfig-paths-webpack-plugin: ^4.1.0
     tsup: ^7.2.0
     typescript: ^5.1.6
-    vite: ^4.4.9
-    vite-tsconfig-paths: ^4.2.0
     webpack: ^5.88.2
     yalc: ^1.0.0-pre.53
   peerDependencies:
@@ -12494,13 +12492,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globrex@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "globrex@npm:0.1.2"
-  checksum: adca162494a176ce9ecf4dd232f7b802956bb1966b37f60c15e49d2e7d961b66c60826366dc2649093cad5a0d69970cfa8875bd1695b5a1a2f33dcd2aa88da3c
-  languageName: node
-  linkType: hard
-
 "gopd@npm:^1.0.1":
   version: 1.0.1
   resolution: "gopd@npm:1.0.1"
@@ -19878,7 +19869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfck@npm:^2.1.0, tsconfck@npm:^2.1.2":
+"tsconfck@npm:^2.1.2":
   version: 2.1.2
   resolution: "tsconfck@npm:2.1.2"
   peerDependencies:
@@ -20657,22 +20648,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-tsconfig-paths@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "vite-tsconfig-paths@npm:4.2.0"
-  dependencies:
-    debug: ^4.1.1
-    globrex: ^0.1.2
-    tsconfck: ^2.1.0
-  peerDependencies:
-    vite: "*"
-  peerDependenciesMeta:
-    vite:
-      optional: true
-  checksum: 73a8467de72d7ac502328454fd00c19571cd4bad2dd5982643b24718bb95e449a3f4153cfc2d58a358bfc8f37e592fb442fc10884b59ae82138c1329160cd952
-  languageName: node
-  linkType: hard
-
 "vite@npm:4.4.8":
   version: 4.4.8
   resolution: "vite@npm:4.4.8"
@@ -20713,7 +20688,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.4.6, vite@npm:^4.4.9":
+"vite@npm:^4.4.6":
   version: 4.4.9
   resolution: "vite@npm:4.4.9"
   dependencies:
