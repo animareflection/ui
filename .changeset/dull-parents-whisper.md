@@ -2,4 +2,4 @@
 "@animareflection/ui": minor
 ---
 
-Add Accordion component
+Add `Accordion` component
