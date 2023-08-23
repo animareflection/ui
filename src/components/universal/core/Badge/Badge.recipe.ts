@@ -1,6 +1,6 @@
 import { defineRecipe } from "@pandacss/dev";
 
-export const recipe = defineRecipe({
+export const badgeRecipe = defineRecipe({
   className: "badge",
   description: "The styles for the Badge component",
   base: {
@@ -30,6 +30,7 @@ export const recipe = defineRecipe({
       outline: {
         borderWidth: "2px",
         borderColor: "border.emphasized",
+        color: "fg.emphasized",
       },
     },
     size: {

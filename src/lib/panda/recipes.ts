@@ -4,14 +4,16 @@ import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe"
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
+import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
 import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.recipe";
 import { textRecipe } from "../../components/universal/core/Text/Text.recipe";
 
 export const recipes = {
-  buttonRecipe,
-  spinnerRecipe,
-  textRecipe,
+  badge: badgeRecipe,
+  button: buttonRecipe,
+  spinner: spinnerRecipe,
+  text: textRecipe,
 };
 
 export const slotRecipes = {
