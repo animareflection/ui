@@ -52,6 +52,7 @@ const Image = ({ fill, height, width, ...rest }: Props) => {
       delete containerProps[prop];
     else delete imageProps[prop];
   }
+
   return (
     <panda.div
       display="flex"
