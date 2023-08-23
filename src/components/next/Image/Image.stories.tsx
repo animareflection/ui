@@ -1,4 +1,4 @@
-import { Image } from "components/universal";
+import { Image } from "components/next";
 import { panda } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -14,14 +14,14 @@ export const Default: Story = {
 export const LayoutFill: Story = {
   render: () => (
     <panda.div h={40} w={40}>
-      <Image src="img/logo.png" alt="AR logo" layout="fill" />
+      <Image src="img/logo.png" alt="AR logo" fill />
     </panda.div>
   ),
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
 const meta: Meta<typeof Image> = {
-  title: "Components/Universal/Core/Image",
+  title: "Components/Next/Image",
   component: Image,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
