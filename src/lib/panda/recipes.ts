@@ -15,10 +15,10 @@ export const recipes = {
 };
 
 export const slotRecipes = {
-  accordionRecipe,
-  cardRecipe,
-  drawerRecipe,
-  menuRecipe,
-  modalRecipe,
-  sliderRecipe,
+  accordion: accordionRecipe,
+  card: cardRecipe,
+  drawer: drawerRecipe,
+  menu: menuRecipe,
+  modal: modalRecipe,
+  slider: sliderRecipe,
 };

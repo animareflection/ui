@@ -8,7 +8,7 @@ import {
   SliderThumb,
   SliderTrack,
 } from "components/primitives";
-import { sliderRecipe } from "generated/panda/recipes";
+import { slider } from "generated/panda/recipes";
 
 import type { SliderProps } from "components/primitives";
 import type { JsxStyleProps } from "generated/panda/types";
@@ -26,7 +26,7 @@ export interface Props extends SliderProps {
 }
 
 const Slider = ({ label, markers, maxW, ...rest }: Props) => {
-  const classNames = sliderRecipe();
+  const classNames = slider();
 
   return (
     <PrimitiveSlider {...rest}>
