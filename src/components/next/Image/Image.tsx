@@ -6,7 +6,7 @@ import type { AspectRatioProps } from "generated/panda/jsx";
 import type { ImageProps as NextImageProps } from "next/image";
 
 export interface Props extends NextImageProps {
-  containerProps?: AspectRatioProps;
+  containerProps?: Omit<AspectRatioProps, "width" | "height">;
 }
 
 /**
