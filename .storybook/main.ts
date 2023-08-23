@@ -1,17 +1,15 @@
-import { mergeConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
-import type { StorybookConfig } from "@storybook/react-vite";
+import type { StorybookConfig } from "@storybook/nextjs";
 
 /**
  * Storybook configuration.
  */
 const storybookConfig: StorybookConfig = {
-  core: {
-    builder: "@storybook/builder-vite",
-    disableTelemetry: true,
+  framework: {
+    name: "@storybook/nextjs",
+    options: {},
   },
-  framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx|mdx)"],
   // inject CSS into Storybook UI
   managerHead: (head) => `
@@ -39,15 +37,17 @@ const storybookConfig: StorybookConfig = {
     // NB: this is a hack to get custom styles (e.g. custom fonts) rendering in the Storybook manager UI. This *does* duplicate some static CSS already in the build, but is a convenient workaround
     { from: "../src/lib/styles", to: "styles" },
   ],
-  viteFinal: (config) =>
-    // recursively merge Vite options
-    mergeConfig(config, {
-      plugins: [tsconfigPaths()],
-      // dependencies to pre-optimize
-      optimizeDeps: {
-        include: ["storybook-dark-mode"],
-      },
-    }),
+  webpackFinal: async (config) => {
+    if (config.resolve) {
+      config.resolve.plugins = [
+        ...(config.resolve.plugins || []),
+        new TsconfigPathsPlugin({
+          extensions: config.resolve.extensions,
+        }),
+      ];
+    }
+    return config;
+  },
 };
 
 export default storybookConfig;
