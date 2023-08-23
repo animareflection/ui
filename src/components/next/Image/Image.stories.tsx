@@ -7,7 +7,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Image src="/img/logo.png" alt="AR logo" height={40} width={40} />
+    <Image
+      src="/img/logo.png"
+      alt="AR logo"
+      containerProps={{
+        h: 40,
+        w: 40,
+      }}
+    />
   ),
 };
 
