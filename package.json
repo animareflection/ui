@@ -25,6 +25,11 @@
       "import": "./build/client.mjs",
       "types": "./build/client.d.ts"
     },
+    "./next": {
+      "require": "./build/next.js",
+      "import": "./build/next.mjs",
+      "types": "./build/next.d.ts"
+    },
     "./primitives": {
       "require": "./build/primitives.js",
       "import": "./build/primitives.mjs",
@@ -36,7 +41,7 @@
     "prepare:css": "panda codegen",
     "dev": "panda codegen && concurrently --kill-others -n \"BUILD,PANDA,STORYBOOK\" -c \"#f13334,#ffc83d,#ff4785\" \"yarn build --watch\" \"yarn dev:css\" \"yarn storybook\"",
     "dev:css": "panda --watch",
-    "build": "panda codegen && tsup --onSuccess 'while [ ! -f ./build/ui.d.ts ] && [ ! -f ./build/client.d.ts ] && [ ! -f ./build/primitives.d.ts ]; do sleep 1; done && sleep 4; yarn yalc push'",
+    "build": "panda codegen && tsup --onSuccess 'while [ ! -f ./build/ui.d.ts ] && [ ! -f ./build/client.d.ts ] && [ ! -f ./build/primitives.d.ts ] && [ ! -f ./build/next.d.ts ]; do sleep 1; done && sleep 4; yarn yalc push'",
     "format": "prettier . --write",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "test": "panda codegen && jest",
