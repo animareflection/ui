@@ -19,9 +19,8 @@ export interface Props extends AccordionProps {
 }
 
 /**
- * Core UI Accordion
+ * Core UI accordion.
  */
-
 const Accordion = ({ trigger, children, value, icon, ...rest }: Props) => {
   const classNames = accordion();
   const Icon = icon;
