@@ -20,14 +20,14 @@ export const badgeRecipe = defineRecipe({
   variants: {
     variant: {
       subtle: {
-        background: "bg.subtle",
-        borderColor: "border.default",
+        background: "accent.subtle",
+        borderColor: "border.accent",
         borderWidth: "1px",
         color: "fg.emphasized",
       },
       outline: {
         background: "bg.subtle",
-        borderWidth: "2px",
+        borderWidth: "1px",
         borderColor: "border.emphasized",
         color: "fg.emphasized",
       },
