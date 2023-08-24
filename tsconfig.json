@@ -20,7 +20,8 @@
     "strict": true,
     "target": "esnext",
     "typeRoots": [
-      "generated/panda"
+      "generated/panda",
+      "node_modules/@types"
     ]
   },
   "include": [

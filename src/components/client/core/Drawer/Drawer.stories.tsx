@@ -8,7 +8,6 @@ type Story = StoryObj<typeof meta>;
 export const RightPlacement: Story = {
   render: () => (
     <Drawer
-      placement="left"
       trigger={<Button>Open Drawer</Button>}
       title="Drawer Title"
       description="Drawer Description"

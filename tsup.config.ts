@@ -8,6 +8,7 @@ const tsupConfig = defineTsupConfig({
   entry: {
     ui: "src/index.ts",
     client: "src/index.client.ts",
+    next: "src/index.next.ts",
     primitives: "src/index.primitives.ts",
   },
   // TODO enable Rollup tree-shaking, temporarily disabled to allow properly injecting `use client` directive banner (Rollup tree-shaking removes it); track https://github.com/egoist/tsup/issues/835
@@ -18,7 +19,7 @@ const tsupConfig = defineTsupConfig({
   dts: true,
   splitting: false,
   format: ["cjs", "esm"],
-  external: ["react", "@ark-ui/react", "react-icons"],
+  external: ["react", "@ark-ui/react", "react-icons", "next"],
   outDir: "build",
   esbuildOptions: (opt, _ctx) => {
     // https://esbuild.github.io/api/#resolve-extensions
