@@ -3,12 +3,11 @@ import { render, screen } from "@testing-library/react";
 
 import { Badge } from "components/universal";
 
-const MockBadge = () => <Badge />;
-
+const MockBadge = () => <Badge>badge test</Badge>;
 describe("Badge", () => {
   it("renders badge correctly", () => {
     render(<MockBadge />);
 
-    expect(screen.getByRole("button")).toBeInTheDocument();
+    expect(screen.getByText(/badge/i)).toHaveClass("badge");
   });
 });
