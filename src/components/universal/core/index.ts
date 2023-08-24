@@ -1,3 +1,4 @@
+export { default as Badge } from "./Badge/Badge";
 export { default as Card, CardHeader, CardBody, CardFooter } from "./Card/Card";
 export { default as Image } from "./Image/Image";
 export { default as Spinner } from "./Spinner/Spinner";
