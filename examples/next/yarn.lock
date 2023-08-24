@@ -22,16 +22,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@animareflection/ui@file:.yalc/@animareflection/ui::locator=ui-next-example%40workspace%3A.":
-  version: 0.3.0
-  resolution: "@animareflection/ui@file:.yalc/@animareflection/ui#.yalc/@animareflection/ui::hash=9a3874&locator=ui-next-example%40workspace%3A."
-  peerDependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  checksum: dd5dc4b982c38234e96c4b35b6ba0cb5092733ef6e558f16706d952fe054747c2d8886b672c00f59e28e07e01938e39d076bb3fe78ae19c8485ea17941fe9185
-  languageName: node
-  linkType: hard
-
 "@ark-ui/react@npm:0.7.2":
   version: 0.7.2
   resolution: "@ark-ui/react@npm:0.7.2"
@@ -8360,7 +8350,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ui-next-example@workspace:."
   dependencies:
-    "@animareflection/ui": "file:.yalc/@animareflection/ui"
     "@pandacss/dev": ^0.9.0
     "@types/node": ^20.4.6
     "@types/react": ^18.2.18
