@@ -1,4 +1,6 @@
-import { Button } from "components/client";
+import { FiChevronDown as ChevronDownIcon } from "react-icons/fi";
+
+import { Button, Icon } from "components/client";
 import {
   Accordion as PrimitiveAccordion,
   AccordionItem,
@@ -13,17 +15,14 @@ import type { ReactNode } from "react";
 export interface Props extends AccordionProps {
   trigger: ReactNode;
   children: ReactNode;
-  disabled?: boolean;
   value: string;
-  icon: (props: { isOpen: boolean }) => JSX.Element;
 }
 
 /**
  * Core UI accordion.
  */
-const Accordion = ({ trigger, children, value, icon, ...rest }: Props) => {
+const Accordion = ({ trigger, children, value, ...rest }: Props) => {
   const classNames = accordion();
-  const Icon = icon;
 
   return (
     <PrimitiveAccordion collapsible className={classNames.root} {...rest}>
@@ -38,7 +37,13 @@ const Accordion = ({ trigger, children, value, icon, ...rest }: Props) => {
                 justifyContent="space-between"
               >
                 {trigger}
-                <Icon isOpen={isOpen} />
+                <Icon
+                  as={ChevronDownIcon}
+                  transform={isOpen ? "rotate(-180deg)" : undefined}
+                  transition="transform 0.4s"
+                  transformOrigin="center"
+                  color={{ base: "white", _dark: "black" }}
+                />
               </Button>
             </AccordionTrigger>
             <AccordionContent className={classNames.content}>

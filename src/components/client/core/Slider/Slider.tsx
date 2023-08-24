@@ -29,7 +29,7 @@ const Slider = ({ label, markers, maxW, ...rest }: Props) => {
   const classNames = slider();
 
   return (
-    <PrimitiveSlider {...rest}>
+    <PrimitiveSlider className={classNames.root} {...rest}>
       {label && <SliderLabel className={classNames.label}>{label}</SliderLabel>}
       <SliderControl className={classNames.control} maxW={maxW}>
         <SliderTrack className={classNames.track} maxW={maxW}>

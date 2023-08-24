@@ -1,23 +1,17 @@
-import { FiChevronDown as ChevronDown } from "react-icons/fi";
-
-import { Accordion, Icon } from "components/client";
+import { Accordion } from "components/client";
 import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
-type IconProps = {
-  isOpen: boolean;
-};
-
-const items = ["panel-1", "panel-2", "panel-3"];
+const ITEMS = ["panel-1", "panel-2", "panel-3"];
 
 export const Default: Story = {
   render: () => (
     <>
-      {items.map((item, id) => (
-        <Accordion icon={AccordionIcon} key={id} value={item} trigger={item}>
+      {ITEMS.map((item, id) => (
+        <Accordion key={id} value={item} trigger={item}>
           <Text>{item} content</Text>
         </Accordion>
       ))}
@@ -28,8 +22,8 @@ export const Default: Story = {
 export const WithContext: Story = {
   render: () => (
     <>
-      {items.map((item, id) => (
-        <Accordion icon={AccordionIcon} key={id} value={item} trigger={item}>
+      {ITEMS.map((item, id) => (
+        <Accordion key={id} value={item} trigger={item}>
           <Text>{item} content</Text>
         </Accordion>
       ))}
@@ -44,20 +38,5 @@ const meta: Meta<typeof Accordion> = {
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Accordion>;
-
-const AccordionIcon = ({ isOpen }: IconProps) => {
-  const iconStyles = {
-    transform: isOpen && "rotate(-180deg)",
-    transition: "transform 0.4s",
-    transformOrigin: "center",
-  };
-  return (
-    <Icon
-      style={iconStyles}
-      as={ChevronDown}
-      color={{ base: "white", _dark: "black" }}
-    />
-  );
-};
 
 export default meta;
