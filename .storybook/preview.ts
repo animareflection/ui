@@ -26,6 +26,9 @@ const preview: Preview = {
       classTarget: "html",
       stylePreview: true,
     },
+    nextjs: {
+      appDirectory: true,
+    },
   },
 };
 
