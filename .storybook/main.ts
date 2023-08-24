@@ -14,7 +14,11 @@ const storybookConfig: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
-  stories: ["../src/**/*.stories.@(ts|tsx|mdx)"],
+  stories: [
+    // NB: intentional pattern duplication (with capture group below) to ensure introduction page is loaded first
+    "../src/stories/introduction.stories.mdx",
+    "../src/**/*.stories.@(ts|tsx|mdx)",
+  ],
   // inject CSS into Storybook UI
   managerHead: (head) => `
   ${head}

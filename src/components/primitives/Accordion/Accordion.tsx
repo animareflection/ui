@@ -18,7 +18,6 @@ import type { PandaComponent } from "generated/panda/types/jsx";
 /**
  * Core UI accordion primitives.
  */
-
 export type AccordionProps = ArkAccordionProps;
 const Accordion: PandaComponent<typeof ArkAccordion> = panda(ArkAccordion);
 
