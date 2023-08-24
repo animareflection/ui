@@ -22,7 +22,7 @@ const Image = ({ containerProps, fill, ...rest }: Props) => (
   >
     <NextImage
       priority
-      fill={true}
+      fill
       sizes={
         fill
           ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
