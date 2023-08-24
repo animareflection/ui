@@ -1,2 +1,2 @@
-// export nextjs
+// export nextjs enhanced components
 export * from "components/next";
