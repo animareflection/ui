@@ -1,6 +1,6 @@
 import { defineSlotRecipe } from "@pandacss/dev";
 
-export const recipe = defineSlotRecipe({
+export const accordionRecipe = defineSlotRecipe({
   className: "accordion",
   description: "The styles for the Accordion component",
   slots: ["root", "trigger", "content"],

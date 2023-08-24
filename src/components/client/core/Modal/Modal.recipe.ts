@@ -1,6 +1,6 @@
 import { defineSlotRecipe } from "@pandacss/dev";
 
-export const recipe = defineSlotRecipe({
+export const modalRecipe = defineSlotRecipe({
   className: "modal",
   description: "The styles for the Modal component",
   slots: [
