@@ -10,8 +10,7 @@ export type Props = ComponentPropsWithoutRef<typeof panda.div> &
 /**
  * Core UI Badge
  */
-
-export const Badge = ({ variant, size = "md", children, ...props }: Props) => {
+export const Badge = ({ variant, size, children, ...props }: Props) => {
   return (
     <panda.div className={badge({ variant, size })} {...props}>
       {children}

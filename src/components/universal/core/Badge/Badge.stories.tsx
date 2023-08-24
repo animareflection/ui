@@ -5,8 +5,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
-export const Solid: Story = {
-  render: () => <Badge variant="solid">Badge</Badge>,
+export const Default: Story = {
+  render: () => <Badge>Badge</Badge>,
 };
 export const Subtle: Story = {
   render: () => <Badge variant="subtle">Badge</Badge>,
@@ -18,15 +18,9 @@ export const Outline: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex gap={2} alignItems="center">
-      <Badge variant="solid" size="sm">
-        Badge
-      </Badge>
-      <Badge variant="solid" size="md">
-        Badge
-      </Badge>
-      <Badge variant="solid" size="lg">
-        Badge
-      </Badge>
+      <Badge size="sm">Badge</Badge>
+      <Badge>Badge</Badge>
+      <Badge size="lg">Badge</Badge>
     </Flex>
   ),
 };
