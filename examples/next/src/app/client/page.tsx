@@ -22,9 +22,29 @@ import type {
   MenuItemRecord,
   MenuItemGroupRecord,
   SliderMarkerRecord,
+  AccordionItemRecord,
 } from "@animareflection/ui/client";
 
-const ACCORDION_ITEMS = ["panel-1", "panel-2", "panel-3"];
+const ITEMS: AccordionItemRecord[] = [
+  {
+    id: "panel-1",
+    value: "panel-1",
+    triggerLabel: "Panel 1",
+    content: "Panel 1 content",
+  },
+  {
+    id: "panel-2",
+    value: "panel-2",
+    triggerLabel: "Panel 2",
+    content: "Panel 2 content",
+  },
+  {
+    id: "panel-3",
+    value: "panel-3",
+    triggerLabel: "Panel 3",
+    content: "Panel 3 content",
+  },
+];
 
 const SUBMENU_GROUP_ITEMS: MenuItemRecord[] = [
   { id: "item-7", child: "Item 7" },
@@ -98,11 +118,7 @@ const ClientPage = () => (
       Click me
     </Button>
     <Text fontWeight="bold">Accordion:</Text>
-    {ACCORDION_ITEMS.map((item, id) => (
-      <Accordion key={id} value={item} trigger={item}>
-        <Text>{item} content</Text>
-      </Accordion>
-    ))}
+    <Accordion items={ITEMS} />
     <Text fontWeight="bold">Drawer:</Text>
     <Drawer
       trigger={<Button>Open Drawer</Button>}

@@ -12,46 +12,55 @@ import { accordion } from "generated/panda/recipes";
 import type { AccordionProps } from "components/primitives";
 import type { ReactNode } from "react";
 
-export interface Props extends AccordionProps {
-  trigger: ReactNode;
-  children: ReactNode;
+export interface AccordionItemRecord {
+  id: string;
   value: string;
+  triggerLabel?: string;
+  content: ReactNode;
+}
+
+export interface Props extends AccordionProps {
+  items: AccordionItemRecord[];
 }
 
 /**
  * Core UI accordion.
  */
-const Accordion = ({ trigger, children, value, ...rest }: Props) => {
+const Accordion = ({ items, ...rest }: Props) => {
   const classNames = accordion();
 
   return (
-    <PrimitiveAccordion collapsible className={classNames.root} {...rest}>
-      <AccordionItem value={value}>
-        {({ isOpen }) => (
-          <>
-            <AccordionTrigger className={classNames.trigger} asChild>
-              <Button
-                display="flex"
-                alignItems="center"
-                w="full"
-                justifyContent="space-between"
-              >
-                {trigger}
-                <Icon
-                  as={ChevronDownIcon}
-                  transform={isOpen ? "rotate(-180deg)" : undefined}
-                  transition="transform 0.4s"
-                  transformOrigin="center"
-                  color={{ base: "white", _dark: "black" }}
-                />
-              </Button>
-            </AccordionTrigger>
-            <AccordionContent className={classNames.content}>
-              {children}
-            </AccordionContent>
-          </>
-        )}
-      </AccordionItem>
+    <PrimitiveAccordion
+      collapsible
+      multiple
+      className={classNames.root}
+      {...rest}
+    >
+      {items.map(({ id, value, triggerLabel, content }) => (
+        <AccordionItem key={id} value={value}>
+          {({ isOpen }) => (
+            <>
+              <AccordionTrigger className={classNames.trigger} asChild>
+                <Button borderBottomRadius={isOpen ? "unset" : "md"}>
+                  {triggerLabel ?? value}
+                  <Icon
+                    as={ChevronDownIcon}
+                    transform={isOpen ? "rotate(-180deg)" : undefined}
+                    transition="transform 0.4s"
+                    transformOrigin="center"
+                    color={{ base: "white", _dark: "black" }}
+                  />
+                </Button>
+              </AccordionTrigger>
+              {isOpen && (
+                <AccordionContent className={classNames.content}>
+                  {content}
+                </AccordionContent>
+              )}
+            </>
+          )}
+        </AccordionItem>
+      ))}
     </PrimitiveAccordion>
   );
 };
