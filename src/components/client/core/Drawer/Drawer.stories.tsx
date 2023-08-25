@@ -1,9 +1,6 @@
-import { expect } from "@storybook/jest";
-import { screen, within } from "@storybook/testing-library";
-
+import { openState } from "./Drawer.spec";
 import { Button, Drawer } from "components/client";
 import { Text } from "components/universal";
-import { sleep } from "lib/utils";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -56,35 +53,7 @@ export const WithContext: Story = {
 
 export const OpenState: Story = {
   ...WithContext,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    const openButton = canvas.getByRole("button", {
-      name: /open drawer/i,
-    });
-
-    // await userEvent.click(openButton);
-
-    // ? this works, above does not
-    openButton.click();
-
-    await sleep(2000);
-
-    const drawerTitle = screen.getByText("Drawer Title");
-
-    await expect(drawerTitle).toBeInTheDocument();
-
-    const closeButton = screen.getByRole("button");
-    closeButton.click();
-
-    await sleep(2000);
-
-    await expect(drawerTitle).not.toBeInTheDocument();
-
-    // TODO determine if below is better practice than `screen` utility
-    // const body = canvasElement.ownerDocument.body;
-    // await expect(within(body).getByText("Drawer Title")).toBeInTheDocument();
-  },
+  play: openState,
   name: "[TEST] Open State",
   tags: ["test"],
 };
