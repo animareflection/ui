@@ -9,6 +9,7 @@ import {
   SliderTrack,
 } from "components/primitives";
 import { slider } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { SliderProps } from "components/primitives";
 import type { JsxStyleProps } from "generated/panda/types";
@@ -27,6 +28,10 @@ export interface Props extends SliderProps {
 
 const Slider = ({ label, markers, maxW, ...rest }: Props) => {
   const classNames = slider();
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveSlider className={classNames.root} {...rest}>
