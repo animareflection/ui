@@ -41,14 +41,14 @@ const Accordion = ({ items, ...rest }: Props) => {
           {({ isOpen }) => (
             <>
               <AccordionTrigger className={classNames.trigger} asChild>
-                <Button borderBottomRadius={isOpen ? "unset" : "md"}>
+                <Button w="full" borderBottomRadius={isOpen ? "unset" : "md"}>
                   {triggerLabel ?? value}
                   <Icon
                     as={ChevronDownIcon}
                     transform={isOpen ? "rotate(-180deg)" : undefined}
                     transition="transform 0.4s"
                     transformOrigin="center"
-                    color="fg.default"
+                    color="accent.fg"
                   />
                 </Button>
               </AccordionTrigger>
