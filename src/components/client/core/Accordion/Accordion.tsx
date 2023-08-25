@@ -48,7 +48,7 @@ const Accordion = ({ items, ...rest }: Props) => {
                     transform={isOpen ? "rotate(-180deg)" : undefined}
                     transition="transform 0.4s"
                     transformOrigin="center"
-                    color={{ base: "white", _dark: "black" }}
+                    color="fg.default"
                   />
                 </Button>
               </AccordionTrigger>
