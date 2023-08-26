@@ -1,3 +1,4 @@
+import { openState } from "./Menu.spec";
 import { Button, Menu } from "components/client";
 import { Text } from "components/universal";
 import { HStack } from "generated/panda/jsx";
@@ -99,12 +100,19 @@ export const WithContext: Story = {
       groups={WITH_CONTEXT_GROUPS}
     >
       {({ onClose }) => (
-        <Button mx={1} variant="ghost" onClick={onClose}>
+        <Button borderRadius="unset" variant="ghost" w="full" onClick={onClose}>
           Close
         </Button>
       )}
     </Menu>
   ),
+};
+
+export const OpenState: Story = {
+  ...WithContext,
+  play: openState,
+  name: "[TEST] Open State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
