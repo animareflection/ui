@@ -37,7 +37,8 @@ const storybookConfig: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-coverage",
+    // TODO enable coverage addon, causes tests to be flaky (e.g. with https://github.com/storybookjs/test-runner/issues/336)
+    // "@storybook/addon-coverage",
     "storybook-dark-mode",
   ],
   staticDirs: [
