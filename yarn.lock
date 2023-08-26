@@ -8039,12 +8039,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zag-js/store@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@zag-js/store@npm:0.13.0"
+"@zag-js/store@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@zag-js/store@npm:0.16.0"
   dependencies:
     proxy-compare: 2.5.1
-  checksum: acf7a3f109d18189fe954349f8e4fd391b548ef782af4dad41e168c669e846f1b084f96feb423c3b7a8dcf2bddf5e4c9a63908af12cd3a3cec94dd4601a7395f
+  checksum: 0df2407d06b4cc7a1b6a1bf48e7c11a214be415d81db902340014b05692d5fb4f8c76032b3950b3a45dddd82db4c88b7ae303eb63d5dc48c2f7995b56a4a81fc
   languageName: node
   linkType: hard
 
