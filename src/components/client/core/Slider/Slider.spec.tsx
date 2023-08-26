@@ -4,8 +4,6 @@ import { within, userEvent } from "@storybook/testing-library";
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
-// TODO implement `userEvent` simulation package from `@storybook/testing-library` instead of native HTML browser click event (e.g. `await userEvent.click(openButton);` instead of `openButton.click();`); https://trello.com/c/Ez0nSBmA/152-implement-userevent-in-story-play-tests
-
 /**
  * Test slider thumb moves correctly.
  */
