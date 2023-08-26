@@ -1,7 +1,7 @@
 import path from "path";
 
+import type { AddonOptionsBabel } from "@storybook/addon-coverage";
 import type { StorybookConfig } from "@storybook/nextjs";
-
 /**
  * Storybook configuration.
  */
@@ -37,8 +37,18 @@ const storybookConfig: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    // TODO enable coverage addon, causes tests to be flaky (e.g. with https://github.com/storybookjs/test-runner/issues/336)
-    // "@storybook/addon-coverage",
+    {
+      name: "@storybook/addon-coverage",
+      options: {
+        istanbul: {
+          include: [
+            "**/*.tsx",
+            // ignore stories
+            "!**/*.stories.tsx",
+          ],
+        },
+      } as AddonOptionsBabel,
+    },
     "storybook-dark-mode",
   ],
   staticDirs: [
