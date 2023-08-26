@@ -12,17 +12,9 @@
 
 - [#55](https://github.com/animareflection/ui/pull/55) [`5b3fca6`](https://github.com/animareflection/ui/commit/5b3fca6ea18706bad9573e09123d8b1fdb276612) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add Next.js enhanced `Image` component
 
-- [#55](https://github.com/animareflection/ui/pull/55) [`5b3fca6`](https://github.com/animareflection/ui/commit/5b3fca6ea18706bad9573e09123d8b1fdb276612) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Image` component
+- [#55](https://github.com/animareflection/ui/pull/55) [`5b3fca6`](https://github.com/animareflection/ui/commit/5b3fca6ea18706bad9573e09123d8b1fdb276612) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Image` components (regular & Next.js-enhanced)
 
 - [#52](https://github.com/animareflection/ui/pull/52) [`ffa0395`](https://github.com/animareflection/ui/commit/ffa03955528700a9122fe9879bfc5e17ff1ae846) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Spinner` component
-
-### Patch Changes
-
-- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@coopbri](https://github.com/coopbri)! - Fix Next.js image component not rendering in consuming applications (vercel/next.js#52216, prismicio/prismic-next#79)
-
-- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Slider` component
-
-- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Accordion` component
 
 ## 0.3.0
 
