@@ -16,6 +16,8 @@ export interface TabRecord {
   value: string;
   trigger: ReactNode;
   disabled?: boolean;
+  lazyMount?: boolean;
+  unmountOnExit?: boolean;
   content: ReactNode;
 }
 
@@ -49,12 +51,12 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
         ))}
         <TabIndicator className={classNames.indicator} />
       </TabList>
-      {tabs.map(({ value, content }) => (
+      {tabs.map(({ value, content, lazyMount, unmountOnExit }) => (
         <TabContent
           key={value}
           value={value}
-          lazyMount
-          unmountOnExit
+          lazyMount={lazyMount}
+          unmountOnExit={unmountOnExit}
           className={classNames.content}
         >
           {content}
