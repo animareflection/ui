@@ -50,6 +50,13 @@ export {
   SliderThumb,
   SliderTrack,
 } from "./Slider/Slider";
+export {
+  default as Tabs,
+  TabContent,
+  TabIndicator,
+  TabList,
+  TabTrigger,
+} from "./Tabs/Tabs";
 
 export type {
   AccordionProps,
@@ -103,3 +110,10 @@ export type {
   SliderThumbProps,
   SliderTrackProps,
 } from "./Slider/Slider";
+export type {
+  TabsProps,
+  TabContentProps,
+  TabIndicatorProps,
+  TabListProps,
+  TabTriggerProps,
+} from "./Tabs/Tabs";
