@@ -28,6 +28,5 @@ jobs:
         name: Determine coverage
         with:
           package-manager: yarn
-          test-script: yarn test:coverage
           annotations: failed-tests
           coverage-file: ./coverage/storybook/coverage-storybook.json
