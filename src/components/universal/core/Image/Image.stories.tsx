@@ -3,7 +3,7 @@ import { panda } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Image>;
 
 export const Default: Story = {
   render: () => (

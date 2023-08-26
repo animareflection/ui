@@ -4,7 +4,7 @@ import { Accordion } from "components/client";
 import type { Meta, StoryObj } from "@storybook/react";
 import type { AccordionItemRecord } from "components/client";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Accordion>;
 
 const ITEMS: AccordionItemRecord[] = [
   {

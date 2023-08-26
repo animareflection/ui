@@ -6,7 +6,7 @@ import { HStack } from "generated/panda/jsx";
 import type { Meta, StoryObj } from "@storybook/react";
 import type { MenuItemRecord, MenuItemGroupRecord } from "components/client";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Menu>;
 
 const SUBMENU_GROUP_ITEMS: MenuItemRecord[] = [
   { id: "item-7", child: "Item 7" },

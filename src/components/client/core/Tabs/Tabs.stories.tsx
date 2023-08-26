@@ -3,7 +3,7 @@ import { Tabs } from "components/client";
 import type { Meta, StoryObj } from "@storybook/react";
 import type { TabRecord } from "components/client";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Tabs>;
 
 const TABS: TabRecord[] = [
   {

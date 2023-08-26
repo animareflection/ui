@@ -4,7 +4,7 @@ import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   render: () => (

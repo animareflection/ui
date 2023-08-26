@@ -3,7 +3,7 @@ import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Badge>;
 
 export const Default: Story = {
   render: () => <Badge>Badge</Badge>,

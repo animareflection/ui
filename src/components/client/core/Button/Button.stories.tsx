@@ -2,7 +2,7 @@ import { Button } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   render: () => <Button>Click me 🏝️</Button>,
