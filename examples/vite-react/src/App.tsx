@@ -12,6 +12,7 @@ import {
   ModalDemo,
   SliderDemo,
   SpinnerDemo,
+  TabsDemo,
 } from "components";
 
 import "main.css";
@@ -77,6 +78,7 @@ const App = () => (
       <CardDemo />
       <ImageDemo />
       <SpinnerDemo />
+      <TabsDemo />
     </Flex>
   </Flex>
 );

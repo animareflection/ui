@@ -4,6 +4,7 @@ import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe"
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
+import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
 import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
 import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
@@ -25,4 +26,5 @@ export const slotRecipes = {
   menu: menuRecipe,
   modal: modalRecipe,
   slider: sliderRecipe,
+  tabs: tabsRecipe,
 };
