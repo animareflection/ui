@@ -1,19 +1,23 @@
 import { Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
-import { Button } from "@animareflection/ui/client";
+
+import {
+  AccordionDemo,
+  BadgeDemo,
+  ButtonDemo,
+  CardDemo,
+  DrawerDemo,
+  IconDemo,
+  ImageDemo,
+  MenuDemo,
+  ModalDemo,
+  SliderDemo,
+  SpinnerDemo,
+} from "components";
 
 import "main.css";
 
 const App = () => (
-  <Flex
-    gradientFrom="white"
-    gradientTo="brand.primary.100"
-    bgGradient="to-b"
-    direction="column"
-    h="100%"
-    align="center"
-    gap={4}
-    pt={12}
-  >
+  <Flex direction="column" h="100%" align="center" gap={4} py={12}>
     <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
       Anima Reflection UI library demo
     </Text>
@@ -61,7 +65,19 @@ const App = () => (
       </Circle>
     </Grid>
 
-    <Button>Click me!</Button>
+    <Flex direction="column" align="center" w="100%" gap={2} p={12}>
+      <ButtonDemo />
+      <AccordionDemo />
+      <DrawerDemo />
+      <IconDemo />
+      <MenuDemo />
+      <ModalDemo />
+      <SliderDemo />
+      <BadgeDemo />
+      <CardDemo />
+      <ImageDemo />
+      <SpinnerDemo />
+    </Flex>
   </Flex>
 );
 

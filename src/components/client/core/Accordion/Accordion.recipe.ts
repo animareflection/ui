@@ -9,6 +9,9 @@ export const accordionRecipe = defineSlotRecipe({
       width: "full",
       py: 1,
       borderRadius: "md",
+      display: "flex",
+      flexDirection: "column",
+      gap: 2,
     },
     trigger: {
       alignItems: "center",
@@ -21,10 +24,21 @@ export const accordionRecipe = defineSlotRecipe({
     },
     content: {
       backgroundColor: "bg.muted",
-      borderRadius: "md",
-      mt: 2,
-      px: 4,
-      py: 2,
+      color: "fg.default",
+      borderBottomLeftRadius: "md",
+      borderBottomRightRadius: "md",
+      p: 4,
+      display: "grid",
+      gridTemplateRows: "0fr",
+      transitionProperty: "grid-template-rows, padding",
+      transitionDuration: "normal",
+      transitionTimingFunction: "default",
+      _open: {
+        gridTemplateRows: "1fr",
+      },
+      _closed: {
+        p: 0,
+      },
       "& > div": {
         overflow: "hidden",
       },

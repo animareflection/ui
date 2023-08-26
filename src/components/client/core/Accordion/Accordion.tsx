@@ -1,4 +1,6 @@
-import { Button } from "components/client";
+import { FiChevronDown as ChevronDownIcon } from "react-icons/fi";
+
+import { Button, Icon } from "components/client";
 import {
   Accordion as PrimitiveAccordion,
   AccordionItem,
@@ -10,43 +12,55 @@ import { accordion } from "generated/panda/recipes";
 import type { AccordionProps } from "components/primitives";
 import type { ReactNode } from "react";
 
-export interface Props extends AccordionProps {
-  trigger: ReactNode;
-  children: ReactNode;
-  disabled?: boolean;
+export interface AccordionItemRecord {
+  id: string;
   value: string;
-  icon: (props: { isOpen: boolean }) => JSX.Element;
+  triggerLabel?: string;
+  content: ReactNode;
+}
+
+export interface Props extends AccordionProps {
+  items: AccordionItemRecord[];
 }
 
 /**
  * Core UI accordion.
  */
-const Accordion = ({ trigger, children, value, icon, ...rest }: Props) => {
+const Accordion = ({ items, ...rest }: Props) => {
   const classNames = accordion();
-  const Icon = icon;
 
   return (
-    <PrimitiveAccordion collapsible className={classNames.root} {...rest}>
-      <AccordionItem value={value}>
-        {({ isOpen }) => (
-          <>
-            <AccordionTrigger className={classNames.trigger} asChild>
-              <Button
-                display="flex"
-                alignItems="center"
-                w="full"
-                justifyContent="space-between"
-              >
-                {trigger}
-                <Icon isOpen={isOpen} />
-              </Button>
-            </AccordionTrigger>
-            <AccordionContent className={classNames.content}>
-              {children}
-            </AccordionContent>
-          </>
-        )}
-      </AccordionItem>
+    <PrimitiveAccordion
+      collapsible
+      multiple
+      className={classNames.root}
+      {...rest}
+    >
+      {items.map(({ id, value, triggerLabel, content }) => (
+        <AccordionItem key={id} value={value}>
+          {({ isOpen }) => (
+            <>
+              <AccordionTrigger className={classNames.trigger} asChild>
+                <Button w="full" borderBottomRadius={isOpen ? "unset" : "md"}>
+                  {triggerLabel ?? value}
+                  <Icon
+                    as={ChevronDownIcon}
+                    transform={isOpen ? "rotate(-180deg)" : undefined}
+                    transition="transform 0.4s"
+                    transformOrigin="center"
+                    color="accent.fg"
+                  />
+                </Button>
+              </AccordionTrigger>
+              {isOpen && (
+                <AccordionContent className={classNames.content}>
+                  {content}
+                </AccordionContent>
+              )}
+            </>
+          )}
+        </AccordionItem>
+      ))}
     </PrimitiveAccordion>
   );
 };

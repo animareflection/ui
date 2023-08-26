@@ -6,6 +6,7 @@ export const buttonRecipe = defineRecipe({
   base: {
     color: "accent.fg",
     bgColor: "accent.default",
+    w: "fit-content",
     cursor: "pointer",
     fontWeight: "bold",
     p: 3,
