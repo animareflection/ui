@@ -1,3 +1,4 @@
+import { openState } from "./Drawer.spec";
 import { Button, Drawer } from "components/client";
 import { Text } from "components/universal";
 
@@ -48,6 +49,13 @@ export const WithContext: Story = {
       {({ isOpen }) => <Text mt={2}>Open: {String(isOpen)}</Text>}
     </Drawer>
   ),
+};
+
+export const OpenState: Story = {
+  ...WithContext,
+  play: openState,
+  name: "[TEST] Open State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663

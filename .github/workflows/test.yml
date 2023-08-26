@@ -7,8 +7,8 @@ on:
     branches: [master]
 
 jobs:
-  test_unit:
-    name: Run unit tests 🃏
+  test:
+    name: Run tests 🃏
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -18,16 +18,9 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: yarn
-      - name: Run unit tests
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Build Storybook
+        run: yarn storybook:build --quiet
+      - name: Serve Storybook and run tests
         run: yarn test:ci
-
-  coverage:
-    name: Determine code coverage 📊
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          package-manager: yarn
-          test-script: yarn test:coverage
-          annotations: failed-tests
