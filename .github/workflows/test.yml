@@ -25,5 +25,13 @@ jobs:
       - name: Serve Storybook and run tests
         run: yarn test:ci
 
-  # TODO add SB test runner coverage job
-
+  coverage:
+    name: Determine code coverage 📊
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          package-manager: yarn
+          test-script: yarn test:coverage
+          annotations: failed-tests
