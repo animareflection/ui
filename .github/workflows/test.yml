@@ -24,9 +24,12 @@ jobs:
         run: yarn storybook:build --quiet
       - name: Serve Storybook and run tests
         run: yarn test:ci
+        # https://github.com/ArtiomTr/jest-coverage-report-action#usage
       - uses: ArtiomTr/jest-coverage-report-action@v2
         name: Determine coverage
         with:
+          # skip installing dependencies and running test script, since tests are already executed in previous step
+          skip-step: all
           package-manager: yarn
           annotations: failed-tests
           coverage-file: ./coverage/storybook/coverage-storybook.json
