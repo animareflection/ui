@@ -1,13 +1,28 @@
 "use client";
 
-import { Stack } from "@animareflection/ui";
-import { Button } from "@animareflection/ui/client";
+import { Flex } from "@animareflection/ui";
+
+import {
+  AccordionDemo,
+  ButtonDemo,
+  DrawerDemo,
+  IconDemo,
+  MenuDemo,
+  ModalDemo,
+  SliderDemo,
+} from "components";
 
 const ClientPage = () => (
-  <Stack w="fit-content" p={12}>
+  <Flex direction="column" align="center" w="100%" gap={2} p={12}>
     Client component demo!
-    <Button onClick={() => console.log("Clicked!")}>Click me</Button>
-  </Stack>
+    <ButtonDemo />
+    <AccordionDemo />
+    <DrawerDemo />
+    <IconDemo />
+    <MenuDemo />
+    <ModalDemo />
+    <SliderDemo />
+  </Flex>
 );
 
 export default ClientPage;

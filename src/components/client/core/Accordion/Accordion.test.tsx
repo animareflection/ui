@@ -1,39 +1,37 @@
 import { describe, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
-import { FiChevronDown as ChevronDown } from "react-icons/fi";
 
-import { Accordion, Icon } from "components/client";
-import { Text } from "components/universal";
+import { Accordion } from "components/client";
 
-type IconProps = {
-  isOpen: boolean;
-};
+import type { AccordionItemRecord } from "components/client";
 
-const items = ["panel-1", "panel-2", "panel-3"];
+const ITEMS: AccordionItemRecord[] = [
+  {
+    id: "panel-1",
+    value: "panel-1",
+    triggerLabel: "Panel 1",
+    content: "Panel 1 content",
+  },
+  {
+    id: "panel-2",
+    value: "panel-2",
+    triggerLabel: "Panel 2",
+    content: "Panel 2 content",
+  },
+  {
+    id: "panel-3",
+    value: "panel-3",
+    triggerLabel: "Panel 3",
+    content: "Panel 3 content",
+  },
+];
 
-const MockAccordion = () => (
-  <>
-    {items.map((item, id) => (
-      <Accordion icon={AccordionIcon} key={id} value={item} trigger={item}>
-        <Text>{item} content</Text>
-      </Accordion>
-    ))}
-  </>
-);
+const MockAccordion = () => <Accordion items={ITEMS} />;
 
 describe("Accordion", () => {
   it("renders accordion correctly", () => {
     render(<MockAccordion />);
 
-    expect(screen.getByRole("button", { name: "panel-1" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Panel 1" })).toBeInTheDocument();
   });
 });
-
-const AccordionIcon = ({ isOpen }: IconProps) => {
-  const iconStyles = {
-    transform: isOpen && "rotate(-180deg)",
-    transition: "transform 0.4s",
-    transformOrigin: "center",
-  };
-  return <Icon style={iconStyles} as={ChevronDown} color="white" />;
-};

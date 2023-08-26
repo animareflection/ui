@@ -1,40 +1,33 @@
-import { FiChevronDown as ChevronDown } from "react-icons/fi";
-
-import { Accordion, Icon } from "components/client";
-import { Text } from "components/universal";
+import { Accordion } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
+import type { AccordionItemRecord } from "components/client";
 
 type Story = StoryObj<typeof meta>;
 
-type IconProps = {
-  isOpen: boolean;
-};
-
-const items = ["panel-1", "panel-2", "panel-3"];
+const ITEMS: AccordionItemRecord[] = [
+  {
+    id: "panel-1",
+    value: "panel-1",
+    triggerLabel: "Panel 1",
+    content: "Panel 1 content",
+  },
+  {
+    id: "panel-2",
+    value: "panel-2",
+    triggerLabel: "Panel 2",
+    content: "Panel 2 content",
+  },
+  {
+    id: "panel-3",
+    value: "panel-3",
+    triggerLabel: "Panel 3",
+    content: "Panel 3 content",
+  },
+];
 
 export const Default: Story = {
-  render: () => (
-    <>
-      {items.map((item, id) => (
-        <Accordion icon={AccordionIcon} key={id} value={item} trigger={item}>
-          <Text>{item} content</Text>
-        </Accordion>
-      ))}
-    </>
-  ),
-};
-
-export const WithContext: Story = {
-  render: () => (
-    <>
-      {items.map((item, id) => (
-        <Accordion icon={AccordionIcon} key={id} value={item} trigger={item}>
-          <Text>{item} content</Text>
-        </Accordion>
-      ))}
-    </>
-  ),
+  render: () => <Accordion items={ITEMS} />,
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
@@ -44,20 +37,5 @@ const meta: Meta<typeof Accordion> = {
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Accordion>;
-
-const AccordionIcon = ({ isOpen }: IconProps) => {
-  const iconStyles = {
-    transform: isOpen && "rotate(-180deg)",
-    transition: "transform 0.4s",
-    transformOrigin: "center",
-  };
-  return (
-    <Icon
-      style={iconStyles}
-      as={ChevronDown}
-      color={{ base: "white", _dark: "black" }}
-    />
-  );
-};
 
 export default meta;

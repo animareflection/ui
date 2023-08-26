@@ -1,6 +1,8 @@
 import { Box, Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
 import Link from "next/link";
 
+import { BadgeDemo, CardDemo, ImageDemo, SpinnerDemo } from "components";
+
 const HomePage = () => (
   <Flex
     gradientFrom="white"
@@ -49,6 +51,13 @@ const HomePage = () => (
         Circle
       </Circle>
     </Grid>
+
+    <Flex direction="column" w="100%" gap={2} p={4}>
+      <BadgeDemo />
+      <CardDemo />
+      <ImageDemo />
+      <SpinnerDemo />
+    </Flex>
 
     <Box color="blue" _hover={{ textDecoration: "underline" }}>
       <Link href="/client">Go to client page demo</Link>

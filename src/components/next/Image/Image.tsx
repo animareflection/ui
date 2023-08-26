@@ -9,6 +9,15 @@ export interface Props extends NextImageProps {
   containerProps?: Omit<AspectRatioProps, "width" | "height">;
 }
 
+// TODO remove once https://github.com/vercel/next.js/issues/52216 is resolved (`next/image` affected by a default + named export bundling bug)
+// solution from https://github.com/prismicio/prismic-next/pull/79/files
+let ResolvedImage = NextImage;
+if ("default" in ResolvedImage) {
+  // @ts-ignore temporary workaround, see note above
+  ResolvedImage = (ResolvedImage as unknown as { default: typeof Image })
+    .default;
+}
+
 /**
  * Next.js-enhanced image.
  */
@@ -20,7 +29,7 @@ const Image = ({ containerProps, fill, ...rest }: Props) => (
     h={fill ? "100%" : containerProps!.h}
     {...containerProps}
   >
-    <NextImage
+    <ResolvedImage
       priority
       fill
       sizes={

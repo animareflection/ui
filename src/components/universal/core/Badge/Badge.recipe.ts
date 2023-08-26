@@ -5,6 +5,7 @@ export const badgeRecipe = defineRecipe({
   description: "The styles for the Badge component",
   base: {
     borderRadius: "full",
+    w: "fit-content",
     fontWeight: "medium",
     display: "inline-flex",
     alignItems: "center",
