@@ -32,3 +32,4 @@ jobs:
           skip-step: all
           annotations: failed-tests
           coverage-file: ./coverage/storybook/coverage-storybook.json
+          base-coverage-file: ./coverage/storybook/coverage-storybook.json
