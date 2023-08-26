@@ -15,6 +15,7 @@ import type { ReactNode } from "react";
 export interface TabRecord {
   value: string;
   trigger: ReactNode;
+  disabled?: boolean;
   content: ReactNode;
 }
 
@@ -35,11 +36,12 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
   return (
     <PrimitiveTabs className={classNames.root} {...rest}>
       <TabList className={classNames.list}>
-        {tabs.map(({ value, trigger }) => (
+        {tabs.map(({ value, trigger, disabled }) => (
           <TabTrigger
             flex={1}
             key={value}
             value={value}
+            disabled={disabled}
             className={classNames.trigger}
           >
             {trigger}
@@ -48,7 +50,13 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
         <TabIndicator className={classNames.indicator} />
       </TabList>
       {tabs.map(({ value, content }) => (
-        <TabContent key={value} value={value} className={classNames.content}>
+        <TabContent
+          key={value}
+          value={value}
+          lazyMount
+          unmountOnExit
+          className={classNames.content}
+        >
           {content}
         </TabContent>
       ))}
