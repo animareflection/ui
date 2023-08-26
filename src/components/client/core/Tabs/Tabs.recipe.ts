@@ -18,10 +18,17 @@ export const tabsRecipe = defineSlotRecipe({
       borderBottomWidth: {
         _horizontal: "1px",
       },
+      borderBottomColor: {
+        _horizontal: "border.default",
+      },
       borderLeftWidth: {
         _vertical: "1px",
       },
+      borderLeftColor: {
+        _vertical: "border.default",
+      },
       position: "relative",
+      w: "full",
     },
     trigger: {
       transitionDuration: "normal",
@@ -68,6 +75,7 @@ export const tabsRecipe = defineSlotRecipe({
     },
     content: {
       mt: 5,
+      color: "fg.default",
     },
   },
   variants: {

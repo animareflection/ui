@@ -31,7 +31,12 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
     <PrimitiveTabs className={classNames.root} {...rest}>
       <TabList className={classNames.list}>
         {tabs.map(({ value, trigger }) => (
-          <TabTrigger key={value} value={value} className={classNames.trigger}>
+          <TabTrigger
+            flex={1}
+            key={value}
+            value={value}
+            className={classNames.trigger}
+          >
             {trigger}
           </TabTrigger>
         ))}
