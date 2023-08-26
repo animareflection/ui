@@ -1,5 +1,29 @@
 # @animareflection/ui
 
+## 0.4.0
+
+### Minor Changes
+
+- [#54](https://github.com/animareflection/ui/pull/54) [`212647a`](https://github.com/animareflection/ui/commit/212647a9210d71e841e57a3f4d0bf41a6a89d971) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Accordion` component
+
+- [#57](https://github.com/animareflection/ui/pull/57) [`562e742`](https://github.com/animareflection/ui/commit/562e7424dcadb47fd556088de391684e56804417) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Badge` component
+
+- [#50](https://github.com/animareflection/ui/pull/50) [`35835e1`](https://github.com/animareflection/ui/commit/35835e10700526218ce6173d2e4c4e6e5a1af955) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Slider` component
+
+- [#55](https://github.com/animareflection/ui/pull/55) [`5b3fca6`](https://github.com/animareflection/ui/commit/5b3fca6ea18706bad9573e09123d8b1fdb276612) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add Next.js enhanced `Image` component
+
+- [#55](https://github.com/animareflection/ui/pull/55) [`5b3fca6`](https://github.com/animareflection/ui/commit/5b3fca6ea18706bad9573e09123d8b1fdb276612) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Image` component
+
+- [#52](https://github.com/animareflection/ui/pull/52) [`ffa0395`](https://github.com/animareflection/ui/commit/ffa03955528700a9122fe9879bfc5e17ff1ae846) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Spinner` component
+
+### Patch Changes
+
+- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@coopbri](https://github.com/coopbri)! - Fix Next.js image component not rendering in consuming applications (vercel/next.js#52216, prismicio/prismic-next#79)
+
+- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Slider` component
+
+- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Accordion` component
+
 ## 0.3.0
 
 ### Minor Changes
