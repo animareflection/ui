@@ -24,14 +24,10 @@ jobs:
         run: yarn storybook:build --quiet
       - name: Serve Storybook and run tests
         run: yarn test:ci
-
-  coverage:
-    name: Determine code coverage 📊
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
       - uses: ArtiomTr/jest-coverage-report-action@v2
+        name: Determine coverage
         with:
           package-manager: yarn
           test-script: yarn test:coverage
           annotations: failed-tests
+          coverage-file: ./coverage/storybook/coverage-storybook.json
