@@ -2,12 +2,16 @@ import { Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
 
 import {
   AccordionDemo,
+  BadgeDemo,
   ButtonDemo,
+  CardDemo,
   DrawerDemo,
   IconDemo,
+  ImageDemo,
   MenuDemo,
   ModalDemo,
   SliderDemo,
+  SpinnerDemo,
 } from "components";
 
 import "main.css";
@@ -69,6 +73,10 @@ const App = () => (
       <MenuDemo />
       <ModalDemo />
       <SliderDemo />
+      <BadgeDemo />
+      <CardDemo />
+      <ImageDemo />
+      <SpinnerDemo />
     </Flex>
   </Flex>
 );
