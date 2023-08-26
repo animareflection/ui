@@ -6,6 +6,7 @@ import {
   TabTrigger,
 } from "components/primitives";
 import { tabs as tabsRecipe } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { TabsProps } from "components/primitives";
 import type { TabsVariantProps } from "generated/panda/recipes";
@@ -26,6 +27,10 @@ export interface Props extends TabsProps, TabsVariantProps {
  */
 const Tabs = ({ tabs, size, ...rest }: Props) => {
   const classNames = tabsRecipe({ size });
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveTabs className={classNames.root} {...rest}>

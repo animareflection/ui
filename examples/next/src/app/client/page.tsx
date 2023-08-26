@@ -10,6 +10,7 @@ import {
   MenuDemo,
   ModalDemo,
   SliderDemo,
+  TabsDemo,
 } from "components";
 
 const ClientPage = () => (
@@ -22,6 +23,7 @@ const ClientPage = () => (
     <MenuDemo />
     <ModalDemo />
     <SliderDemo />
+    <TabsDemo />
   </Flex>
 );
 

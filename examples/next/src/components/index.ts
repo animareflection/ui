@@ -9,4 +9,5 @@ export { default as MenuDemo } from "./MenuDemo";
 export { default as ModalDemo } from "./ModalDemo";
 export { default as SliderDemo } from "./SliderDemo";
 export { default as SpinnerDemo } from "./SpinnerDemo";
+export { default as TabsDemo } from "./TabsDemo";
 export { default as Wrapper } from "./Wrapper";
