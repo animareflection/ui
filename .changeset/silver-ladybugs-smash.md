@@ -2,4 +2,4 @@
 "@animareflection/ui": patch
 ---
 
-update `Accordion` component
+Update `Accordion` component

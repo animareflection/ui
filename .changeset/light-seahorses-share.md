@@ -2,4 +2,4 @@
 "@animareflection/ui": patch
 ---
 
-update `Slider` component
+Update `Slider` component
