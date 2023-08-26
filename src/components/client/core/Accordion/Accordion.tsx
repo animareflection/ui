@@ -53,7 +53,7 @@ const Accordion = ({ items, ...rest }: Props) => {
                 </Button>
               </AccordionTrigger>
               {isOpen && (
-                <AccordionContent className={classNames.content}>
+                <AccordionContent unmountOnExit className={classNames.content}>
                   {content}
                 </AccordionContent>
               )}

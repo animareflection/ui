@@ -1,3 +1,4 @@
+import { openState } from "./Accordion.spec";
 import { Accordion } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -28,6 +29,13 @@ const ITEMS: AccordionItemRecord[] = [
 
 export const Default: Story = {
   render: () => <Accordion items={ITEMS} />,
+};
+
+export const OpenState: Story = {
+  ...Default,
+  play: openState,
+  name: "[TEST] Open State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
