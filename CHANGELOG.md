@@ -18,7 +18,7 @@
 
 ### Patch Changes
 
-- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix Next.js image component not rendering in consuming applications (vercel/next.js#52216, prismicio/prismic-next#79)
+- [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@coopbri](https://github.com/coopbri)! - Fix Next.js image component not rendering in consuming applications (vercel/next.js#52216, prismicio/prismic-next#79)
 
 - [#64](https://github.com/animareflection/ui/pull/64) [`a507406`](https://github.com/animareflection/ui/commit/a507406001c2232b11a83efec3c32bc5d104bdd0) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Slider` component
 
