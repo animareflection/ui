@@ -46,7 +46,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "test": "test-storybook",
     "test:coverage": "yarn test --coverage",
-    "test:ci": "yarn test --ci",
+    "test:ci": "concurrently --kill-others -s first -n \"STORYBOOK,TEST\" -c \"#ff4785,#45ba4b\" \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test --ci\"",
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev --quiet --no-open -p 6006",
     "storybook:build": "panda codegen && storybook build",
@@ -107,6 +107,7 @@
     "eslint-plugin-testing-library": "^6.0.1",
     "eslint-plugin-typescript-sort-keys": "^2.3.0",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "http-server": "^14.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "next": "^13.4.19",
@@ -121,6 +122,7 @@
     "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
+    "wait-on": "^7.0.1",
     "webpack": "^5.88.2",
     "yalc": "^1.0.0-pre.53"
   }
