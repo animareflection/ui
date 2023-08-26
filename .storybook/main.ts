@@ -41,11 +41,7 @@ const storybookConfig: StorybookConfig = {
       name: "@storybook/addon-coverage",
       options: {
         istanbul: {
-          include: [
-            "**/*.tsx",
-            // ignore stories
-            "!**/*.stories.tsx",
-          ],
+          include: ["**/*.tsx", "**/*.stories.tsx"],
         },
       } as AddonOptionsBabel,
     },
