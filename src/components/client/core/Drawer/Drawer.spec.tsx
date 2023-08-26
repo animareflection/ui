@@ -6,6 +6,8 @@ import { sleep } from "lib/utils";
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
+// TODO implement `userEvent` simulation package from `@storybook/testing-library` instead of native HTML browser click event (e.g. `await userEvent.click(openButton);` instead of `openButton.click();`); https://trello.com/c/Ez0nSBmA/152-implement-userevent-in-story-play-tests
+
 /**
  * Test drawer opening and closing.
  */
@@ -17,9 +19,6 @@ export const openState = async <R extends Renderer = ReactRenderer>({
   const openButton = canvas.getByRole("button", {
     name: /open drawer/i,
   });
-
-  // TODO implement below instead of native HTML browser click event
-  // await userEvent.click(openButton);
 
   openButton.click();
 
@@ -35,8 +34,4 @@ export const openState = async <R extends Renderer = ReactRenderer>({
   await sleep(2000);
 
   await expect(drawerTitle).not.toBeInTheDocument();
-
-  // TODO determine if below is better practice than `screen` utility
-  // const body = canvasElement.ownerDocument.body;
-  // await expect(within(body).getByText("Drawer Title")).toBeInTheDocument();
 };
