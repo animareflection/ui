@@ -46,7 +46,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "test": "test-storybook",
     "test:coverage": "yarn test --coverage",
-    "test:ci": "concurrently --kill-others -s first -n \"STORYBOOK,TEST\" -c \"#ff4785,#45ba4b\" \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test --ci\"",
+    "test:ci": "concurrently --kill-others -s first -n \"STORYBOOK,TEST\" -c \"#ff4785,#45ba4b\" \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test:coverage --ci\"",
     "test:watch": "yarn test --watch",
     "storybook": "storybook dev --quiet --no-open -p 6006",
     "storybook:build": "panda codegen && storybook build",
