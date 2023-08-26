@@ -30,6 +30,5 @@ jobs:
         with:
           # skip installing dependencies and running test script, since tests are already executed in previous step
           skip-step: all
-          package-manager: yarn
           annotations: failed-tests
           coverage-file: ./coverage/storybook/coverage-storybook.json
