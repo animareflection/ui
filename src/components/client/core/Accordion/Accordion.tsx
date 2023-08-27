@@ -46,17 +46,18 @@ const Accordion = ({ items, ...rest }: Props) => {
                   <Icon
                     as={ChevronDownIcon}
                     transform={isOpen ? "rotate(-180deg)" : undefined}
-                    transition="transform 0.4s"
                     transformOrigin="center"
                     color="accent.fg"
                   />
                 </Button>
               </AccordionTrigger>
-              {isOpen && (
-                <AccordionContent unmountOnExit className={classNames.content}>
-                  {content}
-                </AccordionContent>
-              )}
+              <AccordionContent
+                lazyMount
+                unmountOnExit
+                className={classNames.content}
+              >
+                {content}
+              </AccordionContent>
             </>
           )}
         </AccordionItem>
