@@ -1,3 +1,4 @@
+import { tabState } from "./Tabs.spec";
 import { Tabs } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -25,6 +26,13 @@ const TABS: TabRecord[] = [
 
 export const Default: Story = {
   render: () => <Tabs tabs={TABS} />,
+};
+
+export const TabState: Story = {
+  ...Default,
+  play: tabState,
+  name: "[TEST] Tab State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
