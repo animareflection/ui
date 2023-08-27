@@ -1,5 +1,7 @@
 import { expect } from "@storybook/jest";
-import { screen, within, userEvent } from "@storybook/testing-library";
+import { screen, userEvent, within } from "@storybook/testing-library";
+
+import { sleep } from "lib/utils";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
@@ -18,14 +20,17 @@ export const openState = async <R extends Renderer = ReactRenderer>({
 
   await userEvent.click(openButton);
 
+  await sleep(2000);
+
   const closeButton = screen.getByRole("button", {
     name: /close/i,
   });
 
   await expect(closeButton).toBeVisible();
 
-  // TODO: fix this test
-  // await userEvent.click(closeButton);
+  closeButton.click();
 
-  // await expect(closeButton).not.toBeVisible();
+  await sleep(2000);
+
+  await expect(closeButton).not.toBeVisible();
 };
