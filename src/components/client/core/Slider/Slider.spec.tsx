@@ -9,6 +9,7 @@ import type { PlayFunctionContext, Renderer } from "@storybook/types";
  */
 export const movementState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
+  step,
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
@@ -16,23 +17,25 @@ export const movementState = async <R extends Renderer = ReactRenderer>({
 
   thumb.focus();
 
-  await userEvent.keyboard("[ArrowRight]", {
-    delay: 100,
+  await step("Move slider thumb to the right", async () => {
+    await userEvent.keyboard("[ArrowRight]");
+    await expect(thumb).toHaveAttribute("aria-valuenow", "1");
+    await userEvent.keyboard("[ArrowRight]");
+    await expect(thumb).toHaveAttribute("aria-valuenow", "2");
   });
-  await expect(thumb).toHaveAttribute("aria-valuenow", "1");
 
-  await userEvent.keyboard("[ArrowRight]", {
-    delay: 100,
+  await step("Move slider thumb to the left", async () => {
+    await userEvent.keyboard("[ArrowLeft]");
+    await expect(thumb).toHaveAttribute("aria-valuenow", "1");
   });
-  await expect(thumb).toHaveAttribute("aria-valuenow", "2");
 
-  await userEvent.keyboard("[Home]", {
-    delay: 100,
+  await step("Move slider thumb to the beginning", async () => {
+    await userEvent.keyboard("[Home]");
+    await expect(thumb).toHaveAttribute("aria-valuenow", "0");
   });
-  await expect(thumb).toHaveAttribute("aria-valuenow", "0");
 
-  await userEvent.keyboard("[End]", {
-    delay: 100,
+  await step("Move slider thumb to the end", async () => {
+    await userEvent.keyboard("[End]");
+    await expect(thumb).toHaveAttribute("aria-valuenow", "100");
   });
-  await expect(thumb).toHaveAttribute("aria-valuenow", "100");
 };
