@@ -1,5 +1,5 @@
 import { expect } from "@storybook/jest";
-import { screen, within } from "@storybook/testing-library";
+import { within } from "@storybook/testing-library";
 
 import { sleep } from "lib/utils";
 
@@ -28,7 +28,7 @@ export const openState = async <R extends Renderer = ReactRenderer>({
 
   await sleep(2000);
 
-  const accordionPanelOneContent = screen.getByText(/Panel 1 content/i);
+  const accordionPanelOneContent = canvas.getByText(/Panel 1 content/i);
 
   await expect(accordionPanelOneContent).toBeInTheDocument();
 
@@ -36,7 +36,7 @@ export const openState = async <R extends Renderer = ReactRenderer>({
 
   await sleep(2000);
 
-  const accordionPanelTwoContent = screen.getByText(/Panel 2 content/i);
+  const accordionPanelTwoContent = canvas.getByText(/Panel 2 content/i);
 
   await expect(accordionPanelOneContent).toBeInTheDocument();
 
