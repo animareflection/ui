@@ -1,7 +1,5 @@
 import { expect } from "@storybook/jest";
-import { within } from "@storybook/testing-library";
-
-import { sleep } from "lib/utils";
+import { userEvent, within } from "@storybook/testing-library";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
@@ -20,11 +18,7 @@ export const onClickEvent = async <R extends Renderer = ReactRenderer>({
 
   await expect(button).toBeInTheDocument();
 
-  await sleep(1000);
-
-  button.click();
-
-  await sleep(1000);
+  await userEvent.click(button);
 
   await expect(button).toHaveTextContent(/clicks: 1/i);
 };

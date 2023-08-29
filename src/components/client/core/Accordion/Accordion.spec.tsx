@@ -1,12 +1,8 @@
 import { expect } from "@storybook/jest";
-import { within } from "@storybook/testing-library";
-
-import { sleep } from "lib/utils";
+import { userEvent, within } from "@storybook/testing-library";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
-
-// TODO implement `userEvent` simulation package from `@storybook/testing-library` instead of native HTML browser click event (e.g. `await userEvent.click(openButton);` instead of `openButton.click();`); https://trello.com/c/Ez0nSBmA/152-implement-userevent-in-story-play-tests
 
 /**
  * Test accordion opening and closing.
@@ -24,17 +20,13 @@ export const openState = async <R extends Renderer = ReactRenderer>({
     name: /panel 2/i,
   });
 
-  panelOneButton.click();
-
-  await sleep(2000);
+  await userEvent.click(panelOneButton);
 
   const accordionPanelOneContent = canvas.getByText(/Panel 1 content/i);
 
   await expect(accordionPanelOneContent).toBeInTheDocument();
 
-  panelTwoButton.click();
-
-  await sleep(2000);
+  await userEvent.click(panelTwoButton);
 
   const accordionPanelTwoContent = canvas.getByText(/Panel 2 content/i);
 
@@ -42,15 +34,11 @@ export const openState = async <R extends Renderer = ReactRenderer>({
 
   await expect(accordionPanelTwoContent).toBeInTheDocument();
 
-  panelOneButton.click();
-
-  await sleep(2000);
+  await userEvent.click(panelOneButton);
 
   await expect(accordionPanelOneContent).not.toBeInTheDocument();
 
-  panelTwoButton.click();
-
-  await sleep(2000);
+  await userEvent.click(panelTwoButton);
 
   await expect(accordionPanelTwoContent).not.toBeInTheDocument();
 };

@@ -1,12 +1,10 @@
 import { expect } from "@storybook/jest";
-import { screen, within } from "@storybook/testing-library";
+import { screen, userEvent, within } from "@storybook/testing-library";
 
 import { sleep } from "lib/utils";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
-
-// TODO implement `userEvent` simulation package from `@storybook/testing-library` instead of native HTML browser click event (e.g. `await userEvent.click(openButton);` instead of `openButton.click();`); https://trello.com/c/Ez0nSBmA/152-implement-userevent-in-story-play-tests
 
 /**
  * Test modal opening and closing.
@@ -20,18 +18,22 @@ export const openState = async <R extends Renderer = ReactRenderer>({
     name: /open modal/i,
   });
 
-  openButton.click();
+  await userEvent.click(openButton);
 
-  await sleep(2000);
+  await sleep(1000);
 
   const modalTitle = screen.getByText("Modal Title");
 
-  await expect(modalTitle).toBeInTheDocument();
+  await expect(modalTitle).toBeVisible();
 
-  const closeButton = screen.getByRole("button");
-  closeButton.click();
+  const closeButton = screen.getByRole("button", {
+    name(_accessibleName, element) {
+      // eslint-disable-next-line testing-library/no-node-access
+      return element?.closest("div")?.getAttribute("role") === "dialog";
+    },
+  });
 
-  await sleep(2000);
+  await userEvent.click(closeButton);
 
-  await expect(modalTitle).not.toBeInTheDocument();
+  await expect(modalTitle).not.toBeVisible();
 };
