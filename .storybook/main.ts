@@ -2,6 +2,7 @@ import path from "path";
 
 import type { AddonOptionsBabel } from "@storybook/addon-coverage";
 import type { StorybookConfig } from "@storybook/nextjs";
+
 /**
  * Storybook configuration.
  */

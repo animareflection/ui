@@ -1,31 +1,35 @@
 import { expect } from "@storybook/jest";
 import { screen, userEvent, within } from "@storybook/testing-library";
 
+import { sleep } from "lib/utils";
+
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
 /**
- * Drawer testing suite.
+ * Modal testing suite.
  */
-export const drawerState = async <R extends Renderer = ReactRenderer>({
+export const modalState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
   step,
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
   const openButton = canvas.getByRole("button", {
-    name: /open drawer/i,
+    name: /open modal/i,
   });
 
-  await step("It should open drawer on trigger click", async () => {
+  await step("It should open modal on trigger click", async () => {
     await userEvent.click(openButton);
 
-    const drawerTitle = screen.getByText("Drawer Title");
+    await sleep(1000);
 
-    await expect(drawerTitle).toBeVisible();
+    const modalTitle = screen.getByText("Modal Title");
+
+    await expect(modalTitle).toBeVisible();
   });
 
-  await step("It should close drawer on close button click", async () => {
+  await step("It should close modal on close button click", async () => {
     const closeButton = screen.getByRole("button", {
       name(_accessibleName, element) {
         // eslint-disable-next-line testing-library/no-node-access
@@ -35,8 +39,8 @@ export const drawerState = async <R extends Renderer = ReactRenderer>({
 
     await userEvent.click(closeButton);
 
-    const drawerTitle = screen.getByText("Drawer Title");
+    const modalTitle = screen.getByText("Modal Title");
 
-    await expect(drawerTitle).not.toBeVisible();
+    await expect(modalTitle).not.toBeVisible();
   });
 };

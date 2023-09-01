@@ -2,7 +2,7 @@ import { Card, CardHeader, CardBody, CardFooter } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
   render: () => (
