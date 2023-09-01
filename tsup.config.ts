@@ -1,4 +1,18 @@
+import { spawnSync } from "child_process";
+
 import { defineConfig as defineTsupConfig } from "tsup";
+
+import type { SpawnSyncOptionsWithStringEncoding as SpawnSyncOptions } from "child_process";
+
+/**
+ * Options for spawning synchronous processes.
+ */
+const spawnProcessOptions: SpawnSyncOptions = {
+  cwd: process.cwd(),
+  env: process.env,
+  stdio: "inherit",
+  encoding: "utf-8",
+};
 
 /**
  * `tsup` configuration.
@@ -16,7 +30,6 @@ const tsupConfig = defineTsupConfig({
   sourcemap: true,
   minify: true,
   clean: true,
-  dts: true,
   splitting: false,
   format: ["cjs", "esm"],
   // NB: `peerDeps`, among others, are excluded (marked external) by default
@@ -29,6 +42,14 @@ const tsupConfig = defineTsupConfig({
 
     // extend recognized extensions to include explicit ESM extensions
     opt.resolveExtensions = [...defaultExtensions, ".mts", ".mjs"];
+  },
+  onSuccess: async () => {
+    console.log("Generating type declarations...");
+    // NB: below is used as alternative to `tsup` config `dts: true` option to avoid race condition with local package publish (at the cost of less concurrency)
+    spawnSync("yarn", ["tsup", "--dts-only"], spawnProcessOptions);
+
+    console.log("Publishing local package...");
+    spawnSync("yarn", ["yalc", "push"], spawnProcessOptions);
   },
 });
 
