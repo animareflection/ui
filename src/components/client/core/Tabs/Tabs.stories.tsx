@@ -21,11 +21,12 @@ const TABS: TabRecord[] = [
     value: "tab-3",
     trigger: "Tab 3",
     content: "Tab 3 content",
+    disabled: true,
   },
 ];
 
 export const Default: Story = {
-  render: () => <Tabs tabs={TABS} />,
+  render: () => <Tabs defaultValue="tab-1" tabs={TABS} />,
 };
 
 export const TabState: Story = {
