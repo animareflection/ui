@@ -85,6 +85,8 @@
     "@typescript-eslint/no-floating-promises": "error",
     // enforce type imports
     "@typescript-eslint/consistent-type-imports": "error",
+    // prevent cyclic dependencies
+    "import/no-cycle": "error",
     // prevent duplicate imports
     "import/no-duplicates": "error",
     // remove unused imports
