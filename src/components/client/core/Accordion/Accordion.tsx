@@ -1,6 +1,7 @@
 import { FiChevronDown as ChevronDownIcon } from "react-icons/fi";
 
-import { Button, Icon } from "components/client";
+import Button from "components/client/core/Button/Button";
+import Icon from "components/client/core/Icon/Icon";
 import {
   Accordion as PrimitiveAccordion,
   AccordionItem,
