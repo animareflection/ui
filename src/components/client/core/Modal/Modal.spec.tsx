@@ -7,10 +7,11 @@ import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
 /**
- * Test modal opening and closing.
+ * Modal testing suite.
  */
-export const openState = async <R extends Renderer = ReactRenderer>({
+export const modalState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
+  step,
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
@@ -18,22 +19,28 @@ export const openState = async <R extends Renderer = ReactRenderer>({
     name: /open modal/i,
   });
 
-  await userEvent.click(openButton);
+  await step("It should open modal on trigger click", async () => {
+    await userEvent.click(openButton);
 
-  await sleep(1000);
+    await sleep(1000);
 
-  const modalTitle = screen.getByText("Modal Title");
+    const modalTitle = screen.getByText("Modal Title");
 
-  await expect(modalTitle).toBeVisible();
-
-  const closeButton = screen.getByRole("button", {
-    name(_accessibleName, element) {
-      // eslint-disable-next-line testing-library/no-node-access
-      return element?.closest("div")?.getAttribute("role") === "dialog";
-    },
+    await expect(modalTitle).toBeVisible();
   });
 
-  await userEvent.click(closeButton);
+  await step("It should close modal on close button click", async () => {
+    const closeButton = screen.getByRole("button", {
+      name(_accessibleName, element) {
+        // eslint-disable-next-line testing-library/no-node-access
+        return element?.closest("div")?.getAttribute("role") === "dialog";
+      },
+    });
 
-  await expect(modalTitle).not.toBeVisible();
+    await userEvent.click(closeButton);
+
+    const modalTitle = screen.getByText("Modal Title");
+
+    await expect(modalTitle).not.toBeVisible();
+  });
 };

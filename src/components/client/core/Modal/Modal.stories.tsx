@@ -1,4 +1,4 @@
-import { openState } from "./Modal.spec";
+import { modalState } from "./Modal.spec";
 import { Button, Modal } from "components/client";
 import { Text } from "components/universal";
 
@@ -34,10 +34,10 @@ export const WithContext: Story = {
   ),
 };
 
-export const OpenState: Story = {
+export const ModalState: Story = {
   ...WithContext,
-  play: openState,
-  name: "[TEST] Open State",
+  play: modalState,
+  name: "[TEST] Modal State",
   tags: ["test"],
 };
 
