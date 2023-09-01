@@ -51,6 +51,9 @@ export const tabsRecipe = defineSlotRecipe({
       _hover: {
         color: "fg.muted",
       },
+      _focus: {
+        outline: "none",
+      },
       _selected: {
         color: "fg.default",
         _hover: {

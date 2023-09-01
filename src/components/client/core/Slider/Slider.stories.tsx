@@ -1,4 +1,4 @@
-import { movementState } from "./Slider.spec";
+import { sliderState } from "./Slider.spec";
 import { Slider } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -24,10 +24,10 @@ export const Default: Story = {
   ),
 };
 
-export const MovementState: Story = {
+export const SliderState: Story = {
   ...Default,
-  play: movementState,
-  name: "[TEST] Movement State",
+  play: sliderState,
+  name: "[TEST] Slider State",
   tags: ["test"],
 };
 
