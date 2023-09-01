@@ -1,4 +1,4 @@
-import { openState } from "./Menu.spec";
+import { menuState } from "./Menu.spec";
 import { Button, Menu } from "components/client";
 import { Text } from "components/universal";
 import { HStack } from "generated/panda/jsx";
@@ -108,10 +108,10 @@ export const WithContext: Story = {
   ),
 };
 
-export const OpenState: Story = {
+export const MenuState: Story = {
   ...WithContext,
-  play: openState,
-  name: "[TEST] Open State",
+  play: menuState,
+  name: "[TEST] Menu State",
   tags: ["test"],
 };
 

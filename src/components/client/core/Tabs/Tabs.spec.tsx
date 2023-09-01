@@ -5,7 +5,7 @@ import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
 /**
- * Test tab content is displayed correctly.
+ * Tabs testing suite.
  */
 export const tabState = async <R extends Renderer = ReactRenderer>({
   canvasElement,

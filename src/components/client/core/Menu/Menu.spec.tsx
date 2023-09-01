@@ -5,10 +5,11 @@ import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
 /**
- * Test menu opening and closing.
+ * Menu testing suite.
  */
-export const openState = async <R extends Renderer = ReactRenderer>({
+export const menuState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
+  step,
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
@@ -16,15 +17,23 @@ export const openState = async <R extends Renderer = ReactRenderer>({
     name: /open menu/i,
   });
 
-  await userEvent.click(openButton);
+  await step("It should open the menu on click", async () => {
+    await userEvent.click(openButton);
 
-  const closeButton = screen.getByRole("button", {
-    name: /close/i,
+    const closeButton = screen.getByRole("button", {
+      name: /close/i,
+    });
+
+    await expect(closeButton).toBeVisible();
   });
 
-  await expect(closeButton).toBeVisible();
+  await step("It should close the menu on click", async () => {
+    const closeButton = screen.getByRole("button", {
+      name: /close/i,
+    });
 
-  await userEvent.click(closeButton);
+    await userEvent.click(closeButton);
 
-  await expect(closeButton).not.toBeVisible();
+    await expect(closeButton).not.toBeVisible();
+  });
 };
