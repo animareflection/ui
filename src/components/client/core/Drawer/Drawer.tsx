@@ -1,7 +1,8 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import { Button, Icon } from "components/client";
+import Button from "components/client/core/Button/Button";
+import Icon from "components/client/core/Icon/Icon";
 import {
   Drawer as PrimitiveDrawer,
   DrawerBackdrop,
