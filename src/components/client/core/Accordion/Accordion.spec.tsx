@@ -5,9 +5,9 @@ import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
 /**
- * Test accordion opening and closing.
+ * Accordion testing suite.
  */
-export const openState = async <R extends Renderer = ReactRenderer>({
+export const accordionState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
   step,
 }: PlayFunctionContext<R>) => {

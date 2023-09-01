@@ -1,4 +1,4 @@
-import { openState } from "./Accordion.spec";
+import { accordionState } from "./Accordion.spec";
 import { Accordion } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -35,10 +35,10 @@ export const PlusMinus: Story = {
   render: () => <Accordion items={ITEMS} plusMinus />,
 };
 
-export const OpenState: Story = {
+export const AccordionState: Story = {
   ...Default,
-  play: openState,
-  name: "[TEST] Open State",
+  play: accordionState,
+  name: "[TEST] Accordion State",
   tags: ["test"],
 };
 

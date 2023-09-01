@@ -1,4 +1,4 @@
-import { openState } from "./Drawer.spec";
+import { drawerState } from "./Drawer.spec";
 import { Button, Drawer } from "components/client";
 import { Text } from "components/universal";
 
@@ -51,10 +51,10 @@ export const WithContext: Story = {
   ),
 };
 
-export const OpenState: Story = {
+export const DrawerState: Story = {
   ...WithContext,
-  play: openState,
-  name: "[TEST] Open State",
+  play: drawerState,
+  name: "[TEST] Drawer State",
   tags: ["test"],
 };
 
