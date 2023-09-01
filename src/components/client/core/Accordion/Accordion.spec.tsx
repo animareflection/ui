@@ -9,36 +9,80 @@ import type { PlayFunctionContext, Renderer } from "@storybook/types";
  */
 export const openState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
+  step,
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  const panelOneButton = canvas.getByRole("button", {
+  const triggerOne = canvas.getByRole("button", {
     name: /panel 1/i,
   });
 
-  const panelTwoButton = canvas.getByRole("button", {
+  const triggerTwo = canvas.getByRole("button", {
     name: /panel 2/i,
   });
 
-  await userEvent.click(panelOneButton);
+  const triggerThree = canvas.getByRole("button", {
+    name: /panel 3/i,
+  });
 
-  const accordionPanelOneContent = canvas.getByText(/Panel 1 content/i);
+  await step("It should open accordion item on click", async () => {
+    await userEvent.click(triggerOne);
 
-  await expect(accordionPanelOneContent).toBeInTheDocument();
+    const itemOne = canvas.getByText(/Panel 1 content/i);
 
-  await userEvent.click(panelTwoButton);
+    await expect(itemOne).toBeInTheDocument();
+  });
 
-  const accordionPanelTwoContent = canvas.getByText(/Panel 2 content/i);
+  await step("It should close accordion item on click", async () => {
+    await userEvent.click(triggerOne);
 
-  await expect(accordionPanelOneContent).toBeInTheDocument();
+    await expect(triggerOne).toHaveAttribute("aria-expanded", "false");
+  });
 
-  await expect(accordionPanelTwoContent).toBeInTheDocument();
+  await step("It should open multiple accordion items", async () => {
+    await userEvent.click(triggerOne);
+    await userEvent.click(triggerTwo);
 
-  await userEvent.click(panelOneButton);
+    const itemOne = canvas.getByText(/Panel 1 content/i);
+    const itemTwo = canvas.getByText(/Panel 2 content/i);
 
-  await expect(accordionPanelOneContent).not.toBeInTheDocument();
+    await expect(itemOne).toBeInTheDocument();
+    await expect(itemTwo).toBeInTheDocument();
+  });
 
-  await userEvent.click(panelTwoButton);
+  await step(
+    "It should focus the next/previous triggers on arrow down/up",
+    async () => {
+      triggerOne.focus();
 
-  await expect(accordionPanelTwoContent).not.toBeInTheDocument();
+      await userEvent.keyboard("[ArrowDown]");
+      await expect(triggerTwo).toHaveFocus();
+
+      await userEvent.keyboard("[ArrowUp]");
+      await expect(triggerOne).toHaveFocus();
+    },
+  );
+
+  await step(
+    "It should focus the first/last triggers on home/end",
+    async () => {
+      triggerOne.focus();
+
+      await userEvent.keyboard("[End]");
+      await expect(triggerThree).toHaveFocus();
+
+      await userEvent.keyboard("[Home]");
+      await expect(triggerOne).toHaveFocus();
+    },
+  );
+
+  await step("It should focus the next trigger on tab", async () => {
+    triggerOne.focus();
+
+    await userEvent.keyboard("[Tab]");
+    await expect(triggerTwo).toHaveFocus();
+
+    await userEvent.keyboard("[Tab]");
+    await expect(triggerThree).toHaveFocus();
+  });
 };
