@@ -31,6 +31,10 @@ export const Default: Story = {
   render: () => <Accordion items={ITEMS} />,
 };
 
+export const PlusMinus: Story = {
+  render: () => <Accordion items={ITEMS} plusMinus />,
+};
+
 export const OpenState: Story = {
   ...Default,
   play: openState,
