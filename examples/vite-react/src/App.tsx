@@ -79,7 +79,7 @@ const App = () => (
       <ImageDemo />
       <SpinnerDemo />
       <TabsDemo />
-      {/* TODO: figure out why hideBelow seems to respond to the wrong breakpoint */}
+      {/* TODO: figure out why below seems to respond to the wrong breakpoint */}
       <Hide below="sm">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint

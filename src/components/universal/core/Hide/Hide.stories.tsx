@@ -6,7 +6,7 @@ type Story = StoryObj<typeof Hide>;
 
 export const HideBelow: Story = {
   render: () => (
-    // TODO: figure out why hideBelow seems to respond to the wrong breakpoint
+    // TODO: figure out why below seems to respond to the wrong breakpoint
     <Hide below="sm">
       <Image src="/img/logo.png" alt="AR logo" height={40} width={40} />
     </Hide>
