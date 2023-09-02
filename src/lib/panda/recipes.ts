@@ -9,6 +9,7 @@ import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe"
 import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { hideRecipe } from "../../components/universal/core/Hide/Hide.recipe";
 import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
+import { showRecipe } from "../../components/universal/core/Show/Show.recipe";
 import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.recipe";
 import { textRecipe } from "../../components/universal/core/Text/Text.recipe";
 
@@ -17,6 +18,7 @@ export const recipes = {
   button: buttonRecipe,
   hide: hideRecipe,
   image: imageRecipe,
+  show: showRecipe,
   spinner: spinnerRecipe,
   text: textRecipe,
 };
