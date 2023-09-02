@@ -12,8 +12,6 @@ const Hide = ({ children, below, from, ...rest }: Props) => {
   // TODO: remove when `hideBelow` issue is fixed upstream (panda).
   const belowValue = (): JsxStyleProps["hideBelow"] => {
     switch (below) {
-      case "sm":
-        return undefined;
       case "md":
         return "sm";
       case "lg":
@@ -22,6 +20,7 @@ const Hide = ({ children, below, from, ...rest }: Props) => {
         return "lg";
       case "2xl":
         return "xl";
+      case "sm":
       default:
         return undefined;
     }
