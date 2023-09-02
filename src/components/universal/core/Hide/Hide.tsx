@@ -1,14 +1,20 @@
-import { Flex } from "generated/panda/jsx";
+import { panda } from "generated/panda/jsx";
+import { hide } from "generated/panda/recipes";
 
-import type { FlexProps } from "generated/panda/jsx";
+import type { HideVariantProps } from "generated/panda/recipes";
+import type { ComponentProps } from "react";
 
-export type Props = FlexProps;
+export type Props = Omit<
+  ComponentProps<typeof panda.div>,
+  "hideFrom" | "hideBelow"
+> &
+  HideVariantProps;
 
-const Hide = ({ children, ...rest }: Props) => {
+const Hide = ({ children, below, from, ...rest }: Props) => {
   return (
-    <Flex h="fit-content" w="fit-content" display="contents" {...rest}>
+    <panda.div className={hide({ below, from })} {...rest}>
       {children}
-    </Flex>
+    </panda.div>
   );
 };
 

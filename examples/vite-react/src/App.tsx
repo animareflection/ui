@@ -79,14 +79,13 @@ const App = () => (
       <ImageDemo />
       <SpinnerDemo />
       <TabsDemo />
-      {/* TODO: update when `hideBelow` issue is fixed upstream (panda) */}
-      <Hide hideBelow="sm">
+      <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint
         </Text>
       </Hide>
 
-      <Hide hideFrom="md">
+      <Hide from="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide from md breakpoint and up
         </Text>
