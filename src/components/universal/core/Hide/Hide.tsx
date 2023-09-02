@@ -4,11 +4,7 @@ import { hide } from "generated/panda/recipes";
 import type { HideVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export type Props = Omit<
-  ComponentProps<typeof panda.div>,
-  "hideFrom" | "hideBelow"
-> &
-  HideVariantProps;
+export type Props = ComponentProps<typeof panda.div> & HideVariantProps;
 
 const Hide = ({ children, below, from, ...rest }: Props) => {
   return (
