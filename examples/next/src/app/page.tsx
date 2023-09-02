@@ -66,13 +66,13 @@ const HomePage = () => (
       <ImageDemo />
       <SpinnerDemo />
       {/* TODO: figure out why hideBelow seems to respond to the wrong breakpoint */}
-      <Hide hideBelow="sm">
+      <Hide below="sm">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint
         </Text>
       </Hide>
 
-      <Hide hideFrom="md">
+      <Hide from="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide from md breakpoint and up
         </Text>
