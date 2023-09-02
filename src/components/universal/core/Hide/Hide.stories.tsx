@@ -6,7 +6,8 @@ type Story = StoryObj<typeof Hide>;
 
 export const HideBelow: Story = {
   render: () => (
-    <Hide below="md">
+    // TODO: update when `hideBelow` issue is fixed upstream (panda)
+    <Hide hideBelow="sm">
       <Image src="/img/logo.png" alt="AR logo" height={40} width={40} />
     </Hide>
   ),
@@ -14,7 +15,7 @@ export const HideBelow: Story = {
 
 export const HideFrom: Story = {
   render: () => (
-    <Hide from="md">
+    <Hide hideFrom="md">
       <Image src="/img/logo.png" alt="AR logo" height={40} width={40} />
     </Hide>
   ),
