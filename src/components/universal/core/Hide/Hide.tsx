@@ -9,12 +9,31 @@ export interface Props extends Omit<FlexProps, "hideBelow" | "hideFrom"> {
 }
 
 const Hide = ({ children, below, from, ...rest }: Props) => {
+  // TODO: remove when `hideBelow` issue is fixed upstream (panda).
+  const belowValue = (): JsxStyleProps["hideBelow"] => {
+    switch (below) {
+      case "sm":
+        return undefined;
+      case "md":
+        return "sm";
+      case "lg":
+        return "md";
+      case "xl":
+        return "lg";
+      case "2xl":
+        return "xl";
+      default:
+        return undefined;
+    }
+  };
+
   return (
     <Flex
       h="fit-content"
       w="fit-content"
       display="contents"
-      hideBelow={below}
+      // TODO: change to `hideBelow={below}` when `hideBelow` issue is fixed upstream (panda).
+      hideBelow={belowValue()}
       hideFrom={from}
       {...rest}
     >
