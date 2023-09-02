@@ -1,12 +1,23 @@
 import { Flex } from "generated/panda/jsx";
 
 import type { FlexProps } from "generated/panda/jsx";
+import type { JsxStyleProps } from "generated/panda/types";
 
-export type Props = FlexProps;
+export interface Props extends Omit<FlexProps, "hideBelow" | "hideFrom"> {
+  below?: JsxStyleProps["hideBelow"];
+  from?: JsxStyleProps["hideFrom"];
+}
 
-const Hide = ({ children, ...rest }: Props) => {
+const Hide = ({ children, below, from, ...rest }: Props) => {
   return (
-    <Flex h="fit-content" w="fit-content" display="contents" {...rest}>
+    <Flex
+      h="fit-content"
+      w="fit-content"
+      display="contents"
+      hideBelow={below}
+      hideFrom={from}
+      {...rest}
+    >
       {children}
     </Flex>
   );
