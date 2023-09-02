@@ -1,4 +1,12 @@
-import { Box, Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
+import {
+  Box,
+  Circle,
+  Flex,
+  Grid,
+  Hide,
+  Square,
+  Text,
+} from "@animareflection/ui";
 import Link from "next/link";
 
 import { BadgeDemo, CardDemo, ImageDemo, SpinnerDemo } from "components";
@@ -57,6 +65,18 @@ const HomePage = () => (
       <CardDemo />
       <ImageDemo />
       <SpinnerDemo />
+      {/* TODO: figure out why hideBelow seems to respond to the wrong breakpoint */}
+      <Hide hideBelow="sm">
+        <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
+          Hide below md breakpoint
+        </Text>
+      </Hide>
+
+      <Hide hideFrom="md">
+        <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
+          Hide from md breakpoint and up
+        </Text>
+      </Hide>
     </Flex>
 
     <Box color="blue" _hover={{ textDecoration: "underline" }}>
