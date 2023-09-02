@@ -4,7 +4,7 @@ import type { FlexProps } from "generated/panda/jsx";
 
 export type Props = FlexProps;
 
-const Show = ({ children, ...rest }: Props) => {
+const Hide = ({ children, ...rest }: Props) => {
   return (
     <Flex h="fit-content" w="fit-content" display="contents" {...rest}>
       {children}
@@ -12,4 +12,4 @@ const Show = ({ children, ...rest }: Props) => {
   );
 };
 
-export default Show;
+export default Hide;
