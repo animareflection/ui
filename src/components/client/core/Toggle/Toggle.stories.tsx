@@ -19,8 +19,20 @@ const ExampleToggle = () => {
   );
 };
 
-export const Default: Story = {
+export const Example: Story = {
   render: () => <ExampleToggle />,
+};
+
+export const Small: Story = {
+  render: () => <Toggle size="sm" label="Toggle Label" />,
+};
+
+export const Medium: Story = {
+  render: () => <Toggle label="Toggle Label" />,
+};
+
+export const Large: Story = {
+  render: () => <Toggle size="lg" label="Toggle Label" />,
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
