@@ -7,7 +7,7 @@ import type { ComponentProps } from "react";
 export type Props = ComponentProps<typeof panda.div> & HideVariantProps;
 
 /**
- * Core UI hide.
+ * Utility component to conditionally hide child elements from or below defined breakpoints.
  */
 const Hide = ({ children, below, from, ...rest }: Props) => {
   return (

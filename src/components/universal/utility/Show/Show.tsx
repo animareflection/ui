@@ -7,9 +7,9 @@ import type { ComponentProps } from "react";
 export type Props = ComponentProps<typeof panda.div> & ShowVariantProps;
 
 /**
- * Core UI show.
+ * Utility component to conditionally render child elements from or below defined breakpoints.
  */
-const Hide = ({ children, below, from, ...rest }: Props) => {
+const Show = ({ children, below, from, ...rest }: Props) => {
   return (
     <panda.div className={show({ below, from })} {...rest}>
       {children}
@@ -17,4 +17,4 @@ const Hide = ({ children, below, from, ...rest }: Props) => {
   );
 };
 
-export default Hide;
+export default Show;

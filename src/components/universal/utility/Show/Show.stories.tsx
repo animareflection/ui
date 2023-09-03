@@ -22,7 +22,7 @@ export const ShowBelow: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
 const meta: Meta<typeof Show> = {
-  title: "Components/Universal/Core/Show",
+  title: "Components/Universal/Utility/Show",
   component: Show,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
