@@ -6,6 +6,9 @@ import type { ComponentProps } from "react";
 
 export type Props = ComponentProps<typeof panda.div> & HideVariantProps;
 
+/**
+ * Core UI hide.
+ */
 const Hide = ({ children, below, from, ...rest }: Props) => {
   return (
     <panda.div className={hide({ below, from })} {...rest}>
