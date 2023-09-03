@@ -27,6 +27,7 @@ export const slotRecipes = {
   menu: menuRecipe,
   modal: modalRecipe,
   slider: sliderRecipe,
-  switch: switchRecipe,
+  // NB: 'switch' is not allowed as a variable declaration name, so we default to switchRecipe
+  switchRecipe,
   tabs: tabsRecipe,
 };
