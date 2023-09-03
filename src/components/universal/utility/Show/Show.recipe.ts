@@ -21,7 +21,7 @@ export const showRecipe = defineRecipe({
     },
     below: {
       sm: {
-        hide: "sm",
+        hideFrom: "sm",
       },
       md: {
         hideFrom: "md",
