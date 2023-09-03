@@ -51,6 +51,12 @@ export {
   SliderTrack,
 } from "./Slider/Slider";
 export {
+  default as Switch,
+  SwitchControl,
+  SwitchLabel,
+  SwitchThumb,
+} from "./Switch/Switch";
+export {
   default as Tabs,
   TabContent,
   TabIndicator,
@@ -110,6 +116,12 @@ export type {
   SliderThumbProps,
   SliderTrackProps,
 } from "./Slider/Slider";
+export type {
+  SwitchProps,
+  SwitchControlProps,
+  SwitchLabelProps,
+  SwitchThumbProps,
+} from "./Switch/Switch";
 export type {
   TabsProps,
   TabContentProps,
