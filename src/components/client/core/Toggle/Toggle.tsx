@@ -12,11 +12,8 @@ import { useIsMounted } from "lib/hooks";
 import type { ToggleProps } from "components/primitives";
 import type { ToggleVariantProps } from "generated/panda/recipes";
 
-export interface Props
-  extends Omit<ToggleProps, "children" | "checked">,
-    ToggleVariantProps {
-  label?: string;
-}
+export type Props = Omit<ToggleProps, "children" | "checked"> &
+  ToggleVariantProps;
 
 /**
  * Core UI toggle component.
