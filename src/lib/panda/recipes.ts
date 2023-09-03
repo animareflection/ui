@@ -11,11 +11,15 @@ import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
 import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.recipe";
 import { textRecipe } from "../../components/universal/core/Text/Text.recipe";
+import { hideRecipe } from "../../components/universal/utility/Hide/Hide.recipe";
+import { showRecipe } from "../../components/universal/utility/Show/Show.recipe";
 
 export const recipes = {
   badge: badgeRecipe,
   button: buttonRecipe,
+  hide: hideRecipe,
   image: imageRecipe,
+  show: showRecipe,
   spinner: spinnerRecipe,
   text: textRecipe,
 };

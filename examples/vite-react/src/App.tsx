@@ -1,4 +1,12 @@
-import { Circle, Flex, Grid, Square, Text } from "@animareflection/ui";
+import {
+  Circle,
+  Flex,
+  Grid,
+  Hide,
+  Show,
+  Square,
+  Text,
+} from "@animareflection/ui";
 
 import {
   AccordionDemo,
@@ -79,6 +87,26 @@ const App = () => (
       <ImageDemo />
       <SpinnerDemo />
       <TabsDemo />
+      <Hide below="md">
+        <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
+          Hide below md breakpoint
+        </Text>
+      </Hide>
+      <Hide from="md">
+        <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
+          Hide from md breakpoint and up
+        </Text>
+      </Hide>
+      <Show below="md">
+        <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
+          Show below md breakpoint
+        </Text>
+      </Show>
+      <Show from="md">
+        <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
+          Show from md breakpoint and up
+        </Text>
+      </Show>
     </Flex>
   </Flex>
 );
