@@ -6,13 +6,14 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof Toggle>;
 
-// NB: Seemingly, `Toggle` must be in a controlled state to work, so the state is managed internally until a workaround / fix is applied. This is an example of how to mimic that state for usage outside of the component.
+// NB: `Toggle` must be in a controlled state to work, so the state is naturally managed internally. This is an example of how to control that state for usage outside of the component.
 const ExampleToggle = () => {
   const [isChecked, setIsChecked] = useState(true);
 
   return (
     <Toggle
       label={isChecked ? "Checked" : "Unchecked"}
+      checked={isChecked}
       onChange={() => setIsChecked(!isChecked)}
       defaultChecked
     />
