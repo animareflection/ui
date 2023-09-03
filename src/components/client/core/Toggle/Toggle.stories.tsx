@@ -6,20 +6,20 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof Toggle>;
 
-const DefaultToggle = () => {
+// NB: Seemingly, `Toggle` must be in a controlled state to work, so the sate is managed internally until a workaround / fix is applied. This is an example of how to mimic that state for usage outside of the component.
+const ExampleToggle = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
     <Toggle
-      label="Switch Label"
-      isChecked={isChecked}
-      setIsChecked={setIsChecked}
+      label={isChecked ? "Checked" : "Unchecked"}
+      onChange={() => setIsChecked(!isChecked)}
     />
   );
 };
 
 export const Default: Story = {
-  render: () => <DefaultToggle />,
+  render: () => <ExampleToggle />,
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663

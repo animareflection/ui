@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Toggle as PrimitiveToggle,
   ToggleControl,
@@ -11,17 +13,17 @@ import type { ToggleProps } from "components/primitives";
 import type { ToggleVariantProps } from "generated/panda/recipes";
 
 export interface Props
-  extends Omit<ToggleProps, "children">,
+  extends Omit<ToggleProps, "children" | "checked">,
     ToggleVariantProps {
   label?: string;
-  isChecked: boolean;
-  setIsChecked: (isChecked: boolean) => void;
 }
 
 /**
  * Core UI toggle component.
  */
-const Toggle = ({ label, size, isChecked, setIsChecked, ...rest }: Props) => {
+const Toggle = ({ label, defaultChecked, size, ...rest }: Props) => {
+  const [isChecked, setIsChecked] = useState(defaultChecked ?? false);
+
   const classNames = toggle({ size });
 
   const isMounted = useIsMounted();
@@ -29,7 +31,12 @@ const Toggle = ({ label, size, isChecked, setIsChecked, ...rest }: Props) => {
   if (!isMounted) return null;
 
   return (
-    <PrimitiveToggle checked={isChecked} className={classNames.root} {...rest}>
+    <PrimitiveToggle
+      checked={isChecked}
+      defaultChecked={defaultChecked}
+      className={classNames.root}
+      {...rest}
+    >
       <ToggleControl
         className={classNames.control}
         onClick={() => setIsChecked(!isChecked)}
