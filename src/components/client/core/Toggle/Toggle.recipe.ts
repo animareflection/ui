@@ -1,8 +1,8 @@
 import { defineSlotRecipe } from "@pandacss/dev";
 
-export const switchRecipe = defineSlotRecipe({
-  className: "switchRecipe",
-  description: "A switch style",
+export const toggleRecipe = defineSlotRecipe({
+  className: "toggle",
+  description: "The styles for the Toggle component",
   slots: ["root", "control", "label", "thumb"],
   base: {
     root: {
@@ -13,7 +13,7 @@ export const switchRecipe = defineSlotRecipe({
     },
     control: {
       alignItems: "center",
-      background: "bg.muted",
+      background: "bg.emphasized",
       borderRadius: "full",
       cursor: "pointer",
       display: "inline-flex",
@@ -31,6 +31,7 @@ export const switchRecipe = defineSlotRecipe({
       userSelect: "none",
       textStyle: "md",
       fontWeight: "medium",
+      color: "fg.default",
     },
     thumb: {
       background: "bg.default",

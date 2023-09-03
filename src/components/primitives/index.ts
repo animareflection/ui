@@ -51,18 +51,18 @@ export {
   SliderTrack,
 } from "./Slider/Slider";
 export {
-  default as Switch,
-  SwitchControl,
-  SwitchLabel,
-  SwitchThumb,
-} from "./Switch/Switch";
-export {
   default as Tabs,
   TabContent,
   TabIndicator,
   TabList,
   TabTrigger,
 } from "./Tabs/Tabs";
+export {
+  default as Toggle,
+  ToggleControl,
+  ToggleLabel,
+  ToggleThumb,
+} from "./Toggle/Toggle";
 
 export type {
   AccordionProps,
@@ -117,15 +117,15 @@ export type {
   SliderTrackProps,
 } from "./Slider/Slider";
 export type {
-  SwitchProps,
-  SwitchControlProps,
-  SwitchLabelProps,
-  SwitchThumbProps,
-} from "./Switch/Switch";
-export type {
   TabsProps,
   TabContentProps,
   TabIndicatorProps,
   TabListProps,
   TabTriggerProps,
 } from "./Tabs/Tabs";
+export type {
+  ToggleProps,
+  ToggleControlProps,
+  ToggleLabelProps,
+  ToggleThumbProps,
+} from "./Toggle/Toggle";
