@@ -8,12 +8,13 @@ type Story = StoryObj<typeof Toggle>;
 
 // NB: Seemingly, `Toggle` must be in a controlled state to work, so the state is managed internally until a workaround / fix is applied. This is an example of how to mimic that state for usage outside of the component.
 const ExampleToggle = () => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(true);
 
   return (
     <Toggle
       label={isChecked ? "Checked" : "Unchecked"}
       onChange={() => setIsChecked(!isChecked)}
+      defaultChecked
     />
   );
 };

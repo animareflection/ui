@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import {
   Toggle as PrimitiveToggle,
   ToggleControl,
@@ -12,15 +10,12 @@ import { useIsMounted } from "lib/hooks";
 import type { ToggleProps } from "components/primitives";
 import type { ToggleVariantProps } from "generated/panda/recipes";
 
-export type Props = Omit<ToggleProps, "children" | "checked"> &
-  ToggleVariantProps;
+export type Props = Omit<ToggleProps, "children"> & ToggleVariantProps;
 
 /**
  * Core UI toggle component.
  */
-const Toggle = ({ label, defaultChecked, size, ...rest }: Props) => {
-  const [isChecked, setIsChecked] = useState(defaultChecked ?? false);
-
+const Toggle = ({ label, size, ...rest }: Props) => {
   const classNames = toggle({ size });
 
   const isMounted = useIsMounted();
@@ -28,22 +23,23 @@ const Toggle = ({ label, defaultChecked, size, ...rest }: Props) => {
   if (!isMounted) return null;
 
   return (
-    <PrimitiveToggle
-      checked={isChecked}
-      defaultChecked={defaultChecked}
-      className={classNames.root}
-      {...rest}
-    >
-      <ToggleControl
-        className={classNames.control}
-        onClick={() => setIsChecked(!isChecked)}
-      >
-        <ToggleThumb
-          className={classNames.thumb}
-          onClick={() => setIsChecked(!isChecked)}
-        />
-      </ToggleControl>
-      {label && <ToggleLabel className={classNames.label}>{label}</ToggleLabel>}
+    <PrimitiveToggle className={classNames.root} {...rest}>
+      {({ isChecked, setChecked }) => (
+        <>
+          <ToggleControl
+            className={classNames.control}
+            onClick={() => setChecked(!isChecked)}
+          >
+            <ToggleThumb
+              className={classNames.thumb}
+              onClick={() => setChecked(!isChecked)}
+            />
+          </ToggleControl>
+          {label && (
+            <ToggleLabel className={classNames.label}>{label}</ToggleLabel>
+          )}
+        </>
+      )}
     </PrimitiveToggle>
   );
 };
