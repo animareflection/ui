@@ -3,11 +3,6 @@ import { defineRecipe } from "@pandacss/dev";
 export const hideRecipe = defineRecipe({
   className: "hide",
   description: "The styles for the Hide component",
-  base: {
-    height: "fit-content",
-    width: "fit-content",
-    display: "contents",
-  },
   // TODO: fix variants when `hideBelow` issue is fixed upstream (panda)
   variants: {
     from: {
