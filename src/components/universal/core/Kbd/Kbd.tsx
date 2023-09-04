@@ -21,9 +21,7 @@ const Kbd = ({ children }: Props) => {
       color="neutral.950"
       bgColor={{ base: "gray.100", _dark: "gray.400" }}
       borderRadius="lg"
-      borderTopWidth="1px"
-      borderXWidth="1px"
-      borderBottomWidth="3px"
+      borderWidth="1px 1px 2px"
       borderColor={{ base: "gray.200", _dark: "gray.500" }}
     >
       {children}
