@@ -3,13 +3,13 @@ import { buttonRecipe } from "../../components/client/core/Button/Button.recipe"
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
-import { skeletonRecipe } from "../../components/client/core/Skeleton/Skeleton.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
 import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
 import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe";
 import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
 import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
+import { skeletonRecipe } from "../../components/universal/core/Skeleton/Skeleton.recipe";
 import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.recipe";
 import { textRecipe } from "../../components/universal/core/Text/Text.recipe";
 import { hideRecipe } from "../../components/universal/utility/Hide/Hide.recipe";

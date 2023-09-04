@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { Button, Skeleton } from "components/client";
-import { Text } from "components/universal";
+import { Button } from "components/client";
+import { Skeleton, Text } from "components/universal";
 import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -48,7 +48,7 @@ export const TextVariant: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Skeleton> = {
-  title: "Components/Client/Core/Skeleton",
+  title: "Components/Universal/Core/Skeleton",
   component: Skeleton,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
