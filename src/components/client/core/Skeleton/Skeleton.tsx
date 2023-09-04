@@ -1,21 +1,20 @@
 import { Flex, panda } from "generated/panda/jsx";
+import { skeleton } from "generated/panda/recipes";
 
 import type { FlexProps } from "generated/panda/jsx";
+import type { SkeletonVariantProps } from "generated/panda/recipes";
 
-export interface Props extends FlexProps {
+export interface Props extends FlexProps, SkeletonVariantProps {
   isLoaded?: boolean;
 }
 
-const Skeleton = ({ isLoaded, children, ...rest }: Props) => {
+const Skeleton = ({ isLoaded, variant, children, ...rest }: Props) => {
+  const classNames = skeleton({ variant });
+
   return (
-    <Flex pos="relative" h="fit-content" w="fit-content" {...rest}>
+    <Flex className={classNames.root} {...rest}>
       <panda.div
-        pos="absolute"
-        inset={0}
-        w="full"
-        h="full"
-        animation={{ base: "skeleton-light", _dark: "skeleton-dark" }}
-        borderRadius="sm"
+        className={classNames.skeleton}
         visibility={isLoaded ? "hidden" : "visible"}
       />
       {children}

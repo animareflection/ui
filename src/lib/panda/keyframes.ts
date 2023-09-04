@@ -55,8 +55,8 @@ const keyframes: ReturnType<typeof defineKeyframes> = defineKeyframes({
     "100%": { transform: "rotate(360deg)" },
   },
   "skeleton-loading-dark": {
-    "0%": { background: "#999999" },
-    "100%": { backgroundColor: "#777777" },
+    "0%": { background: "#555555" },
+    "100%": { backgroundColor: "#333333" },
   },
   "skeleton-loading-light": {
     "0%": { background: "#eeeeee" },

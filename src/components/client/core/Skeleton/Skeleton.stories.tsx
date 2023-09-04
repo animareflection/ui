@@ -13,7 +13,7 @@ const SkeletonToggle = () => {
 
   return (
     <Flex direction="column" gap={2}>
-      <Skeleton isLoaded={isLoaded}>
+      <Skeleton isLoaded={isLoaded} w="fit-content">
         <Text maxW="sm" mt={2}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -27,8 +27,23 @@ const SkeletonToggle = () => {
   );
 };
 
-export const Default: Story = {
+export const Toggle: Story = {
   render: () => <SkeletonToggle />,
+};
+
+export const CircleVariant: Story = {
+  render: () => <Skeleton variant="circle" w={12} h={12} />,
+};
+
+export const TextVariant: Story = {
+  render: () => (
+    <Flex direction="column" gap={2}>
+      <Skeleton variant="text" w="50%" />
+      <Skeleton variant="text" w="75%" />
+      <Skeleton variant="text" w="25%" />
+      <Skeleton variant="text" w="2/5" />
+    </Flex>
+  ),
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
