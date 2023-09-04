@@ -14,7 +14,8 @@ const Skeleton = ({ isLoaded, children, ...rest }: Props) => {
         inset={0}
         w="full"
         h="full"
-        animation="skeleton"
+        animation={{ base: "skeleton-light", _dark: "skeleton-dark" }}
+        borderRadius="sm"
         visibility={isLoaded ? "hidden" : "visible"}
       />
       {children}
