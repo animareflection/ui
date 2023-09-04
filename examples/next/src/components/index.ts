@@ -7,6 +7,7 @@ export { default as IconDemo } from "./IconDemo";
 export { default as ImageDemo } from "./ImageDemo";
 export { default as MenuDemo } from "./MenuDemo";
 export { default as ModalDemo } from "./ModalDemo";
+export { default as SkeletonToggleDemo } from "./SkeletonToggleDemo";
 export { default as SliderDemo } from "./SliderDemo";
 export { default as SpinnerDemo } from "./SpinnerDemo";
 export { default as TabsDemo } from "./TabsDemo";
