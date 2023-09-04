@@ -34,6 +34,9 @@ const animations = defineTokens.animations({
   "infinite-spin": {
     value: "spin 1s infinite linear",
   },
+  skeleton: {
+    value: "skeleton-loading 1s infinite linear alternate",
+  },
 });
 
 export default animations;
