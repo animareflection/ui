@@ -1,5 +1,6 @@
 import { accordionRecipe } from "../../components/client/core/Accordion/Accordion.recipe";
 import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
+import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
@@ -27,6 +28,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  checkbox: checkboxRecipe,
   card: cardRecipe,
   drawer: drawerRecipe,
   menu: menuRecipe,

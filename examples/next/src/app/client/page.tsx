@@ -5,6 +5,7 @@ import { Flex } from "@animareflection/ui";
 import {
   AccordionDemo,
   ButtonDemo,
+  CheckboxDemo,
   DrawerDemo,
   IconDemo,
   MenuDemo,
@@ -28,6 +29,7 @@ const ClientPage = () => (
     <TabsDemo />
     <ToggleDemo />
     <SkeletonToggleDemo />
+    <CheckboxDemo />
   </Flex>
 );
 
