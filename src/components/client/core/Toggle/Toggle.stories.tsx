@@ -6,8 +6,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof Toggle>;
 
-// NB: `Toggle` must be in a controlled state to work, so the state is naturally managed internally. This is an example of how to control that state for usage outside of the component.
-const ExampleToggle = () => {
+const ControlledToggle = () => {
   const [isChecked, setIsChecked] = useState(true);
 
   return (
@@ -20,8 +19,8 @@ const ExampleToggle = () => {
   );
 };
 
-export const Example: Story = {
-  render: () => <ExampleToggle />,
+export const Controlled: Story = {
+  render: () => <ControlledToggle />,
 };
 
 export const Small: Story = {
