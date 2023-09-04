@@ -66,12 +66,12 @@ export const checkboxRecipe = defineSlotRecipe({
       },
       lg: {
         root: {
-          gap: 4,
+          gap: 3.5,
         },
         control: {
           width: 6,
           height: 6,
-          borderRadius: "md",
+          borderRadius: "sm",
           "& svg": {
             width: 4,
             height: 4,
