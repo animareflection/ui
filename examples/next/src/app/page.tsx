@@ -5,6 +5,7 @@ import {
   Grid,
   Hide,
   Show,
+  Skeleton,
   Square,
   Text,
 } from "@animareflection/ui";
@@ -19,16 +20,7 @@ import {
 } from "components";
 
 const HomePage = () => (
-  <Flex
-    gradientFrom="white"
-    gradientTo="brand.primary.100"
-    bgGradient="to-b"
-    direction="column"
-    h="100%"
-    align="center"
-    gap={4}
-    pt={12}
-  >
+  <Flex direction="column" h="100%" align="center" gap={4} pt={12}>
     <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
       Anima Reflection UI library demo
     </Text>
@@ -93,6 +85,7 @@ const HomePage = () => (
           Show from md breakpoint and up
         </Text>
       </Show>
+      <Skeleton variant="circle" w={12} h={12} />
     </Flex>
 
     <Box color="blue" _hover={{ textDecoration: "underline" }}>

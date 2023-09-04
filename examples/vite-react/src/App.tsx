@@ -13,12 +13,14 @@ import {
   BadgeDemo,
   ButtonDemo,
   CardDemo,
+  CheckboxDemo,
   DrawerDemo,
   IconDemo,
   ImageDemo,
   KbdDemo,
   MenuDemo,
   ModalDemo,
+  SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
   TabsDemo,
@@ -90,6 +92,8 @@ const App = () => (
       <SpinnerDemo />
       <TabsDemo />
       <ToggleDemo />
+      <SkeletonToggleDemo />
+      <CheckboxDemo />
       <KbdDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
