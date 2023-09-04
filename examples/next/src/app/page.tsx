@@ -10,7 +10,13 @@ import {
 } from "@animareflection/ui";
 import Link from "next/link";
 
-import { BadgeDemo, CardDemo, ImageDemo, SpinnerDemo } from "components";
+import {
+  BadgeDemo,
+  CardDemo,
+  ImageDemo,
+  KbdDemo,
+  SpinnerDemo,
+} from "components";
 
 const HomePage = () => (
   <Flex
@@ -66,6 +72,7 @@ const HomePage = () => (
       <CardDemo />
       <ImageDemo />
       <SpinnerDemo />
+      <KbdDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint
