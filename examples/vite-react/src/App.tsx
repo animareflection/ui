@@ -19,6 +19,7 @@ import {
   ImageDemo,
   MenuDemo,
   ModalDemo,
+  SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
   TabsDemo,
@@ -90,6 +91,7 @@ const App = () => (
       <SpinnerDemo />
       <TabsDemo />
       <ToggleDemo />
+      <SkeletonToggleDemo />
       <CheckboxDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">

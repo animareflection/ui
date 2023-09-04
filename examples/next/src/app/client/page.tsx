@@ -10,6 +10,7 @@ import {
   IconDemo,
   MenuDemo,
   ModalDemo,
+  SkeletonToggleDemo,
   SliderDemo,
   TabsDemo,
   ToggleDemo,
@@ -27,6 +28,7 @@ const ClientPage = () => (
     <SliderDemo />
     <TabsDemo />
     <ToggleDemo />
+    <SkeletonToggleDemo />
     <CheckboxDemo />
   </Flex>
 );

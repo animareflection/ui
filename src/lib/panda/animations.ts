@@ -34,6 +34,12 @@ const animations = defineTokens.animations({
   "infinite-spin": {
     value: "spin 1s infinite linear",
   },
+  "skeleton-dark": {
+    value: "skeleton-loading-dark 1s infinite linear alternate",
+  },
+  "skeleton-light": {
+    value: "skeleton-loading-light 1s infinite linear alternate",
+  },
 });
 
 export default animations;
