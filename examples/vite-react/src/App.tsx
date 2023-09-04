@@ -13,6 +13,7 @@ import {
   BadgeDemo,
   ButtonDemo,
   CardDemo,
+  CheckboxDemo,
   DrawerDemo,
   IconDemo,
   ImageDemo,
@@ -89,6 +90,7 @@ const App = () => (
       <SpinnerDemo />
       <TabsDemo />
       <ToggleDemo />
+      <CheckboxDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint
