@@ -18,6 +18,7 @@ import {
   ImageDemo,
   MenuDemo,
   ModalDemo,
+  SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
   TabsDemo,
@@ -89,6 +90,7 @@ const App = () => (
       <SpinnerDemo />
       <TabsDemo />
       <ToggleDemo />
+      <SkeletonToggleDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint
