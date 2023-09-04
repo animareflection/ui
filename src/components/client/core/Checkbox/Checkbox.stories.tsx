@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { checkboxState } from "./Checkbox.spec";
 import { Checkbox } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -19,7 +20,7 @@ const ControlledCheckbox = () => {
   );
 };
 
-export const Default: Story = {
+export const Controlled: Story = {
   render: () => <ControlledCheckbox />,
 };
 
@@ -33,6 +34,13 @@ export const Medium: Story = {
 
 export const Large: Story = {
   render: () => <Checkbox size="lg" label="Label" />,
+};
+
+export const CheckboxState: Story = {
+  ...Controlled,
+  play: checkboxState,
+  name: "[TEST] Checkbox State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
