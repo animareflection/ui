@@ -5,6 +5,11 @@ export {
   AccordionContent,
 } from "./Accordion/Accordion";
 export {
+  default as Checkbox,
+  CheckboxControl,
+  CheckboxLabel,
+} from "./Checkbox/Checkbox";
+export {
   default as Drawer,
   DrawerBackdrop,
   DrawerTrigger,
@@ -70,6 +75,11 @@ export type {
   AccordionTriggerProps,
   AccordionContentProps,
 } from "./Accordion/Accordion";
+export type {
+  CheckboxProps,
+  CheckboxControlProps,
+  CheckboxLabelProps,
+} from "./Checkbox/Checkbox";
 export type {
   DrawerProps,
   DrawerBackdropProps,
