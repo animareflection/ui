@@ -1,9 +1,10 @@
+import { sliderState } from "./Slider.spec";
 import { Slider } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { SliderMarkerRecord } from "components/client";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Slider>;
 
 const MARKERS: SliderMarkerRecord[] = [
   { id: "marker-1", value: 25, label: "25%" },
@@ -21,6 +22,13 @@ export const Default: Story = {
       markers={MARKERS}
     />
   ),
+};
+
+export const SliderState: Story = {
+  ...Default,
+  play: sliderState,
+  name: "[TEST] Slider State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663

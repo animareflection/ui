@@ -1,4 +1,4 @@
-import { Pressable } from "@ark-ui/react";
+import { ark } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 import { button } from "generated/panda/recipes";
@@ -9,7 +9,10 @@ import type { ComponentProps } from "react";
 
 export type Props = ComponentProps<typeof PandaButton> & ButtonVariantProps;
 
-const PandaButton: PandaComponent<typeof Pressable> = panda(Pressable, button);
+const PandaButton: PandaComponent<typeof ark.button> = panda(
+  ark.button,
+  button,
+);
 
 /**
  * Core UI button.

@@ -1,3 +1,4 @@
+import { menuState } from "./Menu.spec";
 import { Button, Menu } from "components/client";
 import { Text } from "components/universal";
 import { HStack } from "generated/panda/jsx";
@@ -5,7 +6,7 @@ import { HStack } from "generated/panda/jsx";
 import type { Meta, StoryObj } from "@storybook/react";
 import type { MenuItemRecord, MenuItemGroupRecord } from "components/client";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Menu>;
 
 const SUBMENU_GROUP_ITEMS: MenuItemRecord[] = [
   { id: "item-7", child: "Item 7" },
@@ -99,12 +100,19 @@ export const WithContext: Story = {
       groups={WITH_CONTEXT_GROUPS}
     >
       {({ onClose }) => (
-        <Button mx={1} variant="ghost" onClick={onClose}>
+        <Button borderRadius="unset" variant="ghost" w="full" onClick={onClose}>
           Close
         </Button>
       )}
     </Menu>
   ),
+};
+
+export const MenuState: Story = {
+  ...WithContext,
+  play: menuState,
+  name: "[TEST] Menu State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663

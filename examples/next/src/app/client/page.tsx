@@ -11,6 +11,7 @@ import {
   ModalDemo,
   SliderDemo,
   TabsDemo,
+  ToggleDemo,
 } from "components";
 
 const ClientPage = () => (
@@ -24,6 +25,7 @@ const ClientPage = () => (
     <ModalDemo />
     <SliderDemo />
     <TabsDemo />
+    <ToggleDemo />
   </Flex>
 );
 

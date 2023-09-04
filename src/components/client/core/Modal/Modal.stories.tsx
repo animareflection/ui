@@ -1,9 +1,10 @@
+import { modalState } from "./Modal.spec";
 import { Button, Modal } from "components/client";
 import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   render: () => (
@@ -31,6 +32,13 @@ export const WithContext: Story = {
       {({ isOpen }) => <Text mt={2}>Open: {String(isOpen)}</Text>}
     </Modal>
   ),
+};
+
+export const ModalState: Story = {
+  ...WithContext,
+  play: modalState,
+  name: "[TEST] Modal State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663

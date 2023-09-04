@@ -1,9 +1,10 @@
+import { accordionState } from "./Accordion.spec";
 import { Accordion } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { AccordionItemRecord } from "components/client";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Accordion>;
 
 const ITEMS: AccordionItemRecord[] = [
   {
@@ -28,6 +29,17 @@ const ITEMS: AccordionItemRecord[] = [
 
 export const Default: Story = {
   render: () => <Accordion items={ITEMS} />,
+};
+
+export const PlusMinus: Story = {
+  render: () => <Accordion items={ITEMS} plusMinus />,
+};
+
+export const AccordionState: Story = {
+  ...Default,
+  play: accordionState,
+  name: "[TEST] Accordion State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663

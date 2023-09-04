@@ -4,7 +4,7 @@ import { HStack, Stack, panda } from "generated/panda/jsx";
 import type { Meta, StoryObj } from "@storybook/react";
 import type { FontToken } from "generated/panda/tokens";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Typeset>;
 
 interface Props {
   /** Name of font to showcase. */

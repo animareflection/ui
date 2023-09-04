@@ -6,6 +6,7 @@ export { default as Menu } from "./Menu/Menu";
 export { default as Modal } from "./Modal/Modal";
 export { default as Slider } from "./Slider/Slider";
 export { default as Tabs } from "./Tabs/Tabs";
+export { default as Toggle } from "./Toggle/Toggle";
 
 export type {
   Props as AccordionProps,
@@ -22,3 +23,4 @@ export type {
 export type { Props as ModalProps } from "./Modal/Modal";
 export type { Props as SliderProps, SliderMarkerRecord } from "./Slider/Slider";
 export type { Props as TabsProps, TabRecord } from "./Tabs/Tabs";
+export type { Props as ToggleProps } from "./Toggle/Toggle";

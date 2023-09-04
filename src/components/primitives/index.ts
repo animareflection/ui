@@ -57,6 +57,12 @@ export {
   TabList,
   TabTrigger,
 } from "./Tabs/Tabs";
+export {
+  default as Toggle,
+  ToggleControl,
+  ToggleLabel,
+  ToggleThumb,
+} from "./Toggle/Toggle";
 
 export type {
   AccordionProps,
@@ -117,3 +123,9 @@ export type {
   TabListProps,
   TabTriggerProps,
 } from "./Tabs/Tabs";
+export type {
+  ToggleProps,
+  ToggleControlProps,
+  ToggleLabelProps,
+  ToggleThumbProps,
+} from "./Toggle/Toggle";

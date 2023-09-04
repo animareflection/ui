@@ -1,18 +1,15 @@
 import { expect } from "@storybook/jest";
-import { screen, within } from "@storybook/testing-library";
-
-import { sleep } from "lib/utils";
+import { screen, userEvent, within } from "@storybook/testing-library";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
-// TODO implement `userEvent` simulation package from `@storybook/testing-library` instead of native HTML browser click event (e.g. `await userEvent.click(openButton);` instead of `openButton.click();`); https://trello.com/c/Ez0nSBmA/152-implement-userevent-in-story-play-tests
-
 /**
- * Test drawer opening and closing.
+ * Drawer testing suite.
  */
-export const openState = async <R extends Renderer = ReactRenderer>({
+export const drawerState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
+  step,
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
@@ -20,18 +17,26 @@ export const openState = async <R extends Renderer = ReactRenderer>({
     name: /open drawer/i,
   });
 
-  openButton.click();
+  await step("It should open drawer on trigger click", async () => {
+    await userEvent.click(openButton);
 
-  await sleep(2000);
+    const drawerTitle = screen.getByText("Drawer Title");
 
-  const drawerTitle = screen.getByText("Drawer Title");
+    await expect(drawerTitle).toBeVisible();
+  });
 
-  await expect(drawerTitle).toBeInTheDocument();
+  await step("It should close drawer on close button click", async () => {
+    const closeButton = screen.getByRole("button", {
+      name(_accessibleName, element) {
+        // eslint-disable-next-line testing-library/no-node-access
+        return element?.closest("div")?.getAttribute("role") === "dialog";
+      },
+    });
 
-  const closeButton = screen.getByRole("button");
-  closeButton.click();
+    await userEvent.click(closeButton);
 
-  await sleep(2000);
+    const drawerTitle = screen.getByText("Drawer Title");
 
-  await expect(drawerTitle).not.toBeInTheDocument();
+    await expect(drawerTitle).not.toBeVisible();
+  });
 };

@@ -1,10 +1,10 @@
-import { openState } from "./Drawer.spec";
+import { drawerState } from "./Drawer.spec";
 import { Button, Drawer } from "components/client";
 import { Text } from "components/universal";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Drawer>;
 
 export const RightPlacement: Story = {
   render: () => (
@@ -51,10 +51,10 @@ export const WithContext: Story = {
   ),
 };
 
-export const OpenState: Story = {
+export const DrawerState: Story = {
   ...WithContext,
-  play: openState,
-  name: "[TEST] Open State",
+  play: drawerState,
+  name: "[TEST] Drawer State",
   tags: ["test"],
 };
 
