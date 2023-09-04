@@ -10,4 +10,5 @@ export { default as ModalDemo } from "./ModalDemo";
 export { default as SliderDemo } from "./SliderDemo";
 export { default as SpinnerDemo } from "./SpinnerDemo";
 export { default as TabsDemo } from "./TabsDemo";
+export { default as ToggleDemo } from "./ToggleDemo";
 export { default as Wrapper } from "./Wrapper";
