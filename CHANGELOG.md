@@ -1,5 +1,29 @@
 # @animareflection/ui
 
+## 0.5.0
+
+### Minor Changes
+
+- [#66](https://github.com/animareflection/ui/pull/66) [`ff83ff4`](https://github.com/animareflection/ui/commit/ff83ff499d87373de811d2a843ee39f961bb6a78) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Tabs` component
+
+- [#78](https://github.com/animareflection/ui/pull/78) [`91d3c06`](https://github.com/animareflection/ui/commit/91d3c0679d87af91ddd3da1d0e431e3cada6e982) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Hide` component
+
+- [#79](https://github.com/animareflection/ui/pull/79) [`b85cf45`](https://github.com/animareflection/ui/commit/b85cf4566e1ec18cf2e93e5224dfea25c54c1ff0) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Toggle` component
+
+- [#82](https://github.com/animareflection/ui/pull/82) [`abc027f`](https://github.com/animareflection/ui/commit/abc027f3ba94eaf57d5e4061cecaaf80e28df13b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Checkbox` component
+
+- [#78](https://github.com/animareflection/ui/pull/78) [`91d3c06`](https://github.com/animareflection/ui/commit/91d3c0679d87af91ddd3da1d0e431e3cada6e982) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Show` component
+
+- [#81](https://github.com/animareflection/ui/pull/81) [`cfd4a01`](https://github.com/animareflection/ui/commit/cfd4a01ffc9fdce310f7326f9b135ff71e923553) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Skeleton` component
+
+- [#84](https://github.com/animareflection/ui/pull/84) [`baa70d4`](https://github.com/animareflection/ui/commit/baa70d4811356c30326a56e8bf8cfff666f1cd95) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Kbd` component
+
+### Patch Changes
+
+- [#77](https://github.com/animareflection/ui/pull/77) [`1fe24a5`](https://github.com/animareflection/ui/commit/1fe24a5da2c2e72166e0a16fee53fadfafc7120b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Button` component to use ark factory function
+
+- [#77](https://github.com/animareflection/ui/pull/77) [`1fe24a5`](https://github.com/animareflection/ui/commit/1fe24a5da2c2e72166e0a16fee53fadfafc7120b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Accordion` component
+
 ## 0.4.0
 
 ### Minor Changes
