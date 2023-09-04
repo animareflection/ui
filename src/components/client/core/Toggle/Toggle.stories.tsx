@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { toggleState } from "./Toggle.spec";
 import { Toggle } from "components/client";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -33,6 +34,13 @@ export const Medium: Story = {
 
 export const Large: Story = {
   render: () => <Toggle size="lg" label="Toggle Label" />,
+};
+
+export const ToggleState: Story = {
+  ...Controlled,
+  play: toggleState,
+  name: "[TEST] Toggle State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
