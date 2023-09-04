@@ -1,5 +1,6 @@
 export { default as Accordion } from "./Accordion/Accordion";
 export { default as Button } from "./Button/Button";
+export { default as Checkbox } from "./Checkbox/Checkbox";
 export { default as Drawer } from "./Drawer/Drawer";
 export { default as Icon } from "./Icon/Icon";
 export { default as Menu } from "./Menu/Menu";
@@ -13,6 +14,7 @@ export type {
   AccordionItemRecord,
 } from "./Accordion/Accordion";
 export type { Props as ButtonProps } from "./Button/Button";
+export type { Props as CheckboxProps } from "./Checkbox/Checkbox";
 export type { Props as DrawerProps } from "./Drawer/Drawer";
 export type { Props as IconProps } from "./Icon/Icon";
 export type {
