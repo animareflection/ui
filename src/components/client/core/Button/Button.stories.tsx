@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { onClickEvent } from "./Button.spec";
 import { Button } from "components/client";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -29,6 +30,17 @@ export const Ghost: Story = {
 
 export const Round: Story = {
   render: () => <Button variant="round">Click me 🏝️</Button>,
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <Flex gap={2}>
+      <Button size="xs">Click me 🏝️</Button>
+      <Button size="sm">Click me 🏝️</Button>
+      <Button>Click me 🏝️</Button>
+      <Button size="lg">Click me 🏝️</Button>
+    </Flex>
+  ),
 };
 
 export const OnClickEvent: Story = {
