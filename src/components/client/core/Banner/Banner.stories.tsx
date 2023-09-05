@@ -6,21 +6,33 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Banner>Banner</Banner>,
+  render: () => <Banner close>Banner</Banner>,
 };
 export const Subtle: Story = {
-  render: () => <Banner variant="subtle">Banner</Banner>,
+  render: () => (
+    <Banner close variant="subtle">
+      Banner
+    </Banner>
+  ),
 };
 export const Outline: Story = {
-  render: () => <Banner variant="outline">Banner</Banner>,
+  render: () => (
+    <Banner close variant="outline">
+      Banner
+    </Banner>
+  ),
 };
 
 export const Sizes: Story = {
   render: () => (
     <Flex gap={2} alignItems="center">
-      <Banner size="sm">Banner</Banner>
-      <Banner>Banner</Banner>
-      <Banner size="lg">Banner</Banner>
+      <Banner close size="sm">
+        Banner
+      </Banner>
+      <Banner close>Banner</Banner>
+      <Banner close size="lg">
+        Banner
+      </Banner>
     </Flex>
   ),
 };

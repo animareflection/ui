@@ -8,26 +8,32 @@ import { banner } from "generated/panda/recipes";
 import type { BannerVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export type Props = ComponentProps<typeof panda.div> & BannerVariantProps;
+export interface Props
+  extends ComponentProps<typeof panda.div>,
+    BannerVariantProps {
+  close?: boolean;
+}
 
 /**
  * Core UI Banner.
  */
-const Banner = ({ children, variant, size, ...props }: Props) => {
+const Banner = ({ children, variant, size, close, ...props }: Props) => {
   return (
     <panda.div className={banner({ variant, size })} {...props}>
       {children}
-      <Button
-        _focus={{
-          outline: "none",
-        }}
-        bgColor={{
-          base: "inherit",
-          _hover: "bg.subtle",
-        }}
-      >
-        <Icon as={CloseIcon} color="fg.default" />
-      </Button>
+      {close && (
+        <Button
+          _focus={{
+            outline: "none",
+          }}
+          bgColor={{
+            base: "inherit",
+            _hover: "bg.subtle",
+          }}
+        >
+          <Icon as={CloseIcon} color="fg.default" />
+        </Button>
+      )}
     </panda.div>
   );
 };
