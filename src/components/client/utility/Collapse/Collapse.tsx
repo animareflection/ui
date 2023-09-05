@@ -17,6 +17,9 @@ export interface Props extends FlexProps {
   orientation?: "horizontal" | "vertical";
 }
 
+/**
+ * Utility component to conditionally collapse child elements.
+ */
 const Collapse = ({
   label,
   icon,
