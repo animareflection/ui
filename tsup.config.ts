@@ -49,7 +49,7 @@ const tsupConfig = defineTsupConfig({
     spawnSync("yarn", ["tsup", "--dts-only"], spawnProcessOptions);
 
     console.log("Publishing local package...");
-    spawnSync("yarn", ["yalc", "push"], spawnProcessOptions);
+    spawnSync("yarn", ["knit", "push"], spawnProcessOptions);
   },
 });
 

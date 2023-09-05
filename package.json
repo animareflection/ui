@@ -70,6 +70,7 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/types": "^17.4.4",
+    "@omnidev/knit": "^0.1.2",
     "@pandacss/dev": "^0.13.0",
     "@storybook/addon-a11y": "^7.3.2",
     "@storybook/addon-coverage": "^0.0.9",
@@ -123,7 +124,6 @@
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
     "wait-on": "^7.0.1",
-    "webpack": "^5.88.2",
-    "yalc": "^1.0.0-pre.53"
+    "webpack": "^5.88.2"
   }
 }
