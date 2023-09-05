@@ -1,3 +1,4 @@
+import { collapseState } from "./Collapse.spec";
 import { Collapse } from "components/client";
 import { Image, Text } from "components/universal";
 import { Flex } from "generated/panda/jsx";
@@ -32,6 +33,13 @@ export const Horizontal: Story = {
       </Text>
     </Flex>
   ),
+};
+
+export const CollapseState: Story = {
+  ...Vertical,
+  play: collapseState,
+  name: "[TEST] Collapse State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
