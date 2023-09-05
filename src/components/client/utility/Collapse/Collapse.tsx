@@ -49,43 +49,27 @@ const Collapse = ({
           as={icon ?? defaultIcon}
         />
       </Button>
-      {isHorizontal ? (
-        <AnimatePresence initial={isOpen}>
-          {isOpen && (
-            <motion.div
-              style={{ overflow: "hidden" }}
-              initial="collapsed"
-              animate="open"
-              exit="collapsed"
-              variants={{
-                open: { opacity: 1, width: "auto" },
-                collapsed: { opacity: 0, width: 0 },
-              }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-            >
-              {children}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      ) : (
-        <AnimatePresence initial={isOpen}>
-          {isOpen && (
-            <motion.div
-              style={{ overflow: "hidden" }}
-              initial="collapsed"
-              animate="open"
-              exit="collapsed"
-              variants={{
-                open: { opacity: 1, height: "auto" },
-                collapsed: { opacity: 0, height: 0 },
-              }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-            >
-              {children}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
+      <AnimatePresence initial={isOpen}>
+        {isOpen && (
+          <motion.div
+            style={{ overflow: "hidden" }}
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: isHorizontal
+                ? { opacity: 1, width: "auto" }
+                : { opacity: 1, height: "auto" },
+              collapsed: isHorizontal
+                ? { opacity: 0, width: 0 }
+                : { opacity: 0, height: 0 },
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Flex>
   );
 };
