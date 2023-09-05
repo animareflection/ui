@@ -38,6 +38,7 @@ export const Horizontal: Story = {
 const meta: Meta<typeof Collapse> = {
   title: "Components/Client/Core/Collapse",
   component: Collapse,
+  tags: ["autodocs"],
   decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Collapse>;
 
