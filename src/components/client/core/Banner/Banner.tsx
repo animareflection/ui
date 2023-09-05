@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
 import Button from "components/client/core/Button/Button";
@@ -11,30 +12,34 @@ import type { ComponentProps } from "react";
 export interface Props
   extends ComponentProps<typeof panda.div>,
     BannerVariantProps {
-  close?: boolean;
+  visible?: boolean;
 }
 
 /**
  * Core UI Banner.
  */
-const Banner = ({ children, variant, size, close, ...props }: Props) => {
+const Banner = ({ children, variant, size, visible, ...props }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   return (
-    <panda.div className={banner({ variant, size })} {...props}>
-      {children}
-      {close && (
-        <Button
-          _focus={{
-            outline: "none",
-          }}
-          bgColor={{
-            base: "inherit",
-            _hover: "bg.subtle",
-          }}
-        >
-          <Icon as={CloseIcon} color="fg.default" />
-        </Button>
-      )}
-    </panda.div>
+    isOpen && (
+      <panda.div className={banner({ variant, size })} {...props}>
+        {children}
+        {visible && (
+          <Button
+            onClick={() => setIsOpen(false)}
+            _focus={{
+              outline: "none",
+            }}
+            bgColor={{
+              base: "inherit",
+              _hover: "bg.subtle",
+            }}
+          >
+            <Icon as={CloseIcon} color="fg.default" />
+          </Button>
+        )}
+      </panda.div>
+    )
   );
 };
 

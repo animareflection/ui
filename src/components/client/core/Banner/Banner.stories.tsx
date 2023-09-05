@@ -6,18 +6,18 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Banner close>Banner</Banner>,
+  render: () => <Banner visible>Banner</Banner>,
 };
 export const Subtle: Story = {
   render: () => (
-    <Banner close variant="subtle">
+    <Banner visible variant="subtle">
       Banner
     </Banner>
   ),
 };
 export const Outline: Story = {
   render: () => (
-    <Banner close variant="outline">
+    <Banner visible variant="outline">
       Banner
     </Banner>
   ),
@@ -26,11 +26,11 @@ export const Outline: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex gap={2} alignItems="center">
-      <Banner close size="sm">
+      <Banner visible size="sm">
         Banner
       </Banner>
-      <Banner close>Banner</Banner>
-      <Banner close size="lg">
+      <Banner visible>Banner</Banner>
+      <Banner visible size="lg">
         Banner
       </Banner>
     </Flex>
