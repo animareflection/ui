@@ -1,5 +1,3 @@
-import { BiFilterAlt } from "react-icons/bi";
-
 import { Collapse } from "components/client";
 import { Image, Text } from "components/universal";
 import { Flex } from "generated/panda/jsx";
@@ -25,7 +23,7 @@ export const Vertical: Story = {
 export const Horizontal: Story = {
   render: () => (
     <Flex gap={2}>
-      <Collapse orientation="horizontal" icon={BiFilterAlt}>
+      <Collapse orientation="horizontal">
         <Image src="/img/logo.png" alt="AR logo" height={40} width={40} />
       </Collapse>
       <Text p={2} bgColor="bg.muted" maxW="sm" h="fit-content">
