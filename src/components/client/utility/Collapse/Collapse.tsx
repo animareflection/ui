@@ -36,11 +36,11 @@ const Collapse = ({
   return (
     <Flex direction={isHorizontal ? "row-reverse" : "column"} gap={2} {...rest}>
       <Button
-        h="fit-content"
         display="flex"
         alignItems="center"
         gap={2}
         variant="ghost"
+        size="sm"
         onClick={() => setIsOpen(!isOpen)}
       >
         {label}
