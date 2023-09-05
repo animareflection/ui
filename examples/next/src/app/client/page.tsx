@@ -6,6 +6,7 @@ import {
   AccordionDemo,
   ButtonDemo,
   CheckboxDemo,
+  CollapseDemo,
   DrawerDemo,
   IconDemo,
   MenuDemo,
@@ -30,6 +31,7 @@ const ClientPage = () => (
     <ToggleDemo />
     <SkeletonToggleDemo />
     <CheckboxDemo />
+    <CollapseDemo />
   </Flex>
 );
 

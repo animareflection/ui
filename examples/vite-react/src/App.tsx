@@ -14,6 +14,7 @@ import {
   ButtonDemo,
   CardDemo,
   CheckboxDemo,
+  CollapseDemo,
   DrawerDemo,
   IconDemo,
   ImageDemo,
@@ -95,6 +96,7 @@ const App = () => (
       <SkeletonToggleDemo />
       <CheckboxDemo />
       <KbdDemo />
+      <CollapseDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint
