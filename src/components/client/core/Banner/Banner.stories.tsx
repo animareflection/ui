@@ -1,5 +1,5 @@
 import { Banner } from "components/client";
-import { Flex } from "generated/panda/jsx";
+import { VStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -25,15 +25,17 @@ export const Outline: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <Flex gap={2} alignItems="center">
-      <Banner visible size="sm">
+    <VStack>
+      <Banner position="relative" visible size="sm">
         Banner
       </Banner>
-      <Banner visible>Banner</Banner>
-      <Banner visible size="lg">
+      <Banner position="relative" visible>
         Banner
       </Banner>
-    </Flex>
+      <Banner position="relative" visible size="lg">
+        Banner
+      </Banner>
+    </VStack>
   ),
 };
 

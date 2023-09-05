@@ -26,16 +26,18 @@ const Banner = ({ children, variant, size, visible, ...props }: Props) => {
         {children}
         {visible && (
           <Button
+            variant="ghost"
+            p={0}
             onClick={() => setIsOpen(false)}
             _focus={{
               outline: "none",
             }}
             bgColor={{
               base: "inherit",
-              _hover: "bg.subtle",
+              _hover: "none",
             }}
           >
-            <Icon as={CloseIcon} color="fg.default" />
+            <Icon as={CloseIcon} color="accent.fg" />
           </Button>
         )}
       </panda.div>
