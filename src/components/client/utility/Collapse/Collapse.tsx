@@ -14,7 +14,7 @@ export interface Props extends FlexProps {
   icon?: ElementType;
   open?: boolean;
   children?: ReactNode;
-  orientation?: "horizontal" | "vertical";
+  collapseDirection?: "horizontal" | "vertical";
 }
 
 /**
@@ -25,12 +25,12 @@ const Collapse = ({
   icon,
   open,
   children,
-  orientation = "vertical",
+  collapseDirection = "vertical",
   ...rest
 }: Props) => {
   const [isOpen, setIsOpen] = useState(open ?? false);
 
-  const isHorizontal = orientation == "horizontal";
+  const isHorizontal = collapseDirection == "horizontal";
   const defaultIcon = isHorizontal ? FiChevronRight : FiChevronDown;
 
   return (

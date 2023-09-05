@@ -23,7 +23,7 @@ export const Vertical: Story = {
 export const Horizontal: Story = {
   render: () => (
     <Flex gap={2}>
-      <Collapse orientation="horizontal">
+      <Collapse collapseDirection="horizontal">
         <Image src="/img/logo.png" alt="AR logo" height={40} width={40} />
       </Collapse>
       <Text p={2} bgColor="bg.muted" maxW="sm" h="fit-content">
