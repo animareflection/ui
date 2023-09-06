@@ -1,12 +1,17 @@
 import { defineSlotRecipe } from "@pandacss/dev";
 
 export const numberInputRecipe = defineSlotRecipe({
-  className: "input",
-  description: "The styles for the Input component",
+  className: "numberInput",
+  description: "The styles for the NumberInput component",
   slots: ["label", "input", "addon", "stepper"],
   base: {
     input: {
-      appearance: "none",
+      appearance: "textfield",
+      WebkitAppearance: "textfield",
+      MozAppearance: "textfield",
+      "&::-webkit-inner-spin-button, &::-webkit-outer-spin-button": {
+        WebkitAppearance: "none",
+      },
       color: "fg.default",
       caretColor: "accent.default",
       backgroundColor: "bg.default",
@@ -41,7 +46,16 @@ export const numberInputRecipe = defineSlotRecipe({
       display: "flex",
       alignItems: "center",
       backgroundColor: "border.default",
-      color: "white",
+      color: "fg.default",
+    },
+    stepper: {
+      fontSize: "md",
+      display: "flex",
+      alignItems: "center",
+      backgroundColor: "border.default",
+      borderColor: "border.default",
+      borderWidth: "1px",
+      color: "fg.default",
     },
   },
   variants: {
@@ -83,26 +97,31 @@ export const numberInputRecipe = defineSlotRecipe({
         input: { px: 1.5, h: 7, minW: 7, fontSize: "xs" },
         label: { fontSize: "xs" },
         addon: { fontSize: "xs", px: 1.5 },
+        stepper: { fontSize: "xs" },
       },
       xs: {
         input: { px: 2, h: 8, minW: 8, fontSize: "xs" },
         label: { fontSize: "xs" },
         addon: { fontSize: "xs", px: 2 },
+        stepper: { fontSize: "xs" },
       },
       sm: {
         input: { px: 2.5, h: 9, minW: 9, fontSize: "sm" },
         label: { fontSize: "sm" },
         addon: { fontSize: "sm", px: 2.5 },
+        stepper: { fontSize: "sm" },
       },
       lg: {
         input: { px: 3.5, h: 11, minW: 11, fontSize: "md" },
         label: { fontSize: "md" },
         addon: { fontSize: "md", px: 3.5 },
+        stepper: { fontSize: "md" },
       },
       xl: {
         input: { px: 4, h: 12, minW: 12, fontSize: "lg" },
         label: { fontSize: "lg" },
         addon: { fontSize: "lg", px: 4 },
+        stepper: { fontSize: "lg" },
       },
     },
   },

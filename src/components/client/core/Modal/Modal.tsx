@@ -25,7 +25,7 @@ export interface Props extends ModalProps {
 }
 
 /**
- * Core UI Modal.
+ * Core UI modal.
  */
 const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
   const classNames = modal();

@@ -26,6 +26,9 @@ export interface Props extends SliderProps {
   maxW?: JsxStyleProps["maxW"];
 }
 
+/**
+ * Core UI slider.
+ */
 const Slider = ({ label, markers, maxW, ...rest }: Props) => {
   const classNames = slider();
 
