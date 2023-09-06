@@ -81,7 +81,6 @@ const App = () => (
     </Grid>
 
     <Flex direction="column" align="center" w="100%" gap={2} p={12}>
-      <BannerDemo />
       <ButtonDemo />
       <AccordionDemo />
       <DrawerDemo />
@@ -99,6 +98,8 @@ const App = () => (
       <CheckboxDemo />
       <KbdDemo />
       <CollapseDemo />
+      <BannerDemo />
+
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint
