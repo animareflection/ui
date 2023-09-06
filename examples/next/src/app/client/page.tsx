@@ -1,9 +1,10 @@
 "use client";
 
-import { Flex } from "@animareflection/ui";
+import { Flex, Text } from "@animareflection/ui";
 
 import {
   AccordionDemo,
+  BannerDemo,
   ButtonDemo,
   CheckboxDemo,
   CollapseDemo,
@@ -19,7 +20,7 @@ import {
 
 const ClientPage = () => (
   <Flex direction="column" align="center" w="100%" gap={2} p={12}>
-    Client component demo!
+    <Text>Client component demo!</Text>
     <ButtonDemo />
     <AccordionDemo />
     <DrawerDemo />
@@ -32,6 +33,7 @@ const ClientPage = () => (
     <SkeletonToggleDemo />
     <CheckboxDemo />
     <CollapseDemo />
+    <BannerDemo />
   </Flex>
 );
 

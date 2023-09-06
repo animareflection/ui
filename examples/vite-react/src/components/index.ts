@@ -1,5 +1,6 @@
 export { default as AccordionDemo } from "./AccordionDemo";
 export { default as BadgeDemo } from "./BadgeDemo";
+export { default as BannerDemo } from "./BannerDemo";
 export { default as ButtonDemo } from "./ButtonDemo";
 export { default as CardDemo } from "./CardDemo";
 export { default as CheckboxDemo } from "./CheckboxDemo";
