@@ -5,6 +5,8 @@ export const inputRecipe = defineRecipe({
   description: "The styles for the Input component",
   base: {
     appearance: "none",
+    color: "fg.default",
+    caretColor: "accent.default",
     backgroundColor: "bg.default",
     borderColor: "border.emphasized",
     borderRadius: "md",
