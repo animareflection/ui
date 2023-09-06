@@ -11,6 +11,7 @@ import {
 import {
   AccordionDemo,
   BadgeDemo,
+  BannerDemo,
   ButtonDemo,
   CardDemo,
   CheckboxDemo,
@@ -80,6 +81,7 @@ const App = () => (
     </Grid>
 
     <Flex direction="column" align="center" w="100%" gap={2} p={12}>
+      <BannerDemo />
       <ButtonDemo />
       <AccordionDemo />
       <DrawerDemo />
