@@ -7,28 +7,36 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Banner>Banner</Banner>,
+  render: () => (
+    <VStack position="absolute" inset={0}>
+      <Banner>Banner</Banner>
+    </VStack>
+  ),
 };
 
 export const Closeable: Story = {
-  render: () => <Banner closable>Banner</Banner>,
+  render: () => (
+    <VStack position="absolute" inset={0}>
+      <Banner closable>Banner</Banner>
+    </VStack>
+  ),
 };
 
 export const Gradient: Story = {
   render: () => (
-    <Banner closable variant="gradient">
-      Banner
-    </Banner>
+    <VStack position="absolute" inset={0}>
+      <Banner closable variant="gradient">
+        Banner
+      </Banner>
+    </VStack>
   ),
 };
 
 export const Stacked: Story = {
   render: () => (
     <VStack gap={0} position="absolute" inset={0}>
-      <Banner position="relative" variant="gradient">
-        Banner
-      </Banner>
-      <Banner position="relative">Banner</Banner>
+      <Banner variant="gradient">Banner</Banner>
+      <Banner>Banner</Banner>
     </VStack>
   ),
 };

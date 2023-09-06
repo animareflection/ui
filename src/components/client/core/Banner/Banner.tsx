@@ -10,7 +10,7 @@ import type { BannerVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
 export interface Props
-  extends Omit<ComponentProps<typeof panda.div>, "color">,
+  extends ComponentProps<typeof panda.div>,
     BannerVariantProps {
   closable?: boolean;
 }
@@ -18,12 +18,12 @@ export interface Props
 /**
  * Core UI banner.
  */
-const Banner = ({ children, variant, closable, ...props }: Props) => {
+const Banner = ({ children, variant, closable, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
   return (
     isOpen && (
-      <panda.div className={banner({ variant })} {...props}>
+      <panda.div className={banner({ variant })} {...rest}>
         {children}
         {closable && (
           <Button
