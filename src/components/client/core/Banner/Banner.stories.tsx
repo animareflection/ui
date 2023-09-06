@@ -1,39 +1,22 @@
 import { bannerState } from "./Banner.spec";
 import { Banner } from "components/client";
-// import { Flex, VStack } from "generated/panda/jsx";
+import { VStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Banner visible>Banner</Banner>,
-};
-export const Subtle: Story = {
-  render: () => (
-    <Banner visible variant="subtle">
-      Banner
-    </Banner>
-  ),
-};
-export const Outline: Story = {
-  render: () => (
-    <Banner visible variant="outline">
-      Banner
-    </Banner>
-  ),
+  render: () => <Banner>Banner</Banner>,
 };
 
-export const SizeSmall: Story = {
-  render: () => (
-    <Banner visible size="sm">
-      Banner
-    </Banner>
-  ),
+export const Closeable: Story = {
+  render: () => <Banner closable>Banner</Banner>,
 };
-export const SizeLarge: Story = {
+
+export const Gradient: Story = {
   render: () => (
-    <Banner visible size="lg">
+    <Banner closable variant="gradient">
       Banner
     </Banner>
   ),
@@ -41,14 +24,12 @@ export const SizeLarge: Story = {
 
 export const Stacked: Story = {
   render: () => (
-    <>
-      <Banner visible size="lg">
+    <VStack gap={0} position="absolute" inset={0}>
+      <Banner position="relative" variant="gradient">
         Banner
       </Banner>
-      <Banner variant="outline" visible size="lg">
-        Banner
-      </Banner>
-    </>
+      <Banner position="relative">Banner</Banner>
+    </VStack>
   ),
 };
 

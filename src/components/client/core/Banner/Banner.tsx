@@ -12,25 +12,25 @@ import type { ComponentProps } from "react";
 export interface Props
   extends Omit<ComponentProps<typeof panda.div>, "color">,
     BannerVariantProps {
-  visible?: boolean;
+  closable?: boolean;
 }
 
 /**
- * Core UI Banner.
+ * Core UI banner.
  */
-const Banner = ({ children, variant, size, visible, ...props }: Props) => {
+const Banner = ({ children, variant, closable, ...props }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
-  const classNames = banner({ variant, size });
 
   return (
     isOpen && (
-      <panda.div className={classNames.root} {...props}>
+      <panda.div className={banner({ variant })} {...props}>
         {children}
-        {visible && (
+        {closable && (
           <Button
-            variant="ghost"
-            p={0}
             onClick={() => setIsOpen(false)}
+            position="absolute"
+            right={6}
+            p={1}
             _focus={{
               outline: "none",
             }}
@@ -39,7 +39,7 @@ const Banner = ({ children, variant, size, visible, ...props }: Props) => {
               _hover: "none",
             }}
           >
-            <Icon as={CloseIcon} className={classNames.icon} />
+            <Icon as={CloseIcon} color="bg.default" />
           </Button>
         )}
       </panda.div>

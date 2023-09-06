@@ -1,56 +1,32 @@
-import { defineSlotRecipe } from "@pandacss/dev";
+import { defineRecipe } from "@pandacss/dev";
 
-export const bannerRecipe = defineSlotRecipe({
+export const bannerRecipe = defineRecipe({
   className: "banner",
   description: "The styles for the Banner component",
-  slots: ["root", "icon"],
   base: {
-    root: {
-      fontWeight: "medium",
-      justifyContent: "space-between",
-      display: "inline-flex",
-      alignItems: "center",
-      userSelect: "none",
-      whiteSpace: "nowrap",
-      textStyle: "sm",
-      w: "full",
-      px: 2.5,
-      h: 14,
-      background: "accent.default",
-      color: "accent.fg",
-    },
-    icon: {
-      color: "accent.fg",
-    },
+    textStyle: "md",
+    fontWeight: "bold",
+    textAlign: "center",
+    justifyContent: "center",
+    display: "inline-flex",
+    alignItems: "center",
+    userSelect: "none",
+    whiteSpace: "nowrap",
+    w: "full",
+    p: 4,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    background: "accent.default",
+    color: "accent.fg",
   },
   variants: {
     variant: {
-      subtle: {
-        root: {
-          background: "accent.subtle",
-          borderColor: "border.accent",
-          borderWidth: "1px",
-          color: "fg.emphasized",
-        },
-        icon: { color: "fg.emphasized" },
+      gradient: {
+        bgGradient: "to-r",
+        gradientFrom: "brand.secondary.500",
+        gradientTo: "accent.default",
       },
-      outline: {
-        root: {
-          background: "bg.subtle",
-          borderWidth: "1px",
-          borderColor: "border.emphasized",
-          color: "fg.emphasized",
-        },
-        icon: {
-          color: "fg.emphasized",
-        },
-      },
-    },
-    size: {
-      sm: {
-        root: { textStyle: "xs", px: 2, h: 7, gap: 1 },
-      },
-      lg: { root: { textStyle: "sm", px: 3, h: 10, gap: 1.5 } },
     },
   },
 });
