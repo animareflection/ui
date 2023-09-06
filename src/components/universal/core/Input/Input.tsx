@@ -6,7 +6,7 @@ import { input } from "generated/panda/recipes";
 import type { InputVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export type Props = ComponentProps<typeof ark.input> & InputVariantProps;
+export type Props = ComponentProps<typeof PandaInput> & InputVariantProps;
 
 const PandaInput = panda(ark.input, input);
 
