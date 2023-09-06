@@ -6,6 +6,7 @@ import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe"
 import { inputRecipe } from "../../components/client/core/Input/Input.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
+import { numberInputRecipe } from "../../components/client/core/NumberInput/NumberInput.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
 import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
 import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe";
@@ -37,6 +38,7 @@ export const slotRecipes = {
   input: inputRecipe,
   menu: menuRecipe,
   modal: modalRecipe,
+  numberInput: numberInputRecipe,
   skeleton: skeletonRecipe,
   slider: sliderRecipe,
   tabs: tabsRecipe,
