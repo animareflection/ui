@@ -3,6 +3,7 @@ import { bannerRecipe } from "../../components/client/core/Banner/Banner.recipe"
 import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
 import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
+import { inputRecipe } from "../../components/client/core/Input/Input.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
@@ -11,7 +12,6 @@ import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe"
 import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
 import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
-import { inputRecipe } from "../../components/universal/core/Input/Input.recipe";
 import { skeletonRecipe } from "../../components/universal/core/Skeleton/Skeleton.recipe";
 import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.recipe";
 import { textRecipe } from "../../components/universal/core/Text/Text.recipe";

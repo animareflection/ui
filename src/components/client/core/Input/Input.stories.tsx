@@ -1,4 +1,4 @@
-import { Input } from "components/universal";
+import { Input } from "components/client";
 import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -35,7 +35,7 @@ export const Sizes: Story = {
 };
 
 const meta: Meta<typeof Input> = {
-  title: "Components/Universal/Core/Input",
+  title: "Components/Client/Core/Input",
   component: Input,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

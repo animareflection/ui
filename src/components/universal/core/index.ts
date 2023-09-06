@@ -1,7 +1,6 @@
 export { default as Badge } from "./Badge/Badge";
 export { default as Card, CardHeader, CardBody, CardFooter } from "./Card/Card";
 export { default as Image } from "./Image/Image";
-export { default as Input } from "./Input/Input";
 export { default as Skeleton } from "./Skeleton/Skeleton";
 export { default as Kbd } from "./Kbd/Kbd";
 export { default as Spinner } from "./Spinner/Spinner";
@@ -14,7 +13,6 @@ export type {
   CardFooterProps,
 } from "./Card/Card";
 export type { Props as ImageProps } from "./Image/Image";
-export type { Props as InputProps } from "./Input/Input";
 export type { Props as SkeletonProps } from "./Skeleton/Skeleton";
 export type { Props as KbdProps } from "./Kbd/Kbd";
 export type { Props as SpinnerProps } from "./Spinner/Spinner";
