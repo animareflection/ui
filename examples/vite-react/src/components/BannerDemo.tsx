@@ -1,4 +1,3 @@
-import { VStack } from "@animareflection/ui";
 import { Banner } from "@animareflection/ui/client";
 
 import { Wrapper } from "components";
