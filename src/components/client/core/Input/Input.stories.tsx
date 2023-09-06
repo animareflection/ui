@@ -16,7 +16,12 @@ export const Variants: Story = {
       <Input variant="filled" placeholder="Filled" />
       <Input variant="flushed" placeholder="Flushed" />
       <Input variant="unstyled" placeholder="Unstyled" />
-      <Input leftAddon="https://" placeholder="mywebsite" rightAddon=".com" />
+      <Input
+        label="Addons"
+        leftAddon="https://"
+        placeholder="mywebsite"
+        rightAddon=".com"
+      />
     </Flex>
   ),
 };
