@@ -34,7 +34,7 @@ export const Stacked: Story = {
 };
 
 export const BannerState: Story = {
-  ...Default,
+  ...Closeable,
   play: bannerState,
   name: "[TEST] Banner State",
   tags: ["test"],
