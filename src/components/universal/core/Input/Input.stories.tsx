@@ -6,19 +6,18 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
-  render: () => <Input placeholder="Placeholder" />,
+  render: () => <Input label="Input Label" placeholder="Placeholder" />,
 };
 
 export const Sizes: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
-      <Input size="2xs" placeholder="Placeholder" />
-      <Input size="xs" placeholder="Placeholder" />
-      <Input size="sm" placeholder="Placeholder" />
-      <Input placeholder="Placeholder" />
-      <Input size="lg" placeholder="Placeholder" />
-      <Input size="xl" placeholder="Placeholder" />
-      <Input size="2xl" placeholder="Placeholder" />
+      <Input label="Input Label" size="2xs" placeholder="Placeholder" />
+      <Input label="Input Label" size="xs" placeholder="Placeholder" />
+      <Input label="Input Label" size="sm" placeholder="Placeholder" />
+      <Input label="Input Label" placeholder="Placeholder" />
+      <Input label="Input Label" size="lg" placeholder="Placeholder" />
+      <Input label="Input Label" size="xl" placeholder="Placeholder" />
     </Flex>
   ),
 };
