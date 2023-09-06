@@ -5,9 +5,7 @@ import { Wrapper } from "components";
 
 const BannerDemo = () => (
   <Wrapper title="Banner">
-    <VStack position="relative" inset={0}>
-      <Banner closable>Banner</Banner>
-    </VStack>
+    <Banner closable>Banner</Banner>
   </Wrapper>
 );
 

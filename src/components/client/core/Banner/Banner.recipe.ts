@@ -13,6 +13,7 @@ export const bannerRecipe = defineRecipe({
     userSelect: "none",
     whiteSpace: "nowrap",
     w: "full",
+    position: "relative",
     p: 4,
     background: "accent.default",
     color: "accent.fg",
