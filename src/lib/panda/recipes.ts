@@ -3,6 +3,7 @@ import { bannerRecipe } from "../../components/client/core/Banner/Banner.recipe"
 import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
 import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
+import { flyoutRecipe } from "../../components/client/core/Flyout/Flyout.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
@@ -33,6 +34,7 @@ export const slotRecipes = {
   checkbox: checkboxRecipe,
   card: cardRecipe,
   drawer: drawerRecipe,
+  flyout: flyoutRecipe,
   menu: menuRecipe,
   modal: modalRecipe,
   skeleton: skeletonRecipe,

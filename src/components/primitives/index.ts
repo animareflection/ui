@@ -45,6 +45,17 @@ export {
   ModalDescription,
 } from "./Modal/Modal";
 export {
+  default as Flyout,
+  FlyoutArrow,
+  FlyoutArrowTip,
+  FlyoutCloseTrigger,
+  FlyoutContent,
+  FlyoutDescription,
+  FlyoutPositioner,
+  FlyoutTitle,
+  FlyoutTrigger,
+} from "./Flyout/Flyout";
+export {
   default as Slider,
   SliderControl,
   SliderLabel,
@@ -115,6 +126,18 @@ export type {
   ModalTitleProps,
   ModalTriggerProps,
 } from "./Modal/Modal";
+export type {
+  FlyoutProps,
+  FlyoutArrowProps,
+  FlyoutArrowTipProps,
+  FlyoutCloseTriggerProps,
+  FlyoutContentProps,
+  FlyoutDescriptionProps,
+  FlyoutPositionerProps,
+  FlyoutTitleProps,
+  FlyoutTriggerProps,
+} from "./Flyout/Flyout";
+
 export type {
   SliderProps,
   SliderControlProps,
