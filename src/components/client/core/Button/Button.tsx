@@ -17,9 +17,9 @@ const PandaButton: PandaComponent<typeof ark.button> = panda(
 /**
  * Core UI button.
  */
-const Button = ({ variant, children, ...rest }: Props) => {
+const Button = ({ variant, size, children, ...rest }: Props) => {
   return (
-    <PandaButton className={button({ variant })} {...rest}>
+    <PandaButton className={button({ variant, size })} {...rest}>
       {children}
     </PandaButton>
   );

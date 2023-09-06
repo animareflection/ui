@@ -7,6 +7,7 @@ export const buttonRecipe = defineRecipe({
     color: "accent.fg",
     bgColor: "accent.default",
     w: "fit-content",
+    h: "fit-content",
     cursor: "pointer",
     fontWeight: "bold",
     p: 3,
@@ -74,6 +75,20 @@ export const buttonRecipe = defineRecipe({
             bgColor: "bg.disabled",
           },
         },
+      },
+    },
+    size: {
+      xs: {
+        fontSize: "xs",
+        p: 2,
+      },
+      sm: {
+        fontSize: "sm",
+        p: 2.5,
+      },
+      lg: {
+        fontSize: "lg",
+        p: 3.5,
       },
     },
   },
