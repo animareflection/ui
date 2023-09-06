@@ -18,8 +18,8 @@ const PandaLabel = panda(ark.label);
 /**
  * Core UI input.
  */
-const Input = ({ label, size, ...rest }: Props) => {
-  const classNames = input({ size });
+const Input = ({ label, variant, size, ...rest }: Props) => {
+  const classNames = input({ size, variant });
 
   return (
     <Stack gap={1.5}>

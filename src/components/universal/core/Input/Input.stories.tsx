@@ -9,6 +9,17 @@ export const Default: Story = {
   render: () => <Input label="Input Label" placeholder="Placeholder" />,
 };
 
+export const Variants: Story = {
+  render: () => (
+    <Flex direction="column" gap={2}>
+      <Input placeholder="Default" />
+      <Input variant="filled" placeholder="Filled" />
+      <Input variant="flushed" placeholder="Flushed" />
+      <Input variant="unstyled" placeholder="Unstyled" />
+    </Flex>
+  ),
+};
+
 export const Sizes: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
