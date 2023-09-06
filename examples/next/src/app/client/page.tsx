@@ -20,7 +20,7 @@ import {
 
 const ClientPage = () => (
   <Flex direction="column" align="center" w="100%" gap={2} p={12}>
-    <Text mt={4}>Client component demo!</Text>
+    <Text>Client component demo!</Text>
     <ButtonDemo />
     <AccordionDemo />
     <DrawerDemo />

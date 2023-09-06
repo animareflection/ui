@@ -1,5 +1,13 @@
 import { Banner } from "@animareflection/ui/client";
 
-const BannerDemo = () => <Banner>Banner</Banner>;
+import { Wrapper } from "components";
+
+const BannerDemo = () => (
+  <Wrapper title="Banner">
+    <Banner position="relative" closable>
+      Banner
+    </Banner>
+  </Wrapper>
+);
 
 export default BannerDemo;
