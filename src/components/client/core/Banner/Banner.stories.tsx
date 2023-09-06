@@ -1,5 +1,6 @@
+import { bannerState } from "./Banner.spec";
 import { Banner } from "components/client";
-import { VStack } from "generated/panda/jsx";
+// import { Flex, VStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -23,20 +24,39 @@ export const Outline: Story = {
   ),
 };
 
-export const Sizes: Story = {
+export const SizeSmall: Story = {
   render: () => (
-    <VStack>
-      <Banner position="relative" visible size="sm">
-        Banner
-      </Banner>
-      <Banner position="relative" visible>
-        Banner
-      </Banner>
-      <Banner position="relative" visible size="lg">
-        Banner
-      </Banner>
-    </VStack>
+    <Banner visible size="sm">
+      Banner
+    </Banner>
   ),
+};
+export const SizeLarge: Story = {
+  render: () => (
+    <Banner visible size="lg">
+      Banner
+    </Banner>
+  ),
+};
+
+export const Stacked: Story = {
+  render: () => (
+    <>
+      <Banner visible size="lg">
+        Banner
+      </Banner>
+      <Banner variant="outline" visible size="lg">
+        Banner
+      </Banner>
+    </>
+  ),
+};
+
+export const BannerState: Story = {
+  ...Default,
+  play: bannerState,
+  name: "[TEST] Banner State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663

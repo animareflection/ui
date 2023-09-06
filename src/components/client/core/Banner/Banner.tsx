@@ -10,7 +10,7 @@ import type { BannerVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
 export interface Props
-  extends ComponentProps<typeof panda.div>,
+  extends Omit<ComponentProps<typeof panda.div>, "color">,
     BannerVariantProps {
   visible?: boolean;
 }
@@ -20,9 +20,11 @@ export interface Props
  */
 const Banner = ({ children, variant, size, visible, ...props }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
+  const classNames = banner({ variant, size });
+
   return (
     isOpen && (
-      <panda.div className={banner({ variant, size })} {...props}>
+      <panda.div className={classNames.root} {...props}>
         {children}
         {visible && (
           <Button
@@ -37,7 +39,7 @@ const Banner = ({ children, variant, size, visible, ...props }: Props) => {
               _hover: "none",
             }}
           >
-            <Icon as={CloseIcon} color="accent.fg" />
+            <Icon as={CloseIcon} className={classNames.icon} />
           </Button>
         )}
       </panda.div>

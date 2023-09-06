@@ -19,7 +19,6 @@ import { showRecipe } from "../../components/universal/utility/Show/Show.recipe"
 
 export const recipes = {
   badge: badgeRecipe,
-  banner: bannerRecipe,
   button: buttonRecipe,
   hide: hideRecipe,
   image: imageRecipe,
@@ -30,6 +29,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  banner: bannerRecipe,
   checkbox: checkboxRecipe,
   card: cardRecipe,
   drawer: drawerRecipe,
