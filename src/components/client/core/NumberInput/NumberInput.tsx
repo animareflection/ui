@@ -15,6 +15,7 @@ export interface Props
   label?: string;
   leftAddon?: ReactNode;
   stepper?: boolean;
+  precision?: number;
 }
 
 const PandaInput = panda(ark.input, numberInput);
@@ -33,23 +34,30 @@ const Input = ({
   step = 1,
   min = Number.MIN_SAFE_INTEGER,
   max = Number.MAX_SAFE_INTEGER,
+  precision,
   ...rest
 }: Props) => {
-  const [value, setValue] = useState<number | undefined>(
-    (defaultValue as number) ?? undefined,
-  );
+  const [value, setValue] = useState((defaultValue as number) ?? 0);
 
   const classNames = numberInput({ size, variant });
 
   const handleIncrement = useCallback(() => {
     if ((value ?? 0) + Number(step) > Number(max)) return;
-    setValue((prevValue) => (prevValue ?? 0) + Number(step));
-  }, [step, max, value]);
+    setValue((prevValue) =>
+      precision
+        ? Number(((prevValue ?? 0) + Number(step)).toFixed(precision))
+        : (prevValue ?? 0) + Number(step),
+    );
+  }, [step, max, value, precision]);
 
   const handleDecrement = useCallback(() => {
     if ((value ?? 0) - Number(step) < Number(min)) return;
-    setValue((prevValue) => (prevValue ?? 0) - Number(step));
-  }, [step, min, value]);
+    setValue((prevValue) =>
+      precision
+        ? Number(((prevValue ?? 0) - Number(step)).toFixed(precision))
+        : (prevValue ?? 0) - Number(step),
+    );
+  }, [step, min, value, precision]);
 
   return (
     <Stack gap={1.5}>
@@ -63,10 +71,15 @@ const Input = ({
         <PandaInput
           type="number"
           defaultValue={defaultValue}
-          value={value}
+          value={value === 0 ? "" : value}
           step={step}
           min={min}
           max={max}
+          onChange={(e) =>
+            Number(e.target.value) <= Number(max) &&
+            Number(e.target.value) >= Number(min) &&
+            setValue(Number(Number(e.target.value).toFixed(precision)))
+          }
           className={classNames.input}
           borderTopLeftRadius={leftAddon ? 0 : "sm"}
           borderBottomLeftRadius={leftAddon ? 0 : "sm"}
@@ -75,33 +88,17 @@ const Input = ({
           {...rest}
         />
         {stepper && (
-          <Flex
-            align="center"
-            borderRightRadius="sm"
-            className={classNames.stepper}
-          >
+          <Flex className={classNames.stepper}>
             <Icon
               as={FiMinus}
-              w="100%"
-              h="100%"
-              cursor="pointer"
-              _hover={{
-                backgroundColor: "bg.subtle",
-              }}
-              px={3}
+              className={classNames.stepperIcon}
               onClick={handleDecrement}
             />
             <panda.div w="1px" h="75%" mx={0.5} bgColor="fg.default" />
             <Icon
               as={FiPlus}
-              w="100%"
-              h="100%"
-              cursor="pointer"
-              _hover={{
-                backgroundColor: "bg.subtle",
-              }}
+              className={classNames.stepperIcon}
               borderRightRadius="sm"
-              px={3}
               onClick={handleIncrement}
             />
           </Flex>

@@ -24,6 +24,8 @@ export const Variants: Story = {
         placeholder="0"
         min={0}
         max={5}
+        step={0.1}
+        precision={1}
         stepper
       />
     </Flex>
