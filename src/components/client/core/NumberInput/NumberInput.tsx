@@ -24,7 +24,7 @@ const PandaLabel = panda(ark.label);
 /**
  * Core UI number input.
  */
-const Input = ({
+const NumberInput = ({
   label,
   leftAddon,
   stepper,
@@ -131,4 +131,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default NumberInput;
