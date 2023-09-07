@@ -60,9 +60,6 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
                     pos="absolute"
                     top={2}
                     right={2}
-                    _focus={{
-                      outline: "none",
-                    }}
                     bgColor={{
                       base: "inherit",
                       _hover: "bg.subtle",
