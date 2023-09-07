@@ -1,5 +1,5 @@
 import { ark } from "@ark-ui/react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
 import Icon from "components/client/core/Icon/Icon";
@@ -39,6 +39,8 @@ const Input = ({
 }: Props) => {
   const [value, setValue] = useState((defaultValue as number) ?? 0);
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const classNames = numberInput({ size, variant });
 
   const handleIncrement = useCallback(() => {
@@ -59,6 +61,24 @@ const Input = ({
     );
   }, [step, min, value, precision]);
 
+  useEffect(() => {
+    if (inputRef.current) {
+      window.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+        },
+        { passive: false },
+      );
+    }
+
+    return () => {
+      window.removeEventListener("wheel", (e) => {
+        e.preventDefault();
+      });
+    };
+  }, [inputRef.current]);
+
   return (
     <Stack gap={1.5}>
       <PandaLabel className={classNames.label}>{label}</PandaLabel>
@@ -70,6 +90,7 @@ const Input = ({
         )}
         <PandaInput
           type="number"
+          ref={inputRef}
           defaultValue={defaultValue}
           value={value === 0 ? "" : value}
           step={step}
