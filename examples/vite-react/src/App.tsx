@@ -19,9 +19,11 @@ import {
   DrawerDemo,
   IconDemo,
   ImageDemo,
+  InputDemo,
   KbdDemo,
   MenuDemo,
   ModalDemo,
+  NumberInputDemo,
   SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
@@ -99,6 +101,8 @@ const App = () => (
       <KbdDemo />
       <CollapseDemo />
       <BannerDemo />
+      <InputDemo />
+      <NumberInputDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
