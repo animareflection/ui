@@ -12,6 +12,20 @@ export const Default: Story = {
   ),
 };
 
+export const Addons: Story = {
+  render: () => (
+    <NumberInput
+      leftAddon="Steps"
+      placeholder="0"
+      min={0}
+      max={5}
+      step={0.1}
+      precision={1}
+      stepper
+    />
+  ),
+};
+
 export const Variants: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
@@ -19,16 +33,6 @@ export const Variants: Story = {
       <NumberInput variant="filled" placeholder="Filled" />
       <NumberInput variant="flushed" placeholder="Flushed" />
       <NumberInput variant="unstyled" placeholder="Unstyled" />
-      <NumberInput
-        label="Addons"
-        leftAddon="Steps"
-        placeholder="0"
-        min={0}
-        max={5}
-        step={0.1}
-        precision={1}
-        stepper
-      />
     </Flex>
   ),
 };
@@ -47,7 +51,7 @@ export const Sizes: Story = {
 };
 
 export const NumberInputState: Story = {
-  ...Default,
+  ...Addons,
   play: numberInputState,
   name: "[TEST] NumberInput State",
   tags: ["test"],
