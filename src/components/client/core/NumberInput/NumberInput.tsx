@@ -2,6 +2,7 @@ import { ark } from "@ark-ui/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
+import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import { Flex, panda, Stack } from "generated/panda/jsx";
 import { numberInput } from "generated/panda/recipes";
@@ -110,20 +111,39 @@ const NumberInput = ({
         />
         {stepper && (
           <Flex className={classNames.stepper}>
-            <Icon
-              as={FiMinus}
-              role="button"
-              className={classNames.stepperIcon}
+            <Button
               onClick={handleDecrement}
-            />
-            <panda.div w="1px" h="75%" mx={0.5} bgColor="fg.default" />
-            <Icon
-              as={FiPlus}
-              role="button"
-              className={classNames.stepperIcon}
-              borderRightRadius="sm"
+              bgColor={{
+                base: "border.default",
+                _hover: "bg.subtle",
+              }}
+              p={0}
+              w="100%"
+              h="100%"
+              color="fg.default"
+            >
+              <Icon as={FiMinus} className={classNames.stepperIcon} px={3} />
+            </Button>
+
+            <panda.div w="1px" h="75%" mx={0.5} bgColor="gray.600" />
+            <Button
               onClick={handleIncrement}
-            />
+              bgColor={{
+                base: "border.default",
+                _hover: "bg.subtle",
+              }}
+              p={0}
+              w="100%"
+              h="100%"
+              color="fg.default"
+            >
+              <Icon
+                as={FiPlus}
+                className={classNames.stepperIcon}
+                borderRightRadius="sm"
+                px={3}
+              />
+            </Button>
           </Flex>
         )}
       </Flex>

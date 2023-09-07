@@ -61,13 +61,9 @@ export const numberInputRecipe = defineSlotRecipe({
       borderBottomRightRadius: "sm",
     },
     stepperIcon: {
-      w: "100%",
       h: "100%",
+      w: "100%",
       px: 3,
-      cursor: "pointer",
-      _hover: {
-        backgroundColor: "bg.subtle",
-      },
     },
   },
   variants: {
