@@ -1,3 +1,4 @@
+import { numberInputState } from "./NumberInput.spec";
 import { NumberInput } from "components/client";
 import { Flex } from "generated/panda/jsx";
 
@@ -43,6 +44,13 @@ export const Sizes: Story = {
       <NumberInput label="NumberInput Label" size="xl" placeholder="0" />
     </Flex>
   ),
+};
+
+export const NumberInputState: Story = {
+  ...Default,
+  play: numberInputState,
+  name: "[TEST] NumberInput State",
+  tags: ["test"],
 };
 
 const meta: Meta<typeof NumberInput> = {

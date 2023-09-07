@@ -112,12 +112,14 @@ const Input = ({
           <Flex className={classNames.stepper}>
             <Icon
               as={FiMinus}
+              role="button"
               className={classNames.stepperIcon}
               onClick={handleDecrement}
             />
             <panda.div w="1px" h="75%" mx={0.5} bgColor="fg.default" />
             <Icon
               as={FiPlus}
+              role="button"
               className={classNames.stepperIcon}
               borderRightRadius="sm"
               onClick={handleIncrement}
