@@ -37,7 +37,7 @@ const Flyout = ({ trigger, title, description, ...rest }: Props) => {
   if (!isMounted) return null;
 
   return (
-    <PrimitiveFlyout {...rest}>
+    <PrimitiveFlyout onClose={() => setIsOpen(false)} portalled {...rest}>
       <FlyoutTrigger asChild onClick={() => setIsOpen(!isOpen)}>
         {trigger}
       </FlyoutTrigger>

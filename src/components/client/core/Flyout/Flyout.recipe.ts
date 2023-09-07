@@ -33,10 +33,10 @@ export const flyoutRecipe = defineSlotRecipe({
       },
       py: 6,
       _open: {
-        animation: "fadeIn 0.25s ease-out",
+        animation: "fade-in",
       },
       _closed: {
-        animation: "fadeOut 0.2s ease-out",
+        animation: "fade-out",
       },
     },
     title: {
@@ -54,6 +54,7 @@ export const flyoutRecipe = defineSlotRecipe({
     },
     arrowTip: {
       borderTopWidth: "1px",
+      borderColor: "border.default",
       borderLeftWidth: "1px",
     },
   },

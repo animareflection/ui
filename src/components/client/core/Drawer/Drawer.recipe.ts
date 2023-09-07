@@ -24,10 +24,10 @@ export const drawerRecipe = defineSlotRecipe({
       position: "fixed",
       zIndex: "overlay",
       _open: {
-        animation: "backdrop-in",
+        animation: "fade-in",
       },
       _closed: {
-        animation: "backdrop-out",
+        animation: "fade-out",
       },
     },
     container: {
