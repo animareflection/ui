@@ -121,6 +121,7 @@ const NumberInput = ({
               w="100%"
               h="100%"
               color="fg.default"
+              borderRadius="sm"
             >
               <Icon as={FiMinus} className={classNames.stepperIcon} px={3} />
             </Button>
@@ -136,13 +137,9 @@ const NumberInput = ({
               w="100%"
               h="100%"
               color="fg.default"
+              borderRadius="sm"
             >
-              <Icon
-                as={FiPlus}
-                className={classNames.stepperIcon}
-                borderRightRadius="sm"
-                px={3}
-              />
+              <Icon as={FiPlus} className={classNames.stepperIcon} px={3} />
             </Button>
           </Flex>
         )}
