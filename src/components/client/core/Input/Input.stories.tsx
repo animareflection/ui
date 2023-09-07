@@ -1,3 +1,4 @@
+import { inputState } from "./Input.spec";
 import { Input } from "components/client";
 import { Flex } from "generated/panda/jsx";
 
@@ -37,6 +38,13 @@ export const Sizes: Story = {
       <Input label="Input Label" size="xl" placeholder="Placeholder" />
     </Flex>
   ),
+};
+
+export const InputState: Story = {
+  ...Default,
+  play: inputState,
+  name: "[TEST] Input State",
+  tags: ["test"],
 };
 
 const meta: Meta<typeof Input> = {
