@@ -1,6 +1,7 @@
 import { flyoutState } from "./Flyout.spec";
 import { Button, Flyout } from "components/client";
 import { Text } from "components/universal";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -8,13 +9,15 @@ type Story = StoryObj<typeof Flyout>;
 
 export const Default: Story = {
   render: () => (
-    <Flyout trigger={<Button>Open Flyout</Button>} title="Flyout Title">
-      <Text mt={2}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam.
-      </Text>
-    </Flyout>
+    <Flex h="screen" w="full" justifyContent="center" alignItems="center">
+      <Flyout trigger={<Button>Open Flyout</Button>} title="Flyout Title">
+        <Text mt={2}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam.
+        </Text>
+      </Flyout>
+    </Flex>
   ),
 };
 
