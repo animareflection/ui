@@ -3,7 +3,7 @@ import { NumberInput } from "@animareflection/ui/client";
 import { Wrapper } from "components";
 
 const NumberInputDemo = () => (
-  <Wrapper title="Input">
+  <Wrapper title="Number Input">
     <NumberInput
       leftAddon="Steps"
       placeholder="0"
