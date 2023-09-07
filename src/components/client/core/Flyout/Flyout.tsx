@@ -24,10 +24,10 @@ import type { ReactNode } from "react";
 export interface Props extends FlyoutProps {
   trigger: ReactNode;
   title?: string;
-  description?: string;
+  children: ReactNode;
 }
 
-const Flyout = ({ trigger, title, description, ...rest }: Props) => {
+const Flyout = ({ trigger, title, children, ...rest }: Props) => {
   const classNames = flyout();
 
   const isMounted = useIsMounted();
@@ -52,11 +52,9 @@ const Flyout = ({ trigger, title, description, ...rest }: Props) => {
               {title && (
                 <FlyoutTitle className={classNames.title}>{title}</FlyoutTitle>
               )}
-              {description && (
-                <FlyoutDescription className={classNames.description}>
-                  {description}
-                </FlyoutDescription>
-              )}
+              <FlyoutDescription className={classNames.description}>
+                {children}
+              </FlyoutDescription>
 
               <FlyoutCloseTrigger asChild onClick={() => setIsOpen(false)}>
                 <Button
@@ -68,7 +66,7 @@ const Flyout = ({ trigger, title, description, ...rest }: Props) => {
                   }}
                   bgColor={{
                     base: "inherit",
-                    _hover: "bg.subtle",
+                    _hover: "bg.emphasized",
                   }}
                 >
                   <Icon as={CloseIcon} color="fg.default" />

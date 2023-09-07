@@ -8,11 +8,7 @@ type Story = StoryObj<typeof Flyout>;
 
 export const Default: Story = {
   render: () => (
-    <Flyout
-      trigger={<Button>Open Flyout</Button>}
-      title="Flyout Title"
-      description="Flyout Description"
-    >
+    <Flyout trigger={<Button>Open Flyout</Button>} title="Flyout Title">
       <Text mt={2}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
