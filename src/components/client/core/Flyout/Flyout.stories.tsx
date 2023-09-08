@@ -17,7 +17,7 @@ type Placement =
   | "bottom-start"
   | "bottom-end";
 
-const testArray: Placement[] = [
+const placementOptions: Placement[] = [
   "bottom-start",
   "bottom-end",
   "left-start",
@@ -49,7 +49,7 @@ export const Placement: Story = {
       justifyContent="center"
       alignItems="center"
     >
-      {testArray.map((item) => (
+      {placementOptions.map((item) => (
         <Flyout
           key={item}
           placement={item}
