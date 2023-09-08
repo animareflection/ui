@@ -45,6 +45,15 @@ export {
   ModalDescription,
 } from "./Modal/Modal";
 export {
+  default as NumberInput,
+  NumberInputControl,
+  NumberInputDecrementTrigger,
+  NumberInputIncrementTrigger,
+  NumberInputInput,
+  NumberInputLabel,
+  NumberInputScrubber,
+} from "./NumberInput/NumberInput";
+export {
   default as Flyout,
   FlyoutArrow,
   FlyoutArrowTip,
@@ -126,6 +135,15 @@ export type {
   ModalTitleProps,
   ModalTriggerProps,
 } from "./Modal/Modal";
+export type {
+  NumberInputControlProps,
+  NumberInputDecrementTriggerProps,
+  NumberInputIncrementTriggerProps,
+  NumberInputInputProps,
+  NumberInputLabelProps,
+  NumberInputProps,
+  NumberInputScrubberProps,
+} from "./NumberInput/NumberInput";
 export type {
   FlyoutProps,
   FlyoutArrowProps,

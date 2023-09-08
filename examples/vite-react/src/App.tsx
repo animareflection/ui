@@ -20,9 +20,11 @@ import {
   FlyoutDemo,
   IconDemo,
   ImageDemo,
+  InputDemo,
   KbdDemo,
   MenuDemo,
   ModalDemo,
+  NumberInputDemo,
   SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
@@ -100,6 +102,8 @@ const App = () => (
       <KbdDemo />
       <CollapseDemo />
       <BannerDemo />
+      <InputDemo />
+      <NumberInputDemo />
       <FlyoutDemo />
 
       <Hide below="md">

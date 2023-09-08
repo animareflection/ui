@@ -71,7 +71,7 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/types": "^17.4.4",
     "@omnidev/knit": "^0.1.2",
-    "@pandacss/dev": "^0.13.0",
+    "@pandacss/dev": "^0.14.0",
     "@storybook/addon-a11y": "^7.3.2",
     "@storybook/addon-coverage": "^0.0.9",
     "@storybook/addon-essentials": "^7.3.2",

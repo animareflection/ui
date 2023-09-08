@@ -11,8 +11,10 @@ import {
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
+  InputDemo,
   MenuDemo,
   ModalDemo,
+  NumberInputDemo,
   SkeletonToggleDemo,
   SliderDemo,
   TabsDemo,
@@ -35,6 +37,8 @@ const ClientPage = () => (
     <CheckboxDemo />
     <CollapseDemo />
     <BannerDemo />
+    <InputDemo />
+    <NumberInputDemo />
     <FlyoutDemo />
   </Flex>
 );

@@ -13,7 +13,7 @@ import type { ToggleVariantProps } from "generated/panda/recipes";
 export type Props = ToggleProps & ToggleVariantProps;
 
 /**
- * Core UI toggle component.
+ * Core UI toggle.
  */
 const Toggle = ({ label, size, ...rest }: Props) => {
   const classNames = toggle({ size });
