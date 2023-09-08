@@ -46,7 +46,7 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
   );
 
   await step(
-    "It should increment numberInput value on increment button",
+    "It should increment numberInput value on increment button click",
     async () => {
       await userEvent.click(incrementButton);
 
@@ -58,7 +58,7 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
 
   // TODO: Fix this test
   //   await step(
-  //     "It should decrement numberInput value on decrement button",
+  //     "It should decrement numberInput value on decrement button click",
   //     async () => {
   //       await userEvent.click(incrementButton);
   //       await userEvent.click(incrementButton);
