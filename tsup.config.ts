@@ -22,6 +22,7 @@ const tsupConfig = defineTsupConfig({
   entry: {
     ui: "src/index.ts",
     client: "src/index.client.ts",
+    hooks: "src/index.hooks.ts",
     next: "src/index.next.ts",
     primitives: "src/index.primitives.ts",
   },
