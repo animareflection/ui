@@ -10,7 +10,6 @@ const NumberInputDemo = () => (
       min={0}
       max={5}
       step={0.1}
-      precision={1}
       stepper
     />
   </Wrapper>
