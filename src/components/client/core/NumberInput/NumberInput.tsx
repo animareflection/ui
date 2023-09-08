@@ -62,6 +62,19 @@ const NumberInput = ({
     );
   }, [step, min, value, precision]);
 
+  const STEPPER_BUTTONS = [
+    {
+      label: "Decrement",
+      onClick: handleDecrement,
+      icon: FiMinus,
+    },
+    {
+      label: "Increment",
+      onClick: handleIncrement,
+      icon: FiPlus,
+    },
+  ];
+
   useEffect(() => {
     if (inputRef.current) {
       window.addEventListener(
@@ -111,38 +124,28 @@ const NumberInput = ({
         />
         {stepper && (
           <Flex className={classNames.stepper}>
-            <Button
-              onClick={handleDecrement}
-              bgColor={{
-                base: "border.default",
-                _hover: "bg.subtle",
-              }}
-              p={0}
-              w="100%"
-              h="100%"
-              color="fg.default"
-              borderRadius="sm"
-              aria-label="Decrement"
-            >
-              <Icon as={FiMinus} className={classNames.stepperIcon} px={3} />
-            </Button>
-
-            <panda.div w="1px" h="75%" mx={0.5} bgColor="gray.600" />
-            <Button
-              onClick={handleIncrement}
-              bgColor={{
-                base: "border.default",
-                _hover: "bg.subtle",
-              }}
-              p={0}
-              w="100%"
-              h="100%"
-              color="fg.default"
-              borderRadius="sm"
-              aria-label="Increment"
-            >
-              <Icon as={FiPlus} className={classNames.stepperIcon} px={3} />
-            </Button>
+            {STEPPER_BUTTONS.map(({ label, onClick, icon }) => (
+              <>
+                <Button
+                  onClick={onClick}
+                  bgColor={{
+                    base: "border.default",
+                    _hover: "bg.subtle",
+                  }}
+                  p={0}
+                  w="100%"
+                  h="100%"
+                  color="fg.default"
+                  borderRadius="sm"
+                  aria-label={label}
+                >
+                  <Icon as={icon} className={classNames.stepperIcon} px={3} />
+                </Button>
+                {label === "Decrement" && (
+                  <panda.div w="1px" h="75%" mx={0.5} bgColor="gray.600" />
+                )}
+              </>
+            ))}
           </Flex>
         )}
       </Flex>
