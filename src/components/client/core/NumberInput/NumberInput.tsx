@@ -125,7 +125,7 @@ const NumberInput = ({
         {stepper && (
           <Flex className={classNames.stepper}>
             {STEPPER_BUTTONS.map(({ label, onClick, icon }) => (
-              <>
+              <Flex key={label} w="100%" h="100%">
                 <Button
                   onClick={onClick}
                   bgColor={{
@@ -142,9 +142,15 @@ const NumberInput = ({
                   <Icon as={icon} className={classNames.stepperIcon} px={3} />
                 </Button>
                 {label === "Decrement" && (
-                  <panda.div w="1px" h="75%" mx={0.5} bgColor="gray.600" />
+                  <panda.div
+                    w="1px"
+                    h="75%"
+                    mx={0.5}
+                    my="auto"
+                    bgColor="gray.600"
+                  />
                 )}
-              </>
+              </Flex>
             ))}
           </Flex>
         )}
