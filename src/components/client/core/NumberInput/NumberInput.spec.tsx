@@ -14,11 +14,9 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
   const canvas = within(canvasElement as HTMLElement);
 
   const numberInput = canvas.getByPlaceholderText("0");
-  const buttons = canvas.getAllByRole("button");
-
-  // TODO: uncomment this when the decrement test is fixed
-  // const decrementButton = buttons[0];
-  const incrementButton = buttons[1];
+  const increment = canvas.getByLabelText("Increment");
+  // TODO: uncomment this line when the decrement test is fixed.
+  // const decrement = canvas.getByLabelText("Decrement");
 
   await step(
     "It should change numberInput value if a number is typed",
@@ -48,7 +46,7 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
   await step(
     "It should increment numberInput value on increment button click",
     async () => {
-      await userEvent.click(incrementButton);
+      await userEvent.click(increment);
 
       await expect(numberInput).toHaveValue(0.1);
 
@@ -56,17 +54,17 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
     },
   );
 
-  // TODO: Fix this test
-  //   await step(
-  //     "It should decrement numberInput value on decrement button click",
-  //     async () => {
-  //       await userEvent.click(incrementButton);
-  //       await userEvent.click(incrementButton);
-  //       await userEvent.click(decrementButton);
+  // TODO: Fix this test.
+  // await step(
+  //   "It should decrement numberInput value on decrement button click",
+  //   async () => {
+  //     await userEvent.click(increment);
+  //     await userEvent.click(increment);
+  //     await userEvent.click(decrement);
 
-  //       await expect(numberInput).toHaveValue(0.1);
+  //     await expect(numberInput).toHaveValue(0.1);
 
-  //       await userEvent.keyboard("delete");
-  //     },
-  //   );
+  //     await userEvent.keyboard("delete");
+  //   },
+  // );
 };
