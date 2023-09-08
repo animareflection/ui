@@ -122,6 +122,7 @@ const NumberInput = ({
               h="100%"
               color="fg.default"
               borderRadius="sm"
+              aria-label="Decrement"
             >
               <Icon as={FiMinus} className={classNames.stepperIcon} px={3} />
             </Button>
@@ -138,6 +139,7 @@ const NumberInput = ({
               h="100%"
               color="fg.default"
               borderRadius="sm"
+              aria-label="Increment"
             >
               <Icon as={FiPlus} className={classNames.stepperIcon} px={3} />
             </Button>
