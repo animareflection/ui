@@ -4,7 +4,7 @@ import { FiX as CloseIcon } from "react-icons/fi";
 import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import {
-  Toast,
+  Toast as PrimitiveToast,
   ToastCloseTrigger,
   ToastDescription,
   ToastGroup,
@@ -19,7 +19,7 @@ import type { ToastProps } from "components/primitives";
 
 export type Props = Omit<ToastProps, "toast">;
 
-export const ToastDemo = ({ children, ...rest }: Props) => {
+export const Toast = ({ children, ...rest }: Props) => {
   const classNames = toast();
 
   return (
@@ -35,7 +35,7 @@ export const ToastDemo = ({ children, ...rest }: Props) => {
               >
                 {(toasts) =>
                   toasts.map((toast) => (
-                    <Toast
+                    <PrimitiveToast
                       key={toast.id}
                       toast={toast}
                       className={classNames.root}
@@ -61,7 +61,7 @@ export const ToastDemo = ({ children, ...rest }: Props) => {
                           </Button>
                         </ToastCloseTrigger>
                       </Box>
-                    </Toast>
+                    </PrimitiveToast>
                   ))
                 }
               </ToastGroup>
@@ -73,3 +73,5 @@ export const ToastDemo = ({ children, ...rest }: Props) => {
     </ToastProvider>
   );
 };
+
+export default Toast;
