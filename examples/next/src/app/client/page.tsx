@@ -9,6 +9,7 @@ import {
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
+  FlyoutDemo,
   IconDemo,
   MenuDemo,
   ModalDemo,
@@ -34,6 +35,7 @@ const ClientPage = () => (
     <CheckboxDemo />
     <CollapseDemo />
     <BannerDemo />
+    <FlyoutDemo />
   </Flex>
 );
 

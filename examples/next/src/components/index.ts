@@ -6,6 +6,7 @@ export { default as CardDemo } from "./CardDemo";
 export { default as CheckboxDemo } from "./CheckboxDemo";
 export { default as CollapseDemo } from "./CollapseDemo";
 export { default as DrawerDemo } from "./DrawerDemo";
+export { default as FlyoutDemo } from "./FlyoutDemo";
 export { default as IconDemo } from "./IconDemo";
 export { default as ImageDemo } from "./ImageDemo";
 export { default as KbdDemo } from "./KbdDemo";
