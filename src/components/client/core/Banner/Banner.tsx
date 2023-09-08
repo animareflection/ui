@@ -31,9 +31,6 @@ const Banner = ({ children, variant, closable, ...rest }: Props) => {
             position="absolute"
             right={6}
             p={1}
-            _focus={{
-              outline: "none",
-            }}
             bgColor={{
               base: "inherit",
               _hover: "none",

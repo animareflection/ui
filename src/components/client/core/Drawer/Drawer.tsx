@@ -70,9 +70,6 @@ const Drawer = ({
                     pos="absolute"
                     top={2}
                     right={2}
-                    _focus={{
-                      outline: "none",
-                    }}
                     p={3}
                     bgColor={{
                       base: "inherit",
