@@ -1,7 +1,7 @@
 import { flyoutState } from "./Flyout.spec";
 import { Button, Flyout } from "components/client";
 import { Text } from "components/universal";
-import { Flex, VStack } from "generated/panda/jsx";
+import { VStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -28,8 +28,20 @@ const testArray: Placement[] = [
   "top-end",
 ];
 
-export const PlacementTest = () => {
-  return (
+export const Default: Story = {
+  render: () => (
+    <Flyout trigger={<Button>Open Flyout</Button>} title="Flyout Title">
+      <Text mt={2}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam.
+      </Text>
+    </Flyout>
+  ),
+};
+
+export const Placement: Story = {
+  render: () => (
     <VStack
       gap={4}
       h="screen"
@@ -52,36 +64,6 @@ export const PlacementTest = () => {
         </Flyout>
       ))}
     </VStack>
-  );
-};
-
-export const Default: Story = {
-  render: () => (
-    <Flyout trigger={<Button>Open Flyout</Button>} title="Flyout Title">
-      <Text mt={2}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam.
-      </Text>
-    </Flyout>
-  ),
-};
-
-export const Placement: Story = {
-  render: () => (
-    <Flex h="screen" w="full" justifyContent="center" alignItems="center">
-      <Flyout
-        placement="left-start"
-        trigger={<Button>Open Flyout</Button>}
-        title="Flyout Title"
-      >
-        <Text mt={2}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </Text>
-      </Flyout>
-    </Flex>
   ),
 };
 
