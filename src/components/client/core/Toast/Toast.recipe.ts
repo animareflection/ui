@@ -3,15 +3,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const toastRecipe = defineSlotRecipe({
   className: "toast",
   description: "The styles for the Toast component",
-  slots: [
-    "root",
-    "title",
-    "placements",
-    "closeTrigger",
-    "group",
-    "title",
-    "description",
-  ],
+  slots: ["root", "title", "group", "description"],
   base: {
     root: {
       background: "bg.default",
