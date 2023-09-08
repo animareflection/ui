@@ -17,6 +17,7 @@ import {
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
+  FlyoutDemo,
   IconDemo,
   ImageDemo,
   KbdDemo,
@@ -99,6 +100,7 @@ const App = () => (
       <KbdDemo />
       <CollapseDemo />
       <BannerDemo />
+      <FlyoutDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
