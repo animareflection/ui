@@ -45,20 +45,20 @@ const NumberInput = ({
   const classNames = numberInput({ size, variant });
 
   const handleIncrement = useCallback(() => {
-    if ((value ?? 0) + Number(step) > Number(max)) return;
+    if (value + Number(step) > Number(max)) return;
     setValue((prevValue) =>
       precision
-        ? Number(((prevValue ?? 0) + Number(step)).toFixed(precision))
-        : (prevValue ?? 0) + Number(step),
+        ? Number((prevValue + Number(step)).toFixed(precision))
+        : prevValue + Number(step),
     );
   }, [step, max, value, precision]);
 
   const handleDecrement = useCallback(() => {
-    if ((value ?? 0) - Number(step) < Number(min)) return;
+    if (value - Number(step) < Number(min)) return;
     setValue((prevValue) =>
       precision
-        ? Number(((prevValue ?? 0) - Number(step)).toFixed(precision))
-        : (prevValue ?? 0) - Number(step),
+        ? Number((prevValue - Number(step)).toFixed(precision))
+        : prevValue - Number(step),
     );
   }, [step, min, value, precision]);
 
