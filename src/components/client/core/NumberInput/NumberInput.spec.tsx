@@ -14,9 +14,8 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
   const canvas = within(canvasElement as HTMLElement);
 
   const numberInput = canvas.getByPlaceholderText("0");
-  const increment = canvas.getByLabelText("Increment");
-  // TODO: uncomment this line when the decrement test is fixed.
-  // const decrement = canvas.getByLabelText("Decrement");
+  const increment = canvas.getByLabelText("increment value");
+  const decrement = canvas.getByLabelText("decrease value");
 
   await step(
     "It should change numberInput value if a number is typed",
@@ -25,9 +24,9 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
         delay: 100,
       });
 
-      await expect(numberInput).toHaveValue(2);
+      await expect(numberInput).toHaveValue("2");
 
-      await userEvent.keyboard("delete");
+      await userEvent.keyboard("[Backspace]");
     },
   );
 
@@ -39,7 +38,7 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
       });
 
       await expect(numberInput).not.toHaveValue("q");
-      await expect(numberInput).toHaveValue(null);
+      await expect(numberInput).toHaveValue("");
     },
   );
 
@@ -48,23 +47,20 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
     async () => {
       await userEvent.click(increment);
 
-      await expect(numberInput).toHaveValue(0.1);
+      await expect(numberInput).toHaveValue("0.1");
 
-      await userEvent.keyboard("delete");
+      await userEvent.keyboard("[Backspace]");
     },
   );
 
-  // TODO: Fix this test.
-  // await step(
-  //   "It should decrement numberInput value on decrement button click",
-  //   async () => {
-  //     await userEvent.click(increment);
-  //     await userEvent.click(increment);
-  //     await userEvent.click(decrement);
+  await step(
+    "It should decrement numberInput value on decrement button click",
+    async () => {
+      await userEvent.click(increment);
+      await userEvent.click(increment);
+      await userEvent.click(decrement);
 
-  //     await expect(numberInput).toHaveValue(0.1);
-
-  //     await userEvent.keyboard("delete");
-  //   },
-  // );
+      await expect(numberInput).toHaveValue("0.1");
+    },
+  );
 };
