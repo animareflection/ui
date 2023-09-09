@@ -12,7 +12,7 @@ import {
   ToastProvider,
   ToastTitle,
 } from "components/primitives";
-import { Box, Stack } from "generated/panda/jsx";
+import { Stack } from "generated/panda/jsx";
 import { toast } from "generated/panda/recipes";
 
 import type { ToastProps } from "components/primitives";
@@ -46,21 +46,20 @@ export const Toast = ({ children, ...rest }: Props) => {
                         <ToastDescription className={classNames.description} />
                       </Stack>
 
-                      <Box position="absolute" top="3" right="3">
-                        <ToastCloseTrigger asChild>
-                          <Button
-                            pos="absolute"
-                            top={2}
-                            right={2}
-                            bgColor={{
-                              base: "inherit",
-                              _hover: "bg.subtle",
-                            }}
-                          >
-                            <Icon as={CloseIcon} color="fg.default" />
-                          </Button>
-                        </ToastCloseTrigger>
-                      </Box>
+                      <ToastCloseTrigger asChild>
+                        <Button
+                          pos="absolute"
+                          top={2}
+                          right={2}
+                          bgColor={{
+                            base: "inherit",
+                            _hover: "bg.subtle",
+                          }}
+                          p={1}
+                        >
+                          <Icon as={CloseIcon} color="fg.default" />
+                        </Button>
+                      </ToastCloseTrigger>
                     </PrimitiveToast>
                   ))
                 }

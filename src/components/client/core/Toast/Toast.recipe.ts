@@ -6,20 +6,11 @@ export const toastRecipe = defineSlotRecipe({
   slots: ["root", "title", "group", "description"],
   base: {
     root: {
+      position: "relative",
       background: "bg.default",
       borderRadius: "lg",
-      borderWidth: "1px",
       boxShadow: "lg",
       minWidth: "xs",
-      p: "4",
-      _open: {
-        animation: "slideInFromBottom 0.2s ease-out",
-      },
-      _closed: {
-        animation: "slideOutFromBottom 0.2s ease-out",
-      },
-    },
-    group: {
       p: 4,
     },
     title: {
