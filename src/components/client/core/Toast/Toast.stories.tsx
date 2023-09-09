@@ -30,7 +30,6 @@ const ToastOnStateChange = () => {
   const toast = useToast();
   const [isOpen, setIsOpen] = useState(false);
 
-  // NB: timeout is set to demonstrate state change behavior
   useEffect(() => {
     if (isOpen) {
       toast.create({
@@ -47,6 +46,7 @@ const ToastOnStateChange = () => {
   return (
     <Button
       onClick={() => {
+        // NB: timeout is set to demonstrate state change behavior
         setTimeout(() => {
           setIsOpen(true);
         }, 1000);
