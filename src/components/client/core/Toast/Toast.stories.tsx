@@ -16,8 +16,8 @@ const ToastOnClick = () => {
         toast.create({
           title: "Toast Title",
           description: "Toast Description",
-          placement: "top-end",
-          removeDelay: 3,
+          placement: "top",
+          duration: 3000,
         });
       }}
     >
@@ -35,8 +35,8 @@ const ToastOnStateChange = () => {
       toast.create({
         title: "Toast Title",
         description: "Toast Description",
-        placement: "top-end",
-        removeDelay: 3,
+        placement: "top",
+        duration: 3000,
       });
 
       setIsOpen(false);

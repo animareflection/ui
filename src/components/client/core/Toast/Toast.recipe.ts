@@ -12,6 +12,9 @@ export const toastRecipe = defineSlotRecipe({
       boxShadow: "lg",
       minWidth: "xs",
       p: 4,
+      _open: {
+        animation: "slide-in-top 200ms",
+      },
     },
     title: {
       fontWeight: "semibold",
