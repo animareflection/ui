@@ -25,7 +25,7 @@ import type {
 } from "@ark-ui/react";
 
 /**
- * Core UI popover primitives.
+ * Core UI flyout primitives.
  */
 export type FlyoutProps = PopoverProps;
 const Flyout = panda(Popover);
