@@ -30,16 +30,12 @@ export const flyoutState = async <R extends Renderer = ReactRenderer>({
   });
 
   await step("It should close flyout on close button click", async () => {
-    const closeButton = screen.getByRole("button", {
-      name(_accessibleName, element) {
-        // eslint-disable-next-line testing-library/no-node-access
-        return element?.closest("div")?.getAttribute("role") === "dialog";
-      },
-    });
+    const closeButton = screen.getByLabelText("close");
+    const flyoutTitle = screen.getByText("Flyout Title");
 
     await userEvent.click(closeButton);
 
-    const flyoutTitle = screen.getByText("Flyout Title");
+    await sleep(1000);
 
     await expect(flyoutTitle).not.toBeVisible();
   });

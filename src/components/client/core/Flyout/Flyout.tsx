@@ -20,33 +20,18 @@ import { flyout } from "generated/panda/recipes";
 import type { FlyoutProps } from "components/primitives";
 import type { ReactNode } from "react";
 
-type Placement =
-  | "left-start"
-  | "left-end"
-  | "right-start"
-  | "right-end"
-  | "top-start"
-  | "top-end"
-  | "bottom-start"
-  | "bottom-end";
-
 export interface Props extends FlyoutProps {
   trigger: ReactNode;
   title?: string;
   children: ReactNode;
-  placement?: Placement | undefined;
 }
 
-const Flyout = ({ trigger, title, children, placement, ...rest }: Props) => {
-  const classNames = flyout();
-
+const Flyout = ({ trigger, title, children, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const classNames = flyout();
 
   return (
     <PrimitiveFlyout
-      positioning={{
-        placement: placement,
-      }}
       open={isOpen}
       onClose={() => setIsOpen(false)}
       portalled

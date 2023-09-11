@@ -1,32 +1,41 @@
 import { flyoutState } from "./Flyout.spec";
 import { Button, Flyout } from "components/client";
 import { Text } from "components/universal";
-import { VStack } from "generated/panda/jsx";
+import { Flex, Grid } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof Flyout>;
 
 type Placement =
-  | "left-start"
-  | "left-end"
-  | "right-start"
-  | "right-end"
+  | "top"
   | "top-start"
   | "top-end"
+  | "bottom"
   | "bottom-start"
-  | "bottom-end";
+  | "bottom-end"
+  | "left"
+  | "left-start"
+  | "left-end"
+  | "right"
+  | "right-start"
+  | "right-end";
 
-const placementOptions: Placement[] = [
-  "bottom-start",
-  "bottom-end",
-  "left-start",
-  "left-end",
-  "right-start",
-  "right-end",
-  "top-start",
-  "top-end",
-];
+const FlyoutTemplate = ({ placement }: { placement: Placement }) => (
+  <Flyout
+    positioning={{
+      placement: placement,
+    }}
+    trigger={<Button minW={32}>{placement}</Button>}
+    title="Flyout Title"
+  >
+    <Text mt={2}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Text>
+  </Flyout>
+);
 
 export const Default: Story = {
   render: () => (
@@ -42,28 +51,22 @@ export const Default: Story = {
 
 export const Placement: Story = {
   render: () => (
-    <VStack
-      gap={4}
-      h="screen"
-      w="full"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {placementOptions.map((item) => (
-        <Flyout
-          key={item}
-          placement={item}
-          trigger={<Button>{item}</Button>}
-          title="Flyout Title"
-        >
-          <Text mt={2}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </Text>
-        </Flyout>
-      ))}
-    </VStack>
+    <Flex h="screen" w="full" justify="center" align="center">
+      <Grid columns={{ base: 2, sm: 3 }} justifyContent="center">
+        <FlyoutTemplate placement="bottom-start" />
+        <FlyoutTemplate placement="bottom" />
+        <FlyoutTemplate placement="bottom-end" />
+        <FlyoutTemplate placement="left-start" />
+        <FlyoutTemplate placement="left" />
+        <FlyoutTemplate placement="left-end" />
+        <FlyoutTemplate placement="right-start" />
+        <FlyoutTemplate placement="right" />
+        <FlyoutTemplate placement="right-end" />
+        <FlyoutTemplate placement="top-start" />
+        <FlyoutTemplate placement="top" />
+        <FlyoutTemplate placement="top-end" />
+      </Grid>
+    </Flex>
   ),
 };
 
