@@ -20,7 +20,8 @@ export const flyoutRecipe = defineSlotRecipe({
       position: "relative",
     },
     content: {
-      background: "bg.muted",
+      background: "bg.default",
+      boxShadow: "lg",
       borderRadius: "md",
       borderWidth: "1px",
       borderColor: "border.subtle",
@@ -59,7 +60,7 @@ export const flyoutRecipe = defineSlotRecipe({
     },
     arrow: {
       "--arrow-size": "var(--sizes-3)",
-      "--arrow-background": "var(--colors-bg-muted)",
+      "--arrow-background": "var(--colors-bg-default)",
     },
     arrowTip: {
       borderTopWidth: "1px",
