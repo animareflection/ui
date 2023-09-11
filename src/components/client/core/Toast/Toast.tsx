@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import {
   Toast as PrimitiveToast,
@@ -45,13 +44,11 @@ const Toast = ({ children, state, ...rest }: Props) => {
                         <ToastDescription className={classNames.description} />
                       </Stack>
 
-                      <ToastCloseTrigger asChild>
-                        <Button className={classNames.closeTrigger}>
-                          <Icon
-                            as={CloseIcon}
-                            className={classNames.closeTriggerIcon}
-                          />
-                        </Button>
+                      <ToastCloseTrigger className={classNames.closeTrigger}>
+                        <Icon
+                          as={CloseIcon}
+                          className={classNames.closeTriggerIcon}
+                        />
                       </ToastCloseTrigger>
                     </PrimitiveToast>
                   ))

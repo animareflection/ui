@@ -36,7 +36,9 @@ export const toastRecipe = defineSlotRecipe({
       position: "absolute",
       top: 2,
       right: 2,
-      p: "1 !important",
+      p: 1,
+      borderRadius: "md",
+      cursor: "pointer",
       backgroundColor: { base: "inherit", _hover: "bg.subtle" },
     },
     closeTriggerIcon: {
