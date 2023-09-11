@@ -88,7 +88,14 @@ export {
   ToggleLabel,
   ToggleThumb,
 } from "./Toggle/Toggle";
-
+export {
+  default as Tooltip,
+  TooltipArrow,
+  TooltipArrowTip,
+  TooltipContent,
+  TooltipPositioner,
+  TooltipTrigger,
+} from "./Tooltip/Tooltip";
 export type {
   AccordionProps,
   AccordionItemProps,
@@ -155,7 +162,6 @@ export type {
   FlyoutTitleProps,
   FlyoutTriggerProps,
 } from "./Flyout/Flyout";
-
 export type {
   SliderProps,
   SliderControlProps,
@@ -180,3 +186,11 @@ export type {
   ToggleLabelProps,
   ToggleThumbProps,
 } from "./Toggle/Toggle";
+export type {
+  TooltipProps,
+  TooltipArrowProps,
+  TooltipArrowTipProps,
+  TooltipContentProps,
+  TooltipPositionerProps,
+  TooltipTriggerProps,
+} from "./Tooltip/Tooltip";
