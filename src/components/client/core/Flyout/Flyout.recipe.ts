@@ -24,7 +24,7 @@ export const flyoutRecipe = defineSlotRecipe({
       boxShadow: "lg",
       borderRadius: "md",
       borderWidth: "1px",
-      borderColor: "border.subtle",
+      borderColor: "border.default",
       width: { base: "xs", sm: "sm" },
       _open: {
         animation: "fade-in",
@@ -51,7 +51,7 @@ export const flyoutRecipe = defineSlotRecipe({
       fontWeight: "bold",
       textStyle: "lg",
       borderBottomWidth: "1px",
-      borderColor: "border.subtle",
+      borderColor: "border.default",
     },
     description: {
       p: 3,
@@ -64,7 +64,7 @@ export const flyoutRecipe = defineSlotRecipe({
     },
     arrowTip: {
       borderTopWidth: "1px",
-      borderColor: "border.subtle",
+      borderColor: "border.default",
       borderLeftWidth: "1px",
     },
   },
