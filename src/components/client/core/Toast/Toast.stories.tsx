@@ -55,11 +55,11 @@ const ToastOnStateChange = () => {
     }
   }, [isSuccess]);
 
-  const randomSuccess = () => setIsSuccess(Math.random() >= 0.5);
+  const randomizeSuccess = () => setIsSuccess(Math.random() >= 0.5);
 
   return (
     <Toast state={isSuccess ? "success" : "error"}>
-      <Button onClick={randomSuccess}>Open Toast</Button>
+      <Button onClick={randomizeSuccess}>Open Toast</Button>
     </Toast>
   );
 };
