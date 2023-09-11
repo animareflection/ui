@@ -28,6 +28,7 @@ const Tooltip = ({ trigger, content, ...rest }: Props) => {
   const isMounted = useIsMounted();
 
   if (!isMounted) return null;
+
   return (
     <PrimitiveTooltip {...rest}>
       {({ isOpen }) => (
