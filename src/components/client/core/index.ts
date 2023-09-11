@@ -5,6 +5,7 @@ export { default as Checkbox } from "./Checkbox/Checkbox";
 export { default as Drawer } from "./Drawer/Drawer";
 export { default as Icon } from "./Icon/Icon";
 export { default as Input } from "./Input/Input";
+export { default as Flyout } from "./Flyout/Flyout";
 export { default as Menu } from "./Menu/Menu";
 export { default as Modal } from "./Modal/Modal";
 export { default as NumberInput } from "./NumberInput/NumberInput";
@@ -22,6 +23,7 @@ export type { Props as CheckboxProps } from "./Checkbox/Checkbox";
 export type { Props as DrawerProps } from "./Drawer/Drawer";
 export type { Props as IconProps } from "./Icon/Icon";
 export type { Props as InputProps } from "./Input/Input";
+export type { Props as FlyoutProps } from "./Flyout/Flyout";
 export type {
   Props as MenuProps,
   MenuItemRecord,

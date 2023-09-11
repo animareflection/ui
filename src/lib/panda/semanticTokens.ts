@@ -97,6 +97,12 @@ const semanticTokens = defineSemanticTokens({
           _dark: "{colors.neutral.800}",
         },
       },
+      subtle: {
+        value: {
+          base: "{colors.neutral.300}",
+          _dark: "{colors.neutral.600}",
+        },
+      },
       emphasized: {
         value: {
           base: "{colors.brand.primary.600}",

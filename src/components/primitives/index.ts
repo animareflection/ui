@@ -54,6 +54,17 @@ export {
   NumberInputScrubber,
 } from "./NumberInput/NumberInput";
 export {
+  default as Flyout,
+  FlyoutArrow,
+  FlyoutArrowTip,
+  FlyoutCloseTrigger,
+  FlyoutContent,
+  FlyoutDescription,
+  FlyoutPositioner,
+  FlyoutTitle,
+  FlyoutTrigger,
+} from "./Flyout/Flyout";
+export {
   default as Slider,
   SliderControl,
   SliderLabel,
@@ -133,6 +144,18 @@ export type {
   NumberInputProps,
   NumberInputScrubberProps,
 } from "./NumberInput/NumberInput";
+export type {
+  FlyoutProps,
+  FlyoutArrowProps,
+  FlyoutArrowTipProps,
+  FlyoutCloseTriggerProps,
+  FlyoutContentProps,
+  FlyoutDescriptionProps,
+  FlyoutPositionerProps,
+  FlyoutTitleProps,
+  FlyoutTriggerProps,
+} from "./Flyout/Flyout";
+
 export type {
   SliderProps,
   SliderControlProps,
