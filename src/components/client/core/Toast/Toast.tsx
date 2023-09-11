@@ -39,7 +39,7 @@ const Toast = ({ children, state, ...rest }: Props) => {
                       className={classNames.root}
                       {...rest}
                     >
-                      <Stack gap="1">
+                      <Stack gap={1}>
                         <ToastTitle className={classNames.title} />
                         <ToastDescription className={classNames.description} />
                       </Stack>
