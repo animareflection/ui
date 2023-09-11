@@ -16,6 +16,7 @@ import {
   FlyoutTrigger,
 } from "components/primitives";
 import { flyout } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { FlyoutProps } from "components/primitives";
 import type { ReactNode } from "react";
@@ -28,7 +29,12 @@ export interface Props extends FlyoutProps {
 
 const Flyout = ({ trigger, title, children, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const classNames = flyout();
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveFlyout
