@@ -1,10 +1,10 @@
 import { defineTokens } from "@pandacss/dev";
 
 const animations = defineTokens.animations({
-  "backdrop-in": {
+  "fade-in": {
     value: "fade-in 250ms {easings.default}",
   },
-  "backdrop-out": {
+  "fade-out": {
     value: "fade-out 200ms {easings.default}",
   },
   "modal-in": {
