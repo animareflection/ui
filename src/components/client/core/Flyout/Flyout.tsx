@@ -27,6 +27,9 @@ export interface Props extends FlyoutProps {
   children: ReactNode;
 }
 
+/**
+ * Core UI flyout.
+ */
 const Flyout = ({ trigger, title, children, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
