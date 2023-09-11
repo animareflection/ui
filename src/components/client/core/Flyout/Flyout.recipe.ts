@@ -2,7 +2,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 
 export const flyoutRecipe = defineSlotRecipe({
   className: "flyout",
-  description: "A flyout style",
+  description: "The styles for the Flyout component",
   slots: [
     "root",
     "arrow",
