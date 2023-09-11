@@ -16,25 +16,16 @@ import { Stack } from "generated/panda/jsx";
 import { toast } from "generated/panda/recipes";
 
 import type { ToastProps, ToastProviderProps } from "components/primitives";
-import type { ToastVariantProps } from "generated/panda/recipes";
 
-export interface Props extends ToastProviderProps, ToastVariantProps {
+export interface Props extends ToastProviderProps {
   toastProps?: Omit<ToastProps, "toast">;
 }
 
-export const ToastProvider = ({
-  children,
-  state,
-  toastProps,
-  ...rest
-}: Props) => {
-  const classNames = toast({ state });
+export const ToastProvider = ({ children, toastProps, ...rest }: Props) => {
+  const classNames = toast();
 
   return (
-    <PrimitiveToastProvider
-      defaultOptions={{ placement: "top", duration: 3000 }}
-      {...rest}
-    >
+    <PrimitiveToastProvider {...rest}>
       <Portal>
         <ToastPlacements>
           {(placements) =>

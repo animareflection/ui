@@ -57,19 +57,11 @@ const ToastOnStateChange = () => {
 };
 
 export const Click: Story = {
-  render: () => (
-    <ToastProvider>
-      <ToastOnClick />
-    </ToastProvider>
-  ),
+  render: () => <ToastOnClick />,
 };
 
 export const StateChange: Story = {
-  render: () => (
-    <ToastProvider>
-      <ToastOnStateChange />
-    </ToastProvider>
-  ),
+  render: () => <ToastOnStateChange />,
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
@@ -77,7 +69,18 @@ const meta: Meta<typeof ToastProvider> = {
   title: "Components/Client/Core/Toast",
   component: ToastProvider,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
+  decorators: [
+    (Story) => (
+      <ToastProvider
+        defaultOptions={{
+          placement: "top",
+          duration: 3000,
+        }}
+      >
+        <Story />
+      </ToastProvider>
+    ),
+  ],
 } satisfies Meta<typeof ToastProvider>;
 
 export default meta;
