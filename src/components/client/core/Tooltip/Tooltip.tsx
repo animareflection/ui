@@ -22,7 +22,13 @@ export interface Props extends TooltipProps {
 /**
  * Core UI tooltip.
  */
-const Tooltip = ({ trigger, content, ...rest }: Props) => {
+const Tooltip = ({
+  trigger,
+  content,
+  openDelay = 0,
+  closeDelay = 0,
+  ...rest
+}: Props) => {
   const classNames = tooltip();
 
   const isMounted = useIsMounted();
@@ -30,7 +36,7 @@ const Tooltip = ({ trigger, content, ...rest }: Props) => {
   if (!isMounted) return null;
 
   return (
-    <PrimitiveTooltip {...rest}>
+    <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
       {({ isOpen }) => (
         <>
           <TooltipTrigger asChild>{trigger}</TooltipTrigger>

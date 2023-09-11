@@ -9,8 +9,6 @@ const FlyoutDemo = () => {
         positioning={{
           placement: "top",
         }}
-        openDelay={0}
-        closeDelay={0}
         trigger={<Button>Open Tooltip</Button>}
         content="Tooltip Title"
       />
