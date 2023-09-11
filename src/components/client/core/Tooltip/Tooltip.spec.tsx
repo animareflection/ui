@@ -15,9 +15,7 @@ export const tooltipState = async <R extends Renderer = ReactRenderer>({
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  const hoverButton = canvas.getByText("Tooltip");
-
-  //   hoverButton.focus();
+  const hoverButton = canvas.getByText("Open Tooltip");
 
   await step("It should open flyout on button hover", async () => {
     await userEvent.hover(hoverButton);

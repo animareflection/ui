@@ -32,7 +32,12 @@ const TooltipTemplate = ({ placement }: { placement: Placement }) => (
 
 export const Default: Story = {
   render: () => (
-    <Tooltip trigger={<Button>Tooltip</Button>} content="Tooltip Title" />
+    <Tooltip
+      openDelay={0}
+      closeDelay={0}
+      trigger={<Button>Open Tooltip</Button>}
+      content="Tooltip Title"
+    />
   ),
 };
 

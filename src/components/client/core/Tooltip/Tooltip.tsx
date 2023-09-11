@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from "components/primitives";
 import { tooltip } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { TooltipProps } from "components/primitives";
 import type { ReactNode } from "react";
@@ -23,9 +24,13 @@ export interface Props extends TooltipProps {
  */
 const Tooltip = ({ trigger, content, ...rest }: Props) => {
   const classNames = tooltip();
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
   return (
     <PrimitiveTooltip {...rest}>
-      <TooltipTrigger>{trigger}</TooltipTrigger>
+      <TooltipTrigger asChild>{trigger}</TooltipTrigger>
       <Portal>
         <TooltipPositioner className={classNames.positioner}>
           <TooltipArrow>

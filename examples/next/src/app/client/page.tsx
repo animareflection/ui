@@ -19,6 +19,7 @@ import {
   SliderDemo,
   TabsDemo,
   ToggleDemo,
+  TooltipDemo,
 } from "components";
 
 const ClientPage = () => (
@@ -40,6 +41,7 @@ const ClientPage = () => (
     <InputDemo />
     <NumberInputDemo />
     <FlyoutDemo />
+    <TooltipDemo />
   </Flex>
 );
 

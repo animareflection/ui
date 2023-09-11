@@ -17,7 +17,7 @@ export const tooltipRecipe = defineSlotRecipe({
       fontWeight: "semibold",
       px: "3",
       py: "2",
-      textStyle: "xs",
+      textStyle: "sm",
       color: "fg.default",
     },
   },

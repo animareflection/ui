@@ -30,6 +30,7 @@ import {
   SpinnerDemo,
   TabsDemo,
   ToggleDemo,
+  TooltipDemo,
 } from "components";
 
 import "main.css";
@@ -105,6 +106,7 @@ const App = () => (
       <InputDemo />
       <NumberInputDemo />
       <FlyoutDemo />
+      <TooltipDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
