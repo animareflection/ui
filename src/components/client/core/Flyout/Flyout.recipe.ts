@@ -8,6 +8,7 @@ export const flyoutRecipe = defineSlotRecipe({
     "arrow",
     "arrowTip",
     "closeTrigger",
+    "closeTriggerIcon",
     "content",
     "description",
     "positioner",
@@ -24,13 +25,24 @@ export const flyoutRecipe = defineSlotRecipe({
       borderWidth: "1px",
       borderColor: "border.subtle",
       width: { base: "xs", sm: "sm" },
-      mx: 1,
       _open: {
         animation: "fade-in",
       },
       _closed: {
         animation: "fade-out",
       },
+    },
+    closeTrigger: {
+      p: 2,
+      position: "absolute",
+      top: 2,
+      right: 2,
+      borderRadius: "md",
+      cursor: "pointer",
+      backgroundColor: { base: "inherit", _hover: "bg.emphasized" },
+    },
+    closeTriggerIcon: {
+      color: "fg.default",
     },
     title: {
       p: 4,

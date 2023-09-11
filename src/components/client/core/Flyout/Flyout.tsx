@@ -2,7 +2,6 @@ import { Portal } from "@ark-ui/react";
 import { useState } from "react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import {
   Flyout as PrimitiveFlyout,
@@ -63,18 +62,11 @@ const Flyout = ({ trigger, title, children, ...rest }: Props) => {
               {children}
             </FlyoutDescription>
 
-            <FlyoutCloseTrigger asChild onClick={() => setIsOpen(false)}>
-              <Button
-                pos="absolute"
-                top={2}
-                right={2}
-                bgColor={{
-                  base: "inherit",
-                  _hover: "bg.emphasized",
-                }}
-              >
-                <Icon as={CloseIcon} color="fg.default" />
-              </Button>
+            <FlyoutCloseTrigger
+              onClick={() => setIsOpen(false)}
+              className={classNames.closeTrigger}
+            >
+              <Icon as={CloseIcon} className={classNames.closeTriggerIcon} />
             </FlyoutCloseTrigger>
           </FlyoutContent>
         </FlyoutPositioner>
