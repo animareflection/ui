@@ -53,7 +53,7 @@ const ToastOnStateChange = () => {
         },
       });
     }
-  }, [isSuccess]);
+  }, [isSuccess, toast]);
 
   const randomizeSuccess = () => setIsSuccess(Math.random() >= 0.5);
 
