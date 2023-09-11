@@ -81,6 +81,7 @@ const meta: Meta<typeof ToastProvider> = {
     (Story) => (
       <ToastProvider
         defaultOptions={{
+          // NB: `placement: top` is required for `Toast` to animate properly in current state.
           placement: "top",
           duration: 3000,
         }}
