@@ -3,7 +3,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const tooltipRecipe = defineSlotRecipe({
   className: "tooltip",
   description: "The styles for the Tooltip component",
-  slots: ["content", "positioner"],
+  slots: ["positioner", "content", "arrow", "arrowTip"],
   base: {
     positioner: {
       position: "relative",
@@ -19,6 +19,15 @@ export const tooltipRecipe = defineSlotRecipe({
       py: "2",
       textStyle: "sm",
       color: "fg.default",
+    },
+    arrow: {
+      "--arrow-size": "var(--sizes-3)",
+      "--arrow-background": "var(--colors-bg-default)",
+    },
+    arrowTip: {
+      borderTopWidth: "1px",
+      borderColor: "border.default",
+      borderLeftWidth: "1px",
     },
   },
 });

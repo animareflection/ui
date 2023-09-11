@@ -30,17 +30,23 @@ const Tooltip = ({ trigger, content, ...rest }: Props) => {
   if (!isMounted) return null;
   return (
     <PrimitiveTooltip {...rest}>
-      <TooltipTrigger asChild>{trigger}</TooltipTrigger>
-      <Portal>
-        <TooltipPositioner className={classNames.positioner}>
-          <TooltipArrow>
-            <TooltipArrowTip />
-          </TooltipArrow>
-          <TooltipContent className={classNames.content}>
-            {content}
-          </TooltipContent>
-        </TooltipPositioner>
-      </Portal>
+      {({ isOpen }) => (
+        <>
+          <TooltipTrigger asChild>{trigger}</TooltipTrigger>
+          <Portal>
+            <TooltipPositioner className={classNames.positioner}>
+              {isOpen && (
+                <TooltipArrow className={classNames.arrow}>
+                  <TooltipArrowTip className={classNames.arrowTip} />
+                </TooltipArrow>
+              )}
+              <TooltipContent className={classNames.content}>
+                {content}
+              </TooltipContent>
+            </TooltipPositioner>
+          </Portal>
+        </>
+      )}
     </PrimitiveTooltip>
   );
 };
