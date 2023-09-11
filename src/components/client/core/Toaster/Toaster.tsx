@@ -17,6 +17,7 @@ const Toaster = ({ ...props }: Props) => (
         borderWidth: "1px",
         borderColor: "var(--colors-border-default)",
         boxShadow: "var(--shadows-lg)",
+        minWidth: "var(--sizes-32)",
       },
       success: {
         style: {
