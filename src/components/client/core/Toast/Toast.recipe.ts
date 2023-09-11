@@ -7,7 +7,8 @@ export const toastRecipe = defineSlotRecipe({
   base: {
     root: {
       position: "relative",
-      background: "bg.default",
+      backgroundColor: "brand.primary.100",
+      color: "brand.primary.800",
       borderRadius: "lg",
       boxShadow: "lg",
       minWidth: "xs",
@@ -23,6 +24,22 @@ export const toastRecipe = defineSlotRecipe({
     description: {
       color: "fg.muted",
       textStyle: "sm",
+    },
+  },
+  variants: {
+    state: {
+      success: {
+        root: {
+          backgroundColor: "green.100",
+          color: "green.800",
+        },
+      },
+      error: {
+        root: {
+          backgroundColor: "red.100",
+          color: "red.800",
+        },
+      },
     },
   },
 });

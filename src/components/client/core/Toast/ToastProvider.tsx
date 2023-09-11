@@ -4,26 +4,37 @@ import { FiX as CloseIcon } from "react-icons/fi";
 import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import {
-  Toast as PrimitiveToast,
+  Toast,
   ToastCloseTrigger,
   ToastDescription,
   ToastGroup,
   ToastPlacements,
-  ToastProvider,
+  ToastProvider as PrimitiveToastProvider,
   ToastTitle,
 } from "components/primitives";
 import { Stack } from "generated/panda/jsx";
 import { toast } from "generated/panda/recipes";
 
-import type { ToastProps } from "components/primitives";
+import type { ToastProps, ToastProviderProps } from "components/primitives";
+import type { ToastVariantProps } from "generated/panda/recipes";
 
-export type Props = Omit<ToastProps, "toast">;
+export interface Props extends ToastProviderProps, ToastVariantProps {
+  toastProps?: Omit<ToastProps, "toast">;
+}
 
-export const Toast = ({ children, ...rest }: Props) => {
-  const classNames = toast();
+export const ToastProvider = ({
+  children,
+  state,
+  toastProps,
+  ...rest
+}: Props) => {
+  const classNames = toast({ state });
 
   return (
-    <ToastProvider max={1}>
+    <PrimitiveToastProvider
+      defaultOptions={{ placement: "top", duration: 3000 }}
+      {...rest}
+    >
       <Portal>
         <ToastPlacements>
           {(placements) =>
@@ -35,11 +46,11 @@ export const Toast = ({ children, ...rest }: Props) => {
               >
                 {(toasts) =>
                   toasts.map((toast) => (
-                    <PrimitiveToast
+                    <Toast
                       key={toast.id}
                       toast={toast}
                       className={classNames.root}
-                      {...rest}
+                      {...toastProps}
                     >
                       <Stack gap="1">
                         <ToastTitle className={classNames.title} />
@@ -60,7 +71,7 @@ export const Toast = ({ children, ...rest }: Props) => {
                           <Icon as={CloseIcon} color="fg.default" />
                         </Button>
                       </ToastCloseTrigger>
-                    </PrimitiveToast>
+                    </Toast>
                   ))
                 }
               </ToastGroup>
@@ -69,8 +80,8 @@ export const Toast = ({ children, ...rest }: Props) => {
         </ToastPlacements>
       </Portal>
       {children}
-    </ToastProvider>
+    </PrimitiveToastProvider>
   );
 };
 
-export default Toast;
+export default ToastProvider;

@@ -4,7 +4,7 @@ import {
   ToastDescription as ArkToastDescription,
   ToastGroup as ArkToastGroup,
   ToastPlacements as ArkToastPlacements,
-  ToastProvider as Ark,
+  ToastProvider as ArkToastProvider,
   ToastTitle as ArkToastTitle,
 } from "@ark-ui/react";
 
@@ -16,7 +16,7 @@ import type {
   ToastDescriptionProps as ArkToastDescriptionProps,
   ToastGroupProps as ArkToastGroupProps,
   ToastPlacementsProps as ArkToastPlacementsProps,
-  ToastProviderProps as ArkProps,
+  ToastProviderProps as ArkToastProviderProps,
   ToastTitleProps as ArkToastTitleProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
@@ -42,8 +42,8 @@ export const ToastGroup: PandaComponent<typeof ArkToastGroup> =
 export type ToastPlacementsProps = ArkToastPlacementsProps;
 export const ToastPlacements = panda(ArkToastPlacements);
 
-export type ToastProviderProps = ArkProps;
-export const ToastProvider = panda(Ark);
+export type ToastProviderProps = ArkToastProviderProps;
+export const ToastProvider = panda(ArkToastProvider);
 
 export type ToastTitleProps = ArkToastTitleProps;
 export const ToastTitle = panda(ArkToastTitle);
