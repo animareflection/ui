@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Button, ToastProvider } from "components/client";
+import { Button, Toast, ToastProvider } from "components/client";
 import { useToast } from "lib/hooks";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -11,18 +11,20 @@ const ToastOnClick = () => {
   const toast = useToast();
 
   return (
-    <Button
-      onClick={() => {
-        toast.create({
-          title: "Toast Title",
-          description: "Toast Description",
-          placement: "top",
-          duration: 3000,
-        });
-      }}
-    >
-      Open Toast
-    </Button>
+    <Toast>
+      <Button
+        onClick={() => {
+          toast.create({
+            title: "Toast Title",
+            description: "Toast Description",
+            placement: "top",
+            duration: 3000,
+          });
+        }}
+      >
+        Open Toast
+      </Button>
+    </Toast>
   );
 };
 
@@ -36,24 +38,30 @@ const ToastOnStateChange = () => {
       toast.create({
         title: "Success!",
         description: "Successful toast description",
+        onClose: () => {
+          setIsSuccess(undefined);
+        },
       });
-
-      setIsSuccess(undefined);
     }
 
     if (isSuccess === false) {
       toast.create({
         title: "Error",
         description: "Error toast description",
+        onClose: () => {
+          setIsSuccess(undefined);
+        },
       });
-
-      setIsSuccess(undefined);
     }
   }, [isSuccess]);
 
   const randomSuccess = () => setIsSuccess(Math.random() >= 0.5);
 
-  return <Button onClick={randomSuccess}>Open Toast</Button>;
+  return (
+    <Toast state={isSuccess ? "success" : "error"}>
+      <Button onClick={randomSuccess}>Open Toast</Button>
+    </Toast>
+  );
 };
 
 export const Click: Story = {
