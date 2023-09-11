@@ -17,7 +17,7 @@ export const tooltipState = async <R extends Renderer = ReactRenderer>({
 
   const hoverButton = canvas.getByText("Open Tooltip");
 
-  await step("It should open flyout on button hover", async () => {
+  await step("It should open tooltip on button hover", async () => {
     await userEvent.hover(hoverButton);
 
     await sleep(1000);
@@ -27,7 +27,7 @@ export const tooltipState = async <R extends Renderer = ReactRenderer>({
     await expect(tooltipTitle).toBeVisible();
   });
 
-  await step("It should close flyout when the hover ends", async () => {
+  await step("It should close tooltip when the hover ends", async () => {
     await userEvent.unhover(hoverButton);
 
     await sleep(1000);

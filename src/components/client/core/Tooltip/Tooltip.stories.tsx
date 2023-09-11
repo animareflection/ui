@@ -35,6 +35,9 @@ export const Default: Story = {
     <Tooltip
       openDelay={0}
       closeDelay={0}
+      positioning={{
+        placement: "top",
+      }}
       trigger={<Button>Open Tooltip</Button>}
       content="Tooltip Title"
     />
