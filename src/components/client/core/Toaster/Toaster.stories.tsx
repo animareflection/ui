@@ -1,9 +1,10 @@
 import { default as toast } from "react-hot-toast";
 
 import { Button, Toaster } from "components/client";
-import { Flex } from "generated/panda/jsx";
+import { Flex, Grid } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
+import type { ToastPosition } from "react-hot-toast";
 
 type Story = StoryObj<typeof Toaster>;
 
@@ -23,6 +24,16 @@ const promise = () => {
   );
 };
 
+const PositionTemplate = ({ position }: { position: ToastPosition }) => {
+  const notify = () => toast(`Position set to ${position}`, { position });
+
+  return (
+    <Button minW={32} onClick={notify}>
+      {position}
+    </Button>
+  );
+};
+
 export const Default: Story = {
   render: () => <Button onClick={notify}>Make a Toast</Button>,
 };
@@ -34,6 +45,21 @@ export const Variants: Story = {
       <Button onClick={success}>Success</Button>
       <Button onClick={error}>Error</Button>
       <Button onClick={promise}>Promise</Button>
+    </Flex>
+  ),
+};
+
+export const Positions: Story = {
+  render: () => (
+    <Flex h="screen" w="full" justify="center" align="center">
+      <Grid columns={{ base: 2, sm: 3 }} justifyContent="center">
+        <PositionTemplate position="top-left" />
+        <PositionTemplate position="top-center" />
+        <PositionTemplate position="top-right" />
+        <PositionTemplate position="bottom-left" />
+        <PositionTemplate position="bottom-center" />
+        <PositionTemplate position="bottom-right" />
+      </Grid>
     </Flex>
   ),
 };
