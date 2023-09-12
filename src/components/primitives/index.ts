@@ -83,15 +83,6 @@ export {
   TabTrigger,
 } from "./Tabs/Tabs";
 export {
-  default as Toast,
-  ToastCloseTrigger,
-  ToastDescription,
-  ToastGroup,
-  ToastPlacements,
-  ToastProvider,
-  ToastTitle,
-} from "./Toast/Toast";
-export {
   default as Toggle,
   ToggleControl,
   ToggleLabel,
@@ -189,15 +180,6 @@ export type {
   TabListProps,
   TabTriggerProps,
 } from "./Tabs/Tabs";
-export type {
-  ToastProps,
-  ToastCloseTriggerProps,
-  ToastDescriptionProps,
-  ToastGroupProps,
-  ToastPlacementsProps,
-  ToastProviderProps,
-  ToastTitleProps,
-} from "./Toast/Toast";
 export type {
   ToggleProps,
   ToggleControlProps,
