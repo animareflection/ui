@@ -25,10 +25,11 @@ const promise = () => {
 };
 
 const PositionTemplate = ({ position }: { position: ToastPosition }) => {
-  const notify = () => toast(`Position set to ${position}`, { position });
+  const showToastPosition = () =>
+    toast(`Position set to ${position}`, { position });
 
   return (
-    <Button minW={32} onClick={notify}>
+    <Button minW={32} onClick={showToastPosition}>
       {position}
     </Button>
   );
