@@ -17,7 +17,7 @@ const promise = () => {
       setTimeout(Math.random() >= 0.5 ? resolve : reject, 2000),
     ),
     {
-      loading: "Loading",
+      loading: "Loading...",
       success: "Success",
       error: "Error",
     },

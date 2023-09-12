@@ -22,22 +22,26 @@ const Toaster = ({ ...props }: Props) => (
       success: {
         style: {
           background: "var(--colors-green-100)",
-          color: "var(--colors-green-800)",
-          borderColor: "var(--colors-green-800)",
+          color: "var(--colors-green-500)",
+          borderColor: "var(--colors-green-500)",
         },
       },
       error: {
         style: {
           background: "var(--colors-red-100)",
-          color: "var(--colors-red-800)",
-          borderColor: "var(--colors-red-800)",
+          color: "var(--colors-red-500)",
+          borderColor: "var(--colors-red-500)",
         },
       },
       loading: {
         style: {
-          background: "var(--colors-blue-100)",
-          color: "var(--colors-blue-800)",
-          borderColor: "var(--colors-blue-800)",
+          background: "var(--colors-brand-primary-100)",
+          color: "var(--colors-brand-primary-500)",
+          borderColor: "var(--colors-brand-primary-500)",
+        },
+        iconTheme: {
+          primary: "var(--colors-brand-primary-500)",
+          secondary: "var(--colors-brand-primary-200)",
         },
       },
     }}
