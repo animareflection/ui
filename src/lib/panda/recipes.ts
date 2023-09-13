@@ -1,5 +1,6 @@
 import { accordionRecipe } from "../../components/client/core/Accordion/Accordion.recipe";
 import { bannerRecipe } from "../../components/client/core/Banner/Banner.recipe";
+import { breadcrumbRecipe } from "../../components/client/core/Breadcrumb/Breadcrumb.recipe";
 import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
 import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
@@ -24,6 +25,7 @@ import { showRecipe } from "../../components/universal/utility/Show/Show.recipe"
 export const recipes = {
   badge: badgeRecipe,
   banner: bannerRecipe,
+  breadcrumb: breadcrumbRecipe,
   button: buttonRecipe,
   hide: hideRecipe,
   image: imageRecipe,
