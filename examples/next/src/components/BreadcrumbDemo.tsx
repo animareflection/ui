@@ -9,7 +9,7 @@ const BreadcrumbDemo = () => {
   return (
     <Wrapper title="Breadcrumb">
       <Breadcrumb
-        address={pathname}
+        pathname={pathname}
         baseUrl="storybook.animareflection.com"
         SeparatorIcon={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
       />

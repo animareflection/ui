@@ -1,13 +1,13 @@
-import { Fragment } from "react";
+import { cloneElement } from "react";
 
 import { Text } from "components/universal";
 import { panda } from "generated/panda/jsx";
 import { breadcrumb } from "generated/panda/recipes";
 
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 export interface Props {
-  address: string;
+  pathname: string;
   baseUrl?: string;
   SeparatorIcon: ReactNode;
 }
@@ -15,27 +15,27 @@ export interface Props {
 /**
  * Core UI breadcrumb.
  */
-const Breadcrumb = ({ address, baseUrl = "Home", SeparatorIcon }: Props) => {
+const Breadcrumb = ({ pathname, baseUrl = "Home", SeparatorIcon }: Props) => {
+  if (pathname.startsWith("https://")) {
+    throw new Error("The pathname prop should not include 'https://'.");
+  }
+
+  const breadcrumbItems: (string | ReactNode)[] = [baseUrl];
+
+  pathname.split("/").forEach((segment) => {
+    if (segment) {
+      breadcrumbItems.push(SeparatorIcon, segment);
+    }
+  });
   return (
     <panda.div className={breadcrumb()}>
-      <Text>{baseUrl}</Text>
-      {address ? (
-        <>
-          {SeparatorIcon}
-          {address
-            .split("/")
-            .slice(1)
-            .map((segment, index, array) => {
-              return (
-                <Fragment key={segment}>
-                  <Text key={segment}>{segment}</Text>
-
-                  {index !== array.length - 1 ? SeparatorIcon : null}
-                </Fragment>
-              );
-            })}
-        </>
-      ) : null}
+      {breadcrumbItems.map((item, index) =>
+        typeof item === "string" ? (
+          <Text key={index}>{item}</Text>
+        ) : (
+          cloneElement(item as ReactElement, { key: index })
+        ),
+      )}
     </panda.div>
   );
 };
