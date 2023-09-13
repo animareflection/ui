@@ -5,6 +5,7 @@ import { Flex, Text } from "@animareflection/ui";
 import {
   AccordionDemo,
   BannerDemo,
+  BreadcrumbDemo,
   ButtonDemo,
   CheckboxDemo,
   CollapseDemo,
@@ -21,7 +22,6 @@ import {
   ToggleDemo,
   TooltipDemo,
 } from "components";
-import BreadcrumbDemo from "components/BreadcrumbDemo";
 
 const ClientPage = () => (
   <Flex direction="column" align="center" w="100%" gap={2} p={12}>
