@@ -9,13 +9,13 @@ import type { ReactElement, ReactNode } from "react";
 export interface Props {
   pathname: string;
   baseUrl?: string;
-  SeparatorIcon: ReactNode;
+  seperator: ReactNode;
 }
 
 /**
  * Core UI breadcrumb.
  */
-const Breadcrumb = ({ pathname, baseUrl = "Home", SeparatorIcon }: Props) => {
+const Breadcrumb = ({ pathname, baseUrl = "Home", seperator }: Props) => {
   if (pathname.startsWith("https://")) {
     throw new Error("The pathname prop should not include 'https://'.");
   }
@@ -24,7 +24,7 @@ const Breadcrumb = ({ pathname, baseUrl = "Home", SeparatorIcon }: Props) => {
 
   pathname.split("/").forEach((segment) => {
     if (segment) {
-      breadcrumbItems.push(SeparatorIcon, segment);
+      breadcrumbItems.push(seperator, segment);
     }
   });
   return (

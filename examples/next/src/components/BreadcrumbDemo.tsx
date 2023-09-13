@@ -11,7 +11,7 @@ const BreadcrumbDemo = () => {
       <Breadcrumb
         pathname={pathname}
         baseUrl="storybook.animareflection.com"
-        SeparatorIcon={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
+        seperator={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
       />
     </Wrapper>
   );
