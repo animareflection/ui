@@ -24,7 +24,7 @@ const Breadcrumb = ({ address, baseUrl = "Home", SeparatorIcon }: Props) => {
           {SeparatorIcon}
           {address
             .split("/")
-            .slice(3)
+            .slice(1)
             .map((segment, index, array) => {
               return (
                 <Fragment key={segment}>

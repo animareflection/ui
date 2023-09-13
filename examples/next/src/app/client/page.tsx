@@ -21,6 +21,7 @@ import {
   ToggleDemo,
   TooltipDemo,
 } from "components";
+import BreadcrumbDemo from "components/BreadcrumbDemo";
 
 const ClientPage = () => (
   <Flex direction="column" align="center" w="100%" gap={2} p={12}>
@@ -42,6 +43,7 @@ const ClientPage = () => (
     <NumberInputDemo />
     <FlyoutDemo />
     <TooltipDemo />
+    <BreadcrumbDemo />
   </Flex>
 );
 
