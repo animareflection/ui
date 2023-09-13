@@ -13,14 +13,12 @@ export const breadcrumbState = async <R extends Renderer = ReactRenderer>({
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  // Check that the default baseUrl ("Home") is in the document
   const baseUrl = await canvas.findByText("🏝️");
   await expect(baseUrl).toBeInTheDocument();
 
   await step(
     "It should display each address segment separated by the SeparatorIcon",
     async () => {
-      // Check for each segment
       const segment1 = screen.getByText("ethereum");
       const segment2 = screen.getByText("collections");
       const segment3 = screen.getByText(
