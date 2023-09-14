@@ -18,6 +18,7 @@ import {
   SkeletonToggleDemo,
   SliderDemo,
   TabsDemo,
+  TextareaDemo,
   ToggleDemo,
   TooltipDemo,
 } from "components";
@@ -40,6 +41,7 @@ const ClientPage = () => (
     <BannerDemo />
     <InputDemo />
     <NumberInputDemo />
+    <TextareaDemo />
     <FlyoutDemo />
     <TooltipDemo />
   </Flex>

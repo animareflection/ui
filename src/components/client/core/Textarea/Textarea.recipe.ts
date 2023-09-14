@@ -10,7 +10,7 @@ export const textareaRecipe = defineSlotRecipe({
       color: "fg.default",
       appearance: "none",
       borderColor: "border.default",
-      borderRadius: "l2",
+      borderRadius: "sm",
       borderWidth: "1px",
       minW: 0,
       outline: 0,
@@ -35,8 +35,41 @@ export const textareaRecipe = defineSlotRecipe({
     },
   },
   variants: {
+    variant: {
+      flushed: {
+        textarea: {
+          backgroundColor: "transparent",
+          borderWidth: "0 0 1px",
+          borderRadius: "0 !important",
+          _focus: {
+            borderColor: "border.accent",
+            boxShadow: "none",
+          },
+        },
+      },
+      filled: {
+        textarea: {
+          backgroundColor: "border.default",
+          _focus: {
+            backgroundColor: "bg.default",
+            borderColor: "border.accent",
+            boxShadow: "sm",
+          },
+        },
+      },
+      unstyled: {
+        textarea: {
+          backgroundColor: "transparent",
+          borderWidth: 0,
+          borderRadius: 0,
+          _focus: {
+            boxShadow: "none",
+          },
+        },
+      },
+    },
     size: {
-      xs: { textarea: { p: 2, fontSize: "xl" }, label: { fontSize: "xs" } },
+      xs: { textarea: { p: 2, fontSize: "xs" }, label: { fontSize: "xs" } },
       sm: { textarea: { p: 2.5, fontSize: "sm" }, label: { fontSize: "sm" } },
       lg: { textarea: { p: 3.5, fontSize: "md" }, label: { fontSize: "md" } },
       xl: { textarea: { p: 4, fontSize: "lg" }, label: { fontSize: "lg" } },
