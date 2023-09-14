@@ -1,5 +1,25 @@
 # @animareflection/ui
 
+## 0.6.0
+
+### Minor Changes
+
+- [#99](https://github.com/animareflection/ui/pull/99) [`dfd8aeb`](https://github.com/animareflection/ui/commit/dfd8aeb99924a477d7eff163c1754d4e0dd92eea) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Tooltip` component
+
+- [#88](https://github.com/animareflection/ui/pull/88) [`870fe67`](https://github.com/animareflection/ui/commit/870fe67be81df3b8c85abcf67306f3a2d10966e2) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Collapse` component
+
+- [#98](https://github.com/animareflection/ui/pull/98) [`9d1c527`](https://github.com/animareflection/ui/commit/9d1c527fa31aea843d5ea1513504ca8fbad9f830) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Flyout` component
+
+- [#90](https://github.com/animareflection/ui/pull/90) [`e2c27e4`](https://github.com/animareflection/ui/commit/e2c27e4be1f815b0858dd8b3aedd5fb9759ab7f6) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Banner` component
+
+- [#91](https://github.com/animareflection/ui/pull/91) [`ff7d40d`](https://github.com/animareflection/ui/commit/ff7d40d844c610ee3171d0240e89e633d1c1624f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `NumberInput` component
+
+- [#91](https://github.com/animareflection/ui/pull/91) [`ff7d40d`](https://github.com/animareflection/ui/commit/ff7d40d844c610ee3171d0240e89e633d1c1624f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Input` component
+
+### Patch Changes
+
+- [#88](https://github.com/animareflection/ui/pull/88) [`870fe67`](https://github.com/animareflection/ui/commit/870fe67be81df3b8c85abcf67306f3a2d10966e2) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Button` component
+
 ## 0.5.0
 
 ### Minor Changes
