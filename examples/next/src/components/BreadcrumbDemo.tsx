@@ -10,8 +10,8 @@ const BreadcrumbDemo = () => {
   return (
     <Wrapper title="Breadcrumb">
       <Breadcrumb
-        pathname={pathname}
         baseUrl={app.url}
+        pathname={pathname}
         separator={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
       />
     </Wrapper>

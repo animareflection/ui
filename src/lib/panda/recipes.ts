@@ -25,7 +25,6 @@ import { showRecipe } from "../../components/universal/utility/Show/Show.recipe"
 export const recipes = {
   badge: badgeRecipe,
   banner: bannerRecipe,
-  breadcrumb: breadcrumbRecipe,
   button: buttonRecipe,
   hide: hideRecipe,
   image: imageRecipe,
@@ -36,6 +35,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  breadcrumb: breadcrumbRecipe,
   checkbox: checkboxRecipe,
   card: cardRecipe,
   drawer: drawerRecipe,
