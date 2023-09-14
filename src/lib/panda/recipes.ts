@@ -10,6 +10,7 @@ import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
 import { numberInputRecipe } from "../../components/client/core/NumberInput/NumberInput.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
 import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
+import { textareaRecipe } from "../../components/client/core/Textarea/Textarea.recipe";
 import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe";
 import { tooltipRecipe } from "../../components/client/core/Tooltip/Tooltip.recipe";
 import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
@@ -45,6 +46,7 @@ export const slotRecipes = {
   skeleton: skeletonRecipe,
   slider: sliderRecipe,
   tabs: tabsRecipe,
+  textarea: textareaRecipe,
   toggle: toggleRecipe,
   tooltip: tooltipRecipe,
 };
