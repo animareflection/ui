@@ -3,6 +3,7 @@ import { Breadcrumb, Icon } from "@animareflection/ui/client";
 import { FiChevronRight as ChevronRightIcon } from "react-icons/fi";
 
 import { Wrapper } from "components";
+import app from "lib/app";
 
 const BreadcrumbDemo = () => {
   const pathname = usePathname();
@@ -10,8 +11,8 @@ const BreadcrumbDemo = () => {
     <Wrapper title="Breadcrumb">
       <Breadcrumb
         pathname={pathname}
-        baseUrl="storybook.animareflection.com"
-        seperator={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
+        baseUrl={app.url}
+        separator={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
       />
     </Wrapper>
   );
