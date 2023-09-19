@@ -1,4 +1,6 @@
 import {
+  FiBattery,
+  FiBell,
   FiHeart,
   FiCheck,
   FiExternalLink,
@@ -12,9 +14,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Variants: Story = {
   render: () => (
     <Flex gap={2}>
+      <Flex h="fit-content" bgColor="purple.100" p={2} borderRadius="md">
+        <Icon as={FiBell} size="xs" color="purple.500" />
+      </Flex>
       <Flex h="fit-content" bgColor="red.100" p={2} borderRadius="md">
         <Icon as={FiHeart} size="sm" color="red.500" />
       </Flex>
@@ -26,6 +31,9 @@ export const Default: Story = {
       </Flex>
       <Flex h="fit-content" bgColor="yellow.100" p={2} borderRadius="md">
         <Icon as={FiAlertTriangle} size="xl" color="yellow.500" />
+      </Flex>
+      <Flex h="fit-content" bgColor="green.100" p={2} borderRadius="md">
+        <Icon as={FiBattery} size="2xl" color="green.500" />
       </Flex>
     </Flex>
   ),
