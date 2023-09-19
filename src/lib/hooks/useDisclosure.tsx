@@ -27,8 +27,7 @@ const useDisclosure = ({
   }, [isControlled, onOpenProp]);
 
   const onToggle = useCallback(() => {
-    !isControlled && setIsOpen(!isOpen);
-    isOpenProp ? onClose() : onOpen();
+    !isControlled ? setIsOpen(!isOpen) : isOpenProp ? onClose() : onOpen();
   }, [isControlled, isOpen, isOpenProp, onClose, onOpen]);
 
   return {
