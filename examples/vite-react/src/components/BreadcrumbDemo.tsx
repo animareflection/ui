@@ -9,7 +9,7 @@ const BreadcrumbDemo = () => {
   return (
     <Wrapper title="Breadcrumb">
       <Breadcrumb
-        baseUrl={app.uiLibraryUrl}
+        rootSegment={app.uiLibraryUrl}
         disabled
         pathname={demoPathname}
         separator={<Icon as={ChevronRightIcon} color="accent.emphasized" />}

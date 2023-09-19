@@ -3,18 +3,26 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const breadcrumbRecipe = defineSlotRecipe({
   className: "breadcrumb",
   description: "The styles for the Breadcrumb component",
-  slots: ["breadcrumb", "link"],
+  slots: ["root", "trigger"],
   base: {
-    breadcrumb: {
+    root: {
       display: "flex",
       gap: 2,
       alignItems: "center",
       p: 2,
     },
-    link: {
+    trigger: {
       color: "fg.default",
+      cursor: "pointer",
       _hover: {
         color: "accent.default",
+      },
+      _disabled: {
+        color: "fg.muted",
+        cursor: "not-allowed",
+        _hover: {
+          color: "fg.muted",
+        },
       },
     },
   },

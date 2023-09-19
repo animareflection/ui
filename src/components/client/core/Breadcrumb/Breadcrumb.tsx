@@ -6,20 +6,20 @@ import { breadcrumb } from "generated/panda/recipes";
 import type { ReactElement, ReactNode } from "react";
 
 export interface Props {
-  baseUrl?: string;
+  rootSegment?: string;
   pathname: string;
   separator: ReactNode;
   disabled?: boolean;
 }
 
-type BreadcrumbItem = { item: ReactNode; link: string };
+type BreadcrumbItem = { item: string; link: string };
 
 /**
  * Core UI breadcrumb.
  */
 const Breadcrumb = ({
   pathname,
-  baseUrl = "Home",
+  rootSegment = "Home",
   separator,
   disabled,
 }: Props) => {
@@ -27,7 +27,7 @@ const Breadcrumb = ({
     throw new Error("The pathname prop should not include 'https://'.");
   }
 
-  const breadcrumbItems: BreadcrumbItem[] = [{ item: baseUrl, link: "/" }];
+  const breadcrumbItems: BreadcrumbItem[] = [{ item: rootSegment, link: "/" }];
   let runningPath: string = "";
 
   pathname.split("/").forEach((segment) => {
@@ -40,17 +40,18 @@ const Breadcrumb = ({
   const classNames = breadcrumb();
 
   return (
-    <panda.div className={classNames.breadcrumb}>
+    <panda.div className={classNames.root}>
       {breadcrumbItems.map(({ item, link }, index) => (
         <Fragment key={index}>
           {index !== 0 && cloneElement(separator as ReactElement)}
-          {disabled ? (
-            <panda.div className={classNames.link}> {item} </panda.div>
-          ) : (
-            <panda.a className={classNames.link} href={link}>
+          <panda.a href={link}>
+            <panda.button
+              className={classNames.trigger}
+              disabled={disabled ? true : index === breadcrumbItems.length - 1}
+            >
               {item}
-            </panda.a>
-          )}
+            </panda.button>
+          </panda.a>
         </Fragment>
       ))}
     </panda.div>
