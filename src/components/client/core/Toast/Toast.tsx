@@ -13,6 +13,9 @@ export interface Props extends FlexProps, ToastVariantProps {
   onClose?: () => void;
 }
 
+/**
+ * Core UI toast.
+ */
 const Toast = ({ title, description, onClose, variant, ...rest }: Props) => {
   const classNames = toast({ variant });
 
