@@ -29,6 +29,7 @@ import {
   SliderDemo,
   SpinnerDemo,
   TabsDemo,
+  ToastDemo,
   ToggleDemo,
   TooltipDemo,
 } from "components";
@@ -107,6 +108,7 @@ const App = () => (
       <NumberInputDemo />
       <FlyoutDemo />
       <TooltipDemo />
+      <ToastDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
