@@ -21,7 +21,7 @@ export const HideBelow: Story = {
         <Text>Hidden at and below xl breakpoint (1280px)</Text>
       </Hide>
       <Hide below="2xl">
-        <Text>Hidden at and 2xl breakpoint (1536px)</Text>
+        <Text>Hidden at and below 2xl breakpoint (1536px)</Text>
       </Hide>
     </Flex>
   ),
