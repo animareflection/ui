@@ -25,17 +25,11 @@ const success = () =>
       variant="success"
       title="Success!"
       description="toast description"
-      onClose={closeToast}
     />,
   );
 const error = () =>
   toast.error(
-    <Toast
-      variant="error"
-      title="Error"
-      description="toast description"
-      onClose={closeToast}
-    />,
+    <Toast variant="error" title="Error" description="toast description" />,
   );
 const promise = () => {
   void toast.promise(
@@ -48,7 +42,6 @@ const promise = () => {
           variant="loading"
           title="Loading..."
           description="toast description"
-          onClose={closeToast}
         />
       ),
       success: (
@@ -56,16 +49,10 @@ const promise = () => {
           variant="success"
           title="Success!"
           description="toast description"
-          onClose={closeToast}
         />
       ),
       error: (
-        <Toast
-          variant="error"
-          title="Error"
-          description="toast description"
-          onClose={closeToast}
-        />
+        <Toast variant="error" title="Error" description="toast description" />
       ),
     },
   );
