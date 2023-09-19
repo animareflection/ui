@@ -4,6 +4,7 @@ import { buttonRecipe } from "../../components/client/core/Button/Button.recipe"
 import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
 import { flyoutRecipe } from "../../components/client/core/Flyout/Flyout.recipe";
+import { iconRecipe } from "../../components/client/core/Icon/Icon.recipe";
 import { inputRecipe } from "../../components/client/core/Input/Input.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
@@ -27,6 +28,7 @@ export const recipes = {
   banner: bannerRecipe,
   button: buttonRecipe,
   hide: hideRecipe,
+  icon: iconRecipe,
   image: imageRecipe,
   show: showRecipe,
   spinner: spinnerRecipe,
