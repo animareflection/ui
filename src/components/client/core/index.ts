@@ -11,7 +11,8 @@ export { default as Modal } from "./Modal/Modal";
 export { default as NumberInput } from "./NumberInput/NumberInput";
 export { default as Slider } from "./Slider/Slider";
 export { default as Tabs } from "./Tabs/Tabs";
-export { default as Toaster } from "./Toaster/Toaster";
+export { default as Toast } from "./Toast/Toast";
+export { default as Toaster } from "./Toast/Toaster";
 export { default as Toggle } from "./Toggle/Toggle";
 export { default as Tooltip } from "./Tooltip/Tooltip";
 
@@ -35,6 +36,7 @@ export type { Props as ModalProps } from "./Modal/Modal";
 export type { Props as NumberInputProps } from "./NumberInput/NumberInput";
 export type { Props as SliderProps, SliderMarkerRecord } from "./Slider/Slider";
 export type { Props as TabsProps, TabRecord } from "./Tabs/Tabs";
-export type { Props as ToasterProps } from "./Toaster/Toaster";
+export type { Props as ToastProps } from "./Toast/Toast";
+export type { Props as ToasterProps } from "./Toast/Toaster";
 export type { Props as ToggleProps } from "./Toggle/Toggle";
 export type { Props as TooltipProps } from "./Tooltip/Tooltip";
