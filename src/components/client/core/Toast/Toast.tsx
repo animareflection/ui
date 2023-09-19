@@ -24,10 +24,7 @@ const Toast = ({ title, description, onClose, variant, ...rest }: Props) => {
       {onClose && (
         <panda.button
           className={classNames.closeTrigger}
-          onClick={(e) => {
-            e.stopPropagation();
-            onClose();
-          }}
+          onClick={onClose}
           aria-label="Close Toast"
         >
           <Icon as={FiX} h={4} w={4} />
