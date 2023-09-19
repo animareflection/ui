@@ -8,17 +8,20 @@ type Story = StoryObj<typeof Show>;
 export const ShowFrom: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
+      <Show from="sm">
+        <Text>Shown above sm breakpoint (640px)</Text>
+      </Show>
       <Show from="md">
-        <Text>Shown from md breakpoint and above (768px)</Text>
+        <Text>Shown above md breakpoint (768px)</Text>
       </Show>
       <Show from="lg">
-        <Text>Shown from lg breakpoint and above (1024px)</Text>
+        <Text>Shown above lg breakpoint (1024px)</Text>
       </Show>
       <Show from="xl">
-        <Text>Shown from xl breakpoint and above (1280px)</Text>
+        <Text>Shown above xl breakpoint (1280px)</Text>
       </Show>
       <Show from="2xl">
-        <Text>Shown from 2xl breakpoint and above (1536px)</Text>
+        <Text>Shown above 2xl breakpoint (1536px)</Text>
       </Show>
     </Flex>
   ),
