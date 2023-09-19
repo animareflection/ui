@@ -1,25 +1,37 @@
 import { default as toast } from "react-hot-toast";
 
 import { Button, Toaster } from "components/client";
-import { Flex, Grid } from "generated/panda/jsx";
+import { Flex, Grid, panda } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
+import type { JsxStyleProps } from "generated/panda/types";
 import type { ToastPosition } from "react-hot-toast";
 
 type Story = StoryObj<typeof Toaster>;
 
+interface Props extends JsxStyleProps {
+  title: string;
+}
+const Toast = ({ title, ...rest }: Props) => (
+  <Flex direction="column">
+    <panda.p>{title}</panda.p>
+    <panda.p {...rest}>toast description</panda.p>
+  </Flex>
+);
+
 const notify = () => toast("Hello World!");
-const success = () => toast.success("Success!");
-const error = () => toast.error("Error!");
+const success = () =>
+  toast.success(<Toast title="Success!" color="green.500" />);
+const error = () => toast.error(<Toast title="Error" color="red.500" />);
 const promise = () => {
   void toast.promise(
     new Promise((resolve, reject) =>
       setTimeout(Math.random() >= 0.5 ? resolve : reject, 2000),
     ),
     {
-      loading: "Loading...",
-      success: "Success",
-      error: "Error",
+      loading: <Toast title="Loading..." color="brand.primary.500" />,
+      success: <Toast title="Success!" color="green.500" />,
+      error: <Toast title="Error" color="red.500" />,
     },
   );
 };
