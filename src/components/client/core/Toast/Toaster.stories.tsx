@@ -1,5 +1,6 @@
 import { default as toast } from "react-hot-toast";
 
+import { toastState } from "./Toast.spec";
 import { Button, Toast, Toaster } from "components/client";
 import { Flex, Grid } from "generated/panda/jsx";
 
@@ -97,6 +98,13 @@ export const Positions: Story = {
       </Grid>
     </Flex>
   ),
+};
+
+export const ToastState: Story = {
+  ...Default,
+  play: toastState,
+  name: "[TEST] Toast State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
