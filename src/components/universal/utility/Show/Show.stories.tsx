@@ -43,7 +43,7 @@ export const ShowBelow: Story = {
         <Text>Shown below xl breakpoint (1280px)</Text>
       </Show>
       <Show below="2xl">
-        <Text>Shown from 2xl breakpoint (1536px)</Text>
+        <Text>Shown below 2xl breakpoint (1536px)</Text>
       </Show>
     </Flex>
   ),
