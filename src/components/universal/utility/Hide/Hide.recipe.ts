@@ -3,7 +3,6 @@ import { defineRecipe } from "@pandacss/dev";
 export const hideRecipe = defineRecipe({
   className: "hide",
   description: "The styles for the Hide component",
-  // TODO: fix variants when `hideBelow` issue is fixed upstream (panda)
   variants: {
     from: {
       sm: {
@@ -23,17 +22,20 @@ export const hideRecipe = defineRecipe({
       },
     },
     below: {
-      md: {
+      sm: {
         hideBelow: "sm",
       },
-      lg: {
+      md: {
         hideBelow: "md",
       },
-      xl: {
+      lg: {
         hideBelow: "lg",
       },
-      "2xl": {
+      xl: {
         hideBelow: "xl",
+      },
+      "2xl": {
+        hideBelow: "2xl",
       },
     },
   },
