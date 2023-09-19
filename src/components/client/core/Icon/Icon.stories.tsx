@@ -15,17 +15,17 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Flex gap={2}>
-      <Flex bgColor="red.100" p={2} borderRadius="md">
-        <Icon as={FiHeart} color="red.500" />
+      <Flex h="fit-content" bgColor="red.100" p={2} borderRadius="md">
+        <Icon as={FiHeart} size="sm" color="red.500" />
       </Flex>
-      <Flex bgColor="blue.100" p={2} borderRadius="md">
+      <Flex h="fit-content" bgColor="blue.100" p={2} borderRadius="md">
         <Icon as={FiCheck} color="blue.500" />
       </Flex>
-      <Flex bgColor="gray.100" p={2} borderRadius="md">
-        <Icon as={FiExternalLink} color="gray.500" />
+      <Flex h="fit-content" bgColor="gray.100" p={2} borderRadius="md">
+        <Icon as={FiExternalLink} size="lg" color="gray.500" />
       </Flex>
-      <Flex bgColor="yellow.100" p={2} borderRadius="md">
-        <Icon as={FiAlertTriangle} color="yellow.500" />
+      <Flex h="fit-content" bgColor="yellow.100" p={2} borderRadius="md">
+        <Icon as={FiAlertTriangle} size="xl" color="yellow.500" />
       </Flex>
     </Flex>
   ),
