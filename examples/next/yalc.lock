@@ -1,8 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "@animareflection/ui": {
-      "signature": "88f7e26945671d0ad754393b5241ede1"
-    }
-  }
-}
