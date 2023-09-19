@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-interface Props {
+export interface Props {
   isOpen?: boolean;
   defaultIsOpen?: boolean;
   onOpen?: () => void;
