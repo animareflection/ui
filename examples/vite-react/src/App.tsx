@@ -30,6 +30,7 @@ import {
   SliderDemo,
   SpinnerDemo,
   TabsDemo,
+  ToastDemo,
   ToggleDemo,
   TooltipDemo,
 } from "components";
@@ -108,6 +109,7 @@ const App = () => (
       <NumberInputDemo />
       <FlyoutDemo />
       <TooltipDemo />
+      <ToastDemo />
       <BreadcrumbDemo />
 
       <Hide below="md">

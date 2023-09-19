@@ -2,4 +2,4 @@
 "@animareflection/ui": minor
 ---
 
-Add `Banner` component
+Add `Toast` and `Toaster` component

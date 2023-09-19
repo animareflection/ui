@@ -2,4 +2,4 @@
 "@animareflection/ui": minor
 ---
 
-Add `Tooltip` component
+Add `useDisclosure` hook

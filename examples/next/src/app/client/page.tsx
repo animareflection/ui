@@ -19,6 +19,7 @@ import {
   SkeletonToggleDemo,
   SliderDemo,
   TabsDemo,
+  ToastDemo,
   ToggleDemo,
   TooltipDemo,
 } from "components";
@@ -44,6 +45,7 @@ const ClientPage = () => (
     <FlyoutDemo />
     <TooltipDemo />
     <BreadcrumbDemo />
+    <ToastDemo />
   </Flex>
 );
 

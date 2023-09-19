@@ -3,20 +3,22 @@ import { defineRecipe } from "@pandacss/dev";
 export const showRecipe = defineRecipe({
   className: "show",
   description: "The styles for the Show component",
-  // TODO: fix variants when `hideBelow` issue is fixed upstream (panda)
   variants: {
     from: {
-      md: {
+      sm: {
         hideBelow: "sm",
       },
-      lg: {
+      md: {
         hideBelow: "md",
       },
-      xl: {
+      lg: {
         hideBelow: "lg",
       },
-      "2xl": {
+      xl: {
         hideBelow: "xl",
+      },
+      "2xl": {
+        hideBelow: "2xl",
       },
     },
     below: {

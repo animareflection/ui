@@ -19,6 +19,7 @@ export { default as SkeletonToggleDemo } from "./SkeletonToggleDemo";
 export { default as SliderDemo } from "./SliderDemo";
 export { default as SpinnerDemo } from "./SpinnerDemo";
 export { default as TabsDemo } from "./TabsDemo";
+export { default as ToastDemo } from "./ToastDemo";
 export { default as ToggleDemo } from "./ToggleDemo";
 export { default as TooltipDemo } from "./TooltipDemo";
 export { default as Wrapper } from "./Wrapper";

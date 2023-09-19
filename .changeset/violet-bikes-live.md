@@ -2,4 +2,4 @@
 "@animareflection/ui": patch
 ---
 
-Refactor `Button` component
+Refactor `Icon` component

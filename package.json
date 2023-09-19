@@ -1,7 +1,7 @@
 {
   "name": "@animareflection/ui",
   "description": "Anima Reflection design system and library",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "license": "MIT",
   "packageManager": "yarn@3.6.3",
   "main": "build/ui.js",
@@ -24,6 +24,11 @@
       "require": "./build/client.js",
       "import": "./build/client.mjs",
       "types": "./build/client.d.ts"
+    },
+    "./hooks": {
+      "require": "./build/hooks.js",
+      "import": "./build/hooks.mjs",
+      "types": "./build/hooks.d.ts"
     },
     "./next": {
       "require": "./build/next.js",
@@ -71,7 +76,7 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/types": "^17.4.4",
     "@omnidev/knit": "^0.1.2",
-    "@pandacss/dev": "^0.14.0",
+    "@pandacss/dev": "^0.15.0",
     "@storybook/addon-a11y": "^7.3.2",
     "@storybook/addon-coverage": "^0.0.9",
     "@storybook/addon-essentials": "^7.3.2",
@@ -118,6 +123,7 @@
     "prettier": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "storybook": "^7.3.2",
     "storybook-dark-mode": "^3.0.1",

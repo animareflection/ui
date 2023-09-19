@@ -5,12 +5,14 @@ import { buttonRecipe } from "../../components/client/core/Button/Button.recipe"
 import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
 import { flyoutRecipe } from "../../components/client/core/Flyout/Flyout.recipe";
+import { iconRecipe } from "../../components/client/core/Icon/Icon.recipe";
 import { inputRecipe } from "../../components/client/core/Input/Input.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
 import { numberInputRecipe } from "../../components/client/core/NumberInput/NumberInput.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
 import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
+import { toastRecipe } from "../../components/client/core/Toast/Toast.recipe";
 import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe";
 import { tooltipRecipe } from "../../components/client/core/Tooltip/Tooltip.recipe";
 import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
@@ -27,6 +29,7 @@ export const recipes = {
   banner: bannerRecipe,
   button: buttonRecipe,
   hide: hideRecipe,
+  icon: iconRecipe,
   image: imageRecipe,
   show: showRecipe,
   spinner: spinnerRecipe,
@@ -47,6 +50,7 @@ export const slotRecipes = {
   skeleton: skeletonRecipe,
   slider: sliderRecipe,
   tabs: tabsRecipe,
+  toast: toastRecipe,
   toggle: toggleRecipe,
   tooltip: tooltipRecipe,
 };
