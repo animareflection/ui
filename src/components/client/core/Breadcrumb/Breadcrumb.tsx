@@ -5,44 +5,47 @@ import { breadcrumb } from "generated/panda/recipes";
 
 import type { ReactElement, ReactNode } from "react";
 
-type BreadcrumbItem = { item: string; link: string };
+type BreadcrumbItem = { item: ReactNode; link: string };
 
 export interface Props {
-  rootBreadcrumb?: BreadcrumbItem;
+  rootBreadcrumb?: ReactNode;
   pathname: string;
   separator: ReactNode;
-  disabled?: boolean;
+  startingSegment?: string;
 }
 
 /**
  * Core UI breadcrumb.
  */
 const Breadcrumb = ({
-  rootBreadcrumb = { item: "Home", link: "/" },
+  rootBreadcrumb = "Home",
   pathname,
   separator,
-  disabled,
+  startingSegment,
 }: Props) => {
   if (pathname.startsWith("https://")) {
     throw new Error("The pathname prop should not include 'https://'.");
   }
 
   const breadcrumbItems: BreadcrumbItem[] = useMemo(() => {
-    const items: BreadcrumbItem[] = [rootBreadcrumb];
-    let runningPath: string = rootBreadcrumb.link;
+    const items: BreadcrumbItem[] = [{ item: rootBreadcrumb, link: "/" }];
+    let runningPath = "";
+    let shouldAddItems = !startingSegment;
 
-    pathname
-      .replace(rootBreadcrumb.link, "/")
-      .split("/")
-      .forEach((segment) => {
-        if (segment) {
-          runningPath += `/${segment}`;
-          items.push({ item: segment, link: runningPath });
-        }
-      });
+    pathname.split("/").forEach((segment) => {
+      runningPath += `/${segment}`;
+
+      if (segment === startingSegment) {
+        shouldAddItems = true;
+      }
+
+      if (shouldAddItems) {
+        items.push({ item: segment, link: runningPath });
+      }
+    });
 
     return items;
-  }, [pathname, rootBreadcrumb]);
+  }, [pathname, rootBreadcrumb, startingSegment]);
 
   const classNames = breadcrumb();
 
@@ -54,7 +57,7 @@ const Breadcrumb = ({
           <panda.a href={link}>
             <panda.button
               className={classNames.trigger}
-              disabled={disabled ? true : index === breadcrumbItems.length - 1}
+              disabled={index === breadcrumbItems.length - 1}
             >
               {item}
             </panda.button>

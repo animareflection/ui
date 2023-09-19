@@ -8,7 +8,6 @@ const BreadcrumbDemo = () => {
   return (
     <Wrapper title="Breadcrumb">
       <Breadcrumb
-        disabled
         pathname={demoPathname}
         separator={
           <Icon

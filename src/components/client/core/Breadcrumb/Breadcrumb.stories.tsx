@@ -11,9 +11,26 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Breadcrumb
-      disabled
-      rootBreadcrumb={{ item: "🏝️", link: "/" }}
+      rootBreadcrumb="🏝️"
       pathname="ethereum/collections/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      separator={
+        <Icon
+          as={ChevronRightIcon}
+          color="accent.emphasized"
+          aria-label="separator-icon"
+          flexShrink={0}
+        />
+      }
+    />
+  ),
+};
+
+export const StartingSegment: Story = {
+  render: () => (
+    <Breadcrumb
+      rootBreadcrumb="🏝️"
+      pathname="ethereum/collections/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+      startingSegment="collections"
       separator={
         <Icon
           as={ChevronRightIcon}
