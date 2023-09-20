@@ -1,6 +1,7 @@
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import Icon from "components/client/core/Icon/Icon";
+import NextImage from "components/next/Image/Image";
 import {
   Carousel as PrimitiveCarousel,
   CarouselControl,
@@ -22,12 +23,14 @@ import type { CSSProperties } from "react";
 export interface Props extends CarouselProps, CarouselVariantProps {
   images: string[];
   imageStyle?: CSSProperties;
+  nextjs?: boolean;
 }
 
 const Carousel = ({
   images,
   imageStyle = { height: "398px", width: "100%", objectFit: "cover" },
   size,
+  nextjs,
   ...rest
 }: Props) => {
   const classNames = carousel({ size });
@@ -42,11 +45,19 @@ const Carousel = ({
               key={index}
               index={index}
             >
-              <Image
-                src={image}
-                alt={`Slide Image ${index}`}
-                style={imageStyle}
-              />
+              {nextjs ? (
+                <NextImage
+                  src={image}
+                  alt={`Slide Image ${index}`}
+                  style={imageStyle}
+                />
+              ) : (
+                <Image
+                  src={image}
+                  alt={`Slide Image ${index}`}
+                  style={imageStyle}
+                />
+              )}
             </CarouselSlide>
           ))}
         </CarouselSlideGroup>
