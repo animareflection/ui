@@ -6,6 +6,7 @@ import {
   AccordionDemo,
   BannerDemo,
   ButtonDemo,
+  CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
@@ -44,6 +45,7 @@ const ClientPage = () => (
     <FlyoutDemo />
     <TooltipDemo />
     <ToastDemo />
+    <CarouselDemo />
   </Flex>
 );
 

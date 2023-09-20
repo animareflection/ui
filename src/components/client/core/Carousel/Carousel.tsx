@@ -15,6 +15,7 @@ import {
 } from "components/primitives";
 import Image from "components/universal/core/Image/Image";
 import { carousel } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { CarouselProps } from "components/primitives";
 import type { CarouselVariantProps } from "generated/panda/recipes";
@@ -34,6 +35,10 @@ const Carousel = ({
   ...rest
 }: Props) => {
   const classNames = carousel({ size });
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveCarousel className={classNames.root} {...rest}>

@@ -1,14 +1,13 @@
 import { Flex, Text } from "@animareflection/ui";
 
-import type { ReactNode } from "react";
+import type { FlexProps } from "@animareflection/ui";
 
-interface Props {
+interface Props extends FlexProps {
   title: string;
-  children: ReactNode;
 }
 
-const Wrapper = ({ title, children }: Props) => (
-  <Flex w="100%" direction="column" gap={2}>
+const Wrapper = ({ title, children, ...rest }: Props) => (
+  <Flex w="100%" direction="column" gap={2} {...rest}>
     <Text fontWeight="bold">{title}:</Text>
     {children}
   </Flex>

@@ -14,6 +14,7 @@ import {
   BannerDemo,
   ButtonDemo,
   CardDemo,
+  CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
@@ -109,6 +110,7 @@ const App = () => (
       <FlyoutDemo />
       <TooltipDemo />
       <ToastDemo />
+      <CarouselDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
