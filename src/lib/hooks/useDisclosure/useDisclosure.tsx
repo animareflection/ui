@@ -1,18 +1,21 @@
 import { useState, useCallback } from "react";
 
-export interface Props {
+export interface Options {
   isOpen?: boolean;
   defaultIsOpen?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
 }
 
+/**
+ * Manage boolean disclosure state. Useful for modals, dropdowns, tooltips, and other components that can be toggled open/closed.
+ */
 const useDisclosure = ({
   isOpen: isOpenProp,
   defaultIsOpen,
   onOpen: onOpenProp,
   onClose: onCloseProp,
-}: Props) => {
+}: Options) => {
   const [isOpen, setIsOpen] = useState(defaultIsOpen || false);
   const isControlled = isOpenProp !== undefined;
 
