@@ -34,7 +34,7 @@ const BreakpointValueExample = () => {
         <Text color="red">[base → sm): red</Text>
         <Text color="blue">[sm → lg): blue</Text>
         <Text color="green">[lg → &#x1d461;]: green</Text>
-        &#x1d461; is any breakpoint token above lg
+        <Text>&#x1d461; is any breakpoint token above lg</Text>
       </Stack>
     </HStack>
   );
