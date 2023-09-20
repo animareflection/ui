@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-export interface Props {
+export interface Options {
   isOpen?: boolean;
   defaultIsOpen?: boolean;
   onOpen?: () => void;
@@ -12,7 +12,7 @@ const useDisclosure = ({
   defaultIsOpen,
   onOpen: onOpenProp,
   onClose: onCloseProp,
-}: Props) => {
+}: Options) => {
   const [isOpen, setIsOpen] = useState(defaultIsOpen || false);
   const isControlled = isOpenProp !== undefined;
 
