@@ -10,7 +10,7 @@
 
 - [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add `useBreakpoint` hook
 
-- [#93](https://github.com/animareflection/ui/pull/93) [`c06b29d`](https://github.com/animareflection/ui/commit/c06b29d5dfb738723e3fefaad4bb80ea6cb7109e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Toast` and `Toaster` component
+- [#93](https://github.com/animareflection/ui/pull/93) [`c06b29d`](https://github.com/animareflection/ui/commit/c06b29d5dfb738723e3fefaad4bb80ea6cb7109e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Toast` and `Toaster` components
 
 - [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add custom breakpoints to ANIREF preset
 
