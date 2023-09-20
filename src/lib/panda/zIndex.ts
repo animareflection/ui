@@ -1,6 +1,9 @@
 import { defineTokens } from "@pandacss/dev";
 
 const zIndex = defineTokens.zIndex({
+  docked: {
+    value: 10,
+  },
   overlay: {
     value: 1300,
   },

@@ -7,6 +7,7 @@ import {
   BannerDemo,
   BreadcrumbDemo,
   ButtonDemo,
+  CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
@@ -46,6 +47,7 @@ const ClientPage = () => (
     <TooltipDemo />
     <BreadcrumbDemo />
     <ToastDemo />
+    <CarouselDemo />
   </Flex>
 );
 

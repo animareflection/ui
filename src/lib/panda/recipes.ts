@@ -2,6 +2,7 @@ import { accordionRecipe } from "../../components/client/core/Accordion/Accordio
 import { bannerRecipe } from "../../components/client/core/Banner/Banner.recipe";
 import { breadcrumbRecipe } from "../../components/client/core/Breadcrumb/Breadcrumb.recipe";
 import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
+import { carouselRecipe } from "../../components/client/core/Carousel/Carousel.recipe";
 import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
 import { flyoutRecipe } from "../../components/client/core/Flyout/Flyout.recipe";
@@ -38,6 +39,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  carousel: carouselRecipe,
   breadcrumb: breadcrumbRecipe,
   checkbox: checkboxRecipe,
   card: cardRecipe,

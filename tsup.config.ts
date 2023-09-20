@@ -47,8 +47,13 @@ const tsupConfig = defineTsupConfig({
     // https://esbuild.github.io/api/#resolve-extensions
     const defaultExtensions = [".tsx", ".ts", ".jsx", ".js", ".css", ".json"];
 
+    // filter out extensions from `esbuild` defaults
+    const selectedDefaultExtensions = defaultExtensions.filter(
+      (ext) => ![".css", ".json"].includes(ext),
+    );
+
     // extend recognized extensions to include explicit ESM extensions
-    opt.resolveExtensions = [...defaultExtensions, ".mts", ".mjs"];
+    opt.resolveExtensions = [...selectedDefaultExtensions, ".mts", ".mjs"];
   },
   onSuccess: async () => {
     console.log("Generating type declarations...");

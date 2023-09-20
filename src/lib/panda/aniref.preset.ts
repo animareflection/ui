@@ -2,6 +2,7 @@ import { definePreset, defineTokens } from "@pandacss/dev";
 
 import {
   animations,
+  breakpoints,
   colors,
   conditions,
   easings,
@@ -31,6 +32,7 @@ const anirefPreset: ReturnType<typeof definePreset> = definePreset({
   globalCss,
   theme: {
     extend: {
+      breakpoints,
       keyframes,
       recipes,
       semanticTokens,

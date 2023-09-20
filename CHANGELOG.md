@@ -1,5 +1,25 @@
 # @animareflection/ui
 
+## 0.7.0
+
+### Minor Changes
+
+- [#111](https://github.com/animareflection/ui/pull/111) [`2368829`](https://github.com/animareflection/ui/commit/2368829172efca2f459548eec9648f3983c053cf) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Carousel` component
+
+- [#107](https://github.com/animareflection/ui/pull/107) [`2fbcb12`](https://github.com/animareflection/ui/commit/2fbcb1281ca99168ae217e221a197bb3e61b5f1c) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `useDisclosure` hook
+
+- [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add `useBreakpoint` hook
+
+- [#93](https://github.com/animareflection/ui/pull/93) [`c06b29d`](https://github.com/animareflection/ui/commit/c06b29d5dfb738723e3fefaad4bb80ea6cb7109e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Toast` and `Toaster` components
+
+- [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add custom breakpoints to ANIREF preset
+
+- [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add `useBreakpointValue` hook
+
+### Patch Changes
+
+- [#108](https://github.com/animareflection/ui/pull/108) [`6eef5cc`](https://github.com/animareflection/ui/commit/6eef5cc321411787872230c1ad66fd0a5720ac61) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Icon` component
+
 ## 0.6.0
 
 ### Minor Changes

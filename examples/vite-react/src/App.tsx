@@ -15,6 +15,7 @@ import {
   BreadcrumbDemo,
   ButtonDemo,
   CardDemo,
+  CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
@@ -110,6 +111,7 @@ const App = () => (
       <FlyoutDemo />
       <TooltipDemo />
       <ToastDemo />
+      <CarouselDemo />
       <BreadcrumbDemo />
 
       <Hide below="md">

@@ -4,6 +4,7 @@ export { default as BannerDemo } from "./BannerDemo";
 export { default as BreadcrumbDemo } from "./BreadcrumbDemo";
 export { default as ButtonDemo } from "./ButtonDemo";
 export { default as CardDemo } from "./CardDemo";
+export { default as CarouselDemo } from "./CarouselDemo";
 export { default as CheckboxDemo } from "./CheckboxDemo";
 export { default as CollapseDemo } from "./CollapseDemo";
 export { default as DrawerDemo } from "./DrawerDemo";
