@@ -18,7 +18,6 @@ export const Default: Story = {
           as={ChevronRightIcon}
           color="accent.emphasized"
           aria-label="separator-icon"
-          flexShrink={0}
         />
       }
     />
@@ -36,7 +35,6 @@ export const StartingSegment: Story = {
           as={ChevronRightIcon}
           color="accent.emphasized"
           aria-label="separator-icon"
-          flexShrink={0}
         />
       }
     />

@@ -10,13 +10,7 @@ const BreadcrumbDemo = () => {
     <Wrapper title="Breadcrumb">
       <Breadcrumb
         pathname={pathname}
-        separator={
-          <Icon
-            as={ChevronRightIcon}
-            color="accent.emphasized"
-            flexShrink={0}
-          />
-        }
+        separator={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
       />
     </Wrapper>
   );
