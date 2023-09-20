@@ -17,19 +17,16 @@ import { carousel } from "generated/panda/recipes";
 
 import type { CarouselProps } from "components/primitives";
 import type { CarouselVariantProps } from "generated/panda/recipes";
-import type { JsxStyleProps } from "generated/panda/types";
+import type { CSSProperties } from "react";
 
 export interface Props extends CarouselProps, CarouselVariantProps {
   images: string[];
-  // !NB: Must use same naming convention as `Image` props. See: https://panda-css.com/docs/guides/dynamic-styling#property-renaming
-  h?: JsxStyleProps["h"];
-  w?: JsxStyleProps["w"];
+  imageStyle?: CSSProperties;
 }
 
 const Carousel = ({
   images,
-  h = "398px",
-  w = "100%",
+  imageStyle = { height: "398px", width: "100%", objectFit: "cover" },
   size,
   ...rest
 }: Props) => {
@@ -48,9 +45,7 @@ const Carousel = ({
               <Image
                 src={image}
                 alt={`Slide Image ${index}`}
-                h={h}
-                w={w}
-                objectFit="cover"
+                style={imageStyle}
               />
             </CarouselSlide>
           ))}
