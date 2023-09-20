@@ -1,3 +1,4 @@
+import { carouselState } from "./Carousel.spec";
 import { Carousel } from "components/client";
 import { panda } from "generated/panda/jsx";
 
@@ -19,6 +20,13 @@ export const Default: Story = {
       <Carousel images={IMAGES} />
     </panda.div>
   ),
+};
+
+export const CarouselState: Story = {
+  ...Default,
+  play: carouselState,
+  name: "[TEST] Carousel State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
