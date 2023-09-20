@@ -16,7 +16,7 @@ const IMAGES = [
 export const Default: Story = {
   render: () => (
     <panda.div w="600px">
-      <Carousel images={IMAGES} h="450px" />
+      <Carousel images={IMAGES} />
     </panda.div>
   ),
 };
