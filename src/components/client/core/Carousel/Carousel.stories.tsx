@@ -17,6 +17,14 @@ const IMAGES = [
 export const Default: Story = {
   render: () => (
     <panda.div w="600px">
+      <Carousel images={IMAGES} />
+    </panda.div>
+  ),
+};
+
+export const NextJSEnhanced: Story = {
+  render: () => (
+    <panda.div w="600px">
       <Carousel images={IMAGES} nextjs />
     </panda.div>
   ),
