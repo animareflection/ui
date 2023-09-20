@@ -16,15 +16,23 @@ import Image from "components/universal/core/Image/Image";
 import { carousel } from "generated/panda/recipes";
 
 import type { CarouselProps } from "components/primitives";
-import type { Props as ImageProps } from "components/universal/core/Image/Image";
 import type { CarouselVariantProps } from "generated/panda/recipes";
+import type { JsxStyleProps } from "generated/panda/types";
 
 export interface Props extends CarouselProps, CarouselVariantProps {
   images: string[];
-  imageProps?: ImageProps;
+  // !NB: Must use same naming convention as `Image` props. See: https://panda-css.com/docs/guides/dynamic-styling#property-renaming
+  h?: JsxStyleProps["h"];
+  w?: JsxStyleProps["w"];
 }
 
-const Carousel = ({ images, imageProps, size, ...rest }: Props) => {
+const Carousel = ({
+  images,
+  h = "398px",
+  w = "100%",
+  size,
+  ...rest
+}: Props) => {
   const classNames = carousel({ size });
 
   return (
@@ -37,12 +45,18 @@ const Carousel = ({ images, imageProps, size, ...rest }: Props) => {
               key={index}
               index={index}
             >
-              <Image src={image} alt={`Slide Image ${index}`} {...imageProps} />
+              <Image
+                src={image}
+                alt={`Slide Image ${index}`}
+                h={h}
+                w={w}
+                objectFit="cover"
+              />
             </CarouselSlide>
           ))}
         </CarouselSlideGroup>
         <CarouselControl className={classNames.control}>
-          <CarouselPrevSlideTrigger className={classNames.prevTrigger}>
+          <CarouselPrevSlideTrigger className={classNames.trigger}>
             <Icon as={FiChevronLeft} />
           </CarouselPrevSlideTrigger>
           <CarouselIndicatorGroup className={classNames.indicatorGroup}>
@@ -55,7 +69,7 @@ const Carousel = ({ images, imageProps, size, ...rest }: Props) => {
               />
             ))}
           </CarouselIndicatorGroup>
-          <CarouselNextSlideTrigger className={classNames.nextTrigger}>
+          <CarouselNextSlideTrigger className={classNames.trigger}>
             <Icon as={FiChevronRight} />
           </CarouselNextSlideTrigger>
         </CarouselControl>

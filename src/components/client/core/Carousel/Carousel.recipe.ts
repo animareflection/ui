@@ -7,8 +7,7 @@ export const carouselRecipe = defineSlotRecipe({
     "root",
     "control",
     "viewport",
-    "nextTrigger",
-    "prevTrigger",
+    "trigger",
     "slide",
     "slideGroup",
     "indicatorGroup",
@@ -52,6 +51,25 @@ export const carouselRecipe = defineSlotRecipe({
         outline: "2px solid",
         outlineColor: "border.outline",
       },
+    },
+    trigger: {
+      color: "fg.muted",
+      verticalAlign: "baseline",
+      cursor: "pointer",
+      _hover: {
+        color: "fg.default",
+      },
+      _disabled: {
+        color: "fg.disabled",
+        cursor: "not-allowed",
+        _hover: {
+          color: "fg.disabled",
+        },
+      },
+      height: "auto!",
+      px: "0!",
+      pb: 1,
+      minW: "0!",
     },
   },
   variants: {
