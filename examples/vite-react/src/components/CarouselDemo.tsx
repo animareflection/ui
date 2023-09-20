@@ -1,8 +1,9 @@
+import { Image } from "@animareflection/ui";
 import { Carousel } from "@animareflection/ui/client";
 
 import { Wrapper } from "components";
 
-const IMAGES = [
+const IMAGE_SOURCES = [
   "https://tinyurl.com/5b6ka8jd",
   "https://tinyurl.com/7rmccdn5",
   "https://tinyurl.com/59jxz9uu",
@@ -12,7 +13,16 @@ const IMAGES = [
 
 const CarouselDemo = () => (
   <Wrapper title="Carousel" w="600px" placeSelf="start">
-    <Carousel images={IMAGES} />
+    <Carousel
+      images={IMAGE_SOURCES.map((src, index) => (
+        <Image
+          key={index}
+          src={src}
+          alt={`Image ${index + 1}`}
+          style={{ height: "398px", width: "100%", objectFit: "cover" }}
+        />
+      ))}
+    />
   </Wrapper>
 );
 

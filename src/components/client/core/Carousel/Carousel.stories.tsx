@@ -1,12 +1,14 @@
 import { carouselState } from "./Carousel.spec";
 import { Carousel } from "components/client";
+import { Image as NextImage } from "components/next";
+import { Image } from "components/universal";
 import { panda } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof Carousel>;
 
-const IMAGES = [
+const IMAGE_SOURCES = [
   "https://tinyurl.com/5b6ka8jd",
   "https://tinyurl.com/7rmccdn5",
   "https://tinyurl.com/59jxz9uu",
@@ -17,7 +19,16 @@ const IMAGES = [
 export const Default: Story = {
   render: () => (
     <panda.div w="600px">
-      <Carousel images={IMAGES} />
+      <Carousel
+        images={IMAGE_SOURCES.map((src, index) => (
+          <Image
+            key={index}
+            src={src}
+            alt={`Image ${index + 1}`}
+            style={{ height: "398px", width: "100%", objectFit: "cover" }}
+          />
+        ))}
+      />
     </panda.div>
   ),
 };
@@ -25,7 +36,16 @@ export const Default: Story = {
 export const NextJSEnhanced: Story = {
   render: () => (
     <panda.div w="600px">
-      <Carousel images={IMAGES} nextjs />
+      <Carousel
+        images={IMAGE_SOURCES.map((src, index) => (
+          <NextImage
+            key={index}
+            src={src}
+            alt={`Image ${index + 1}`}
+            style={{ height: "398px", width: "100%", objectFit: "cover" }}
+          />
+        ))}
+      />
     </panda.div>
   ),
 };

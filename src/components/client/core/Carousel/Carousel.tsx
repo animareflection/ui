@@ -1,7 +1,6 @@
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import Icon from "components/client/core/Icon/Icon";
-import NextImage from "components/next/Image/Image";
 import {
   Carousel as PrimitiveCarousel,
   CarouselControl,
@@ -13,27 +12,18 @@ import {
   CarouselSlideGroup,
   CarouselViewport,
 } from "components/primitives";
-import Image from "components/universal/core/Image/Image";
 import { carousel } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
 import type { CarouselProps } from "components/primitives";
 import type { CarouselVariantProps } from "generated/panda/recipes";
-import type { CSSProperties } from "react";
+import type { ReactNode } from "react";
 
 export interface Props extends CarouselProps, CarouselVariantProps {
-  images: string[];
-  imageStyle?: CSSProperties;
-  nextjs?: boolean;
+  images: ReactNode[];
 }
 
-const Carousel = ({
-  images,
-  imageStyle = { height: "398px", width: "100%", objectFit: "cover" },
-  size,
-  nextjs,
-  ...rest
-}: Props) => {
+const Carousel = ({ images, size, ...rest }: Props) => {
   const classNames = carousel({ size });
 
   const isMounted = useIsMounted();
@@ -50,19 +40,7 @@ const Carousel = ({
               key={index}
               index={index}
             >
-              {nextjs ? (
-                <NextImage
-                  src={image}
-                  alt={`Slide Image ${index}`}
-                  style={imageStyle}
-                />
-              ) : (
-                <Image
-                  src={image}
-                  alt={`Slide Image ${index}`}
-                  style={imageStyle}
-                />
-              )}
+              {image}
             </CarouselSlide>
           ))}
         </CarouselSlideGroup>
