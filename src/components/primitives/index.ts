@@ -5,6 +5,17 @@ export {
   AccordionContent,
 } from "./Accordion/Accordion";
 export {
+  default as Carousel,
+  CarouselControl,
+  CarouselNextSlideTrigger,
+  CarouselPrevSlideTrigger,
+  CarouselSlide,
+  CarouselSlideGroup,
+  CarouselViewport,
+  CarouselIndicator,
+  CarouselIndicatorGroup,
+} from "./Carousel/Carousel";
+export {
   default as Checkbox,
   CheckboxControl,
   CheckboxLabel,
@@ -96,12 +107,24 @@ export {
   TooltipPositioner,
   TooltipTrigger,
 } from "./Tooltip/Tooltip";
+
 export type {
   AccordionProps,
   AccordionItemProps,
   AccordionTriggerProps,
   AccordionContentProps,
 } from "./Accordion/Accordion";
+export type {
+  CarouselProps,
+  CarouselControlProps,
+  CarouselNextSlideTriggerProps,
+  CarouselPrevSlideTriggerProps,
+  CarouselSlideProps,
+  CarouselSlideGroupProps,
+  CarouselViewportProps,
+  CarouselIndicatorProps,
+  CarouselIndicatorGroupProps,
+} from "./Carousel/Carousel";
 export type {
   CheckboxProps,
   CheckboxControlProps,
