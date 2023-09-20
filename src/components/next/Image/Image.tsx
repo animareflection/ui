@@ -27,6 +27,7 @@ const Image = ({ containerProps, style, fill, ...rest }: Props) => (
     overflow="hidden"
     w={style ? undefined : fill ? "100%" : containerProps!.w}
     h={style ? undefined : fill ? "100%" : containerProps!.h}
+    style={style}
     {...containerProps}
   >
     <ResolvedImage
