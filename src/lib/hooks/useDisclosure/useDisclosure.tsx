@@ -7,6 +7,9 @@ export interface Options {
   onClose?: () => void;
 }
 
+/**
+ * Manage boolean disclosure state. Useful for modals, dropdowns, tooltips, and other components that can be toggled open/closed.
+ */
 const useDisclosure = ({
   isOpen: isOpenProp,
   defaultIsOpen,
