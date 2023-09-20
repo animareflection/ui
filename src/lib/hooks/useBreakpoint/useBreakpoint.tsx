@@ -10,12 +10,16 @@ interface WindowDimensions {
   height: typeof window.innerHeight;
 }
 
+export interface Options {
+  /** Fallback breakpoint to use if no match is found, or if `window` is undefined as in server-side contexts. Defaults to "base". */
+  fallback?: BreakpointToken;
+}
+
 /**
  * Get the current theme breakpoint.
  */
-// TODO add fallback support (especially useful for SSR)
-const useBreakpoint = () => {
-  const [breakpoint, setBreakpoint] = useState<BreakpointToken>("base"),
+const useBreakpoint = ({ fallback = "base" }: Options = {}) => {
+  const [breakpoint, setBreakpoint] = useState<BreakpointToken>(fallback),
     [windowDimensions, setWindowDimensions] = useState<WindowDimensions>({
       width: 0,
       height: 0,
