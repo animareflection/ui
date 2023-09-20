@@ -21,6 +21,7 @@ import type { ReactNode } from "react";
 export interface Props extends NumberInputProps, NumberInputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
+  rightAddon?: ReactNode;
   stepper?: boolean;
   placeholder?: string;
 }
@@ -33,6 +34,7 @@ const NumberInput = ({
   variant,
   label,
   leftAddon,
+  rightAddon,
   stepper,
   placeholder,
   ...rest
@@ -61,6 +63,11 @@ const NumberInput = ({
           borderTopRightRadius={stepper ? 0 : "sm"}
           borderBottomRightRadius={stepper ? 0 : "sm"}
         />
+        {rightAddon && (
+          <panda.div className={classNames.addon} borderRightRadius="sm">
+            {rightAddon}
+          </panda.div>
+        )}
         {stepper && (
           <NumberInputControl className={classNames.stepper}>
             <NumberInputDecrementTrigger asChild>
