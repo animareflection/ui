@@ -30,7 +30,7 @@ export const carouselRecipe = defineSlotRecipe({
       opacity: 0.9,
       position: "absolute",
       transform: "translateX(-50%)",
-      zIndex: 10,
+      zIndex: "docked",
       gap: 2,
       p: 2.5,
     },
