@@ -11,30 +11,30 @@ export interface Options {
  * Manage boolean disclosure state. Useful for modals, dropdowns, tooltips, and other components that can be toggled open/closed.
  */
 const useDisclosure = ({
-  isOpen: isOpenProp,
+  isOpen: isOpenOption,
   defaultIsOpen,
-  onOpen: onOpenProp,
-  onClose: onCloseProp,
+  onOpen: onOpenOption,
+  onClose: onCloseOption,
 }: Options = {}) => {
   const [isOpen, setIsOpen] = useState(defaultIsOpen || false);
-  const isControlled = isOpenProp !== undefined;
+  const isControlled = isOpenOption !== undefined;
 
   const onClose = useCallback(() => {
     !isControlled && setIsOpen(false);
-    onCloseProp && onCloseProp();
-  }, [isControlled, onCloseProp]);
+    onCloseOption && onCloseOption();
+  }, [isControlled, onCloseOption]);
 
   const onOpen = useCallback(() => {
     !isControlled && setIsOpen(true);
-    onOpenProp && onOpenProp();
-  }, [isControlled, onOpenProp]);
+    onOpenOption && onOpenOption();
+  }, [isControlled, onOpenOption]);
 
   const onToggle = useCallback(() => {
-    !isControlled ? setIsOpen(!isOpen) : isOpenProp ? onClose() : onOpen();
-  }, [isControlled, isOpen, isOpenProp, onClose, onOpen]);
+    !isControlled ? setIsOpen(!isOpen) : isOpenOption ? onClose() : onOpen();
+  }, [isControlled, isOpen, isOpenOption, onClose, onOpen]);
 
   return {
-    isOpen: isControlled ? isOpenProp : isOpen,
+    isOpen: isControlled ? isOpenOption : isOpen,
     onOpen,
     onClose,
     onToggle,
