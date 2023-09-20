@@ -14,7 +14,7 @@ const IMAGE_SOURCES = [
 const CarouselDemo = () => (
   <Wrapper title="Carousel" w="600px" placeSelf="start">
     <Carousel
-      images={IMAGE_SOURCES.map((src, index) => (
+      slides={IMAGE_SOURCES.map((src, index) => (
         <Image
           key={index}
           src={src}

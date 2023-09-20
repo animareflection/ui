@@ -20,10 +20,10 @@ import type { CarouselVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface Props extends CarouselProps, CarouselVariantProps {
-  images: ReactNode[];
+  slides: ReactNode[];
 }
 
-const Carousel = ({ images, size, ...rest }: Props) => {
+const Carousel = ({ slides, size, ...rest }: Props) => {
   const classNames = carousel({ size });
 
   const isMounted = useIsMounted();
@@ -34,13 +34,13 @@ const Carousel = ({ images, size, ...rest }: Props) => {
     <PrimitiveCarousel className={classNames.root} {...rest}>
       <CarouselViewport className={classNames.viewport}>
         <CarouselSlideGroup className={classNames.slideGroup}>
-          {images.map((image, index) => (
+          {slides.map((slides, index) => (
             <CarouselSlide
               className={classNames.slide}
               key={index}
               index={index}
             >
-              {image}
+              {slides}
             </CarouselSlide>
           ))}
         </CarouselSlideGroup>
@@ -49,7 +49,7 @@ const Carousel = ({ images, size, ...rest }: Props) => {
             <Icon as={FiChevronLeft} />
           </CarouselPrevSlideTrigger>
           <CarouselIndicatorGroup className={classNames.indicatorGroup}>
-            {images.map((_, index) => (
+            {slides.map((_, index) => (
               <CarouselIndicator
                 key={index}
                 index={index}
