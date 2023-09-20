@@ -15,7 +15,7 @@ const useDisclosure = ({
   defaultIsOpen,
   onOpen: onOpenProp,
   onClose: onCloseProp,
-}: Options) => {
+}: Options = {}) => {
   const [isOpen, setIsOpen] = useState(defaultIsOpen || false);
   const isControlled = isOpenProp !== undefined;
 

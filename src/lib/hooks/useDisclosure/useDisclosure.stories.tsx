@@ -8,7 +8,7 @@ import type { ComponentType } from "react";
 type Story = StoryObj<typeof useDisclosure>;
 
 const DisclosureExample = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure({});
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Modal
