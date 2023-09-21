@@ -16,6 +16,7 @@ export { default as KbdDemo } from "./KbdDemo";
 export { default as MenuDemo } from "./MenuDemo";
 export { default as ModalDemo } from "./ModalDemo";
 export { default as NumberInputDemo } from "./NumberInputDemo";
+export { default as RadioGroupDemo } from "./RadioGroupDemo";
 export { default as SkeletonToggleDemo } from "./SkeletonToggleDemo";
 export { default as SliderDemo } from "./SliderDemo";
 export { default as SpinnerDemo } from "./SpinnerDemo";
