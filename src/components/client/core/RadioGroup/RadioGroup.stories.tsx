@@ -1,19 +1,34 @@
 import { radioGroupState } from "./RadioGroup.spec";
 import { RadioGroup } from "components/client";
+import { HStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof RadioGroup>;
 
 const ITEMS = [
-  { id: "react", label: "React" },
-  { id: "solid", label: "Solid" },
-  { id: "svelte", label: "Svelte", disabled: true },
-  { id: "vue", label: "Vue" },
+  { value: "react", label: "React" },
+  { value: "solid", label: "Solid" },
+  { value: "svelte", label: "Svelte", disabled: true },
+  { value: "vue", label: "Vue" },
 ];
 
 export const Default: Story = {
-  render: () => <RadioGroup orientation="vertical" items={ITEMS} />,
+  render: () => <RadioGroup items={ITEMS} />,
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <HStack gap={8} alignItems="start">
+      <RadioGroup size="sm" items={ITEMS} />
+      <RadioGroup items={ITEMS} />
+      <RadioGroup size="lg" items={ITEMS} />
+    </HStack>
+  ),
+};
+
+export const DefaultValue: Story = {
+  render: () => <RadioGroup defaultValue="solid" items={ITEMS} />,
 };
 
 export const RadioGroupState: Story = {

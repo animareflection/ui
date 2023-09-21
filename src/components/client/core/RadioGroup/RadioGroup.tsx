@@ -10,7 +10,7 @@ import type { RadioGroupProps } from "components/primitives";
 import type { RadioGroupVariantProps } from "generated/panda/recipes";
 
 export interface RadioGroupRecord {
-  id: string;
+  value: string;
   label: string;
   disabled?: boolean;
 }
@@ -25,7 +25,7 @@ export interface Props extends RadioGroupProps, RadioGroupVariantProps {
 const RadioGroup = ({
   items,
   defaultValue,
-  orientation,
+  orientation = "vertical",
   size,
   ...rest
 }: Props) => {
@@ -40,8 +40,8 @@ const RadioGroup = ({
     >
       {items.map((item) => (
         <Radio
-          key={item.id}
-          value={item.id}
+          key={item.value}
+          value={item.value}
           disabled={item.disabled}
           className={classNames.radio}
         >
