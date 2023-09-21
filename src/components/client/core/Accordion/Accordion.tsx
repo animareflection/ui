@@ -15,14 +15,14 @@ import {
 import { accordion } from "generated/panda/recipes";
 
 import type { AccordionProps } from "components/primitives";
-import type { ElementType, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 export interface AccordionItemRecord {
   id: string;
   value: string;
   triggerLabel?: string;
   content: ReactNode;
-  icon?: ElementType;
+  icon?: ReactElement;
 }
 
 export interface Props extends AccordionProps {
@@ -51,19 +51,22 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                 <Button w="full" borderBottomRadius={isOpen ? "unset" : "md"}>
                   {triggerLabel ?? value}
                   <Icon
-                    as={
-                      plusMinus
-                        ? isOpen
-                          ? MinusIcon
-                          : PlusIcon
-                        : icon ?? ChevronDownIcon
-                    }
                     transform={
                       isOpen && !plusMinus ? "rotate(-180deg)" : undefined
                     }
                     transformOrigin="center"
                     color="accent.fg"
-                  />
+                  >
+                    {plusMinus ? (
+                      isOpen ? (
+                        <MinusIcon />
+                      ) : (
+                        <PlusIcon />
+                      )
+                    ) : (
+                      icon ?? <ChevronDownIcon />
+                    )}
+                  </Icon>
                 </Button>
               </AccordionTrigger>
               <AccordionContent

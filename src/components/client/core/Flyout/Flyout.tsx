@@ -22,7 +22,7 @@ import type { ReactNode } from "react";
 
 export interface Props extends FlyoutProps {
   trigger: ReactNode;
-  title?: string;
+  title?: ReactNode;
   children: ReactNode;
 }
 
@@ -66,7 +66,9 @@ const Flyout = ({ trigger, title, children, ...rest }: Props) => {
               onClick={() => setIsOpen(false)}
               className={classNames.closeTrigger}
             >
-              <Icon as={CloseIcon} className={classNames.closeTriggerIcon} />
+              <Icon className={classNames.closeTriggerIcon}>
+                <CloseIcon />
+              </Icon>
             </FlyoutCloseTrigger>
           </FlyoutContent>
         </FlyoutPositioner>

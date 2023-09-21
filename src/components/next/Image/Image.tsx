@@ -6,7 +6,7 @@ import type { AspectRatioProps } from "generated/panda/jsx";
 import type { ImageProps as NextImageProps } from "next/image";
 
 export interface Props extends NextImageProps {
-  containerProps?: Omit<AspectRatioProps, "width" | "height">;
+  containerProps?: Omit<AspectRatioProps, "width" | "height" | "style">;
 }
 
 // TODO remove once https://github.com/vercel/next.js/issues/52216 is resolved (`next/image` affected by a default + named export bundling bug)
@@ -21,12 +21,18 @@ if ("default" in ResolvedImage) {
 /**
  * Next.js-enhanced image.
  */
-const Image = ({ containerProps, fill, ...rest }: Props) => (
+const Image = ({
+  containerProps = { w: "100%", h: "100%" },
+  style,
+  fill,
+  ...rest
+}: Props) => (
   <AspectRatio
     pos="relative"
     overflow="hidden"
-    w={fill ? "100%" : containerProps!.w}
-    h={fill ? "100%" : containerProps!.h}
+    w={style ? undefined : fill ? "100%" : containerProps.w}
+    h={style ? undefined : fill ? "100%" : containerProps.h}
+    style={style}
     {...containerProps}
   >
     <ResolvedImage

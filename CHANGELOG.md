@@ -1,5 +1,71 @@
 # @animareflection/ui
 
+## 0.8.1
+
+### Patch Changes
+
+- [#120](https://github.com/animareflection/ui/pull/120) [`a5a9d0a`](https://github.com/animareflection/ui/commit/a5a9d0af6741f5d2f4cfc275d475c02e841a1fdc) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Tooltip` background color prop for content and arrow slots
+
+- [#118](https://github.com/animareflection/ui/pull/118) [`bcccf60`](https://github.com/animareflection/ui/commit/bcccf60d2db64bc31e7a7144847c9f9c1082327d) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add default height and width to container props for Next.js enhanced `Image` component
+
+## 0.8.0
+
+### Minor Changes
+
+- [#117](https://github.com/animareflection/ui/pull/117) [`912518f`](https://github.com/animareflection/ui/commit/912518f87e7b696ea7d861fcb0e97c865e7e8de8) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `RadioGroup` component
+
+- [#100](https://github.com/animareflection/ui/pull/100) [`bf87dea`](https://github.com/animareflection/ui/commit/bf87dea700b3ce5a477d9d44c1fc00ab74c29651) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Breadcrumb` component
+
+- [#116](https://github.com/animareflection/ui/pull/116) [`8579205`](https://github.com/animareflection/ui/commit/8579205cca0e3d33cc40d875cd48ec5329dc60b3) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Icon` component by removing `as` prop usage"
+
+### Patch Changes
+
+- [#114](https://github.com/animareflection/ui/pull/114) [`7582526`](https://github.com/animareflection/ui/commit/758252637554564d1bf7fa06f92beaf3af9808ea) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Input` and `NumberInput` to offer consistent optional addon and element input props
+
+- [#112](https://github.com/animareflection/ui/pull/112) [`b7d0c7b`](https://github.com/animareflection/ui/commit/b7d0c7ba4a16399e4f984fa52330220aa5288b98) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add default `{}` options to `useDisclosure` hook
+
+- [#115](https://github.com/animareflection/ui/pull/115) [`de22540`](https://github.com/animareflection/ui/commit/de22540a97d6fe705a3563063faa97b9baf73976) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Flyout` title prop typing from `string` to `ReactNode`
+
+## 0.7.0
+
+### Minor Changes
+
+- [#111](https://github.com/animareflection/ui/pull/111) [`2368829`](https://github.com/animareflection/ui/commit/2368829172efca2f459548eec9648f3983c053cf) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Carousel` component
+
+- [#107](https://github.com/animareflection/ui/pull/107) [`2fbcb12`](https://github.com/animareflection/ui/commit/2fbcb1281ca99168ae217e221a197bb3e61b5f1c) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `useDisclosure` hook
+
+- [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add `useBreakpoint` hook
+
+- [#93](https://github.com/animareflection/ui/pull/93) [`c06b29d`](https://github.com/animareflection/ui/commit/c06b29d5dfb738723e3fefaad4bb80ea6cb7109e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Toast` and `Toaster` components
+
+- [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add custom breakpoints to ANIREF preset
+
+- [#110](https://github.com/animareflection/ui/pull/110) [`ab85312`](https://github.com/animareflection/ui/commit/ab85312ef5224772a0d4831284b758acbc9b53d4) Thanks [@coopbri](https://github.com/coopbri)! - Add `useBreakpointValue` hook
+
+### Patch Changes
+
+- [#108](https://github.com/animareflection/ui/pull/108) [`6eef5cc`](https://github.com/animareflection/ui/commit/6eef5cc321411787872230c1ad66fd0a5720ac61) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Icon` component
+
+## 0.6.0
+
+### Minor Changes
+
+- [#99](https://github.com/animareflection/ui/pull/99) [`dfd8aeb`](https://github.com/animareflection/ui/commit/dfd8aeb99924a477d7eff163c1754d4e0dd92eea) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Tooltip` component
+
+- [#88](https://github.com/animareflection/ui/pull/88) [`870fe67`](https://github.com/animareflection/ui/commit/870fe67be81df3b8c85abcf67306f3a2d10966e2) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Collapse` component
+
+- [#98](https://github.com/animareflection/ui/pull/98) [`9d1c527`](https://github.com/animareflection/ui/commit/9d1c527fa31aea843d5ea1513504ca8fbad9f830) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Flyout` component
+
+- [#90](https://github.com/animareflection/ui/pull/90) [`e2c27e4`](https://github.com/animareflection/ui/commit/e2c27e4be1f815b0858dd8b3aedd5fb9759ab7f6) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Banner` component
+
+- [#91](https://github.com/animareflection/ui/pull/91) [`ff7d40d`](https://github.com/animareflection/ui/commit/ff7d40d844c610ee3171d0240e89e633d1c1624f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `NumberInput` component
+
+- [#91](https://github.com/animareflection/ui/pull/91) [`ff7d40d`](https://github.com/animareflection/ui/commit/ff7d40d844c610ee3171d0240e89e633d1c1624f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Input` component
+
+### Patch Changes
+
+- [#88](https://github.com/animareflection/ui/pull/88) [`870fe67`](https://github.com/animareflection/ui/commit/870fe67be81df3b8c85abcf67306f3a2d10966e2) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Button` component
+
 ## 0.5.0
 
 ### Minor Changes

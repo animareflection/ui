@@ -5,6 +5,17 @@ export {
   AccordionContent,
 } from "./Accordion/Accordion";
 export {
+  default as Carousel,
+  CarouselControl,
+  CarouselNextSlideTrigger,
+  CarouselPrevSlideTrigger,
+  CarouselSlide,
+  CarouselSlideGroup,
+  CarouselViewport,
+  CarouselIndicator,
+  CarouselIndicatorGroup,
+} from "./Carousel/Carousel";
+export {
   default as Checkbox,
   CheckboxControl,
   CheckboxLabel,
@@ -54,6 +65,12 @@ export {
   NumberInputScrubber,
 } from "./NumberInput/NumberInput";
 export {
+  default as RadioGroup,
+  RadioControl,
+  Radio,
+  RadioLabel,
+} from "./RadioGroup/RadioGroup";
+export {
   default as Flyout,
   FlyoutArrow,
   FlyoutArrowTip,
@@ -96,12 +113,24 @@ export {
   TooltipPositioner,
   TooltipTrigger,
 } from "./Tooltip/Tooltip";
+
 export type {
   AccordionProps,
   AccordionItemProps,
   AccordionTriggerProps,
   AccordionContentProps,
 } from "./Accordion/Accordion";
+export type {
+  CarouselProps,
+  CarouselControlProps,
+  CarouselNextSlideTriggerProps,
+  CarouselPrevSlideTriggerProps,
+  CarouselSlideProps,
+  CarouselSlideGroupProps,
+  CarouselViewportProps,
+  CarouselIndicatorProps,
+  CarouselIndicatorGroupProps,
+} from "./Carousel/Carousel";
 export type {
   CheckboxProps,
   CheckboxControlProps,
@@ -151,6 +180,12 @@ export type {
   NumberInputProps,
   NumberInputScrubberProps,
 } from "./NumberInput/NumberInput";
+export type {
+  RadioControlProps,
+  RadioLabelProps,
+  RadioProps,
+  RadioGroupProps,
+} from "./RadioGroup/RadioGroup";
 export type {
   FlyoutProps,
   FlyoutArrowProps,

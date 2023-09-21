@@ -5,7 +5,9 @@ import { Flex, Text } from "@animareflection/ui";
 import {
   AccordionDemo,
   BannerDemo,
+  BreadcrumbDemo,
   ButtonDemo,
+  CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
@@ -15,10 +17,12 @@ import {
   MenuDemo,
   ModalDemo,
   NumberInputDemo,
+  RadioGroupDemo,
   SkeletonToggleDemo,
   SliderDemo,
   TabsDemo,
   TextareaDemo,
+  ToastDemo,
   ToggleDemo,
   TooltipDemo,
 } from "components";
@@ -44,6 +48,10 @@ const ClientPage = () => (
     <TextareaDemo />
     <FlyoutDemo />
     <TooltipDemo />
+    <BreadcrumbDemo />
+    <ToastDemo />
+    <CarouselDemo />
+    <RadioGroupDemo />
   </Flex>
 );
 

@@ -8,17 +8,20 @@ type Story = StoryObj<typeof Hide>;
 export const HideBelow: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
+      <Hide below="sm">
+        <Text>Hidden at and below sm breakpoint (640px)</Text>
+      </Hide>
       <Hide below="md">
-        <Text>Hidden below md breakpoint (768px)</Text>
+        <Text>Hidden at and below md breakpoint (768px)</Text>
       </Hide>
       <Hide below="lg">
-        <Text>Hidden below lg breakpoint (1024px)</Text>
+        <Text>Hidden at and below lg breakpoint (1024px)</Text>
       </Hide>
       <Hide below="xl">
-        <Text>Hidden below xl breakpoint (1280px)</Text>
+        <Text>Hidden at and below xl breakpoint (1280px)</Text>
       </Hide>
       <Hide below="2xl">
-        <Text>Hidden from 2xl breakpoint (1536px)</Text>
+        <Text>Hidden at and below 2xl breakpoint (1536px)</Text>
       </Hide>
     </Flex>
   ),

@@ -12,8 +12,10 @@ import {
   AccordionDemo,
   BadgeDemo,
   BannerDemo,
+  BreadcrumbDemo,
   ButtonDemo,
   CardDemo,
+  CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
   DrawerDemo,
@@ -25,11 +27,13 @@ import {
   MenuDemo,
   ModalDemo,
   NumberInputDemo,
+  RadioGroupDemo,
   SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
   TabsDemo,
   TextareaDemo,
+  ToastDemo,
   ToggleDemo,
   TooltipDemo,
 } from "components";
@@ -109,6 +113,10 @@ const App = () => (
       <TextareaDemo />
       <FlyoutDemo />
       <TooltipDemo />
+      <ToastDemo />
+      <CarouselDemo />
+      <BreadcrumbDemo />
+      <RadioGroupDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">

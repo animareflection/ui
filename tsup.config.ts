@@ -22,6 +22,7 @@ const tsupConfig = defineTsupConfig({
   entry: {
     ui: "src/index.ts",
     client: "src/index.client.ts",
+    hooks: "src/index.hooks.ts",
     next: "src/index.next.ts",
     primitives: "src/index.primitives.ts",
   },
@@ -34,14 +35,25 @@ const tsupConfig = defineTsupConfig({
   format: ["cjs", "esm"],
   // NB: `peerDeps`, among others, are excluded (marked external) by default
   // see https://tsup.egoist.dev/#excluding-packages
-  external: ["@ark-ui/react", "react-icons", "next", "framer-motion"],
+  external: [
+    "@ark-ui/react",
+    "react-icons",
+    "next",
+    "framer-motion",
+    "react-hot-toast",
+  ],
   outDir: "build",
   esbuildOptions: (opt, _ctx) => {
     // https://esbuild.github.io/api/#resolve-extensions
     const defaultExtensions = [".tsx", ".ts", ".jsx", ".js", ".css", ".json"];
 
+    // filter out extensions from `esbuild` defaults
+    const selectedDefaultExtensions = defaultExtensions.filter(
+      (ext) => ![".css", ".json"].includes(ext),
+    );
+
     // extend recognized extensions to include explicit ESM extensions
-    opt.resolveExtensions = [...defaultExtensions, ".mts", ".mjs"];
+    opt.resolveExtensions = [...selectedDefaultExtensions, ".mts", ".mjs"];
   },
   onSuccess: async () => {
     console.log("Generating type declarations...");

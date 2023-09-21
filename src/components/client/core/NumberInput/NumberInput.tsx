@@ -1,6 +1,5 @@
 import { FiMinus, FiPlus } from "react-icons/fi";
 
-import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import {
   NumberInput as PrimitiveNumberInput,
@@ -21,6 +20,9 @@ import type { ReactNode } from "react";
 export interface Props extends NumberInputProps, NumberInputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
+  rightAddon?: ReactNode;
+  inputLeftElement?: ReactNode;
+  inputRightElement?: ReactNode;
   stepper?: boolean;
   placeholder?: string;
 }
@@ -33,6 +35,9 @@ const NumberInput = ({
   variant,
   label,
   leftAddon,
+  rightAddon,
+  inputLeftElement,
+  inputRightElement,
   stepper,
   placeholder,
   ...rest
@@ -53,52 +58,45 @@ const NumberInput = ({
             {leftAddon}
           </panda.div>
         )}
-        <NumberInputInput
-          className={classNames.input}
-          placeholder={placeholder}
-          borderTopLeftRadius={leftAddon ? 0 : "sm"}
-          borderBottomLeftRadius={leftAddon ? 0 : "sm"}
-          borderTopRightRadius={stepper ? 0 : "sm"}
-          borderBottomRightRadius={stepper ? 0 : "sm"}
-        />
+        <Flex pos="relative" w="100%">
+          {inputLeftElement && (
+            <panda.div className={classNames.leftElement}>
+              {inputLeftElement}
+            </panda.div>
+          )}
+          <NumberInputInput
+            className={classNames.input}
+            placeholder={placeholder}
+            borderTopLeftRadius={leftAddon ? 0 : "sm"}
+            borderBottomLeftRadius={leftAddon ? 0 : "sm"}
+            borderTopRightRadius={stepper ? 0 : "sm"}
+            borderBottomRightRadius={stepper ? 0 : "sm"}
+            pl={inputLeftElement ? 10 : 3}
+            pr={inputRightElement ? 10 : 3}
+          />
+          {inputRightElement && (
+            <panda.div className={classNames.rightElement}>
+              {inputRightElement}
+            </panda.div>
+          )}
+        </Flex>
+        {rightAddon && (
+          <panda.div className={classNames.addon} borderRightRadius="sm">
+            {rightAddon}
+          </panda.div>
+        )}
         {stepper && (
           <NumberInputControl className={classNames.stepper}>
-            <NumberInputDecrementTrigger asChild>
-              <Button
-                bgColor={{
-                  base: "border.default",
-                  _hover: "bg.subtle",
-                  _disabled: {
-                    _hover: "border.default",
-                  },
-                }}
-                p={0}
-                w="100%"
-                h="100%"
-                color="fg.default"
-                borderRadius="sm"
-              >
-                <Icon as={FiMinus} className={classNames.stepperIcon} />
-              </Button>
+            <NumberInputDecrementTrigger className={classNames.stepperTrigger}>
+              <Icon className={classNames.stepperIcon}>
+                <FiMinus />
+              </Icon>
             </NumberInputDecrementTrigger>
             <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
-            <NumberInputIncrementTrigger asChild>
-              <Button
-                bgColor={{
-                  base: "border.default",
-                  _hover: "bg.subtle",
-                  _disabled: {
-                    _hover: "border.default",
-                  },
-                }}
-                p={0}
-                w="100%"
-                h="100%"
-                color="fg.default"
-                borderRadius="sm"
-              >
-                <Icon as={FiPlus} className={classNames.stepperIcon} />
-              </Button>
+            <NumberInputIncrementTrigger className={classNames.stepperTrigger}>
+              <Icon className={classNames.stepperIcon}>
+                <FiPlus />
+              </Icon>
             </NumberInputIncrementTrigger>
           </NumberInputControl>
         )}
