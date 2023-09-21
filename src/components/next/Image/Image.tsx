@@ -21,12 +21,17 @@ if ("default" in ResolvedImage) {
 /**
  * Next.js-enhanced image.
  */
-const Image = ({ containerProps, style, fill, ...rest }: Props) => (
+const Image = ({
+  containerProps = { w: "100%", h: "100%" },
+  style,
+  fill,
+  ...rest
+}: Props) => (
   <AspectRatio
     pos="relative"
     overflow="hidden"
-    w={style ? undefined : fill ? "100%" : containerProps!.w}
-    h={style ? undefined : fill ? "100%" : containerProps!.h}
+    w={style ? undefined : fill ? "100%" : containerProps.w}
+    h={style ? undefined : fill ? "100%" : containerProps.h}
     style={style}
     {...containerProps}
   >
