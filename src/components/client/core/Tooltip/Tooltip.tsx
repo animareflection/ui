@@ -12,11 +12,13 @@ import { tooltip } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
 import type { TooltipProps } from "components/primitives";
+import type { JsxStyleProps } from "generated/panda/types";
 import type { ReactNode } from "react";
 
 export interface Props extends TooltipProps {
   trigger: ReactNode;
   content: ReactNode;
+  bgColor?: JsxStyleProps["bgColor"];
 }
 
 /**
@@ -27,6 +29,7 @@ const Tooltip = ({
   content,
   openDelay = 0,
   closeDelay = 0,
+  bgColor = "bg.default",
   ...rest
 }: Props) => {
   const classNames = tooltip();
@@ -43,11 +46,11 @@ const Tooltip = ({
           <Portal>
             <TooltipPositioner className={classNames.positioner}>
               {isOpen && (
-                <TooltipArrow className={classNames.arrow}>
+                <TooltipArrow bgColor={bgColor} className={classNames.arrow}>
                   <TooltipArrowTip className={classNames.arrowTip} />
                 </TooltipArrow>
               )}
-              <TooltipContent className={classNames.content}>
+              <TooltipContent bgColor={bgColor} className={classNames.content}>
                 {content}
               </TooltipContent>
             </TooltipPositioner>
