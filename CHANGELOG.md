@@ -1,5 +1,23 @@
 # @animareflection/ui
 
+## 0.8.0
+
+### Minor Changes
+
+- [#117](https://github.com/animareflection/ui/pull/117) [`912518f`](https://github.com/animareflection/ui/commit/912518f87e7b696ea7d861fcb0e97c865e7e8de8) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `RadioGroup` component
+
+- [#100](https://github.com/animareflection/ui/pull/100) [`bf87dea`](https://github.com/animareflection/ui/commit/bf87dea700b3ce5a477d9d44c1fc00ab74c29651) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Breadcrumb` component
+
+- [#116](https://github.com/animareflection/ui/pull/116) [`8579205`](https://github.com/animareflection/ui/commit/8579205cca0e3d33cc40d875cd48ec5329dc60b3) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Icon` component by removing `as` prop usage"
+
+### Patch Changes
+
+- [#114](https://github.com/animareflection/ui/pull/114) [`7582526`](https://github.com/animareflection/ui/commit/758252637554564d1bf7fa06f92beaf3af9808ea) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Refactor `Input` and `NumberInput` to offer consistent optional addon and element input props
+
+- [#112](https://github.com/animareflection/ui/pull/112) [`b7d0c7b`](https://github.com/animareflection/ui/commit/b7d0c7ba4a16399e4f984fa52330220aa5288b98) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add default `{}` options to `useDisclosure` hook
+
+- [#115](https://github.com/animareflection/ui/pull/115) [`de22540`](https://github.com/animareflection/ui/commit/de22540a97d6fe705a3563063faa97b9baf73976) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Flyout` title prop typing from `string` to `ReactNode`
+
 ## 0.7.0
 
 ### Minor Changes
