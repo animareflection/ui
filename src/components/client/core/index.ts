@@ -1,5 +1,6 @@
 export { default as Accordion } from "./Accordion/Accordion";
 export { default as Banner } from "./Banner/Banner";
+export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb";
 export { default as Button } from "./Button/Button";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as Checkbox } from "./Checkbox/Checkbox";
@@ -22,6 +23,10 @@ export type {
   AccordionItemRecord,
 } from "./Accordion/Accordion";
 export type { Props as BannerProps } from "./Banner/Banner";
+export type {
+  Props as BreadcrumbProps,
+  BreadcrumbRecord,
+} from "./Breadcrumb/Breadcrumb";
 export type { Props as ButtonProps } from "./Button/Button";
 export type { Props as CarouselProps } from "./Carousel/Carousel";
 export type { Props as CheckboxProps } from "./Checkbox/Checkbox";
