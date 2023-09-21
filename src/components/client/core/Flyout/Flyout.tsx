@@ -22,7 +22,7 @@ import type { ReactNode } from "react";
 
 export interface Props extends FlyoutProps {
   trigger: ReactNode;
-  title?: string;
+  title?: ReactNode;
   children: ReactNode;
 }
 
