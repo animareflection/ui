@@ -1,7 +1,7 @@
 {
   "name": "@animareflection/ui",
   "description": "Anima Reflection design system and library",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "license": "MIT",
   "packageManager": "yarn@3.6.3",
   "main": "build/ui.js",
