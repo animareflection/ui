@@ -1,5 +1,13 @@
 # @animareflection/ui
 
+## 0.8.1
+
+### Patch Changes
+
+- [#120](https://github.com/animareflection/ui/pull/120) [`a5a9d0a`](https://github.com/animareflection/ui/commit/a5a9d0af6741f5d2f4cfc275d475c02e841a1fdc) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Tooltip` background color prop for content and arrow slots
+
+- [#118](https://github.com/animareflection/ui/pull/118) [`bcccf60`](https://github.com/animareflection/ui/commit/bcccf60d2db64bc31e7a7144847c9f9c1082327d) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add default height and width to container props for Next.js enhanced `Image` component
+
 ## 0.8.0
 
 ### Minor Changes
