@@ -21,6 +21,8 @@ export interface Props extends NumberInputProps, NumberInputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
+  inputLeftElement?: ReactNode;
+  inputRightElement?: ReactNode;
   stepper?: boolean;
   placeholder?: string;
 }
@@ -34,6 +36,8 @@ const NumberInput = ({
   label,
   leftAddon,
   rightAddon,
+  inputLeftElement,
+  inputRightElement,
   stepper,
   placeholder,
   ...rest
@@ -54,14 +58,28 @@ const NumberInput = ({
             {leftAddon}
           </panda.div>
         )}
-        <NumberInputInput
-          className={classNames.input}
-          placeholder={placeholder}
-          borderTopLeftRadius={leftAddon ? 0 : "sm"}
-          borderBottomLeftRadius={leftAddon ? 0 : "sm"}
-          borderTopRightRadius={stepper ? 0 : "sm"}
-          borderBottomRightRadius={stepper ? 0 : "sm"}
-        />
+        <Flex pos="relative" w="100%">
+          {inputLeftElement && (
+            <panda.div className={classNames.leftElement}>
+              {inputLeftElement}
+            </panda.div>
+          )}
+          <NumberInputInput
+            className={classNames.input}
+            placeholder={placeholder}
+            borderTopLeftRadius={leftAddon ? 0 : "sm"}
+            borderBottomLeftRadius={leftAddon ? 0 : "sm"}
+            borderTopRightRadius={stepper ? 0 : "sm"}
+            borderBottomRightRadius={stepper ? 0 : "sm"}
+            pl={inputLeftElement ? 10 : 3}
+            pr={inputRightElement ? 10 : 3}
+          />
+          {inputRightElement && (
+            <panda.div className={classNames.rightElement}>
+              {inputRightElement}
+            </panda.div>
+          )}
+        </Flex>
         {rightAddon && (
           <panda.div className={classNames.addon} borderRightRadius="sm">
             {rightAddon}
