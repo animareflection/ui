@@ -76,7 +76,9 @@ const Drawer = ({
                       _hover: "bg.subtle",
                     }}
                   >
-                    <Icon as={CloseIcon} color="fg.default" />
+                    <Icon color="fg.default">
+                      <CloseIcon />
+                    </Icon>
                   </Button>
                 </DrawerCloseTrigger>
               </DrawerContent>

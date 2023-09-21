@@ -7,11 +7,11 @@ import Icon from "components/client/core/Icon/Icon";
 import { Flex } from "generated/panda/jsx";
 
 import type { FlexProps } from "generated/panda/jsx";
-import type { ElementType, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 export interface Props extends FlexProps {
   label?: string;
-  icon?: ElementType;
+  icon?: ReactElement;
   open?: boolean;
   children?: ReactNode;
   collapseDirection?: "horizontal" | "vertical";
@@ -31,7 +31,7 @@ const Collapse = ({
   const [isOpen, setIsOpen] = useState(open ?? false);
 
   const isHorizontal = collapseDirection == "horizontal";
-  const defaultIcon = isHorizontal ? FiChevronRight : FiChevronDown;
+  const defaultIcon = isHorizontal ? <FiChevronRight /> : <FiChevronDown />;
 
   return (
     <Flex direction={isHorizontal ? "row-reverse" : "column"} gap={2} {...rest}>
@@ -44,10 +44,9 @@ const Collapse = ({
         onClick={() => setIsOpen(!isOpen)}
       >
         {label}
-        <Icon
-          transform={isOpen && !icon ? "rotate(-180deg)" : undefined}
-          as={icon ?? defaultIcon}
-        />
+        <Icon transform={isOpen && !icon ? "rotate(-180deg)" : undefined}>
+          {icon ?? defaultIcon}
+        </Icon>
       </Button>
       <AnimatePresence initial={isOpen}>
         {isOpen && (

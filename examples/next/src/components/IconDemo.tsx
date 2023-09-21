@@ -13,16 +13,24 @@ const IconDemo = () => (
   <Wrapper title="Icon">
     <Flex gap={2}>
       <Flex bgColor="red.100" p={2} borderRadius="md">
-        <Icon as={FiHeart} color="red.500" />
+        <Icon color="red.500">
+          <FiHeart />
+        </Icon>
       </Flex>
       <Flex bgColor="blue.100" p={2} borderRadius="md">
-        <Icon as={FiCheck} color="blue.500" />
+        <Icon color="blue.500">
+          <FiCheck />
+        </Icon>
       </Flex>
       <Flex bgColor="gray.100" p={2} borderRadius="md">
-        <Icon as={FiExternalLink} color="gray.500" />
+        <Icon color="gray.500">
+          <FiExternalLink />
+        </Icon>
       </Flex>
       <Flex bgColor="yellow.100" p={2} borderRadius="md">
-        <Icon as={FiAlertTriangle} color="yellow.500" />
+        <Icon color="yellow.500">
+          <FiAlertTriangle />
+        </Icon>
       </Flex>
     </Flex>
   </Wrapper>

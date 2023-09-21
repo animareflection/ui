@@ -17,11 +17,9 @@ const BreadcrumbDemo = () => {
       <Breadcrumb
         breadcrumbs={BREADCRUMBS}
         separator={
-          <Icon
-            as={ChevronRightIcon}
-            color="accent.emphasized"
-            aria-label="separator-icon"
-          />
+          <Icon color="accent.emphasized" aria-label="separator-icon">
+            <ChevronRightIcon />
+          </Icon>
         }
       />
     </Wrapper>

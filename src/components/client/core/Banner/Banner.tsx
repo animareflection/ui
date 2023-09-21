@@ -36,7 +36,9 @@ const Banner = ({ children, variant, closable, ...rest }: Props) => {
               _hover: "none",
             }}
           >
-            <Icon as={CloseIcon} color="bg.default" />
+            <Icon color="bg.default">
+              <CloseIcon />
+            </Icon>
           </Button>
         )}
       </panda.div>
