@@ -46,7 +46,9 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
         </CarouselSlideGroup>
         <CarouselControl className={classNames.control}>
           <CarouselPrevSlideTrigger className={classNames.trigger}>
-            <Icon as={FiChevronLeft} />
+            <Icon>
+              <FiChevronLeft />
+            </Icon>
           </CarouselPrevSlideTrigger>
           <CarouselIndicatorGroup className={classNames.indicatorGroup}>
             {slides.map((_, index) => (
@@ -59,7 +61,9 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
             ))}
           </CarouselIndicatorGroup>
           <CarouselNextSlideTrigger className={classNames.trigger}>
-            <Icon as={FiChevronRight} />
+            <Icon>
+              <FiChevronRight />
+            </Icon>
           </CarouselNextSlideTrigger>
         </CarouselControl>
       </CarouselViewport>

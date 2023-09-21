@@ -88,11 +88,15 @@ const NumberInput = ({
         {stepper && (
           <NumberInputControl className={classNames.stepper}>
             <NumberInputDecrementTrigger className={classNames.stepperTrigger}>
-              <Icon as={FiMinus} className={classNames.stepperIcon} />
+              <Icon className={classNames.stepperIcon}>
+                <FiMinus />
+              </Icon>
             </NumberInputDecrementTrigger>
             <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
             <NumberInputIncrementTrigger className={classNames.stepperTrigger}>
-              <Icon as={FiPlus} className={classNames.stepperIcon} />
+              <Icon className={classNames.stepperIcon}>
+                <FiPlus />
+              </Icon>
             </NumberInputIncrementTrigger>
           </NumberInputControl>
         )}

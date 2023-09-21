@@ -1,22 +1,20 @@
+import { ark } from "@ark-ui/react";
+
 import { panda } from "generated/panda/jsx";
 import { icon } from "generated/panda/recipes";
 
+import type { HTMLPandaProps } from "generated/panda/jsx";
 import type { IconVariantProps } from "generated/panda/recipes";
-import type { HTMLPandaProps } from "generated/panda/types/jsx";
-import type { ElementType } from "react";
+import type { ReactElement } from "react";
 
-export interface Props extends HTMLPandaProps<"svg">, IconVariantProps {
-  as: ElementType;
+export interface Props extends IconVariantProps, HTMLPandaProps<"svg"> {
+  children: ReactElement;
 }
 
-/**
- * Core UI icon.
- */
-const Icon = ({ as, size, ...rest }: Props) => {
-  const className = icon({ size });
-  const Component = panda(as);
+const PandaIcon = panda(ark.svg, icon);
 
-  return <Component className={className} {...rest} />;
+const Icon = ({ ...props }: Props) => {
+  return <PandaIcon asChild {...props} />;
 };
 
 export default Icon;

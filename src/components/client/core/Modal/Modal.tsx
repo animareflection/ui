@@ -65,7 +65,9 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
                       _hover: "bg.subtle",
                     }}
                   >
-                    <Icon as={CloseIcon} color="fg.default" />
+                    <Icon color="fg.default">
+                      <CloseIcon />
+                    </Icon>
                   </Button>
                 </ModalCloseTrigger>
               </ModalContent>
