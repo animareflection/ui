@@ -8,7 +8,11 @@ type Story = StoryObj<typeof NumberInput>;
 
 export const Default: Story = {
   render: () => (
-    <NumberInput label="NumberInput Label" placeholder="Placeholder" />
+    <NumberInput
+      inputLeftElement="🏝️"
+      label="NumberInput Label"
+      placeholder="Placeholder"
+    />
   ),
 };
 
@@ -39,12 +43,47 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
-      <NumberInput label="NumberInput Label" size="2xs" placeholder="0" />
-      <NumberInput label="NumberInput Label" size="xs" placeholder="0" />
-      <NumberInput label="NumberInput Label" size="sm" placeholder="0" />
-      <NumberInput label="NumberInput Label" placeholder="0" />
-      <NumberInput label="NumberInput Label" size="lg" placeholder="0" />
-      <NumberInput label="NumberInput Label" size="xl" placeholder="0" />
+      <NumberInput
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="NumberInput Label"
+        size="2xs"
+        placeholder="0"
+      />
+      <NumberInput
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="NumberInput Label"
+        size="xs"
+        placeholder="0"
+      />
+      <NumberInput
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="NumberInput Label"
+        size="sm"
+        placeholder="0"
+      />
+      <NumberInput
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="NumberInput Label"
+        placeholder="0"
+      />
+      <NumberInput
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="NumberInput Label"
+        size="lg"
+        placeholder="0"
+      />
+      <NumberInput
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="NumberInput Label"
+        size="xl"
+        placeholder="0"
+      />
     </Flex>
   ),
 };
