@@ -12,6 +12,8 @@ export interface Props
   label?: string;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
+  inputLeftElement?: ReactNode;
+  inputRightElement?: ReactNode;
 }
 
 const PandaInput = panda(ark.input, input);
@@ -24,6 +26,8 @@ const Input = ({
   label,
   leftAddon,
   rightAddon,
+  inputLeftElement,
+  inputRightElement,
   variant,
   size,
   ...rest
@@ -39,14 +43,29 @@ const Input = ({
             {leftAddon}
           </panda.div>
         )}
-        <PandaInput
-          className={classNames.input}
-          borderTopLeftRadius={leftAddon ? 0 : "sm"}
-          borderBottomLeftRadius={leftAddon ? 0 : "sm"}
-          borderTopRightRadius={rightAddon ? 0 : "sm"}
-          borderBottomRightRadius={rightAddon ? 0 : "sm"}
-          {...rest}
-        />
+        <Flex pos="relative" w="100%">
+          {inputLeftElement && (
+            <panda.div className={classNames.leftElement}>
+              {inputLeftElement}
+            </panda.div>
+          )}
+          <PandaInput
+            className={classNames.input}
+            borderTopLeftRadius={leftAddon ? 0 : "sm"}
+            borderBottomLeftRadius={leftAddon ? 0 : "sm"}
+            borderTopRightRadius={rightAddon ? 0 : "sm"}
+            borderBottomRightRadius={rightAddon ? 0 : "sm"}
+            pl={inputLeftElement ? 10 : 3}
+            pr={inputRightElement ? 10 : 3}
+            {...rest}
+          />
+          {inputRightElement && (
+            <panda.div className={classNames.rightElement}>
+              {inputRightElement}
+            </panda.div>
+          )}
+        </Flex>
+
         {rightAddon && (
           <panda.div className={classNames.addon} borderRightRadius="sm">
             {rightAddon}
