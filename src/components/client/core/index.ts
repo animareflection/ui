@@ -42,7 +42,10 @@ export type {
 } from "./Menu/Menu";
 export type { Props as ModalProps } from "./Modal/Modal";
 export type { Props as NumberInputProps } from "./NumberInput/NumberInput";
-export type { Props as RadioGroupProps } from "./RadioGroup/RadioGroup";
+export type {
+  Props as RadioGroupProps,
+  RadioGroupRecord,
+} from "./RadioGroup/RadioGroup";
 export type { Props as SliderProps, SliderMarkerRecord } from "./Slider/Slider";
 export type { Props as TabsProps, TabRecord } from "./Tabs/Tabs";
 export type { Props as ToastProps } from "./Toast/Toast";
