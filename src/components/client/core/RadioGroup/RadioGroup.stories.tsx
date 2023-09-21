@@ -1,6 +1,6 @@
 import { radioGroupState } from "./RadioGroup.spec";
 import { RadioGroup } from "components/client";
-import { HStack } from "generated/panda/jsx";
+import { HStack, VStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -24,6 +24,15 @@ export const Sizes: Story = {
       <RadioGroup items={ITEMS} />
       <RadioGroup size="lg" items={ITEMS} />
     </HStack>
+  ),
+};
+
+export const Orientation: Story = {
+  render: () => (
+    <VStack gap={8} alignItems="start">
+      <RadioGroup items={ITEMS} />
+      <RadioGroup orientation="horizontal" items={ITEMS} />
+    </VStack>
   ),
 };
 

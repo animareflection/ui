@@ -42,12 +42,12 @@ export const radioGroupRecipe = defineSlotRecipe({
         },
       },
       _disabled: {
-        borderColor: "border.disabled",
-        color: "fg.disabled",
+        borderColor: "border.subtle",
+        color: "fg.muted",
 
         _hover: {
           bg: "initial",
-          color: "fg.disabled",
+          color: "fg.subtle",
         },
       },
     },
@@ -65,7 +65,7 @@ export const radioGroupRecipe = defineSlotRecipe({
       fontWeight: "medium",
       textStyle: "md",
       _disabled: {
-        color: "fg.disabled",
+        color: "fg.subtle",
       },
     },
   },
