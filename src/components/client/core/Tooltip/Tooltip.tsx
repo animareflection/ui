@@ -45,15 +45,8 @@ const Tooltip = ({
           <Portal>
             <TooltipPositioner className={classNames.positioner}>
               {isOpen && (
-                <TooltipArrow
-                  bgColor={bgColor}
-                  rotate="45deg"
-                  className={classNames.arrow}
-                >
-                  <TooltipArrowTip
-                    rotate="-45deg"
-                    className={classNames.arrowTip}
-                  />
+                <TooltipArrow bgColor={bgColor} className={classNames.arrow}>
+                  <TooltipArrowTip className={classNames.arrowTip} />
                 </TooltipArrow>
               )}
               <TooltipContent bgColor={bgColor} className={classNames.content}>
