@@ -1,6 +1,5 @@
 import { FiMinus, FiPlus } from "react-icons/fi";
 
-import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import {
   NumberInput as PrimitiveNumberInput,
@@ -70,42 +69,12 @@ const NumberInput = ({
         )}
         {stepper && (
           <NumberInputControl className={classNames.stepper}>
-            <NumberInputDecrementTrigger asChild>
-              <Button
-                bgColor={{
-                  base: "border.default",
-                  _hover: "bg.subtle",
-                  _disabled: {
-                    _hover: "border.default",
-                  },
-                }}
-                p={0}
-                w="100%"
-                h="100%"
-                color="fg.default"
-                borderRadius="sm"
-              >
-                <Icon as={FiMinus} className={classNames.stepperIcon} />
-              </Button>
+            <NumberInputDecrementTrigger className={classNames.stepperTrigger}>
+              <Icon as={FiMinus} className={classNames.stepperIcon} />
             </NumberInputDecrementTrigger>
             <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
-            <NumberInputIncrementTrigger asChild>
-              <Button
-                bgColor={{
-                  base: "border.default",
-                  _hover: "bg.subtle",
-                  _disabled: {
-                    _hover: "border.default",
-                  },
-                }}
-                p={0}
-                w="100%"
-                h="100%"
-                color="fg.default"
-                borderRadius="sm"
-              >
-                <Icon as={FiPlus} className={classNames.stepperIcon} />
-              </Button>
+            <NumberInputIncrementTrigger className={classNames.stepperTrigger}>
+              <Icon as={FiPlus} className={classNames.stepperIcon} />
             </NumberInputIncrementTrigger>
           </NumberInputControl>
         )}

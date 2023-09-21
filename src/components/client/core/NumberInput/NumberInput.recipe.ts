@@ -3,7 +3,14 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const numberInputRecipe = defineSlotRecipe({
   className: "numberInput",
   description: "The styles for the NumberInput component",
-  slots: ["label", "input", "addon", "stepper", "stepperIcon"],
+  slots: [
+    "label",
+    "input",
+    "addon",
+    "stepper",
+    "stepperIcon",
+    "stepperTrigger",
+  ],
   base: {
     input: {
       appearance: "textfield",
@@ -64,6 +71,24 @@ export const numberInputRecipe = defineSlotRecipe({
       h: "100%",
       w: "100%",
       px: 3,
+    },
+    stepperTrigger: {
+      bgColor: {
+        base: "border.default",
+        _hover: "bg.subtle",
+        _disabled: {
+          _hover: "border.default",
+        },
+      },
+      cursor: {
+        base: "pointer",
+        _disabled: "not-allowed",
+      },
+      p: 0,
+      w: "100%",
+      h: "100%",
+      color: "fg.default",
+      borderRadius: "sm",
     },
   },
   variants: {
