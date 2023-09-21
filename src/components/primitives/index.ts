@@ -65,6 +65,12 @@ export {
   NumberInputScrubber,
 } from "./NumberInput/NumberInput";
 export {
+  default as RadioGroup,
+  RadioControl,
+  Radio,
+  RadioLabel,
+} from "./RadioGroup/RadioGroup";
+export {
   default as Flyout,
   FlyoutArrow,
   FlyoutArrowTip,
@@ -174,6 +180,12 @@ export type {
   NumberInputProps,
   NumberInputScrubberProps,
 } from "./NumberInput/NumberInput";
+export type {
+  RadioControlProps,
+  RadioLabelProps,
+  RadioProps,
+  RadioGroupProps,
+} from "./RadioGroup/RadioGroup";
 export type {
   FlyoutProps,
   FlyoutArrowProps,

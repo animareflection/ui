@@ -11,6 +11,7 @@ export { default as Flyout } from "./Flyout/Flyout";
 export { default as Menu } from "./Menu/Menu";
 export { default as Modal } from "./Modal/Modal";
 export { default as NumberInput } from "./NumberInput/NumberInput";
+export { default as RadioGroup } from "./RadioGroup/RadioGroup";
 export { default as Slider } from "./Slider/Slider";
 export { default as Tabs } from "./Tabs/Tabs";
 export { default as Toast } from "./Toast/Toast";
@@ -41,6 +42,7 @@ export type {
 } from "./Menu/Menu";
 export type { Props as ModalProps } from "./Modal/Modal";
 export type { Props as NumberInputProps } from "./NumberInput/NumberInput";
+export type { Props as RadioGroupProps } from "./RadioGroup/RadioGroup";
 export type { Props as SliderProps, SliderMarkerRecord } from "./Slider/Slider";
 export type { Props as TabsProps, TabRecord } from "./Tabs/Tabs";
 export type { Props as ToastProps } from "./Toast/Toast";

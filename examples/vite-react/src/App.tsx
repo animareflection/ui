@@ -27,6 +27,7 @@ import {
   MenuDemo,
   ModalDemo,
   NumberInputDemo,
+  RadioGroupDemo,
   SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
@@ -113,6 +114,7 @@ const App = () => (
       <ToastDemo />
       <CarouselDemo />
       <BreadcrumbDemo />
+      <RadioGroupDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">

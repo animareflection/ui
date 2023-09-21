@@ -17,6 +17,7 @@ import {
   MenuDemo,
   ModalDemo,
   NumberInputDemo,
+  RadioGroupDemo,
   SkeletonToggleDemo,
   SliderDemo,
   TabsDemo,
@@ -48,6 +49,7 @@ const ClientPage = () => (
     <BreadcrumbDemo />
     <ToastDemo />
     <CarouselDemo />
+    <RadioGroupDemo />
   </Flex>
 );
 

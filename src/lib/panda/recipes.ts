@@ -11,6 +11,7 @@ import { inputRecipe } from "../../components/client/core/Input/Input.recipe";
 import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
 import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
 import { numberInputRecipe } from "../../components/client/core/NumberInput/NumberInput.recipe";
+import { radioGroupRecipe } from "../../components/client/core/RadioGroup/RadioGroup.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
 import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
 import { toastRecipe } from "../../components/client/core/Toast/Toast.recipe";
@@ -49,6 +50,7 @@ export const slotRecipes = {
   menu: menuRecipe,
   modal: modalRecipe,
   numberInput: numberInputRecipe,
+  radioGroup: radioGroupRecipe,
   skeleton: skeletonRecipe,
   slider: sliderRecipe,
   tabs: tabsRecipe,
