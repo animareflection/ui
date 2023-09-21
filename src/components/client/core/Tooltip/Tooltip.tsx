@@ -12,12 +12,13 @@ import { tooltip } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
 import type { TooltipProps } from "components/primitives";
+import type { JsxStyleProps } from "generated/panda/types";
 import type { ReactNode } from "react";
 
 export interface Props extends TooltipProps {
   trigger: ReactNode;
   content: ReactNode;
-  bgColor?: string;
+  bgColor?: JsxStyleProps["bgColor"];
 }
 
 /**

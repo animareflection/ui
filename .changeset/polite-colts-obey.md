@@ -2,4 +2,4 @@
 "@animareflection/ui": patch
 ---
 
-Added `Tooltip` color prop for content and arrow slots
+Added `Tooltip` bgColor prop for content and arrow slots
