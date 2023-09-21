@@ -7,7 +7,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
-  render: () => <Input label="Input Label" placeholder="Placeholder" />,
+  render: () => (
+    <Input
+      label="Input Label"
+      placeholder="Placeholder"
+      inputLeftElement="🏝️"
+    />
+  ),
 };
 
 export const Variants: Story = {
@@ -30,12 +36,47 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
-      <Input label="Input Label" size="2xs" placeholder="Placeholder" />
-      <Input label="Input Label" size="xs" placeholder="Placeholder" />
-      <Input label="Input Label" size="sm" placeholder="Placeholder" />
-      <Input label="Input Label" placeholder="Placeholder" />
-      <Input label="Input Label" size="lg" placeholder="Placeholder" />
-      <Input label="Input Label" size="xl" placeholder="Placeholder" />
+      <Input
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="Input Label"
+        size="2xs"
+        placeholder="Placeholder"
+      />
+      <Input
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="Input Label"
+        size="xs"
+        placeholder="Placeholder"
+      />
+      <Input
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="Input Label"
+        size="sm"
+        placeholder="Placeholder"
+      />
+      <Input
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="Input Label"
+        placeholder="Placeholder"
+      />
+      <Input
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="Input Label"
+        size="lg"
+        placeholder="Placeholder"
+      />
+      <Input
+        inputLeftElement="🏝️"
+        inputRightElement="BEACH"
+        label="Input Label"
+        size="xl"
+        placeholder="Placeholder"
+      />
     </Flex>
   ),
 };
