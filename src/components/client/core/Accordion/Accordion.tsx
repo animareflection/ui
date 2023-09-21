@@ -64,7 +64,7 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                         <PlusIcon />
                       )
                     ) : (
-                      (icon as ReactElement) ?? <ChevronDownIcon />
+                      icon ?? <ChevronDownIcon />
                     )}
                   </Icon>
                 </Button>
