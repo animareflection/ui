@@ -23,11 +23,9 @@ export const Pathname: Story = {
       rootLabel="🏝️"
       pathname="ethereum/collections/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
       separator={
-        <Icon
-          as={ChevronRightIcon}
-          color="accent.emphasized"
-          aria-label="separator-icon"
-        />
+        <Icon color="accent.emphasized" aria-label="separator-icon">
+          <ChevronRightIcon />
+        </Icon>
       }
     />
   ),
@@ -38,11 +36,9 @@ export const Breadcrumbs: Story = {
     <Breadcrumb
       breadcrumbs={BREADCRUMBS}
       separator={
-        <Icon
-          as={ChevronRightIcon}
-          color="accent.emphasized"
-          aria-label="separator-icon"
-        />
+        <Icon color="accent.emphasized" aria-label="separator-icon">
+          <ChevronRightIcon />
+        </Icon>
       }
     />
   ),
