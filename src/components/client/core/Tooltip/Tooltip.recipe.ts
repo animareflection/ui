@@ -22,12 +22,13 @@ export const tooltipRecipe = defineSlotRecipe({
     },
     arrow: {
       "--arrow-size": "var(--sizes-3)",
-      "--arrow-background": "var(--colors-bg-default)",
+      rotate: "45deg",
     },
     arrowTip: {
       borderTopWidth: "1px",
       borderColor: "border.default",
       borderLeftWidth: "1px",
+      rotate: "-45deg",
     },
   },
 });
