@@ -28,7 +28,7 @@ export const radioGroupRecipe = defineSlotRecipe({
       width: "5",
       height: "5",
       _hover: {
-        background: "bg.subtle",
+        background: "bg.muted",
       },
       _checked: {
         background: "accent.default",
