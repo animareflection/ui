@@ -24,6 +24,7 @@ export type {
 } from "./Accordion/Accordion";
 export type { Props as BannerProps } from "./Banner/Banner";
 export type { Props as BreadcrumbProps } from "./Breadcrumb/Breadcrumb";
+export type { BreadcrumbRecord } from "./Breadcrumb/Breadcrumb";
 export type { Props as ButtonProps } from "./Button/Button";
 export type { Props as CarouselProps } from "./Carousel/Carousel";
 export type { Props as CheckboxProps } from "./Checkbox/Checkbox";

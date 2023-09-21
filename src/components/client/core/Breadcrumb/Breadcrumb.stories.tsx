@@ -4,14 +4,23 @@ import { breadcrumbState } from "./Breadcrumb.spec";
 import { Breadcrumb } from "components/client";
 import Icon from "components/client/core/Icon/Icon";
 
+import type { BreadcrumbRecord } from "./Breadcrumb";
 import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+const BREADCRUMBS: BreadcrumbRecord[] = [
+  { label: "Home", href: "#" },
+  { label: "Apparel", href: "#" },
+  { label: "Casual", href: "#" },
+  { label: "Topwear", href: "#" },
+  { label: "Shirts", href: "#" },
+];
+
+export const Pathname: Story = {
   render: () => (
     <Breadcrumb
-      rootBreadcrumb="🏝️"
+      rootLabel="🏝️"
       pathname="ethereum/collections/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
       separator={
         <Icon
@@ -24,12 +33,10 @@ export const Default: Story = {
   ),
 };
 
-export const StartingSegment: Story = {
+export const Breadcrumbs: Story = {
   render: () => (
     <Breadcrumb
-      rootBreadcrumb="🏝️"
-      pathname="ethereum/collections/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
-      startingSegment="collections"
+      breadcrumbs={BREADCRUMBS}
       separator={
         <Icon
           as={ChevronRightIcon}
@@ -42,7 +49,7 @@ export const StartingSegment: Story = {
 };
 
 export const BreadcrumbState: Story = {
-  ...Default,
+  ...Pathname,
   play: breadcrumbState,
   name: "[TEST] Breadcrumb State",
   tags: ["test"],

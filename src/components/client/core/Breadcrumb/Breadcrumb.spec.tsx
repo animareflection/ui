@@ -13,30 +13,23 @@ export const breadcrumbState = async <R extends Renderer = ReactRenderer>({
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  const baseUrl = await canvas.findByText("🏝️");
-  await expect(baseUrl).toBeInTheDocument();
-
-  await step(
-    "It should display each address segment separated by the SeparatorIcon",
-    async () => {
-      const segment1 = canvas.getByText("ethereum");
-      const segment2 = canvas.getByText("collections");
-      const segment3 = canvas.getByText(
-        "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
-      );
-      canvas;
-
-      await expect(segment1).toBeInTheDocument();
-      await expect(segment2).toBeInTheDocument();
-      await expect(segment3).toBeInTheDocument();
-    },
+  const rootSegment = canvas.getByText("🏝️");
+  const segment1 = canvas.getByText(/ethereum/i);
+  const segment2 = canvas.getByText(/collections/i);
+  const segment3 = canvas.getByText(
+    "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
   );
 
-  await step(
-    "It should display each address segment separated by the SeparatorIcon",
-    async () => {
-      const separatorIcons = canvas.getAllByLabelText("separator-icon");
-      void expect(separatorIcons).toHaveLength(3);
-    },
-  );
+  const separatorIcons = canvas.getAllByLabelText("separator-icon");
+
+  await step("It should display each pathname segment", async () => {
+    await expect(rootSegment).toBeInTheDocument();
+    await expect(segment1).toBeInTheDocument();
+    await expect(segment2).toBeInTheDocument();
+    await expect(segment3).toBeInTheDocument();
+  });
+
+  await step("It should display correct number of SeparatorIcons", async () => {
+    await expect(separatorIcons).toHaveLength(3);
+  });
 };

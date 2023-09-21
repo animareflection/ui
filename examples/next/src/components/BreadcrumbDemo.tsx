@@ -1,16 +1,28 @@
-import { usePathname } from "next/navigation";
-import { Breadcrumb, Icon } from "@animareflection/ui/client";
+import { Breadcrumb, BreadcrumbRecord, Icon } from "@animareflection/ui/client";
 import { FiChevronRight as ChevronRightIcon } from "react-icons/fi";
 
 import { Wrapper } from "components";
 
+const BREADCRUMBS: BreadcrumbRecord[] = [
+  { label: "Home", href: "#" },
+  { label: "Apparel", href: "#" },
+  { label: "Casual", href: "#" },
+  { label: "Topwear", href: "#" },
+  { label: "Shirts", href: "#" },
+];
+
 const BreadcrumbDemo = () => {
-  const pathname = usePathname();
   return (
     <Wrapper title="Breadcrumb">
       <Breadcrumb
-        pathname={pathname}
-        separator={<Icon as={ChevronRightIcon} color="accent.emphasized" />}
+        breadcrumbs={BREADCRUMBS}
+        separator={
+          <Icon
+            as={ChevronRightIcon}
+            color="accent.emphasized"
+            aria-label="separator-icon"
+          />
+        }
       />
     </Wrapper>
   );
