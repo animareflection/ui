@@ -12,7 +12,7 @@ export interface Props
   // TODO: remove children omit once `@ark-ui/react` fixes required children type
   extends Omit<CheckboxProps, "children">,
     CheckboxVariantProps {
-  label: string;
+  label?: string;
 }
 
 /**
@@ -42,7 +42,9 @@ const Checkbox = ({ size, label, ...rest }: Props) => {
               </svg>
             )}
           </CheckboxControl>
-          <CheckboxLabel className={classNames.label}>{label}</CheckboxLabel>
+          {label && (
+            <CheckboxLabel className={classNames.label}>{label}</CheckboxLabel>
+          )}
         </>
       )}
     </PrimitiveCheckbox>
