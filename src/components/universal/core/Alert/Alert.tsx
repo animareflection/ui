@@ -20,6 +20,7 @@ const Alert = ({ icon, title, description, ...rest }: Props) => {
       className={classNames.root}
       gap={4}
       direction={{ base: "column", sm: "row" }}
+      align={{ sm: "center" }}
       {...rest}
     >
       {icon && <Icon className={classNames.icon}>{icon}</Icon>}

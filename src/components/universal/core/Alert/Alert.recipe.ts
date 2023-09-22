@@ -9,9 +9,9 @@ export const alertRecipe = defineSlotRecipe({
       backgroundColor: "bg.default",
       borderRadius: "md",
       borderWidth: "1px",
+      borderColor: "border.emphasized",
       boxShadow: "md",
       p: 4,
-      textStyle: "sm",
       w: "full",
     },
     icon: {
@@ -22,6 +22,7 @@ export const alertRecipe = defineSlotRecipe({
     },
     description: {
       color: "fg.muted",
+      textStyle: "sm",
     },
   },
 });
