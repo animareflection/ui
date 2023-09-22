@@ -21,6 +21,7 @@ import {
   SkeletonToggleDemo,
   SliderDemo,
   TabsDemo,
+  TextareaDemo,
   ToastDemo,
   ToggleDemo,
   TooltipDemo,
@@ -44,6 +45,7 @@ const ClientPage = () => (
     <BannerDemo />
     <InputDemo />
     <NumberInputDemo />
+    <TextareaDemo />
     <FlyoutDemo />
     <TooltipDemo />
     <BreadcrumbDemo />

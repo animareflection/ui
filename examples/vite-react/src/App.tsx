@@ -32,6 +32,7 @@ import {
   SliderDemo,
   SpinnerDemo,
   TabsDemo,
+  TextareaDemo,
   ToastDemo,
   ToggleDemo,
   TooltipDemo,
@@ -109,6 +110,7 @@ const App = () => (
       <BannerDemo />
       <InputDemo />
       <NumberInputDemo />
+      <TextareaDemo />
       <FlyoutDemo />
       <TooltipDemo />
       <ToastDemo />

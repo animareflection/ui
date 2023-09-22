@@ -14,6 +14,7 @@ import { numberInputRecipe } from "../../components/client/core/NumberInput/Numb
 import { radioGroupRecipe } from "../../components/client/core/RadioGroup/RadioGroup.recipe";
 import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
 import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
+import { textareaRecipe } from "../../components/client/core/Textarea/Textarea.recipe";
 import { toastRecipe } from "../../components/client/core/Toast/Toast.recipe";
 import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe";
 import { tooltipRecipe } from "../../components/client/core/Tooltip/Tooltip.recipe";
@@ -54,6 +55,7 @@ export const slotRecipes = {
   skeleton: skeletonRecipe,
   slider: sliderRecipe,
   tabs: tabsRecipe,
+  textarea: textareaRecipe,
   toast: toastRecipe,
   toggle: toggleRecipe,
   tooltip: tooltipRecipe,

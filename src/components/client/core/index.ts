@@ -14,6 +14,7 @@ export { default as NumberInput } from "./NumberInput/NumberInput";
 export { default as RadioGroup } from "./RadioGroup/RadioGroup";
 export { default as Slider } from "./Slider/Slider";
 export { default as Tabs } from "./Tabs/Tabs";
+export { default as Textarea } from "./Textarea/Textarea";
 export { default as Toast } from "./Toast/Toast";
 export { default as Toaster } from "./Toast/Toaster";
 export { default as Toggle } from "./Toggle/Toggle";
@@ -48,6 +49,7 @@ export type {
 } from "./RadioGroup/RadioGroup";
 export type { Props as SliderProps, SliderMarkerRecord } from "./Slider/Slider";
 export type { Props as TabsProps, TabRecord } from "./Tabs/Tabs";
+export type { Props as TextareaProps } from "./Textarea/Textarea";
 export type { Props as ToastProps } from "./Toast/Toast";
 export type { Props as ToasterProps } from "./Toast/Toaster";
 export type { Props as ToggleProps } from "./Toggle/Toggle";
