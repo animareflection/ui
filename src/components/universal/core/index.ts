@@ -1,3 +1,4 @@
+export { default as Alert } from "./Alert/Alert";
 export { default as Badge } from "./Badge/Badge";
 export { default as Card, CardHeader, CardBody, CardFooter } from "./Card/Card";
 export { default as Image } from "./Image/Image";
@@ -6,6 +7,7 @@ export { default as Kbd } from "./Kbd/Kbd";
 export { default as Spinner } from "./Spinner/Spinner";
 export { default as Text } from "./Text/Text";
 
+export type { Props as AlertProps } from "./Alert/Alert";
 export type {
   CardProps,
   CardHeaderProps,
