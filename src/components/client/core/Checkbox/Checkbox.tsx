@@ -7,12 +7,13 @@ import { checkbox } from "generated/panda/recipes";
 
 import type { CheckboxProps } from "components/primitives";
 import type { CheckboxVariantProps } from "generated/panda/recipes";
+import type { ReactNode } from "react";
 
 export interface Props
   // TODO: remove children omit once `@ark-ui/react` fixes required children type
   extends Omit<CheckboxProps, "children">,
     CheckboxVariantProps {
-  label?: string;
+  label?: ReactNode;
 }
 
 /**

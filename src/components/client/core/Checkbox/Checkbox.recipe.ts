@@ -6,6 +6,7 @@ export const checkboxRecipe = defineSlotRecipe({
   slots: ["root", "control", "label"],
   base: {
     root: {
+      w: "100%",
       alignItems: "center",
       display: "flex",
       gap: 3,
@@ -14,6 +15,7 @@ export const checkboxRecipe = defineSlotRecipe({
       color: "fg.emphasized",
       fontWeight: "medium",
       textStyle: "md",
+      flex: 1,
     },
     control: {
       alignItems: "center",
