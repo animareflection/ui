@@ -14,6 +14,7 @@ const Skeleton = ({ isLoaded, variant, children, ...rest }: Props) => {
   return (
     <Flex className={classNames.root} {...rest}>
       <panda.div
+        data-testid="skeleton"
         className={classNames.skeleton}
         visibility={isLoaded ? "hidden" : "visible"}
       />
