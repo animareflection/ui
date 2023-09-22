@@ -4,6 +4,7 @@ export { default as Image } from "./Image/Image";
 export { default as Skeleton } from "./Skeleton/Skeleton";
 export { default as Kbd } from "./Kbd/Kbd";
 export { default as Spinner } from "./Spinner/Spinner";
+export { default as Stat } from "./Stat/Stat";
 export { default as Text } from "./Text/Text";
 
 export type {
@@ -16,4 +17,5 @@ export type { Props as ImageProps } from "./Image/Image";
 export type { Props as SkeletonProps } from "./Skeleton/Skeleton";
 export type { Props as KbdProps } from "./Kbd/Kbd";
 export type { Props as SpinnerProps } from "./Spinner/Spinner";
+export type { Props as StatProps } from "./Stat/Stat";
 export type { Props as TextProps } from "./Text/Text";
