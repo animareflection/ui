@@ -2,7 +2,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 
 export const checkboxRecipe = defineSlotRecipe({
   className: "checkbox",
-  description: "The styles for the Accordion component",
+  description: "The styles for the Checkbox component",
   slots: ["root", "control", "label"],
   base: {
     root: {

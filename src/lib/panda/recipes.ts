@@ -18,6 +18,7 @@ import { textareaRecipe } from "../../components/client/core/Textarea/Textarea.r
 import { toastRecipe } from "../../components/client/core/Toast/Toast.recipe";
 import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe";
 import { tooltipRecipe } from "../../components/client/core/Tooltip/Tooltip.recipe";
+import { alertRecipe } from "../../components/universal/core/Alert/Alert.recipe";
 import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
 import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
@@ -41,6 +42,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  alert: alertRecipe,
   carousel: carouselRecipe,
   breadcrumb: breadcrumbRecipe,
   checkbox: checkboxRecipe,
