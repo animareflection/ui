@@ -1,5 +1,6 @@
 import { FiHeart } from "react-icons/fi";
 
+import { statState } from "./Stat.spec";
 import { Stat, Text } from "components/universal";
 import { VStack } from "generated/panda/jsx";
 
@@ -9,7 +10,7 @@ type Story = StoryObj<typeof Image>;
 
 export const Default: Story = {
   render: () => (
-    <Stat icon={<FiHeart />} minW={32} title="Likes">
+    <Stat icon={<FiHeart data-testid="icon" />} minW={32} title="Likes">
       <Text>49</Text>
     </Stat>
   ),
@@ -29,6 +30,13 @@ export const Sizes: Story = {
       </Stat>
     </VStack>
   ),
+};
+
+export const StatState: Story = {
+  ...Default,
+  play: statState,
+  name: "[TEST] Stat State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
