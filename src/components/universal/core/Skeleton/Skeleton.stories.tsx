@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { skeletonState } from "./Skeleton.spec";
 import { Button } from "components/client";
 import { Skeleton, Text } from "components/universal";
 import { Flex } from "generated/panda/jsx";
@@ -20,7 +21,12 @@ const SkeletonToggle = () => {
           minim veniam.
         </Text>
       </Skeleton>
-      <Button variant="ghost" p={2} onClick={() => setIsLoaded(!isLoaded)}>
+      <Button
+        data-testid="toggle"
+        variant="ghost"
+        p={2}
+        onClick={() => setIsLoaded(!isLoaded)}
+      >
         Toggle Skeleton
       </Button>
     </Flex>
@@ -44,6 +50,13 @@ export const TextVariant: Story = {
       <Skeleton variant="text" w="2/5" />
     </Flex>
   ),
+};
+
+export const SkeletonState: Story = {
+  ...Toggle,
+  play: skeletonState,
+  name: "[TEST] Skeleton State",
+  tags: ["test"],
 };
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
