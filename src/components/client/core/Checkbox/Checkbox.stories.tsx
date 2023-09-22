@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { checkboxState } from "./Checkbox.spec";
 import { Checkbox } from "components/client";
+import { Badge, Text } from "components/universal";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -24,16 +26,37 @@ export const Controlled: Story = {
   render: () => <ControlledCheckbox />,
 };
 
-export const Small: Story = {
-  render: () => <Checkbox size="sm" label="Label" />,
-};
-
-export const Medium: Story = {
-  render: () => <Checkbox label="Label" />,
-};
-
-export const Large: Story = {
-  render: () => <Checkbox size="lg" label="Label" />,
+export const Sizes: Story = {
+  render: () => (
+    <Flex direction="column" gap={2} maxW="xs">
+      <Checkbox
+        size="sm"
+        label={
+          <Flex justify="space-between" align="center">
+            <Text color="fg.emphasized">Small</Text>
+            <Badge size="sm">SM</Badge>
+          </Flex>
+        }
+      />
+      <Checkbox
+        label={
+          <Flex justify="space-between" align="center">
+            <Text color="fg.emphasized">Medium</Text>
+            <Badge>MD</Badge>
+          </Flex>
+        }
+      />
+      <Checkbox
+        size="lg"
+        label={
+          <Flex justify="space-between" align="center">
+            <Text color="fg.emphasized">Large</Text>
+            <Badge size="lg">LG</Badge>
+          </Flex>
+        }
+      />
+    </Flex>
+  ),
 };
 
 export const CheckboxState: Story = {
