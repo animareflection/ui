@@ -4,16 +4,17 @@ import { Stack } from "generated/panda/jsx";
 import { alert } from "generated/panda/recipes";
 
 import type { StackProps } from "generated/panda/jsx";
+import type { AlertVariantProps } from "generated/panda/recipes";
 import type { ReactElement } from "react";
 
-export interface Props extends StackProps {
+export interface Props extends StackProps, AlertVariantProps {
   icon?: ReactElement;
   title: string;
   description?: string;
 }
 
-const Alert = ({ icon, title, description, ...rest }: Props) => {
-  const classNames = alert();
+const Alert = ({ variant, icon, title, description, ...rest }: Props) => {
+  const classNames = alert({ variant });
 
   return (
     <Stack

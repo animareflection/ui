@@ -13,6 +13,7 @@ export const Default: Story = {
       icon={<FiInfo />}
       title="Browser update available"
       description="For the best experience, please update your browser."
+      variant="warning"
     />
   ),
 };

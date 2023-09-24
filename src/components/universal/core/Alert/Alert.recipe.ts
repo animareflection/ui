@@ -25,4 +25,13 @@ export const alertRecipe = defineSlotRecipe({
       textStyle: "sm",
     },
   },
+  variants: {
+    variant: {
+      warning: {
+        root: {
+          backgroundColor: "yellow.100",
+        },
+      },
+    },
+  },
 });
