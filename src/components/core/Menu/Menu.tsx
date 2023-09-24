@@ -1,20 +1,20 @@
 import { Portal } from "@ark-ui/react";
 
 import {
-  Menu as PrimitiveMenu,
-  MenuContent,
-  MenuPositioner,
-  MenuTrigger,
-  MenuItem,
-  MenuSeparator,
-  MenuItemGroup,
-  MenuItemGroupLabel,
-  MenuTriggerItem,
+  PrimitiveMenu,
+  PrimitiveMenuContent,
+  PrimitiveMenuPositioner,
+  PrimitiveMenuTrigger,
+  PrimitiveMenuItem,
+  PrimitiveMenuSeparator,
+  PrimitiveMenuItemGroup,
+  PrimitiveMenuItemGroupLabel,
+  PrimitiveMenuTriggerItem,
 } from "components/primitives";
 import { button, menu } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { MenuProps } from "components/primitives";
+import type { PrimitiveMenuProps } from "components/primitives";
 import type {
   ButtonVariantProps,
   MenuVariantProps,
@@ -34,7 +34,7 @@ export interface MenuItemGroupRecord {
   items: MenuItemRecord[];
 }
 
-export interface Props extends MenuProps, MenuVariantProps {
+export interface Props extends PrimitiveMenuProps, MenuVariantProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
   triggerVariant?: ButtonVariantProps["variant"];
@@ -64,31 +64,33 @@ const Menu = ({
       {(ctx) => (
         <>
           {trigger && (
-            <MenuTrigger className={button({ variant: triggerVariant })}>
+            <PrimitiveMenuTrigger
+              className={button({ variant: triggerVariant })}
+            >
               {trigger}
-            </MenuTrigger>
+            </PrimitiveMenuTrigger>
           )}
           {triggerItem && (
-            <MenuTriggerItem className={classNames.triggerItem}>
+            <PrimitiveMenuTriggerItem className={classNames.triggerItem}>
               {triggerItem}
-            </MenuTriggerItem>
+            </PrimitiveMenuTriggerItem>
           )}
           <Portal>
-            <MenuPositioner>
-              <MenuContent className={classNames.content}>
+            <PrimitiveMenuPositioner>
+              <PrimitiveMenuContent className={classNames.content}>
                 {groups?.map(({ id, label, separator, items }) => (
-                  <MenuItemGroup
+                  <PrimitiveMenuItemGroup
                     key={id}
                     id={id}
                     className={classNames.itemGroup}
                   >
                     {label && (
-                      <MenuItemGroupLabel
+                      <PrimitiveMenuItemGroupLabel
                         htmlFor={id}
                         className={classNames.itemGroupLabel}
                       >
                         {label}
-                      </MenuItemGroupLabel>
+                      </PrimitiveMenuItemGroupLabel>
                     )}
                     {items.map(({ id, child, subMenu }) => {
                       if (subMenu) {
@@ -96,20 +98,26 @@ const Menu = ({
                         return child;
                       }
                       return (
-                        <MenuItem key={id} id={id} className={classNames.item}>
+                        <PrimitiveMenuItem
+                          key={id}
+                          id={id}
+                          className={classNames.item}
+                        >
                           {child}
-                        </MenuItem>
+                        </PrimitiveMenuItem>
                       );
                     })}
                     {separator && (
-                      <MenuSeparator className={classNames.separator} />
+                      <PrimitiveMenuSeparator
+                        className={classNames.separator}
+                      />
                     )}
-                  </MenuItemGroup>
+                  </PrimitiveMenuItemGroup>
                 ))}
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
-              </MenuContent>
-            </MenuPositioner>
+              </PrimitiveMenuContent>
+            </PrimitiveMenuPositioner>
           </Portal>
         </>
       )}

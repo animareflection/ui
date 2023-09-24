@@ -4,22 +4,22 @@ import { FiX as CloseIcon } from "react-icons/fi";
 import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
 import {
-  Drawer as PrimitiveDrawer,
-  DrawerBackdrop,
-  DrawerCloseTrigger,
-  DrawerContainer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerTitle,
-  DrawerTrigger,
+  PrimitiveDrawer,
+  PrimitiveDrawerBackdrop,
+  PrimitiveDrawerCloseTrigger,
+  PrimitiveDrawerContainer,
+  PrimitiveDrawerContent,
+  PrimitiveDrawerDescription,
+  PrimitiveDrawerTitle,
+  PrimitiveDrawerTrigger,
 } from "components/primitives";
 import { drawer } from "generated/panda/recipes";
 
-import type { DrawerProps } from "components/primitives";
+import type { PrimitiveDrawerProps } from "components/primitives";
 import type { DrawerVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
-export interface Props extends DrawerProps, DrawerVariantProps {
+export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
   trigger: ReactNode;
   title?: string;
   description?: string;
@@ -42,30 +42,32 @@ const Drawer = ({
     <PrimitiveDrawer {...rest}>
       {(ctx) => (
         <>
-          <DrawerTrigger asChild>{trigger}</DrawerTrigger>
+          <PrimitiveDrawerTrigger asChild>{trigger}</PrimitiveDrawerTrigger>
           <Portal>
-            <DrawerBackdrop className={classNames.backdrop} />
-            <DrawerContainer className={classNames.container}>
-              <DrawerContent
+            <PrimitiveDrawerBackdrop className={classNames.backdrop} />
+            <PrimitiveDrawerContainer className={classNames.container}>
+              <PrimitiveDrawerContent
                 lazyMount
                 unmountOnExit
                 className={classNames.content}
               >
                 {title && (
-                  <DrawerTitle className={classNames.title}>
+                  <PrimitiveDrawerTitle className={classNames.title}>
                     {title}
-                  </DrawerTitle>
+                  </PrimitiveDrawerTitle>
                 )}
                 {description && (
-                  <DrawerDescription className={classNames.description}>
+                  <PrimitiveDrawerDescription
+                    className={classNames.description}
+                  >
                     {description}
-                  </DrawerDescription>
+                  </PrimitiveDrawerDescription>
                 )}
 
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <DrawerCloseTrigger asChild>
+                <PrimitiveDrawerCloseTrigger asChild>
                   <Button
                     pos="absolute"
                     top={2}
@@ -80,9 +82,9 @@ const Drawer = ({
                       <CloseIcon />
                     </Icon>
                   </Button>
-                </DrawerCloseTrigger>
-              </DrawerContent>
-            </DrawerContainer>
+                </PrimitiveDrawerCloseTrigger>
+              </PrimitiveDrawerContent>
+            </PrimitiveDrawerContainer>
           </Portal>
         </>
       )}

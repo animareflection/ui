@@ -1,21 +1,21 @@
 import { Portal } from "@ark-ui/react";
 
 import {
-  Tooltip as PrimitiveTooltip,
-  TooltipArrow,
-  TooltipArrowTip,
-  TooltipContent,
-  TooltipPositioner,
-  TooltipTrigger,
+  PrimitiveTooltip,
+  PrimitiveTooltipArrow,
+  PrimitiveTooltipArrowTip,
+  PrimitiveTooltipContent,
+  PrimitiveTooltipPositioner,
+  PrimitiveTooltipTrigger,
 } from "components/primitives";
 import { tooltip } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { TooltipProps } from "components/primitives";
+import type { PrimitiveTooltipProps } from "components/primitives";
 import type { JsxStyleProps } from "generated/panda/types";
 import type { ReactNode } from "react";
 
-export interface Props extends TooltipProps {
+export interface Props extends PrimitiveTooltipProps {
   trigger: ReactNode;
   content: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
@@ -42,18 +42,24 @@ const Tooltip = ({
     <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
       {({ isOpen }) => (
         <>
-          <TooltipTrigger asChild>{trigger}</TooltipTrigger>
+          <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
           <Portal>
-            <TooltipPositioner className={classNames.positioner}>
+            <PrimitiveTooltipPositioner className={classNames.positioner}>
               {isOpen && (
-                <TooltipArrow bgColor={bgColor} className={classNames.arrow}>
-                  <TooltipArrowTip className={classNames.arrowTip} />
-                </TooltipArrow>
+                <PrimitiveTooltipArrow
+                  bgColor={bgColor}
+                  className={classNames.arrow}
+                >
+                  <PrimitiveTooltipArrowTip className={classNames.arrowTip} />
+                </PrimitiveTooltipArrow>
               )}
-              <TooltipContent bgColor={bgColor} className={classNames.content}>
+              <PrimitiveTooltipContent
+                bgColor={bgColor}
+                className={classNames.content}
+              >
                 {content}
-              </TooltipContent>
-            </TooltipPositioner>
+              </PrimitiveTooltipContent>
+            </PrimitiveTooltipPositioner>
           </Portal>
         </>
       )}

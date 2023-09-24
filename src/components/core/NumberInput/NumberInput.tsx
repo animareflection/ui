@@ -2,22 +2,24 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
 import {
-  NumberInput as PrimitiveNumberInput,
-  NumberInputControl,
-  NumberInputDecrementTrigger,
-  NumberInputIncrementTrigger,
-  NumberInputInput,
-  NumberInputLabel,
-  NumberInputScrubber,
+  PrimitiveNumberInput,
+  PrimitiveNumberInputControl,
+  PrimitiveNumberInputDecrementTrigger,
+  PrimitiveNumberInputIncrementTrigger,
+  PrimitiveNumberInputInput,
+  PrimitiveNumberInputLabel,
+  PrimitiveNumberInputScrubber,
 } from "components/primitives";
 import { Flex, panda } from "generated/panda/jsx";
 import { numberInput } from "generated/panda/recipes";
 
-import type { NumberInputProps } from "components/primitives";
+import type { PrimitiveNumberInputProps } from "components/primitives";
 import type { NumberInputVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
-export interface Props extends NumberInputProps, NumberInputVariantProps {
+export interface Props
+  extends PrimitiveNumberInputProps,
+    NumberInputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
@@ -46,11 +48,11 @@ const NumberInput = ({
 
   return (
     <PrimitiveNumberInput {...rest}>
-      <NumberInputScrubber />
+      <PrimitiveNumberInputScrubber />
       {label && (
-        <NumberInputLabel className={classNames.label}>
+        <PrimitiveNumberInputLabel className={classNames.label}>
           {label}
-        </NumberInputLabel>
+        </PrimitiveNumberInputLabel>
       )}
       <Flex>
         {leftAddon && (
@@ -64,7 +66,7 @@ const NumberInput = ({
               {inputLeftElement}
             </panda.div>
           )}
-          <NumberInputInput
+          <PrimitiveNumberInputInput
             className={classNames.input}
             placeholder={placeholder}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}
@@ -86,19 +88,23 @@ const NumberInput = ({
           </panda.div>
         )}
         {stepper && (
-          <NumberInputControl className={classNames.stepper}>
-            <NumberInputDecrementTrigger className={classNames.stepperTrigger}>
+          <PrimitiveNumberInputControl className={classNames.stepper}>
+            <PrimitiveNumberInputDecrementTrigger
+              className={classNames.stepperTrigger}
+            >
               <Icon className={classNames.stepperIcon}>
                 <FiMinus />
               </Icon>
-            </NumberInputDecrementTrigger>
+            </PrimitiveNumberInputDecrementTrigger>
             <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
-            <NumberInputIncrementTrigger className={classNames.stepperTrigger}>
+            <PrimitiveNumberInputIncrementTrigger
+              className={classNames.stepperTrigger}
+            >
               <Icon className={classNames.stepperIcon}>
                 <FiPlus />
               </Icon>
-            </NumberInputIncrementTrigger>
-          </NumberInputControl>
+            </PrimitiveNumberInputIncrementTrigger>
+          </PrimitiveNumberInputControl>
         )}
       </Flex>
     </PrimitiveNumberInput>

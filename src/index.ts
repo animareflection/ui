@@ -16,6 +16,7 @@ export type { ToastPosition } from "react-hot-toast";
 export { default as anirefPreset } from "lib/panda/aniref.preset";
 
 export * from "components/core";
+export * from "components/primitives";
 export * from "components/utility";
 
 export * from "lib/hooks";

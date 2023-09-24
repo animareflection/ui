@@ -4,21 +4,21 @@ import { FiX as CloseIcon } from "react-icons/fi";
 import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
 import {
-  Modal as PrimitiveModal,
-  ModalBackdrop,
-  ModalCloseTrigger,
-  ModalContainer,
-  ModalContent,
-  ModalDescription,
-  ModalTitle,
-  ModalTrigger,
+  PrimitiveModal,
+  PrimitiveModalBackdrop,
+  PrimitiveModalCloseTrigger,
+  PrimitiveModalContainer,
+  PrimitiveModalContent,
+  PrimitiveModalDescription,
+  PrimitiveModalTitle,
+  PrimitiveModalTrigger,
 } from "components/primitives";
 import { modal } from "generated/panda/recipes";
 
-import type { ModalProps } from "components/primitives";
+import type { PrimitiveModalProps } from "components/primitives";
 import type { ReactNode } from "react";
 
-export interface Props extends ModalProps {
+export interface Props extends PrimitiveModalProps {
   trigger: ReactNode;
   title?: string;
   description?: string;
@@ -34,28 +34,30 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
     <PrimitiveModal {...rest}>
       {(ctx) => (
         <>
-          <ModalTrigger asChild>{trigger}</ModalTrigger>
+          <PrimitiveModalTrigger asChild>{trigger}</PrimitiveModalTrigger>
           <Portal>
-            <ModalBackdrop className={classNames.backdrop} />
-            <ModalContainer className={classNames.container}>
-              <ModalContent
+            <PrimitiveModalBackdrop className={classNames.backdrop} />
+            <PrimitiveModalContainer className={classNames.container}>
+              <PrimitiveModalContent
                 lazyMount
                 unmountOnExit
                 className={classNames.content}
               >
                 {title && (
-                  <ModalTitle className={classNames.title}>{title}</ModalTitle>
+                  <PrimitiveModalTitle className={classNames.title}>
+                    {title}
+                  </PrimitiveModalTitle>
                 )}
                 {description && (
-                  <ModalDescription className={classNames.description}>
+                  <PrimitiveModalDescription className={classNames.description}>
                     {description}
-                  </ModalDescription>
+                  </PrimitiveModalDescription>
                 )}
 
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <ModalCloseTrigger asChild>
+                <PrimitiveModalCloseTrigger asChild>
                   <Button
                     pos="absolute"
                     top={2}
@@ -69,9 +71,9 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
                       <CloseIcon />
                     </Icon>
                   </Button>
-                </ModalCloseTrigger>
-              </ModalContent>
-            </ModalContainer>
+                </PrimitiveModalCloseTrigger>
+              </PrimitiveModalContent>
+            </PrimitiveModalContainer>
           </Portal>
         </>
       )}

@@ -7,14 +7,14 @@ import {
 import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
 import {
-  Accordion as PrimitiveAccordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
+  PrimitiveAccordion,
+  PrimitiveAccordionItem,
+  PrimitiveAccordionTrigger,
+  PrimitiveAccordionContent,
 } from "components/primitives";
 import { accordion } from "generated/panda/recipes";
 
-import type { AccordionProps } from "components/primitives";
+import type { PrimitiveAccordionProps } from "components/primitives";
 import type { ReactElement, ReactNode } from "react";
 
 export interface AccordionItemRecord {
@@ -25,7 +25,7 @@ export interface AccordionItemRecord {
   icon?: ReactElement;
 }
 
-export interface Props extends AccordionProps {
+export interface Props extends PrimitiveAccordionProps {
   items: AccordionItemRecord[];
   plusMinus?: boolean;
 }
@@ -44,10 +44,10 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
       {...rest}
     >
       {items.map(({ id, value, triggerLabel, content, icon }) => (
-        <AccordionItem key={id} value={value}>
+        <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
-              <AccordionTrigger className={classNames.trigger} asChild>
+              <PrimitiveAccordionTrigger className={classNames.trigger} asChild>
                 <Button w="full" borderBottomRadius={isOpen ? "unset" : "md"}>
                   {triggerLabel ?? value}
                   <Icon
@@ -68,17 +68,17 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                     )}
                   </Icon>
                 </Button>
-              </AccordionTrigger>
-              <AccordionContent
+              </PrimitiveAccordionTrigger>
+              <PrimitiveAccordionContent
                 lazyMount
                 unmountOnExit
                 className={classNames.content}
               >
                 {content}
-              </AccordionContent>
+              </PrimitiveAccordionContent>
             </>
           )}
-        </AccordionItem>
+        </PrimitiveAccordionItem>
       ))}
     </PrimitiveAccordion>
   );

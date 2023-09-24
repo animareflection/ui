@@ -4,23 +4,23 @@ import { FiX as CloseIcon } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
 import {
-  Flyout as PrimitiveFlyout,
-  FlyoutArrow,
-  FlyoutArrowTip,
-  FlyoutCloseTrigger,
-  FlyoutContent,
-  FlyoutDescription,
-  FlyoutPositioner,
-  FlyoutTitle,
-  FlyoutTrigger,
+  PrimitiveFlyout,
+  PrimitiveFlyoutArrow,
+  PrimitiveFlyoutArrowTip,
+  PrimitiveFlyoutCloseTrigger,
+  PrimitiveFlyoutContent,
+  PrimitiveFlyoutDescription,
+  PrimitiveFlyoutPositioner,
+  PrimitiveFlyoutTitle,
+  PrimitiveFlyoutTrigger,
 } from "components/primitives";
 import { flyout } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { FlyoutProps } from "components/primitives";
+import type { PrimitiveFlyoutProps } from "components/primitives";
 import type { ReactNode } from "react";
 
-export interface Props extends FlyoutProps {
+export interface Props extends PrimitiveFlyoutProps {
   trigger: ReactNode;
   title?: ReactNode;
   children: ReactNode;
@@ -45,33 +45,35 @@ const Flyout = ({ trigger, title, children, ...rest }: Props) => {
       portalled
       {...rest}
     >
-      <FlyoutTrigger asChild onClick={() => setIsOpen(!isOpen)}>
+      <PrimitiveFlyoutTrigger asChild onClick={() => setIsOpen(!isOpen)}>
         {trigger}
-      </FlyoutTrigger>
+      </PrimitiveFlyoutTrigger>
 
       <Portal>
-        <FlyoutPositioner className={classNames.positioner}>
-          <FlyoutContent className={classNames.content}>
-            <FlyoutArrow className={classNames.arrow}>
-              <FlyoutArrowTip className={classNames.arrowTip} />
-            </FlyoutArrow>
+        <PrimitiveFlyoutPositioner className={classNames.positioner}>
+          <PrimitiveFlyoutContent className={classNames.content}>
+            <PrimitiveFlyoutArrow className={classNames.arrow}>
+              <PrimitiveFlyoutArrowTip className={classNames.arrowTip} />
+            </PrimitiveFlyoutArrow>
             {title && (
-              <FlyoutTitle className={classNames.title}>{title}</FlyoutTitle>
+              <PrimitiveFlyoutTitle className={classNames.title}>
+                {title}
+              </PrimitiveFlyoutTitle>
             )}
-            <FlyoutDescription className={classNames.description}>
+            <PrimitiveFlyoutDescription className={classNames.description}>
               {children}
-            </FlyoutDescription>
+            </PrimitiveFlyoutDescription>
 
-            <FlyoutCloseTrigger
+            <PrimitiveFlyoutCloseTrigger
               onClick={() => setIsOpen(false)}
               className={classNames.closeTrigger}
             >
               <Icon className={classNames.closeTriggerIcon}>
                 <CloseIcon />
               </Icon>
-            </FlyoutCloseTrigger>
-          </FlyoutContent>
-        </FlyoutPositioner>
+            </PrimitiveFlyoutCloseTrigger>
+          </PrimitiveFlyoutContent>
+        </PrimitiveFlyoutPositioner>
       </Portal>
     </PrimitiveFlyout>
   );

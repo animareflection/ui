@@ -1,42 +1,42 @@
 import {
-  Tooltip as ArkTooltip,
-  TooltipArrow as ArkTooltipArrow,
-  TooltipArrowTip as ArkTooltipArrowTip,
-  TooltipContent as ArkTooltipContent,
-  TooltipPositioner as ArkTooltipPositioner,
-  TooltipTrigger as ArkTooltipTrigger,
+  Tooltip,
+  TooltipArrow,
+  TooltipArrowTip,
+  TooltipContent,
+  TooltipPositioner,
+  TooltipTrigger,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  TooltipProps as ArkTooltipProps,
-  TooltipArrowProps as ArkTooltipArrowProps,
-  TooltipArrowTipProps as ArkTooltipArrowTipProps,
-  TooltipContentProps as ArkTooltipContentProps,
-  TooltipPositionerProps as ArkTooltipPositionerProps,
-  TooltipTriggerProps as ArkTooltipTriggerProps,
+  TooltipProps,
+  TooltipArrowProps,
+  TooltipArrowTipProps,
+  TooltipContentProps,
+  TooltipPositionerProps,
+  TooltipTriggerProps,
 } from "@ark-ui/react";
 
 /**
  * Core UI tooltip primitives.
  */
-export type TooltipProps = ArkTooltipProps;
-const Tooltip = panda(ArkTooltip);
+export type PrimitiveTooltipProps = TooltipProps;
+const PrimitiveTooltip = panda(Tooltip);
 
-export type TooltipArrowProps = ArkTooltipArrowProps;
-export const TooltipArrow = panda(ArkTooltipArrow);
+export type PrimitiveTooltipArrowProps = TooltipArrowProps;
+export const PrimitiveTooltipArrow = panda(TooltipArrow);
 
-export type TooltipArrowTipProps = ArkTooltipArrowTipProps;
-export const TooltipArrowTip = panda(ArkTooltipArrowTip);
+export type PrimitiveTooltipArrowTipProps = TooltipArrowTipProps;
+export const PrimitiveTooltipArrowTip = panda(TooltipArrowTip);
 
-export type TooltipContentProps = ArkTooltipContentProps;
-export const TooltipContent = panda(ArkTooltipContent);
+export type PrimitiveTooltipContentProps = TooltipContentProps;
+export const PrimitiveTooltipContent = panda(TooltipContent);
 
-export type TooltipPositionerProps = ArkTooltipPositionerProps;
-export const TooltipPositioner = panda(ArkTooltipPositioner);
+export type PrimitiveTooltipPositionerProps = TooltipPositionerProps;
+export const PrimitiveTooltipPositioner = panda(TooltipPositioner);
 
-export type TooltipTriggerProps = ArkTooltipTriggerProps;
-export const TooltipTrigger = panda(ArkTooltipTrigger);
+export type PrimitiveTooltipTriggerProps = TooltipTriggerProps;
+export const PrimitiveTooltipTrigger = panda(TooltipTrigger);
 
-export default Tooltip;
+export default PrimitiveTooltip;

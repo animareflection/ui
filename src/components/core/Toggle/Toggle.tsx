@@ -1,16 +1,16 @@
 import {
-  Toggle as PrimitiveToggle,
-  ToggleControl,
-  ToggleThumb,
-  ToggleLabel,
+  PrimitiveToggle,
+  PrimitiveToggleControl,
+  PrimitiveToggleThumb,
+  PrimitiveToggleLabel,
 } from "components/primitives";
 import { toggle } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { ToggleProps } from "components/primitives";
+import type { PrimitiveToggleProps } from "components/primitives";
 import type { ToggleVariantProps } from "generated/panda/recipes";
 
-export type Props = ToggleProps & ToggleVariantProps;
+export type Props = PrimitiveToggleProps & ToggleVariantProps;
 
 /**
  * Core UI toggle.
@@ -24,10 +24,14 @@ const Toggle = ({ label, size, ...rest }: Props) => {
 
   return (
     <PrimitiveToggle className={classNames.root} {...rest}>
-      <ToggleControl className={classNames.control}>
-        <ToggleThumb className={classNames.thumb} />
-      </ToggleControl>
-      {label && <ToggleLabel className={classNames.label}>{label}</ToggleLabel>}
+      <PrimitiveToggleControl className={classNames.control}>
+        <PrimitiveToggleThumb className={classNames.thumb} />
+      </PrimitiveToggleControl>
+      {label && (
+        <PrimitiveToggleLabel className={classNames.label}>
+          {label}
+        </PrimitiveToggleLabel>
+      )}
     </PrimitiveToggle>
   );
 };

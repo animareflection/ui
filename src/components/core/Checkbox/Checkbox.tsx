@@ -1,17 +1,17 @@
 import {
-  Checkbox as PrimitiveCheckbox,
-  CheckboxControl,
-  CheckboxLabel,
+  PrimitiveCheckbox,
+  PrimitiveCheckboxControl,
+  PrimitiveCheckboxLabel,
 } from "components/primitives";
 import { checkbox } from "generated/panda/recipes";
 
-import type { CheckboxProps } from "components/primitives";
+import type { PrimitiveCheckboxProps } from "components/primitives";
 import type { CheckboxVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface Props
   // TODO: remove children omit once `@ark-ui/react` fixes required children type
-  extends Omit<CheckboxProps, "children">,
+  extends Omit<PrimitiveCheckboxProps, "children">,
     CheckboxVariantProps {
   label?: ReactNode;
 }
@@ -26,7 +26,7 @@ const Checkbox = ({ size, label, ...rest }: Props) => {
     <PrimitiveCheckbox className={classNames.root} {...rest}>
       {({ isChecked }) => (
         <>
-          <CheckboxControl className={classNames.control}>
+          <PrimitiveCheckboxControl className={classNames.control}>
             {isChecked && (
               <svg
                 viewBox="0 0 14 14"
@@ -42,9 +42,11 @@ const Checkbox = ({ size, label, ...rest }: Props) => {
                 />
               </svg>
             )}
-          </CheckboxControl>
+          </PrimitiveCheckboxControl>
           {label && (
-            <CheckboxLabel className={classNames.label}>{label}</CheckboxLabel>
+            <PrimitiveCheckboxLabel className={classNames.label}>
+              {label}
+            </PrimitiveCheckboxLabel>
           )}
         </>
       )}

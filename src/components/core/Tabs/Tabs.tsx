@@ -1,14 +1,14 @@
 import {
-  Tabs as PrimitiveTabs,
-  TabContent,
-  TabIndicator,
-  TabList,
-  TabTrigger,
+  PrimitiveTabs,
+  PrimitiveTabContent,
+  PrimitiveTabIndicator,
+  PrimitiveTabList,
+  PrimitiveTabTrigger,
 } from "components/primitives";
 import { tabs as tabsRecipe } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { TabsProps } from "components/primitives";
+import type { PrimitiveTabsProps } from "components/primitives";
 import type { TabsVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
@@ -21,7 +21,7 @@ export interface TabRecord {
   content: ReactNode;
 }
 
-export interface Props extends TabsProps, TabsVariantProps {
+export interface Props extends PrimitiveTabsProps, TabsVariantProps {
   tabs: TabRecord[];
 }
 
@@ -37,9 +37,9 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
 
   return (
     <PrimitiveTabs className={classNames.root} {...rest}>
-      <TabList className={classNames.list}>
+      <PrimitiveTabList className={classNames.list}>
         {tabs.map(({ value, trigger, disabled }) => (
-          <TabTrigger
+          <PrimitiveTabTrigger
             flex={1}
             key={value}
             value={value}
@@ -47,12 +47,12 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
             className={classNames.trigger}
           >
             {trigger}
-          </TabTrigger>
+          </PrimitiveTabTrigger>
         ))}
-        <TabIndicator className={classNames.indicator} />
-      </TabList>
+        <PrimitiveTabIndicator className={classNames.indicator} />
+      </PrimitiveTabList>
       {tabs.map(({ value, content, lazyMount, unmountOnExit }) => (
-        <TabContent
+        <PrimitiveTabContent
           key={value}
           value={value}
           lazyMount={lazyMount}
@@ -60,7 +60,7 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
           className={classNames.content}
         >
           {content}
-        </TabContent>
+        </PrimitiveTabContent>
       ))}
     </PrimitiveTabs>
   );

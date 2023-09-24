@@ -1,17 +1,17 @@
 import {
-  Slider as PrimitiveSlider,
-  SliderControl,
-  SliderLabel,
-  SliderMarker,
-  SliderMarkerGroup,
-  SliderRange,
-  SliderThumb,
-  SliderTrack,
+  PrimitiveSlider,
+  PrimitiveSliderControl,
+  PrimitiveSliderLabel,
+  PrimitiveSliderMarker,
+  PrimitiveSliderMarkerGroup,
+  PrimitiveSliderRange,
+  PrimitiveSliderThumb,
+  PrimitiveSliderTrack,
 } from "components/primitives";
 import { slider } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { SliderProps } from "components/primitives";
+import type { PrimitiveSliderProps } from "components/primitives";
 import type { JsxStyleProps } from "generated/panda/types";
 
 export interface SliderMarkerRecord {
@@ -20,7 +20,7 @@ export interface SliderMarkerRecord {
   label: string;
 }
 
-export interface Props extends SliderProps {
+export interface Props extends PrimitiveSliderProps {
   label?: string;
   markers?: SliderMarkerRecord[];
   maxW?: JsxStyleProps["maxW"];
@@ -38,22 +38,33 @@ const Slider = ({ label, markers, maxW, ...rest }: Props) => {
 
   return (
     <PrimitiveSlider className={classNames.root} {...rest}>
-      {label && <SliderLabel className={classNames.label}>{label}</SliderLabel>}
-      <SliderControl className={classNames.control} maxW={maxW}>
-        <SliderTrack className={classNames.track} maxW={maxW}>
-          <SliderRange className={classNames.range} />
-        </SliderTrack>
+      {label && (
+        <PrimitiveSliderLabel className={classNames.label}>
+          {label}
+        </PrimitiveSliderLabel>
+      )}
+      <PrimitiveSliderControl className={classNames.control} maxW={maxW}>
+        <PrimitiveSliderTrack className={classNames.track} maxW={maxW}>
+          <PrimitiveSliderRange className={classNames.range} />
+        </PrimitiveSliderTrack>
 
-        <SliderThumb className={classNames.thumb} />
-      </SliderControl>
+        <PrimitiveSliderThumb className={classNames.thumb} />
+      </PrimitiveSliderControl>
       {markers && (
-        <SliderMarkerGroup className={classNames.markerGroup} maxW={maxW}>
+        <PrimitiveSliderMarkerGroup
+          className={classNames.markerGroup}
+          maxW={maxW}
+        >
           {markers.map(({ id, value, label }) => (
-            <SliderMarker key={id} value={value} className={classNames.marker}>
+            <PrimitiveSliderMarker
+              key={id}
+              value={value}
+              className={classNames.marker}
+            >
               {label}
-            </SliderMarker>
+            </PrimitiveSliderMarker>
           ))}
-        </SliderMarkerGroup>
+        </PrimitiveSliderMarkerGroup>
       )}
     </PrimitiveSlider>
   );

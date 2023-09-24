@@ -1,12 +1,12 @@
 import {
-  RadioGroup as PrimitiveRadioGroup,
-  RadioLabel,
-  Radio,
-  RadioControl,
+  PrimitiveRadioGroup,
+  PrimitiveRadioLabel,
+  PrimitiveRadio,
+  PrimitiveRadioControl,
 } from "components/primitives";
 import { radioGroup } from "generated/panda/recipes";
 
-import type { RadioGroupProps } from "components/primitives";
+import type { PrimitiveRadioGroupProps } from "components/primitives";
 import type { RadioGroupVariantProps } from "generated/panda/recipes";
 
 export interface RadioGroupRecord {
@@ -15,7 +15,9 @@ export interface RadioGroupRecord {
   disabled?: boolean;
 }
 
-export interface Props extends RadioGroupProps, RadioGroupVariantProps {
+export interface Props
+  extends PrimitiveRadioGroupProps,
+    RadioGroupVariantProps {
   items: RadioGroupRecord[];
 }
 
@@ -39,17 +41,17 @@ const RadioGroup = ({
       {...rest}
     >
       {items.map((item) => (
-        <Radio
+        <PrimitiveRadio
           key={item.value}
           value={item.value}
           disabled={item.disabled}
           className={classNames.radio}
         >
-          <RadioControl className={classNames.radioControl} />
-          <RadioLabel className={classNames.radioLabel}>
+          <PrimitiveRadioControl className={classNames.radioControl} />
+          <PrimitiveRadioLabel className={classNames.radioLabel}>
             {item.label}
-          </RadioLabel>
-        </Radio>
+          </PrimitiveRadioLabel>
+        </PrimitiveRadio>
       ))}
     </PrimitiveRadioGroup>
   );
