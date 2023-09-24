@@ -1,7 +1,7 @@
 import { toast } from "@animareflection/ui";
 import { Button, Toast, Toaster } from "@animareflection/ui/client";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const ToastDemo = () => {
   const promise = () => {

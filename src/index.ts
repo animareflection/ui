@@ -1,3 +1,5 @@
+"use client";
+
 // inject root cascade layers
 import "lib/styles/main.css";
 
@@ -13,5 +15,7 @@ export type { ToastPosition } from "react-hot-toast";
 // export Panda preset (to be used in downstream Panda configurations)
 export { default as anirefPreset } from "lib/panda/aniref.preset";
 
-// export components renderable on both server and client
-export * from "components/universal";
+export * from "components/core";
+export * from "components/utility";
+
+export * from "lib/hooks";

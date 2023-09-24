@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Skeleton, Text } from "@animareflection/ui";
 import { Button } from "@animareflection/ui/client";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const SkeletonToggleDemo = () => {
   const [isLoaded, setIsLoaded] = useState(false);

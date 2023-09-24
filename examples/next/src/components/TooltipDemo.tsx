@@ -1,6 +1,6 @@
 import { Button, Tooltip } from "@animareflection/ui/client";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const FlyoutDemo = () => {
   return (

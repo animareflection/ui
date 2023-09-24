@@ -1,6 +1,6 @@
 import { Textarea } from "@animareflection/ui/client";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const TextareaDemo = () => (
   <Wrapper title="Textarea">

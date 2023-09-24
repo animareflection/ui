@@ -1,6 +1,6 @@
 import { Image } from "@animareflection/ui";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const ImageDemo = () => (
   <Wrapper title="Image">

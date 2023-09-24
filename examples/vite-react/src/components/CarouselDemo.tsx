@@ -1,7 +1,7 @@
 import { Image } from "@animareflection/ui";
 import { Carousel } from "@animareflection/ui/client";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const IMAGE_SOURCES = [
   "https://tinyurl.com/5b6ka8jd",

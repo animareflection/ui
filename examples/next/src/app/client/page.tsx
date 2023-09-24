@@ -25,7 +25,7 @@ import {
   ToastDemo,
   ToggleDemo,
   TooltipDemo,
-} from "components";
+} from "components/core";
 
 const ClientPage = () => (
   <Flex direction="column" align="center" w="100%" gap={2} p={12}>

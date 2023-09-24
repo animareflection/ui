@@ -7,7 +7,7 @@ import {
   FiAlertTriangle,
 } from "react-icons/fi";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const IconDemo = () => (
   <Wrapper title="Icon">

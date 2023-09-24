@@ -1,6 +1,6 @@
 import { HStack, Kbd } from "@animareflection/ui";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const KbdDemo = () => (
   <Wrapper title="Kbd">

@@ -1,7 +1,7 @@
 import { Checkbox } from "@animareflection/ui/client";
 import { useState } from "react";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const CheckboxDemo = () => {
   const [isChecked, setIsChecked] = useState(true);

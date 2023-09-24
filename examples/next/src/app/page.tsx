@@ -17,7 +17,7 @@ import {
   ImageDemo,
   KbdDemo,
   SpinnerDemo,
-} from "components";
+} from "components/core";
 
 const HomePage = () => (
   <Flex direction="column" h="100%" align="center" gap={4} pt={12}>

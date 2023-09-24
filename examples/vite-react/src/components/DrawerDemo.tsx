@@ -1,7 +1,7 @@
 import { Text } from "@animareflection/ui";
 import { Button, Drawer } from "@animareflection/ui/client";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 const DrawerDemo = () => (
   <Wrapper title="Drawer">

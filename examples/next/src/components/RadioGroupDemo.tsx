@@ -1,6 +1,6 @@
 import { RadioGroup } from "@animareflection/ui/client";
 
-import { Wrapper } from "components";
+import { Wrapper } from "components/core";
 
 import type { RadioGroupRecord } from "@animareflection/ui/client";
 
