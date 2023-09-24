@@ -1,7 +1,6 @@
-import { Text } from "@animareflection/ui";
-import { Button, Modal } from "@animareflection/ui/client";
+import { Button, Modal, Text } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const ModalDemo = () => (
   <Wrapper title="Modal">

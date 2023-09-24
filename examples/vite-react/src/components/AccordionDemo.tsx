@@ -1,8 +1,8 @@
-import { Accordion } from "@animareflection/ui/client";
+import { Accordion } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
-import type { AccordionItemRecord } from "@animareflection/ui/client";
+import type { AccordionItemRecord } from "@animareflection/ui";
 
 const ITEMS: AccordionItemRecord[] = [
   {

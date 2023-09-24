@@ -1,5 +1,4 @@
-import { Flex } from "@animareflection/ui";
-import { Icon } from "@animareflection/ui/client";
+import { Flex, Icon } from "@animareflection/ui";
 import {
   FiHeart,
   FiCheck,
@@ -7,7 +6,7 @@ import {
   FiAlertTriangle,
 } from "react-icons/fi";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const IconDemo = () => (
   <Wrapper title="Icon">

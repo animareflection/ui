@@ -1,6 +1,6 @@
-import { Button } from "@animareflection/ui/client";
+import { Button } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const ButtonDemo = () => (
   <Wrapper title="Button">

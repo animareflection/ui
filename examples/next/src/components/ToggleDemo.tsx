@@ -1,9 +1,7 @@
-"use client";
-
-import { Toggle } from "@animareflection/ui/client";
+import { Toggle } from "@animareflection/ui";
 import { useState } from "react";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const ToggleDemo = () => {
   const [isChecked, setIsChecked] = useState(true);

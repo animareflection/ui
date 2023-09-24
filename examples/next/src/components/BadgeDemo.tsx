@@ -1,6 +1,6 @@
 import { Badge } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const BadgeDemo = () => (
   <Wrapper title="Badge">

@@ -1,8 +1,7 @@
-import { Flex, Text } from "@animareflection/ui";
-import { Collapse } from "@animareflection/ui/client";
+import { Collapse, Flex, Text } from "@animareflection/ui";
 import { Image } from "@animareflection/ui/next";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const CollapseDemo = () => (
   <Wrapper title="Collapse">

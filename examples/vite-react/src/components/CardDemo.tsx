@@ -1,6 +1,6 @@
 import { Card, CardBody, CardFooter, CardHeader } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const CardDemo = () => (
   <Wrapper title="Card">

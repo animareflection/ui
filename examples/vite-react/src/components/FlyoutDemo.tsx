@@ -1,7 +1,6 @@
-import { Text } from "@animareflection/ui";
-import { Button, Flyout } from "@animareflection/ui/client";
+import { Button, Flyout, Text } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const FlyoutDemo = () => {
   return (

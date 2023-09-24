@@ -1,6 +1,6 @@
-import { NumberInput } from "@animareflection/ui/client";
+import { NumberInput } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const NumberInputDemo = () => (
   <Wrapper title="Number Input">

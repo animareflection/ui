@@ -1,7 +1,7 @@
-import { Breadcrumb, BreadcrumbRecord, Icon } from "@animareflection/ui/client";
+import { Breadcrumb, BreadcrumbRecord, Icon } from "@animareflection/ui";
 import { FiChevronRight as ChevronRightIcon } from "react-icons/fi";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const BREADCRUMBS: BreadcrumbRecord[] = [
   { label: "Home", href: "#" },

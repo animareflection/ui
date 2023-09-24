@@ -1,8 +1,8 @@
-import { Tabs } from "@animareflection/ui/client";
+import { Tabs } from "@animareflection/ui";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
-import type { TabRecord } from "@animareflection/ui/client";
+import type { TabRecord } from "@animareflection/ui";
 
 const TABS: TabRecord[] = [
   {

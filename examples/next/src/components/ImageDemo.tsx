@@ -1,6 +1,6 @@
 import { Image } from "@animareflection/ui/next";
 
-import { Wrapper } from "components/core";
+import { Wrapper } from "components";
 
 const ImageDemo = () => (
   <Wrapper title="NextJS Enhanced Image">
