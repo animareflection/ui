@@ -56,7 +56,7 @@ Now you are ready to install the UI library. You can either install it [from the
 
 ## Remote
 
-Install from remote repository: `yarn add @animareflection/ui`
+Install from remote repository along with required dependencies: `yarn add @animareflection/ui @ark-ui/react framer-motion react-hot-toast`
 
 ## Local
 
