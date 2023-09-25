@@ -34,8 +34,7 @@ const storybookConfig: StorybookConfig = {
     check: true,
   },
   addons: [
-    // !NB: issue upstream. Tracking: https://github.com/storybookjs/storybook/issues/24273
-    // "@storybook/addon-a11y",
+    "@storybook/addon-a11y",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
