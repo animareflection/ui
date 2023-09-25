@@ -36,7 +36,7 @@ import {
   ToastDemo,
   ToggleDemo,
   TooltipDemo,
-} from "components/core";
+} from "components";
 
 import "main.css";
 
