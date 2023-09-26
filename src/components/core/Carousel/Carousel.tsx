@@ -45,7 +45,9 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
           ))}
         </PrimitiveCarouselSlideGroup>
         <PrimitiveCarouselControl className={classNames.control}>
-          <PrimitiveCarouselPrevSlideTrigger className={classNames.trigger}>
+          <PrimitiveCarouselPrevSlideTrigger
+            className={classNames.prevSlideTrigger}
+          >
             <Icon>
               <FiChevronLeft />
             </Icon>
@@ -62,7 +64,9 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
               />
             ))}
           </PrimitiveCarouselIndicatorGroup>
-          <PrimitiveCarouselNextSlideTrigger className={classNames.trigger}>
+          <PrimitiveCarouselNextSlideTrigger
+            className={classNames.nextSlideTrigger}
+          >
             <Icon>
               <FiChevronRight />
             </Icon>

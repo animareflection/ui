@@ -1,14 +1,35 @@
+import { numberInputAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
+
+const stepperTriggerStyles = {
+  bgColor: {
+    base: "border.default",
+    _hover: "bg.subtle",
+    _disabled: {
+      _hover: "border.default",
+    },
+  },
+  cursor: {
+    base: "pointer",
+    _disabled: "not-allowed",
+  },
+  px: 3,
+  w: "100%",
+  h: "100%",
+  color: {
+    base: "fg.default",
+    _disabled: "fg.muted",
+  },
+  borderRadius: "sm",
+};
 
 export const numberInputRecipe = defineSlotRecipe({
   className: "numberInput",
   description: "The styles for the NumberInput component",
   slots: [
-    "label",
-    "input",
+    ...numberInputAnatomy.keys(),
     "addon",
     "stepper",
-    "stepperTrigger",
     "leftElement",
     "rightElement",
   ],
@@ -68,27 +89,8 @@ export const numberInputRecipe = defineSlotRecipe({
       borderTopRightRadius: "sm",
       borderBottomRightRadius: "sm",
     },
-    stepperTrigger: {
-      bgColor: {
-        base: "border.default",
-        _hover: "bg.subtle",
-        _disabled: {
-          _hover: "border.default",
-        },
-      },
-      cursor: {
-        base: "pointer",
-        _disabled: "not-allowed",
-      },
-      px: 3,
-      w: "100%",
-      h: "100%",
-      color: {
-        base: "fg.default",
-        _disabled: "fg.muted",
-      },
-      borderRadius: "sm",
-    },
+    decrementTrigger: stepperTriggerStyles,
+    incrementTrigger: stepperTriggerStyles,
     leftElement: {
       position: "absolute",
       left: 3,

@@ -1,18 +1,30 @@
+import { carouselAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
+
+const triggerStyle = {
+  color: "fg.muted",
+  verticalAlign: "baseline",
+  cursor: "pointer",
+  _hover: {
+    color: "fg.default",
+  },
+  _disabled: {
+    color: "fg.disabled",
+    cursor: "not-allowed",
+    _hover: {
+      color: "fg.disabled",
+    },
+  },
+  height: "auto!",
+  px: "0!",
+  pb: 1,
+  minW: "0!",
+};
 
 export const carouselRecipe = defineSlotRecipe({
   className: "carousel",
   description: "The styles for the Carousel component",
-  slots: [
-    "root",
-    "control",
-    "viewport",
-    "trigger",
-    "slide",
-    "slideGroup",
-    "indicatorGroup",
-    "indicator",
-  ],
+  slots: carouselAnatomy.keys(),
   base: {
     viewport: {
       overflowX: "hidden",
@@ -52,25 +64,8 @@ export const carouselRecipe = defineSlotRecipe({
         outlineColor: "border.outline",
       },
     },
-    trigger: {
-      color: "fg.muted",
-      verticalAlign: "baseline",
-      cursor: "pointer",
-      _hover: {
-        color: "fg.default",
-      },
-      _disabled: {
-        color: "fg.disabled",
-        cursor: "not-allowed",
-        _hover: {
-          color: "fg.disabled",
-        },
-      },
-      height: "auto!",
-      px: "0!",
-      pb: 1,
-      minW: "0!",
-    },
+    nextSlideTrigger: triggerStyle,
+    prevSlideTrigger: triggerStyle,
   },
   variants: {
     size: {

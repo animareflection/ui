@@ -1,3 +1,4 @@
+import { menuAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
 const itemStyle = {
@@ -27,21 +28,7 @@ const itemStyle = {
 export const menuRecipe = defineSlotRecipe({
   className: "menu",
   description: "The styles for the Menu component",
-  slots: [
-    "root",
-    "arrow",
-    "arrowTip",
-    "content",
-    "contextTrigger",
-    "item",
-    "itemGroup",
-    "itemGroupLabel",
-    "optionItem",
-    "positioner",
-    "separator",
-    "trigger",
-    "triggerItem",
-  ],
+  slots: menuAnatomy.keys(),
   base: {
     itemGroupLabel: {
       fontWeight: "semibold",

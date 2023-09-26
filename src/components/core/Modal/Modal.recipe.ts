@@ -1,18 +1,10 @@
+import { dialogAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
 export const modalRecipe = defineSlotRecipe({
   className: "modal",
   description: "The styles for the Modal component",
-  slots: [
-    "root",
-    "backdrop",
-    "closeTrigger",
-    "container",
-    "content",
-    "description",
-    "title",
-    "trigger",
-  ],
+  slots: dialogAnatomy.keys(),
   base: {
     backdrop: {
       backdropFilter: "blur(4px)",

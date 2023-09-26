@@ -1,20 +1,10 @@
+import { popoverAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
 export const flyoutRecipe = defineSlotRecipe({
   className: "flyout",
   description: "The styles for the Flyout component",
-  slots: [
-    "root",
-    "arrow",
-    "arrowTip",
-    "closeTrigger",
-    "closeTriggerIcon",
-    "content",
-    "description",
-    "positioner",
-    "title",
-    "trigger",
-  ],
+  slots: [...popoverAnatomy.keys(), "closeTriggerIcon"],
   base: {
     positioner: {
       position: "relative",
@@ -43,7 +33,7 @@ export const flyoutRecipe = defineSlotRecipe({
       backgroundColor: { base: "inherit", _hover: "bg.emphasized" },
     },
     closeTriggerIcon: {
-      color: "fg.default",
+      color: "fg.default!",
     },
     title: {
       p: 4,

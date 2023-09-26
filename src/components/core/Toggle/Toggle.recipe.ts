@@ -1,9 +1,10 @@
+import { switchAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
 export const toggleRecipe = defineSlotRecipe({
   className: "toggle",
   description: "The styles for the Toggle component",
-  slots: ["root", "control", "label", "thumb"],
+  slots: switchAnatomy.keys(),
   base: {
     root: {
       alignItems: "center",

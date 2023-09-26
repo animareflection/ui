@@ -1,18 +1,10 @@
+import { dialogAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
 export const drawerRecipe = defineSlotRecipe({
   className: "drawer",
   description: "The styles for the Drawer component",
-  slots: [
-    "root",
-    "backdrop",
-    "closeTrigger",
-    "container",
-    "content",
-    "description",
-    "title",
-    "trigger",
-  ],
+  slots: dialogAnatomy.keys(),
   base: {
     backdrop: {
       backdropFilter: "blur(4px)",

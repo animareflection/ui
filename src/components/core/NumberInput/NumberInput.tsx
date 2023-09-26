@@ -90,7 +90,7 @@ const NumberInput = ({
         {stepper && (
           <PrimitiveNumberInputControl className={classNames.stepper}>
             <PrimitiveNumberInputDecrementTrigger
-              className={classNames.stepperTrigger}
+              className={classNames.decrementTrigger}
             >
               <Icon>
                 <FiMinus />
@@ -98,7 +98,7 @@ const NumberInput = ({
             </PrimitiveNumberInputDecrementTrigger>
             <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
             <PrimitiveNumberInputIncrementTrigger
-              className={classNames.stepperTrigger}
+              className={classNames.incrementTrigger}
             >
               <Icon>
                 <FiPlus />

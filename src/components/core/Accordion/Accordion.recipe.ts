@@ -1,9 +1,10 @@
+import { accordionAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
 export const accordionRecipe = defineSlotRecipe({
   className: "accordion",
   description: "The styles for the Accordion component",
-  slots: ["root", "trigger", "content"],
+  slots: accordionAnatomy.keys(),
   base: {
     root: {
       width: "full",

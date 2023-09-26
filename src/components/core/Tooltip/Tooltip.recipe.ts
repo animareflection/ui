@@ -1,9 +1,10 @@
+import { tooltipAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
 export const tooltipRecipe = defineSlotRecipe({
   className: "tooltip",
   description: "The styles for the Tooltip component",
-  slots: ["positioner", "content", "arrow", "arrowTip"],
+  slots: tooltipAnatomy.keys(),
   base: {
     positioner: {
       position: "relative",
