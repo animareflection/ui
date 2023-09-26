@@ -42,7 +42,7 @@ const Stat = ({
       <panda.div className={classNames.value}>{value}</panda.div>
       <HStack alignItems="center" gap={1}>
         {indicator && (
-          <Icon h={3} w={3} color={indicatorColor}>
+          <Icon data-testid="indicator" h={3} w={3} color={indicatorColor}>
             {IndicatorIcon}
           </Icon>
         )}

@@ -7,7 +7,14 @@ import type { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof Image>;
 
 export const Default: Story = {
-  render: () => <Stat label="Floor Price" value="$10.85" />,
+  render: () => (
+    <Stat
+      label="Floor Price"
+      value="$10.85"
+      helpText="12.35%"
+      indicator="decrease"
+    />
+  ),
 };
 
 export const Variants: Story = {
@@ -26,15 +33,15 @@ export const Indicator: Story = {
     <VStack alignItems="start" gap={2}>
       <Stat
         label="Floor Price"
+        value="$10.85"
         helpText="12.35%"
         indicator="increase"
-        value="$10.85"
       />
       <Stat
         label="Floor Price"
+        value="$10.85"
         helpText="12.35%"
         indicator="decrease"
-        value="$10.85"
       />
     </VStack>
   ),
@@ -46,15 +53,15 @@ export const Orientation: Story = {
       <Stat
         orientation="horizontal"
         label="Floor Price"
+        value="$10.85"
         helpText="12.35%"
         indicator="increase"
-        value="$10.85"
       />
       <Stat
         label="Floor Price"
+        value="$10.85"
         helpText="12.35%"
         indicator="decrease"
-        value="$10.85"
       />
     </VStack>
   ),
