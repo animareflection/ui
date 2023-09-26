@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@animareflection/ui";
 
 import { Wrapper } from "components";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Toggle } from "@animareflection/ui";
 import { useState } from "react";
 
