@@ -46,7 +46,6 @@ export const statRecipe = defineSlotRecipe({
       outline: {
         root: {
           bgColor: "transparent",
-          borderWidth: 1,
           borderColor: "accent.default",
         },
       },
