@@ -18,7 +18,7 @@ export const Default: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Kbd> = {
-  title: "Components/Universal/Core/Kbd",
+  title: "Components/Core/Kbd",
   component: Kbd,
   decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Kbd>;

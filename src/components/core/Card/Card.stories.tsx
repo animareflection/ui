@@ -21,7 +21,7 @@ export const Default: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Card> = {
-  title: "Components/Universal/Core/Card",
+  title: "Components/Core/Card",
   component: Card,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

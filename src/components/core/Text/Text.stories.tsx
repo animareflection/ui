@@ -98,7 +98,7 @@ export const CodeFont: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Text> = {
-  title: "Components/Universal/Core/Text",
+  title: "Components/Core/Text",
   component: Text,
   decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Text>;

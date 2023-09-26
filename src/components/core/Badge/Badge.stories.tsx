@@ -27,7 +27,7 @@ export const Sizes: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Badge> = {
-  title: "Components/Universal/Core/Badge",
+  title: "Components/Core/Badge",
   component: Badge,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
