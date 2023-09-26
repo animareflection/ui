@@ -5,6 +5,11 @@ export {
   AccordionContent,
 } from "./Accordion/Accordion";
 export {
+  default as Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "./Avatar/Avatar";
+export {
   default as Carousel,
   CarouselControl,
   CarouselNextSlideTrigger,
@@ -120,6 +125,11 @@ export type {
   AccordionTriggerProps,
   AccordionContentProps,
 } from "./Accordion/Accordion";
+export type {
+  AvatarProps,
+  AvatarFallbackProps,
+  AvatarImageProps,
+} from "./Avatar/Avatar";
 export type {
   CarouselProps,
   CarouselControlProps,
