@@ -8,6 +8,9 @@ export interface Props extends FlexProps, SkeletonVariantProps {
   isLoaded?: boolean;
 }
 
+/**
+ * Core Skeleton component.
+ */
 const Skeleton = ({ isLoaded, variant, children, ...rest }: Props) => {
   const classNames = skeleton({ variant });
 

@@ -20,6 +20,7 @@ export { default as RadioGroupDemo } from "./RadioGroupDemo";
 export { default as SkeletonToggleDemo } from "./SkeletonToggleDemo";
 export { default as SliderDemo } from "./SliderDemo";
 export { default as SpinnerDemo } from "./SpinnerDemo";
+export { default as StatDemo } from "./StatDemo";
 export { default as TabsDemo } from "./TabsDemo";
 export { default as TextareaDemo } from "./TextareaDemo";
 export { default as ToastDemo } from "./ToastDemo";
