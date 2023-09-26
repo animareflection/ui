@@ -36,6 +36,7 @@ export const statRecipe = defineSlotRecipe({
     },
   },
   variants: {
+    variant: {},
     size: {
       sm: {
         root: { gap: 2, p: 2 },

@@ -10,7 +10,7 @@ type Story = StoryObj<typeof Image>;
 
 export const Default: Story = {
   render: () => (
-    <Stat icon={<FiHeart data-testid="icon" />} minW={32} title="Likes">
+    <Stat icon={<FiHeart data-testid="icon" />} title="Likes">
       <Text>49</Text>
     </Stat>
   ),

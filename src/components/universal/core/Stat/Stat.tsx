@@ -1,34 +1,30 @@
-import { ark } from "@ark-ui/react";
-
 import Icon from "components/client/core/Icon/Icon";
 import { VStack, panda } from "generated/panda/jsx";
 import { stat } from "generated/panda/recipes";
 
 import type { StatVariantProps } from "generated/panda/recipes";
-import type { ComponentProps, ReactElement } from "react";
+import type { ReactNode, ReactElement } from "react";
 
-export interface Props
-  extends ComponentProps<typeof PandaStat>,
-    StatVariantProps {
+export interface Props extends StatVariantProps {
   icon?: ReactElement;
+  children: ReactNode;
+  title?: string;
 }
-
-const PandaStat = panda(ark.div, stat);
 
 /**
  * Core Stat component.
  */
-const Stat = ({ children, title, icon, size, ...rest }: Props) => {
-  const classNames = stat({ size });
+const Stat = ({ children, title, icon, variant, size, ...rest }: Props) => {
+  const classNames = stat({ variant, size });
   return (
     <panda.div className={classNames.root} {...rest}>
       {icon && (
-        <Icon bgColor="red" className={classNames.icon}>
+        <Icon bgColor="gray" className={classNames.icon}>
           {icon}
         </Icon>
       )}
       <VStack alignItems="start" gap={1}>
-        <panda.div className={classNames.title}>{title}</panda.div>
+        {title && <panda.div className={classNames.title}>{title}</panda.div>}
         <panda.div className={classNames.value}>{children}</panda.div>
       </VStack>
     </panda.div>
