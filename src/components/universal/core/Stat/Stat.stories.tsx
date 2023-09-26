@@ -33,7 +33,6 @@ export const Indicator: Story = {
       <Stat
         label="Floor Price"
         helpText="12.35%"
-        orientation="horizontal"
         indicator="decrease"
         value="$10.85"
       />
