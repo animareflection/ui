@@ -87,7 +87,7 @@ export const StatState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
 const meta: Meta<typeof Stat> = {
-  title: "Components/Universal/Core/Stat",
+  title: "Components/Core/Stat",
   component: Stat,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
