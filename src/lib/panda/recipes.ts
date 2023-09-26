@@ -1,4 +1,5 @@
 import { accordionRecipe } from "../../components/client/core/Accordion/Accordion.recipe";
+import { avatarRecipe } from "../../components/client/core/Avatar/Avatar.recipe";
 import { bannerRecipe } from "../../components/client/core/Banner/Banner.recipe";
 import { breadcrumbRecipe } from "../../components/client/core/Breadcrumb/Breadcrumb.recipe";
 import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
@@ -41,6 +42,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  avatar: avatarRecipe,
   carousel: carouselRecipe,
   breadcrumb: breadcrumbRecipe,
   checkbox: checkboxRecipe,
