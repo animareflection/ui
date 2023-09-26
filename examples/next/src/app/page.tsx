@@ -38,6 +38,7 @@ import {
   ToastDemo,
   ToggleDemo,
   TooltipDemo,
+  StatDemo,
 } from "components";
 
 const HomePage = () => (
@@ -108,7 +109,7 @@ const HomePage = () => (
       <CarouselDemo />
       <BreadcrumbDemo />
       <RadioGroupDemo />
-
+      <StatDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint

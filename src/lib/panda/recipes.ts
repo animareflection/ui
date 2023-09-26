@@ -18,6 +18,7 @@ import { radioGroupRecipe } from "../../components/core/RadioGroup/RadioGroup.re
 import { skeletonRecipe } from "../../components/core/Skeleton/Skeleton.recipe";
 import { sliderRecipe } from "../../components/core/Slider/Slider.recipe";
 import { spinnerRecipe } from "../../components/core/Spinner/Spinner.recipe";
+import { statRecipe } from "../../components/core/Stat/Stat.recipe";
 import { tabsRecipe } from "../../components/core/Tabs/Tabs.recipe";
 import { textRecipe } from "../../components/core/Text/Text.recipe";
 import { textareaRecipe } from "../../components/core/Textarea/Textarea.recipe";
@@ -54,6 +55,7 @@ export const slotRecipes = {
   radioGroup: radioGroupRecipe,
   skeleton: skeletonRecipe,
   slider: sliderRecipe,
+  stat: statRecipe,
   tabs: tabsRecipe,
   textarea: textareaRecipe,
   toast: toastRecipe,

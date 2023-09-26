@@ -8,6 +8,9 @@ export type Props = ComponentProps<typeof PandaSpinner> & SpinnerVariantProps;
 
 const PandaSpinner = panda("svg");
 
+/**
+ * Core Spinner component.
+ */
 const Spinner = ({ size, ...props }: Props) => {
   return (
     <PandaSpinner

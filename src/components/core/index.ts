@@ -19,6 +19,7 @@ export { default as RadioGroup } from "./RadioGroup/RadioGroup";
 export { default as Skeleton } from "./Skeleton/Skeleton";
 export { default as Slider } from "./Slider/Slider";
 export { default as Spinner } from "./Spinner/Spinner";
+export { default as Stat } from "./Stat/Stat";
 export { default as Tabs } from "./Tabs/Tabs";
 export { default as Text } from "./Text/Text";
 export { default as Textarea } from "./Textarea/Textarea";
@@ -65,6 +66,7 @@ export type {
 export type { Props as SkeletonProps } from "./Skeleton/Skeleton";
 export type { Props as SliderProps, SliderMarkerRecord } from "./Slider/Slider";
 export type { Props as SpinnerProps } from "./Spinner/Spinner";
+export type { Props as StatProps } from "./Stat/Stat";
 export type { Props as TabsProps, TabRecord } from "./Tabs/Tabs";
 export type { Props as TextProps } from "./Text/Text";
 export type { Props as TextareaProps } from "./Textarea/Textarea";
