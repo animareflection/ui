@@ -15,6 +15,13 @@ const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // set JSX factory name
   jsxFactory: "panda",
   jsxFramework: "react",
+  // TODO remove static CSS pregeneration
+  staticCss: {
+    recipes: {
+      alert: [{ variant: ["*"] }],
+      stat: [{ variant: ["*"] }],
+    },
+  },
 });
 
 export default pandaConfig;

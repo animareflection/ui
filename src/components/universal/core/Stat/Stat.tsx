@@ -1,32 +1,56 @@
+import {
+  TbTriangleInvertedFilled as TriangleDown,
+  TbTriangleFilled as TriangleUp,
+} from "react-icons/tb";
+
 import Icon from "components/client/core/Icon/Icon";
-import { VStack, panda } from "generated/panda/jsx";
+import { HStack, panda } from "generated/panda/jsx";
 import { stat } from "generated/panda/recipes";
 
 import type { StatVariantProps } from "generated/panda/recipes";
-import type { ReactNode, ReactElement } from "react";
 
 export interface Props extends StatVariantProps {
-  icon?: ReactElement;
-  children: ReactNode;
-  title?: string;
+  value: string;
+  label: string;
+  helpText?: string;
+  indicator?: "increase" | "decrease";
 }
 
 /**
  * Core Stat component.
  */
-const Stat = ({ children, title, icon, variant, size, ...rest }: Props) => {
-  const classNames = stat({ variant, size });
+const Stat = ({
+  value,
+  label,
+  helpText,
+  variant,
+  size,
+  indicator,
+  orientation,
+  ...rest
+}: Props) => {
+  const classNames = stat({ variant, size, orientation });
+
+  const indicatorColor = indicator === "decrease" ? "red.500" : "green.500";
+
+  const IndicatorIcon =
+    indicator === "decrease" ? <TriangleDown /> : <TriangleUp />;
+
   return (
     <panda.div className={classNames.root} {...rest}>
-      {icon && (
-        <Icon bgColor="gray" className={classNames.icon}>
-          {icon}
-        </Icon>
-      )}
-      <VStack alignItems="start" gap={1}>
-        {title && <panda.div className={classNames.title}>{title}</panda.div>}
-        <panda.div className={classNames.value}>{children}</panda.div>
-      </VStack>
+      <panda.div className={classNames.label}>{label}</panda.div>
+      <panda.div className={classNames.value}>{value}</panda.div>
+      <HStack alignItems="center" gap={1}>
+        {indicator && (
+          <Icon h={3} w={3} color={indicatorColor}>
+            {IndicatorIcon}
+          </Icon>
+        )}
+
+        {helpText && (
+          <panda.div className={classNames.helpText}>{helpText}</panda.div>
+        )}
+      </HStack>
     </panda.div>
   );
 };

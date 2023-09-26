@@ -3,52 +3,94 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const statRecipe = defineSlotRecipe({
   className: "stat",
   description: "The styles for the Stat component",
-  slots: ["root", "title", "value", "icon"],
+  slots: ["root", "label", "value", "helpText"],
   base: {
     root: {
       display: "flex",
-      flexDirection: "row",
+      flexDirection: "column",
+      alignItems: "start",
       borderRadius: "md",
       boxShadow: "sm",
       bgColor: "accent.default",
       color: "fg.default",
-      gap: 4,
       w: "fit",
-      alignItems: "center",
-      p: 4,
+      px: 4,
+      py: 2,
+      gap: 0,
     },
-    title: {
-      color: "fg.default",
+    helpText: {
+      textStyle: "sm",
+      fontWeight: "light",
+    },
+    label: {
       textStyle: "md",
+      fontWeight: "normal",
     },
     value: {
-      color: "fg.default",
+      textStyle: "lg",
       fontWeight: "bold",
-      textStyle: "xl",
-    },
-    icon: {
-      color: "fg.default",
-      h: 12,
-      w: 12,
-      p: 2,
-      borderRadius: "md",
-      backgroundColor: "bg.default",
     },
   },
   variants: {
-    variant: {},
+    variant: {
+      unstyled: {
+        root: {
+          bgColor: "transparent",
+          boxShadow: "none",
+          borderWidth: 0,
+          borderRadius: 0,
+        },
+      },
+      outline: {
+        root: {
+          bgColor: "transparent",
+          borderWidth: 1,
+          borderColor: "accent.default",
+        },
+      },
+      subtle: {
+        root: {
+          bgColor: "fg.subtle",
+          borderWidth: 1,
+          color: "accent.fg",
+          borderColor: "border.subtle",
+        },
+      },
+    },
+    orientation: {
+      horizontal: {
+        root: {
+          alignItems: "center",
+          flexDirection: "row",
+          gap: 4,
+        },
+      },
+      vertical: {
+        root: {
+          alignItems: "start",
+          flexDirection: "column",
+          gap: 0,
+        },
+      },
+    },
     size: {
       sm: {
-        root: { gap: 2, p: 2 },
-        title: { textStyle: "sm" },
+        root: { px: 2, py: 1 },
+        helpText: { textStyle: "xs" },
+        label: { textStyle: "sm" },
         value: { textStyle: "md" },
-        icon: { h: 6, w: 6, p: 1 },
       },
       lg: {
-        root: { gap: 6, p: 6 },
-        title: { textStyle: "lg" },
+        root: { px: 6, py: 3 },
+        helpText: { textStyle: "md" },
+        label: { textStyle: "lg" },
+        value: { textStyle: "xl" },
+      },
+      xl: {
+        root: { px: 8, py: 4 },
+        helpText: { textStyle: "lg" },
+        label: { textStyle: "xl" },
         value: { textStyle: "2xl" },
-        icon: { h: 20, w: 20, p: 4 },
       },
     },
   },

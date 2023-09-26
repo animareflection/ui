@@ -13,12 +13,12 @@ export const statState = async <R extends Renderer = ReactRenderer>({
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  const titleElement = canvas.getByText("Likes");
+  const labelElement = canvas.getByText("Likes");
   const valueElement = canvas.getByText("49");
   const iconElement = canvas.queryByTestId("icon");
 
   await step("renders the provided title and value", async () => {
-    await expect(titleElement).toBeInTheDocument();
+    await expect(labelElement).toBeInTheDocument();
     await expect(valueElement).toBeInTheDocument();
   });
 
