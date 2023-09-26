@@ -52,10 +52,8 @@ export const statRecipe = defineSlotRecipe({
       },
       subtle: {
         root: {
-          bgColor: "fg.subtle",
-          borderWidth: 1,
-          color: "accent.fg",
-          borderColor: "border.subtle",
+          bgColor: "bg.subtle",
+          borderWidth: 0,
         },
       },
     },
