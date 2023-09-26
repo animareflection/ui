@@ -31,6 +31,7 @@ import {
   SkeletonToggleDemo,
   SliderDemo,
   SpinnerDemo,
+  StatDemo,
   TabsDemo,
   TextareaDemo,
   ToastDemo,
@@ -117,6 +118,7 @@ const App = () => (
       <CarouselDemo />
       <BreadcrumbDemo />
       <RadioGroupDemo />
+      <StatDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">

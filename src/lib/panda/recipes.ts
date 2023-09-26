@@ -24,6 +24,7 @@ import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
 import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
 import { skeletonRecipe } from "../../components/universal/core/Skeleton/Skeleton.recipe";
 import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.recipe";
+import { statRecipe } from "../../components/universal/core/Stat/Stat.recipe";
 import { textRecipe } from "../../components/universal/core/Text/Text.recipe";
 import { hideRecipe } from "../../components/universal/utility/Hide/Hide.recipe";
 import { showRecipe } from "../../components/universal/utility/Show/Show.recipe";
@@ -56,6 +57,7 @@ export const slotRecipes = {
   radioGroup: radioGroupRecipe,
   skeleton: skeletonRecipe,
   slider: sliderRecipe,
+  stat: statRecipe,
   tabs: tabsRecipe,
   textarea: textareaRecipe,
   toast: toastRecipe,
