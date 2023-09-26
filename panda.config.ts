@@ -15,6 +15,9 @@ const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // set JSX factory name
   jsxFactory: "panda",
   jsxFramework: "react",
+  studio: {
+    logo: "https://github.com/animareflection/ui/blob/master/public/img/logo.png?raw=true",
+  },
   // TODO remove static CSS pregeneration
   staticCss: {
     recipes: {
