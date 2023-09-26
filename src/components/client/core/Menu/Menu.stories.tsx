@@ -115,8 +115,7 @@ export const MenuState: Story = {
   tags: ["test"],
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const meta: Meta<typeof Menu> = {
+const meta = {
   title: "Components/Client/Core/Menu",
   component: Menu,
   tags: ["autodocs"],

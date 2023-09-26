@@ -12,7 +12,7 @@ import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Icon>;
 
 export const Variants: Story = {
   render: () => (
@@ -51,8 +51,7 @@ export const Variants: Story = {
   ),
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const meta: Meta<typeof Icon> = {
+const meta = {
   title: "Components/Client/Core/Icon",
   component: Icon,
   tags: ["autodocs"],

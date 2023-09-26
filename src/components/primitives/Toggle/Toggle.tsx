@@ -8,15 +8,14 @@ import type {
   SwitchThumbProps,
   SwitchLabelProps,
 } from "@ark-ui/react";
-import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI toggle primitives.
  */
 export type ToggleProps = SwitchProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
+
 // NB: Using `Toggle` instead of `Switch` here to avoid recipe issues with `switch` being a reserved word.
-const Toggle: PandaComponent<typeof Switch> = panda(Switch);
+const Toggle = panda(Switch);
 
 export type ToggleControlProps = SwitchControlProps;
 export const ToggleControl = panda(SwitchControl);

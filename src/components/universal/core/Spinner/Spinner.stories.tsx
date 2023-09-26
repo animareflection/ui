@@ -15,8 +15,7 @@ export const Sizes: Story = {
   ),
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
-const meta: Meta<typeof Spinner> = {
+const meta = {
   title: "Components/Universal/Core/Spinner",
   component: Spinner,
   tags: ["autodocs"],

@@ -26,8 +26,7 @@ export const LayoutFill: Story = {
   ),
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
-const meta: Meta<typeof Image> = {
+const meta = {
   title: "Components/Next/Image",
   component: Image,
   tags: ["autodocs"],

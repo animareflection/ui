@@ -23,14 +23,13 @@ import type {
   SliderThumbProps as ArkSliderThumbProps,
   SliderTrackProps as ArkSliderTrackProps,
 } from "@ark-ui/react";
-import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI slider primitives.
  */
 export type SliderProps = ArkSliderProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const Slider: PandaComponent<typeof ArkSlider> = panda(ArkSlider);
+
+const Slider = panda(ArkSlider);
 
 export type SliderControlProps = ArkSliderControlProps;
 export const SliderControl = panda(ArkSliderControl);
@@ -45,9 +44,8 @@ export type SliderMarkerGroupProps = ArkSliderMarkerGroupProps;
 export const SliderMarkerGroup = panda(ArkSliderMarkerGroup);
 
 export type SliderOutputProps = ArkSliderOutputProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const SliderOutput: PandaComponent<typeof ArkSliderOutput> =
-  panda(ArkSliderOutput);
+
+export const SliderOutput = panda(ArkSliderOutput);
 
 export type SliderRangeProps = ArkSliderRangeProps;
 export const SliderRange = panda(ArkSliderRange);

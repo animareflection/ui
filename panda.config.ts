@@ -5,8 +5,7 @@ import anirefPreset from "lib/panda/aniref.preset";
 /**
  * 🐼 Panda configuration.
  */
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
+const pandaConfig = defineConfig({
   // enable CSS reset
   preflight: true,
   include: ["src/**/*.{ts,tsx,mdx}"],

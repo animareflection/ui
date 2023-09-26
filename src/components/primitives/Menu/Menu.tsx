@@ -31,14 +31,13 @@ import type {
   MenuTriggerProps as ArkMenuTriggerProps,
   MenuTriggerItemProps as ArkMenuTriggerItemProps,
 } from "@ark-ui/react";
-import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI menu primitives.
  */
 export type MenuProps = ArkMenuProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const Menu: PandaComponent<typeof ArkMenu> = panda(ArkMenu);
+
+const Menu = panda(ArkMenu);
 
 export type MenuArrowProps = ArkMenuArrowProps;
 export const MenuArrow = panda(ArkMenuArrow);
@@ -53,21 +52,19 @@ export type MenuContextTriggerProps = ArkMenuContextTriggerProps;
 export const MenuContextTrigger = panda(ArkMenuContextTrigger);
 
 export type MenuItemProps = ArkMenuItemProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const MenuItem: PandaComponent<typeof ArkMenuItem> = panda(ArkMenuItem);
+
+export const MenuItem = panda(ArkMenuItem);
 
 export type MenuItemGroupProps = ArkMenuItemGroupProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const MenuItemGroup: PandaComponent<typeof ArkMenuItemGroup> =
-  panda(ArkMenuItemGroup);
+
+export const MenuItemGroup = panda(ArkMenuItemGroup);
 
 export type MenuItemGroupLabelProps = ArkMenuItemGroupLabelProps;
 export const MenuItemGroupLabel = panda(ArkMenuItemGroupLabel);
 
 export type MenuOptionItemProps = ArkMenuOptionItemProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const MenuOptionItem: PandaComponent<typeof ArkMenuOptionItem> =
-  panda(ArkMenuOptionItem);
+
+export const MenuOptionItem = panda(ArkMenuOptionItem);
 
 export type MenuPositionerProps = ArkMenuPositionerProps;
 export const MenuPositioner = panda(ArkMenuPositioner);

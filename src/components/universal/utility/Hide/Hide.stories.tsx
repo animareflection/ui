@@ -49,8 +49,7 @@ export const HideFrom: Story = {
   ),
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker);
-const meta: Meta<typeof Hide> = {
+const meta = {
   title: "Components/Universal/Utility/Hide",
   component: Hide,
   tags: ["autodocs"],

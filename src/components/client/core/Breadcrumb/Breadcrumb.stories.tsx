@@ -7,7 +7,7 @@ import Icon from "components/client/core/Icon/Icon";
 import type { BreadcrumbRecord } from "./Breadcrumb";
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Breadcrumb>;
 
 const BREADCRUMBS: BreadcrumbRecord[] = [
   { label: "Home", href: "#" },
@@ -51,8 +51,7 @@ export const BreadcrumbState: Story = {
   tags: ["test"],
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const meta: Meta<typeof Breadcrumb> = {
+const meta = {
   title: "Components/Client/Core/Breadcrumb",
   component: Breadcrumb,
   tags: ["autodocs"],
