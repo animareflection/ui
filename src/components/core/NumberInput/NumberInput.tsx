@@ -92,7 +92,7 @@ const NumberInput = ({
             <PrimitiveNumberInputDecrementTrigger
               className={classNames.stepperTrigger}
             >
-              <Icon className={classNames.stepperIcon}>
+              <Icon>
                 <FiMinus />
               </Icon>
             </PrimitiveNumberInputDecrementTrigger>
@@ -100,7 +100,7 @@ const NumberInput = ({
             <PrimitiveNumberInputIncrementTrigger
               className={classNames.stepperTrigger}
             >
-              <Icon className={classNames.stepperIcon}>
+              <Icon>
                 <FiPlus />
               </Icon>
             </PrimitiveNumberInputIncrementTrigger>

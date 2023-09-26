@@ -8,7 +8,6 @@ export const numberInputRecipe = defineSlotRecipe({
     "input",
     "addon",
     "stepper",
-    "stepperIcon",
     "stepperTrigger",
     "leftElement",
     "rightElement",
@@ -69,11 +68,6 @@ export const numberInputRecipe = defineSlotRecipe({
       borderTopRightRadius: "sm",
       borderBottomRightRadius: "sm",
     },
-    stepperIcon: {
-      h: "100%",
-      w: "100%",
-      px: 3,
-    },
     stepperTrigger: {
       bgColor: {
         base: "border.default",
@@ -86,10 +80,13 @@ export const numberInputRecipe = defineSlotRecipe({
         base: "pointer",
         _disabled: "not-allowed",
       },
-      p: 0,
+      px: 3,
       w: "100%",
       h: "100%",
-      color: "fg.default",
+      color: {
+        base: "fg.default",
+        _disabled: "fg.muted",
+      },
       borderRadius: "sm",
     },
     leftElement: {
