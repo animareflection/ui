@@ -12,6 +12,7 @@ import {
 } from "components/primitives";
 import { Flex, panda } from "generated/panda/jsx";
 import { numberInput } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { PrimitiveNumberInputProps } from "components/primitives";
 import type { NumberInputVariantProps } from "generated/panda/recipes";
@@ -45,6 +46,10 @@ const NumberInput = ({
   ...rest
 }: Props) => {
   const classNames = numberInput({ size, variant });
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveNumberInput {...rest}>
