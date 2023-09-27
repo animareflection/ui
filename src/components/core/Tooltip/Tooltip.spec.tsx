@@ -17,7 +17,7 @@ export const tooltipState = async <R extends Renderer = ReactRenderer>({
 
   await sleep(100);
 
-  const hoverButton = canvas.getByText("Open Tooltip");
+  const hoverButton = canvas.getByText(/tooltip/i);
 
   await step("It should open tooltip on button hover", async () => {
     await userEvent.hover(hoverButton);

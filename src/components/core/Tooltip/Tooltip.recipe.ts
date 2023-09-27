@@ -6,6 +6,10 @@ export const tooltipRecipe = defineSlotRecipe({
   description: "The styles for the Tooltip component",
   slots: tooltipAnatomy.keys(),
   base: {
+    trigger: {
+      w: "fit-content",
+      h: "fit-content",
+    },
     positioner: {
       position: "relative",
     },

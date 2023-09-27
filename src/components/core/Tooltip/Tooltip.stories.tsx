@@ -1,5 +1,5 @@
 import { tooltipState } from "./Tooltip.spec";
-import { Button, Tooltip } from "components/core";
+import { Text, Tooltip } from "components/core";
 import { Flex, Grid } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -25,14 +25,27 @@ const TooltipTemplate = ({ placement }: { placement: Placement }) => (
     positioning={{
       placement: placement,
     }}
-    trigger={<Button minW={32}>{placement}</Button>}
+    trigger={
+      <Text
+        minW={32}
+        bgColor="brand.primary.500"
+        p={3}
+        borderRadius="md"
+        fontWeight="bold"
+      >
+        {placement}
+      </Text>
+    }
     content="Tooltip Title"
   />
 );
 
 export const Default: Story = {
   render: () => (
-    <Tooltip trigger={<Button>Open Tooltip</Button>} content="Tooltip Title" />
+    <Tooltip
+      trigger={<Text fontWeight="bold">Tooltip</Text>}
+      content="Tooltip Title"
+    />
   ),
 };
 
