@@ -56,7 +56,7 @@ const DatePicker = ({ ...rest }: Props) => {
               <DatePickerInput asChild>
                 <Input />
               </DatePickerInput>
-              <DatePickerTrigger asChild>
+              <DatePickerTrigger asChild aria-label="calendar icon">
                 <Button>
                   <Icon>
                     <CalendarIcon />
@@ -70,14 +70,17 @@ const DatePicker = ({ ...rest }: Props) => {
               <DatePickerContent className={classNames.content}>
                 <Stack gap="3">
                   <Stack justify="space-between" direction="row">
-                    <DatePickerPrevTrigger asChild>
+                    <DatePickerPrevTrigger
+                      asChild
+                      aria-label="chevron left icon"
+                    >
                       <Button>
                         <Icon>
                           <ChevronLeft />
                         </Icon>
                       </Button>
                     </DatePickerPrevTrigger>
-                    <DatePickerViewTrigger asChild>
+                    <DatePickerViewTrigger asChild aria-label="view trigger">
                       <Button variant="ghost" size="sm">
                         {api.view === "day" && api.visibleRangeText.start}
                         {api.view === "month" && api.visibleRange.start.year}
@@ -85,7 +88,10 @@ const DatePicker = ({ ...rest }: Props) => {
                           `${api.getDecade().start} - ${api.getDecade().end}`}
                       </Button>
                     </DatePickerViewTrigger>
-                    <DatePickerNextTrigger asChild>
+                    <DatePickerNextTrigger
+                      asChild
+                      aria-label="chevron right icon"
+                    >
                       <Button>
                         <Icon>
                           <ChevronRight />
