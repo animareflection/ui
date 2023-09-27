@@ -68,7 +68,10 @@ const Flyout = ({ trigger, title, children, triggerProps, ...rest }: Props) => {
                 {title}
               </PrimitiveFlyoutTitle>
             )}
-            <PrimitiveFlyoutDescription className={classNames.description}>
+            <PrimitiveFlyoutDescription
+              className={classNames.description}
+              asChild
+            >
               {children}
             </PrimitiveFlyoutDescription>
 
