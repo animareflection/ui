@@ -8,6 +8,8 @@ export const radioGroupRecipe = defineSlotRecipe({
   base: {
     root: {
       display: "flex",
+      w: "fit-content",
+      h: "fit-content",
       flexDirection: {
         _vertical: "column",
         _horizontal: "row",
