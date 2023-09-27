@@ -1,11 +1,33 @@
-import { Avatar } from "@animareflection/ui/client";
+"use client";
+
+import { useState } from "react";
+
+import { Avatar, Button, Flex } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
-const AvatarDemo = () => (
-  <Wrapper title="Avatar">
-    <Avatar src="/img/logo.png" alt="avatar" />
-  </Wrapper>
-);
+const AvatarToggleDemo = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
-export default AvatarDemo;
+  return (
+    <Wrapper title="Avatar">
+      <Flex direction="column" gap={2}>
+        {isLoaded ? (
+          <Avatar src="/img/logo.png" alt="avatar" id="" />
+        ) : (
+          <Avatar src="" alt="" id="" />
+        )}
+        <Button
+          data-testid="toggle"
+          variant="ghost"
+          p={2}
+          onClick={() => setIsLoaded(!isLoaded)}
+        >
+          {isLoaded ? "Toggle to fallback" : "Toggle to image"}
+        </Button>
+      </Flex>
+    </Wrapper>
+  );
+};
+
+export default AvatarToggleDemo;

@@ -1,6 +1,6 @@
 "use client";
 
-import { Checkbox } from "@animareflection/ui/client";
+import { Checkbox } from "@animareflection/ui";
 import { useState } from "react";
 
 import { Wrapper } from "components";

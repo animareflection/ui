@@ -1,28 +1,24 @@
-import {
-  Avatar as ArkAvatar,
-  AvatarFallback as ArkAvatarFallback,
-  AvatarImage as ArkAvatarImage,
-} from "@ark-ui/react";
+import { Avatar, AvatarFallback, AvatarImage } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  AvatarProps as ArkAvatarProps,
-  AvatarFallbackProps as ArkAvatarFallbackProps,
-  AvatarImageProps as ArkAvatarImageProps,
+  AvatarProps,
+  AvatarFallbackProps,
+  AvatarImageProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI avatar primitives.
  */
-export type AvatarProps = ArkAvatarProps;
-const Avatar: PandaComponent<typeof ArkAvatar> = panda(ArkAvatar);
+export type PrimitiveAvatarProps = AvatarProps;
+const PrimitiveAvatar: PandaComponent<typeof Avatar> = panda(Avatar);
 
-export type AvatarFallbackProps = ArkAvatarFallbackProps;
-export const AvatarFallback = panda(ArkAvatarFallback);
+export type PrimitiveAvatarFallbackProps = AvatarFallbackProps;
+export const PrimitiveAvatarFallback = panda(AvatarFallback);
 
-export type AvatarImageProps = ArkAvatarImageProps;
-export const AvatarImage = panda(ArkAvatarImage);
+export type PrimitiveAvatarImageProps = AvatarImageProps;
+export const PrimitiveAvatarImage = panda(AvatarImage);
 
-export default Avatar;
+export default PrimitiveAvatar;

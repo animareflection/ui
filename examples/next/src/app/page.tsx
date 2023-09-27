@@ -1,22 +1,42 @@
 import {
-  Box,
   Circle,
   Flex,
   Grid,
   Hide,
   Show,
-  Skeleton,
   Square,
   Text,
 } from "@animareflection/ui";
-import Link from "next/link";
 
 import {
+  AccordionDemo,
+  AvatarDemo,
   BadgeDemo,
+  BannerDemo,
+  BreadcrumbDemo,
+  ButtonDemo,
   CardDemo,
+  CarouselDemo,
+  CheckboxDemo,
+  CollapseDemo,
+  DrawerDemo,
+  FlyoutDemo,
+  IconDemo,
   ImageDemo,
+  InputDemo,
   KbdDemo,
+  MenuDemo,
+  ModalDemo,
+  NumberInputDemo,
+  RadioGroupDemo,
+  SkeletonToggleDemo,
+  SliderDemo,
   SpinnerDemo,
+  TabsDemo,
+  TextareaDemo,
+  ToastDemo,
+  ToggleDemo,
+  TooltipDemo,
   StatDemo,
 } from "components";
 
@@ -61,11 +81,34 @@ const HomePage = () => (
     </Grid>
 
     <Flex direction="column" w="100%" gap={2} p={4}>
+      <ButtonDemo />
+      <AvatarDemo />
+      <AccordionDemo />
+      <DrawerDemo />
+      <IconDemo />
+      <MenuDemo />
+      <ModalDemo />
+      <SliderDemo />
       <BadgeDemo />
       <CardDemo />
       <ImageDemo />
       <SpinnerDemo />
+      <TabsDemo />
+      <ToggleDemo />
+      <SkeletonToggleDemo />
+      <CheckboxDemo />
       <KbdDemo />
+      <CollapseDemo />
+      <BannerDemo />
+      <InputDemo />
+      <NumberInputDemo />
+      <TextareaDemo />
+      <FlyoutDemo />
+      <TooltipDemo />
+      <ToastDemo />
+      <CarouselDemo />
+      <BreadcrumbDemo />
+      <RadioGroupDemo />
       <StatDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
@@ -87,12 +130,7 @@ const HomePage = () => (
           Show from md breakpoint and up
         </Text>
       </Show>
-      <Skeleton variant="circle" w={12} h={12} />
     </Flex>
-
-    <Box color="blue" _hover={{ textDecoration: "underline" }}>
-      <Link href="/client">Go to client page demo</Link>
-    </Box>
   </Flex>
 );
 

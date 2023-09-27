@@ -1,4 +1,4 @@
-import { Text } from "components/universal";
+import { Text } from "components/core";
 import { panda } from "generated/panda/jsx";
 import { token } from "generated/panda/tokens";
 import { useBreakpoint } from "lib/hooks";

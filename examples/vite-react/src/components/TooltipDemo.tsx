@@ -1,19 +1,26 @@
-import { Button, Tooltip } from "@animareflection/ui/client";
+import { Tooltip } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
-const FlyoutDemo = () => {
+const TooltipDemo = () => {
   return (
     <Wrapper title="Tooltip">
       <Tooltip
         positioning={{
           placement: "top",
         }}
-        trigger={<Button>Open Tooltip</Button>}
+        trigger="Open Tooltip"
         content="Tooltip Title"
+        triggerProps={{
+          bgColor: "brand.primary.500",
+          p: 3,
+          borderRadius: "md",
+          color: "accent.fg",
+          fontWeight: "bold",
+        }}
       />
     </Wrapper>
   );
 };
 
-export default FlyoutDemo;
+export default TooltipDemo;

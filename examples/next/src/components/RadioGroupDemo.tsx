@@ -1,8 +1,8 @@
-import { RadioGroup } from "@animareflection/ui/client";
+import { RadioGroup } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
-import type { RadioGroupRecord } from "@animareflection/ui/client";
+import type { RadioGroupRecord } from "@animareflection/ui";
 
 const ITEMS: RadioGroupRecord[] = [
   { value: "react", label: "React" },

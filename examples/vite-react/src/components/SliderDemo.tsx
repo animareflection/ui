@@ -1,8 +1,8 @@
-import { Slider } from "@animareflection/ui/client";
+import { Slider } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
-import type { SliderMarkerRecord } from "@animareflection/ui/client";
+import type { SliderMarkerRecord } from "@animareflection/ui";
 
 const MARKERS: SliderMarkerRecord[] = [
   { id: "marker-1", value: 25, label: "25%" },

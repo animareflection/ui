@@ -1,55 +1,55 @@
 import {
-  NumberInput as ArkNumberInput,
-  NumberInputControl as ArkNumberInputControl,
-  NumberInputDecrementTrigger as ArkNumberInputDecrementTrigger,
-  NumberInputIncrementTrigger as ArkNumberInputIncrementTrigger,
-  NumberInputInput as ArkNumberInputInput,
-  NumberInputLabel as ArkNumberInputLabel,
-  NumberInputScrubber as ArkNumberInputScrubber,
+  NumberInput,
+  NumberInputControl,
+  NumberInputDecrementTrigger,
+  NumberInputIncrementTrigger,
+  NumberInputInput,
+  NumberInputLabel,
+  NumberInputScrubber,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  NumberInputControlProps as ArkNumberInputControlProps,
-  NumberInputDecrementTriggerProps as ArkNumberInputDecrementTriggerProps,
-  NumberInputIncrementTriggerProps as ArkNumberInputIncrementTriggerProps,
-  NumberInputInputProps as ArkNumberInputInputProps,
-  NumberInputLabelProps as ArkNumberInputLabelProps,
-  NumberInputProps as ArkNumberInputProps,
-  NumberInputScrubberProps as ArkNumberInputScrubberProps,
+  NumberInputControlProps,
+  NumberInputDecrementTriggerProps,
+  NumberInputIncrementTriggerProps,
+  NumberInputInputProps,
+  NumberInputLabelProps,
+  NumberInputProps,
+  NumberInputScrubberProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI number input primitives.
  */
-export type NumberInputProps = ArkNumberInputProps;
-const NumberInput: PandaComponent<typeof ArkNumberInput> =
-  panda(ArkNumberInput);
+export type PrimitiveNumberInputProps = NumberInputProps;
+const PrimitiveNumberInput: PandaComponent<typeof NumberInput> =
+  panda(NumberInput);
 
-export type NumberInputControlProps = ArkNumberInputControlProps;
-export const NumberInputControl = panda(ArkNumberInputControl);
+export type PrimitiveNumberInputControlProps = NumberInputControlProps;
+export const PrimitiveNumberInputControl = panda(NumberInputControl);
 
-export type NumberInputDecrementTriggerProps =
-  ArkNumberInputDecrementTriggerProps;
-export const NumberInputDecrementTrigger = panda(
-  ArkNumberInputDecrementTrigger,
+export type PrimitiveNumberInputDecrementTriggerProps =
+  NumberInputDecrementTriggerProps;
+export const PrimitiveNumberInputDecrementTrigger = panda(
+  NumberInputDecrementTrigger,
 );
 
-export type NumberInputIncrementTriggerProps =
-  ArkNumberInputIncrementTriggerProps;
-export const NumberInputIncrementTrigger = panda(
-  ArkNumberInputIncrementTrigger,
+export type PrimitiveNumberInputIncrementTriggerProps =
+  NumberInputIncrementTriggerProps;
+export const PrimitiveNumberInputIncrementTrigger = panda(
+  NumberInputIncrementTrigger,
 );
 
-export type NumberInputInputProps = ArkNumberInputInputProps;
-export const NumberInputInput = panda(ArkNumberInputInput);
+export type PrimitiveNumberInputInputProps = NumberInputInputProps;
+export const PrimitiveNumberInputInput = panda(NumberInputInput);
 
-export type NumberInputLabelProps = ArkNumberInputLabelProps;
-export const NumberInputLabel = panda(ArkNumberInputLabel);
+export type PrimitiveNumberInputLabelProps = NumberInputLabelProps;
+export const PrimitiveNumberInputLabel = panda(NumberInputLabel);
 
-export type NumberInputScrubberProps = ArkNumberInputScrubberProps;
-export const NumberInputScrubber = panda(ArkNumberInputScrubber);
+export type PrimitiveNumberInputScrubberProps = NumberInputScrubberProps;
+export const PrimitiveNumberInputScrubber = panda(NumberInputScrubber);
 
-export default NumberInput;
+export default PrimitiveNumberInput;

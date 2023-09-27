@@ -1,4 +1,4 @@
-import { Banner } from "@animareflection/ui/client";
+import { Banner } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 

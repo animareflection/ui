@@ -1,4 +1,4 @@
-import { Button } from "@animareflection/ui/client";
+import { Button } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
