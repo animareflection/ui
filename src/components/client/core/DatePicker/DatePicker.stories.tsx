@@ -17,8 +17,16 @@ type Story = StoryObj<typeof DatePicker>;
 export const Default: Story = {
   render: () => (
     <DatePicker
+      clearTrigger
       input={
         <Input
+          color="fg.default"
+          _focus={{
+            borderColor: "border.accent",
+            boxShadow: "sm",
+          }}
+          outline={0}
+          backgroundColor="bg.default"
           borderWidth="1px"
           borderColor="border.default"
           h={10}

@@ -19,7 +19,6 @@ export const datePickerRecipe = defineSlotRecipe({
         color: "fg.default",
         background: "accent.subtle",
         borderRadius: "md",
-
         _hover: {
           bgColor: "transparent",
           color: "fg.emphasized",

@@ -2,7 +2,7 @@ import { Portal } from "@ark-ui/react";
 import {
   FiChevronLeft as ChevronLeft,
   FiChevronRight as ChevronRight,
-  // FiCalendar as CalendarIcon,
+  FiX,
 } from "react-icons/fi";
 
 import Button from "components/client/core/Button/Button";
@@ -28,6 +28,7 @@ import {
   DatePickerYearCell,
   DatePickerYearCellTrigger,
   DatePickerPositioner,
+  DatePickerClearTrigger,
 } from "components/primitives";
 import { HStack, Stack } from "generated/panda/jsx";
 import { datePicker } from "generated/panda/recipes";
@@ -38,19 +39,19 @@ import type { ReactNode } from "react";
 export interface Props extends DatePickerProps {
   trigger: ReactNode;
   input: ReactNode;
+  clearTrigger?: boolean;
 }
 
 /**
  * Core UI date picker.
  */
-const DatePicker = ({ trigger, input, ...rest }: Props) => {
+const DatePicker = ({ trigger, input, clearTrigger, ...rest }: Props) => {
   const classNames = datePicker();
 
   return (
     <PrimitiveDatePicker
       positioning={{ sameWidth: true }}
       selectionMode="range"
-      //TODO: numOfMonths={2}
       {...rest}
     >
       {(api) => (
@@ -61,6 +62,15 @@ const DatePicker = ({ trigger, input, ...rest }: Props) => {
               <DatePickerTrigger aria-label="calendar icon">
                 {trigger}
               </DatePickerTrigger>
+              {clearTrigger && (
+                <DatePickerClearTrigger color="white">
+                  <Button size="xs" variant="secondary">
+                    <Icon h={5} w={5}>
+                      <FiX />
+                    </Icon>
+                  </Button>
+                </DatePickerClearTrigger>
+              )}
             </HStack>
           </DatePickerControl>
           <Portal>
