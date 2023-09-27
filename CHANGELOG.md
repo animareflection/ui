@@ -1,5 +1,19 @@
 # @animareflection/ui
 
+## 0.9.0
+
+### Minor Changes
+
+- [#122](https://github.com/animareflection/ui/pull/122) [`2625cc9`](https://github.com/animareflection/ui/commit/2625cc92857ec8b3315b12337e8c78c7525ba50b) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Textarea` component
+
+- [#130](https://github.com/animareflection/ui/pull/130) [`640aed8`](https://github.com/animareflection/ui/commit/640aed832e21ed180d71b31096c5d486528a4bfc) Thanks [@hobbescodes](https://github.com/hobbescodes)! - **Breaking:** Refactor library structure with client component focus
+
+- [#127](https://github.com/animareflection/ui/pull/127) [`fe40cf9`](https://github.com/animareflection/ui/commit/fe40cf9f84591181f9f79685673f7ad0b403dfe1) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Stat` component
+
+### Patch Changes
+
+- [#126](https://github.com/animareflection/ui/pull/126) [`5afdcd4`](https://github.com/animareflection/ui/commit/5afdcd41cfc1c61d7ffa5c87cef6ebc9d439831d) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Change `Checkbox` label prop to be of optional `ReactNode` type
+
 ## 0.8.1
 
 ### Patch Changes
