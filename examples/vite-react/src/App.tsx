@@ -18,6 +18,7 @@ import {
   CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
+  DatePickerDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -93,6 +94,7 @@ const App = () => (
     <Flex direction="column" align="center" w="100%" gap={2} p={12}>
       <ButtonDemo />
       <AccordionDemo />
+      <DatePickerDemo />
       <DrawerDemo />
       <IconDemo />
       <MenuDemo />

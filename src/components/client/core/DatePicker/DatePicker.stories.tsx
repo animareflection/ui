@@ -1,8 +1,4 @@
-import {
-  // FiChevronLeft as ChevronLeft,
-  // FiChevronRight as ChevronRight,
-  FiCalendar as CalendarIcon,
-} from "react-icons/fi";
+import { FiCalendar as CalendarIcon } from "react-icons/fi";
 
 import { datePickerState } from "./DatePicker.spec";
 import { DatePicker } from "components/client";

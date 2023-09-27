@@ -10,6 +10,7 @@ import {
   CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
+  DatePickerDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -32,6 +33,7 @@ const ClientPage = () => (
     <Text>Client component demo!</Text>
     <ButtonDemo />
     <AccordionDemo />
+    <DatePickerDemo />
     <DrawerDemo />
     <IconDemo />
     <MenuDemo />
