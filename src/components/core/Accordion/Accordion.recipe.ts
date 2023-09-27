@@ -19,9 +19,13 @@ export const accordionRecipe = defineSlotRecipe({
       cursor: "pointer",
       display: "flex",
       px: 4,
+      py: 3,
       fontWeight: "medium",
       justifyContent: "space-between",
       width: "full",
+      color: "accent.fg",
+      bgColor: "accent.default",
+      borderRadius: "md",
     },
     content: {
       backgroundColor: "bg.muted",

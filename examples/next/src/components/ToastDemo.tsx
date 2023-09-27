@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, toast, Toast, Toaster } from "@animareflection/ui";
 
 import { Wrapper } from "components";

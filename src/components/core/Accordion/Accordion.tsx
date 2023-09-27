@@ -4,7 +4,6 @@ import {
   FiPlus as PlusIcon,
 } from "react-icons/fi";
 
-import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveAccordion,
@@ -47,27 +46,28 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
         <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
-              <PrimitiveAccordionTrigger className={classNames.trigger} asChild>
-                <Button w="full" borderBottomRadius={isOpen ? "unset" : "md"}>
-                  {triggerLabel ?? value}
-                  <Icon
-                    transform={
-                      isOpen && !plusMinus ? "rotate(-180deg)" : undefined
-                    }
-                    transformOrigin="center"
-                    color="accent.fg"
-                  >
-                    {plusMinus ? (
-                      isOpen ? (
-                        <MinusIcon />
-                      ) : (
-                        <PlusIcon />
-                      )
+              <PrimitiveAccordionTrigger
+                className={classNames.trigger}
+                borderBottomRadius={isOpen ? "unset" : "md"}
+              >
+                {triggerLabel ?? value}
+                <Icon
+                  transform={
+                    isOpen && !plusMinus ? "rotate(-180deg)" : undefined
+                  }
+                  transformOrigin="center"
+                  color="accent.fg"
+                >
+                  {plusMinus ? (
+                    isOpen ? (
+                      <MinusIcon />
                     ) : (
-                      icon ?? <ChevronDownIcon />
-                    )}
-                  </Icon>
-                </Button>
+                      <PlusIcon />
+                    )
+                  ) : (
+                    icon ?? <ChevronDownIcon />
+                  )}
+                </Icon>
               </PrimitiveAccordionTrigger>
               <PrimitiveAccordionContent
                 lazyMount
