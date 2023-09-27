@@ -57,5 +57,26 @@ export const flyoutRecipe = defineSlotRecipe({
       borderColor: "border.default",
       borderLeftWidth: "1px",
     },
+    trigger: {
+      color: "accent.fg",
+      bgColor: "accent.default",
+      cursor: "pointer",
+      fontWeight: "bold",
+      p: 3,
+      w: "fit-content!",
+      h: "fit-content!",
+      borderRadius: "md",
+      _focus: { outline: "none" },
+      _hover: {
+        bgColor: "accent.emphasized",
+      },
+      _disabled: {
+        bgColor: "bg.disabled",
+        cursor: "not-allowed",
+        _hover: {
+          bgColor: "bg.disabled",
+        },
+      },
+    },
   },
 });

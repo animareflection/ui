@@ -17,19 +17,23 @@ import {
 import { flyout } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { PrimitiveFlyoutProps } from "components/primitives";
+import type {
+  PrimitiveFlyoutProps,
+  PrimitiveFlyoutTriggerProps,
+} from "components/primitives";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveFlyoutProps {
   trigger: ReactNode;
   title?: ReactNode;
   children: ReactNode;
+  triggerProps?: PrimitiveFlyoutTriggerProps;
 }
 
 /**
  * Core UI flyout.
  */
-const Flyout = ({ trigger, title, children, ...rest }: Props) => {
+const Flyout = ({ trigger, title, children, triggerProps, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const classNames = flyout();
@@ -45,7 +49,11 @@ const Flyout = ({ trigger, title, children, ...rest }: Props) => {
       portalled
       {...rest}
     >
-      <PrimitiveFlyoutTrigger asChild onClick={() => setIsOpen(!isOpen)}>
+      <PrimitiveFlyoutTrigger
+        className={classNames.trigger}
+        onClick={() => setIsOpen(!isOpen)}
+        {...triggerProps}
+      >
         {trigger}
       </PrimitiveFlyoutTrigger>
 

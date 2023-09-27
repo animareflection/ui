@@ -1,5 +1,5 @@
 import { flyoutState } from "./Flyout.spec";
-import { Button, Flyout, Text } from "components/core";
+import { Flyout, Text } from "components/core";
 import { Flex, Grid } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -25,7 +25,11 @@ const FlyoutTemplate = ({ placement }: { placement: Placement }) => (
     positioning={{
       placement: placement,
     }}
-    trigger={<Button minW={32}>{placement}</Button>}
+    trigger={
+      <Flex minW={24} w="100%" justify="center">
+        {placement}
+      </Flex>
+    }
     title="Flyout Title"
   >
     <Text mt={2}>
@@ -38,7 +42,7 @@ const FlyoutTemplate = ({ placement }: { placement: Placement }) => (
 
 export const Default: Story = {
   render: () => (
-    <Flyout trigger={<Button>Open Flyout</Button>} title="Flyout Title">
+    <Flyout trigger="Open Flyout" title="Flyout Title">
       <Text mt={2}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
