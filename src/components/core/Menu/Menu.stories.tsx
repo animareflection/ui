@@ -120,6 +120,10 @@ const meta: Meta<typeof Menu> = {
   component: Menu,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
+  // TODO: remove when portal issue / ref bug is fixed
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof Menu>;
 
 export default meta;

@@ -83,6 +83,9 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;

@@ -86,6 +86,10 @@ const meta: Meta<typeof Flyout> = {
   component: Flyout,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
+  // TODO: remove when portal issue / ref bug is fixed
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof Flyout>;
 
 export default meta;
