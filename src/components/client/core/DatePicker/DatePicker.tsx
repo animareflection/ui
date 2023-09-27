@@ -31,6 +31,7 @@ import {
   DatePickerPositioner,
 } from "components/primitives";
 import { Stack } from "generated/panda/jsx";
+import { datePicker } from "generated/panda/recipes";
 
 import type { DatePickerProps } from "components/primitives";
 
@@ -40,6 +41,8 @@ export interface Props extends DatePickerProps {}
  * Core UI date picker.
  */
 const DatePicker = ({ ...rest }: Props) => {
+  const classNames = datePicker();
+
   return (
     <PrimitiveDatePicker
       positioning={{ sameWidth: true }}
@@ -54,9 +57,6 @@ const DatePicker = ({ ...rest }: Props) => {
                 <Input />
               </DatePickerInput>
               <DatePickerTrigger asChild>
-                {/* <IconButton variant="outline" aria-label="Open date picker">
-                  <CalendarIcon />
-                </IconButton> */}
                 <Button>
                   <Icon>
                     <CalendarIcon />
@@ -67,13 +67,10 @@ const DatePicker = ({ ...rest }: Props) => {
           </DatePickerControl>
           <Portal>
             <DatePickerPositioner>
-              <DatePickerContent>
+              <DatePickerContent className={classNames.content}>
                 <Stack gap="3">
                   <Stack justify="space-between" direction="row">
                     <DatePickerPrevTrigger asChild>
-                      {/* <IconButton size="sm" variant="ghost" aria-label="Prev">
-                        <ChevronLeftIcon />
-                      </IconButton> */}
                       <Button>
                         <Icon>
                           <ChevronLeft />
@@ -89,9 +86,6 @@ const DatePicker = ({ ...rest }: Props) => {
                       </Button>
                     </DatePickerViewTrigger>
                     <DatePickerNextTrigger asChild>
-                      {/* <IconButton size="sm" variant="ghost" aria-label="Next">
-                        <ChevronRightIcon />
-                      </IconButton> */}
                       <Button>
                         <Icon>
                           <ChevronRight />
@@ -100,20 +94,27 @@ const DatePicker = ({ ...rest }: Props) => {
                     </DatePickerNextTrigger>
                   </Stack>
                   {api.view === "day" && (
-                    <DatePickerGrid>
-                      <DatePickerRowHeader>
+                    <DatePickerGrid className={classNames.grid}>
+                      <DatePickerRowHeader className={classNames.rowHeader}>
                         {api.weekDays.map((day, i) => (
-                          <DatePickerColumnHeader key={i} aria-label={day.long}>
+                          <DatePickerColumnHeader
+                            key={i}
+                            aria-label={day.long}
+                            className={classNames.columnHeader}
+                          >
                             {day.narrow}
                           </DatePickerColumnHeader>
                         ))}
                       </DatePickerRowHeader>
-                      <DatePickerRowGroup>
+                      <DatePickerRowGroup className={classNames.rowGroup}>
                         {api.weeks.map((week, id) => (
-                          <DatePickerRow key={id}>
+                          <DatePickerRow className={classNames.row} key={id}>
                             {week.map((day, id) => (
                               <DatePickerDayCell key={id} value={day}>
-                                <DatePickerDayCellTrigger asChild>
+                                <DatePickerDayCellTrigger
+                                  asChild
+                                  className={classNames.cellTrigger}
+                                >
                                   <Button variant="ghost" px="0">
                                     {day.day}
                                   </Button>
@@ -126,8 +127,8 @@ const DatePicker = ({ ...rest }: Props) => {
                     </DatePickerGrid>
                   )}
                   {api.view === "month" && (
-                    <DatePickerGrid>
-                      <DatePickerRowGroup>
+                    <DatePickerGrid className={classNames.grid}>
+                      <DatePickerRowGroup className={classNames.rowGroup}>
                         {api
                           .getMonthsGrid({ columns: 4, format: "short" })
                           .map((months, row) => (
@@ -137,7 +138,10 @@ const DatePicker = ({ ...rest }: Props) => {
                                   key={index}
                                   value={month.value}
                                 >
-                                  <DatePickerMonthCellTrigger asChild>
+                                  <DatePickerMonthCellTrigger
+                                    asChild
+                                    className={classNames.cellTrigger}
+                                  >
                                     <Button variant="ghost">
                                       {month.label}
                                     </Button>
@@ -150,8 +154,8 @@ const DatePicker = ({ ...rest }: Props) => {
                     </DatePickerGrid>
                   )}
                   {api.view === "year" && (
-                    <DatePickerGrid>
-                      <DatePickerRowGroup>
+                    <DatePickerGrid className={classNames.grid}>
+                      <DatePickerRowGroup className={classNames.rowGroup}>
                         {api.getYearsGrid({ columns: 4 }).map((years, row) => (
                           <DatePickerRow key={row}>
                             {years.map((year, index) => (
@@ -159,7 +163,9 @@ const DatePicker = ({ ...rest }: Props) => {
                                 key={index}
                                 value={year.value}
                               >
-                                <DatePickerYearCellTrigger>
+                                <DatePickerYearCellTrigger
+                                  className={classNames.cellTrigger}
+                                >
                                   <Button variant="ghost">{year.label}</Button>
                                 </DatePickerYearCellTrigger>
                               </DatePickerYearCell>

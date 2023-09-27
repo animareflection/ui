@@ -4,6 +4,7 @@ import { breadcrumbRecipe } from "../../components/client/core/Breadcrumb/Breadc
 import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
 import { carouselRecipe } from "../../components/client/core/Carousel/Carousel.recipe";
 import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
+import { datePickerRecipe } from "../../components/client/core/DatePicker/DatePicker.recipe";
 import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
 import { flyoutRecipe } from "../../components/client/core/Flyout/Flyout.recipe";
 import { iconRecipe } from "../../components/client/core/Icon/Icon.recipe";
@@ -46,6 +47,7 @@ export const slotRecipes = {
   breadcrumb: breadcrumbRecipe,
   checkbox: checkboxRecipe,
   card: cardRecipe,
+  datePicker: datePickerRecipe,
   drawer: drawerRecipe,
   input: inputRecipe,
   flyout: flyoutRecipe,
