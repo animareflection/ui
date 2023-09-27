@@ -1,3 +1,6 @@
+// TODO: figure out why this directive is needed
+"use client";
+
 import { Card, CardBody, CardFooter, CardHeader } from "@animareflection/ui";
 
 import { Wrapper } from "components";
