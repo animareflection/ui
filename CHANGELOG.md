@@ -12,7 +12,7 @@
 
 ### Patch Changes
 
-- [#126](https://github.com/animareflection/ui/pull/126) [`5afdcd4`](https://github.com/animareflection/ui/commit/5afdcd41cfc1c61d7ffa5c87cef6ebc9d439831d) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Checkbox` label prop to be of type `ReactNode` as well as optional
+- [#126](https://github.com/animareflection/ui/pull/126) [`5afdcd4`](https://github.com/animareflection/ui/commit/5afdcd41cfc1c61d7ffa5c87cef6ebc9d439831d) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Change `Checkbox` label prop to be of optional `ReactNode` type
 
 ## 0.8.1
 
