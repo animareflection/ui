@@ -18,7 +18,9 @@ const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // TODO remove static CSS pregeneration
   staticCss: {
     recipes: {
+      accordion: [{ variant: ["*"] }],
       alert: [{ variant: ["*"] }],
+      stat: [{ variant: ["*"] }],
     },
   },
 });

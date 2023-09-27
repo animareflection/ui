@@ -50,13 +50,13 @@ import "main.css";
 const App = () => <></>;
 ```
 
-5. (_for TypeScript users_) If you are using TypeScript, make sure your consuming application has `compilerOptions.moduleResolution` set to `node16` or higher (e.g. `nodenext`) in `tsconfig.json`. This will allow you to properly import from subpaths from the library. Read more about this [here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#ecmascript-module-support-in-node-js).
+5. (_for TypeScript users_) If you are using TypeScript, make sure your consuming application has `compilerOptions.module` and `compilerOptions.moduleResolution` set to `node16` or higher (e.g. `nodenext`) in `tsconfig.json`. This will allow you to properly import from subpaths from the library. Read more about this [here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#ecmascript-module-support-in-node-js).
 
 Now you are ready to install the UI library. You can either install it [from the published package](#from-published-package) or from a [local clone](#local) on your local filesystem. The latter is useful if you are developing the library.
 
 ## Remote
 
-Install from remote repository: `yarn add @animareflection/ui`
+Install from remote repository along with required dependencies: `yarn add @animareflection/ui @ark-ui/react framer-motion react-hot-toast`
 
 ## Local
 

@@ -27,31 +27,31 @@ import type {
 /**
  * Core UI flyout primitives.
  */
-export type FlyoutProps = PopoverProps;
-const Flyout = panda(Popover);
+export type PrimitiveFlyoutProps = PopoverProps;
+const PrimitiveFlyout = panda(Popover);
 
-export type FlyoutArrowProps = PopoverArrowProps;
-export const FlyoutArrow = panda(PopoverArrow);
+export type PrimitiveFlyoutArrowProps = PopoverArrowProps;
+export const PrimitiveFlyoutArrow = panda(PopoverArrow);
 
-export type FlyoutArrowTipProps = PopoverArrowTipProps;
-export const FlyoutArrowTip = panda(PopoverArrowTip);
+export type PrimitiveFlyoutArrowTipProps = PopoverArrowTipProps;
+export const PrimitiveFlyoutArrowTip = panda(PopoverArrowTip);
 
-export type FlyoutCloseTriggerProps = PopoverCloseTriggerProps;
-export const FlyoutCloseTrigger = panda(PopoverCloseTrigger);
+export type PrimitiveFlyoutCloseTriggerProps = PopoverCloseTriggerProps;
+export const PrimitiveFlyoutCloseTrigger = panda(PopoverCloseTrigger);
 
-export type FlyoutContentProps = PopoverContentProps;
-export const FlyoutContent = panda(PopoverContent);
+export type PrimitiveFlyoutContentProps = PopoverContentProps;
+export const PrimitiveFlyoutContent = panda(PopoverContent);
 
-export type FlyoutDescriptionProps = PopoverDescriptionProps;
-export const FlyoutDescription = panda(PopoverDescription);
+export type PrimitiveFlyoutDescriptionProps = PopoverDescriptionProps;
+export const PrimitiveFlyoutDescription = panda(PopoverDescription);
 
-export type FlyoutPositionerProps = PopoverPositionerProps;
-export const FlyoutPositioner = panda(PopoverPositioner);
+export type PrimitiveFlyoutPositionerProps = PopoverPositionerProps;
+export const PrimitiveFlyoutPositioner = panda(PopoverPositioner);
 
-export type FlyoutTitleProps = PopoverTitleProps;
-export const FlyoutTitle = panda(PopoverTitle);
+export type PrimitiveFlyoutTitleProps = PopoverTitleProps;
+export const PrimitiveFlyoutTitle = panda(PopoverTitle);
 
-export type FlyoutTriggerProps = PopoverTriggerProps;
-export const FlyoutTrigger = panda(PopoverTrigger);
+export type PrimitiveFlyoutTriggerProps = PopoverTriggerProps;
+export const PrimitiveFlyoutTrigger = panda(PopoverTrigger);
 
-export default Flyout;
+export default PrimitiveFlyout;

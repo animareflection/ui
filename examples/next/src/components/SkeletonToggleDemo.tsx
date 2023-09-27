@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-import { Skeleton, Text } from "@animareflection/ui";
-import { Button } from "@animareflection/ui/client";
+import { Button, Skeleton, Text } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 

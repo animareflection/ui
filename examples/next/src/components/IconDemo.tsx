@@ -1,5 +1,4 @@
-import { Flex } from "@animareflection/ui";
-import { Icon } from "@animareflection/ui/client";
+import { Flex, Icon } from "@animareflection/ui";
 import {
   FiHeart,
   FiCheck,
