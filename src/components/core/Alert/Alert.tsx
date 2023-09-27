@@ -1,3 +1,6 @@
+import { FiInfo } from "react-icons/fi";
+
+import Icon from "components/core/Icon/Icon";
 import Text from "components/core/Text/Text";
 import { Stack } from "generated/panda/jsx";
 import { alert } from "generated/panda/recipes";
@@ -23,7 +26,9 @@ const Alert = ({ variant, icon, title, description, ...rest }: Props) => {
       align={{ sm: "center" }}
       {...rest}
     >
-      {icon && icon}
+      <Icon className={classNames.icon} color="fg.emphasized">
+        {icon ?? <FiInfo />}
+      </Icon>
       <Stack gap={1}>
         <Text className={classNames.title}>{title}</Text>
         {description && (

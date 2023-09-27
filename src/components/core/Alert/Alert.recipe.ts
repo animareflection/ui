@@ -3,7 +3,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const alertRecipe = defineSlotRecipe({
   className: "alert",
   description: "The styles for the Alert component",
-  slots: ["root", "title", "description"],
+  slots: ["root", "title", "description", "icon"],
   base: {
     root: {
       backgroundColor: "bg.default",
@@ -35,6 +35,9 @@ export const alertRecipe = defineSlotRecipe({
         description: {
           color: "yellow.600",
         },
+        icon: {
+          color: "yellow.800!",
+        },
       },
       error: {
         root: {
@@ -46,6 +49,9 @@ export const alertRecipe = defineSlotRecipe({
         },
         description: {
           color: "red.600",
+        },
+        icon: {
+          color: "red.800!",
         },
       },
     },
