@@ -36,7 +36,12 @@ const Avatar = ({
   return (
     <PrimitiveAvatar className={classNames.root} {...rest}>
       <AvatarFallback className={classNames.fallback}>
-        <panda.div height="inherit" display="flex" alignItems="center">
+        <panda.div
+          height="inherit"
+          justifyContent="center"
+          display="flex"
+          alignItems="center"
+        >
           {fallback}
         </panda.div>
       </AvatarFallback>
