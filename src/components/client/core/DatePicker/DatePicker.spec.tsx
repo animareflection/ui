@@ -24,24 +24,21 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
   await step("Opens the date picker on trigger click", async () => {
     await userEvent.click(triggerButton);
 
-    const chevronLeftButton = await within(document.body).findByRole("button", {
-      name: /chevron left icon/i,
+    const Prev = await within(document.body).findByRole("button", {
+      name: /Prev/i,
     });
 
     const viewTrigger = await within(document.body).findByRole("button", {
       name: /view trigger/i,
     });
 
-    const chevronRightButton = await within(document.body).findByRole(
-      "button",
-      {
-        name: /chevron right icon/i,
-      },
-    );
+    const Next = await within(document.body).findByRole("button", {
+      name: /Next/i,
+    });
 
-    await expect(chevronLeftButton).toBeInTheDocument();
+    await expect(Prev).toBeInTheDocument();
     await expect(viewTrigger).toBeInTheDocument();
-    await expect(chevronRightButton).toBeInTheDocument();
+    await expect(Next).toBeInTheDocument();
   });
 
   await step("Navigates to month view", async () => {
@@ -100,14 +97,17 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
 
   await step("Selects a date range", async () => {
     await userEvent.click(triggerButton);
+    await sleep(1000);
 
-    const someDateCell = await within(document.body).findAllByRole("button", {
+    const startRangeDate = await within(document.body).findAllByRole("button", {
       name: /4/,
     });
+    const endRangeDate = await within(document.body).findAllByRole("button", {
+      name: /14/,
+    });
 
-    await userEvent.click(someDateCell[0]);
-    await sleep(1000);
-    await userEvent.click(someDateCell[1]);
+    await userEvent.click(startRangeDate[0]);
+    await userEvent.click(endRangeDate[0]);
 
     await expect(input).toHaveValue("09/04/2023 - 09/14/2023"); // Adjust based on your date format
   });

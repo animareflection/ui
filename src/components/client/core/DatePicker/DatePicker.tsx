@@ -2,10 +2,9 @@ import { Portal } from "@ark-ui/react";
 import {
   FiChevronLeft as ChevronLeft,
   FiChevronRight as ChevronRight,
-  FiCalendar as CalendarIcon,
+  // FiCalendar as CalendarIcon,
 } from "react-icons/fi";
 
-import Input from "../Input/Input";
 import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
 import {
@@ -30,70 +29,63 @@ import {
   DatePickerYearCellTrigger,
   DatePickerPositioner,
 } from "components/primitives";
-import { Stack } from "generated/panda/jsx";
+import { HStack, Stack } from "generated/panda/jsx";
 import { datePicker } from "generated/panda/recipes";
 
 import type { DatePickerProps } from "components/primitives";
+import type { ReactNode } from "react";
 
-export interface Props extends DatePickerProps {}
+export interface Props extends DatePickerProps {
+  trigger: ReactNode;
+  input: ReactNode;
+}
 
 /**
  * Core UI date picker.
  */
-const DatePicker = ({ ...rest }: Props) => {
+const DatePicker = ({ trigger, input, ...rest }: Props) => {
   const classNames = datePicker();
 
   return (
     <PrimitiveDatePicker
       positioning={{ sameWidth: true }}
       selectionMode="range"
+      //TODO: numOfMonths={2}
       {...rest}
     >
       {(api) => (
         <>
           <DatePickerControl>
-            <Stack direction="row">
-              <DatePickerInput asChild>
-                <Input />
-              </DatePickerInput>
-              <DatePickerTrigger asChild aria-label="calendar icon">
-                <Button>
-                  <Icon>
-                    <CalendarIcon />
-                  </Icon>
-                </Button>
+            <HStack w="fit">
+              <DatePickerInput asChild>{input}</DatePickerInput>
+              <DatePickerTrigger aria-label="calendar icon">
+                {trigger}
               </DatePickerTrigger>
-            </Stack>
+            </HStack>
           </DatePickerControl>
           <Portal>
             <DatePickerPositioner>
               <DatePickerContent className={classNames.content}>
                 <Stack gap="3">
                   <Stack justify="space-between" direction="row">
-                    <DatePickerPrevTrigger
-                      asChild
-                      aria-label="chevron left icon"
-                    >
-                      <Button>
-                        <Icon>
+                    <DatePickerPrevTrigger aria-label="Prev">
+                      <Button size="xs" variant="ghost">
+                        <Icon h={5} w={5}>
                           <ChevronLeft />
                         </Icon>
                       </Button>
                     </DatePickerPrevTrigger>
-                    <DatePickerViewTrigger asChild aria-label="view trigger">
-                      <Button variant="ghost" size="sm">
+                    <DatePickerViewTrigger aria-label="view trigger">
+                      <Button variant="ghost" size="xs" textStyle="sm">
                         {api.view === "day" && api.visibleRangeText.start}
                         {api.view === "month" && api.visibleRange.start.year}
                         {api.view === "year" &&
                           `${api.getDecade().start} - ${api.getDecade().end}`}
                       </Button>
                     </DatePickerViewTrigger>
-                    <DatePickerNextTrigger
-                      asChild
-                      aria-label="chevron right icon"
-                    >
-                      <Button>
-                        <Icon>
+                    <DatePickerNextTrigger aria-label="Next">
+                      <Button size="xs" variant="ghost">
+                        <Icon h={5} w={5}>
                           <ChevronRight />
                         </Icon>
                       </Button>
@@ -118,10 +110,21 @@ const DatePicker = ({ ...rest }: Props) => {
                             {week.map((day, id) => (
                               <DatePickerDayCell key={id} value={day}>
                                 <DatePickerDayCellTrigger
-                                  asChild
+                                  _focus={{
+                                    color: "fg.default",
+                                    background: "accent.subtle",
+                                    borderRadius: "md",
+                                  }}
                                   className={classNames.cellTrigger}
                                 >
-                                  <Button variant="ghost" px="0">
+                                  <Button
+                                    variant="ghost"
+                                    justifyContent="center"
+                                    display="flex"
+                                    alignItems="center"
+                                    w="9"
+                                    h="9"
+                                  >
                                     {day.day}
                                   </Button>
                                 </DatePickerDayCellTrigger>
@@ -138,17 +141,32 @@ const DatePicker = ({ ...rest }: Props) => {
                         {api
                           .getMonthsGrid({ columns: 4, format: "short" })
                           .map((months, row) => (
-                            <DatePickerRow key={row}>
+                            <DatePickerRow
+                              gap={1}
+                              className={classNames.row}
+                              key={row}
+                            >
                               {months.map((month, index) => (
                                 <DatePickerMonthCell
                                   key={index}
                                   value={month.value}
                                 >
                                   <DatePickerMonthCellTrigger
-                                    asChild
+                                    _focus={{
+                                      color: "fg.default",
+                                      background: "accent.subtle",
+                                      borderRadius: "md",
+                                    }}
                                     className={classNames.cellTrigger}
                                   >
-                                    <Button variant="ghost">
+                                    <Button
+                                      variant="ghost"
+                                      justifyContent="center"
+                                      display="flex"
+                                      alignItems="center"
+                                      w="16"
+                                      h="10"
+                                    >
                                       {month.label}
                                     </Button>
                                   </DatePickerMonthCellTrigger>
@@ -163,16 +181,34 @@ const DatePicker = ({ ...rest }: Props) => {
                     <DatePickerGrid className={classNames.grid}>
                       <DatePickerRowGroup className={classNames.rowGroup}>
                         {api.getYearsGrid({ columns: 4 }).map((years, row) => (
-                          <DatePickerRow key={row}>
+                          <DatePickerRow
+                            key={row}
+                            gap={1}
+                            className={classNames.row}
+                          >
                             {years.map((year, index) => (
                               <DatePickerYearCell
                                 key={index}
                                 value={year.value}
                               >
                                 <DatePickerYearCellTrigger
+                                  _focus={{
+                                    color: "fg.default",
+                                    background: "accent.subtle",
+                                    borderRadius: "md",
+                                  }}
                                   className={classNames.cellTrigger}
                                 >
-                                  <Button variant="ghost">{year.label}</Button>
+                                  <Button
+                                    variant="ghost"
+                                    justifyContent="center"
+                                    display="flex"
+                                    alignItems="center"
+                                    w="16"
+                                    h="10"
+                                  >
+                                    {year.label}
+                                  </Button>
                                 </DatePickerYearCellTrigger>
                               </DatePickerYearCell>
                             ))}

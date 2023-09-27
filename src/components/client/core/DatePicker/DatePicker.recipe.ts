@@ -12,28 +12,31 @@ export const datePickerRecipe = defineSlotRecipe({
     "rowHeader",
     "columnHeader",
   ],
+
   base: {
     cellTrigger: {
-      _today: {
-        _before: {
-          content: "'−'",
-          color: "accent.default",
-          position: "absolute",
-          marginTop: "6",
-        },
-      },
       "&[data-in-range]": {
-        background: "bg.subtle",
+        color: "fg.default",
+        background: "accent.subtle",
+        borderRadius: "md",
+
+        _hover: {
+          bgColor: "transparent",
+          color: "fg.emphasized",
+        },
       },
       _selected: {
         _before: {
-          color: "accent.fg",
+          bgColor: "accent.subtle",
+          color: "fg.default",
         },
       },
     },
     content: {
       background: "bg.default",
-      borderRadius: "l3",
+      borderColor: "border.default",
+      borderRadius: "sm",
+      boxShadow: "sm",
       borderWidth: "1px",
       p: "4",
       width: "fit-content",
@@ -59,6 +62,7 @@ export const datePickerRecipe = defineSlotRecipe({
     },
     row: {
       display: "grid",
+      gap: "1",
     },
     rowHeader: {
       display: "grid",
