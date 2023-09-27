@@ -5,6 +5,7 @@ import {
 } from "components/primitives";
 import { panda } from "generated/panda/jsx";
 import { avatar } from "generated/panda/recipes";
+import { useIsMounted } from "index.hooks";
 
 import type { AvatarProps } from "components/primitives";
 import type { AvatarVariantProps } from "generated/panda/recipes";
@@ -26,7 +27,12 @@ const Avatar = ({
   variant,
   ...rest
 }: Props) => {
+  const isMounted = useIsMounted();
+
   const classNames = avatar({ size, variant });
+
+  if (!isMounted) return null;
+
   return (
     <PrimitiveAvatar className={classNames.root} {...rest}>
       <AvatarFallback className={classNames.fallback}>

@@ -4,6 +4,7 @@ import { Flex, Text } from "@animareflection/ui";
 
 import {
   AccordionDemo,
+  AvatarDemo,
   BannerDemo,
   BreadcrumbDemo,
   ButtonDemo,
@@ -31,6 +32,7 @@ const ClientPage = () => (
   <Flex direction="column" align="center" w="100%" gap={2} p={12}>
     <Text>Client component demo!</Text>
     <ButtonDemo />
+    <AvatarDemo />
     <AccordionDemo />
     <DrawerDemo />
     <IconDemo />
