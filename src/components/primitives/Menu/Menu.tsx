@@ -31,13 +31,15 @@ import type {
   MenuTriggerProps,
   MenuTriggerItemProps,
 } from "@ark-ui/react";
+import type { PandaComponent } from "generated/panda/jsx";
 
 /**
  * Core UI menu primitives.
  */
 export type PrimitiveMenuProps = MenuProps;
 
-const PrimitiveMenu = panda(Menu);
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+const PrimitiveMenu: PandaComponent<typeof Menu> = panda(Menu);
 
 export type PrimitiveMenuArrowProps = MenuArrowProps;
 export const PrimitiveMenuArrow = panda(MenuArrow);
@@ -53,18 +55,23 @@ export const PrimitiveMenuContextTrigger = panda(MenuContextTrigger);
 
 export type PrimitiveMenuItemProps = MenuItemProps;
 
-export const PrimitiveMenuItem = panda(MenuItem);
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+export const PrimitiveMenuItem: PandaComponent<typeof MenuItem> =
+  panda(MenuItem);
 
 export type PrimitiveMenuItemGroupProps = MenuItemGroupProps;
 
-export const PrimitiveMenuItemGroup = panda(MenuItemGroup);
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+export const PrimitiveMenuItemGroup: PandaComponent<typeof MenuItemGroup> =
+  panda(MenuItemGroup);
 
 export type PrimitiveMenuItemGroupLabelProps = MenuItemGroupLabelProps;
 export const PrimitiveMenuItemGroupLabel = panda(MenuItemGroupLabel);
 
 export type PrimitiveMenuOptionItemProps = MenuOptionItemProps;
-
-export const PrimitiveMenuOptionItem = panda(MenuOptionItem);
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+export const PrimitiveMenuOptionItem: PandaComponent<typeof MenuOptionItem> =
+  panda(MenuOptionItem);
 
 export type PrimitiveMenuPositionerProps = MenuPositionerProps;
 export const PrimitiveMenuPositioner = panda(MenuPositioner);

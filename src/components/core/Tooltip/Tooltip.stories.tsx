@@ -77,7 +77,8 @@ export const TooltipState: Story = {
   tags: ["test"],
 };
 
-const meta = {
+// NB: type annotation resolves type portability error
+const meta: Meta = {
   title: "Components/Core/Tooltip",
   component: Tooltip,
   tags: ["autodocs"],
