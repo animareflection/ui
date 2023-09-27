@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveDrawer,
@@ -42,7 +41,9 @@ const Drawer = ({
     <PrimitiveDrawer {...rest}>
       {(ctx) => (
         <>
-          <PrimitiveDrawerTrigger asChild>{trigger}</PrimitiveDrawerTrigger>
+          <PrimitiveDrawerTrigger className={classNames.trigger}>
+            {trigger}
+          </PrimitiveDrawerTrigger>
           <Portal>
             <PrimitiveDrawerBackdrop className={classNames.backdrop} />
             <PrimitiveDrawerContainer className={classNames.container}>
@@ -67,21 +68,12 @@ const Drawer = ({
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <PrimitiveDrawerCloseTrigger asChild>
-                  <Button
-                    pos="absolute"
-                    top={2}
-                    right={2}
-                    p={3}
-                    bgColor={{
-                      base: "inherit",
-                      _hover: "bg.subtle",
-                    }}
-                  >
-                    <Icon color="fg.default">
-                      <CloseIcon />
-                    </Icon>
-                  </Button>
+                <PrimitiveDrawerCloseTrigger
+                  className={classNames.closeTrigger}
+                >
+                  <Icon color="fg.default">
+                    <CloseIcon />
+                  </Icon>
                 </PrimitiveDrawerCloseTrigger>
               </PrimitiveDrawerContent>
             </PrimitiveDrawerContainer>

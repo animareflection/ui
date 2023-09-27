@@ -60,6 +60,39 @@ export const drawerRecipe = defineSlotRecipe({
       color: "fg.muted",
       textStyle: "sm",
     },
+    trigger: {
+      color: "accent.fg",
+      bgColor: "accent.default",
+      w: "fit-content",
+      h: "fit-content",
+      cursor: "pointer",
+      fontWeight: "bold",
+      p: 3,
+      borderRadius: "md",
+      _focus: { outline: "none" },
+      _hover: {
+        bgColor: "accent.emphasized",
+      },
+      _disabled: {
+        bgColor: "bg.disabled",
+        cursor: "not-allowed",
+        _hover: {
+          bgColor: "bg.disabled",
+        },
+      },
+    },
+    closeTrigger: {
+      cursor: "pointer",
+      borderRadius: "md",
+      pos: "absolute",
+      top: 2,
+      right: 2,
+      p: 3,
+      bgColor: {
+        base: "inherit",
+        _hover: "bg.subtle",
+      },
+    },
   },
   variants: {
     placement: {

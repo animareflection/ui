@@ -1,5 +1,5 @@
 import { drawerState } from "./Drawer.spec";
-import { Button, Drawer, Text } from "components/core";
+import { Drawer, Text } from "components/core";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -8,7 +8,7 @@ type Story = StoryObj<typeof Drawer>;
 export const RightPlacement: Story = {
   render: () => (
     <Drawer
-      trigger={<Button>Open Drawer</Button>}
+      trigger="Open Drawer"
       title="Drawer Title"
       description="Drawer Description"
     >
@@ -25,7 +25,7 @@ export const LeftPlacement: Story = {
   render: () => (
     <Drawer
       placement="left"
-      trigger={<Button>Open Drawer</Button>}
+      trigger="Open Drawer"
       title="Drawer Title"
       description="Drawer Description"
     >
@@ -41,7 +41,7 @@ export const LeftPlacement: Story = {
 export const WithContext: Story = {
   render: () => (
     <Drawer
-      trigger={<Button>Open Drawer</Button>}
+      trigger="Open Drawer"
       title="Drawer Title"
       description="Drawer Description"
     >

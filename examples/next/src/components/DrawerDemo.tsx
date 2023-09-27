@@ -1,11 +1,11 @@
-import { Button, Drawer, Text } from "@animareflection/ui";
+import { Drawer, Text } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
 const DrawerDemo = () => (
   <Wrapper title="Drawer">
     <Drawer
-      trigger={<Button>Open Drawer</Button>}
+      trigger="Open Drawer"
       title="Drawer Title"
       description="Drawer Description"
     >

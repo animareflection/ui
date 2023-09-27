@@ -9,12 +9,10 @@ export type Props = ComponentProps<typeof panda.button> & ButtonVariantProps;
 /**
  * Core UI button.
  */
-const Button = ({ variant, size, children, ...rest }: Props) => {
-  return (
-    <panda.button className={button({ variant, size })} {...rest}>
-      {children}
-    </panda.button>
-  );
-};
+const Button = ({ variant, size, children, ...rest }: Props) => (
+  <panda.button className={button({ variant, size })} {...rest}>
+    {children}
+  </panda.button>
+);
 
 export default Button;
