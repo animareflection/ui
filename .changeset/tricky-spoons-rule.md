@@ -2,4 +2,4 @@
 "@animareflection/ui": minor
 ---
 
-Refactor library structure with client component focus
+**Breaking:** Refactor library structure with client component focus
