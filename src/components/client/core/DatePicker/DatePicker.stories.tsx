@@ -1,10 +1,9 @@
 import { FiCalendar as CalendarIcon } from "react-icons/fi";
 
 import { datePickerState } from "./DatePicker.spec";
-import { DatePicker } from "components/client";
+import { DatePicker, Input } from "components/client";
 import Button from "components/client/core/Button/Button";
 import Icon from "components/client/core/Icon/Icon";
-import Input from "components/client/core/Input/Input";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
