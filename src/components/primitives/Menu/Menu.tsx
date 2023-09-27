@@ -36,8 +36,8 @@ import type {
  * Core UI menu primitives.
  */
 export type PrimitiveMenuProps = MenuProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const PrimitiveMenu: PandaComponent<typeof Menu> = panda(Menu);
+
+const PrimitiveMenu = panda(Menu);
 
 export type PrimitiveMenuArrowProps = MenuArrowProps;
 export const PrimitiveMenuArrow = panda(MenuArrow);
@@ -52,22 +52,19 @@ export type PrimitiveMenuContextTriggerProps = MenuContextTriggerProps;
 export const PrimitiveMenuContextTrigger = panda(MenuContextTrigger);
 
 export type PrimitiveMenuItemProps = MenuItemProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const PrimitiveMenuItem: PandaComponent<typeof MenuItem> =
-  panda(MenuItem);
+
+export const PrimitiveMenuItem = panda(MenuItem);
 
 export type PrimitiveMenuItemGroupProps = MenuItemGroupProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const PrimitiveMenuItemGroup: PandaComponent<typeof MenuItemGroup> =
-  panda(MenuItemGroup);
+
+export const PrimitiveMenuItemGroup = panda(MenuItemGroup);
 
 export type PrimitiveMenuItemGroupLabelProps = MenuItemGroupLabelProps;
 export const PrimitiveMenuItemGroupLabel = panda(MenuItemGroupLabel);
 
 export type PrimitiveMenuOptionItemProps = MenuOptionItemProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const PrimitiveMenuOptionItem: PandaComponent<typeof MenuOptionItem> =
-  panda(MenuOptionItem);
+
+export const PrimitiveMenuOptionItem = panda(MenuOptionItem);
 
 export type PrimitiveMenuPositionerProps = MenuPositionerProps;
 export const PrimitiveMenuPositioner = panda(MenuPositioner);
