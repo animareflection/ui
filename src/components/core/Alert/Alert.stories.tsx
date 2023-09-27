@@ -1,6 +1,6 @@
-import { FiInfo } from "react-icons/fi";
+import { FiInfo, FiAlertTriangle, FiAlertOctagon } from "react-icons/fi";
 
-import { Alert } from "components/core";
+import { Alert, Icon } from "components/core";
 import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -13,8 +13,43 @@ export const Default: Story = {
       icon={<FiInfo />}
       title="Browser update available"
       description="For the best experience, please update your browser."
-      variant="warning"
     />
+  ),
+};
+
+export const Variants: Story = {
+  render: () => (
+    <Flex direction="column" w="100%" gap={2}>
+      <Alert
+        icon={
+          <Icon color="fg.emphasized">
+            <FiInfo />
+          </Icon>
+        }
+        title="Default alert"
+        description="Description of default alert."
+      />
+      <Alert
+        icon={
+          <Icon color="yellow.800">
+            <FiAlertTriangle />
+          </Icon>
+        }
+        title="Warning alert"
+        description="Description of warning alert."
+        variant="warning"
+      />
+      <Alert
+        icon={
+          <Icon color="red.800">
+            <FiAlertOctagon />
+          </Icon>
+        }
+        title="Error alert"
+        description="Description of error alert."
+        variant="error"
+      />
+    </Flex>
   ),
 };
 

@@ -1,4 +1,3 @@
-import Icon from "components/core/Icon/Icon";
 import Text from "components/core/Text/Text";
 import { Stack } from "generated/panda/jsx";
 import { alert } from "generated/panda/recipes";
@@ -24,7 +23,7 @@ const Alert = ({ variant, icon, title, description, ...rest }: Props) => {
       align={{ sm: "center" }}
       {...rest}
     >
-      {icon && <Icon className={classNames.icon}>{icon}</Icon>}
+      {icon && icon}
       <Stack gap={1}>
         <Text className={classNames.title}>{title}</Text>
         {description && (
