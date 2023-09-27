@@ -39,18 +39,13 @@ const Avatar = ({
         <panda.div
           height="inherit"
           justifyContent="center"
-          display="flex"
           alignItems="center"
+          display="flex"
         >
           {fallback}
         </panda.div>
       </AvatarFallback>
-      <AvatarImage
-        objectFit="fill"
-        className={classNames.image}
-        src={src}
-        alt={alt}
-      />
+      <AvatarImage className={classNames.image} src={src} alt={alt} />
     </PrimitiveAvatar>
   );
 };

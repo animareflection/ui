@@ -17,8 +17,6 @@ export const avatarRecipe = defineSlotRecipe({
     fallback: {
       height: "inherit",
       textStyle: "md",
-      alignItems: "center",
-      justifyContent: "center",
     },
     image: {
       objectFit: "cover",
