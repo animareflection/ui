@@ -43,6 +43,7 @@ export {
   DatePickerMonthCellTrigger,
   DatePickerYearCell,
   DatePickerYearCellTrigger,
+  DatePickerPositioner,
 } from "./DatePicker/DatePicker";
 export {
   default as Drawer,
@@ -183,6 +184,7 @@ export type {
   DatePickerMonthCellTriggerProps,
   DatePickerYearCellProps,
   DatePickerYearCellTriggerProps,
+  DatePickerPositionerProps,
 } from "./DatePicker/DatePicker";
 export type {
   DrawerProps,

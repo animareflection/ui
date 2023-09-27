@@ -21,6 +21,7 @@ import {
   DatePickerMonthCellTrigger as ArkDatePickerMonthCellTrigger,
   DatePickerYearCell as ArkDatePickerYearCell,
   DatePickerYearCellTrigger as ArkDatePickerYearCellTrigger,
+  DatePickerPositioner as ArkDatePickerPositioner,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
@@ -48,6 +49,7 @@ import type {
   DatePickerMonthCellTriggerProps as ArkDatePickerMonthCellTriggerProps,
   DatePickerYearCellProps as ArkDatePickerYearCellProps,
   DatePickerYearCellTriggerProps as ArkDatePickerYearCellTriggerProps,
+  DatePickerPositionerProps as ArkDatePickerPositionerProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
 
@@ -129,5 +131,8 @@ export const DatePickerYearCell: PandaComponent<typeof ArkDatePickerYearCell> =
 
 export type DatePickerYearCellTriggerProps = ArkDatePickerYearCellTriggerProps;
 export const DatePickerYearCellTrigger = panda(ArkDatePickerYearCellTrigger);
+
+export type DatePickerPositionerProps = ArkDatePickerPositionerProps;
+export const DatePickerPositioner = panda(ArkDatePickerPositioner);
 
 export default DatePicker;
