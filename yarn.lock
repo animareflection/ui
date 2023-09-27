@@ -5795,30 +5795,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/router@npm:7.4.5":
-  version: 7.4.5
-  resolution: "@storybook/router@npm:7.4.5"
-  dependencies:
-    "@storybook/client-logger": 7.4.5
-    memoizerific: ^1.11.3
-    qs: ^6.10.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: bbbbc0b4e39fe07c5ec9cdb7153ac177361b08131b027e3e7e6f5d0911f7f5323e25b0835c6e85204b66de598b038058612f4888f441fd8b9ff8935a987391ba
-  languageName: node
-  linkType: hard
-
-"@storybook/store@npm:7.4.5":
-  version: 7.4.5
-  resolution: "@storybook/store@npm:7.4.5"
-  dependencies:
-    "@storybook/client-logger": 7.4.5
-    "@storybook/preview-api": 7.4.5
-  checksum: b5372f42049dda7cd80cc284f6d4609ce344d14c1436e6903862744b8668db0cd7d9445cc19819ebaf1c4ca0142fb908a42572e72ace70629732653632f32d3b
-  languageName: node
-  linkType: hard
-
 "@storybook/storybook-deployer@npm:^2.8.16":
   version: 2.8.16
   resolution: "@storybook/storybook-deployer@npm:2.8.16"
@@ -6078,22 +6054,6 @@ __metadata:
   linkType: hard
 
 "@testing-library/dom@npm:^9.0.0, @testing-library/dom@npm:^9.3.3":
-  version: 9.3.3
-  resolution: "@testing-library/dom@npm:9.3.3"
-  dependencies:
-    "@babel/code-frame": ^7.10.4
-    "@babel/runtime": ^7.12.5
-    "@types/aria-query": ^5.0.1
-    aria-query: 5.1.3
-    chalk: ^4.1.0
-    dom-accessibility-api: ^0.5.9
-    lz-string: ^1.5.0
-    pretty-format: ^27.0.2
-  checksum: 34e0a564da7beb92aa9cc44a9080221e2412b1a132eb37be3d513fe6c58027674868deb9f86195756d98d15ba969a30fe00632a4e26e25df2a5a4f6ac0686e37
-  languageName: node
-  linkType: hard
-
-"@testing-library/dom@npm:^9.3.1":
   version: 9.3.3
   resolution: "@testing-library/dom@npm:9.3.3"
   dependencies:
@@ -6636,13 +6596,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.5.6":
-  version: 20.7.0
-  resolution: "@types/node@npm:20.7.0"
-  checksum: 1b2919925c213f4d2039ada7a8354c998e144f7291db8d719ef58ea9924ab636c113690073b0ec3b82ba62907385f7e0f51e9d1583c1a818776daa5156d3a590
-  languageName: node
-  linkType: hard
-
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.2
   resolution: "@types/normalize-package-data@npm:2.4.2"
@@ -6709,17 +6662,6 @@ __metadata:
   linkType: hard
 
 "@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.2.22":
-  version: 18.2.23
-  resolution: "@types/react@npm:18.2.23"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: efb9d1ed1940c0e7ba08a21ffba5e266d8dbbb8fe618cfb97bc902dfc96385fdd8189e3f7f64b4aa13134f8e61947d60560deb23be151253c3a97b0d070897ca
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^18.2.21":
   version: 18.2.23
   resolution: "@types/react@npm:18.2.23"
   dependencies:
@@ -19773,17 +19715,6 @@ __metadata:
   linkType: hard
 
 "postcss@npm:^8.1.10, postcss@npm:^8.2.14, postcss@npm:^8.4.21, postcss@npm:^8.4.27, postcss@npm:^8.4.30":
-  version: 8.4.30
-  resolution: "postcss@npm:8.4.30"
-  dependencies:
-    nanoid: ^3.3.6
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 6c810c10c9bd3e03ca016e0b6b6756261e640aba1a9a7b1200b55502bc34b9165e38f590aef3493afc2f30ab55cdfcd43fd0f8408d69a77318ddbcf2a8ad164b
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.28":
   version: 8.4.30
   resolution: "postcss@npm:8.4.30"
   dependencies:
