@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { avatarState } from "./Avatar.spec";
 import { Avatar, Button } from "components/client";
-import { Flex } from "generated/panda/jsx";
+import { Flex, HStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -32,6 +32,29 @@ const AvatarToggle = () => {
 
 export const Toggle: Story = {
   render: () => <AvatarToggle />,
+};
+
+export const Variants: Story = {
+  render: () => (
+    <HStack gap={2}>
+      <Avatar src="/img/logo.png" alt="avatar" />
+      <Avatar variant="square" src="/img/logo.png" alt="avatar" />
+    </HStack>
+  ),
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <HStack gap={2}>
+      <Avatar size="xs" src="/img/logo.png" alt="avatar" />
+      <Avatar size="sm" src="/img/logo.png" alt="avatar" />
+      <Avatar src="/img/logo.png" alt="avatar" />
+      <Avatar size="lg" src="/img/logo.png" alt="avatar" />
+      <Avatar size="xl" src="/img/logo.png" alt="avatar" />
+      <Avatar size="2xl" src="/img/logo.png" alt="avatar" />
+      <Avatar size="3xl" src="/img/logo.png" alt="avatar" />
+    </HStack>
+  ),
 };
 
 export const AvatarState: Story = {

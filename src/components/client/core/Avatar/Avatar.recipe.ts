@@ -6,32 +6,37 @@ export const avatarRecipe = defineSlotRecipe({
   slots: ["root", "fallback", "image"],
   base: {
     root: {
+      height: 10,
+      width: 10,
       borderRadius: "full",
       borderWidth: "1px",
+      alignItems: "center",
       flexShrink: 0,
-      height: "10",
-      width: "10",
+      justifyContent: "center",
     },
     fallback: {
-      alignItems: "center",
-      background: "bg.subtle",
-      borderWidth: "1px",
-      display: "flex",
-      fontWeight: "semibold",
       height: "inherit",
-      justifyContent: "center",
       textStyle: "md",
+      alignItems: "center",
+      justifyContent: "center",
     },
     image: {
       objectFit: "cover",
     },
   },
   variants: {
+    variant: {
+      square: {
+        root: {
+          borderRadius: "lg",
+        },
+      },
+    },
     size: {
       xs: {
         root: {
-          height: "8",
-          width: "8",
+          height: 8,
+          width: 8,
         },
         fallback: {
           textStyle: "xs",
@@ -39,8 +44,8 @@ export const avatarRecipe = defineSlotRecipe({
       },
       sm: {
         root: {
-          height: "9",
-          width: "9",
+          height: 9,
+          width: 9,
         },
         fallback: {
           textStyle: "sm",
@@ -48,8 +53,8 @@ export const avatarRecipe = defineSlotRecipe({
       },
       lg: {
         root: {
-          height: "11",
-          width: "11",
+          height: 11,
+          width: 11,
         },
         fallback: {
           textStyle: "lg",
@@ -57,8 +62,8 @@ export const avatarRecipe = defineSlotRecipe({
       },
       xl: {
         root: {
-          height: "12",
-          width: "12",
+          height: 12,
+          width: 12,
         },
         fallback: {
           textStyle: "xl",
@@ -66,11 +71,20 @@ export const avatarRecipe = defineSlotRecipe({
       },
       "2xl": {
         root: {
-          height: "16",
-          width: "16",
+          height: 14,
+          width: 14,
         },
         fallback: {
           textStyle: "2xl",
+        },
+      },
+      "3xl": {
+        root: {
+          height: 16,
+          width: 16,
+        },
+        fallback: {
+          textStyle: "3xl",
         },
       },
     },

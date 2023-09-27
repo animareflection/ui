@@ -14,7 +14,7 @@ export const avatarState = async <R extends Renderer = ReactRenderer>({
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  const fallbackAvatar = canvas.getByText("PA");
+  const fallbackAvatar = canvas.getByText("AR");
   const toggleButton = await canvas.findByTestId("toggle");
 
   await step("renders fallback avatar when image is not provided", async () => {

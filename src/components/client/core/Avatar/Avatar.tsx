@@ -3,25 +3,43 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "components/primitives";
+import { panda } from "generated/panda/jsx";
 import { avatar } from "generated/panda/recipes";
 
 import type { AvatarProps } from "components/primitives";
 import type { AvatarVariantProps } from "generated/panda/recipes";
 
 export interface Props extends AvatarProps, AvatarVariantProps {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
+  fallback?: string;
 }
 
 /**
  * Core UI avatar.
  */
-const Avatar = ({ src, alt, size, ...rest }: Props) => {
-  const classNames = avatar({ size });
+const Avatar = ({
+  src,
+  alt,
+  fallback = "AR",
+  size,
+  variant,
+  ...rest
+}: Props) => {
+  const classNames = avatar({ size, variant });
   return (
     <PrimitiveAvatar className={classNames.root} {...rest}>
-      <AvatarFallback className={classNames.fallback}>PA</AvatarFallback>
-      <AvatarImage className={classNames.image} src={src} alt={alt} />
+      <AvatarFallback className={classNames.fallback}>
+        <panda.div height="inherit" display="flex" alignItems="center">
+          {fallback}
+        </panda.div>
+      </AvatarFallback>
+      <AvatarImage
+        objectFit="fill"
+        className={classNames.image}
+        src={src}
+        alt={alt}
+      />
     </PrimitiveAvatar>
   );
 };
