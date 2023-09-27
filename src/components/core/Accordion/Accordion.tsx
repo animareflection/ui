@@ -12,6 +12,7 @@ import {
   PrimitiveAccordionContent,
 } from "components/primitives";
 import { accordion } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { PrimitiveAccordionProps } from "components/primitives";
 import type { ReactElement, ReactNode } from "react";
@@ -34,6 +35,10 @@ export interface Props extends PrimitiveAccordionProps {
  */
 const Accordion = ({ items, plusMinus, ...rest }: Props) => {
   const classNames = accordion();
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveAccordion

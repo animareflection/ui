@@ -28,9 +28,9 @@ export const tooltipState = async <R extends Renderer = ReactRenderer>({
   });
 
   await step("It should close tooltip when the hover ends", async () => {
-    await userEvent.unhover(hoverButton);
-
     const tooltipTitle = screen.getByText("Tooltip Title");
+
+    await userEvent.unhover(hoverButton);
 
     await expect(tooltipTitle).not.toBeVisible();
   });

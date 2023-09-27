@@ -13,6 +13,7 @@ import {
   PrimitiveModalTrigger,
 } from "components/primitives";
 import { modal } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
 import type { ReactNode } from "react";
@@ -28,6 +29,10 @@ export interface Props extends PrimitiveModalProps {
  */
 const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
   const classNames = modal();
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveModal {...rest}>

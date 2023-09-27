@@ -4,6 +4,7 @@ import {
   PrimitiveCheckboxLabel,
 } from "components/primitives";
 import { checkbox } from "generated/panda/recipes";
+import { useIsMounted } from "lib/hooks";
 
 import type { PrimitiveCheckboxProps } from "components/primitives";
 import type { CheckboxVariantProps } from "generated/panda/recipes";
@@ -21,6 +22,10 @@ export interface Props
  */
 const Checkbox = ({ size, label, ...rest }: Props) => {
   const classNames = checkbox({ size });
+
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveCheckbox className={classNames.root} {...rest}>

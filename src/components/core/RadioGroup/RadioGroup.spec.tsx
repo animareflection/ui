@@ -1,6 +1,8 @@
 import { expect } from "@storybook/jest";
 import { userEvent, within } from "@storybook/testing-library";
 
+import { sleep } from "lib/utils";
+
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
@@ -12,6 +14,8 @@ export const radioGroupState = async <R extends Renderer = ReactRenderer>({
   step,
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
+
+  await sleep(100);
 
   const firstRadio = canvas.getByText("React");
   const secondRadio = canvas.getByText("Solid");

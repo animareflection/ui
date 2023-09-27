@@ -15,6 +15,8 @@ export const modalState = async <R extends Renderer = ReactRenderer>({
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
+  await sleep(100);
+
   const openButton = canvas.getByRole("button", {
     name: /open modal/i,
   });
