@@ -19,13 +19,7 @@ const Alert = ({ variant, icon, title, description, ...rest }: Props) => {
   const classNames = alert({ variant });
 
   return (
-    <Stack
-      className={classNames.root}
-      gap={4}
-      direction={{ base: "column", sm: "row" }}
-      align={{ sm: "center" }}
-      {...rest}
-    >
+    <Stack className={classNames.root} {...rest}>
       <Icon className={classNames.icon} color="fg.emphasized">
         {icon ?? <FiInfo />}
       </Icon>

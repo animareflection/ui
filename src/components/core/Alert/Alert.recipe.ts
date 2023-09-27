@@ -13,6 +13,9 @@ export const alertRecipe = defineSlotRecipe({
       boxShadow: "md",
       p: 4,
       w: "full",
+      gap: 4,
+      flexDirection: { base: "column!", sm: "row!" },
+      alignItems: { sm: "center" },
     },
     title: {
       fontWeight: "medium",
@@ -30,10 +33,10 @@ export const alertRecipe = defineSlotRecipe({
           borderColor: "yellow.600",
         },
         title: {
-          color: "yellow.800",
+          color: "yellow.800!",
         },
         description: {
-          color: "yellow.600",
+          color: "yellow.600!",
         },
         icon: {
           color: "yellow.800!",
@@ -45,10 +48,10 @@ export const alertRecipe = defineSlotRecipe({
           borderColor: "red.600",
         },
         title: {
-          color: "red.800",
+          color: "red.800!",
         },
         description: {
-          color: "red.600",
+          color: "red.600!",
         },
         icon: {
           color: "red.800!",
