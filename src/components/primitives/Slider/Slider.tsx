@@ -23,14 +23,13 @@ import type {
   SliderThumbProps,
   SliderTrackProps,
 } from "@ark-ui/react";
-import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI slider primitives.
  */
 export type PrimitiveSliderProps = SliderProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const PrimitiveSlider: PandaComponent<typeof Slider> = panda(Slider);
+
+const PrimitiveSlider = panda(Slider);
 
 export type PrimitiveSliderControlProps = SliderControlProps;
 export const PrimitiveSliderControl = panda(SliderControl);
@@ -45,9 +44,8 @@ export type PrimitiveSliderMarkerGroupProps = SliderMarkerGroupProps;
 export const PrimitiveSliderMarkerGroup = panda(SliderMarkerGroup);
 
 export type PrimitiveSliderOutputProps = SliderOutputProps;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-export const PrimitiveSliderOutput: PandaComponent<typeof SliderOutput> =
-  panda(SliderOutput);
+
+export const PrimitiveSliderOutput = panda(SliderOutput);
 
 export type PrimitiveSliderRangeProps = SliderRangeProps;
 export const PrimitiveSliderRange = panda(SliderRange);

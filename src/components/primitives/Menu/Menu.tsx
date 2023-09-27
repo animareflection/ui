@@ -31,12 +31,13 @@ import type {
   MenuTriggerProps,
   MenuTriggerItemProps,
 } from "@ark-ui/react";
-import type { PandaComponent } from "generated/panda/types/jsx";
+import type { PandaComponent } from "generated/panda/jsx";
 
 /**
  * Core UI menu primitives.
  */
 export type PrimitiveMenuProps = MenuProps;
+
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const PrimitiveMenu: PandaComponent<typeof Menu> = panda(Menu);
 
@@ -53,11 +54,13 @@ export type PrimitiveMenuContextTriggerProps = MenuContextTriggerProps;
 export const PrimitiveMenuContextTrigger = panda(MenuContextTrigger);
 
 export type PrimitiveMenuItemProps = MenuItemProps;
+
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 export const PrimitiveMenuItem: PandaComponent<typeof MenuItem> =
   panda(MenuItem);
 
 export type PrimitiveMenuItemGroupProps = MenuItemGroupProps;
+
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 export const PrimitiveMenuItemGroup: PandaComponent<typeof MenuItemGroup> =
   panda(MenuItemGroup);
