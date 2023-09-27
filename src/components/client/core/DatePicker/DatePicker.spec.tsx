@@ -48,11 +48,11 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
 
     await userEvent.click(viewTrigger);
 
-    const monthCell = await within(document.body).findByRole("button", {
+    const monthCell = await within(document.body).findAllByRole("button", {
       name: /Jan/,
     });
 
-    await expect(monthCell).toBeInTheDocument();
+    await expect(monthCell[0]).toBeInTheDocument();
   });
 
   await step("Navigates to year view", async () => {
@@ -78,11 +78,11 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
 
     await userEvent.click(yearTriggers[0]);
 
-    const monthCell = await within(document.body).findByRole("button", {
+    const monthCell = await within(document.body).findAllByRole("button", {
       name: /Sep/,
     });
 
-    await userEvent.click(monthCell);
+    await userEvent.click(monthCell[0]);
 
     const someDateCell = await within(document.body).findAllByRole("button", {
       name: /4/,

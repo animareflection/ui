@@ -15,6 +15,14 @@ export const datePickerRecipe = defineSlotRecipe({
 
   base: {
     cellTrigger: {
+      _disabled: {
+        color: "fg.disabled",
+        cursor: "not-allowed",
+        _hover: {
+          background: "transparent",
+          color: "fg.disabled",
+        },
+      },
       "&[data-in-range]": {
         color: "fg.default",
         background: "accent.subtle",
@@ -29,6 +37,11 @@ export const datePickerRecipe = defineSlotRecipe({
           bgColor: "accent.subtle",
           color: "fg.default",
         },
+      },
+      _focus: {
+        color: "fg.default",
+        background: "accent.subtle",
+        borderRadius: "md",
       },
     },
     content: {

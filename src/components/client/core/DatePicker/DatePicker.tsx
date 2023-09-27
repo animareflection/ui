@@ -120,11 +120,6 @@ const DatePicker = ({ trigger, input, clearTrigger, ...rest }: Props) => {
                             {week.map((day, id) => (
                               <DatePickerDayCell key={id} value={day}>
                                 <DatePickerDayCellTrigger
-                                  _focus={{
-                                    color: "fg.default",
-                                    background: "accent.subtle",
-                                    borderRadius: "md",
-                                  }}
                                   className={classNames.cellTrigger}
                                 >
                                   <Button
@@ -162,11 +157,6 @@ const DatePicker = ({ trigger, input, clearTrigger, ...rest }: Props) => {
                                   value={month.value}
                                 >
                                   <DatePickerMonthCellTrigger
-                                    _focus={{
-                                      color: "fg.default",
-                                      background: "accent.subtle",
-                                      borderRadius: "md",
-                                    }}
                                     className={classNames.cellTrigger}
                                   >
                                     <Button
@@ -202,11 +192,6 @@ const DatePicker = ({ trigger, input, clearTrigger, ...rest }: Props) => {
                                 value={year.value}
                               >
                                 <DatePickerYearCellTrigger
-                                  _focus={{
-                                    color: "fg.default",
-                                    background: "accent.subtle",
-                                    borderRadius: "md",
-                                  }}
                                   className={classNames.cellTrigger}
                                 >
                                   <Button
