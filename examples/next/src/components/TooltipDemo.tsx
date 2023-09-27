@@ -11,9 +11,12 @@ const TooltipDemo = () => {
         }}
         trigger="Open Tooltip"
         content="Tooltip Title"
-        // TODO: figure out why the panda style props aren't working
         triggerProps={{
-          bgColor: "bg.default",
+          bgColor: "brand.primary.500",
+          p: 3,
+          borderRadius: "md",
+          color: "accent.fg",
+          fontWeight: "bold",
         }}
       />
     </Wrapper>

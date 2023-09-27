@@ -11,6 +11,13 @@ const TooltipDemo = () => {
         }}
         trigger="Open Tooltip"
         content="Tooltip Title"
+        triggerProps={{
+          bgColor: "brand.primary.500",
+          p: 3,
+          borderRadius: "md",
+          color: "accent.fg",
+          fontWeight: "bold",
+        }}
       />
     </Wrapper>
   );
