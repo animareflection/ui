@@ -25,28 +25,28 @@ import type {
 /**
  * Core UI drawer primitives.
  */
-export type DrawerProps = DialogProps;
-const Drawer = panda(Dialog);
+export type PrimitiveDrawerProps = DialogProps;
+const PrimitiveDrawer = panda(Dialog);
 
-export type DrawerTriggerProps = DialogTriggerProps;
-export const DrawerTrigger = panda(DialogTrigger);
+export type PrimitiveDrawerTriggerProps = DialogTriggerProps;
+export const PrimitiveDrawerTrigger = panda(DialogTrigger);
 
-export type DrawerBackdropProps = DialogBackdropProps;
-export const DrawerBackdrop = panda(DialogBackdrop);
+export type PrimitiveDrawerBackdropProps = DialogBackdropProps;
+export const PrimitiveDrawerBackdrop = panda(DialogBackdrop);
 
-export type DrawerContainerProps = DialogContainerProps;
-export const DrawerContainer = panda(DialogContainer);
+export type PrimitiveDrawerContainerProps = DialogContainerProps;
+export const PrimitiveDrawerContainer = panda(DialogContainer);
 
-export type DrawerContentProps = DialogContentProps;
-export const DrawerContent = panda(DialogContent);
+export type PrimitiveDrawerContentProps = DialogContentProps;
+export const PrimitiveDrawerContent = panda(DialogContent);
 
-export type DrawerCloseTriggerProps = DialogCloseTriggerProps;
-export const DrawerCloseTrigger = panda(DialogCloseTrigger);
+export type PrimitiveDrawerCloseTriggerProps = DialogCloseTriggerProps;
+export const PrimitiveDrawerCloseTrigger = panda(DialogCloseTrigger);
 
-export type DrawerTitleProps = DialogTitleProps;
-export const DrawerTitle = panda(DialogTitle);
+export type PrimitiveDrawerTitleProps = DialogTitleProps;
+export const PrimitiveDrawerTitle = panda(DialogTitle);
 
-export type DrawerDescriptionProps = DialogDescriptionProps;
-export const DrawerDescription = panda(DialogDescription);
+export type PrimitiveDrawerDescriptionProps = DialogDescriptionProps;
+export const PrimitiveDrawerDescription = panda(DialogDescription);
 
-export default Drawer;
+export default PrimitiveDrawer;

@@ -1,4 +1,4 @@
-import { Text } from "components/universal";
+import { Text } from "components/core";
 import { Box, HStack, Stack } from "generated/panda/jsx";
 import { useBreakpoint, useBreakpointValue } from "lib/hooks";
 

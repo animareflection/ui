@@ -25,28 +25,28 @@ import type {
 /**
  * Core UI modal primitives.
  */
-export type ModalProps = DialogProps;
-const Modal = panda(Dialog);
+export type PrimitiveModalProps = DialogProps;
+const PrimitiveModal = panda(Dialog);
 
-export type ModalTriggerProps = DialogTriggerProps;
-export const ModalTrigger = panda(DialogTrigger);
+export type PrimitiveModalTriggerProps = DialogTriggerProps;
+export const PrimitiveModalTrigger = panda(DialogTrigger);
 
-export type ModalBackdropProps = DialogBackdropProps;
-export const ModalBackdrop = panda(DialogBackdrop);
+export type PrimitiveModalBackdropProps = DialogBackdropProps;
+export const PrimitiveModalBackdrop = panda(DialogBackdrop);
 
-export type ModalContainerProps = DialogContainerProps;
-export const ModalContainer = panda(DialogContainer);
+export type PrimitiveModalContainerProps = DialogContainerProps;
+export const PrimitiveModalContainer = panda(DialogContainer);
 
-export type ModalContentProps = DialogContentProps;
-export const ModalContent = panda(DialogContent);
+export type PrimitiveModalContentProps = DialogContentProps;
+export const PrimitiveModalContent = panda(DialogContent);
 
-export type ModalCloseTriggerProps = DialogCloseTriggerProps;
-export const ModalCloseTrigger = panda(DialogCloseTrigger);
+export type PrimitiveModalCloseTriggerProps = DialogCloseTriggerProps;
+export const PrimitiveModalCloseTrigger = panda(DialogCloseTrigger);
 
-export type ModalTitleProps = DialogTitleProps;
-export const ModalTitle = panda(DialogTitle);
+export type PrimitiveModalTitleProps = DialogTitleProps;
+export const PrimitiveModalTitle = panda(DialogTitle);
 
-export type ModalDescriptionProps = DialogDescriptionProps;
-export const ModalDescription = panda(DialogDescription);
+export type PrimitiveModalDescriptionProps = DialogDescriptionProps;
+export const PrimitiveModalDescription = panda(DialogDescription);
 
-export default Modal;
+export default PrimitiveModal;

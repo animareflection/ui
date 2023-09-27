@@ -1,4 +1,4 @@
-import { Textarea } from "@animareflection/ui/client";
+import { Textarea } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 

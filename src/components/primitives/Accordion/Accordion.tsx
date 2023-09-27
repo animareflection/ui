@@ -1,34 +1,34 @@
 import {
-  Accordion as ArkAccordion,
-  AccordionItem as ArkAccordionItem,
-  AccordionTrigger as ArkAccordionTrigger,
-  AccordionContent as ArkAccordionContent,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  AccordionProps as ArkAccordionProps,
-  AccordionItemProps as ArkAccordionItemProps,
-  AccordionTriggerProps as ArkAccordionTriggerProps,
-  AccordionContentProps as ArkAccordionContentProps,
+  AccordionProps,
+  AccordionItemProps,
+  AccordionTriggerProps,
+  AccordionContentProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI accordion primitives.
  */
-export type AccordionProps = ArkAccordionProps;
-const Accordion: PandaComponent<typeof ArkAccordion> = panda(ArkAccordion);
+export type PrimitiveAccordionProps = AccordionProps;
+const PrimitiveAccordion: PandaComponent<typeof Accordion> = panda(Accordion);
 
-export type AccordionItemProps = ArkAccordionItemProps;
-export const AccordionItem: PandaComponent<typeof ArkAccordionItem> =
-  panda(ArkAccordionItem);
+export type PrimitiveAccordionItemProps = AccordionItemProps;
+export const PrimitiveAccordionItem: PandaComponent<typeof AccordionItem> =
+  panda(AccordionItem);
 
-export type AccordionTriggerProps = ArkAccordionTriggerProps;
-export const AccordionTrigger = panda(ArkAccordionTrigger);
+export type PrimitiveAccordionTriggerProps = AccordionTriggerProps;
+export const PrimitiveAccordionTrigger = panda(AccordionTrigger);
 
-export type AccordionContentProps = ArkAccordionContentProps;
-export const AccordionContent = panda(ArkAccordionContent);
+export type PrimitiveAccordionContentProps = AccordionContentProps;
+export const PrimitiveAccordionContent = panda(AccordionContent);
 
-export default Accordion;
+export default PrimitiveAccordion;

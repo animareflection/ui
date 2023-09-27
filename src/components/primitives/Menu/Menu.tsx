@@ -1,81 +1,84 @@
 import {
-  Menu as ArkMenu,
-  MenuArrow as ArkMenuArrow,
-  MenuArrowTip as ArkMenuArrowTip,
-  MenuContent as ArkMenuContent,
-  MenuContextTrigger as ArkMenuContextTrigger,
-  MenuItem as ArkMenuItem,
-  MenuItemGroup as ArkMenuItemGroup,
-  MenuItemGroupLabel as ArkMenuItemGroupLabel,
-  MenuOptionItem as ArkMenuOptionItem,
-  MenuPositioner as ArkMenuPositioner,
-  MenuSeparator as ArkMenuSeparator,
-  MenuTrigger as ArkMenuTrigger,
-  MenuTriggerItem as ArkMenuTriggerItem,
+  Menu,
+  MenuArrow,
+  MenuArrowTip,
+  MenuContent,
+  MenuContextTrigger,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemGroupLabel,
+  MenuOptionItem,
+  MenuPositioner,
+  MenuSeparator,
+  MenuTrigger,
+  MenuTriggerItem,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  MenuProps as ArkMenuProps,
-  MenuArrowProps as ArkMenuArrowProps,
-  MenuArrowTipProps as ArkMenuArrowTipProps,
-  MenuContentProps as ArkMenuContentProps,
-  MenuContextTriggerProps as ArkMenuContextTriggerProps,
-  MenuItemProps as ArkMenuItemProps,
-  MenuItemGroupProps as ArkMenuItemGroupProps,
-  MenuItemGroupLabelProps as ArkMenuItemGroupLabelProps,
-  MenuOptionItemProps as ArkMenuOptionItemProps,
-  MenuPositionerProps as ArkMenuPositionerProps,
-  MenuSeparatorProps as ArkMenuSeparatorProps,
-  MenuTriggerProps as ArkMenuTriggerProps,
-  MenuTriggerItemProps as ArkMenuTriggerItemProps,
+  MenuProps,
+  MenuArrowProps,
+  MenuArrowTipProps,
+  MenuContentProps,
+  MenuContextTriggerProps,
+  MenuItemProps,
+  MenuItemGroupProps,
+  MenuItemGroupLabelProps,
+  MenuOptionItemProps,
+  MenuPositionerProps,
+  MenuSeparatorProps,
+  MenuTriggerProps,
+  MenuTriggerItemProps,
 } from "@ark-ui/react";
 
 /**
  * Core UI menu primitives.
  */
-export type MenuProps = ArkMenuProps;
+export type PrimitiveMenuProps = MenuProps;
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+const PrimitiveMenu: PandaComponent<typeof Menu> = panda(Menu);
 
-const Menu = panda(ArkMenu);
+export type PrimitiveMenuArrowProps = MenuArrowProps;
+export const PrimitiveMenuArrow = panda(MenuArrow);
 
-export type MenuArrowProps = ArkMenuArrowProps;
-export const MenuArrow = panda(ArkMenuArrow);
+export type PrimitiveMenuArrowTipProps = MenuArrowTipProps;
+export const PrimitiveMenuArrowTip = panda(MenuArrowTip);
 
-export type MenuArrowTipProps = ArkMenuArrowTipProps;
-export const MenuArrowTip = panda(ArkMenuArrowTip);
+export type PrimitiveMenuContentProps = MenuContentProps;
+export const PrimitiveMenuContent = panda(MenuContent);
 
-export type MenuContentProps = ArkMenuContentProps;
-export const MenuContent = panda(ArkMenuContent);
+export type PrimitiveMenuContextTriggerProps = MenuContextTriggerProps;
+export const PrimitiveMenuContextTrigger = panda(MenuContextTrigger);
 
-export type MenuContextTriggerProps = ArkMenuContextTriggerProps;
-export const MenuContextTrigger = panda(ArkMenuContextTrigger);
+export type PrimitiveMenuItemProps = MenuItemProps;
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+export const PrimitiveMenuItem: PandaComponent<typeof MenuItem> =
+  panda(MenuItem);
 
-export type MenuItemProps = ArkMenuItemProps;
+export type PrimitiveMenuItemGroupProps = MenuItemGroupProps;
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+export const PrimitiveMenuItemGroup: PandaComponent<typeof MenuItemGroup> =
+  panda(MenuItemGroup);
 
-export const MenuItem = panda(ArkMenuItem);
+export type PrimitiveMenuItemGroupLabelProps = MenuItemGroupLabelProps;
+export const PrimitiveMenuItemGroupLabel = panda(MenuItemGroupLabel);
 
-export type MenuItemGroupProps = ArkMenuItemGroupProps;
+export type PrimitiveMenuOptionItemProps = MenuOptionItemProps;
+// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
+export const PrimitiveMenuOptionItem: PandaComponent<typeof MenuOptionItem> =
+  panda(MenuOptionItem);
 
-export const MenuItemGroup = panda(ArkMenuItemGroup);
+export type PrimitiveMenuPositionerProps = MenuPositionerProps;
+export const PrimitiveMenuPositioner = panda(MenuPositioner);
 
-export type MenuItemGroupLabelProps = ArkMenuItemGroupLabelProps;
-export const MenuItemGroupLabel = panda(ArkMenuItemGroupLabel);
+export type PrimitiveMenuSeparatorProps = MenuSeparatorProps;
+export const PrimitiveMenuSeparator = panda(MenuSeparator);
 
-export type MenuOptionItemProps = ArkMenuOptionItemProps;
+export type PrimitiveMenuTriggerProps = MenuTriggerProps;
+export const PrimitiveMenuTrigger = panda(MenuTrigger);
 
-export const MenuOptionItem = panda(ArkMenuOptionItem);
+export type PrimitiveMenuTriggerItemProps = MenuTriggerItemProps;
+export const PrimitiveMenuTriggerItem = panda(MenuTriggerItem);
 
-export type MenuPositionerProps = ArkMenuPositionerProps;
-export const MenuPositioner = panda(ArkMenuPositioner);
-
-export type MenuSeparatorProps = ArkMenuSeparatorProps;
-export const MenuSeparator = panda(ArkMenuSeparator);
-
-export type MenuTriggerProps = ArkMenuTriggerProps;
-export const MenuTrigger = panda(ArkMenuTrigger);
-
-export type MenuTriggerItemProps = ArkMenuTriggerItemProps;
-export const MenuTriggerItem = panda(ArkMenuTriggerItem);
-
-export default Menu;
+export default PrimitiveMenu;

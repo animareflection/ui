@@ -20,6 +20,7 @@ const pandaConfig = defineConfig({
   // TODO remove static CSS pregeneration
   staticCss: {
     recipes: {
+      accordion: [{ variant: ["*"] }],
       stat: [{ variant: ["*"] }],
     },
   },

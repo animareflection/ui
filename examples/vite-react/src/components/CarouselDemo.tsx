@@ -1,5 +1,4 @@
-import { Image } from "@animareflection/ui";
-import { Carousel } from "@animareflection/ui/client";
+import { Carousel, Image } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 

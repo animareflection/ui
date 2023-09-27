@@ -1,5 +1,4 @@
-import { Button, Modal } from "components/client";
-import { Text } from "components/universal";
+import { Button, Modal, Text } from "components/core";
 import { useDisclosure } from "lib/hooks";
 
 import type { Meta, StoryObj } from "@storybook/react";

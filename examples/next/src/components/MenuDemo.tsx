@@ -1,12 +1,8 @@
-import { HStack, Text } from "@animareflection/ui";
-import { Menu } from "@animareflection/ui/client";
+import { HStack, Menu, Text } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
-import type {
-  MenuItemGroupRecord,
-  MenuItemRecord,
-} from "@animareflection/ui/client";
+import type { MenuItemGroupRecord, MenuItemRecord } from "@animareflection/ui";
 
 const SUBMENU_GROUP_ITEMS: MenuItemRecord[] = [
   { id: "item-7", child: "Item 7" },
