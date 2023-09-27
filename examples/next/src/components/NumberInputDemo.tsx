@@ -1,4 +1,4 @@
-import { NumberInput } from "@animareflection/ui/client";
+import { NumberInput } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 

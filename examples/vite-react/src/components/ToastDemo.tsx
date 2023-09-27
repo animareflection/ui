@@ -1,5 +1,4 @@
-import { toast } from "@animareflection/ui";
-import { Button, Toast, Toaster } from "@animareflection/ui/client";
+import { Button, toast, Toast, Toaster } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
