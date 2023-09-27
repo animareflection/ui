@@ -50,7 +50,7 @@ export const BannerState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Banner> = {
-  title: "components/Core/Banner",
+  title: "Components/Core/Banner",
   component: Banner,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

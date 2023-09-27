@@ -1,11 +1,11 @@
-import { Button, Modal, Text } from "@animareflection/ui";
+import { Modal, Text } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
 const ModalDemo = () => (
   <Wrapper title="Modal">
     <Modal
-      trigger={<Button>Open Modal</Button>}
+      trigger="Open Modal"
       title="Modal Title"
       description="Modal Description"
     >

@@ -1,7 +1,6 @@
 import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
-import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveModal,
@@ -34,7 +33,9 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
     <PrimitiveModal {...rest}>
       {(ctx) => (
         <>
-          <PrimitiveModalTrigger asChild>{trigger}</PrimitiveModalTrigger>
+          <PrimitiveModalTrigger className={classNames.trigger}>
+            {trigger}
+          </PrimitiveModalTrigger>
           <Portal>
             <PrimitiveModalBackdrop className={classNames.backdrop} />
             <PrimitiveModalContainer className={classNames.container}>
@@ -57,20 +58,10 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <PrimitiveModalCloseTrigger asChild>
-                  <Button
-                    pos="absolute"
-                    top={2}
-                    right={2}
-                    bgColor={{
-                      base: "inherit",
-                      _hover: "bg.subtle",
-                    }}
-                  >
-                    <Icon color="fg.default">
-                      <CloseIcon />
-                    </Icon>
-                  </Button>
+                <PrimitiveModalCloseTrigger className={classNames.closeTrigger}>
+                  <Icon color="fg.default">
+                    <CloseIcon />
+                  </Icon>
                 </PrimitiveModalCloseTrigger>
               </PrimitiveModalContent>
             </PrimitiveModalContainer>

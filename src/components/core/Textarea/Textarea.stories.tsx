@@ -42,7 +42,7 @@ export const TextareaState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Textarea> = {
-  title: "components/Core/Textarea",
+  title: "Components/Core/Textarea",
   component: Textarea,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

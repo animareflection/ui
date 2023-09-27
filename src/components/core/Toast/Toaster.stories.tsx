@@ -109,7 +109,7 @@ export const ToastState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Toaster> = {
-  title: "components/Core/Toaster",
+  title: "Components/Core/Toaster",
   component: Toaster,
   tags: ["autodocs"],
   decorators: [

@@ -79,10 +79,11 @@ export const TooltipState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Tooltip> = {
-  title: "components/Core/Tooltip",
+  title: "Components/Core/Tooltip",
   component: Tooltip,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
+  // TODO: remove when portal issue / ref bug is fixed
   parameters: {
     layout: "centered",
   },

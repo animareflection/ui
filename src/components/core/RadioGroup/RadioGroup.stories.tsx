@@ -48,7 +48,7 @@ export const RadioGroupState: Story = {
 };
 
 const meta: Meta<typeof RadioGroup> = {
-  title: "components/Core/RadioGroup",
+  title: "Components/Core/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

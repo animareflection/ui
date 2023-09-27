@@ -96,7 +96,7 @@ export const NumberInputState: Story = {
 };
 
 const meta: Meta<typeof NumberInput> = {
-  title: "components/Core/NumberInput",
+  title: "Components/Core/NumberInput",
   component: NumberInput,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

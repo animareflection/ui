@@ -89,7 +89,7 @@ export const InputState: Story = {
 };
 
 const meta: Meta<typeof Input> = {
-  title: "components/Core/Input",
+  title: "Components/Core/Input",
   component: Input,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

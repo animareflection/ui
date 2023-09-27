@@ -1,5 +1,5 @@
 import { modalState } from "./Modal.spec";
-import { Button, Modal, Text } from "components/core";
+import { Modal, Text } from "components/core";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -8,7 +8,7 @@ type Story = StoryObj<typeof Modal>;
 export const Default: Story = {
   render: () => (
     <Modal
-      trigger={<Button>Open Modal</Button>}
+      trigger="Open Modal"
       title="Modal Title"
       description="Modal Description"
     >
@@ -24,7 +24,7 @@ export const Default: Story = {
 export const WithContext: Story = {
   render: () => (
     <Modal
-      trigger={<Button>Open Modal</Button>}
+      trigger="Open Modal"
       title="Modal Title"
       description="Modal Description"
     >
@@ -42,7 +42,7 @@ export const ModalState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Modal> = {
-  title: "components/Core/Modal",
+  title: "Components/Core/Modal",
   component: Modal,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

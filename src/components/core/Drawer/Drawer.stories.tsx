@@ -59,7 +59,7 @@ export const DrawerState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Drawer> = {
-  title: "components/Core/Drawer",
+  title: "Components/Core/Drawer",
   component: Drawer,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],

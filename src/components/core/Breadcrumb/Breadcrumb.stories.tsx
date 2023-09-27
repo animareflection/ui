@@ -53,7 +53,7 @@ export const BreadcrumbState: Story = {
 
 // TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const meta: Meta<typeof Breadcrumb> = {
-  title: "components/Core/Breadcrumb",
+  title: "Components/Core/Breadcrumb",
   component: Breadcrumb,
   tags: ["autodocs"],
   decorators: [(Story) => <Story />],
