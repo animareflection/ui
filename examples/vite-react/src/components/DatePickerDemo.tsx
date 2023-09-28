@@ -1,4 +1,4 @@
-import { Button, DatePicker, Icon, Input } from "@animareflection/ui/client";
+import { Button, DatePicker, Icon, Input } from "@animareflection/ui";
 import { FiCalendar as CalendarIcon } from "react-icons/fi";
 
 import { Wrapper } from "components";

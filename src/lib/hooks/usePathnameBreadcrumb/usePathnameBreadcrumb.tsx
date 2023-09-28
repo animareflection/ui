@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import type { BreadcrumbRecord } from "components/client/core/Breadcrumb/Breadcrumb";
+import type { BreadcrumbRecord } from "components/core/Breadcrumb/Breadcrumb";
 
 interface Options {
   pathname?: string;

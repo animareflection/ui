@@ -1,60 +1,67 @@
 import {
-  Carousel as ArkCarousel,
-  CarouselControl as ArkCarouselControl,
-  CarouselNextSlideTrigger as ArkCarouselNextSlideTrigger,
-  CarouselPrevSlideTrigger as ArkCarouselPrevSlideTrigger,
-  CarouselSlide as ArkCarouselSlide,
-  CarouselSlideGroup as ArkCarouselSlideGroup,
-  CarouselViewport as ArkCarouselViewport,
-  CarouselIndicator as ArkCarouselIndicator,
-  CarouselIndicatorGroup as ArkCarouselIndicatorGroup,
+  Carousel,
+  CarouselControl,
+  CarouselNextSlideTrigger,
+  CarouselPrevSlideTrigger,
+  CarouselSlide,
+  CarouselSlideGroup,
+  CarouselViewport,
+  CarouselIndicator,
+  CarouselIndicatorGroup,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  CarouselProps as ArkCarouselProps,
-  CarouselControlProps as ArkCarouselControlProps,
-  CarouselNextSlideTriggerProps as ArkCarouselNextSlideTriggerProps,
-  CarouselPrevSlideTriggerProps as ArkCarouselPrevSlideTriggerProps,
-  CarouselSlideProps as ArkCarouselSlideProps,
-  CarouselSlideGroupProps as ArkCarouselSlideGroupProps,
-  CarouselViewportProps as ArkCarouselViewportProps,
-  CarouselIndicatorProps as ArkCarouselIndicatorProps,
-  CarouselIndicatorGroupProps as ArkCarouselIndicatorGroupProps,
+  CarouselProps,
+  CarouselControlProps,
+  CarouselNextSlideTriggerProps,
+  CarouselPrevSlideTriggerProps,
+  CarouselSlideProps,
+  CarouselSlideGroupProps,
+  CarouselViewportProps,
+  CarouselIndicatorProps,
+  CarouselIndicatorGroupProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/jsx";
 
 /**
  * Core UI carousel primitives.
  */
-export type CarouselProps = ArkCarouselProps;
-const Carousel: PandaComponent<typeof ArkCarousel> = panda(ArkCarousel);
+export type PrimitiveCarouselProps = CarouselProps;
+const PrimitiveCarousel: PandaComponent<typeof Carousel> = panda(Carousel);
 
-export type CarouselControlProps = ArkCarouselControlProps;
-export const CarouselControl = panda(ArkCarouselControl);
+export type PrimitiveCarouselControlProps = CarouselControlProps;
+export const PrimitiveCarouselControl = panda(CarouselControl);
 
-export type CarouselNextSlideTriggerProps = ArkCarouselNextSlideTriggerProps;
-export const CarouselNextSlideTrigger = panda(ArkCarouselNextSlideTrigger);
+export type PrimitiveCarouselNextSlideTriggerProps =
+  CarouselNextSlideTriggerProps;
+export const PrimitiveCarouselNextSlideTrigger = panda(
+  CarouselNextSlideTrigger,
+);
 
-export type CarouselPrevSlideTriggerProps = ArkCarouselPrevSlideTriggerProps;
-export const CarouselPrevSlideTrigger = panda(ArkCarouselPrevSlideTrigger);
+export type PrimitiveCarouselPrevSlideTriggerProps =
+  CarouselPrevSlideTriggerProps;
+export const PrimitiveCarouselPrevSlideTrigger = panda(
+  CarouselPrevSlideTrigger,
+);
 
-export type CarouselSlideProps = ArkCarouselSlideProps;
-export const CarouselSlide: PandaComponent<typeof ArkCarouselSlide> =
-  panda(ArkCarouselSlide);
+export type PrimitiveCarouselSlideProps = CarouselSlideProps;
+export const PrimitiveCarouselSlide: PandaComponent<typeof CarouselSlide> =
+  panda(CarouselSlide);
 
-export type CarouselSlideGroupProps = ArkCarouselSlideGroupProps;
-export const CarouselSlideGroup = panda(ArkCarouselSlideGroup);
+export type PrimitiveCarouselSlideGroupProps = CarouselSlideGroupProps;
+export const PrimitiveCarouselSlideGroup = panda(CarouselSlideGroup);
 
-export type CarouselViewportProps = ArkCarouselViewportProps;
-export const CarouselViewport = panda(ArkCarouselViewport);
+export type PrimitiveCarouselViewportProps = CarouselViewportProps;
+export const PrimitiveCarouselViewport = panda(CarouselViewport);
 
-export type CarouselIndicatorProps = ArkCarouselIndicatorProps;
-export const CarouselIndicator: PandaComponent<typeof ArkCarouselIndicator> =
-  panda(ArkCarouselIndicator);
+export type PrimitiveCarouselIndicatorProps = CarouselIndicatorProps;
+export const PrimitiveCarouselIndicator: PandaComponent<
+  typeof CarouselIndicator
+> = panda(CarouselIndicator);
 
-export type CarouselIndicatorGroupProps = ArkCarouselIndicatorGroupProps;
-export const CarouselIndicatorGroup = panda(ArkCarouselIndicatorGroup);
+export type PrimitiveCarouselIndicatorGroupProps = CarouselIndicatorGroupProps;
+export const PrimitiveCarouselIndicatorGroup = panda(CarouselIndicatorGroup);
 
-export default Carousel;
+export default PrimitiveCarousel;

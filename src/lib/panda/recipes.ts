@@ -1,33 +1,34 @@
-import { accordionRecipe } from "../../components/client/core/Accordion/Accordion.recipe";
-import { bannerRecipe } from "../../components/client/core/Banner/Banner.recipe";
-import { breadcrumbRecipe } from "../../components/client/core/Breadcrumb/Breadcrumb.recipe";
-import { buttonRecipe } from "../../components/client/core/Button/Button.recipe";
-import { carouselRecipe } from "../../components/client/core/Carousel/Carousel.recipe";
-import { checkboxRecipe } from "../../components/client/core/Checkbox/Checkbox.recipe";
-import { datePickerRecipe } from "../../components/client/core/DatePicker/DatePicker.recipe";
-import { drawerRecipe } from "../../components/client/core/Drawer/Drawer.recipe";
-import { flyoutRecipe } from "../../components/client/core/Flyout/Flyout.recipe";
-import { iconRecipe } from "../../components/client/core/Icon/Icon.recipe";
-import { inputRecipe } from "../../components/client/core/Input/Input.recipe";
-import { menuRecipe } from "../../components/client/core/Menu/Menu.recipe";
-import { modalRecipe } from "../../components/client/core/Modal/Modal.recipe";
-import { numberInputRecipe } from "../../components/client/core/NumberInput/NumberInput.recipe";
-import { radioGroupRecipe } from "../../components/client/core/RadioGroup/RadioGroup.recipe";
-import { sliderRecipe } from "../../components/client/core/Slider/Slider.recipe";
-import { tabsRecipe } from "../../components/client/core/Tabs/Tabs.recipe";
-import { textareaRecipe } from "../../components/client/core/Textarea/Textarea.recipe";
-import { toastRecipe } from "../../components/client/core/Toast/Toast.recipe";
-import { toggleRecipe } from "../../components/client/core/Toggle/Toggle.recipe";
-import { tooltipRecipe } from "../../components/client/core/Tooltip/Tooltip.recipe";
-import { badgeRecipe } from "../../components/universal/core/Badge/Badge.recipe";
-import { cardRecipe } from "../../components/universal/core/Card/Card.recipe";
-import { imageRecipe } from "../../components/universal/core/Image/Image.recipe";
-import { skeletonRecipe } from "../../components/universal/core/Skeleton/Skeleton.recipe";
-import { spinnerRecipe } from "../../components/universal/core/Spinner/Spinner.recipe";
-import { statRecipe } from "../../components/universal/core/Stat/Stat.recipe";
-import { textRecipe } from "../../components/universal/core/Text/Text.recipe";
-import { hideRecipe } from "../../components/universal/utility/Hide/Hide.recipe";
-import { showRecipe } from "../../components/universal/utility/Show/Show.recipe";
+import { accordionRecipe } from "../../components/core/Accordion/Accordion.recipe";
+import { avatarRecipe } from "../../components/core/Avatar/Avatar.recipe";
+import { badgeRecipe } from "../../components/core/Badge/Badge.recipe";
+import { bannerRecipe } from "../../components/core/Banner/Banner.recipe";
+import { breadcrumbRecipe } from "../../components/core/Breadcrumb/Breadcrumb.recipe";
+import { buttonRecipe } from "../../components/core/Button/Button.recipe";
+import { cardRecipe } from "../../components/core/Card/Card.recipe";
+import { carouselRecipe } from "../../components/core/Carousel/Carousel.recipe";
+import { checkboxRecipe } from "../../components/core/Checkbox/Checkbox.recipe";
+import { datePickerRecipe } from "../../components/core/DatePicker/DatePicker.recipe";
+import { drawerRecipe } from "../../components/core/Drawer/Drawer.recipe";
+import { flyoutRecipe } from "../../components/core/Flyout/Flyout.recipe";
+import { iconRecipe } from "../../components/core/Icon/Icon.recipe";
+import { imageRecipe } from "../../components/core/Image/Image.recipe";
+import { inputRecipe } from "../../components/core/Input/Input.recipe";
+import { menuRecipe } from "../../components/core/Menu/Menu.recipe";
+import { modalRecipe } from "../../components/core/Modal/Modal.recipe";
+import { numberInputRecipe } from "../../components/core/NumberInput/NumberInput.recipe";
+import { radioGroupRecipe } from "../../components/core/RadioGroup/RadioGroup.recipe";
+import { skeletonRecipe } from "../../components/core/Skeleton/Skeleton.recipe";
+import { sliderRecipe } from "../../components/core/Slider/Slider.recipe";
+import { spinnerRecipe } from "../../components/core/Spinner/Spinner.recipe";
+import { statRecipe } from "../../components/core/Stat/Stat.recipe";
+import { tabsRecipe } from "../../components/core/Tabs/Tabs.recipe";
+import { textRecipe } from "../../components/core/Text/Text.recipe";
+import { textareaRecipe } from "../../components/core/Textarea/Textarea.recipe";
+import { toastRecipe } from "../../components/core/Toast/Toast.recipe";
+import { toggleRecipe } from "../../components/core/Toggle/Toggle.recipe";
+import { tooltipRecipe } from "../../components/core/Tooltip/Tooltip.recipe";
+import { hideRecipe } from "../../components/utility/Hide/Hide.recipe";
+import { showRecipe } from "../../components/utility/Show/Show.recipe";
 
 export const recipes = {
   badge: badgeRecipe,
@@ -43,6 +44,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  avatar: avatarRecipe,
   carousel: carouselRecipe,
   breadcrumb: breadcrumbRecipe,
   checkbox: checkboxRecipe,

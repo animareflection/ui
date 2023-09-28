@@ -1,5 +1,4 @@
-import { Button, Modal } from "components/client";
-import { Text } from "components/universal";
+import { Button, Modal, Text } from "components/core";
 import { useDisclosure } from "lib/hooks";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -28,8 +27,7 @@ export const Default: Story = {
   render: () => <DisclosureExample />,
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const meta: Meta<typeof useDisclosure> = {
+const meta = {
   title: "Hooks/useDisclosure",
   tags: ["autodocs"],
   // NB: type coercion here to allow `useDisclosure` Storybook metadata to render (e.g. JSDoc, hook parameters)

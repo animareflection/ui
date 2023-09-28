@@ -1,138 +1,149 @@
 import {
-  DatePicker as ArkDatePicker,
-  DatePickerControl as ArkDatePickerControl,
-  DatePickerInput as ArkDatePickerInput,
-  DatePickerTrigger as ArkDatePickerTrigger,
-  DatePickerClearTrigger as ArkDatePickerClearTrigger,
-  DatePickerContent as ArkDatePickerContent,
-  DatePickerYearSelect as ArkDatePickerYearSelect,
-  DatePickerMonthSelect as ArkDatePickerMonthSelect,
-  DatePickerPrevTrigger as ArkDatePickerPrevTrigger,
-  DatePickerViewTrigger as ArkDatePickerViewTrigger,
-  DatePickerNextTrigger as ArkDatePickerNextTrigger,
-  DatePickerGrid as ArkDatePickerGrid,
-  DatePickerRowHeader as ArkDatePickerRowHeader,
-  DatePickerColumnHeader as ArkDatePickerColumnHeader,
-  DatePickerRowGroup as ArkDatePickerRowGroup,
-  DatePickerRow as ArkDatePickerRow,
-  DatePickerDayCell as ArkDatePickerDayCell,
-  DatePickerDayCellTrigger as ArkDatePickerDayCellTrigger,
-  DatePickerMonthCell as ArkDatePickerMonthCell,
-  DatePickerMonthCellTrigger as ArkDatePickerMonthCellTrigger,
-  DatePickerYearCell as ArkDatePickerYearCell,
-  DatePickerYearCellTrigger as ArkDatePickerYearCellTrigger,
-  DatePickerPositioner as ArkDatePickerPositioner,
+  DatePicker,
+  DatePickerControl,
+  DatePickerInput,
+  DatePickerTrigger,
+  DatePickerClearTrigger,
+  DatePickerContent,
+  DatePickerYearSelect,
+  DatePickerMonthSelect,
+  DatePickerPrevTrigger,
+  DatePickerViewTrigger,
+  DatePickerNextTrigger,
+  DatePickerGrid,
+  DatePickerRowHeader,
+  DatePickerColumnHeader,
+  DatePickerRowGroup,
+  DatePickerRow,
+  DatePickerDayCell,
+  DatePickerDayCellTrigger,
+  DatePickerMonthCell,
+  DatePickerMonthCellTrigger,
+  DatePickerYearCell,
+  DatePickerYearCellTrigger,
+  DatePickerPositioner,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  DatePickerProps as ArkDatePickerProps,
-  DatePickerControlProps as ArkDatePickerControlProps,
-  DatePickerInputProps as ArkDatePickerInputProps,
-  DatePickerTriggerProps as ArkDatePickerTriggerProps,
-  DatePickerClearTriggerProps as ArkDatePickerClearTriggerProps,
-  DatePickerContentProps as ArkDatePickerContentProps,
-  DatePickerYearSelectProps as ArkDatePickerYearSelectProps,
-  DatePickerMonthSelectProps as ArkDatePickerMonthSelectProps,
-  DatePickerPrevTriggerProps as ArkDatePickerPrevTriggerProps,
-  DatePickerViewTriggerProps as ArkDatePickerViewTriggerProps,
-  DatePickerNextTriggerProps as ArkDatePickerNextTriggerProps,
-  DatePickerGridProps as ArkDatePickerGridProps,
-  DatePickerRowHeaderProps as ArkDatePickerRowHeaderProps,
-  DatePickerColumnHeaderProps as ArkDatePickerColumnHeaderProps,
-  DatePickerRowGroupProps as ArkDatePickerRowGroupProps,
-  DatePickerRowProps as ArkDatePickerRowProps,
-  DatePickerDayCellProps as ArkDatePickerDayCellProps,
-  DatePickerDayCellTriggerProps as ArkDatePickerDayCellTriggerProps,
-  DatePickerMonthCellProps as ArkDatePickerMonthCellProps,
-  DatePickerMonthCellTriggerProps as ArkDatePickerMonthCellTriggerProps,
-  DatePickerYearCellProps as ArkDatePickerYearCellProps,
-  DatePickerYearCellTriggerProps as ArkDatePickerYearCellTriggerProps,
-  DatePickerPositionerProps as ArkDatePickerPositionerProps,
+  DatePickerProps,
+  DatePickerControlProps,
+  DatePickerInputProps,
+  DatePickerTriggerProps,
+  DatePickerClearTriggerProps,
+  DatePickerContentProps,
+  DatePickerYearSelectProps,
+  DatePickerMonthSelectProps,
+  DatePickerPrevTriggerProps,
+  DatePickerViewTriggerProps,
+  DatePickerNextTriggerProps,
+  DatePickerGridProps,
+  DatePickerRowHeaderProps,
+  DatePickerColumnHeaderProps,
+  DatePickerRowGroupProps,
+  DatePickerRowProps,
+  DatePickerDayCellProps,
+  DatePickerDayCellTriggerProps,
+  DatePickerMonthCellProps,
+  DatePickerMonthCellTriggerProps,
+  DatePickerYearCellProps,
+  DatePickerYearCellTriggerProps,
+  DatePickerPositionerProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI date picker primitives.
  */
-export type DatePickerProps = ArkDatePickerProps;
-const DatePicker: PandaComponent<typeof ArkDatePicker> = panda(ArkDatePicker);
+export type PrimitiveDatePickerProps = DatePickerProps;
+const PrimitiveDatePicker: PandaComponent<typeof DatePicker> =
+  panda(DatePicker);
 
-export type DatePickerControlProps = ArkDatePickerControlProps;
-export const DatePickerControl = panda(ArkDatePickerControl);
+export type PrimitiveDatePickerControlProps = DatePickerControlProps;
+export const PrimitiveDatePickerControl = panda(DatePickerControl);
 
-export type DatePickerInputProps = ArkDatePickerInputProps;
-export const DatePickerInput = panda(ArkDatePickerInput);
+export type PrimitiveDatePickerInputProps = DatePickerInputProps;
+export const PrimitiveDatePickerInput = panda(DatePickerInput);
 
-export type DatePickerTriggerProps = ArkDatePickerTriggerProps;
-export const DatePickerTrigger = panda(ArkDatePickerTrigger);
+export type PrimitiveDatePickerTriggerProps = DatePickerTriggerProps;
+export const PrimitiveDatePickerTrigger = panda(DatePickerTrigger);
 
-export type DatePickerClearTriggerProps = ArkDatePickerClearTriggerProps;
-export const DatePickerClearTrigger = panda(ArkDatePickerClearTrigger);
+export type PrimitiveDatePickerClearTriggerProps = DatePickerClearTriggerProps;
+export const PrimitiveDatePickerClearTrigger = panda(DatePickerClearTrigger);
 
-export type DatePickerContentProps = ArkDatePickerContentProps;
-export const DatePickerContent = panda(ArkDatePickerContent);
+export type PrimitiveDatePickerContentProps = DatePickerContentProps;
+export const PrimitiveDatePickerContent = panda(DatePickerContent);
 
-export type DatePickerYearSelectProps = ArkDatePickerYearSelectProps;
-export const DatePickerYearSelect = panda(ArkDatePickerYearSelect);
+export type PrimitiveDatePickerYearSelectProps = DatePickerYearSelectProps;
+export const PrimitiveDatePickerYearSelect = panda(DatePickerYearSelect);
 
-export type DatePickerMonthSelectProps = ArkDatePickerMonthSelectProps;
-export const DatePickerMonthSelect = panda(ArkDatePickerMonthSelect);
+export type PrimitiveDatePickerMonthSelectProps = DatePickerMonthSelectProps;
+export const PrimitiveDatePickerMonthSelect = panda(DatePickerMonthSelect);
 
-export type DatePickerPrevTriggerProps = ArkDatePickerPrevTriggerProps;
-export const DatePickerPrevTrigger: PandaComponent<
-  typeof ArkDatePickerPrevTrigger
-> = panda(ArkDatePickerPrevTrigger);
+export type PrimitiveDatePickerPrevTriggerProps = DatePickerPrevTriggerProps;
+export const PrimitiveDatePickerPrevTrigger: PandaComponent<
+  typeof DatePickerPrevTrigger
+> = panda(DatePickerPrevTrigger);
 
-export type DatePickerViewTriggerProps = ArkDatePickerViewTriggerProps;
-export const DatePickerViewTrigger: PandaComponent<
-  typeof ArkDatePickerViewTrigger
-> = panda(ArkDatePickerViewTrigger);
+export type PrimitiveDatePickerViewTriggerProps = DatePickerViewTriggerProps;
+export const PrimitiveDatePickerViewTrigger: PandaComponent<
+  typeof DatePickerViewTrigger
+> = panda(DatePickerViewTrigger);
 
-export type DatePickerNextTriggerProps = ArkDatePickerNextTriggerProps;
-export const DatePickerNextTrigger = panda(ArkDatePickerNextTrigger);
+export type PrimitiveDatePickerNextTriggerProps = DatePickerNextTriggerProps;
+export const PrimitiveDatePickerNextTrigger = panda(DatePickerNextTrigger);
 
-export type DatePickerGridProps = ArkDatePickerGridProps;
-export const DatePickerGrid: PandaComponent<typeof ArkDatePickerGrid> =
-  panda(ArkDatePickerGrid);
+export type PrimitiveDatePickerGridProps = DatePickerGridProps;
+export const PrimitiveDatePickerGrid: PandaComponent<typeof DatePickerGrid> =
+  panda(DatePickerGrid);
 
-export type DatePickerRowHeaderProps = ArkDatePickerRowHeaderProps;
-export const DatePickerRowHeader = panda(ArkDatePickerRowHeader);
+export type PrimitiveDatePickerRowHeaderProps = DatePickerRowHeaderProps;
+export const PrimitiveDatePickerRowHeader = panda(DatePickerRowHeader);
 
-export type DatePickerColumnHeaderProps = ArkDatePickerColumnHeaderProps;
-export const DatePickerColumnHeader = panda(ArkDatePickerColumnHeader);
+export type PrimitiveDatePickerColumnHeaderProps = DatePickerColumnHeaderProps;
+export const PrimitiveDatePickerColumnHeader = panda(DatePickerColumnHeader);
 
-export type DatePickerRowGroupProps = ArkDatePickerRowGroupProps;
-export const DatePickerRowGroup = panda(ArkDatePickerRowGroup);
+export type PrimitiveDatePickerRowGroupProps = DatePickerRowGroupProps;
+export const PrimitiveDatePickerRowGroup = panda(DatePickerRowGroup);
 
-export type DatePickerRowProps = ArkDatePickerRowProps;
-export const DatePickerRow = panda(ArkDatePickerRow);
+export type PrimitiveDatePickerRowProps = DatePickerRowProps;
+export const PrimitiveDatePickerRow = panda(DatePickerRow);
 
-export type DatePickerDayCellProps = ArkDatePickerDayCellProps;
-export const DatePickerDayCell: PandaComponent<typeof ArkDatePickerDayCell> =
-  panda(ArkDatePickerDayCell);
+export type PrimitiveDatePickerDayCellProps = DatePickerDayCellProps;
+export const PrimitiveDatePickerDayCell: PandaComponent<
+  typeof DatePickerDayCell
+> = panda(DatePickerDayCell);
 
-export type DatePickerDayCellTriggerProps = ArkDatePickerDayCellTriggerProps;
-export const DatePickerDayCellTrigger = panda(ArkDatePickerDayCellTrigger);
+export type PrimitiveDatePickerDayCellTriggerProps =
+  DatePickerDayCellTriggerProps;
+export const PrimitiveDatePickerDayCellTrigger = panda(
+  DatePickerDayCellTrigger,
+);
 
-export type DatePickerMonthCellProps = ArkDatePickerMonthCellProps;
-export const DatePickerMonthCell: PandaComponent<
-  typeof ArkDatePickerMonthCell
-> = panda(ArkDatePickerMonthCell);
+export type PrimitiveDatePickerMonthCellProps = DatePickerMonthCellProps;
+export const PrimitiveDatePickerMonthCell: PandaComponent<
+  typeof DatePickerMonthCell
+> = panda(DatePickerMonthCell);
 
-export type DatePickerMonthCellTriggerProps =
-  ArkDatePickerMonthCellTriggerProps;
-export const DatePickerMonthCellTrigger = panda(ArkDatePickerMonthCellTrigger);
+export type PrimitiveDatePickerMonthCellTriggerProps =
+  DatePickerMonthCellTriggerProps;
+export const PrimitiveDatePickerMonthCellTrigger = panda(
+  DatePickerMonthCellTrigger,
+);
 
-export type DatePickerYearCellProps = ArkDatePickerYearCellProps;
-export const DatePickerYearCell: PandaComponent<typeof ArkDatePickerYearCell> =
-  panda(ArkDatePickerYearCell);
+export type PrimitiveDatePickerYearCellProps = DatePickerYearCellProps;
+export const PrimitiveDatePickerYearCell: PandaComponent<
+  typeof DatePickerYearCell
+> = panda(DatePickerYearCell);
 
-export type DatePickerYearCellTriggerProps = ArkDatePickerYearCellTriggerProps;
-export const DatePickerYearCellTrigger = panda(ArkDatePickerYearCellTrigger);
+export type PrimitiveDatePickerYearCellTriggerProps =
+  DatePickerYearCellTriggerProps;
+export const PrimitiveDatePickerYearCellTrigger = panda(
+  DatePickerYearCellTrigger,
+);
 
-export type DatePickerPositionerProps = ArkDatePickerPositionerProps;
-export const DatePickerPositioner = panda(ArkDatePickerPositioner);
+export type PrimitiveDatePickerPositionerProps = DatePickerPositionerProps;
+export const PrimitiveDatePickerPositioner = panda(DatePickerPositioner);
 
-export default DatePicker;
+export default PrimitiveDatePicker;

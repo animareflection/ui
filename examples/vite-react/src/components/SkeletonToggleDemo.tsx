@@ -1,9 +1,5 @@
-"use client";
-
+import { Button, Skeleton, Text } from "@animareflection/ui";
 import { useState } from "react";
-
-import { Skeleton, Text } from "@animareflection/ui";
-import { Button } from "@animareflection/ui/client";
 
 import { Wrapper } from "components";
 

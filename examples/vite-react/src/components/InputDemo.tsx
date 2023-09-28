@@ -1,4 +1,4 @@
-import { Input } from "@animareflection/ui/client";
+import { Input } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 

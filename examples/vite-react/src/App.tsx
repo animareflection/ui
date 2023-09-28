@@ -10,6 +10,7 @@ import {
 
 import {
   AccordionDemo,
+  AvatarDemo,
   BadgeDemo,
   BannerDemo,
   BreadcrumbDemo,
@@ -93,6 +94,7 @@ const App = () => (
 
     <Flex direction="column" align="center" w="100%" gap={2} p={12}>
       <ButtonDemo />
+      <AvatarDemo />
       <AccordionDemo />
       <DatePickerDemo />
       <DrawerDemo />

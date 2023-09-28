@@ -1,4 +1,4 @@
-import { Text } from "components/universal";
+import { Text } from "components/core";
 import { Box, HStack, Stack } from "generated/panda/jsx";
 import { useBreakpoint, useBreakpointValue } from "lib/hooks";
 
@@ -47,8 +47,7 @@ export const Default: Story = {
   render: () => <BreakpointValueExample />,
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const meta: Meta<typeof useBreakpointValue> = {
+const meta = {
   title: "Hooks/useBreakpointValue",
   tags: ["autodocs"],
   component: useBreakpointValue,

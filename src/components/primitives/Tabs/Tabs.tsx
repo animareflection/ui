@@ -1,41 +1,41 @@
 import {
-  Tabs as ArkTabs,
-  TabContent as ArkTabContent,
-  TabIndicator as ArkTabIndicator,
-  TabList as ArkTabList,
-  TabTrigger as ArkTabTrigger,
+  Tabs,
+  TabContent,
+  TabIndicator,
+  TabList,
+  TabTrigger,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
 import type {
-  TabsProps as ArkTabsProps,
-  TabContentProps as ArkTabContentProps,
-  TabIndicatorProps as ArkTabIndicatorProps,
-  TabListProps as ArkTabListProps,
-  TabTriggerProps as ArkTabTriggerProps,
+  TabsProps,
+  TabContentProps,
+  TabIndicatorProps,
+  TabListProps,
+  TabTriggerProps,
 } from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI tabs primitives.
  */
-export type TabsProps = ArkTabsProps;
-const Tabs: PandaComponent<typeof ArkTabs> = panda(ArkTabs);
+export type PrimitiveTabsProps = TabsProps;
+const PrimitiveTabs: PandaComponent<typeof Tabs> = panda(Tabs);
 
-export type TabContentProps = ArkTabContentProps;
-export const TabContent: PandaComponent<typeof ArkTabContent> =
-  panda(ArkTabContent);
+export type PrimitiveTabContentProps = TabContentProps;
+export const PrimitiveTabContent: PandaComponent<typeof TabContent> =
+  panda(TabContent);
 
-export type TabIndicatorProps = ArkTabIndicatorProps;
-export const TabIndicator: PandaComponent<typeof ArkTabIndicator> =
-  panda(ArkTabIndicator);
+export type PrimitiveTabIndicatorProps = TabIndicatorProps;
+export const PrimitiveTabIndicator: PandaComponent<typeof TabIndicator> =
+  panda(TabIndicator);
 
-export type TabListProps = ArkTabListProps;
-export const TabList: PandaComponent<typeof ArkTabList> = panda(ArkTabList);
+export type PrimitiveTabListProps = TabListProps;
+export const PrimitiveTabList: PandaComponent<typeof TabList> = panda(TabList);
 
-export type TabTriggerProps = ArkTabTriggerProps;
-export const TabTrigger: PandaComponent<typeof ArkTabTrigger> =
-  panda(ArkTabTrigger);
+export type PrimitiveTabTriggerProps = TabTriggerProps;
+export const PrimitiveTabTrigger: PandaComponent<typeof TabTrigger> =
+  panda(TabTrigger);
 
-export default Tabs;
+export default PrimitiveTabs;

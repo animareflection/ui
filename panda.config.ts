@@ -5,8 +5,7 @@ import anirefPreset from "lib/panda/aniref.preset";
 /**
  * 🐼 Panda configuration.
  */
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
+const pandaConfig = defineConfig({
   // enable CSS reset
   preflight: true,
   include: ["src/**/*.{ts,tsx,mdx}"],
@@ -15,9 +14,13 @@ const pandaConfig: ReturnType<typeof defineConfig> = defineConfig({
   // set JSX factory name
   jsxFactory: "panda",
   jsxFramework: "react",
+  studio: {
+    logo: "https://github.com/animareflection/ui/blob/master/public/img/logo.png?raw=true",
+  },
   // TODO remove static CSS pregeneration
   staticCss: {
     recipes: {
+      accordion: [{ variant: ["*"] }],
       stat: [{ variant: ["*"] }],
     },
   },

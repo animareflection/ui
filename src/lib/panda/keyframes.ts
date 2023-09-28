@@ -1,7 +1,6 @@
 import { defineKeyframes } from "@pandacss/dev";
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const keyframes: ReturnType<typeof defineKeyframes> = defineKeyframes({
+const keyframes = defineKeyframes({
   "fade-in": {
     from: { opacity: 0 },
     to: { opacity: 1 },
