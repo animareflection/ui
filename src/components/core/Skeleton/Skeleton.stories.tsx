@@ -58,8 +58,7 @@ export const SkeletonState: Story = {
   tags: ["test"],
 };
 
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
-const meta: Meta<typeof Skeleton> = {
+const meta = {
   title: "Components/Core/Skeleton",
   component: Skeleton,
   tags: ["autodocs"],
