@@ -12,11 +12,10 @@ const AvatarToggleDemo = () => {
   return (
     <Wrapper title="Avatar">
       <Flex direction="column" gap={2}>
-        {isLoaded ? (
-          <Avatar src="/img/logo.png" alt="avatar" />
-        ) : (
-          <Avatar src="" alt="" />
-        )}
+        <Avatar
+          src={isLoaded ? "/img/logo.png" : ""}
+          alt={isLoaded ? "avatar" : ""}
+        />
         <Button
           data-testid="toggle"
           variant="ghost"

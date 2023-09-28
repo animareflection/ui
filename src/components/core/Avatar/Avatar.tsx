@@ -3,7 +3,6 @@ import {
   PrimitiveAvatarFallback,
   PrimitiveAvatarImage,
 } from "components/primitives";
-import { panda } from "generated/panda/jsx";
 import { avatar } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
@@ -39,16 +38,14 @@ const Avatar = ({
   return (
     <PrimitiveAvatar className={classNames.root} {...rest}>
       <PrimitiveAvatarFallback className={classNames.fallback}>
-        <panda.div
-          height="inherit"
-          justifyContent="center"
-          alignItems="center"
-          display="flex"
-        >
-          {fallback}
-        </panda.div>
+        {fallback}
       </PrimitiveAvatarFallback>
-      <PrimitiveAvatarImage className={classNames.image} src={src} alt={alt} />
+      <PrimitiveAvatarImage
+        objectFit="contain"
+        className={classNames.image}
+        src={src}
+        alt={alt}
+      />
     </PrimitiveAvatar>
   );
 };

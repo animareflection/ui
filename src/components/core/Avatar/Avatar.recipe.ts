@@ -9,15 +9,20 @@ export const avatarRecipe = defineSlotRecipe({
     root: {
       height: 10,
       width: 10,
+      m: "-1px",
+      borderColor: "border.default",
       borderRadius: "full",
       borderWidth: "1px",
-      alignItems: "center",
       flexShrink: 0,
-      justifyContent: "center",
     },
     fallback: {
+      alignItems: "center",
+      background: "bg.subtle",
+      display: "flex",
+      fontWeight: "semibold",
+      color: "fg.default",
       height: "inherit",
-      textStyle: "md",
+      justifyContent: "center",
     },
     image: {
       objectFit: "cover",
