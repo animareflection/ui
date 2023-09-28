@@ -14,9 +14,9 @@ const AvatarToggle = () => {
   return (
     <Flex direction="column" gap={2}>
       {isLoaded ? (
-        <Avatar src="/img/logo.png" alt="avatar" id="" />
+        <Avatar src="/img/logo.png" alt="avatar" />
       ) : (
-        <Avatar src="" alt="" id="" />
+        <Avatar src="" />
       )}
       <Button
         data-testid="toggle"
@@ -37,8 +37,8 @@ export const Toggle: Story = {
 export const Variants: Story = {
   render: () => (
     <HStack gap={2}>
-      <Avatar src="/img/logo.png" alt="avatar" id="" />
-      <Avatar variant="square" src="/img/logo.png" alt="avatar" id="" />
+      <Avatar src="/img/logo.png" alt="avatar" />
+      <Avatar variant="square" src="/img/logo.png" alt="avatar" />
     </HStack>
   ),
 };
@@ -46,13 +46,13 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => (
     <HStack gap={2}>
-      <Avatar size="xs" src="/img/logo.png" alt="avatar" id="" />
-      <Avatar size="sm" src="/img/logo.png" alt="avatar" id="" />
-      <Avatar src="/img/logo.png" alt="avatar" id="" />
-      <Avatar size="lg" src="/img/logo.png" alt="avatar" id="" />
-      <Avatar size="xl" src="/img/logo.png" alt="avatar" id="" />
-      <Avatar size="2xl" src="/img/logo.png" alt="avatar" id="" />
-      <Avatar size="3xl" src="/img/logo.png" alt="avatar" id="" />
+      <Avatar size="xs" src="/img/logo.png" alt="avatar" />
+      <Avatar size="sm" src="/img/logo.png" alt="avatar" />
+      <Avatar src="/img/logo.png" alt="avatar" />
+      <Avatar size="lg" src="/img/logo.png" alt="avatar" />
+      <Avatar size="xl" src="/img/logo.png" alt="avatar" />
+      <Avatar size="2xl" src="/img/logo.png" alt="avatar" />
+      <Avatar size="3xl" src="/img/logo.png" alt="avatar" />
     </HStack>
   ),
 };

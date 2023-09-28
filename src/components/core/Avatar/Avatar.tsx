@@ -10,7 +10,10 @@ import { useIsMounted } from "lib/hooks";
 import type { PrimitiveAvatarProps } from "components/primitives";
 import type { AvatarVariantProps } from "generated/panda/recipes";
 
-export interface Props extends PrimitiveAvatarProps, AvatarVariantProps {
+export interface Props
+  // TODO: remove children omit once `@ark-ui/react` fixes required children type
+  extends Omit<PrimitiveAvatarProps, "id">,
+    AvatarVariantProps {
   src?: string;
   alt?: string;
   fallback?: string;
