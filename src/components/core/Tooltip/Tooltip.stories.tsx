@@ -70,16 +70,6 @@ export const Placement: Story = {
   ),
 };
 
-export const Variants: Story = {
-  render: () => (
-    <Tooltip
-      trigger={<Text fontWeight="bold">Square</Text>}
-      content="Tooltip Title"
-      variant="square"
-    />
-  ),
-};
-
 export const TooltipState: Story = {
   ...Default,
   play: tooltipState,
