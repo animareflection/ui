@@ -1,4 +1,4 @@
-import { Button, Modal, Text } from "components/core";
+import { Modal, Text } from "components/core";
 import { useDisclosure } from "lib/hooks";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -11,7 +11,7 @@ const DisclosureExample = () => {
 
   return (
     <Modal
-      trigger={<Button>Open Modal</Button>}
+      trigger="Open Modal"
       title="Modal Title"
       description="Modal Description"
       open={isOpen}
