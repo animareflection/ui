@@ -7,7 +7,7 @@ export const bannerRecipe = defineRecipe({
     textStyle: "md",
     fontWeight: "bold",
     textAlign: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     display: "inline-flex",
     alignItems: "center",
     userSelect: "none",

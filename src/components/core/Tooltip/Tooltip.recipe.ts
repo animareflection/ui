@@ -16,7 +16,7 @@ export const tooltipRecipe = defineSlotRecipe({
     content: {
       background: "bg.default",
       boxShadow: "lg",
-      borderRadius: "md",
+      borderRadius: "full",
       borderWidth: "1px",
       borderColor: "border.default",
       fontWeight: "semibold",
@@ -34,6 +34,15 @@ export const tooltipRecipe = defineSlotRecipe({
       borderColor: "border.default",
       borderLeftWidth: "1px",
       rotate: "-45deg",
+    },
+  },
+  variants: {
+    variant: {
+      square: {
+        content: {
+          borderRadius: "md",
+        },
+      },
     },
   },
 });

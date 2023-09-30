@@ -24,12 +24,12 @@ const Banner = ({ children, variant, closable, ...rest }: Props) => {
   return (
     isOpen && (
       <panda.div className={banner({ variant })} {...rest}>
-        {children}
+        <panda.div flex={1} p={2}>
+          {children}
+        </panda.div>
         {closable && (
           <Button
             onClick={() => setIsOpen(false)}
-            position="absolute"
-            right={6}
             p={1}
             bgColor={{
               base: "inherit",
