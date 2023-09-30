@@ -20,7 +20,7 @@ import type { DrawerVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: string;
   description?: string;
 }
@@ -46,9 +46,12 @@ const Drawer = ({
     <PrimitiveDrawer {...rest}>
       {(ctx) => (
         <>
-          <PrimitiveDrawerTrigger className={classNames.trigger}>
-            {trigger}
-          </PrimitiveDrawerTrigger>
+          {trigger && (
+            <PrimitiveDrawerTrigger className={classNames.trigger}>
+              {trigger}
+            </PrimitiveDrawerTrigger>
+          )}
+
           <Portal>
             <PrimitiveDrawerBackdrop className={classNames.backdrop} />
             <PrimitiveDrawerContainer className={classNames.container}>

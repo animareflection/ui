@@ -24,7 +24,7 @@ import type {
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveFlyoutProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: ReactNode;
   children: ReactNode;
   triggerProps?: PrimitiveFlyoutTriggerProps;
@@ -49,13 +49,15 @@ const Flyout = ({ trigger, title, children, triggerProps, ...rest }: Props) => {
       portalled
       {...rest}
     >
-      <PrimitiveFlyoutTrigger
-        className={classNames.trigger}
-        onClick={() => setIsOpen(!isOpen)}
-        {...triggerProps}
-      >
-        {trigger}
-      </PrimitiveFlyoutTrigger>
+      {trigger && (
+        <PrimitiveFlyoutTrigger
+          className={classNames.trigger}
+          onClick={() => setIsOpen(!isOpen)}
+          {...triggerProps}
+        >
+          {trigger}
+        </PrimitiveFlyoutTrigger>
+      )}
 
       <Portal>
         <PrimitiveFlyoutPositioner className={classNames.positioner}>
