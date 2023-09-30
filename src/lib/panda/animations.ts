@@ -31,6 +31,12 @@ const animations = defineTokens.animations({
   "drawer-out-bottom": {
     value: "slide-out-bottom 200ms {easings.emphasized-out}",
   },
+  "drawer-in-top": {
+    value: "slide-in-top 400ms {easings.emphasized-in}",
+  },
+  "drawer-out-top": {
+    value: "slide-out-top 200ms {easings.emphasized-out}",
+  },
   "infinite-spin": {
     value: "spin 1s infinite linear",
   },

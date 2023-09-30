@@ -42,10 +42,10 @@ export const drawerRecipe = defineSlotRecipe({
       },
       py: 6,
       _open: {
-        animation: { base: "drawer-in-bottom", sm: "drawer-in-right" },
+        animation: "drawer-in-right",
       },
       _closed: {
-        animation: { base: "drawer-out-bottom", sm: "drawer-out-right" },
+        animation: "drawer-out-right",
       },
     },
     title: {
@@ -99,10 +99,40 @@ export const drawerRecipe = defineSlotRecipe({
         },
         content: {
           _open: {
-            animation: { base: "drawer-in-bottom", sm: "drawer-in-left" },
+            animation: "drawer-in-left",
           },
           _closed: {
-            animation: { base: "drawer-out-bottom", sm: "drawer-out-left" },
+            animation: "drawer-out-left",
+          },
+        },
+      },
+      bottom: {
+        container: {
+          justifyContent: undefined,
+          alignItems: "flex-end",
+        },
+        content: {
+          width: "full",
+          _open: {
+            animation: "drawer-in-bottom",
+          },
+          _closed: {
+            animation: "drawer-out-bottom",
+          },
+        },
+      },
+      top: {
+        container: {
+          justifyContent: undefined,
+          alignItems: "flex-start",
+        },
+        content: {
+          width: "full",
+          _open: {
+            animation: "drawer-in-top",
+          },
+          _closed: {
+            animation: "drawer-out-top",
           },
         },
       },
