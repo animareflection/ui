@@ -23,12 +23,9 @@ export const drawerRecipe = defineSlotRecipe({
       },
     },
     container: {
-      alignItems: "center",
       display: "flex",
-      top: 0,
-      bottom: 0,
-      right: 0,
-      justifyContent: "center",
+      justifyContent: "flex-end",
+      inset: 0,
       position: "fixed",
       zIndex: "modal",
     },
@@ -45,10 +42,10 @@ export const drawerRecipe = defineSlotRecipe({
       },
       py: 6,
       _open: {
-        animation: { base: "drawer-in-bottom", sm: "drawer-in-right" },
+        animation: "drawer-in-right",
       },
       _closed: {
-        animation: { base: "drawer-out-bottom", sm: "drawer-out-right" },
+        animation: "drawer-out-right",
       },
     },
     title: {
@@ -98,18 +95,48 @@ export const drawerRecipe = defineSlotRecipe({
     placement: {
       left: {
         container: {
-          left: 0,
-          right: "auto",
+          justifyContent: "flex-start",
         },
         content: {
           _open: {
-            animation: { base: "drawer-in-bottom", sm: "drawer-in-left" },
+            animation: "drawer-in-left",
           },
           _closed: {
-            animation: { base: "drawer-out-bottom", sm: "drawer-out-left" },
+            animation: "drawer-out-left",
+          },
+        },
+      },
+      bottom: {
+        container: {
+          justifyContent: undefined,
+          alignItems: "flex-end",
+        },
+        content: {
+          width: "full",
+          _open: {
+            animation: "drawer-in-bottom",
+          },
+          _closed: {
+            animation: "drawer-out-bottom",
+          },
+        },
+      },
+      top: {
+        container: {
+          justifyContent: undefined,
+          alignItems: "flex-start",
+        },
+        content: {
+          width: "full",
+          _open: {
+            animation: "drawer-in-top",
+          },
+          _closed: {
+            animation: "drawer-out-top",
           },
         },
       },
     },
   },
+  jsx: ["Drawer", "DrawerTemplate"],
 });
