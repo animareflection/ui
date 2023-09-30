@@ -21,9 +21,9 @@ const pandaConfig = defineConfig({
   staticCss: {
     recipes: {
       accordion: [{ variant: ["*"] }],
-      stat: [{ variant: ["*"] }],
       hide: [{ variant: ["*"] }],
       show: [{ variant: ["*"] }],
+      stat: [{ variant: ["*"] }],
     },
   },
 });
