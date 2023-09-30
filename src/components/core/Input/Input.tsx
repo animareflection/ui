@@ -36,7 +36,7 @@ const Input = ({
 
   return (
     <Stack gap={1.5}>
-      <PandaLabel className={classNames.label}>{label}</PandaLabel>
+      {label && <PandaLabel className={classNames.label}>{label}</PandaLabel>}
       <Flex>
         {leftAddon && (
           <panda.div className={classNames.addon} borderLeftRadius="sm">
