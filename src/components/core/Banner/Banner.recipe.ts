@@ -11,7 +11,7 @@ export const bannerRecipe = defineRecipe({
     display: "inline-flex",
     alignItems: "center",
     userSelect: "none",
-    whiteSpace: "nowrap",
+    whiteSpace: "wrap",
     w: "full",
     position: "relative",
     p: 4,
