@@ -15,7 +15,10 @@ import {
 import { drawer } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { PrimitiveDrawerProps } from "components/primitives";
+import type {
+  PrimitiveDrawerProps,
+  PrimitiveDrawerContentProps,
+} from "components/primitives";
 import type { DrawerVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
@@ -23,6 +26,7 @@ export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
   trigger?: ReactNode;
   title?: string;
   description?: string;
+  contentProps?: PrimitiveDrawerContentProps;
 }
 
 /**
@@ -34,6 +38,7 @@ const Drawer = ({
   trigger,
   title,
   description,
+  contentProps,
   ...rest
 }: Props) => {
   const classNames = drawer({ placement });
@@ -59,6 +64,7 @@ const Drawer = ({
                 lazyMount
                 unmountOnExit
                 className={classNames.content}
+                {...contentProps}
               >
                 {title && (
                   <PrimitiveDrawerTitle className={classNames.title}>
