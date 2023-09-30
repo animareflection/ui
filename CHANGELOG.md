@@ -14,7 +14,7 @@
 
 ### Patch Changes
 
-- [#134](https://github.com/animareflection/ui/pull/134) [`bb6795a`](https://github.com/animareflection/ui/commit/bb6795a06fef7a60c41e08b1b3db0df992f132af) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Banner` component
+- [#134](https://github.com/animareflection/ui/pull/134) [`bb6795a`](https://github.com/animareflection/ui/commit/bb6795a06fef7a60c41e08b1b3db0df992f132af) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix `Banner` component styles
 
 ## 0.9.0
 
