@@ -4,7 +4,9 @@ import { Wrapper } from "components";
 
 const BannerDemo = () => (
   <Wrapper title="Banner">
-    <Banner closable>Banner</Banner>
+    <Banner closable>
+      🚨 MirageSwap is alpha software. Expect bugs and missing functionality!
+    </Banner>
   </Wrapper>
 );
 
