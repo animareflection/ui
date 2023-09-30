@@ -23,12 +23,9 @@ export const drawerRecipe = defineSlotRecipe({
       },
     },
     container: {
-      alignItems: "center",
       display: "flex",
-      top: 0,
-      bottom: 0,
-      right: 0,
-      justifyContent: "center",
+      justifyContent: "flex-end",
+      inset: 0,
       position: "fixed",
       zIndex: "modal",
     },
@@ -98,8 +95,7 @@ export const drawerRecipe = defineSlotRecipe({
     placement: {
       left: {
         container: {
-          left: 0,
-          right: "auto",
+          justifyContent: "flex-start",
         },
         content: {
           _open: {
