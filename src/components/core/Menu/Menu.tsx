@@ -19,11 +19,11 @@ import type {
   ButtonVariantProps,
   MenuVariantProps,
 } from "generated/panda/recipes";
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 export interface MenuItemRecord {
   id: string;
-  child: ReactNode;
+  child: ReactElement;
   subMenu?: boolean;
 }
 
@@ -102,6 +102,7 @@ const Menu = ({
                           key={id}
                           id={id}
                           className={classNames.item}
+                          asChild
                         >
                           {child}
                         </PrimitiveMenuItem>
