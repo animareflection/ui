@@ -72,6 +72,9 @@ export const menuRecipe = defineSlotRecipe({
     item: itemStyle,
     optionItem: itemStyle,
     triggerItem: itemStyle,
+    positioner: {
+      zIndex: "menu",
+    },
   },
   variants: {
     size: {

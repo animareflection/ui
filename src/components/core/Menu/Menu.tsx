@@ -76,7 +76,7 @@ const Menu = ({
             </PrimitiveMenuTriggerItem>
           )}
           <Portal>
-            <PrimitiveMenuPositioner>
+            <PrimitiveMenuPositioner className={classNames.positioner}>
               <PrimitiveMenuContent className={classNames.content}>
                 {groups?.map(({ id, label, separator, items }) => (
                   <PrimitiveMenuItemGroup
