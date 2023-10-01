@@ -41,7 +41,7 @@ export const inputRecipe = defineSlotRecipe({
       display: "flex",
       alignItems: "center",
       backgroundColor: "border.default",
-      color: "white",
+      color: "fg.default",
     },
     leftElement: {
       position: "absolute",

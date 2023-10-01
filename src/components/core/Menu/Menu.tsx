@@ -11,6 +11,7 @@ import {
   PrimitiveMenuItemGroupLabel,
   PrimitiveMenuTriggerItem,
 } from "components/primitives";
+import { cx } from "generated/panda/css";
 import { button, menu } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
@@ -65,7 +66,10 @@ const Menu = ({
         <>
           {trigger && (
             <PrimitiveMenuTrigger
-              className={button({ variant: triggerVariant })}
+              className={cx(
+                button({ variant: triggerVariant }),
+                classNames.trigger,
+              )}
             >
               {trigger}
             </PrimitiveMenuTrigger>

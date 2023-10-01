@@ -80,21 +80,38 @@ const WITH_CONTEXT_GROUPS: MenuItemGroupRecord[] = [
 ];
 
 export const Default: Story = {
-  render: () => <Menu trigger="Open Menu" groups={GROUPS} />,
+  render: () => (
+    <Menu triggerVariant="primary" trigger="Open Menu" groups={GROUPS} />
+  ),
 };
 
 export const Small: Story = {
-  render: () => <Menu trigger="Open Menu" groups={GROUPS} size="sm" />,
+  render: () => (
+    <Menu
+      triggerVariant="primary"
+      trigger="Open Menu"
+      groups={GROUPS}
+      size="sm"
+    />
+  ),
 };
 
 export const Large: Story = {
-  render: () => <Menu trigger="Open Menu" groups={GROUPS} size="lg" />,
+  render: () => (
+    <Menu
+      triggerVariant="primary"
+      trigger="Open Menu"
+      groups={GROUPS}
+      size="lg"
+    />
+  ),
 };
 
 export const WithContext: Story = {
   render: () => (
     <Menu
       closeOnSelect={false}
+      triggerVariant="primary"
       trigger="Open Menu"
       groups={WITH_CONTEXT_GROUPS}
     >

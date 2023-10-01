@@ -64,7 +64,7 @@ const GROUPS: MenuItemGroupRecord[] = [
 
 const MenuDemo = () => (
   <Wrapper title="Menu">
-    <Menu trigger="Open Menu" groups={GROUPS} />
+    <Menu triggerVariant="primary" trigger="Open Menu" groups={GROUPS} />
   </Wrapper>
 );
 

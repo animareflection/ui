@@ -21,10 +21,11 @@ const AvatarToggle = () => {
       <Button
         data-testid="toggle"
         variant="ghost"
+        w="fit-content"
         p={2}
         onClick={() => setIsLoaded(!isLoaded)}
       >
-        {isLoaded ? "Toggle to fallback" : "Toggle to image"}
+        {isLoaded ? "Toggle to Fallback" : "Toggle to Image"}
       </Button>
     </Flex>
   );
