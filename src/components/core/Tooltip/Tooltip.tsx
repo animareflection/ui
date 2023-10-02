@@ -15,14 +15,16 @@ import type {
   PrimitiveTooltipProps,
   PrimitiveTooltipTriggerProps,
 } from "components/primitives";
+import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
 import type { ReactNode } from "react";
 
-export interface Props extends PrimitiveTooltipProps {
+export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   trigger?: ReactNode;
   content: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
   triggerProps?: PrimitiveTooltipTriggerProps;
+  arrow?: boolean;
 }
 
 /**
@@ -34,12 +36,14 @@ const Tooltip = ({
   openDelay = 0,
   closeDelay = 0,
   bgColor = "bg.default",
+  variant,
   triggerProps,
+  arrow = true,
   ...rest
 }: Props) => {
-  const classNames = tooltip();
-
   const isMounted = useIsMounted();
+
+  const classNames = tooltip({ variant });
 
   if (!isMounted) return null;
 
@@ -49,6 +53,7 @@ const Tooltip = ({
         <>
           {trigger && (
             <PrimitiveTooltipTrigger
+              asChild
               className={classNames.trigger}
               {...triggerProps}
             >
@@ -60,12 +65,16 @@ const Tooltip = ({
             <PrimitiveTooltipPositioner className={classNames.positioner}>
               {isOpen && (
                 <>
-                  <PrimitiveTooltipArrow
-                    bgColor={bgColor}
-                    className={classNames.arrow}
-                  >
-                    <PrimitiveTooltipArrowTip className={classNames.arrowTip} />
-                  </PrimitiveTooltipArrow>
+                  {arrow && (
+                    <PrimitiveTooltipArrow
+                      bgColor={bgColor}
+                      className={classNames.arrow}
+                    >
+                      <PrimitiveTooltipArrowTip
+                        className={classNames.arrowTip}
+                      />
+                    </PrimitiveTooltipArrow>
+                  )}
                   <PrimitiveTooltipContent
                     bgColor={bgColor}
                     className={classNames.content}

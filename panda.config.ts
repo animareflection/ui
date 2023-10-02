@@ -24,6 +24,7 @@ const pandaConfig = defineConfig({
       hide: [{ variant: ["*"] }],
       show: [{ variant: ["*"] }],
       stat: [{ variant: ["*"] }],
+      tooltip: [{ variant: ["*"] }],
     },
   },
 });
