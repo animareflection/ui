@@ -30,6 +30,7 @@ const TooltipTemplate = ({ placement }: { placement: Placement }) => (
         minW={32}
         bgColor="brand.primary.500"
         p={3}
+        textAlign="center"
         borderRadius="md"
         fontWeight="bold"
       >
@@ -67,6 +68,16 @@ export const Placement: Story = {
         <TooltipTemplate placement="top-end" />
       </Grid>
     </Flex>
+  ),
+};
+
+export const Variants: Story = {
+  render: () => (
+    <Tooltip
+      trigger={<Text fontWeight="bold">Rounded</Text>}
+      content="Tooltip Title"
+      variant="rounded"
+    />
   ),
 };
 

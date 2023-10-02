@@ -22,6 +22,7 @@ const pandaConfig = defineConfig({
     recipes: {
       accordion: [{ variant: ["*"] }],
       stat: [{ variant: ["*"] }],
+      tooltip: [{ variant: ["*"] }],
     },
   },
 });

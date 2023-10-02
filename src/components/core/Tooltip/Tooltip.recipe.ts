@@ -36,4 +36,19 @@ export const tooltipRecipe = defineSlotRecipe({
       rotate: "-45deg",
     },
   },
+  variants: {
+    variant: {
+      rounded: {
+        content: {
+          borderRadius: "full",
+        },
+        arrow: {
+          "--arrow-size": "var(--sizes-3)",
+        },
+        arrowTip: {
+          transform: "translateX(-50%)",
+        },
+      },
+    },
+  },
 });
