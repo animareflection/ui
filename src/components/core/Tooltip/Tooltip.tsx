@@ -43,9 +43,9 @@ const Tooltip = ({
 }: Props) => {
   const isMounted = useIsMounted();
 
-  if (!isMounted) return null;
-
   const classNames = tooltip({ variant });
+
+  if (!isMounted) return null;
 
   return (
     <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
