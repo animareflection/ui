@@ -42,12 +42,6 @@ export const tooltipRecipe = defineSlotRecipe({
         content: {
           borderRadius: "full",
         },
-        arrow: {
-          "--arrow-size": "var(--sizes-3)",
-        },
-        arrowTip: {
-          transform: "translateX(-50%)",
-        },
       },
     },
   },
