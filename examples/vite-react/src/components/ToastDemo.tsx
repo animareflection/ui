@@ -36,7 +36,9 @@ const ToastDemo = () => {
 
   return (
     <Wrapper title="Toast">
-      <Button onClick={promise}>Make Toast</Button>
+      <Button variant="primary" w="fit-content" onClick={promise}>
+        Make Toast
+      </Button>
       <Toaster />
     </Wrapper>
   );

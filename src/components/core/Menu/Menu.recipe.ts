@@ -59,11 +59,6 @@ export const menuRecipe = defineSlotRecipe({
     separator: {
       color: "bg.subtle",
     },
-    trigger: {
-      _focus: {
-        outline: "none",
-      },
-    },
     itemGroup: {
       display: "flex",
       flexDirection: "column",
@@ -72,6 +67,12 @@ export const menuRecipe = defineSlotRecipe({
     item: itemStyle,
     optionItem: itemStyle,
     triggerItem: itemStyle,
+    positioner: {
+      zIndex: "menu",
+    },
+    trigger: {
+      w: "fit-content",
+    },
   },
   variants: {
     size: {

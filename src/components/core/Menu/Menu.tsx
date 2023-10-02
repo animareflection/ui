@@ -11,6 +11,7 @@ import {
   PrimitiveMenuItemGroupLabel,
   PrimitiveMenuTriggerItem,
 } from "components/primitives";
+import { cx } from "generated/panda/css";
 import { button, menu } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
@@ -19,11 +20,11 @@ import type {
   ButtonVariantProps,
   MenuVariantProps,
 } from "generated/panda/recipes";
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 export interface MenuItemRecord {
   id: string;
-  child: ReactNode;
+  child: ReactElement;
   subMenu?: boolean;
 }
 
@@ -65,7 +66,10 @@ const Menu = ({
         <>
           {trigger && (
             <PrimitiveMenuTrigger
-              className={button({ variant: triggerVariant })}
+              className={cx(
+                button({ variant: triggerVariant }),
+                classNames.trigger,
+              )}
             >
               {trigger}
             </PrimitiveMenuTrigger>
@@ -76,7 +80,7 @@ const Menu = ({
             </PrimitiveMenuTriggerItem>
           )}
           <Portal>
-            <PrimitiveMenuPositioner>
+            <PrimitiveMenuPositioner className={classNames.positioner}>
               <PrimitiveMenuContent className={classNames.content}>
                 {groups?.map(({ id, label, separator, items }) => (
                   <PrimitiveMenuItemGroup
@@ -102,6 +106,7 @@ const Menu = ({
                           key={id}
                           id={id}
                           className={classNames.item}
+                          asChild
                         >
                           {child}
                         </PrimitiveMenuItem>
