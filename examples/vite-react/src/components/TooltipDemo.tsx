@@ -1,4 +1,4 @@
-import { Tooltip } from "@animareflection/ui";
+import { Text, Tooltip } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
@@ -9,7 +9,7 @@ const TooltipDemo = () => {
         positioning={{
           placement: "top",
         }}
-        trigger="Open Tooltip"
+        trigger={<Text>Open Tooltip</Text>}
         content="Tooltip Title"
         triggerProps={{
           bgColor: "brand.primary.500",
