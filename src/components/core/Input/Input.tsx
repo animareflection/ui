@@ -3,6 +3,7 @@ import { ark } from "@ark-ui/react";
 import { Flex, panda, Stack } from "generated/panda/jsx";
 import { input } from "generated/panda/recipes";
 
+import type { StackProps } from "generated/panda/jsx";
 import type { InputVariantProps } from "generated/panda/recipes";
 import type { ComponentProps, ReactNode } from "react";
 
@@ -14,6 +15,7 @@ export interface Props
   rightAddon?: ReactNode;
   inputLeftElement?: ReactNode;
   inputRightElement?: ReactNode;
+  containerProps?: StackProps;
 }
 
 const PandaInput = panda(ark.input, input);
@@ -30,13 +32,14 @@ const Input = ({
   inputRightElement,
   variant,
   size,
+  containerProps,
   ...rest
 }: Props) => {
   const classNames = input({ size, variant });
 
   return (
-    <Stack gap={1.5}>
-      <PandaLabel className={classNames.label}>{label}</PandaLabel>
+    <Stack gap={1.5} {...containerProps}>
+      {label && <PandaLabel className={classNames.label}>{label}</PandaLabel>}
       <Flex>
         {leftAddon && (
           <panda.div className={classNames.addon} borderLeftRadius="sm">

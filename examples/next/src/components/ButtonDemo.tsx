@@ -6,7 +6,11 @@ import { Wrapper } from "components";
 
 const ButtonDemo = () => (
   <Wrapper title="Button">
-    <Button w="fit-content" onClick={() => console.log("Clicked!")}>
+    <Button
+      w="fit-content"
+      variant="primary"
+      onClick={() => console.log("Clicked!")}
+    >
       Click me
     </Button>
   </Wrapper>

@@ -2,4 +2,4 @@
 "@animareflection/ui": minor
 ---
 
-Add `Avatar` component
+Update `Menu` component

@@ -21,6 +21,7 @@ import type {
   DialogTitleProps,
   DialogTriggerProps,
 } from "@ark-ui/react";
+import type { HTMLPandaProps } from "generated/panda/jsx";
 
 /**
  * Core UI drawer primitives.
@@ -37,7 +38,8 @@ export const PrimitiveDrawerBackdrop = panda(DialogBackdrop);
 export type PrimitiveDrawerContainerProps = DialogContainerProps;
 export const PrimitiveDrawerContainer = panda(DialogContainer);
 
-export type PrimitiveDrawerContentProps = DialogContentProps;
+export type PrimitiveDrawerContentProps = DialogContentProps &
+  HTMLPandaProps<"div">;
 export const PrimitiveDrawerContent = panda(DialogContent);
 
 export type PrimitiveDrawerCloseTriggerProps = DialogCloseTriggerProps;

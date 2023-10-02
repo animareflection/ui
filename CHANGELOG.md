@@ -1,5 +1,21 @@
 # @animareflection/ui
 
+## 0.10.0
+
+### Minor Changes
+
+- [#129](https://github.com/animareflection/ui/pull/129) [`95be098`](https://github.com/animareflection/ui/commit/95be098e814215598daccb30838de0a6dcabc7cb) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Avatar` component
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Make `trigger` prop optional in applicable components and conditionally render the trigger
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add more `Drawer` placements and add `contentProps` prop for override capability
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Modify `Input` to allow for customizable `containerProps` and conditionally render `label`
+
+### Patch Changes
+
+- [#134](https://github.com/animareflection/ui/pull/134) [`bb6795a`](https://github.com/animareflection/ui/commit/bb6795a06fef7a60c41e08b1b3db0df992f132af) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix `Banner` component styles
+
 ## 0.9.0
 
 ### Minor Changes

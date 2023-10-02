@@ -40,6 +40,7 @@ const Collapse = ({
         alignItems="center"
         gap={2}
         variant="ghost"
+        w="fit-content"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
       >

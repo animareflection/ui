@@ -19,7 +19,7 @@ import type { PrimitiveModalProps } from "components/primitives";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveModalProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: string;
   description?: string;
 }
@@ -38,9 +38,12 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
     <PrimitiveModal {...rest}>
       {(ctx) => (
         <>
-          <PrimitiveModalTrigger className={classNames.trigger}>
-            {trigger}
-          </PrimitiveModalTrigger>
+          {trigger && (
+            <PrimitiveModalTrigger className={classNames.trigger}>
+              {trigger}
+            </PrimitiveModalTrigger>
+          )}
+
           <Portal>
             <PrimitiveModalBackdrop className={classNames.backdrop} />
             <PrimitiveModalContainer className={classNames.container}>

@@ -21,28 +21,28 @@ export interface Props
 const Banner = ({ children, variant, closable, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
+  if (!isOpen) return null;
+
   return (
-    isOpen && (
-      <panda.div className={banner({ variant })} {...rest}>
+    <panda.div className={banner({ variant })} {...rest}>
+      <panda.div flex={1} p={2}>
         {children}
-        {closable && (
-          <Button
-            onClick={() => setIsOpen(false)}
-            position="absolute"
-            right={6}
-            p={1}
-            bgColor={{
-              base: "inherit",
-              _hover: "none",
-            }}
-          >
-            <Icon color="bg.default">
-              <CloseIcon />
-            </Icon>
-          </Button>
-        )}
       </panda.div>
-    )
+      {closable && (
+        <Button
+          onClick={() => setIsOpen(false)}
+          p={1}
+          bgColor={{
+            base: "inherit",
+            _hover: "none",
+          }}
+        >
+          <Icon color="bg.default">
+            <CloseIcon />
+          </Icon>
+        </Button>
+      )}
+    </panda.div>
   );
 };
 

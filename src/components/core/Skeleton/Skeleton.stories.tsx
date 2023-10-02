@@ -23,6 +23,7 @@ const SkeletonToggle = () => {
       <Button
         data-testid="toggle"
         variant="ghost"
+        w="fit-content"
         p={2}
         onClick={() => setIsLoaded(!isLoaded)}
       >

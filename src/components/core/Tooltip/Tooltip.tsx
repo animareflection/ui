@@ -20,7 +20,7 @@ import type { JsxStyleProps } from "generated/panda/types";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   content: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
   triggerProps?: PrimitiveTooltipTriggerProps;
@@ -51,13 +51,16 @@ const Tooltip = ({
     <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
       {({ isOpen }) => (
         <>
-          <PrimitiveTooltipTrigger
-            asChild
-            className={classNames.trigger}
-            {...triggerProps}
-          >
-            {trigger}
-          </PrimitiveTooltipTrigger>
+          {trigger && (
+            <PrimitiveTooltipTrigger
+              asChild
+              className={classNames.trigger}
+              {...triggerProps}
+            >
+              {trigger}
+            </PrimitiveTooltipTrigger>
+          )}
+
           <Portal>
             <PrimitiveTooltipPositioner className={classNames.positioner}>
               {isOpen && (
