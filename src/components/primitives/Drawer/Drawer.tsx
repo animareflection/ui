@@ -11,44 +11,47 @@ import {
 
 import { panda } from "generated/panda/jsx";
 
-import type {
-  DialogBackdropProps,
-  DialogCloseTriggerProps,
-  DialogContainerProps,
-  DialogContentProps,
-  DialogDescriptionProps,
-  DialogProps,
-  DialogTitleProps,
-  DialogTriggerProps,
-} from "@ark-ui/react";
-import type { HTMLPandaProps } from "generated/panda/jsx";
+import type { ComponentProps } from "react";
 
 /**
  * Core UI drawer primitives.
  */
-export type PrimitiveDrawerProps = DialogProps;
+export type PrimitiveDrawerProps = ComponentProps<typeof PrimitiveDrawer>;
 const PrimitiveDrawer = panda(Dialog);
 
-export type PrimitiveDrawerTriggerProps = DialogTriggerProps;
+export type PrimitiveDrawerTriggerProps = ComponentProps<
+  typeof PrimitiveDrawerTrigger
+>;
 export const PrimitiveDrawerTrigger = panda(DialogTrigger);
 
-export type PrimitiveDrawerBackdropProps = DialogBackdropProps;
+export type PrimitiveDrawerBackdropProps = ComponentProps<
+  typeof PrimitiveDrawerBackdrop
+>;
 export const PrimitiveDrawerBackdrop = panda(DialogBackdrop);
 
-export type PrimitiveDrawerContainerProps = DialogContainerProps;
+export type PrimitiveDrawerContainerProps = ComponentProps<
+  typeof PrimitiveDrawerContainer
+>;
 export const PrimitiveDrawerContainer = panda(DialogContainer);
 
-export type PrimitiveDrawerContentProps = DialogContentProps &
-  HTMLPandaProps<"div">;
+export type PrimitiveDrawerContentProps = ComponentProps<
+  typeof PrimitiveDrawerContent
+>;
 export const PrimitiveDrawerContent = panda(DialogContent);
 
-export type PrimitiveDrawerCloseTriggerProps = DialogCloseTriggerProps;
+export type PrimitiveDrawerCloseTriggerProps = ComponentProps<
+  typeof PrimitiveDrawerCloseTrigger
+>;
 export const PrimitiveDrawerCloseTrigger = panda(DialogCloseTrigger);
 
-export type PrimitiveDrawerTitleProps = DialogTitleProps;
+export type PrimitiveDrawerTitleProps = ComponentProps<
+  typeof PrimitiveDrawerTitle
+>;
 export const PrimitiveDrawerTitle = panda(DialogTitle);
 
-export type PrimitiveDrawerDescriptionProps = DialogDescriptionProps;
+export type PrimitiveDrawerDescriptionProps = ComponentProps<
+  typeof PrimitiveDrawerDescription
+>;
 export const PrimitiveDrawerDescription = panda(DialogDescription);
 
 export default PrimitiveDrawer;

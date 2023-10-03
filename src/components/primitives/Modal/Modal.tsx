@@ -11,42 +11,47 @@ import {
 
 import { panda } from "generated/panda/jsx";
 
-import type {
-  DialogBackdropProps,
-  DialogCloseTriggerProps,
-  DialogContainerProps,
-  DialogContentProps,
-  DialogDescriptionProps,
-  DialogProps,
-  DialogTitleProps,
-  DialogTriggerProps,
-} from "@ark-ui/react";
+import type { ComponentProps } from "react";
 
 /**
  * Core UI modal primitives.
  */
-export type PrimitiveModalProps = DialogProps;
+export type PrimitiveModalProps = ComponentProps<typeof PrimitiveModal>;
 const PrimitiveModal = panda(Dialog);
 
-export type PrimitiveModalTriggerProps = DialogTriggerProps;
+export type PrimitiveModalTriggerProps = ComponentProps<
+  typeof PrimitiveModalTrigger
+>;
 export const PrimitiveModalTrigger = panda(DialogTrigger);
 
-export type PrimitiveModalBackdropProps = DialogBackdropProps;
+export type PrimitiveModalBackdropProps = ComponentProps<
+  typeof PrimitiveModalBackdrop
+>;
 export const PrimitiveModalBackdrop = panda(DialogBackdrop);
 
-export type PrimitiveModalContainerProps = DialogContainerProps;
+export type PrimitiveModalContainerProps = ComponentProps<
+  typeof PrimitiveModalContainer
+>;
 export const PrimitiveModalContainer = panda(DialogContainer);
 
-export type PrimitiveModalContentProps = DialogContentProps;
+export type PrimitiveModalContentProps = ComponentProps<
+  typeof PrimitiveModalContent
+>;
 export const PrimitiveModalContent = panda(DialogContent);
 
-export type PrimitiveModalCloseTriggerProps = DialogCloseTriggerProps;
+export type PrimitiveModalCloseTriggerProps = ComponentProps<
+  typeof PrimitiveModalCloseTrigger
+>;
 export const PrimitiveModalCloseTrigger = panda(DialogCloseTrigger);
 
-export type PrimitiveModalTitleProps = DialogTitleProps;
+export type PrimitiveModalTitleProps = ComponentProps<
+  typeof PrimitiveModalTitle
+>;
 export const PrimitiveModalTitle = panda(DialogTitle);
 
-export type PrimitiveModalDescriptionProps = DialogDescriptionProps;
+export type PrimitiveModalDescriptionProps = ComponentProps<
+  typeof PrimitiveModalDescription
+>;
 export const PrimitiveModalDescription = panda(DialogDescription);
 
 export default PrimitiveModal;

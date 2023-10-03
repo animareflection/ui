@@ -21,7 +21,7 @@ import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   trigger?: ReactNode;
-  content: ReactNode;
+  tooltipContent: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
   triggerProps?: PrimitiveTooltipTriggerProps;
   arrow?: boolean;
@@ -32,7 +32,7 @@ export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
  */
 const Tooltip = ({
   trigger,
-  content,
+  tooltipContent,
   openDelay = 0,
   closeDelay = 0,
   bgColor = "bg.default",
@@ -79,7 +79,7 @@ const Tooltip = ({
                     bgColor={bgColor}
                     className={classNames.content}
                   >
-                    {content}
+                    {tooltipContent}
                   </PrimitiveTooltipContent>
                 </>
               )}

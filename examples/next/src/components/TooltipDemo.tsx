@@ -10,7 +10,7 @@ const TooltipDemo = () => {
           placement: "top",
         }}
         trigger={<Text>Open Tooltip</Text>}
-        content="Tooltip Title"
+        tooltipContent="Tooltip Title"
         triggerProps={{
           bgColor: "brand.primary.500",
           p: 3,
