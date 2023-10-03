@@ -24,7 +24,7 @@ import type { ReactNode } from "react";
 export interface Props
   extends PrimitiveNumberInputProps,
     NumberInputVariantProps {
-  label?: string;
+  label?: ReactNode;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
   inputLeftElement?: ReactNode;
