@@ -32,6 +32,7 @@ const Banner = ({ children, closable, ...rest }: Props) => {
           onClick={() => setIsOpen(false)}
           p={1}
           opacity={{ _hover: 0.8 }}
+          aria-label="Close Banner"
         >
           <Icon color="bg.default">
             <CloseIcon />
