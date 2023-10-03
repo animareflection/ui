@@ -1,5 +1,21 @@
 # @animareflection/ui
 
+## 0.11.0
+
+### Minor Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Button` recipe variants and default styles
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Menu` component
+
+### Patch Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add style prop back to the resolved image in the NextJS enhanced `Image` component
+
+- [#140](https://github.com/animareflection/ui/pull/140) [`17cf025`](https://github.com/animareflection/ui/commit/17cf02556f6f956b04a0169d3b4cc5012e9bb480) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Tooltip` component
+
+- [#141](https://github.com/animareflection/ui/pull/141) [`d0768ea`](https://github.com/animareflection/ui/commit/d0768ead72f9aa75849d47054206e333ec4c8f69) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `NumberInput` component
+
 ## 0.10.0
 
 ### Minor Changes
