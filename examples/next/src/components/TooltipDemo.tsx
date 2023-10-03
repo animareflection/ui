@@ -9,15 +9,18 @@ const TooltipDemo = () => {
         positioning={{
           placement: "top",
         }}
-        trigger={<Text>Open Tooltip</Text>}
+        trigger={
+          <Text
+            bgColor="brand.primary.500"
+            p={3}
+            borderRadius="md"
+            color="accent.fg"
+            fontWeight="bold"
+          >
+            Open Tooltip
+          </Text>
+        }
         tooltipContent="Tooltip Title"
-        triggerProps={{
-          bgColor: "brand.primary.500",
-          p: 3,
-          borderRadius: "md",
-          color: "accent.fg",
-          fontWeight: "bold",
-        }}
       />
     </Wrapper>
   );
