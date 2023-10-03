@@ -14,20 +14,24 @@ import { Flex, panda } from "generated/panda/jsx";
 import { numberInput } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type { PrimitiveNumberInputProps } from "components/primitives";
+import type {
+  PrimitiveNumberInputInputProps,
+  PrimitiveNumberInputProps,
+} from "components/primitives";
 import type { NumberInputVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface Props
   extends PrimitiveNumberInputProps,
     NumberInputVariantProps {
-  label?: string;
+  label?: ReactNode;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
   inputLeftElement?: ReactNode;
   inputRightElement?: ReactNode;
   stepper?: boolean;
   placeholder?: string;
+  inputProps?: PrimitiveNumberInputInputProps;
 }
 
 /**
@@ -43,6 +47,7 @@ const NumberInput = ({
   inputRightElement,
   stepper,
   placeholder,
+  inputProps,
   ...rest
 }: Props) => {
   const classNames = numberInput({ size, variant });
@@ -72,6 +77,7 @@ const NumberInput = ({
             </panda.div>
           )}
           <PrimitiveNumberInputInput
+            {...inputProps}
             className={classNames.input}
             placeholder={placeholder}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}

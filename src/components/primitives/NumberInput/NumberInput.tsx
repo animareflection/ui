@@ -19,12 +19,14 @@ import type {
   NumberInputProps,
   NumberInputScrubberProps,
 } from "@ark-ui/react";
+import type { HTMLPandaProps } from "generated/panda/jsx";
 import type { PandaComponent } from "generated/panda/types/jsx";
 
 /**
  * Core UI number input primitives.
  */
-export type PrimitiveNumberInputProps = NumberInputProps;
+export type PrimitiveNumberInputProps = NumberInputProps &
+  HTMLPandaProps<"div">;
 const PrimitiveNumberInput: PandaComponent<typeof NumberInput> =
   panda(NumberInput);
 
@@ -43,7 +45,8 @@ export const PrimitiveNumberInputIncrementTrigger = panda(
   NumberInputIncrementTrigger,
 );
 
-export type PrimitiveNumberInputInputProps = NumberInputInputProps;
+export type PrimitiveNumberInputInputProps = NumberInputInputProps &
+  HTMLPandaProps<"input">;
 export const PrimitiveNumberInputInput = panda(NumberInputInput);
 
 export type PrimitiveNumberInputLabelProps = NumberInputLabelProps;
