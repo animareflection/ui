@@ -26,6 +26,19 @@ export const CustomText: Story = {
   ),
 };
 
+export const CustomButton: Story = {
+  render: () => (
+    <Flex align="center" gap={2}>
+      <CopyToClipboard
+        color={{ base: "fg.default", _hover: "brand.primary.500" }}
+      >
+        Text to Copy
+      </CopyToClipboard>
+      <Input placeholder="Paste text here..." />
+    </Flex>
+  ),
+};
+
 const meta = {
   title: "Components/Utility/CopyToClipboard",
   component: CopyToClipboard,
