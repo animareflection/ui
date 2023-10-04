@@ -1,3 +1,4 @@
+import { copyState } from "./CopyToClipboard.spec";
 import { Input } from "components/core";
 import { CopyToClipboard } from "components/utility";
 import { Flex } from "generated/panda/jsx";
@@ -52,6 +53,13 @@ export const CustomTooltip: Story = {
       <Input placeholder="Paste text here..." />
     </Flex>
   ),
+};
+
+export const CopyState: Story = {
+  ...Default,
+  play: copyState,
+  name: "[TEST] Copy State",
+  tags: ["test"],
 };
 
 const meta = {
