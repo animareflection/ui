@@ -20,7 +20,7 @@ import type {
   ButtonVariantProps,
   MenuVariantProps,
 } from "generated/panda/recipes";
-import type { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode, RefObject } from "react";
 
 export interface MenuItemRecord {
   id: string;
@@ -40,6 +40,7 @@ export interface Props extends PrimitiveMenuProps, MenuVariantProps {
   triggerItem?: ReactNode;
   triggerVariant?: ButtonVariantProps["variant"];
   groups?: MenuItemGroupRecord[];
+  targetRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -52,6 +53,7 @@ const Menu = ({
   triggerVariant,
   groups,
   size,
+  targetRef,
   ...rest
 }: Props) => {
   const classNames = menu({ size });
@@ -79,7 +81,7 @@ const Menu = ({
               {triggerItem}
             </PrimitiveMenuTriggerItem>
           )}
-          <Portal>
+          <Portal target={targetRef}>
             <PrimitiveMenuPositioner className={classNames.positioner}>
               <PrimitiveMenuContent className={classNames.content}>
                 {groups?.map(({ id, label, separator, items }) => (
