@@ -1,5 +1,19 @@
 # @animareflection/ui
 
+## 0.12.0
+
+### Minor Changes
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update all primitive component types using pattern `ComponentProps<typeof PRIMITIVE>`
+
+- [#147](https://github.com/animareflection/ui/pull/147) [`a5c5bf6`](https://github.com/animareflection/ui/commit/a5c5bf68029638f05c079c5db2a2c586ab1834aa) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `targetRef` prop for all components that use `Portal`
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove unnecessary `triggerProps` from `Tooltip` props
+
+- [#148](https://github.com/animareflection/ui/pull/148) [`f72cea7`](https://github.com/animareflection/ui/commit/f72cea70024625dce2164338cd43adcf5725658a) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Collapse` to accept controlled state props
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Change `content` prop to `tooltipContent` to avoid prop collision
+
 ## 0.11.1
 
 ### Patch Changes
