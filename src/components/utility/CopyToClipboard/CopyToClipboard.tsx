@@ -21,7 +21,7 @@ export interface Props extends ButtonProps {
   tooltipProps?: Omit<TooltipProps, "tooltipContent">;
 }
 
-// TODO: Update implementation to use `Tooltip` component, if/when ark-ui api is updated to support onClick `Tooltip` components.
+// TODO: Update implementation to use `Tooltip` trigger, if/when ark-ui api is updated to support onClick `Tooltip` components.
 const CopyToClipboard = ({
   children,
   copyText,
