@@ -12,48 +12,52 @@ import {
 
 import { panda } from "generated/panda/jsx";
 
-import type {
-  SliderProps,
-  SliderControlProps,
-  SliderLabelProps,
-  SliderMarkerProps,
-  SliderMarkerGroupProps,
-  SliderOutputProps,
-  SliderRangeProps,
-  SliderThumbProps,
-  SliderTrackProps,
-} from "@ark-ui/react";
+import type { ComponentProps } from "react";
 
 /**
  * Core UI slider primitives.
  */
-export type PrimitiveSliderProps = SliderProps;
-
+export type PrimitiveSliderProps = ComponentProps<typeof PrimitiveSlider>;
 const PrimitiveSlider = panda(Slider);
 
-export type PrimitiveSliderControlProps = SliderControlProps;
+export type PrimitiveSliderControlProps = ComponentProps<
+  typeof PrimitiveSliderControl
+>;
 export const PrimitiveSliderControl = panda(SliderControl);
 
-export type PrimitiveSliderLabelProps = SliderLabelProps;
+export type PrimitiveSliderLabelProps = ComponentProps<
+  typeof PrimitiveSliderLabel
+>;
 export const PrimitiveSliderLabel = panda(SliderLabel);
 
-export type PrimitiveSliderMarkerProps = SliderMarkerProps;
+export type PrimitiveSliderMarkerProps = ComponentProps<
+  typeof PrimitiveSliderMarker
+>;
 export const PrimitiveSliderMarker = panda(SliderMarker);
 
-export type PrimitiveSliderMarkerGroupProps = SliderMarkerGroupProps;
+export type PrimitiveSliderMarkerGroupProps = ComponentProps<
+  typeof PrimitiveSliderMarkerGroup
+>;
 export const PrimitiveSliderMarkerGroup = panda(SliderMarkerGroup);
 
-export type PrimitiveSliderOutputProps = SliderOutputProps;
-
+export type PrimitiveSliderOutputProps = ComponentProps<
+  typeof PrimitiveSliderOutput
+>;
 export const PrimitiveSliderOutput = panda(SliderOutput);
 
-export type PrimitiveSliderRangeProps = SliderRangeProps;
+export type PrimitiveSliderRangeProps = ComponentProps<
+  typeof PrimitiveSliderRange
+>;
 export const PrimitiveSliderRange = panda(SliderRange);
 
-export type PrimitiveSliderThumbProps = SliderThumbProps;
+export type PrimitiveSliderThumbProps = ComponentProps<
+  typeof PrimitiveSliderThumb
+>;
 export const PrimitiveSliderThumb = panda(SliderThumb);
 
-export type PrimitiveSliderTrackProps = SliderTrackProps;
+export type PrimitiveSliderTrackProps = ComponentProps<
+  typeof PrimitiveSliderTrack
+>;
 export const PrimitiveSliderTrack = panda(SliderTrack);
 
 export default PrimitiveSlider;

@@ -11,19 +11,15 @@ import {
 import { tooltip } from "generated/panda/recipes";
 import { useIsMounted } from "lib/hooks";
 
-import type {
-  PrimitiveTooltipProps,
-  PrimitiveTooltipTriggerProps,
-} from "components/primitives";
+import type { PrimitiveTooltipProps } from "components/primitives";
 import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   trigger?: ReactNode;
-  content: ReactNode;
+  tooltipContent: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
-  triggerProps?: PrimitiveTooltipTriggerProps;
   arrow?: boolean;
 }
 
@@ -32,12 +28,11 @@ export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
  */
 const Tooltip = ({
   trigger,
-  content,
+  tooltipContent,
   openDelay = 0,
   closeDelay = 0,
   bgColor = "bg.default",
   variant,
-  triggerProps,
   arrow = true,
   ...rest
 }: Props) => {
@@ -52,11 +47,7 @@ const Tooltip = ({
       {({ isOpen }) => (
         <>
           {trigger && (
-            <PrimitiveTooltipTrigger
-              asChild
-              className={classNames.trigger}
-              {...triggerProps}
-            >
+            <PrimitiveTooltipTrigger asChild className={classNames.trigger}>
               {trigger}
             </PrimitiveTooltipTrigger>
           )}
@@ -79,7 +70,7 @@ const Tooltip = ({
                     bgColor={bgColor}
                     className={classNames.content}
                   >
-                    {content}
+                    {tooltipContent}
                   </PrimitiveTooltipContent>
                 </>
               )}
