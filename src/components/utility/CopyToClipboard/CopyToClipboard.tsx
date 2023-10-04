@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { HiOutlineClipboardList as ClipboardIcon } from "react-icons/hi";
 
 import Button from "components/core/Button/Button";
-// import Icon from "components/core/Icon/Icon";
+import Icon from "components/core/Icon/Icon";
 import Tooltip from "components/core/Tooltip/Tooltip";
 import { Flex } from "generated/panda/jsx";
 import { useCopyToClipboard } from "lib/hooks";
@@ -13,10 +14,17 @@ export interface Props extends ButtonProps {
   children: string;
   /** Optional text to copy. If not specified, falls back to children. */
   copyText?: string;
+  /** Whether to display icon. Defaults to true. */
+  icon?: boolean;
 }
 
 // TODO: Update implementation to use `Tooltip` component, if/when ark-ui api is updated to support onClick `Tooltip` components.
-const CopyToClipboard = ({ children, copyText, ...rest }: Props) => {
+const CopyToClipboard = ({
+  children,
+  copyText,
+  icon = true,
+  ...rest
+}: Props) => {
   const [isCopied, setIsCopied] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [value, copy] = useCopyToClipboard();
@@ -38,6 +46,11 @@ const CopyToClipboard = ({ children, copyText, ...rest }: Props) => {
         {...rest}
       >
         {children}
+        {icon && (
+          <Icon ml="4px" mb={1.5}>
+            <ClipboardIcon />
+          </Icon>
+        )}
       </Button>
       <Tooltip
         trigger={<div></div>}
