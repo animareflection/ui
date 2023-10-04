@@ -14,13 +14,14 @@ import { useIsMounted } from "lib/hooks";
 import type { PrimitiveTooltipProps } from "components/primitives";
 import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   trigger?: ReactNode;
   tooltipContent: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
   arrow?: boolean;
+  targetRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -34,6 +35,7 @@ const Tooltip = ({
   bgColor = "bg.default",
   variant,
   arrow = true,
+  targetRef,
   ...rest
 }: Props) => {
   const isMounted = useIsMounted();
@@ -52,7 +54,7 @@ const Tooltip = ({
             </PrimitiveTooltipTrigger>
           )}
 
-          <Portal>
+          <Portal target={targetRef}>
             <PrimitiveTooltipPositioner className={classNames.positioner}>
               {isOpen && (
                 <>
