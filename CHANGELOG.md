@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.11.1
+
+### Patch Changes
+
+- [#144](https://github.com/animareflection/ui/pull/144) [`572766a`](https://github.com/animareflection/ui/commit/572766a1ad51d806a42a0af74fd00d2981be6b2e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix `className` omission issue for basic recipe components when used as child for `asChild` components
+
 ## 0.11.0
 
 ### Minor Changes
