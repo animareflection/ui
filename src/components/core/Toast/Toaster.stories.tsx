@@ -64,23 +64,35 @@ const PositionTemplate = ({ position }: { position: ToastPosition }) => {
     toast(`Position set to ${position}`, { position });
 
   return (
-    <Button minW={32} onClick={showToastPosition}>
+    <Button variant="primary" minW={32} onClick={showToastPosition}>
       {position}
     </Button>
   );
 };
 
 export const Default: Story = {
-  render: () => <Button onClick={notify}>Make a Toast</Button>,
+  render: () => (
+    <Button variant="primary" onClick={notify}>
+      Make a Toast
+    </Button>
+  ),
 };
 
 export const Variants: Story = {
   render: () => (
     <Flex gap={2}>
-      <Button onClick={notify}>Default</Button>
-      <Button onClick={success}>Success</Button>
-      <Button onClick={error}>Error</Button>
-      <Button onClick={promise}>Promise</Button>
+      <Button variant="primary" onClick={notify}>
+        Default
+      </Button>
+      <Button variant="primary" onClick={success}>
+        Success
+      </Button>
+      <Button variant="primary" onClick={error}>
+        Error
+      </Button>
+      <Button variant="primary" onClick={promise}>
+        Promise
+      </Button>
     </Flex>
   ),
 };

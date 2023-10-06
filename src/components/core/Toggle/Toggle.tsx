@@ -5,7 +5,7 @@ import {
   PrimitiveToggleLabel,
 } from "components/primitives";
 import { toggle } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveToggleProps } from "components/primitives";
 import type { ToggleVariantProps } from "generated/panda/recipes";
@@ -18,9 +18,9 @@ export type Props = PrimitiveToggleProps & ToggleVariantProps;
 const Toggle = ({ label, size, ...rest }: Props) => {
   const classNames = toggle({ size });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveToggle className={classNames.root} {...rest}>

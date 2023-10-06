@@ -11,6 +11,7 @@ import {
 import {
   AccordionDemo,
   AlertDemo,
+  AvatarDemo,
   BadgeDemo,
   BannerDemo,
   BreadcrumbDemo,
@@ -19,6 +20,7 @@ import {
   CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
+  CopyToClipboardDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -93,6 +95,7 @@ const App = () => (
 
     <Flex direction="column" align="center" w="100%" gap={2} p={12}>
       <ButtonDemo />
+      <AvatarDemo />
       <AccordionDemo />
       <DrawerDemo />
       <IconDemo />
@@ -120,6 +123,7 @@ const App = () => (
       <BreadcrumbDemo />
       <RadioGroupDemo />
       <StatDemo />
+      <CopyToClipboardDemo />
       <AlertDemo />
 
       <Hide below="md">

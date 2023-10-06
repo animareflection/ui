@@ -9,20 +9,19 @@ import {
   PrimitiveTooltipTrigger,
 } from "components/primitives";
 import { tooltip } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
-import type {
-  PrimitiveTooltipProps,
-  PrimitiveTooltipTriggerProps,
-} from "components/primitives";
+import type { PrimitiveTooltipProps } from "components/primitives";
+import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
-export interface Props extends PrimitiveTooltipProps {
-  trigger: ReactNode;
-  content: ReactNode;
+export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
+  trigger?: ReactNode;
+  tooltipContent: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
-  triggerProps?: PrimitiveTooltipTriggerProps;
+  arrow?: boolean;
+  targetRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -30,44 +29,50 @@ export interface Props extends PrimitiveTooltipProps {
  */
 const Tooltip = ({
   trigger,
-  content,
+  tooltipContent,
   openDelay = 0,
   closeDelay = 0,
   bgColor = "bg.default",
-  triggerProps,
+  variant,
+  arrow = true,
+  targetRef,
   ...rest
 }: Props) => {
-  const classNames = tooltip();
+  const isClient = useIsClient();
 
-  const isMounted = useIsMounted();
+  const classNames = tooltip({ variant });
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
       {({ isOpen }) => (
         <>
-          <PrimitiveTooltipTrigger
-            className={classNames.trigger}
-            {...triggerProps}
-          >
-            {trigger}
-          </PrimitiveTooltipTrigger>
-          <Portal>
+          {trigger && (
+            <PrimitiveTooltipTrigger asChild className={classNames.trigger}>
+              {trigger}
+            </PrimitiveTooltipTrigger>
+          )}
+
+          <Portal target={targetRef}>
             <PrimitiveTooltipPositioner className={classNames.positioner}>
               {isOpen && (
                 <>
-                  <PrimitiveTooltipArrow
-                    bgColor={bgColor}
-                    className={classNames.arrow}
-                  >
-                    <PrimitiveTooltipArrowTip className={classNames.arrowTip} />
-                  </PrimitiveTooltipArrow>
+                  {arrow && (
+                    <PrimitiveTooltipArrow
+                      bgColor={bgColor}
+                      className={classNames.arrow}
+                    >
+                      <PrimitiveTooltipArrowTip
+                        className={classNames.arrowTip}
+                      />
+                    </PrimitiveTooltipArrow>
+                  )}
                   <PrimitiveTooltipContent
                     bgColor={bgColor}
                     className={classNames.content}
                   >
-                    {content}
+                    {tooltipContent}
                   </PrimitiveTooltipContent>
                 </>
               )}

@@ -1,5 +1,6 @@
 export { default as Accordion } from "./Accordion/Accordion";
 export { default as Alert } from "./Alert/Alert";
+export { default as Avatar } from "./Avatar/Avatar";
 export { default as Badge } from "./Badge/Badge";
 export { default as Banner } from "./Banner/Banner";
 export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb";
@@ -34,6 +35,7 @@ export type {
   AccordionItemRecord,
 } from "./Accordion/Accordion";
 export type { Props as AlertProps } from "./Alert/Alert";
+export type { Props as AvatarProps } from "./Avatar/Avatar";
 export type { Props as BannerProps } from "./Banner/Banner";
 export type {
   Props as BreadcrumbProps,

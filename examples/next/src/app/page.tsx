@@ -11,6 +11,7 @@ import {
 import {
   AccordionDemo,
   AlertDemo,
+  AvatarDemo,
   BadgeDemo,
   BannerDemo,
   BreadcrumbDemo,
@@ -19,6 +20,7 @@ import {
   CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
+  CopyToClipboardDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -82,6 +84,7 @@ const HomePage = () => (
 
     <Flex direction="column" w="100%" gap={2} p={4}>
       <ButtonDemo />
+      <AvatarDemo />
       <AccordionDemo />
       <DrawerDemo />
       <IconDemo />
@@ -109,6 +112,7 @@ const HomePage = () => (
       <BreadcrumbDemo />
       <RadioGroupDemo />
       <StatDemo />
+      <CopyToClipboardDemo />
       <AlertDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">

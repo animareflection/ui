@@ -1,21 +1,13 @@
 import { panda } from "generated/panda/jsx";
 import { badge } from "generated/panda/recipes";
 
-import type { BadgeVariantProps } from "generated/panda/recipes";
-import type { ComponentPropsWithoutRef } from "react";
+import type { ComponentProps } from "react";
 
-export type Props = ComponentPropsWithoutRef<typeof panda.div> &
-  BadgeVariantProps;
+export type Props = ComponentProps<typeof Badge>;
 
 /**
  * Core UI badge.
  */
-const Badge = ({ variant, size, children, ...props }: Props) => {
-  return (
-    <panda.div className={badge({ variant, size })} {...props}>
-      {children}
-    </panda.div>
-  );
-};
+const Badge = panda("div", badge);
 
 export default Badge;

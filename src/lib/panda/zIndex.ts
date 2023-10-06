@@ -10,6 +10,9 @@ const zIndex = defineTokens.zIndex({
   modal: {
     value: 1400,
   },
+  menu: {
+    value: 1500,
+  },
 });
 
 export default zIndex;

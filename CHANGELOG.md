@@ -1,5 +1,57 @@
 # @animareflection/ui
 
+## 0.12.0
+
+### Minor Changes
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update all primitive component types using pattern `ComponentProps<typeof PRIMITIVE>`
+
+- [#147](https://github.com/animareflection/ui/pull/147) [`a5c5bf6`](https://github.com/animareflection/ui/commit/a5c5bf68029638f05c079c5db2a2c586ab1834aa) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `targetRef` prop for all components that use `Portal`
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove unnecessary `triggerProps` from `Tooltip` props
+
+- [#148](https://github.com/animareflection/ui/pull/148) [`f72cea7`](https://github.com/animareflection/ui/commit/f72cea70024625dce2164338cd43adcf5725658a) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Collapse` to accept controlled state props
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Change `content` prop to `tooltipContent` to avoid prop collision
+
+## 0.11.1
+
+### Patch Changes
+
+- [#144](https://github.com/animareflection/ui/pull/144) [`572766a`](https://github.com/animareflection/ui/commit/572766a1ad51d806a42a0af74fd00d2981be6b2e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix `className` omission issue for basic recipe components when used as child for `asChild` components
+
+## 0.11.0
+
+### Minor Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Button` recipe variants and default styles
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Menu` component
+
+### Patch Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add style prop back to the resolved image in the NextJS enhanced `Image` component
+
+- [#140](https://github.com/animareflection/ui/pull/140) [`17cf025`](https://github.com/animareflection/ui/commit/17cf02556f6f956b04a0169d3b4cc5012e9bb480) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Tooltip` component
+
+- [#141](https://github.com/animareflection/ui/pull/141) [`d0768ea`](https://github.com/animareflection/ui/commit/d0768ead72f9aa75849d47054206e333ec4c8f69) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `NumberInput` component
+
+## 0.10.0
+
+### Minor Changes
+
+- [#129](https://github.com/animareflection/ui/pull/129) [`95be098`](https://github.com/animareflection/ui/commit/95be098e814215598daccb30838de0a6dcabc7cb) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Avatar` component
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Make `trigger` prop optional in applicable components and conditionally render the trigger
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add more `Drawer` placements and add `contentProps` prop for override capability
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Modify `Input` to allow for customizable `containerProps` and conditionally render `label`
+
+### Patch Changes
+
+- [#134](https://github.com/animareflection/ui/pull/134) [`bb6795a`](https://github.com/animareflection/ui/commit/bb6795a06fef7a60c41e08b1b3db0df992f132af) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix `Banner` component styles
+
 ## 0.9.0
 
 ### Minor Changes

@@ -5,6 +5,11 @@ export {
   PrimitiveAccordionContent,
 } from "./Accordion/Accordion";
 export {
+  default as PrimitiveAvatar,
+  PrimitiveAvatarFallback,
+  PrimitiveAvatarImage,
+} from "./Avatar/Avatar";
+export {
   default as PrimitiveCarousel,
   PrimitiveCarouselControl,
   PrimitiveCarouselNextSlideTrigger,
@@ -120,6 +125,11 @@ export type {
   PrimitiveAccordionTriggerProps,
   PrimitiveAccordionContentProps,
 } from "./Accordion/Accordion";
+export type {
+  PrimitiveAvatarProps,
+  PrimitiveAvatarFallbackProps,
+  PrimitiveAvatarImageProps,
+} from "./Avatar/Avatar";
 export type {
   PrimitiveCarouselProps,
   PrimitiveCarouselControlProps,

@@ -11,19 +11,20 @@ import {
   PrimitiveMenuItemGroupLabel,
   PrimitiveMenuTriggerItem,
 } from "components/primitives";
+import { cx } from "generated/panda/css";
 import { button, menu } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveMenuProps } from "components/primitives";
 import type {
   ButtonVariantProps,
   MenuVariantProps,
 } from "generated/panda/recipes";
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode, RefObject } from "react";
 
 export interface MenuItemRecord {
   id: string;
-  child: ReactNode;
+  child: ReactElement;
   subMenu?: boolean;
 }
 
@@ -39,6 +40,7 @@ export interface Props extends PrimitiveMenuProps, MenuVariantProps {
   triggerItem?: ReactNode;
   triggerVariant?: ButtonVariantProps["variant"];
   groups?: MenuItemGroupRecord[];
+  targetRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -51,13 +53,14 @@ const Menu = ({
   triggerVariant,
   groups,
   size,
+  targetRef,
   ...rest
 }: Props) => {
   const classNames = menu({ size });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveMenu {...rest}>
@@ -65,7 +68,10 @@ const Menu = ({
         <>
           {trigger && (
             <PrimitiveMenuTrigger
-              className={button({ variant: triggerVariant })}
+              className={cx(
+                button({ variant: triggerVariant }),
+                classNames.trigger,
+              )}
             >
               {trigger}
             </PrimitiveMenuTrigger>
@@ -75,8 +81,8 @@ const Menu = ({
               {triggerItem}
             </PrimitiveMenuTriggerItem>
           )}
-          <Portal>
-            <PrimitiveMenuPositioner>
+          <Portal target={targetRef}>
+            <PrimitiveMenuPositioner className={classNames.positioner}>
               <PrimitiveMenuContent className={classNames.content}>
                 {groups?.map(({ id, label, separator, items }) => (
                   <PrimitiveMenuItemGroup
@@ -102,6 +108,7 @@ const Menu = ({
                           key={id}
                           id={id}
                           className={classNames.item}
+                          asChild
                         >
                           {child}
                         </PrimitiveMenuItem>

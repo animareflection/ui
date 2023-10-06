@@ -3,11 +3,9 @@ import { ark } from "@ark-ui/react";
 import { panda } from "generated/panda/jsx";
 import { icon } from "generated/panda/recipes";
 
-import type { HTMLPandaProps } from "generated/panda/jsx";
-import type { IconVariantProps } from "generated/panda/recipes";
-import type { ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 
-export interface Props extends IconVariantProps, HTMLPandaProps<"svg"> {
+export interface Props extends ComponentProps<typeof PandaIcon> {
   children: ReactElement;
 }
 

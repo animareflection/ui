@@ -15,32 +15,40 @@ import {
   PrimitiveFlyoutTrigger,
 } from "components/primitives";
 import { flyout } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type {
   PrimitiveFlyoutProps,
   PrimitiveFlyoutTriggerProps,
 } from "components/primitives";
-import type { ReactNode } from "react";
+import type { RefObject, ReactNode } from "react";
 
 export interface Props extends PrimitiveFlyoutProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: ReactNode;
   children: ReactNode;
   triggerProps?: PrimitiveFlyoutTriggerProps;
+  targetRef?: RefObject<HTMLElement>;
 }
 
 /**
  * Core UI flyout.
  */
-const Flyout = ({ trigger, title, children, triggerProps, ...rest }: Props) => {
+const Flyout = ({
+  trigger,
+  title,
+  children,
+  triggerProps,
+  targetRef,
+  ...rest
+}: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const classNames = flyout();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveFlyout
@@ -49,15 +57,17 @@ const Flyout = ({ trigger, title, children, triggerProps, ...rest }: Props) => {
       portalled
       {...rest}
     >
-      <PrimitiveFlyoutTrigger
-        className={classNames.trigger}
-        onClick={() => setIsOpen(!isOpen)}
-        {...triggerProps}
-      >
-        {trigger}
-      </PrimitiveFlyoutTrigger>
+      {trigger && (
+        <PrimitiveFlyoutTrigger
+          className={classNames.trigger}
+          onClick={() => setIsOpen(!isOpen)}
+          {...triggerProps}
+        >
+          {trigger}
+        </PrimitiveFlyoutTrigger>
+      )}
 
-      <Portal>
+      <Portal target={targetRef}>
         <PrimitiveFlyoutPositioner className={classNames.positioner}>
           <PrimitiveFlyoutContent className={classNames.content}>
             <PrimitiveFlyoutArrow className={classNames.arrow}>
