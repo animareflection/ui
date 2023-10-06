@@ -8,6 +8,8 @@ export const buttonRecipe = defineRecipe({
     fontWeight: "bold",
     p: 3,
     borderRadius: "md",
+    display: "inline-flex",
+    alignItems: "center",
     _focus: { outline: "none" },
     _disabled: {
       bgColor: "bg.disabled",

@@ -13,7 +13,7 @@ import {
   PrimitiveModalTrigger,
 } from "components/primitives";
 import { modal } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
 import type { ReactNode, RefObject } from "react";
@@ -38,9 +38,9 @@ const Modal = ({
 }: Props) => {
   const classNames = modal();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveModal {...rest}>

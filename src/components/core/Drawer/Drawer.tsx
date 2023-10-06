@@ -13,7 +13,7 @@ import {
   PrimitiveDrawerTrigger,
 } from "components/primitives";
 import { drawer } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type {
   PrimitiveDrawerProps,
@@ -45,9 +45,9 @@ const Drawer = ({
 }: Props) => {
   const classNames = drawer({ placement });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveDrawer {...rest}>
