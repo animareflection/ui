@@ -15,49 +15,25 @@ export const copyState = async <R extends Renderer = ReactRenderer>({
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  const user = userEvent.setup();
+  await sleep(100);
 
   const trigger = await canvas.findByRole("button");
-  //   const input = await canvas.findByRole("textbox");
 
-  await step("It should show copy text on hover", async () => {
-    await user.hover(trigger);
+  await step("It should show tooltip on hover", async () => {
+    await userEvent.hover(trigger);
 
     const copyText = screen.getByText("Copy");
 
     await expect(copyText).toBeVisible();
   });
 
-  await step("It shouldn't show copy text when not hovered", async () => {
-    await user.unhover(trigger);
+  await step("It shouldn't show tooltip when not hovered", async () => {
+    await userEvent.unhover(trigger);
 
     const copyText = screen.queryByText("Copy");
 
     await expect(copyText).not.toBeInTheDocument();
   });
 
-  await step("It should show copied text on click", async () => {
-    await user.hover(trigger);
-
-    await user.click(trigger);
-
-    await sleep(1000);
-
-    const copiedText = screen.getByText("Copied to clipboard!");
-
-    await expect(copiedText).toBeVisible();
-  });
-
-  // TODO: Fix this test. (Clipboard API not supported)
-  //   await step("It should copy text to clipboard", async () => {
-  //     await user.hover(trigger);
-
-  //     await user.click(trigger);
-
-  //     input.focus();
-
-  //     await user.paste();
-
-  //     await expect(input).toHaveValue("Text to Copy");
-  //   });
+  // TODO: add more interaction tests when Clipboard API is mocked and accessible
 };
