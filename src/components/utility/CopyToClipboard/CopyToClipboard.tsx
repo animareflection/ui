@@ -47,11 +47,12 @@ const CopyToClipboard = ({
         }}
         p={0}
         w="fit-content"
+        gap={1}
         {...rest}
       >
         {children}
         {icon && (
-          <Icon ml="4px" mb={1.5}>
+          <Icon>
             <ClipboardIcon />
           </Icon>
         )}
