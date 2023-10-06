@@ -13,7 +13,7 @@ import {
 } from "components/primitives";
 import { cx } from "generated/panda/css";
 import { button, menu } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveMenuProps } from "components/primitives";
 import type {
@@ -58,9 +58,9 @@ const Menu = ({
 }: Props) => {
   const classNames = menu({ size });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveMenu {...rest}>

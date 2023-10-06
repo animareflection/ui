@@ -15,7 +15,7 @@ import {
   PrimitiveFlyoutTrigger,
 } from "components/primitives";
 import { flyout } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type {
   PrimitiveFlyoutProps,
@@ -46,9 +46,9 @@ const Flyout = ({
 
   const classNames = flyout();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveFlyout

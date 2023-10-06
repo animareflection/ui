@@ -13,7 +13,7 @@ import {
   PrimitiveCarouselViewport,
 } from "components/primitives";
 import { carousel } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveCarouselProps } from "components/primitives";
 import type { CarouselVariantProps } from "generated/panda/recipes";
@@ -26,9 +26,9 @@ export interface Props extends PrimitiveCarouselProps, CarouselVariantProps {
 const Carousel = ({ slides, size, ...rest }: Props) => {
   const classNames = carousel({ size });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveCarousel className={classNames.root} {...rest}>

@@ -5,7 +5,7 @@ import {
   PrimitiveRadioControl,
 } from "components/primitives";
 import { radioGroup } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveRadioGroupProps } from "components/primitives";
 import type { RadioGroupVariantProps } from "generated/panda/recipes";
@@ -34,9 +34,9 @@ const RadioGroup = ({
 }: Props) => {
   const classNames = radioGroup({ size });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveRadioGroup

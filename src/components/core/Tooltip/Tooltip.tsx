@@ -9,7 +9,7 @@ import {
   PrimitiveTooltipTrigger,
 } from "components/primitives";
 import { tooltip } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveTooltipProps } from "components/primitives";
 import type { TooltipVariantProps } from "generated/panda/recipes";
@@ -38,11 +38,11 @@ const Tooltip = ({
   targetRef,
   ...rest
 }: Props) => {
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
   const classNames = tooltip({ variant });
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
