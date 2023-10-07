@@ -6,15 +6,13 @@ export const alertRecipe = defineSlotRecipe({
   slots: ["root", "title", "description", "icon"],
   base: {
     root: {
-      backgroundColor: "bg.default",
       borderRadius: "md",
       borderWidth: "1px",
-      borderColor: "border.emphasized",
       boxShadow: "md",
       p: 4,
       w: "full",
       gap: 4,
-      flexDirection: { base: "column!", sm: "row!" },
+      flexDirection: { base: "column", sm: "row" },
       alignItems: { sm: "center" },
     },
     title: {
@@ -25,8 +23,26 @@ export const alertRecipe = defineSlotRecipe({
       textStyle: "sm",
     },
   },
+  defaultVariants: {
+    variant: "info",
+  },
   variants: {
     variant: {
+      info: {
+        root: {
+          backgroundColor: "brand.primary.100",
+          borderColor: "brand.primary.600",
+        },
+        title: {
+          color: "brand.primary.800!",
+        },
+        description: {
+          color: "brand.primary.600!",
+        },
+        icon: {
+          color: "brand.primary.800",
+        },
+      },
       warning: {
         root: {
           backgroundColor: "yellow.100",
@@ -39,7 +55,7 @@ export const alertRecipe = defineSlotRecipe({
           color: "yellow.600!",
         },
         icon: {
-          color: "yellow.800!",
+          color: "yellow.800",
         },
       },
       error: {
@@ -54,7 +70,7 @@ export const alertRecipe = defineSlotRecipe({
           color: "red.600!",
         },
         icon: {
-          color: "red.800!",
+          color: "red.800",
         },
       },
     },

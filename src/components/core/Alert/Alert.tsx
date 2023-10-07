@@ -2,7 +2,7 @@ import { FiInfo } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
 import Text from "components/core/Text/Text";
-import { Stack } from "generated/panda/jsx";
+import { Flex } from "generated/panda/jsx";
 import { alert } from "generated/panda/recipes";
 
 import type { StackProps } from "generated/panda/jsx";
@@ -19,17 +19,15 @@ const Alert = ({ variant, icon, title, description, ...rest }: Props) => {
   const classNames = alert({ variant });
 
   return (
-    <Stack className={classNames.root} {...rest}>
-      <Icon className={classNames.icon} color="fg.emphasized">
-        {icon ?? <FiInfo />}
-      </Icon>
-      <Stack gap={1}>
+    <Flex className={classNames.root} {...rest}>
+      <Icon className={classNames.icon}>{icon ?? <FiInfo />}</Icon>
+      <Flex direction="column" gap={1}>
         <Text className={classNames.title}>{title}</Text>
         {description && (
           <Text className={classNames.description}>{description}</Text>
         )}
-      </Stack>
-    </Stack>
+      </Flex>
+    </Flex>
   );
 };
 

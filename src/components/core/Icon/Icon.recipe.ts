@@ -4,7 +4,6 @@ export const iconRecipe = defineRecipe({
   className: "icon",
   description: "The styles for the Icon component",
   base: {
-    color: "currentcolor",
     display: "inline-block",
     flexShrink: 0,
     verticalAlign: "middle",
