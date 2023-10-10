@@ -4,7 +4,7 @@ import {
   PrimitiveAvatarImage,
 } from "components/primitives";
 import { avatar } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveAvatarProps } from "components/primitives";
 import type { AvatarVariantProps } from "generated/panda/recipes";
@@ -29,11 +29,11 @@ const Avatar = ({
   variant,
   ...rest
 }: Props) => {
-  const isMounted = useIsMounted();
-
   const classNames = avatar({ size, variant });
 
-  if (!isMounted) return null;
+  const isClient = useIsClient();
+
+  if (!isClient) return null;
 
   return (
     <PrimitiveAvatar className={classNames.root} {...rest}>

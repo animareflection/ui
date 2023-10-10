@@ -37,7 +37,7 @@ const TooltipTemplate = ({ placement }: { placement: Placement }) => (
         {placement}
       </Text>
     }
-    content="Tooltip Title"
+    tooltipContent="Tooltip Title"
   />
 );
 
@@ -45,7 +45,7 @@ export const Default: Story = {
   render: () => (
     <Tooltip
       trigger={<Text fontWeight="bold">Tooltip</Text>}
-      content="Tooltip Title"
+      tooltipContent="Tooltip Title"
     />
   ),
 };
@@ -75,7 +75,7 @@ export const Variants: Story = {
   render: () => (
     <Tooltip
       trigger={<Text fontWeight="bold">Rounded</Text>}
-      content="Tooltip Title"
+      tooltipContent="Tooltip Title"
       variant="rounded"
     />
   ),

@@ -19,6 +19,7 @@ import {
   CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
+  CopyToClipboardDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -121,6 +122,7 @@ const App = () => (
       <BreadcrumbDemo />
       <RadioGroupDemo />
       <StatDemo />
+      <CopyToClipboardDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">

@@ -13,26 +13,34 @@ import {
   PrimitiveModalTrigger,
 } from "components/primitives";
 import { modal } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 export interface Props extends PrimitiveModalProps {
   trigger?: ReactNode;
   title?: string;
   description?: string;
+  targetRef?: RefObject<HTMLElement>;
 }
 
 /**
  * Core UI modal.
  */
-const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
+const Modal = ({
+  children,
+  trigger,
+  title,
+  description,
+  targetRef,
+  ...rest
+}: Props) => {
   const classNames = modal();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveModal {...rest}>
@@ -44,7 +52,7 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
             </PrimitiveModalTrigger>
           )}
 
-          <Portal>
+          <Portal target={targetRef}>
             <PrimitiveModalBackdrop className={classNames.backdrop} />
             <PrimitiveModalContainer className={classNames.container}>
               <PrimitiveModalContent

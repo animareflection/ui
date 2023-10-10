@@ -13,20 +13,21 @@ import {
   PrimitiveDrawerTrigger,
 } from "components/primitives";
 import { drawer } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type {
   PrimitiveDrawerProps,
   PrimitiveDrawerContentProps,
 } from "components/primitives";
 import type { DrawerVariantProps } from "generated/panda/recipes";
-import type { ReactNode } from "react";
+import type { RefObject, ReactNode } from "react";
 
 export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
   trigger?: ReactNode;
   title?: string;
   description?: string;
   contentProps?: PrimitiveDrawerContentProps;
+  targetRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -39,13 +40,14 @@ const Drawer = ({
   title,
   description,
   contentProps,
+  targetRef,
   ...rest
 }: Props) => {
   const classNames = drawer({ placement });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveDrawer {...rest}>
@@ -57,7 +59,7 @@ const Drawer = ({
             </PrimitiveDrawerTrigger>
           )}
 
-          <Portal>
+          <Portal target={targetRef}>
             <PrimitiveDrawerBackdrop className={classNames.backdrop} />
             <PrimitiveDrawerContainer className={classNames.container}>
               <PrimitiveDrawerContent
