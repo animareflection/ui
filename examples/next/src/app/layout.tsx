@@ -5,7 +5,6 @@ interface Props {
 }
 
 import "main.css";
-import { BreadcrumbDemo } from "components/core";
 
 /**
  * Root application layout.
