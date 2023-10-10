@@ -7,4 +7,4 @@ export type { Options as UseBreakpointValueOptions } from "./useBreakpointValue/
 export type { Options as UseDisclosureOptions } from "./useDisclosure/useDisclosure";
 
 // export backfill of usehooks-ts hooks
-// export * from "usehooks-ts";
+export * from "usehooks-ts";
