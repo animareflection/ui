@@ -59,6 +59,7 @@ const Flyout = ({
     >
       {trigger && (
         <PrimitiveFlyoutTrigger
+          asChild
           className={classNames.trigger}
           onClick={() => setIsOpen(!isOpen)}
           {...triggerProps}
