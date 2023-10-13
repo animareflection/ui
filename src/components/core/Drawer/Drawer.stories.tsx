@@ -1,5 +1,5 @@
 import { drawerState } from "./Drawer.spec";
-import { Drawer, Text } from "components/core";
+import { Button, Drawer, Text } from "components/core";
 import { Flex } from "generated/panda/jsx";
 import { useBreakpointValue } from "lib/hooks";
 
@@ -15,9 +15,9 @@ interface TemplateProps extends DrawerProps {
 const DrawerTemplate = ({ triggerLabel, ...rest }: TemplateProps) => (
   <Drawer
     trigger={
-      <Flex minW={24} w="100%" justify="center">
+      <Button variant="primary" w="100%">
         {triggerLabel}
-      </Flex>
+      </Button>
     }
     title="Drawer Title"
     description="Drawer Description"
@@ -39,7 +39,7 @@ const BreakpointExample = () => {
 
   return (
     <Drawer
-      trigger={<Text>Open Drawer</Text>}
+      trigger={<Button variant="primary">Open Drawer</Button>}
       title="Drawer Title"
       description="Drawer Description"
       placement={placement}
@@ -71,7 +71,7 @@ export const BreakpointPlacement: Story = {
 export const WithContext: Story = {
   render: () => (
     <Drawer
-      trigger={<Text>Open Drawer</Text>}
+      trigger={<Button variant="primary">Open Drawer</Button>}
       title="Drawer Title"
       description="Drawer Description"
     >
