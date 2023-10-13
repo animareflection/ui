@@ -15,7 +15,12 @@ interface TemplateProps extends DrawerProps {
 const DrawerTemplate = ({ triggerLabel, ...rest }: TemplateProps) => (
   <Drawer
     trigger={
-      <Button variant="primary" w="100%">
+      <Button
+        variant="primary"
+        w="fit-content"
+        justifyContent="center"
+        minW={24}
+      >
         {triggerLabel}
       </Button>
     }
