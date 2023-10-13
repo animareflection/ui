@@ -24,7 +24,6 @@ export const drawerRecipe = defineSlotRecipe({
     },
     container: {
       display: "flex",
-      justifyContent: "flex-end",
       inset: 0,
       position: "fixed",
       zIndex: "modal",
@@ -33,7 +32,6 @@ export const drawerRecipe = defineSlotRecipe({
       background: "bg.default",
       boxShadow: "lg",
       height: "full",
-      width: { base: "full", sm: "sm" },
       overflowY: "auto",
       position: "relative",
       px: {
@@ -41,12 +39,6 @@ export const drawerRecipe = defineSlotRecipe({
         md: 6,
       },
       py: 6,
-      _open: {
-        animation: "drawer-in-right",
-      },
-      _closed: {
-        animation: "drawer-out-right",
-      },
     },
     title: {
       fontWeight: "bold",
@@ -58,24 +50,10 @@ export const drawerRecipe = defineSlotRecipe({
       textStyle: "sm",
     },
     trigger: {
-      color: "accent.fg",
-      bgColor: "accent.default",
-      w: "fit-content",
-      h: "fit-content",
       cursor: "pointer",
-      fontWeight: "bold",
-      p: 3,
-      borderRadius: "md",
       _focus: { outline: "none" },
-      _hover: {
-        bgColor: "accent.emphasized",
-      },
       _disabled: {
-        bgColor: "bg.disabled",
         cursor: "not-allowed",
-        _hover: {
-          bgColor: "bg.disabled",
-        },
       },
     },
     closeTrigger: {
@@ -89,15 +67,34 @@ export const drawerRecipe = defineSlotRecipe({
         base: "inherit",
         _hover: "bg.subtle",
       },
+      _focus: { outline: "none" },
     },
+  },
+  defaultVariants: {
+    placement: "right",
   },
   variants: {
     placement: {
+      right: {
+        container: {
+          justifyContent: "flex-end",
+        },
+        content: {
+          width: { base: "full", sm: "sm" },
+          _open: {
+            animation: "drawer-in-right",
+          },
+          _closed: {
+            animation: "drawer-out-right",
+          },
+        },
+      },
       left: {
         container: {
           justifyContent: "flex-start",
         },
         content: {
+          width: { base: "full", sm: "sm" },
           _open: {
             animation: "drawer-in-left",
           },
@@ -108,7 +105,6 @@ export const drawerRecipe = defineSlotRecipe({
       },
       bottom: {
         container: {
-          justifyContent: undefined,
           alignItems: "flex-end",
         },
         content: {
@@ -123,7 +119,6 @@ export const drawerRecipe = defineSlotRecipe({
       },
       top: {
         container: {
-          justifyContent: undefined,
           alignItems: "flex-start",
         },
         content: {
