@@ -89,6 +89,7 @@ export const drawerRecipe = defineSlotRecipe({
         base: "inherit",
         _hover: "bg.subtle",
       },
+      _focus: { outline: "none" },
     },
   },
   variants: {
