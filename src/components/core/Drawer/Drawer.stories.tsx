@@ -39,7 +39,7 @@ const BreakpointExample = () => {
 
   return (
     <Drawer
-      trigger="Open Drawer"
+      trigger={<Text>Open Drawer</Text>}
       title="Drawer Title"
       description="Drawer Description"
       placement={placement}
@@ -71,7 +71,7 @@ export const BreakpointPlacement: Story = {
 export const WithContext: Story = {
   render: () => (
     <Drawer
-      trigger="Open Drawer"
+      trigger={<Text>Open Drawer</Text>}
       title="Drawer Title"
       description="Drawer Description"
     >

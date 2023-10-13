@@ -5,7 +5,7 @@ import { Wrapper } from "components";
 const DrawerDemo = () => (
   <Wrapper title="Drawer">
     <Drawer
-      trigger="Open Drawer"
+      trigger={<Text color="bg.default">Open Drawer</Text>}
       title="Drawer Title"
       description="Drawer Description"
     >
