@@ -1,4 +1,5 @@
 export { default as AccordionDemo } from "./AccordionDemo";
+export { default as AlertDemo } from "./AlertDemo";
 export { default as AvatarDemo } from "./AvatarDemo";
 export { default as BadgeDemo } from "./BadgeDemo";
 export { default as BannerDemo } from "./BannerDemo";

@@ -10,6 +10,8 @@ export const buttonRecipe = defineRecipe({
     borderRadius: "md",
     display: "inline-flex",
     alignItems: "center",
+    color: "fg.default",
+    h: "fit-content",
     _focus: { outline: "none" },
     _disabled: {
       bgColor: "bg.disabled",

@@ -10,6 +10,7 @@ import {
 
 import {
   AccordionDemo,
+  AlertDemo,
   AvatarDemo,
   BadgeDemo,
   BannerDemo,
@@ -112,6 +113,7 @@ const HomePage = () => (
       <RadioGroupDemo />
       <StatDemo />
       <CopyToClipboardDemo />
+      <AlertDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint

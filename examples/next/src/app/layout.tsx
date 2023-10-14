@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import "main.css";
+
 interface Props {
   children: ReactNode;
 }

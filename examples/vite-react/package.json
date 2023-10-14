@@ -11,7 +11,7 @@
     "@ark-ui/react": "^0.14.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.9.0",
+    "@pandacss/dev": "^0.15.2",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.4",

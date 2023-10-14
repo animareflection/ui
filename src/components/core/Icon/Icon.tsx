@@ -11,8 +11,8 @@ export interface Props extends ComponentProps<typeof PandaIcon> {
 
 const PandaIcon = panda(ark.svg, icon);
 
-const Icon = ({ ...props }: Props) => {
-  return <PandaIcon asChild {...props} />;
+const Icon = ({ asChild = true, ...props }: Props) => {
+  return <PandaIcon asChild={asChild} {...props} />;
 };
 
 export default Icon;
