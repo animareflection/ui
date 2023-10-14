@@ -11,15 +11,17 @@ export const badgeRecipe = defineRecipe({
     alignItems: "center",
     userSelect: "none",
     whiteSpace: "nowrap",
-    textStyle: "sm",
-    px: 2.5,
-    h: 6,
-    gap: 2,
-    background: "accent.default",
-    color: "accent.fg",
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
   },
   variants: {
     variant: {
+      primary: {
+        background: "accent.default",
+        color: "accent.fg",
+      },
       subtle: {
         background: "accent.subtle",
         borderColor: "border.accent",
@@ -35,6 +37,7 @@ export const badgeRecipe = defineRecipe({
     },
     size: {
       sm: { textStyle: "xs", px: 2, h: 5, gap: 1 },
+      md: { textStyle: "sm", px: 2.5, h: 6, gap: 2 },
       lg: { textStyle: "sm", px: 3, h: 7, gap: 1.5 },
     },
   },
