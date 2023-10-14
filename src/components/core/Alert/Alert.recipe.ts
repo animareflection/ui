@@ -1,5 +1,6 @@
 import { defineSlotRecipe } from "@pandacss/dev";
 
+// TODO: remove need for !important styles when issue with cascade layer conflicts is fixed
 export const alertRecipe = defineSlotRecipe({
   className: "alert",
   description: "The styles for the Alert component",
@@ -19,7 +20,6 @@ export const alertRecipe = defineSlotRecipe({
       fontWeight: "medium",
     },
     description: {
-      color: "fg.muted",
       textStyle: "sm",
     },
   },
