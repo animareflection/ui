@@ -8,8 +8,9 @@ export const iconRecipe = defineRecipe({
     flexShrink: 0,
     verticalAlign: "middle",
     lineHeight: "1em",
-    w: 5,
-    h: 5,
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -20,6 +21,10 @@ export const iconRecipe = defineRecipe({
       sm: {
         w: 4,
         h: 4,
+      },
+      md: {
+        w: 5,
+        h: 5,
       },
       lg: {
         w: 6,
