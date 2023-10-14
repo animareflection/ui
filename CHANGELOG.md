@@ -1,5 +1,27 @@
 # @animareflection/ui
 
+## 0.13.0
+
+### Minor Changes
+
+- [#157](https://github.com/animareflection/ui/pull/157) [`69a8838`](https://github.com/animareflection/ui/commit/69a88384d71dbc49a9b4006135218b7b3b98b737) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Alert` component
+
+- [#149](https://github.com/animareflection/ui/pull/149) [`ced2d60`](https://github.com/animareflection/ui/commit/ced2d608909b988e0f6aaf0ddecad25cec15fa8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `CopyToClipboard` component
+
+### Patch Changes
+
+- [#154](https://github.com/animareflection/ui/pull/154) [`52f1260`](https://github.com/animareflection/ui/commit/52f126072a1ba3024c75e08867dedeb139ec4c69) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Collapse` component
+
+- [#156](https://github.com/animareflection/ui/pull/156) [`6255f0a`](https://github.com/animareflection/ui/commit/6255f0a45055a77d5a344737b0a508a48053107f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove need for `use client` for `Card` component in downstream NextJS apps
+
+- [#156](https://github.com/animareflection/ui/pull/156) [`6255f0a`](https://github.com/animareflection/ui/commit/6255f0a45055a77d5a344737b0a508a48053107f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Allow `Card` to accept arbitrary children
+
+- [#152](https://github.com/animareflection/ui/pull/152) [`2342ed0`](https://github.com/animareflection/ui/commit/2342ed0d4cc9144ed433fea8f8a5ed339b1f2aee) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Tooltip` component
+
+- [#153](https://github.com/animareflection/ui/pull/153) [`6ce0f5a`](https://github.com/animareflection/ui/commit/6ce0f5af58f0a6a17645e59659ed1ae6a7c13d16) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Flyout` component
+
+- [#155](https://github.com/animareflection/ui/pull/155) [`a829b89`](https://github.com/animareflection/ui/commit/a829b894ca68821935eafbb5140d1ce3eb268b0c) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Drawer` component
+
 ## 0.12.0
 
 ### Minor Changes
