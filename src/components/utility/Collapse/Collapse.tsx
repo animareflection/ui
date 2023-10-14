@@ -64,7 +64,7 @@ const Collapse = ({
         {isOpen && (
           <motion.div
             style={{ overflow: "hidden" }}
-            initial="collapsed"
+            initial={isOpen ? "open" : "collapsed"}
             animate="open"
             exit="collapsed"
             variants={{

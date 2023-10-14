@@ -54,7 +54,7 @@ const Drawer = ({
       {(ctx) => (
         <>
           {trigger && (
-            <PrimitiveDrawerTrigger className={classNames.trigger}>
+            <PrimitiveDrawerTrigger asChild className={classNames.trigger}>
               {trigger}
             </PrimitiveDrawerTrigger>
           )}

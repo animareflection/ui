@@ -17,9 +17,7 @@ export const flyoutState = async <R extends Renderer = ReactRenderer>({
 
   await sleep(100);
 
-  const openButton = canvas.getByRole("button", {
-    name: /open flyout/i,
-  });
+  const openButton = canvas.getByText("Open Flyout");
 
   await step("It should open flyout on trigger click", async () => {
     await userEvent.click(openButton);

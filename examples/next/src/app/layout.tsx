@@ -6,6 +6,8 @@ interface Props {
   children: ReactNode;
 }
 
+import "main.css";
+
 /**
  * Root application layout.
  */

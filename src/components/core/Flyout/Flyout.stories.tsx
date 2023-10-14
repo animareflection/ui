@@ -26,7 +26,7 @@ const FlyoutTemplate = ({ placement }: { placement: Placement }) => (
       placement: placement,
     }}
     trigger={
-      <Flex minW={24} w="100%" justify="center">
+      <Flex minW={32} w="100%" justify="center">
         {placement}
       </Flex>
     }
@@ -42,7 +42,7 @@ const FlyoutTemplate = ({ placement }: { placement: Placement }) => (
 
 export const Default: Story = {
   render: () => (
-    <Flyout trigger="Open Flyout" title="Flyout Title">
+    <Flyout trigger={<Text>Open Flyout</Text>} title="Flyout Title">
       <Text mt={2}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
