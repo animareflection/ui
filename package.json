@@ -81,6 +81,7 @@
     "@storybook/testing-library": "^0.2.1",
     "@storybook/theming": "^7.4.5",
     "@storybook/types": "^7.4.5",
+    "@tanstack/react-query": "beta",
     "@testing-library/dom": "^9.3.3",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.5.1",
@@ -119,6 +120,8 @@
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "usehooks-ts": "^2.9.1",
+    "viem": "2.0.0-alpha.17",
+    "wagmi": "alpha",
     "wait-on": "^7.0.1",
     "webpack": "^5.88.2"
   }
