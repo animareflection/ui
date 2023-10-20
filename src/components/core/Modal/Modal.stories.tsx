@@ -1,5 +1,5 @@
 import { modalState } from "./Modal.spec";
-import { Modal, Text } from "components/core";
+import { Button, Modal, Text } from "components/core";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -8,7 +8,7 @@ type Story = StoryObj<typeof Modal>;
 export const Default: Story = {
   render: () => (
     <Modal
-      trigger="Open Modal"
+      trigger={<Button>Open Modal</Button>}
       title="Modal Title"
       description="Modal Description"
     >
@@ -24,7 +24,7 @@ export const Default: Story = {
 export const WithContext: Story = {
   render: () => (
     <Modal
-      trigger="Open Modal"
+      trigger={<Button>Open Modal</Button>}
       title="Modal Title"
       description="Modal Description"
     >

@@ -6,7 +6,7 @@ import { MAINNET_RPC_URL, SEPOLIA_RPC_URL } from "lib/config";
 
 const config = createConfig({
   chains: [mainnet, sepolia],
-  connectors: [injected()],
+  connectors: [injected({ shimDisconnect: true })],
   transports: {
     [mainnet.id]: http(MAINNET_RPC_URL),
     [sepolia.id]: http(SEPOLIA_RPC_URL),
