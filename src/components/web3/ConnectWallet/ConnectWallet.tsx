@@ -40,37 +40,46 @@ const ConnectWallet = ({ ...props }: Props) => {
       {...props}
     >
       <Flex direction="column" gap={2} mt={4}>
-        {connectors.map((connector) => (
-          <Button
-            key={connector.uid}
-            display="flex"
-            alignItems="center"
-            gap={2}
-            variant="ghost"
-            onClick={() => connect({ connector })}
-          >
-            {/* TODO: update image sources, use switch statement, or enum */}
-            <Image
-              src={
-                connector.name === "Brave Wallet"
-                  ? "/svg/connectors/brave.svg"
-                  : "/svg/connectors/ethereum.svg"
-              }
-              alt="injected connector"
-              h={4}
-              w={4}
-            />
-            <Text fontSize="lg">{connector.name}</Text>
-            {status === "pending" && connector == currentConnector && (
-              <Flex align="center" ml={2} gap={1}>
-                <Spinner size="xs" />
-                <Text fontSize="xs" color="fg.emphasized">
-                  Connecting...
-                </Text>
-              </Flex>
-            )}
-          </Button>
-        ))}
+        {connectors.map((connector) => {
+          // TODO: update switch statement or refactor as needed
+          const imgSrc = (connectorName: string) => {
+            switch (connectorName) {
+              case "Brave Wallet":
+                return "/svg/connectors/brave.svg";
+              case "MetaMask":
+                return "/svg/connectors/metamask.svg";
+              default:
+                return "/svg/connectors/ethereum.svg";
+            }
+          };
+
+          return (
+            <Button
+              key={connector.uid}
+              display="flex"
+              alignItems="center"
+              gap={2}
+              variant="ghost"
+              onClick={() => connect({ connector })}
+            >
+              <Image
+                src={imgSrc(connector.name)}
+                alt="injected connector"
+                h={4}
+                w={4}
+              />
+              <Text fontSize="lg">{connector.name}</Text>
+              {status === "pending" && connector == currentConnector && (
+                <Flex align="center" ml={2} gap={1}>
+                  <Spinner size="xs" />
+                  <Text fontSize="xs" color="fg.emphasized">
+                    Connecting...
+                  </Text>
+                </Flex>
+              )}
+            </Button>
+          );
+        })}
         {/* TODO: use custom Link component when available */}
         <panda.a
           href="https://ethereum.org/en/wallets/"
