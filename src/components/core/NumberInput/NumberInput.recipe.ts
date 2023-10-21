@@ -43,13 +43,6 @@ export const numberInputRecipe = defineSlotRecipe({
       },
       color: "fg.default",
       caretColor: "accent.default",
-      backgroundColor: "bg.default",
-      borderColor: "border.default",
-      borderWidth: "1px",
-      px: 3,
-      h: 10,
-      minW: 10,
-      fontSize: "md",
       outline: 0,
       position: "relative",
       transitionDuration: "normal",
@@ -60,25 +53,17 @@ export const numberInputRecipe = defineSlotRecipe({
         opacity: 0.4,
         cursor: "not-allowed",
       },
-      _focus: {
-        borderColor: "border.accent",
-        boxShadow: "sm",
-      },
     },
     label: {
-      fontWeight: "md",
       color: "fg.emphasized",
     },
     addon: {
-      fontSize: "md",
-      px: 3,
       display: "flex",
       alignItems: "center",
       backgroundColor: "border.default",
       color: "fg.default",
     },
     stepper: {
-      fontSize: "md",
       display: "flex",
       alignItems: "center",
       backgroundColor: "border.default",
@@ -106,8 +91,23 @@ export const numberInputRecipe = defineSlotRecipe({
       color: "fg.subtle",
     },
   },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
   variants: {
     variant: {
+      primary: {
+        input: {
+          backgroundColor: "bg.default",
+          borderWidth: "1px",
+          borderColor: "border.default",
+          _focus: {
+            borderColor: "border.accent",
+            boxShadow: "sm",
+          },
+        },
+      },
       flushed: {
         input: {
           backgroundColor: "transparent",
@@ -122,6 +122,8 @@ export const numberInputRecipe = defineSlotRecipe({
       filled: {
         input: {
           backgroundColor: "border.default",
+          borderWidth: "1px",
+          borderColor: "border.default",
           _focus: {
             backgroundColor: "bg.default",
             borderColor: "border.accent",
@@ -133,8 +135,10 @@ export const numberInputRecipe = defineSlotRecipe({
         input: {
           backgroundColor: "transparent",
           borderWidth: 0,
+          borderColor: "border.default",
           borderRadius: 0,
           _focus: {
+            borderColor: "border.accent",
             boxShadow: "none",
           },
         },
@@ -164,6 +168,14 @@ export const numberInputRecipe = defineSlotRecipe({
         stepper: { fontSize: "sm" },
         leftElement: { fontSize: "sm" },
         rightElement: { fontSize: "sm" },
+      },
+      md: {
+        input: { px: 3, h: 10, minW: 10, fontSize: "md" },
+        label: { fontSize: "md" },
+        addon: { fontSize: "md", px: 3 },
+        stepper: { fontSize: "md" },
+        leftElement: { fontSize: "md" },
+        rightElement: { fontSize: "md" },
       },
       lg: {
         input: { px: 3.5, h: 11, minW: 11, fontSize: "md" },

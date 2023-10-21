@@ -88,13 +88,4 @@ export const tabsRecipe = defineSlotRecipe({
       color: "fg.default",
     },
   },
-  variants: {
-    size: {
-      sm: {
-        trigger: {
-          textStyle: "sm",
-        },
-      },
-    },
-  },
 });

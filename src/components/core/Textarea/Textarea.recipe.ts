@@ -6,16 +6,10 @@ export const textareaRecipe = defineSlotRecipe({
   slots: ["label", "textarea"],
   base: {
     textarea: {
-      backgroundColor: "bg.default",
       color: "fg.default",
       appearance: "none",
       borderColor: "border.default",
-      borderRadius: "sm",
-      borderWidth: "1px",
-      minW: 10,
       outline: 0,
-      p: 3,
-      fontSize: "md",
       position: "relative",
       transitionDuration: "normal",
       transitionProperty: "box-shadow, border-color",
@@ -24,18 +18,28 @@ export const textareaRecipe = defineSlotRecipe({
         opacity: 0.4,
         cursor: "not-allowed",
       },
-      _focus: {
-        borderColor: "border.accent",
-        boxShadow: "sm",
-      },
     },
     label: {
-      fontWeight: "md",
       color: "fg.emphasized",
     },
   },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
   variants: {
     variant: {
+      primary: {
+        textarea: {
+          backgroundColor: "bg.default",
+          borderWidth: "1px",
+          borderRadius: "sm",
+          _focus: {
+            borderColor: "border.accent",
+            boxShadow: "sm",
+          },
+        },
+      },
       flushed: {
         textarea: {
           backgroundColor: "transparent",
@@ -50,6 +54,8 @@ export const textareaRecipe = defineSlotRecipe({
       filled: {
         textarea: {
           backgroundColor: "border.default",
+          borderWidth: "1px",
+          borderRadius: "sm",
           _focus: {
             backgroundColor: "bg.default",
             borderColor: "border.accent",
@@ -63,6 +69,7 @@ export const textareaRecipe = defineSlotRecipe({
           borderWidth: 0,
           borderRadius: 0,
           _focus: {
+            borderColor: "border.accent",
             boxShadow: "none",
           },
         },
@@ -76,6 +83,10 @@ export const textareaRecipe = defineSlotRecipe({
       sm: {
         textarea: { p: 2.5, minW: 9, fontSize: "sm" },
         label: { fontSize: "sm" },
+      },
+      md: {
+        textarea: { p: 3, minW: 10, fontSize: "md" },
+        label: { fontSize: "md" },
       },
       lg: {
         textarea: { p: 3.5, minW: 11, fontSize: "md" },

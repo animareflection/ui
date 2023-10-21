@@ -7,8 +7,6 @@ const itemStyle = {
   cursor: "pointer",
   color: "fg.default",
   display: "flex",
-  h: 10,
-  px: 2.5,
   mx: 1,
   fontWeight: "medium",
   textStyle: "sm",
@@ -38,7 +36,6 @@ export const menuRecipe = defineSlotRecipe({
       borderBottomWidth: "1px",
       borderBottomColor: "border.default",
       color: "fg.default",
-      p: 1.5,
     },
     content: {
       background: "bg.default",
@@ -54,7 +51,6 @@ export const menuRecipe = defineSlotRecipe({
       outline: "none",
       py: 1,
       gap: 1,
-      minW: 44,
     },
     separator: {
       color: "bg.subtle",
@@ -73,6 +69,9 @@ export const menuRecipe = defineSlotRecipe({
     trigger: {
       w: "fit-content",
     },
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -94,6 +93,26 @@ export const menuRecipe = defineSlotRecipe({
         triggerItem: {
           h: 9,
           px: 2,
+        },
+      },
+      md: {
+        itemGroupLabel: {
+          p: 1.5,
+        },
+        content: {
+          minW: 44,
+        },
+        item: {
+          h: 10,
+          px: 2.5,
+        },
+        optionItem: {
+          h: 10,
+          px: 2.5,
+        },
+        triggerItem: {
+          h: 10,
+          px: 2.5,
         },
       },
       lg: {

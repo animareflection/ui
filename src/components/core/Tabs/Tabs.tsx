@@ -9,7 +9,6 @@ import { tabs as tabsRecipe } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveTabsProps } from "components/primitives";
-import type { TabsVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface TabRecord {
@@ -21,15 +20,15 @@ export interface TabRecord {
   content: ReactNode;
 }
 
-export interface Props extends PrimitiveTabsProps, TabsVariantProps {
+export interface Props extends PrimitiveTabsProps {
   tabs: TabRecord[];
 }
 
 /**
  * Core UI tabs.
  */
-const Tabs = ({ tabs, size, ...rest }: Props) => {
-  const classNames = tabsRecipe({ size });
+const Tabs = ({ tabs, ...rest }: Props) => {
+  const classNames = tabsRecipe();
 
   const isClient = useIsClient();
 

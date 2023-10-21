@@ -42,19 +42,14 @@ export const carouselRecipe = defineSlotRecipe({
       position: "absolute",
       transform: "translateX(-50%)",
       zIndex: "docked",
-      gap: 2,
-      p: 2.5,
     },
     indicatorGroup: {
       display: "flex",
-      gap: 3,
     },
     indicator: {
       borderRadius: "full",
       background: "bg.emphasized",
       cursor: "pointer",
-      width: 2.5,
-      height: 2.5,
       _current: {
         background: "accent.default",
       },
@@ -66,6 +61,9 @@ export const carouselRecipe = defineSlotRecipe({
     },
     nextSlideTrigger: triggerStyle,
     prevSlideTrigger: triggerStyle,
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -80,6 +78,19 @@ export const carouselRecipe = defineSlotRecipe({
         indicator: {
           width: 2,
           height: 2,
+        },
+      },
+      md: {
+        control: {
+          gap: 2,
+          p: 2.5,
+        },
+        indicatorGroup: {
+          gap: 3,
+        },
+        indicator: {
+          width: 2.5,
+          height: 2.5,
         },
       },
     },
