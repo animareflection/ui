@@ -1,5 +1,6 @@
 import { default as toast } from "react-hot-toast";
-import { useAccount, useDisconnect } from "wagmi";
+import { normalize } from "viem/ens";
+import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from "wagmi";
 
 import Button from "components/core/Button/Button";
 import Image from "components/core/Image/Image";
@@ -18,7 +19,13 @@ export interface Props extends ModalProps {}
 const ConnectWallet = ({ ...props }: Props) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  const { address } = useAccount();
+  const { address } = useAccount(),
+    { data: ensName } = useEnsName({
+      address,
+    }),
+    { data: ensAvatar } = useEnsAvatar({
+      name: ensName ? normalize(ensName) : undefined,
+    });
 
   const { connectors, disconnect } = useDisconnect({
     mutation: {
@@ -47,12 +54,13 @@ const ConnectWallet = ({ ...props }: Props) => {
         <Button display="flex" alignItems="center" gap={2}>
           <Image
             // TODO: update to use current chain icon
-            src="/svg/connectors/ethereum.svg"
+            src={ensAvatar ?? "/svg/connectors/ethereum.svg"}
             alt="current chain"
-            h={4}
-            w={4}
+            h={5}
+            w={5}
+            borderRadius={ensAvatar ? "full" : "none"}
           />
-          {truncateString(address!)}
+          {ensName ?? truncateString(address!)}
         </Button>
       }
       title="Disconnect Wallet"
