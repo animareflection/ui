@@ -12,14 +12,14 @@ import { Flex, panda } from "generated/panda/jsx";
 import { useDisclosure } from "lib/hooks";
 
 import type { Props as ModalProps } from "components/core/Modal/Modal";
-import type { Connector, CreateConnectorFn } from "wagmi";
+import type { Connector } from "wagmi";
 
 export interface Props extends ModalProps {}
 
 const ConnectWallet = ({ ...props }: Props) => {
-  const [currentConnector, setCurrentConnector] = useState<
-    CreateConnectorFn | Connector | null
-  >(null);
+  const [currentConnector, setCurrentConnector] = useState<Connector | null>(
+    null,
+  );
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
@@ -32,8 +32,18 @@ const ConnectWallet = ({ ...props }: Props) => {
           <Toast variant="error" title="Error" description={error.message} />,
         );
       },
-      onMutate: ({ connector }) => setCurrentConnector(connector),
-      onSuccess: () => onClose(),
+      onMutate: ({ connector }) => setCurrentConnector(connector as Connector),
+      onSuccess: () => {
+        setCurrentConnector(null);
+        onClose();
+        toast.success(
+          <Toast
+            variant="success"
+            title="Success"
+            description="Wallet connected successfully."
+          />,
+        );
+      },
     },
   });
 
