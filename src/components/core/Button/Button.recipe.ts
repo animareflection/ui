@@ -6,7 +6,6 @@ export const buttonRecipe = defineRecipe({
   base: {
     cursor: "pointer",
     fontWeight: "bold",
-    p: 3,
     borderRadius: "md",
     display: "inline-flex",
     alignItems: "center",
@@ -20,6 +19,10 @@ export const buttonRecipe = defineRecipe({
         bgColor: "bg.disabled",
       },
     },
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
   },
   variants: {
     variant: {
@@ -96,6 +99,10 @@ export const buttonRecipe = defineRecipe({
       sm: {
         fontSize: "sm",
         p: 2.5,
+      },
+      md: {
+        fontSize: "md",
+        p: 3,
       },
       lg: {
         fontSize: "lg",

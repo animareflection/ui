@@ -10,12 +10,10 @@ export const checkboxRecipe = defineSlotRecipe({
       w: "100%",
       alignItems: "center",
       display: "flex",
-      gap: 3,
     },
     label: {
       color: "fg.emphasized",
       fontWeight: "medium",
-      textStyle: "md",
       flex: 1,
     },
     control: {
@@ -25,13 +23,6 @@ export const checkboxRecipe = defineSlotRecipe({
       color: "accent.fg",
       cursor: "pointer",
       display: "flex",
-      width: 5,
-      height: 5,
-      borderRadius: "xs",
-      "& svg": {
-        width: 3.5,
-        height: 3.5,
-      },
       justifyContent: "center",
       transitionDuration: "normal",
       transitionProperty: "border-color, background",
@@ -47,6 +38,9 @@ export const checkboxRecipe = defineSlotRecipe({
         },
       },
     },
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -65,6 +59,23 @@ export const checkboxRecipe = defineSlotRecipe({
         },
         label: {
           textStyle: "sm",
+        },
+      },
+      md: {
+        root: {
+          gap: 3,
+        },
+        control: {
+          width: 5,
+          height: 5,
+          borderRadius: "xs",
+          "& svg": {
+            width: 3.5,
+            height: 3.5,
+          },
+        },
+        label: {
+          textStyle: "md",
         },
       },
       lg: {

@@ -8,11 +8,15 @@ type Story = StoryObj<typeof Badge>;
 export const Default: Story = {
   render: () => <Badge>Badge</Badge>,
 };
-export const Subtle: Story = {
-  render: () => <Badge variant="subtle">Badge</Badge>,
-};
-export const Outline: Story = {
-  render: () => <Badge variant="outline">Badge</Badge>,
+
+export const Variants: Story = {
+  render: () => (
+    <Flex gap={2}>
+      <Badge variant="primary">Badge</Badge>
+      <Badge variant="subtle">Badge</Badge>
+      <Badge variant="outline">Badge</Badge>
+    </Flex>
+  ),
 };
 
 export const Sizes: Story = {
