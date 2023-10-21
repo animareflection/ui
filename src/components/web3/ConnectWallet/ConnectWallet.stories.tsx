@@ -1,3 +1,4 @@
+import { Toaster } from "components/core";
 import { BlockchainProvider } from "components/providers";
 import { ConnectWallet } from "components/web3";
 
@@ -17,6 +18,7 @@ const meta = {
     (Story) => (
       <BlockchainProvider>
         <Story />
+        <Toaster />
       </BlockchainProvider>
     ),
   ],

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { default as toast } from "react-hot-toast";
 import { useConnect } from "wagmi";
 
 import Button from "components/core/Button/Button";
@@ -6,6 +7,7 @@ import Image from "components/core/Image/Image";
 import Modal from "components/core/Modal/Modal";
 import Spinner from "components/core/Spinner/Spinner";
 import Text from "components/core/Text/Text";
+import Toast from "components/core/Toast/Toast";
 import { Flex, panda } from "generated/panda/jsx";
 import { useDisclosure } from "lib/hooks";
 
@@ -23,7 +25,13 @@ const ConnectWallet = ({ ...props }: Props) => {
 
   const { connectors, connect, status } = useConnect({
     mutation: {
-      onError: () => setCurrentConnector(null),
+      onError: (error) => {
+        setCurrentConnector(null);
+        onClose();
+        toast.error(
+          <Toast variant="error" title="Error" description={error.message} />,
+        );
+      },
       onMutate: ({ connector }) => setCurrentConnector(connector),
       onSuccess: () => onClose(),
     },
