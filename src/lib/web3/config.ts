@@ -1,10 +1,11 @@
 import { createConfig, http } from "wagmi";
 import { mainnet, sepolia } from "wagmi/chains";
-import { injected, metaMask, mock } from "wagmi/connectors";
+import { metaMask, mock } from "wagmi/connectors";
 
 import { MAINNET_RPC_URL, NODE_ENV, SEPOLIA_RPC_URL } from "lib/config";
 
-const prodConnectors = [injected({ shimDisconnect: true }), metaMask()];
+// NB: These are connectors that should always be provided as options. EIP-6963 handles the rest.
+const prodConnectors = [metaMask()];
 
 const devConnectors = [
   ...prodConnectors,
