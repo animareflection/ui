@@ -60,8 +60,9 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                   transform={
                     isOpen && !plusMinus ? "rotate(-180deg)" : undefined
                   }
+                  transition="transform 300ms"
                   transformOrigin="center"
-                  color="accent.fg"
+                  color={isOpen ? "accent.fg" : "fg.default"}
                 >
                   {plusMinus ? (
                     isOpen ? (
