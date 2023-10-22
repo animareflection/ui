@@ -6,9 +6,13 @@ export const textRecipe = defineRecipe({
   base: {
     color: "fg.default",
   },
+  defaultVariants: {
+    size: "md",
+  },
   variants: {
     size: {
       sm: { fontSize: "sm" },
+      md: { fontSize: "md" },
       lg: { fontSize: "lg" },
     },
   },

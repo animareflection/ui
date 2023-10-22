@@ -20,7 +20,6 @@ export const Variants: Story = {
   render: () => (
     <Flex gap={2}>
       <Button>Click me 🏝️</Button>
-      <Button variant="primary">Click me 🏝️</Button>
       <Button variant="secondary">Click me 🏝️</Button>
       <Button variant="ghost">Click me 🏝️</Button>
       <Button variant="round">Click me 🏝️</Button>
