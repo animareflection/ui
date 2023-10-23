@@ -1,22 +1,33 @@
 import { default as toast } from "react-hot-toast";
+import { FiClipboard, FiLogOut } from "react-icons/fi";
 import { normalize } from "viem/ens";
-import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from "wagmi";
+import {
+  useAccount,
+  useBalance,
+  useDisconnect,
+  useEnsAvatar,
+  useEnsName,
+} from "wagmi";
 
+import Badge from "components/core/Badge/Badge";
 import Button from "components/core/Button/Button";
+import Icon from "components/core/Icon/Icon";
 import Image from "components/core/Image/Image";
 import Modal from "components/core/Modal/Modal";
 import Text from "components/core/Text/Text";
 import Toast from "components/core/Toast/Toast";
-import { Flex } from "generated/panda/jsx";
-import { useDisclosure } from "lib/hooks";
+import { Flex, panda } from "generated/panda/jsx";
+import { useCopyToClipboard, useDisclosure } from "lib/hooks";
 import { truncateString } from "lib/utils";
-import { getConnectorImage } from "lib/utils/web3";
+import { formatUnits } from "lib/utils/web3";
 
 import type { Props as ModalProps } from "components/core/Modal/Modal";
 
 export interface Props extends ModalProps {}
 
 const ConnectWallet = ({ ...props }: Props) => {
+  const [_value, copy] = useCopyToClipboard();
+
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   const { address } = useAccount(),
@@ -25,9 +36,13 @@ const ConnectWallet = ({ ...props }: Props) => {
     }),
     { data: ensAvatar } = useEnsAvatar({
       name: ensName ? normalize(ensName) : undefined,
+      // TODO: add gateway URLs to resolve ipfs and/or arweave assets
+    }),
+    { data: balance } = useBalance({
+      address,
     });
 
-  const { connectors, disconnect } = useDisconnect({
+  const { disconnect } = useDisconnect({
     mutation: {
       onError: (error) => {
         onClose();
@@ -48,6 +63,19 @@ const ConnectWallet = ({ ...props }: Props) => {
     },
   });
 
+  const MODAL_BUTTONS = [
+    {
+      label: "Copy Address",
+      icon: <FiClipboard />,
+      onClick: () => copy(address!),
+    },
+    {
+      label: "Disconnect",
+      icon: <FiLogOut />,
+      onClick: () => disconnect(),
+    },
+  ];
+
   return (
     <Modal
       trigger={
@@ -63,32 +91,56 @@ const ConnectWallet = ({ ...props }: Props) => {
           {ensName ?? truncateString(address!)}
         </Button>
       }
-      title="Disconnect Wallet"
-      description="Select connector to disconnect your wallet from."
       open={isOpen}
       onOpen={onOpen}
       onClose={onClose}
       {...props}
     >
-      <Flex direction="column" gap={2} mt={4}>
-        {connectors.map((connector) => (
-          <Button
-            key={connector.uid}
-            display="flex"
-            alignItems="center"
-            gap={2}
-            variant="ghost"
-            onClick={() => disconnect({ connector })}
-          >
-            <Image
-              src={getConnectorImage(connector.name)}
-              alt="injected connector"
-              h={4}
-              w={4}
-            />
-            <Text fontSize="lg">{connector.name}</Text>
-          </Button>
-        ))}
+      <Flex direction="column" align="center" gap={2}>
+        <Image
+          // TODO: update to use current chain icon for fallback image
+          src={ensAvatar ?? "/svg/connectors/ethereum.svg"}
+          alt="current chain"
+          h={20}
+          w={20}
+          borderRadius={ensAvatar ? "full" : "none"}
+        />
+        <Text fontSize="lg" fontWeight="semibold">
+          {ensName ?? truncateString(address!)}
+        </Text>
+        {balance && (
+          <Badge variant="subtle">
+            <panda.p>
+              {formatUnits({
+                value: balance.value,
+                decimals: balance.decimals,
+                precision: 3,
+              })}
+              <panda.span ml={1}>{balance.symbol}</panda.span>
+            </panda.p>
+          </Badge>
+        )}
+        <Flex w="100%" gap={2} mt={2}>
+          {MODAL_BUTTONS.map(({ label, icon, onClick }) => (
+            <Button
+              key={label}
+              flexDirection="column"
+              justifyContent="center"
+              gap={2}
+              flex={1}
+              bgColor="bg.subtle"
+              _hover={{
+                bgColor: "accent.subtle",
+              }}
+              onClick={onClick}
+            >
+              <Icon color="fg.default" h={4} w={4}>
+                {icon}
+              </Icon>
+              <Text fontSize="sm">{label}</Text>
+            </Button>
+          ))}
+        </Flex>
       </Flex>
     </Modal>
   );
