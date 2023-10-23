@@ -53,7 +53,7 @@ const ConnectWallet = ({ ...props }: Props) => {
       trigger={
         <Button display="flex" alignItems="center" gap={2}>
           <Image
-            // TODO: update to use current chain icon
+            // TODO: update to use current chain icon for fallback image
             src={ensAvatar ?? "/svg/connectors/ethereum.svg"}
             alt="current chain"
             h={5}
