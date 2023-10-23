@@ -20,12 +20,19 @@ export const accordionRecipe = defineSlotRecipe({
       display: "flex",
       px: 4,
       py: 3,
-      fontWeight: "bold",
       justifyContent: "space-between",
       width: "full",
-      color: "accent.fg",
-      bgColor: "accent.default",
       borderRadius: "md",
+      transitionProperty: "background-color, color",
+      transitionDuration: "300ms",
+      _open: {
+        bgColor: "accent.default",
+        color: "accent.fg",
+      },
+      _closed: {
+        bgColor: "bg.muted",
+        color: "fg.default",
+      },
     },
     content: {
       backgroundColor: "bg.muted",
