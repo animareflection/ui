@@ -53,6 +53,20 @@ const keyframes = defineKeyframes({
     "0%": { transform: "rotate(0deg)" },
     "100%": { transform: "rotate(360deg)" },
   },
+  pulse: {
+    "0%": {
+      transform: "scale(0.95)",
+      boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.7)",
+    },
+    "70%": {
+      transform: "scale(1)",
+      boxShadow: "0 0 0 0 rgba(0, 0, 0, 0)",
+    },
+    "100%": {
+      transform: "scale(0.95)",
+      boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.7)",
+    },
+  },
   "skeleton-loading-dark": {
     "0%": { background: "#555555" },
     "100%": { backgroundColor: "#333333" },

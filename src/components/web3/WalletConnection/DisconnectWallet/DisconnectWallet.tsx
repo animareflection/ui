@@ -16,7 +16,7 @@ import Image from "components/core/Image/Image";
 import Modal from "components/core/Modal/Modal";
 import Text from "components/core/Text/Text";
 import Toast from "components/core/Toast/Toast";
-import { Flex, panda } from "generated/panda/jsx";
+import { Circle, Flex, panda } from "generated/panda/jsx";
 import { useCopyToClipboard, useDisclosure } from "lib/hooks";
 import { truncateString } from "lib/utils";
 import { formatUnits } from "lib/utils/web3";
@@ -30,7 +30,7 @@ const ConnectWallet = ({ ...props }: Props) => {
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  const { address } = useAccount(),
+  const { address, connector } = useAccount(),
     { data: ensName } = useEnsName({
       address,
     }),
@@ -120,6 +120,17 @@ const ConnectWallet = ({ ...props }: Props) => {
             </panda.p>
           </Badge>
         )}
+        <Flex gap={1} align="center">
+          <Circle
+            size={1}
+            bgColor={{ base: "green.600", _dark: "green.500" }}
+            animation="pulse"
+          />
+          <Text fontSize="xs" color={{ base: "green.600", _dark: "green.500" }}>
+            {connector?.name} connected
+          </Text>
+        </Flex>
+
         <Flex w="100%" gap={2} mt={2}>
           {MODAL_BUTTONS.map(({ label, icon, onClick }) => (
             <Button
