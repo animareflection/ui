@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { default as toast } from "react-hot-toast";
 import { FiClipboard, FiLogOut } from "react-icons/fi";
 import { normalize } from "viem/ens";
@@ -26,7 +27,7 @@ import type { Props as ModalProps } from "components/core/Modal/Modal";
 export interface Props extends ModalProps {}
 
 const ConnectWallet = ({ ...props }: Props) => {
-  const [_value, copy] = useCopyToClipboard();
+  const [value, copy] = useCopyToClipboard();
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
@@ -75,6 +76,18 @@ const ConnectWallet = ({ ...props }: Props) => {
       onClick: () => disconnect(),
     },
   ];
+
+  useEffect(() => {
+    if (!value) return;
+
+    toast.success(
+      <Toast
+        variant="success"
+        title="Copied!"
+        description="Address has been copied to clipboard."
+      />,
+    );
+  }, [value]);
 
   return (
     <Modal
