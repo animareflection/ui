@@ -83,7 +83,7 @@ const ConnectWallet = ({ ...props }: Props) => {
           <Image
             // TODO: update to use current chain icon for fallback image
             src={ensAvatar ?? "/svg/connectors/ethereum.svg"}
-            alt="current chain"
+            alt={ensAvatar ? ensName! : "current chain"}
             h={5}
             w={5}
             borderRadius={ensAvatar ? "full" : "none"}
@@ -100,7 +100,7 @@ const ConnectWallet = ({ ...props }: Props) => {
         <Image
           // TODO: update to use current chain icon for fallback image
           src={ensAvatar ?? "/svg/connectors/ethereum.svg"}
-          alt="current chain"
+          alt={ensAvatar ? ensName! : "current chain"}
           h={20}
           w={20}
           borderRadius={ensAvatar ? "full" : "none"}
