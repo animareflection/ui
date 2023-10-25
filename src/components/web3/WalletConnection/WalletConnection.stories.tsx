@@ -24,7 +24,7 @@ const Connection = ({
     return (
       <Flex gap={2}>
         <DisconnectWallet />
-        {showNetworkMenu && <SwitchNetwork />}
+        {showNetworkMenu && <SwitchNetwork iconOnly />}
       </Flex>
     );
 
