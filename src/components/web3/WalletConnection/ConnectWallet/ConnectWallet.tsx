@@ -67,6 +67,7 @@ const ConnectWallet = ({ ...props }: Props) => {
             gap={2}
             variant="ghost"
             onClick={() => connect({ connector })}
+            aria-label={`Connect with ${connector.name}`}
           >
             <Image
               src={getConnectorImage(connector.name)}

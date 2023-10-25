@@ -1,5 +1,6 @@
 import { useAccount } from "wagmi";
 
+import walletConnectionState from "./WalletConnection.spec";
 import { Toaster } from "components/core";
 import { BlockchainProvider } from "components/providers";
 import {
@@ -37,6 +38,13 @@ export const Default: Story = {
 
 export const WithNetworkMenu: Story = {
   render: () => <Connection showNetworkMenu />,
+};
+
+export const WalletConnectionState: Story = {
+  ...Default,
+  play: walletConnectionState,
+  name: "[TEST] Wallet Connection State",
+  tags: ["test"],
 };
 
 const meta = {

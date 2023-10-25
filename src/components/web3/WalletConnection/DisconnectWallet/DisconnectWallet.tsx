@@ -80,6 +80,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
       label: "Disconnect",
       icon: <FiLogOut />,
       onClick: () => disconnect(),
+      ariaLabel: "Disconnect Wallet",
     },
   ];
 
@@ -98,7 +99,12 @@ const DisconnectWallet = ({ ...props }: Props) => {
   return (
     <Modal
       trigger={
-        <Button display="flex" alignItems="center" gap={1}>
+        <Button
+          display="flex"
+          alignItems="center"
+          gap={1}
+          aria-label="Open Disconnect Modal"
+        >
           <Image
             src={ensAvatar ?? currentNetworkIcon}
             alt={ensAvatar ? ensName! : "current chain"}
@@ -149,7 +155,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
         </Flex>
 
         <Flex w="100%" gap={2} mt={2}>
-          {MODAL_BUTTONS.map(({ label, icon, onClick }) => (
+          {MODAL_BUTTONS.map(({ label, icon, onClick, ariaLabel }) => (
             <Button
               key={label}
               flexDirection="column"
@@ -161,6 +167,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
                 bgColor: "accent.subtle",
               }}
               onClick={onClick}
+              aria-label={ariaLabel}
             >
               <Icon color="fg.default" h={4} w={4}>
                 {icon}
