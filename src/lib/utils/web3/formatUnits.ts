@@ -7,6 +7,8 @@ interface Options {
 }
 
 const formatUnits = ({ value, decimals = 18, precision }: Options) =>
-  Number(viemFormatUnits(value, decimals)).toFixed(precision);
+  precision
+    ? Number(viemFormatUnits(value, decimals)).toFixed(precision)
+    : viemFormatUnits(value, decimals);
 
 export default formatUnits;

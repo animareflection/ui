@@ -1,6 +1,6 @@
 import { useAccount } from "wagmi";
 
-import walletConnectionState from "./WalletConnection.spec";
+import { walletConnectionState } from "./WalletConnection.spec";
 import { Toaster } from "components/core";
 import { BlockchainProvider } from "components/providers";
 import {
