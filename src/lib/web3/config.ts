@@ -1,5 +1,5 @@
 import { createConfig, http } from "wagmi";
-import { mainnet, sepolia } from "wagmi/chains";
+import { arbitrum, sepolia, mainnet, optimism, polygon } from "wagmi/chains";
 import { metaMask, mock } from "wagmi/connectors";
 
 import { MAINNET_RPC_URL, NODE_ENV, SEPOLIA_RPC_URL } from "lib/config";
@@ -27,10 +27,13 @@ const devConnectors = [
 ];
 
 const config = createConfig({
-  chains: [mainnet, sepolia],
+  chains: [mainnet, arbitrum, optimism, polygon, sepolia],
   connectors: NODE_ENV === "development" ? devConnectors : prodConnectors,
   transports: {
     [mainnet.id]: http(MAINNET_RPC_URL),
+    [arbitrum.id]: http(),
+    [optimism.id]: http(),
+    [polygon.id]: http(),
     [sepolia.id]: http(SEPOLIA_RPC_URL),
   },
 });

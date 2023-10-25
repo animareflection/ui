@@ -2,16 +2,31 @@ import { useAccount } from "wagmi";
 
 import { Toaster } from "components/core";
 import { BlockchainProvider } from "components/providers";
-import { ConnectWallet, DisconnectWallet } from "components/web3";
+import {
+  ConnectWallet,
+  DisconnectWallet,
+  SwitchNetwork,
+} from "components/web3";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<typeof ConnectWallet | typeof DisconnectWallet>;
+type Story = StoryObj<typeof Connection>;
 
-const Connection = () => {
+const Connection = ({
+  showNetworkMenu = false,
+}: {
+  showNetworkMenu?: boolean;
+}) => {
   const { isConnected } = useAccount();
 
-  if (isConnected) return <DisconnectWallet />;
+  if (isConnected)
+    return (
+      <Flex gap={2}>
+        <DisconnectWallet />
+        {showNetworkMenu && <SwitchNetwork />}
+      </Flex>
+    );
 
   return <ConnectWallet />;
 };
@@ -20,9 +35,13 @@ export const Default: Story = {
   render: () => <Connection />,
 };
 
+export const WithNetworkMenu: Story = {
+  render: () => <Connection showNetworkMenu />,
+};
+
 const meta = {
   title: "Components/Web3/WalletConnection",
-  component: ConnectWallet || DisconnectWallet,
+  component: Connection,
   tags: ["autodocs"],
   decorators: [
     (Story) => (
@@ -32,6 +51,10 @@ const meta = {
       </BlockchainProvider>
     ),
   ],
-} satisfies Meta<typeof ConnectWallet | typeof DisconnectWallet>;
+  // TODO: remove when portal issue / ref bug is fixed
+  parameters: {
+    layout: "centered",
+  },
+} satisfies Meta<typeof Connection>;
 
 export default meta;

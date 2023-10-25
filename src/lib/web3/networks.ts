@@ -1,11 +1,4 @@
-import {
-  arbitrum,
-  goerli,
-  localhost,
-  mainnet,
-  optimism,
-  polygon,
-} from "wagmi/chains";
+import { arbitrum, sepolia, mainnet, optimism, polygon } from "wagmi/chains";
 
 import type { Chain } from "wagmi/chains";
 
@@ -34,11 +27,7 @@ export const NETWORKS: Network[] = [
     icon: "https://cryptologos.cc/logos/optimism-ethereum-op-logo.svg",
   },
   {
-    ...goerli,
-    icon: "https://cryptologos.cc/logos/ethereum-eth-logo.svg",
-  },
-  {
-    ...localhost,
+    ...sepolia,
     icon: "https://cryptologos.cc/logos/ethereum-eth-logo.svg",
   },
 ];

@@ -51,7 +51,7 @@ const ConnectWallet = ({ ...props }: Props) => {
   return (
     <Modal
       trigger={<Button>Connect</Button>}
-      title="Connect Wallet"
+      title="Connect"
       description="Select option to connect your wallet."
       open={isOpen}
       onOpen={onOpen}
