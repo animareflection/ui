@@ -98,12 +98,12 @@ const ConnectWallet = ({ ...props }: Props) => {
   return (
     <Modal
       trigger={
-        <Button display="flex" alignItems="center" gap={2}>
+        <Button display="flex" alignItems="center" gap={1}>
           <Image
             src={ensAvatar ?? currentNetworkIcon}
             alt={ensAvatar ? ensName! : "current chain"}
-            h={5}
-            w={5}
+            h={4}
+            w={4}
             borderRadius={ensAvatar ? "full" : "none"}
           />
           {ensName ?? truncateString(address!)}
