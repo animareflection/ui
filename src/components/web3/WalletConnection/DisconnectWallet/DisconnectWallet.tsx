@@ -28,6 +28,9 @@ import type { Props as ModalProps } from "components/core/Modal/Modal";
 
 export interface Props extends ModalProps {}
 
+/**
+ * Disconnect wallet modal.
+ */
 const DisconnectWallet = ({ ...props }: Props) => {
   const [value, copy] = useCopyToClipboard();
 

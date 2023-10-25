@@ -17,6 +17,9 @@ import type { Connector } from "wagmi";
 
 export interface Props extends ModalProps {}
 
+/**
+ * Connect wallet modal.
+ */
 const ConnectWallet = ({ ...props }: Props) => {
   const [currentConnector, setCurrentConnector] = useState<Connector | null>(
     null,

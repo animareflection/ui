@@ -16,6 +16,9 @@ export interface Props extends MenuProps {
   iconOnly?: boolean;
 }
 
+/**
+ * Switch network menu.
+ */
 const SwitchNetwork = ({ iconOnly = false, ...rest }: Props) => {
   const { isConnected } = useAccount();
   const chainId = useChainId();
@@ -77,6 +80,7 @@ const SwitchNetwork = ({ iconOnly = false, ...rest }: Props) => {
                 id={id.toString()}
                 gap={2}
                 onClick={() => switchChain({ chainId: id })}
+                aria-label={`Switch to ${name}`}
               >
                 <Image
                   src={NETWORKS.find((network) => network.id === id)?.icon}
