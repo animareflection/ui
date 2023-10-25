@@ -28,7 +28,7 @@ import type { Props as ModalProps } from "components/core/Modal/Modal";
 
 export interface Props extends ModalProps {}
 
-const ConnectWallet = ({ ...props }: Props) => {
+const DisconnectWallet = ({ ...props }: Props) => {
   const [value, copy] = useCopyToClipboard();
 
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -174,4 +174,4 @@ const ConnectWallet = ({ ...props }: Props) => {
   );
 };
 
-export default ConnectWallet;
+export default DisconnectWallet;
