@@ -5,6 +5,7 @@ import { normalize } from "viem/ens";
 import {
   useAccount,
   useBalance,
+  useChainId,
   useDisconnect,
   useEnsAvatar,
   useEnsName,
@@ -21,6 +22,7 @@ import { Circle, Flex, panda } from "generated/panda/jsx";
 import { useCopyToClipboard, useDisclosure } from "lib/hooks";
 import { truncateString } from "lib/utils";
 import { formatUnits } from "lib/utils/web3";
+import { NETWORKS } from "lib/web3";
 
 import type { Props as ModalProps } from "components/core/Modal/Modal";
 
@@ -41,7 +43,11 @@ const ConnectWallet = ({ ...props }: Props) => {
     }),
     { data: balance } = useBalance({
       address,
-    });
+    }),
+    chainId = useChainId();
+
+  const currentNetworkIcon = NETWORKS.find((network) => network.id === chainId)
+    ?.icon;
 
   const { disconnect } = useDisconnect({
     mutation: {
@@ -94,8 +100,7 @@ const ConnectWallet = ({ ...props }: Props) => {
       trigger={
         <Button display="flex" alignItems="center" gap={2}>
           <Image
-            // TODO: update to use current chain icon for fallback image
-            src={ensAvatar ?? "/svg/connectors/ethereum.svg"}
+            src={ensAvatar ?? currentNetworkIcon}
             alt={ensAvatar ? ensName! : "current chain"}
             h={5}
             w={5}
@@ -111,8 +116,7 @@ const ConnectWallet = ({ ...props }: Props) => {
     >
       <Flex direction="column" align="center" gap={2}>
         <Image
-          // TODO: update to use current chain icon for fallback image
-          src={ensAvatar ?? "/svg/connectors/ethereum.svg"}
+          src={ensAvatar ?? currentNetworkIcon}
           alt={ensAvatar ? ensName! : "current chain"}
           h={20}
           w={20}
