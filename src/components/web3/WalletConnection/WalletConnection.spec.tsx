@@ -40,8 +40,34 @@ export const walletConnectionState = async <
 
     // TODO: verify that truncated address is displayed
     const disconnectButton = canvas.getByLabelText("Open Disconnect Modal");
+    const networkMenu = canvas.getByLabelText("Open Network Menu");
 
     await expect(disconnectButton).toBeInTheDocument();
+    await expect(networkMenu).toBeInTheDocument();
+  });
+
+  await step("It should open switch network menu", async () => {
+    const networkMenu = canvas.getByLabelText("Open Network Menu");
+
+    await userEvent.click(networkMenu);
+
+    await sleep(1000);
+
+    const arbitrumNetworkItem = screen.getByText("Arbitrum");
+
+    await expect(arbitrumNetworkItem).toBeInTheDocument();
+  });
+
+  await step("It should switch network", async () => {
+    const arbitrumNetworkItem = screen.getByText("Arbitrum");
+
+    await userEvent.click(arbitrumNetworkItem);
+
+    await sleep(1000);
+
+    const currentChainImage = canvas.getByLabelText("Arbitrum One icon");
+
+    await expect(currentChainImage).toBeInTheDocument();
   });
 
   await step("It should open disconnect wallet modal", async () => {

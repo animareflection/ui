@@ -41,7 +41,7 @@ export const WithNetworkMenu: Story = {
 };
 
 export const WalletConnectionState: Story = {
-  ...Default,
+  ...WithNetworkMenu,
   play: walletConnectionState,
   name: "[TEST] Wallet Connection State",
   tags: ["test"],

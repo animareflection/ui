@@ -33,7 +33,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  const { address, connector } = useAccount(),
+  const { address, chain, connector } = useAccount(),
     { data: ensName } = useEnsName({
       address,
     }),
@@ -111,6 +111,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
             h={4}
             w={4}
             borderRadius={ensAvatar ? "full" : "none"}
+            aria-label={ensAvatar ? ensName! : `${chain!.name} icon`}
           />
           {ensName ?? truncateString(address!)}
         </Button>

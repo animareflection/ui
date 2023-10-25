@@ -52,6 +52,7 @@ const SwitchNetwork = ({ iconOnly = false, ...rest }: Props) => {
           variant="secondary"
           gap={iconOnly ? 2 : 1}
           justifyContent="center"
+          aria-label="Open Network Menu"
         >
           <Image
             src={currentNetworkIcon}
