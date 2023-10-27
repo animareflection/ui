@@ -1,15 +1,15 @@
 import { Text } from "components/core";
 import { BlockchainProvider } from "components/providers";
 import { Flex } from "generated/panda/jsx";
-import { useCurrencyBalance } from "lib/hooks/web3";
+import { useBalance } from "lib/hooks/web3";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { ComponentType } from "react";
 
-type Story = StoryObj<typeof useCurrencyBalance>;
+type Story = StoryObj<typeof useBalance>;
 
 const NativeCurrencyExample = () => {
-  const { balance, symbol } = useCurrencyBalance({
+  const { formatted: balance, symbol } = useBalance({
     address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
   });
 
@@ -23,19 +23,21 @@ const NativeCurrencyExample = () => {
 };
 
 const ERC20Example = () => {
-  const { balance, symbol } = useCurrencyBalance({
+  const { formatted: balance, symbol } = useBalance({
     address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
-    erc20Token: "0xdd974D5C2e2928deA5F71b9825b8b646686BD200",
+    token: "0x514910771AF9Ca656af840dff83E8264EcF986CA", // LINK token
   });
 
   if (!balance) return null;
 
   return (
-    <Text mt={2}>{`Vitalik's ${symbol} balance: ${balance} ${symbol}`}</Text>
+    <Text mt={2}>{`Vitalik's ${symbol} balance: ${Number(balance).toFixed(
+      4,
+    )} ${symbol}`}</Text>
   );
 };
 
-export const Currencies: Story = {
+export const Balances: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
       <NativeCurrencyExample />
@@ -45,10 +47,10 @@ export const Currencies: Story = {
 };
 
 const meta = {
-  title: "Hooks/Web3/useCurrencyBalance",
+  title: "Hooks/Web3/useBalance",
   tags: ["autodocs"],
-  // NB: type coercion here to allow `useCurrencyBalance` Storybook metadata to render (e.g. JSDoc, hook parameters)
-  component: useCurrencyBalance as unknown as ComponentType,
+  // NB: type coercion here to allow `useBalance` Storybook metadata to render (e.g. JSDoc, hook parameters)
+  component: useBalance as unknown as ComponentType,
   decorators: [
     (Story) => (
       <BlockchainProvider>
@@ -56,6 +58,6 @@ const meta = {
       </BlockchainProvider>
     ),
   ],
-} satisfies Meta<typeof useCurrencyBalance>;
+} satisfies Meta<typeof useBalance>;
 
 export default meta;

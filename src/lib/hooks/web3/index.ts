@@ -1,3 +1,3 @@
-export { default as useCurrencyBalance } from "./useCurrencyBalance/useCurrencyBalance";
+export { default as useBalance } from "./useBalance/useBalance";
 
-export type { Options as CurrencyBalanceOptions } from "./useCurrencyBalance/useCurrencyBalance";
+export type { Options as BalanceOptions } from "./useBalance/useBalance";

@@ -1,0 +1,64 @@
+import { erc20Abi } from "viem";
+import { useBalance as useWagmiBalance, useReadContracts } from "wagmi";
+
+import { formatUnits } from "lib/utils/web3";
+
+import type { UseBalanceParameters } from "wagmi";
+
+export interface Options extends UseBalanceParameters {
+  token?: `0x${string}`;
+}
+
+/**
+ * Hook used to determine a given address' ERC20 or Native Currency balance.
+ */
+const useBalance = ({ address, token, ...rest }: Options) => {
+  const erc20Contract = {
+    address: token,
+    abi: erc20Abi,
+    ...rest,
+  } as const;
+
+  const { data: nativeCurrencyBalance } = useWagmiBalance({
+      address,
+      ...rest,
+    }),
+    { data: erc20TokenBalance } = useReadContracts({
+      contracts: [
+        {
+          ...erc20Contract,
+          functionName: "balanceOf",
+          args: [address!],
+        },
+        {
+          ...erc20Contract,
+          functionName: "decimals",
+        },
+        {
+          ...erc20Contract,
+          functionName: "symbol",
+        },
+      ],
+      query: {
+        select: (data) => {
+          const [balance, decimals, symbol] = data;
+
+          return {
+            decimals: decimals.result ?? 0,
+            formatted: formatUnits({
+              value: balance.result ?? 0n,
+              decimals: decimals.result,
+            }),
+            symbol: symbol.result ?? "",
+            value: balance.result ?? 0n,
+          };
+        },
+      },
+    });
+
+  const balance = token ? erc20TokenBalance : nativeCurrencyBalance;
+
+  return { ...balance };
+};
+
+export default useBalance;
