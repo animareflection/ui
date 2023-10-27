@@ -2,6 +2,7 @@ import { createConfig, http } from "wagmi";
 import { arbitrum, sepolia, mainnet, optimism, polygon } from "wagmi/chains";
 import { injected, mock } from "wagmi/connectors";
 
+// !NB: using public RPCs (transports) is not recommended for production use. Depending on public storybook traffic, we may want to consider using our own RPC endpoints.
 const config = createConfig({
   chains: [mainnet, arbitrum, optimism, polygon, sepolia],
   connectors: [
