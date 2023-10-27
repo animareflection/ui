@@ -29,7 +29,6 @@ const config = createConfig({
     [polygon.id]: http(),
     [sepolia.id]: http(),
   },
-  multiInjectedProviderDiscovery: true,
 });
 
 export default config;
