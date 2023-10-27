@@ -4,7 +4,6 @@ import { FiClipboard, FiLogOut } from "react-icons/fi";
 import { normalize } from "viem/ens";
 import {
   useAccount,
-  useBalance,
   useChainId,
   useDisconnect,
   useEnsAvatar,
@@ -20,8 +19,9 @@ import Text from "components/core/Text/Text";
 import Toast from "components/core/Toast/Toast";
 import { Circle, Flex, panda } from "generated/panda/jsx";
 import { useCopyToClipboard, useDisclosure } from "lib/hooks";
+// TODO: add `useBalance` hook to `lib/hooks` when it's ready for bundle
+import { useBalance } from "lib/hooks/web3";
 import { truncateString } from "lib/utils";
-import { formatUnits } from "lib/utils/web3";
 import { NETWORKS } from "lib/web3";
 
 import type { Props as ModalProps } from "components/core/Modal/Modal";
@@ -46,6 +46,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
     }),
     { data: balance } = useBalance({
       address,
+      precision: 3,
     }),
     chainId = useChainId();
 
@@ -138,11 +139,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
         {balance && (
           <Badge variant="subtle">
             <panda.p>
-              {formatUnits({
-                value: balance.value,
-                decimals: balance.decimals,
-                precision: 3,
-              })}
+              {balance.formatted}
               <panda.span ml={1}>{balance.symbol}</panda.span>
             </panda.p>
           </Badge>
