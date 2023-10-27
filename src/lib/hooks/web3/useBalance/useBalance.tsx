@@ -12,6 +12,7 @@ export interface Options extends UseBalanceParameters {
 }
 
 export interface BalanceData extends GetBalanceData {
+  // NB: `formatted` is deprecated in `GetBalanceData` and will be removed in a future release of wagmi, this overrides that action
   formatted: string;
 }
 
