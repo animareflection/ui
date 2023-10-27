@@ -40,6 +40,7 @@ export const WithNetworkMenu: Story = {
   render: () => <Connection showNetworkMenu />,
 };
 
+// !NB: Note that the test flow for this story will only work if you start in the disconnected state.
 export const WalletConnectionState: Story = {
   ...WithNetworkMenu,
   play: walletConnectionState,
