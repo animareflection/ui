@@ -20,7 +20,7 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
     ...rest,
   } as const;
 
-  const { data: nativeCurrencyBalance } = useWagmiBalance({
+  const nativeCurrencyBalance = useWagmiBalance({
       address,
       ...rest,
       query: {
@@ -36,7 +36,7 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
         },
       },
     }),
-    { data: erc20TokenBalance } = useReadContracts({
+    erc20TokenBalance = useReadContracts({
       contracts: [
         {
           ...erc20Contract,
