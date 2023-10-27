@@ -4,6 +4,7 @@ import { useBalance as useWagmiBalance, useReadContracts } from "wagmi";
 import { formatUnits } from "lib/utils/web3";
 
 import type { UseBalanceParameters } from "wagmi";
+import type { GetBalanceData } from "wagmi/query";
 
 export interface Options extends UseBalanceParameters {
   token?: `0x${string}`;
@@ -24,7 +25,7 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
       address,
       ...rest,
       query: {
-        select: (data) => {
+        select: (data): GetBalanceData => {
           return {
             ...data,
             formatted: formatUnits({
@@ -53,7 +54,7 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
         },
       ],
       query: {
-        select: (data) => {
+        select: (data): GetBalanceData => {
           const [balance, decimals, symbol] = data;
 
           return {
