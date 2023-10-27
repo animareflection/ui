@@ -11,14 +11,13 @@ type Story = StoryObj<typeof useBalance>;
 const NativeCurrencyExample = () => {
   const { formatted: balance, symbol } = useBalance({
     address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+    precision: 4,
   });
 
   if (!balance) return null;
 
   return (
-    <Text mt={2}>{`Vitalik's ${symbol} balance: ${Number(balance).toFixed(
-      4,
-    )} ${symbol}`}</Text>
+    <Text mt={2}>{`Vitalik's ${symbol} balance: ${balance} ${symbol}`}</Text>
   );
 };
 
@@ -26,14 +25,13 @@ const ERC20Example = () => {
   const { formatted: balance, symbol } = useBalance({
     address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
     token: "0x514910771AF9Ca656af840dff83E8264EcF986CA", // LINK token
+    precision: 4,
   });
 
   if (!balance) return null;
 
   return (
-    <Text mt={2}>{`Vitalik's ${symbol} balance: ${Number(balance).toFixed(
-      4,
-    )} ${symbol}`}</Text>
+    <Text mt={2}>{`Vitalik's ${symbol} balance: ${balance} ${symbol}`}</Text>
   );
 };
 

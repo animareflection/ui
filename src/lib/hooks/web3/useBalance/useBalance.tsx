@@ -7,12 +7,13 @@ import type { UseBalanceParameters } from "wagmi";
 
 export interface Options extends UseBalanceParameters {
   token?: `0x${string}`;
+  precision?: number;
 }
 
 /**
  * Hook used to determine a given address' ERC20 or Native Currency balance.
  */
-const useBalance = ({ address, token, ...rest }: Options) => {
+const useBalance = ({ address, token, precision, ...rest }: Options) => {
   const erc20Contract = {
     address: token,
     abi: erc20Abi,
@@ -22,6 +23,18 @@ const useBalance = ({ address, token, ...rest }: Options) => {
   const { data: nativeCurrencyBalance } = useWagmiBalance({
       address,
       ...rest,
+      query: {
+        select: (data) => {
+          return {
+            ...data,
+            formatted: formatUnits({
+              value: data.value,
+              decimals: data.decimals,
+              precision,
+            }),
+          };
+        },
+      },
     }),
     { data: erc20TokenBalance } = useReadContracts({
       contracts: [
@@ -48,6 +61,7 @@ const useBalance = ({ address, token, ...rest }: Options) => {
             formatted: formatUnits({
               value: balance.result ?? 0n,
               decimals: decimals.result,
+              precision,
             }),
             symbol: symbol.result ?? "",
             value: balance.result ?? 0n,
