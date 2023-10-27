@@ -11,6 +11,10 @@ export interface Options extends UseBalanceParameters {
   precision?: number;
 }
 
+export interface BalanceData extends GetBalanceData {
+  formatted: string;
+}
+
 /**
  * Hook used to determine a given address' ERC20 or Native Currency balance.
  */
@@ -25,7 +29,7 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
       address,
       ...rest,
       query: {
-        select: (data): GetBalanceData => {
+        select: (data): BalanceData => {
           return {
             ...data,
             formatted: formatUnits({
@@ -54,7 +58,7 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
         },
       ],
       query: {
-        select: (data): GetBalanceData => {
+        select: (data): BalanceData => {
           const [balance, decimals, symbol] = data;
 
           return {
