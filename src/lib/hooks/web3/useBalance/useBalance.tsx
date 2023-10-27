@@ -57,13 +57,13 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
           const [balance, decimals, symbol] = data;
 
           return {
-            decimals: decimals.result ?? 0,
+            decimals: decimals.result ?? 18,
             formatted: formatUnits({
               value: balance.result ?? 0n,
               decimals: decimals.result,
               precision,
             }),
-            symbol: symbol.result ?? "",
+            symbol: symbol.result ?? "ETH",
             value: balance.result ?? 0n,
           };
         },
