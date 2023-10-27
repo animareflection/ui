@@ -1,11 +1,11 @@
 import { createConfig, http } from "wagmi";
 import { arbitrum, sepolia, mainnet, optimism, polygon } from "wagmi/chains";
-import { metaMask, mock } from "wagmi/connectors";
+import { injected, mock } from "wagmi/connectors";
 
 const config = createConfig({
   chains: [mainnet, arbitrum, optimism, polygon, sepolia],
   connectors: [
-    metaMask(),
+    injected({ target: "metaMask" }),
     mock({
       // !NB: These accounts are for testing purposes only. Derived from spinning up a local anvil and/or hardhat node.
       accounts: [
@@ -29,6 +29,7 @@ const config = createConfig({
     [polygon.id]: http(),
     [sepolia.id]: http(),
   },
+  multiInjectedProviderDiscovery: true,
 });
 
 export default config;

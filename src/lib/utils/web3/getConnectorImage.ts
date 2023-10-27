@@ -5,6 +5,8 @@ const getConnectorImage = (connectorName: string) => {
       return "/svg/connectors/brave.svg";
     case "MetaMask":
       return "/svg/connectors/metamask.svg";
+    case "Phantom":
+      return "/svg/connectors/phantom.svg";
     default:
       return "/svg/connectors/ethereum.svg";
   }
