@@ -3,6 +3,3 @@ build
 coverage
 generated
 storybook-static
-
-.yarn/*
-!.yarn/releases

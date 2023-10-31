@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: "18.x"
+          bun-version: latest
       - name: Install dependencies
-        run: yarn
+        run: bun install
       - name: Create release PR or publish package
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: yarn release
+          publish: bun release
           title: "feature(release): version packages"
           commit: "ci(changesets): version packages"
         env:

@@ -23,7 +23,6 @@ import type { ComponentProps } from "react";
  * Core UI menu primitives.
  */
 export type PrimitiveMenuProps = ComponentProps<typeof PrimitiveMenu>;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 const PrimitiveMenu: PandaComponent<typeof Menu> = panda(Menu);
 
 export type PrimitiveMenuArrowProps = ComponentProps<typeof PrimitiveMenuArrow>;
@@ -45,14 +44,12 @@ export type PrimitiveMenuContextTriggerProps = ComponentProps<
 export const PrimitiveMenuContextTrigger = panda(MenuContextTrigger);
 
 export type PrimitiveMenuItemProps = ComponentProps<typeof PrimitiveMenuItem>;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 export const PrimitiveMenuItem: PandaComponent<typeof MenuItem> =
   panda(MenuItem);
 
 export type PrimitiveMenuItemGroupProps = ComponentProps<
   typeof PrimitiveMenuItemGroup
 >;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 export const PrimitiveMenuItemGroup: PandaComponent<typeof MenuItemGroup> =
   panda(MenuItemGroup);
 
@@ -64,7 +61,6 @@ export const PrimitiveMenuItemGroupLabel = panda(MenuItemGroupLabel);
 export type PrimitiveMenuOptionItemProps = ComponentProps<
   typeof PrimitiveMenuOptionItem
 >;
-// TODO remove explicit type annotation, required due to `pnpm` bug (and therefore Yarn with `pnpm` linker); https://github.com/microsoft/TypeScript/issues/47663
 export const PrimitiveMenuOptionItem: PandaComponent<typeof MenuOptionItem> =
   panda(MenuOptionItem);
 
