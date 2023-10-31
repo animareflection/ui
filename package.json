@@ -35,7 +35,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "test": "test-storybook",
     "test:coverage": "bun run test --coverage",
-    "test:ci": "concurrently --kill-others -s first -n \"STORYBOOK,TEST\" -c \"#ff4785,#45ba4b\" \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && bun test:coverage --ci\"",
+    "test:ci": "concurrently --kill-others -s first -n \"STORYBOOK,TEST\" -c \"#ff4785,#45ba4b\" \"bunx http-server storybook-static --port 6006 --silent\" \"bunx wait-on tcp:127.0.0.1:6006 && bun test:coverage --ci\"",
     "test:watch": "bun run test --watch",
     "storybook": "storybook dev --quiet --no-open -p 6006",
     "storybook:build": "panda codegen && storybook build",
