@@ -3,5 +3,3 @@ build
 coverage
 generated
 storybook-static
-
-.env.local
