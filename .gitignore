@@ -4,7 +4,4 @@ coverage
 generated
 storybook-static
 
-.yarn/*
-!.yarn/releases
-
 .env.local

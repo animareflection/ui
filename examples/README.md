@@ -16,6 +16,6 @@ To run any of these examples from within the repository, follow the [local usage
 1. Simply install the included dependencies and add the UI library package:
 
 ```sh
-yarn
-yarn add @animareflection/ui # (or link with `knit` as above)
+bun install
+bun add @animareflection/ui # (or link with `knit` as above)
 ```

@@ -3,7 +3,6 @@
   "description": "Anima Reflection design system and library",
   "version": "0.13.0",
   "license": "MIT",
-  "packageManager": "yarn@3.6.3",
   "main": "build/ui.js",
   "module": "build/ui.mjs",
   "types": "build/ui.d.ts",
@@ -28,25 +27,23 @@
     "./index.css": "./build/ui.css"
   },
   "scripts": {
-    "dev": "panda codegen && concurrently --kill-others -n \"BUILD,PANDA,STORYBOOK\" -c \"#f13334,#ffc83d,#ff4785\" \"yarn build --watch\" \"yarn dev:css\" \"yarn storybook\"",
+    "dev": "panda codegen && concurrently --kill-others -n \"PANDA,STORYBOOK\" -c \"#ffc83d,#ff4785\" \"bun dev:css\" \"bun storybook\"",
     "dev:css": "panda --watch",
     "prepare:css": "panda codegen",
     "build": "panda codegen && tsup",
     "format": "prettier . --write",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "test": "test-storybook",
-    "test:coverage": "yarn test --coverage",
-    "test:ci": "concurrently --kill-others -s first -n \"STORYBOOK,TEST\" -c \"#ff4785,#45ba4b\" \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test:coverage --ci\"",
-    "test:watch": "yarn test --watch",
+    "test:coverage": "bun run test --coverage",
+    "test:ci": "concurrently --kill-others -s first -n \"STORYBOOK,TEST\" -c \"#ff4785,#45ba4b\" \"bunx http-server storybook-static --port 6006 --silent\" \"bunx wait-on tcp:127.0.0.1:6006 && bun test:coverage --ci\"",
+    "test:watch": "bun run test --watch",
     "storybook": "storybook dev --quiet --no-open -p 6006",
     "storybook:build": "panda codegen && storybook build",
     "studio": "panda studio",
     "studio:build": "panda studio --build",
     "changeset": "changeset",
-    "release": "yarn build && changeset publish",
-    "postinstall": "husky install",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "release": "bun run build && changeset publish",
+    "postinstall": "husky install"
   },
   "resolutions": {
     "@zag-js/store": "^0.21.0"
@@ -107,7 +104,6 @@
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "next": "^13.5.3",
-    "pinst": "^3.0.0",
     "postcss": "^8.4.30",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
