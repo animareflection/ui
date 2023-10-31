@@ -27,7 +27,7 @@
     "./index.css": "./build/ui.css"
   },
   "scripts": {
-    "dev": "panda codegen && concurrently --kill-others -n \"BUILD,PANDA,STORYBOOK\" -c \"#f13334,#ffc83d,#ff4785\" \"bun run build --watch\" \"bun dev:css\" \"bun storybook\"",
+    "dev": "panda codegen && concurrently --kill-others -n \"PANDA,STORYBOOK\" -c \"#ffc83d,#ff4785\" \"bun dev:css\" \"bun storybook\"",
     "dev:css": "panda --watch",
     "prepare:css": "panda codegen",
     "build": "panda codegen && tsup",
