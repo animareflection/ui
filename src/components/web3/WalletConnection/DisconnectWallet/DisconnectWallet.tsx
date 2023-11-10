@@ -112,8 +112,8 @@ const DisconnectWallet = ({ ...props }: Props) => {
           <Image
             src={ensAvatar ?? currentNetworkIcon}
             alt={ensAvatar ? ensName! : "current chain"}
-            h={4}
-            w={4}
+            h={5}
+            w={5}
             borderRadius={ensAvatar ? "full" : "none"}
             aria-label={ensAvatar ? ensName! : `${chain!.name} icon`}
           />
@@ -164,6 +164,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
               gap={2}
               flex={1}
               bgColor="bg.subtle"
+              borderColor="transparent"
               _hover={{
                 bgColor: "accent.subtle",
               }}
