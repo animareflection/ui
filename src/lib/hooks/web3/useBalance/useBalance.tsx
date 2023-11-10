@@ -69,7 +69,8 @@ const useBalance = ({ address, token, precision, ...rest }: Options) => {
               decimals: decimals.result,
               precision,
             }),
-            symbol: symbol.result ?? "ETH",
+            // TODO: determine appropriate fallback for `symbol`
+            symbol: symbol.result ?? "N/A",
             value: balance.result ?? 0n,
           };
         },
