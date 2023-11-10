@@ -17,11 +17,11 @@ export const walletConnectionState = async <
 }: PlayFunctionContext<R>) => {
   const canvas = within(canvasElement as HTMLElement);
 
-  const connectButton = await canvas.findByRole("button", {
-    name: "Connect",
-  });
-
   await step("It should open connect wallet modal", async () => {
+    const connectButton = await canvas.findByRole("button", {
+      name: "Connect",
+    });
+
     await userEvent.click(connectButton);
 
     await sleep(1000);
@@ -38,7 +38,6 @@ export const walletConnectionState = async <
 
     await sleep(1000);
 
-    // TODO: verify that truncated address is displayed
     const disconnectButton = canvas.getByLabelText("Open Disconnect Modal");
     const networkMenu = canvas.getByLabelText("Open Network Menu");
 
@@ -92,8 +91,12 @@ export const walletConnectionState = async <
     await sleep(2000);
 
     await expect(disconnectButton).not.toBeVisible();
-    // TODO: verify that connect button is visible
-    // await expect(connectButton).toBeVisible();
+
+    const connectButton = await canvas.findByRole("button", {
+      name: "Connect",
+    });
+
+    await expect(connectButton).toBeVisible();
   });
 };
 
