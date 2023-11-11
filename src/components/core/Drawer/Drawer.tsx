@@ -50,7 +50,7 @@ const Drawer = ({
   if (!isClient) return null;
 
   return (
-    <PrimitiveDrawer {...rest}>
+    <PrimitiveDrawer lazyMount unmountOnExit {...rest}>
       {(ctx) => (
         <>
           {trigger && (

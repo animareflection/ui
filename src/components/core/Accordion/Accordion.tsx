@@ -42,6 +42,8 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
 
   return (
     <PrimitiveAccordion
+      lazyMount
+      unmountOnExit
       collapsible
       multiple
       className={classNames.root}

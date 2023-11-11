@@ -43,7 +43,7 @@ const Modal = ({
   if (!isClient) return null;
 
   return (
-    <PrimitiveModal {...rest}>
+    <PrimitiveModal lazyMount unmountOnExit {...rest}>
       {(ctx) => (
         <>
           {trigger && (

@@ -33,7 +33,12 @@ const Tabs = ({ tabs, ...rest }: Props) => {
   if (!isClient) return null;
 
   return (
-    <PrimitiveTabs className={classNames.root} {...rest}>
+    <PrimitiveTabs
+      lazyMount
+      unmountOnExit
+      className={classNames.root}
+      {...rest}
+    >
       <PrimitiveTabList className={classNames.list}>
         {tabs.map(({ value, trigger, disabled }) => (
           <PrimitiveTabTrigger
