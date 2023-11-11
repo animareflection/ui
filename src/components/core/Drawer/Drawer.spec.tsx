@@ -37,6 +37,8 @@ export const drawerState = async <R extends Renderer = ReactRenderer>({
 
     await userEvent.click(closeButton);
 
+    await sleep(1000);
+
     const drawerTitle = screen.getByText("Drawer Title");
 
     await expect(drawerTitle).not.toBeVisible();
