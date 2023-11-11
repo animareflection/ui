@@ -76,7 +76,8 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                 </Icon>
               </PrimitiveAccordionItemTrigger>
               <PrimitiveAccordionItemContent className={classNames.itemContent}>
-                {content}
+                {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
+                <div>{content}</div>
               </PrimitiveAccordionItemContent>
             </>
           )}
