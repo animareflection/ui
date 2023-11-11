@@ -19,18 +19,20 @@ export type PrimitiveRadioGroupProps = ComponentProps<
 const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> =
   panda(RadioGroup);
 
-export type PrimitiveRadioControlProps = ComponentProps<
-  typeof PrimitiveRadioControl
+export type PrimitiveRadioGroupItemControlProps = ComponentProps<
+  typeof PrimitiveRadioGroupItemControl
 >;
-export const PrimitiveRadioControl = panda(RadioGroupItemControl);
+export const PrimitiveRadioGroupItemControl = panda(RadioGroupItemControl);
 
-export type PrimitiveRadioLabelProps = ComponentProps<
-  typeof PrimitiveRadioLabel
+export type PrimitiveRadioGroupLabelProps = ComponentProps<
+  typeof PrimitiveRadioGroupLabel
 >;
-export const PrimitiveRadioLabel = panda(RadioGroupLabel);
+export const PrimitiveRadioGroupLabel = panda(RadioGroupLabel);
 
-export type PrimitiveRadioProps = ComponentProps<typeof PrimitiveRadio>;
-export const PrimitiveRadio: PandaComponent<typeof RadioGroupItem> =
+export type PrimitiveRadioGroupItemProps = ComponentProps<
+  typeof PrimitiveRadioGroupItem
+>;
+export const PrimitiveRadioGroupItem: PandaComponent<typeof RadioGroupItem> =
   panda(RadioGroupItem);
 
 export default PrimitiveRadioGroup;

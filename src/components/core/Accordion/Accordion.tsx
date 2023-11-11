@@ -8,8 +8,8 @@ import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveAccordion,
   PrimitiveAccordionItem,
-  PrimitiveAccordionTrigger,
-  PrimitiveAccordionContent,
+  PrimitiveAccordionItemTrigger,
+  PrimitiveAccordionItemContent,
 } from "components/primitives";
 import { accordion } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
@@ -51,7 +51,7 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
         <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
-              <PrimitiveAccordionTrigger
+              <PrimitiveAccordionItemTrigger
                 className={classNames.itemTrigger}
                 borderBottomRadius={isOpen ? "unset" : "md"}
               >
@@ -74,10 +74,10 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                     icon ?? <ChevronDownIcon />
                   )}
                 </Icon>
-              </PrimitiveAccordionTrigger>
-              <PrimitiveAccordionContent className={classNames.itemContent}>
+              </PrimitiveAccordionItemTrigger>
+              <PrimitiveAccordionItemContent className={classNames.itemContent}>
                 {content}
-              </PrimitiveAccordionContent>
+              </PrimitiveAccordionItemContent>
             </>
           )}
         </PrimitiveAccordionItem>

@@ -22,14 +22,14 @@ export type PrimitiveAccordionItemProps = ComponentProps<
 export const PrimitiveAccordionItem: PandaComponent<typeof AccordionItem> =
   panda(AccordionItem);
 
-export type PrimitiveAccordionTriggerProps = ComponentProps<
-  typeof PrimitiveAccordionTrigger
+export type PrimitiveAccordionItemTriggerProps = ComponentProps<
+  typeof PrimitiveAccordionItemTrigger
 >;
-export const PrimitiveAccordionTrigger = panda(AccordionItemTrigger);
+export const PrimitiveAccordionItemTrigger = panda(AccordionItemTrigger);
 
-export type PrimitiveAccordionContentProps = ComponentProps<
-  typeof PrimitiveAccordionContent
+export type PrimitiveAccordionItemContentProps = ComponentProps<
+  typeof PrimitiveAccordionItemContent
 >;
-export const PrimitiveAccordionContent = panda(AccordionItemContent);
+export const PrimitiveAccordionItemContent = panda(AccordionItemContent);
 
 export default PrimitiveAccordion;

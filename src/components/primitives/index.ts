@@ -1,8 +1,8 @@
 export {
   default as PrimitiveAccordion,
   PrimitiveAccordionItem,
-  PrimitiveAccordionTrigger,
-  PrimitiveAccordionContent,
+  PrimitiveAccordionItemTrigger,
+  PrimitiveAccordionItemContent,
 } from "./Accordion/Accordion";
 export {
   default as PrimitiveAvatar,
@@ -71,9 +71,9 @@ export {
 } from "./NumberInput/NumberInput";
 export {
   default as PrimitiveRadioGroup,
-  PrimitiveRadioControl,
-  PrimitiveRadio,
-  PrimitiveRadioLabel,
+  PrimitiveRadioGroupItemControl,
+  PrimitiveRadioGroupItem,
+  PrimitiveRadioGroupLabel,
 } from "./RadioGroup/RadioGroup";
 export {
   default as PrimitiveFlyout,
@@ -121,8 +121,8 @@ export {
 export type {
   PrimitiveAccordionProps,
   PrimitiveAccordionItemProps,
-  PrimitiveAccordionTriggerProps,
-  PrimitiveAccordionContentProps,
+  PrimitiveAccordionItemTriggerProps,
+  PrimitiveAccordionItemContentProps,
 } from "./Accordion/Accordion";
 export type {
   PrimitiveAvatarProps,
@@ -190,9 +190,9 @@ export type {
   PrimitiveNumberInputScrubberProps,
 } from "./NumberInput/NumberInput";
 export type {
-  PrimitiveRadioControlProps,
-  PrimitiveRadioLabelProps,
-  PrimitiveRadioProps,
+  PrimitiveRadioGroupItemControlProps,
+  PrimitiveRadioGroupLabelProps,
+  PrimitiveRadioGroupItemProps,
   PrimitiveRadioGroupProps,
 } from "./RadioGroup/RadioGroup";
 export type {
