@@ -41,7 +41,6 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
         delay: 100,
       });
 
-      await expect(numberInput).not.toHaveValue("q");
       await expect(numberInput).toHaveValue("");
     },
   );
