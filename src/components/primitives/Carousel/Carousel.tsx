@@ -1,10 +1,10 @@
 import {
   Carousel,
   CarouselControl,
-  CarouselNextSlideTrigger,
-  CarouselPrevSlideTrigger,
-  CarouselSlide,
-  CarouselSlideGroup,
+  CarouselNextTrigger,
+  CarouselPrevTrigger,
+  CarouselItem,
+  CarouselItemGroup,
   CarouselViewport,
   CarouselIndicator,
   CarouselIndicatorGroup,
@@ -26,30 +26,26 @@ export type PrimitiveCarouselControlProps = ComponentProps<
 >;
 export const PrimitiveCarouselControl = panda(CarouselControl);
 
-export type PrimitiveCarouselNextSlideTriggerProps = ComponentProps<
-  typeof PrimitiveCarouselNextSlideTrigger
+export type PrimitiveCarouselNextTriggerProps = ComponentProps<
+  typeof PrimitiveCarouselNextTrigger
 >;
-export const PrimitiveCarouselNextSlideTrigger = panda(
-  CarouselNextSlideTrigger,
-);
+export const PrimitiveCarouselNextTrigger = panda(CarouselNextTrigger);
 
-export type PrimitiveCarouselPrevSlideTriggerProps = ComponentProps<
-  typeof PrimitiveCarouselPrevSlideTrigger
+export type PrimitiveCarouselPrevTriggerProps = ComponentProps<
+  typeof PrimitiveCarouselPrevTrigger
 >;
-export const PrimitiveCarouselPrevSlideTrigger = panda(
-  CarouselPrevSlideTrigger,
-);
+export const PrimitiveCarouselPrevTrigger = panda(CarouselPrevTrigger);
 
-export type PrimitiveCarouselSlideProps = ComponentProps<
-  typeof PrimitiveCarouselSlide
+export type PrimitiveCarouselItemProps = ComponentProps<
+  typeof PrimitiveCarouselItem
 >;
-export const PrimitiveCarouselSlide: PandaComponent<typeof CarouselSlide> =
-  panda(CarouselSlide);
+export const PrimitiveCarouselItem: PandaComponent<typeof CarouselItem> =
+  panda(CarouselItem);
 
-export type PrimitiveCarouselSlideGroupProps = ComponentProps<
-  typeof PrimitiveCarouselSlideGroup
+export type PrimitiveCarouselItemGroupProps = ComponentProps<
+  typeof PrimitiveCarouselItemGroup
 >;
-export const PrimitiveCarouselSlideGroup = panda(CarouselSlideGroup);
+export const PrimitiveCarouselItemGroup = panda(CarouselItemGroup);
 
 export type PrimitiveCarouselViewportProps = ComponentProps<
   typeof PrimitiveCarouselViewport

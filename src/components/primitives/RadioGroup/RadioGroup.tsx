@@ -1,4 +1,9 @@
-import { Radio, RadioControl, RadioGroup, RadioLabel } from "@ark-ui/react";
+import {
+  RadioGroupItem,
+  RadioGroupItemControl,
+  RadioGroup,
+  RadioGroupLabel,
+} from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 
@@ -17,14 +22,15 @@ const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> =
 export type PrimitiveRadioControlProps = ComponentProps<
   typeof PrimitiveRadioControl
 >;
-export const PrimitiveRadioControl = panda(RadioControl);
+export const PrimitiveRadioControl = panda(RadioGroupItemControl);
 
 export type PrimitiveRadioLabelProps = ComponentProps<
   typeof PrimitiveRadioLabel
 >;
-export const PrimitiveRadioLabel = panda(RadioLabel);
+export const PrimitiveRadioLabel = panda(RadioGroupLabel);
 
 export type PrimitiveRadioProps = ComponentProps<typeof PrimitiveRadio>;
-export const PrimitiveRadio: PandaComponent<typeof Radio> = panda(Radio);
+export const PrimitiveRadio: PandaComponent<typeof RadioGroupItem> =
+  panda(RadioGroupItem);
 
 export default PrimitiveRadioGroup;

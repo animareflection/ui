@@ -27,7 +27,7 @@ export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
   title?: string;
   description?: string;
   contentProps?: PrimitiveDrawerContentProps;
-  targetRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -40,7 +40,7 @@ const Drawer = ({
   title,
   description,
   contentProps,
-  targetRef,
+  containerRef,
   ...rest
 }: Props) => {
   const classNames = drawer({ placement });
@@ -59,7 +59,7 @@ const Drawer = ({
             </PrimitiveDrawerTrigger>
           )}
 
-          <Portal target={targetRef}>
+          <Portal container={containerRef}>
             <PrimitiveDrawerBackdrop className={classNames.backdrop} />
             <PrimitiveDrawerPositioner className={classNames.positioner}>
               <PrimitiveDrawerContent

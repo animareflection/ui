@@ -40,7 +40,7 @@ export interface Props extends PrimitiveMenuProps, MenuVariantProps {
   triggerItem?: ReactNode;
   triggerVariant?: ButtonVariantProps["variant"];
   groups?: MenuItemGroupRecord[];
-  targetRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -53,7 +53,7 @@ const Menu = ({
   triggerVariant,
   groups,
   size,
-  targetRef,
+  containerRef,
   ...rest
 }: Props) => {
   const classNames = menu({ size });
@@ -81,7 +81,7 @@ const Menu = ({
               {triggerItem}
             </PrimitiveMenuTriggerItem>
           )}
-          <Portal target={targetRef}>
+          <Portal container={containerRef}>
             <PrimitiveMenuPositioner className={classNames.positioner}>
               <PrimitiveMenuContent className={classNames.content}>
                 {groups?.map(({ id, label, separator, items }) => (

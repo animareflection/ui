@@ -22,7 +22,7 @@ export interface Props extends PrimitiveModalProps {
   trigger?: ReactNode;
   title?: string;
   description?: string;
-  targetRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -33,7 +33,7 @@ const Modal = ({
   trigger,
   title,
   description,
-  targetRef,
+  containerRef,
   ...rest
 }: Props) => {
   const classNames = modal();
@@ -52,7 +52,7 @@ const Modal = ({
             </PrimitiveModalTrigger>
           )}
 
-          <Portal target={targetRef}>
+          <Portal container={containerRef}>
             <PrimitiveModalBackdrop className={classNames.backdrop} />
             <PrimitiveModalPositioner className={classNames.positioner}>
               <PrimitiveModalContent className={classNames.content}>

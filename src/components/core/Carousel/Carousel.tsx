@@ -6,8 +6,8 @@ import {
   PrimitiveCarouselControl,
   PrimitiveCarouselIndicator,
   PrimitiveCarouselIndicatorGroup,
-  PrimitiveCarouselNextSlideTrigger,
-  PrimitiveCarouselPrevSlideTrigger,
+  PrimitiveCarouselNextTrigger,
+  PrimitiveCarouselPrevTrigger,
   PrimitiveCarouselSlide,
   PrimitiveCarouselSlideGroup,
   PrimitiveCarouselViewport,
@@ -33,10 +33,11 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
   return (
     <PrimitiveCarousel className={classNames.root} {...rest}>
       <PrimitiveCarouselViewport className={classNames.viewport}>
-        <PrimitiveCarouselSlideGroup className={classNames.slideGroup}>
+        <PrimitiveCarouselSlideGroup className={classNames.itemGroup}>
+          {/* TODO `slides` -> `items` */}
           {slides.map((slides, index) => (
             <PrimitiveCarouselSlide
-              className={classNames.slide}
+              className={classNames.item}
               key={index}
               index={index}
             >
@@ -45,13 +46,11 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
           ))}
         </PrimitiveCarouselSlideGroup>
         <PrimitiveCarouselControl className={classNames.control}>
-          <PrimitiveCarouselPrevSlideTrigger
-            className={classNames.prevSlideTrigger}
-          >
+          <PrimitiveCarouselPrevTrigger className={classNames.prevTrigger}>
             <Icon>
               <FiChevronLeft />
             </Icon>
-          </PrimitiveCarouselPrevSlideTrigger>
+          </PrimitiveCarouselPrevTrigger>
           <PrimitiveCarouselIndicatorGroup
             className={classNames.indicatorGroup}
           >
@@ -64,13 +63,11 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
               />
             ))}
           </PrimitiveCarouselIndicatorGroup>
-          <PrimitiveCarouselNextSlideTrigger
-            className={classNames.nextSlideTrigger}
-          >
+          <PrimitiveCarouselNextTrigger className={classNames.nextTrigger}>
             <Icon>
               <FiChevronRight />
             </Icon>
-          </PrimitiveCarouselNextSlideTrigger>
+          </PrimitiveCarouselNextTrigger>
         </PrimitiveCarouselControl>
       </PrimitiveCarouselViewport>
     </PrimitiveCarousel>

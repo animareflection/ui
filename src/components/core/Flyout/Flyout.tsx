@@ -28,7 +28,7 @@ export interface Props extends PrimitiveFlyoutProps {
   title?: ReactNode;
   children: ReactNode;
   triggerProps?: PrimitiveFlyoutTriggerProps;
-  targetRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -39,7 +39,7 @@ const Flyout = ({
   title,
   children,
   triggerProps,
-  targetRef,
+  containerRef,
   ...rest
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -68,7 +68,7 @@ const Flyout = ({
         </PrimitiveFlyoutTrigger>
       )}
 
-      <Portal target={targetRef}>
+      <Portal container={containerRef}>
         <PrimitiveFlyoutPositioner className={classNames.positioner}>
           <PrimitiveFlyoutContent className={classNames.content}>
             <PrimitiveFlyoutArrow className={classNames.arrow}>

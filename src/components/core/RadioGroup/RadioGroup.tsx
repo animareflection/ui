@@ -50,10 +50,10 @@ const RadioGroup = ({
           key={item.value}
           value={item.value}
           disabled={item.disabled}
-          className={classNames.radio}
+          className={classNames.item}
         >
-          <PrimitiveRadioControl className={classNames.radioControl} />
-          <PrimitiveRadioLabel className={classNames.radioLabel}>
+          <PrimitiveRadioControl className={classNames.itemControl} />
+          <PrimitiveRadioLabel className={classNames.label}>
             {item.label}
           </PrimitiveRadioLabel>
         </PrimitiveRadio>
