@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "resolutions": {
+    "@ark-ui/react": "^1.0.1"
+  },
   "devDependencies": {
     "@pandacss/dev": "^0.18.2",
     "@types/node": "^20.9.0",
