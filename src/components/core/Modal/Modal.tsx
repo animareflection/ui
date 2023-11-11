@@ -6,11 +6,11 @@ import {
   PrimitiveModal,
   PrimitiveModalBackdrop,
   PrimitiveModalCloseTrigger,
-  PrimitiveModalContainer,
   PrimitiveModalContent,
   PrimitiveModalDescription,
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
+  PrimitiveModalPositioner,
 } from "components/primitives";
 import { modal } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
@@ -54,12 +54,8 @@ const Modal = ({
 
           <Portal target={targetRef}>
             <PrimitiveModalBackdrop className={classNames.backdrop} />
-            <PrimitiveModalContainer className={classNames.container}>
-              <PrimitiveModalContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
+            <PrimitiveModalPositioner className={classNames.positioner}>
+              <PrimitiveModalContent className={classNames.content}>
                 {title && (
                   <PrimitiveModalTitle className={classNames.title}>
                     {title}
@@ -80,7 +76,7 @@ const Modal = ({
                   </Icon>
                 </PrimitiveModalCloseTrigger>
               </PrimitiveModalContent>
-            </PrimitiveModalContainer>
+            </PrimitiveModalPositioner>
           </Portal>
         </>
       )}

@@ -52,7 +52,7 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
           {({ isOpen }) => (
             <>
               <PrimitiveAccordionTrigger
-                className={classNames.trigger}
+                className={classNames.itemTrigger}
                 borderBottomRadius={isOpen ? "unset" : "md"}
               >
                 {triggerLabel ?? value}
@@ -75,11 +75,7 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                   )}
                 </Icon>
               </PrimitiveAccordionTrigger>
-              <PrimitiveAccordionContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
+              <PrimitiveAccordionContent className={classNames.itemContent}>
                 {content}
               </PrimitiveAccordionContent>
             </>

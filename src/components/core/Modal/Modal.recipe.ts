@@ -23,7 +23,7 @@ export const modalRecipe = defineSlotRecipe({
         animation: "fade-out",
       },
     },
-    container: {
+    positioner: {
       alignItems: "center",
       display: "flex",
       inset: 0,

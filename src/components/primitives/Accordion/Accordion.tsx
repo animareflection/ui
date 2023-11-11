@@ -1,8 +1,8 @@
 import {
   Accordion,
   AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
+  AccordionItemTrigger,
+  AccordionItemContent,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
@@ -25,11 +25,11 @@ export const PrimitiveAccordionItem: PandaComponent<typeof AccordionItem> =
 export type PrimitiveAccordionTriggerProps = ComponentProps<
   typeof PrimitiveAccordionTrigger
 >;
-export const PrimitiveAccordionTrigger = panda(AccordionTrigger);
+export const PrimitiveAccordionTrigger = panda(AccordionItemTrigger);
 
 export type PrimitiveAccordionContentProps = ComponentProps<
   typeof PrimitiveAccordionContent
 >;
-export const PrimitiveAccordionContent = panda(AccordionContent);
+export const PrimitiveAccordionContent = panda(AccordionItemContent);
 
 export default PrimitiveAccordion;

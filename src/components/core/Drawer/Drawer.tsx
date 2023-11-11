@@ -6,7 +6,7 @@ import {
   PrimitiveDrawer,
   PrimitiveDrawerBackdrop,
   PrimitiveDrawerCloseTrigger,
-  PrimitiveDrawerContainer,
+  PrimitiveDrawerPositioner,
   PrimitiveDrawerContent,
   PrimitiveDrawerDescription,
   PrimitiveDrawerTitle,
@@ -61,10 +61,8 @@ const Drawer = ({
 
           <Portal target={targetRef}>
             <PrimitiveDrawerBackdrop className={classNames.backdrop} />
-            <PrimitiveDrawerContainer className={classNames.container}>
+            <PrimitiveDrawerPositioner className={classNames.positioner}>
               <PrimitiveDrawerContent
-                lazyMount
-                unmountOnExit
                 className={classNames.content}
                 {...contentProps}
               >
@@ -92,7 +90,7 @@ const Drawer = ({
                   </Icon>
                 </PrimitiveDrawerCloseTrigger>
               </PrimitiveDrawerContent>
-            </PrimitiveDrawerContainer>
+            </PrimitiveDrawerPositioner>
           </Portal>
         </>
       )}
