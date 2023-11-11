@@ -1,5 +1,4 @@
 import { Portal } from "@ark-ui/react";
-import { useState } from "react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
@@ -15,7 +14,7 @@ import {
   PrimitiveFlyoutTrigger,
 } from "components/primitives";
 import { flyout } from "generated/panda/recipes";
-import { useIsClient } from "lib/hooks";
+import { useDisclosure, useIsClient } from "lib/hooks";
 
 import type {
   PrimitiveFlyoutProps,
@@ -42,7 +41,7 @@ const Flyout = ({
   containerRef,
   ...rest
 }: Props) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { isOpen, onClose, onToggle } = useDisclosure();
 
   const classNames = flyout();
 
@@ -51,17 +50,12 @@ const Flyout = ({
   if (!isClient) return null;
 
   return (
-    <PrimitiveFlyout
-      open={isOpen}
-      onClose={() => setIsOpen(false)}
-      portalled
-      {...rest}
-    >
+    <PrimitiveFlyout open={isOpen} onOpenChange={onToggle} portalled {...rest}>
       {trigger && (
         <PrimitiveFlyoutTrigger
           asChild
           className={classNames.trigger}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={onToggle}
           {...triggerProps}
         >
           {trigger}
@@ -87,7 +81,7 @@ const Flyout = ({
             </PrimitiveFlyoutDescription>
 
             <PrimitiveFlyoutCloseTrigger
-              onClick={() => setIsOpen(false)}
+              onClick={onClose}
               className={classNames.closeTrigger}
             >
               <Icon className={classNames.closeTriggerIcon}>

@@ -8,8 +8,8 @@ import {
   PrimitiveCarouselIndicatorGroup,
   PrimitiveCarouselNextTrigger,
   PrimitiveCarouselPrevTrigger,
-  PrimitiveCarouselSlide,
-  PrimitiveCarouselSlideGroup,
+  PrimitiveCarouselItem,
+  PrimitiveCarouselItemGroup,
   PrimitiveCarouselViewport,
 } from "components/primitives";
 import { carousel } from "generated/panda/recipes";
@@ -33,18 +33,18 @@ const Carousel = ({ slides, size, ...rest }: Props) => {
   return (
     <PrimitiveCarousel className={classNames.root} {...rest}>
       <PrimitiveCarouselViewport className={classNames.viewport}>
-        <PrimitiveCarouselSlideGroup className={classNames.itemGroup}>
+        <PrimitiveCarouselItemGroup className={classNames.itemGroup}>
           {/* TODO `slides` -> `items` */}
           {slides.map((slides, index) => (
-            <PrimitiveCarouselSlide
+            <PrimitiveCarouselItem
               className={classNames.item}
               key={index}
               index={index}
             >
               {slides}
-            </PrimitiveCarouselSlide>
+            </PrimitiveCarouselItem>
           ))}
-        </PrimitiveCarouselSlideGroup>
+        </PrimitiveCarouselItemGroup>
         <PrimitiveCarouselControl className={classNames.control}>
           <PrimitiveCarouselPrevTrigger className={classNames.prevTrigger}>
             <Icon>
