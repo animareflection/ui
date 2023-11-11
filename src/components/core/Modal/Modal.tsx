@@ -8,9 +8,9 @@ import {
   PrimitiveModalCloseTrigger,
   PrimitiveModalContent,
   PrimitiveModalDescription,
+  PrimitiveModalPositioner,
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
-  PrimitiveModalPositioner,
 } from "components/primitives";
 import { modal } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
