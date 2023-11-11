@@ -51,6 +51,8 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
     async () => {
       await userEvent.click(increment);
 
+      await sleep(100);
+
       await expect(numberInput).toHaveValue("0.1");
 
       await userEvent.keyboard("[Backspace]");
