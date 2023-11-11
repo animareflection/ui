@@ -1,8 +1,8 @@
 import {
   PrimitiveRadioGroup,
-  PrimitiveRadioGroupLabel,
   PrimitiveRadioGroupItem,
   PrimitiveRadioGroupItemControl,
+  PrimitiveRadioGroupItemText,
 } from "components/primitives";
 import { radioGroup } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
@@ -53,9 +53,9 @@ const RadioGroup = ({
           className={classNames.item}
         >
           <PrimitiveRadioGroupItemControl className={classNames.itemControl} />
-          <PrimitiveRadioGroupLabel className={classNames.label}>
+          <PrimitiveRadioGroupItemText className={classNames.label}>
             {item.label}
-          </PrimitiveRadioGroupLabel>
+          </PrimitiveRadioGroupItemText>
         </PrimitiveRadioGroupItem>
       ))}
     </PrimitiveRadioGroup>

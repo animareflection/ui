@@ -3,6 +3,7 @@ import {
   RadioGroupItemControl,
   RadioGroup,
   RadioGroupLabel,
+  RadioGroupItemText,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
@@ -34,5 +35,10 @@ export type PrimitiveRadioGroupItemProps = ComponentProps<
 >;
 export const PrimitiveRadioGroupItem: PandaComponent<typeof RadioGroupItem> =
   panda(RadioGroupItem);
+
+export type PrimitiveRadioGroupItemTextProps = ComponentProps<
+  typeof RadioGroupItemText
+>;
+export const PrimitiveRadioGroupItemText = panda(RadioGroupItemText);
 
 export default PrimitiveRadioGroup;
