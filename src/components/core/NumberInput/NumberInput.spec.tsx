@@ -63,8 +63,16 @@ export const numberInputState = async <R extends Renderer = ReactRenderer>({
     "It should decrement numberInput value on decrement button click",
     async () => {
       await userEvent.click(increment);
+
+      await sleep(100);
+
       await userEvent.click(increment);
+
+      await sleep(100);
+
       await userEvent.click(decrement);
+
+      await sleep(100);
 
       await expect(numberInput).toHaveValue("0.1");
     },
