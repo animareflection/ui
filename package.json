@@ -101,6 +101,7 @@
     "framer-motion": "^10.16.4",
     "http-server": "^14.1.1",
     "husky": "^8.0.3",
+    "jsonfile": "^6.1.0",
     "lint-staged": "^15.1.0",
     "next": "^14.0.2",
     "postcss": "^8.4.31",
