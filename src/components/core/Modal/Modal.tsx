@@ -6,9 +6,9 @@ import {
   PrimitiveModal,
   PrimitiveModalBackdrop,
   PrimitiveModalCloseTrigger,
-  PrimitiveModalContainer,
   PrimitiveModalContent,
   PrimitiveModalDescription,
+  PrimitiveModalPositioner,
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
 } from "components/primitives";
@@ -22,7 +22,7 @@ export interface Props extends PrimitiveModalProps {
   trigger?: ReactNode;
   title?: string;
   description?: string;
-  targetRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -33,7 +33,7 @@ const Modal = ({
   trigger,
   title,
   description,
-  targetRef,
+  containerRef,
   ...rest
 }: Props) => {
   const classNames = modal();
@@ -43,7 +43,7 @@ const Modal = ({
   if (!isClient) return null;
 
   return (
-    <PrimitiveModal {...rest}>
+    <PrimitiveModal lazyMount unmountOnExit {...rest}>
       {(ctx) => (
         <>
           {trigger && (
@@ -52,14 +52,10 @@ const Modal = ({
             </PrimitiveModalTrigger>
           )}
 
-          <Portal target={targetRef}>
+          <Portal container={containerRef}>
             <PrimitiveModalBackdrop className={classNames.backdrop} />
-            <PrimitiveModalContainer className={classNames.container}>
-              <PrimitiveModalContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
+            <PrimitiveModalPositioner className={classNames.positioner}>
+              <PrimitiveModalContent className={classNames.content}>
                 {title && (
                   <PrimitiveModalTitle className={classNames.title}>
                     {title}
@@ -80,7 +76,7 @@ const Modal = ({
                   </Icon>
                 </PrimitiveModalCloseTrigger>
               </PrimitiveModalContent>
-            </PrimitiveModalContainer>
+            </PrimitiveModalPositioner>
           </Portal>
         </>
       )}

@@ -51,6 +51,7 @@ export const menuRecipe = defineSlotRecipe({
       outline: "none",
       py: 1,
       gap: 1,
+      zIndex: "menu",
     },
     separator: {
       color: "bg.subtle",

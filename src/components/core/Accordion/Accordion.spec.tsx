@@ -73,7 +73,7 @@ export const accordionState = async <R extends Renderer = ReactRenderer>({
       triggerOne.focus();
 
       await userEvent.keyboard("[End]");
-      await expect(triggerThree).toHaveFocus();
+      await expect(triggerTwo).toHaveFocus();
 
       await userEvent.keyboard("[Home]");
       await expect(triggerOne).toHaveFocus();

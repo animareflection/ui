@@ -21,7 +21,7 @@ export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   tooltipContent: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
   arrow?: boolean;
-  targetRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -35,7 +35,7 @@ const Tooltip = ({
   bgColor = "bg.default",
   variant,
   arrow = true,
-  targetRef,
+  containerRef,
   ...rest
 }: Props) => {
   const isClient = useIsClient();
@@ -54,7 +54,7 @@ const Tooltip = ({
             </PrimitiveTooltipTrigger>
           )}
 
-          <Portal target={targetRef}>
+          <Portal container={containerRef}>
             <PrimitiveTooltipPositioner className={classNames.positioner}>
               {isOpen && (
                 <>

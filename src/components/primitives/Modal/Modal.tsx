@@ -2,7 +2,7 @@ import {
   Dialog,
   DialogBackdrop,
   DialogCloseTrigger,
-  DialogContainer,
+  DialogPositioner,
   DialogContent,
   DialogDescription,
   DialogTitle,
@@ -29,10 +29,10 @@ export type PrimitiveModalBackdropProps = ComponentProps<
 >;
 export const PrimitiveModalBackdrop = panda(DialogBackdrop);
 
-export type PrimitiveModalContainerProps = ComponentProps<
-  typeof PrimitiveModalContainer
+export type PrimitiveModalPositionerProps = ComponentProps<
+  typeof PrimitiveModalPositioner
 >;
-export const PrimitiveModalContainer = panda(DialogContainer);
+export const PrimitiveModalPositioner = panda(DialogPositioner);
 
 export type PrimitiveModalContentProps = ComponentProps<
   typeof PrimitiveModalContent

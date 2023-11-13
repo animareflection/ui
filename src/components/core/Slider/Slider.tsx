@@ -48,7 +48,7 @@ const Slider = ({ label, markers, maxW, ...rest }: Props) => {
           <PrimitiveSliderRange className={classNames.range} />
         </PrimitiveSliderTrack>
 
-        <PrimitiveSliderThumb className={classNames.thumb} />
+        <PrimitiveSliderThumb index={0} className={classNames.thumb} />
       </PrimitiveSliderControl>
       {markers && (
         <PrimitiveSliderMarkerGroup

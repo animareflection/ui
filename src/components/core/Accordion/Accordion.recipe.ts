@@ -14,7 +14,7 @@ export const accordionRecipe = defineSlotRecipe({
       flexDirection: "column",
       gap: 2,
     },
-    trigger: {
+    itemTrigger: {
       alignItems: "center",
       cursor: "pointer",
       display: "flex",
@@ -34,7 +34,7 @@ export const accordionRecipe = defineSlotRecipe({
         color: "fg.default",
       },
     },
-    content: {
+    itemContent: {
       backgroundColor: "bg.muted",
       color: "fg.default",
       borderBottomLeftRadius: "md",

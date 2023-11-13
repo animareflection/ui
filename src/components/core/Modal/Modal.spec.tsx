@@ -41,8 +41,10 @@ export const modalState = async <R extends Renderer = ReactRenderer>({
 
     await userEvent.click(closeButton);
 
-    const modalTitle = screen.getByText("Modal Title");
+    await sleep(1000);
 
-    await expect(modalTitle).not.toBeVisible();
+    const modalTitle = screen.queryByText("Modal Title");
+
+    await expect(modalTitle).toBeNull();
   });
 };

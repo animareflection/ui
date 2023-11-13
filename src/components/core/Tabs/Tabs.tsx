@@ -15,8 +15,6 @@ export interface TabRecord {
   value: string;
   trigger: ReactNode;
   disabled?: boolean;
-  lazyMount?: boolean;
-  unmountOnExit?: boolean;
   content: ReactNode;
 }
 
@@ -35,7 +33,12 @@ const Tabs = ({ tabs, ...rest }: Props) => {
   if (!isClient) return null;
 
   return (
-    <PrimitiveTabs className={classNames.root} {...rest}>
+    <PrimitiveTabs
+      lazyMount
+      unmountOnExit
+      className={classNames.root}
+      {...rest}
+    >
       <PrimitiveTabList className={classNames.list}>
         {tabs.map(({ value, trigger, disabled }) => (
           <PrimitiveTabTrigger
@@ -50,12 +53,10 @@ const Tabs = ({ tabs, ...rest }: Props) => {
         ))}
         <PrimitiveTabIndicator className={classNames.indicator} />
       </PrimitiveTabList>
-      {tabs.map(({ value, content, lazyMount, unmountOnExit }) => (
+      {tabs.map(({ value, content }) => (
         <PrimitiveTabContent
           key={value}
           value={value}
-          lazyMount={lazyMount}
-          unmountOnExit={unmountOnExit}
           className={classNames.content}
         >
           {content}
