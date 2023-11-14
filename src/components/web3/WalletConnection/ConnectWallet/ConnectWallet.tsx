@@ -25,7 +25,7 @@ const ConnectWallet = ({ ...props }: Props) => {
     null,
   );
 
-  const { isOpen, onClose, onOpen } = useDisclosure();
+  const { isOpen, onClose, onToggle } = useDisclosure();
 
   const { connectors, connect, status } = useConnect({
     mutation: {
@@ -57,8 +57,7 @@ const ConnectWallet = ({ ...props }: Props) => {
       title="Connect"
       description="Select option to connect your wallet."
       open={isOpen}
-      onOpen={onOpen}
-      onClose={onClose}
+      onOpenChange={onToggle}
       {...props}
     >
       <Flex direction="column" gap={2} mt={4}>

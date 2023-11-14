@@ -34,7 +34,7 @@ export interface Props extends ModalProps {}
 const DisconnectWallet = ({ ...props }: Props) => {
   const [value, copy] = useCopyToClipboard();
 
-  const { isOpen, onClose, onOpen } = useDisclosure();
+  const { isOpen, onClose, onToggle } = useDisclosure();
 
   const { address, chain, connector } = useAccount(),
     { data: ensName } = useEnsName({
@@ -121,8 +121,7 @@ const DisconnectWallet = ({ ...props }: Props) => {
         </Button>
       }
       open={isOpen}
-      onOpen={onOpen}
-      onClose={onClose}
+      onOpenChange={onToggle}
       {...props}
     >
       <Flex direction="column" align="center" gap={2}>
