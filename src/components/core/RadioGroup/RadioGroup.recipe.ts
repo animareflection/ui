@@ -16,7 +16,7 @@ export const radioGroupRecipe = defineSlotRecipe({
       },
       size: "md",
     },
-    radioControl: {
+    itemControl: {
       background: "transparent",
       borderColor: "border.emphasized",
       borderRadius: "full",
@@ -46,7 +46,7 @@ export const radioGroupRecipe = defineSlotRecipe({
         },
       },
     },
-    radio: {
+    item: {
       alignItems: "center",
       cursor: "pointer",
       display: "flex",
@@ -54,7 +54,7 @@ export const radioGroupRecipe = defineSlotRecipe({
         cursor: "not-allowed",
       },
     },
-    radioLabel: {
+    label: {
       color: "fg.emphasized",
       fontWeight: "medium",
       _disabled: {
@@ -74,10 +74,10 @@ export const radioGroupRecipe = defineSlotRecipe({
             _horizontal: 4,
           },
         },
-        radio: {
+        item: {
           gap: 2,
         },
-        radioControl: {
+        itemControl: {
           width: 4,
           height: 4,
           _checked: {
@@ -85,7 +85,7 @@ export const radioGroupRecipe = defineSlotRecipe({
             outlineOffset: "-4px",
           },
         },
-        radioLabel: {
+        label: {
           textStyle: "sm",
         },
       },
@@ -96,10 +96,10 @@ export const radioGroupRecipe = defineSlotRecipe({
             _horizontal: 6,
           },
         },
-        radio: {
+        item: {
           gap: 3,
         },
-        radioControl: {
+        itemControl: {
           width: 5,
           height: 5,
           _checked: {
@@ -107,7 +107,7 @@ export const radioGroupRecipe = defineSlotRecipe({
             outlineOffset: "-5px",
           },
         },
-        radioLabel: {
+        label: {
           textStyle: "md",
         },
       },
@@ -118,10 +118,10 @@ export const radioGroupRecipe = defineSlotRecipe({
             _horizontal: 8,
           },
         },
-        radio: {
+        item: {
           gap: 4,
         },
-        radioControl: {
+        itemControl: {
           width: 6,
           height: 6,
           _checked: {
@@ -129,7 +129,7 @@ export const radioGroupRecipe = defineSlotRecipe({
             outlineOffset: "-6px",
           },
         },
-        radioLabel: {
+        label: {
           textStyle: "lg",
         },
       },

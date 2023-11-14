@@ -22,7 +22,7 @@ export const drawerRecipe = defineSlotRecipe({
         animation: "fade-out",
       },
     },
-    container: {
+    positioner: {
       display: "flex",
       inset: 0,
       position: "fixed",
@@ -76,7 +76,7 @@ export const drawerRecipe = defineSlotRecipe({
   variants: {
     placement: {
       right: {
-        container: {
+        positioner: {
           justifyContent: "flex-end",
         },
         content: {
@@ -90,7 +90,7 @@ export const drawerRecipe = defineSlotRecipe({
         },
       },
       left: {
-        container: {
+        positioner: {
           justifyContent: "flex-start",
         },
         content: {
@@ -104,7 +104,7 @@ export const drawerRecipe = defineSlotRecipe({
         },
       },
       bottom: {
-        container: {
+        positioner: {
           alignItems: "flex-end",
         },
         content: {
@@ -118,7 +118,7 @@ export const drawerRecipe = defineSlotRecipe({
         },
       },
       top: {
-        container: {
+        positioner: {
           alignItems: "flex-start",
         },
         content: {

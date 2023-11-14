@@ -6,7 +6,7 @@ import {
   PrimitiveDrawer,
   PrimitiveDrawerBackdrop,
   PrimitiveDrawerCloseTrigger,
-  PrimitiveDrawerContainer,
+  PrimitiveDrawerPositioner,
   PrimitiveDrawerContent,
   PrimitiveDrawerDescription,
   PrimitiveDrawerTitle,
@@ -27,7 +27,7 @@ export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
   title?: string;
   description?: string;
   contentProps?: PrimitiveDrawerContentProps;
-  targetRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -40,7 +40,7 @@ const Drawer = ({
   title,
   description,
   contentProps,
-  targetRef,
+  containerRef,
   ...rest
 }: Props) => {
   const classNames = drawer({ placement });
@@ -50,7 +50,7 @@ const Drawer = ({
   if (!isClient) return null;
 
   return (
-    <PrimitiveDrawer {...rest}>
+    <PrimitiveDrawer lazyMount unmountOnExit {...rest}>
       {(ctx) => (
         <>
           {trigger && (
@@ -59,12 +59,10 @@ const Drawer = ({
             </PrimitiveDrawerTrigger>
           )}
 
-          <Portal target={targetRef}>
+          <Portal container={containerRef}>
             <PrimitiveDrawerBackdrop className={classNames.backdrop} />
-            <PrimitiveDrawerContainer className={classNames.container}>
+            <PrimitiveDrawerPositioner className={classNames.positioner}>
               <PrimitiveDrawerContent
-                lazyMount
-                unmountOnExit
                 className={classNames.content}
                 {...contentProps}
               >
@@ -92,7 +90,7 @@ const Drawer = ({
                   </Icon>
                 </PrimitiveDrawerCloseTrigger>
               </PrimitiveDrawerContent>
-            </PrimitiveDrawerContainer>
+            </PrimitiveDrawerPositioner>
           </Portal>
         </>
       )}

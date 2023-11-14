@@ -8,8 +8,8 @@ import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveAccordion,
   PrimitiveAccordionItem,
-  PrimitiveAccordionTrigger,
-  PrimitiveAccordionContent,
+  PrimitiveAccordionItemTrigger,
+  PrimitiveAccordionItemContent,
 } from "components/primitives";
 import { accordion } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
@@ -42,6 +42,8 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
 
   return (
     <PrimitiveAccordion
+      lazyMount
+      unmountOnExit
       collapsible
       multiple
       className={classNames.root}
@@ -51,8 +53,8 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
         <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
-              <PrimitiveAccordionTrigger
-                className={classNames.trigger}
+              <PrimitiveAccordionItemTrigger
+                className={classNames.itemTrigger}
                 borderBottomRadius={isOpen ? "unset" : "md"}
               >
                 {triggerLabel ?? value}
@@ -74,14 +76,11 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                     icon ?? <ChevronDownIcon />
                   )}
                 </Icon>
-              </PrimitiveAccordionTrigger>
-              <PrimitiveAccordionContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
-                {content}
-              </PrimitiveAccordionContent>
+              </PrimitiveAccordionItemTrigger>
+              <PrimitiveAccordionItemContent className={classNames.itemContent}>
+                {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
+                <div>{content}</div>
+              </PrimitiveAccordionItemContent>
             </>
           )}
         </PrimitiveAccordionItem>

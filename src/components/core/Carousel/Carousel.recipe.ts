@@ -59,8 +59,8 @@ export const carouselRecipe = defineSlotRecipe({
         outlineColor: "border.outline",
       },
     },
-    nextSlideTrigger: triggerStyle,
-    prevSlideTrigger: triggerStyle,
+    nextTrigger: triggerStyle,
+    prevTrigger: triggerStyle,
   },
   defaultVariants: {
     size: "md",

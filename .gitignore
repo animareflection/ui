@@ -3,3 +3,4 @@ build
 coverage
 generated
 storybook-static
+.vercel

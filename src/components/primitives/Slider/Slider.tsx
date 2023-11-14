@@ -4,7 +4,6 @@ import {
   SliderLabel,
   SliderMarker,
   SliderMarkerGroup,
-  SliderOutput,
   SliderRange,
   SliderThumb,
   SliderTrack,
@@ -39,11 +38,6 @@ export type PrimitiveSliderMarkerGroupProps = ComponentProps<
   typeof PrimitiveSliderMarkerGroup
 >;
 export const PrimitiveSliderMarkerGroup = panda(SliderMarkerGroup);
-
-export type PrimitiveSliderOutputProps = ComponentProps<
-  typeof PrimitiveSliderOutput
->;
-export const PrimitiveSliderOutput = panda(SliderOutput);
 
 export type PrimitiveSliderRangeProps = ComponentProps<
   typeof PrimitiveSliderRange

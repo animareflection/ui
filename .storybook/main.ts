@@ -1,6 +1,5 @@
 import path from "path";
 
-import type { AddonOptionsBabel } from "@storybook/addon-coverage";
 import type { StorybookConfig } from "@storybook/nextjs";
 
 /**
@@ -39,14 +38,7 @@ const storybookConfig: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    {
-      name: "@storybook/addon-coverage",
-      options: {
-        istanbul: {
-          include: ["**/*.tsx", "**/*.stories.tsx"],
-        },
-      } as AddonOptionsBabel,
-    },
+    "@storybook/addon-coverage",
     "storybook-dark-mode",
   ],
   staticDirs: [

@@ -102,7 +102,7 @@ export const WithContext: Story = {
       trigger={<Button>Open Menu</Button>}
       groups={WITH_CONTEXT_GROUPS}
     >
-      {({ onClose }) => (
+      {({ close: onClose }) => (
         <Button borderRadius="unset" variant="ghost" w="full" onClick={onClose}>
           Close
         </Button>
