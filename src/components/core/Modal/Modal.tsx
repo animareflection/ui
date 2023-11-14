@@ -47,7 +47,7 @@ const Modal = ({
       {(ctx) => (
         <>
           {trigger && (
-            <PrimitiveModalTrigger className={classNames.trigger}>
+            <PrimitiveModalTrigger className={classNames.trigger} asChild>
               {trigger}
             </PrimitiveModalTrigger>
           )}

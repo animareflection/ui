@@ -12,6 +12,10 @@ export const spinnerRecipe = defineRecipe({
   },
   variants: {
     size: {
+      xs: {
+        h: 3,
+        w: 3,
+      },
       sm: {
         h: 6,
         w: 6,

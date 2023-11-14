@@ -4,6 +4,7 @@ export const buttonRecipe = defineRecipe({
   className: "button",
   description: "The styles for the Button component",
   base: {
+    borderWidth: "1px",
     cursor: "pointer",
     fontWeight: "bold",
     borderRadius: "md",
@@ -27,6 +28,7 @@ export const buttonRecipe = defineRecipe({
   variants: {
     variant: {
       primary: {
+        borderColor: "accent.default",
         color: "accent.fg",
         bgColor: "accent.default",
         _hover: {
@@ -41,7 +43,6 @@ export const buttonRecipe = defineRecipe({
         },
       },
       secondary: {
-        borderWidth: "1px",
         borderColor: "border.emphasized",
         bgColor: "bg.default",
         color: "fg.emphasized",
@@ -60,6 +61,7 @@ export const buttonRecipe = defineRecipe({
         },
       },
       ghost: {
+        borderColor: "transparent",
         bgColor: "transparent",
         color: "fg.emphasized",
         _hover: {
@@ -76,6 +78,7 @@ export const buttonRecipe = defineRecipe({
         },
       },
       round: {
+        borderColor: "accent.default",
         borderRadius: "full !important",
         color: "accent.fg",
         bgColor: "accent.default",

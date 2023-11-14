@@ -46,6 +46,7 @@ const animations = defineTokens.animations({
   "skeleton-light": {
     value: "skeleton-loading-light 1s infinite linear alternate",
   },
+  pulse: { value: "pulse 2s infinite" },
 });
 
 export default animations;

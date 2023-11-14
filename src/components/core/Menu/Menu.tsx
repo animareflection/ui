@@ -9,15 +9,11 @@ import {
   PrimitiveMenuItemGroupLabel,
   PrimitiveMenuTriggerItem,
 } from "components/primitives";
-import { cx } from "generated/panda/css";
-import { button, menu } from "generated/panda/recipes";
+import { menu } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveMenuProps } from "components/primitives";
-import type {
-  ButtonVariantProps,
-  MenuVariantProps,
-} from "generated/panda/recipes";
+import type { MenuVariantProps } from "generated/panda/recipes";
 import type { ReactElement, ReactNode } from "react";
 
 export interface MenuItemRecord {
@@ -36,7 +32,6 @@ export interface MenuItemGroupRecord {
 export interface Props extends PrimitiveMenuProps, MenuVariantProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
-  triggerVariant?: ButtonVariantProps["variant"];
   groups?: MenuItemGroupRecord[];
 }
 
@@ -47,7 +42,6 @@ const Menu = ({
   children,
   trigger,
   triggerItem,
-  triggerVariant,
   groups,
   size,
   ...rest
@@ -63,14 +57,7 @@ const Menu = ({
       {(ctx) => (
         <>
           {trigger && (
-            <PrimitiveMenuTrigger
-              className={cx(
-                button({ variant: triggerVariant }),
-                classNames.trigger,
-              )}
-            >
-              {trigger}
-            </PrimitiveMenuTrigger>
+            <PrimitiveMenuTrigger asChild>{trigger}</PrimitiveMenuTrigger>
           )}
           {triggerItem && (
             <PrimitiveMenuTriggerItem className={classNames.triggerItem}>
