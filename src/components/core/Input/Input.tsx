@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { ark } from "@ark-ui/react";
 import { forwardRef } from "react";
 
@@ -86,5 +85,7 @@ const Input = forwardRef(
     );
   },
 );
+
+Input.displayName = "Input";
 
 export default Input;
