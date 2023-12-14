@@ -7,6 +7,7 @@
 - [#161](https://github.com/animareflection/ui/pull/161) [`f750579`](https://github.com/animareflection/ui/commit/f75057983f63a85daa7c74fe521298e3b2582e7e) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Accordion` component
 
 - [#171](https://github.com/animareflection/ui/pull/171) [`072e6d0`](https://github.com/animareflection/ui/commit/072e6d0904cdbb6eef0740fbaca43d3fdb0a9738) Thanks [@coopbri](https://github.com/coopbri)! - Change recipes to use Ark v1 slots
+
   - Change `Carousel` `slides` prop to `items`
 
 - [#158](https://github.com/animareflection/ui/pull/158) [`165d9c5`](https://github.com/animareflection/ui/commit/165d9c5fd5c938176c01a427f9493e82970a7fa8) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add additional variants for components that leverage `defaultVariants`
