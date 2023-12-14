@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.13.2
+
+### Patch Changes
+
+- [#177](https://github.com/animareflection/ui/pull/177) [`a8a2871`](https://github.com/animareflection/ui/commit/a8a2871ce478dbf2af5148f4ba91ad7fdc088ae6) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Change `Input` component to use a forwardRef
+
 ## 0.13.1
 
 ### Patch Changes
