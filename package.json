@@ -55,7 +55,7 @@
   "devDependencies": {
     "@ark-ui/anatomy": "^1.0.0",
     "@ark-ui/react": "^1.0.1",
-    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^18.4.1",
     "@commitlint/config-conventional": "^18.4.0",
