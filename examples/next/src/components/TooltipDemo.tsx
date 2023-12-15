@@ -20,6 +20,10 @@ const TooltipDemo = () => {
             Open Tooltip
           </Text>
         }
+        bgColor="accent.default"
+        contentProps={{
+          color: "white",
+        }}
         tooltipContent="Tooltip Title"
       />
     </Wrapper>

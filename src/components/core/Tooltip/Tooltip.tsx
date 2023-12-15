@@ -11,7 +11,10 @@ import {
 import { tooltip } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
-import type { PrimitiveTooltipProps } from "components/primitives";
+import type {
+  PrimitiveTooltipContentProps,
+  PrimitiveTooltipProps,
+} from "components/primitives";
 import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
 import type { ReactNode, RefObject } from "react";
@@ -22,6 +25,7 @@ export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   bgColor?: JsxStyleProps["bgColor"];
   arrow?: boolean;
   containerRef?: RefObject<HTMLElement>;
+  contentProps?: PrimitiveTooltipContentProps;
 }
 
 /**
@@ -36,6 +40,7 @@ const Tooltip = ({
   variant,
   arrow = true,
   containerRef,
+  contentProps,
   ...rest
 }: Props) => {
   const isClient = useIsClient();
@@ -71,6 +76,7 @@ const Tooltip = ({
                   <PrimitiveTooltipContent
                     bgColor={bgColor}
                     className={classNames.content}
+                    {...contentProps}
                   >
                     {tooltipContent}
                   </PrimitiveTooltipContent>

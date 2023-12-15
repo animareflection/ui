@@ -92,7 +92,7 @@ export const DrawerState: Story = {
   tags: ["test"],
 };
 
-const meta = {
+const meta: Meta = {
   title: "Components/Core/Drawer",
   component: Drawer,
   tags: ["autodocs"],
