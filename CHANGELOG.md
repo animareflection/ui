@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.14.0
+
+### Minor Changes
+
+- [#179](https://github.com/animareflection/ui/pull/179) [`69af1ea`](https://github.com/animareflection/ui/commit/69af1ea753fb81dc31c0413c4852b1af2d9f8ae2) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add contentProps to `Tooltip` component
+
 ## 0.13.2
 
 ### Patch Changes
