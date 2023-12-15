@@ -21,6 +21,10 @@ const TooltipDemo = () => {
           </Text>
         }
         tooltipContent="Tooltip Title"
+        bgColor="accent.default"
+        contentProps={{
+          color: "white",
+        }}
       />
     </Wrapper>
   );
