@@ -64,6 +64,7 @@ const Menu = ({
         <>
           {trigger && (
             <PrimitiveMenuTrigger
+              asChild
               className={cx(
                 button({ variant: triggerVariant }),
                 classNames.trigger,
@@ -72,11 +73,13 @@ const Menu = ({
               {trigger}
             </PrimitiveMenuTrigger>
           )}
+
           {triggerItem && (
             <PrimitiveMenuTriggerItem className={classNames.triggerItem}>
               {triggerItem}
             </PrimitiveMenuTriggerItem>
           )}
+
           <PrimitiveMenuPositioner className={classNames.positioner}>
             <PrimitiveMenuContent className={classNames.content}>
               {groups?.map(({ id, label, separator, items }) => (
