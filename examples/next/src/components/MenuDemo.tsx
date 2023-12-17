@@ -1,4 +1,4 @@
-import { HStack, Menu, Text } from "@animareflection/ui";
+import { Button, HStack, Menu, Text } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
@@ -64,7 +64,7 @@ const GROUPS: MenuItemGroupRecord[] = [
 
 const MenuDemo = () => (
   <Wrapper title="Menu">
-    <Menu triggerVariant="primary" trigger="Open Menu" groups={GROUPS} />
+    <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS} />
   </Wrapper>
 );
 
