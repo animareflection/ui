@@ -24,7 +24,8 @@ const GROUP_ONE_ITEMS: MenuItemRecord[] = [
     id: "item-1",
     child: (
       <HStack justify="space-between">
-        Item 1
+        <Text>Item 1</Text>
+
         <Text color="fg.subtle" textStyle="xs">
           Ctrl+P
         </Text>
@@ -39,12 +40,11 @@ const GROUP_TWO_ITEMS: MenuItemRecord[] = [
   { id: "item-4", child: <Text>Item 4</Text> },
   {
     id: "item-5",
-    subMenu: true,
     child: (
       <Menu
         key="item-5"
-        positioning={{ placement: "right-start", gutter: -2 }}
-        triggerItem="Item 5"
+        positioning={{ placement: "right-start" }}
+        triggerItem={<Text>Item 5</Text>}
         groups={[SUBMENU_GROUP]}
       />
     ),
@@ -80,29 +80,34 @@ const WITH_CONTEXT_GROUPS: MenuItemGroupRecord[] = [
 ];
 
 export const Default: Story = {
-  render: () => (
-    <Menu triggerVariant="primary" trigger="Open Menu" groups={GROUPS} />
-  ),
+  render: () => <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS} />,
 };
 
 export const Small: Story = {
   render: () => (
-    <Menu
-      triggerVariant="primary"
-      trigger="Open Menu"
-      groups={GROUPS}
-      size="sm"
-    />
+    <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS} size="sm" />
   ),
 };
 
 export const Large: Story = {
   render: () => (
+    <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS} size="lg" />
+  ),
+};
+
+/**
+ * Set the menu content container width to the same width as the trigger.
+ */
+export const MatchingWidth: Story = {
+  render: () => (
     <Menu
-      triggerVariant="primary"
-      trigger="Open Menu"
+      positioning={{ sameWidth: true }}
+      trigger={
+        <Button justifyContent="center" width="400px">
+          Open Menu
+        </Button>
+      }
       groups={GROUPS}
-      size="lg"
     />
   ),
 };
@@ -111,8 +116,7 @@ export const WithContext: Story = {
   render: () => (
     <Menu
       closeOnSelect={false}
-      triggerVariant="primary"
-      trigger="Open Menu"
+      trigger={<Button>Open Menu</Button>}
       groups={WITH_CONTEXT_GROUPS}
     >
       {({ close: onClose }) => (
@@ -136,11 +140,6 @@ const meta: Meta = {
   title: "Components/Core/Menu",
   component: Menu,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
-  // TODO: remove when portal issue / ref bug is fixed
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Menu>;
 
 export default meta;

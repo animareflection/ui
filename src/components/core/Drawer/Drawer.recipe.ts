@@ -133,5 +133,4 @@ export const drawerRecipe = defineSlotRecipe({
       },
     },
   },
-  jsx: ["Drawer", "DrawerTemplate"],
 });

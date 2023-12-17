@@ -9,21 +9,16 @@ import {
   PrimitiveMenuItemGroupLabel,
   PrimitiveMenuTriggerItem,
 } from "components/primitives";
-import { cx } from "generated/panda/css";
-import { button, menu } from "generated/panda/recipes";
+import { menu } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveMenuProps } from "components/primitives";
-import type {
-  ButtonVariantProps,
-  MenuVariantProps,
-} from "generated/panda/recipes";
+import type { MenuVariantProps } from "generated/panda/recipes";
 import type { ReactElement, ReactNode } from "react";
 
 export interface MenuItemRecord {
   id: string;
   child: ReactElement;
-  subMenu?: boolean;
 }
 
 export interface MenuItemGroupRecord {
@@ -36,7 +31,6 @@ export interface MenuItemGroupRecord {
 export interface Props extends PrimitiveMenuProps, MenuVariantProps {
   trigger?: ReactNode;
   triggerItem?: ReactNode;
-  triggerVariant?: ButtonVariantProps["variant"];
   groups?: MenuItemGroupRecord[];
 }
 
@@ -47,7 +41,6 @@ const Menu = ({
   children,
   trigger,
   triggerItem,
-  triggerVariant,
   groups,
   size,
   ...rest
@@ -63,20 +56,17 @@ const Menu = ({
       {(ctx) => (
         <>
           {trigger && (
-            <PrimitiveMenuTrigger
-              className={cx(
-                button({ variant: triggerVariant }),
-                classNames.trigger,
-              )}
-            >
+            <PrimitiveMenuTrigger asChild className={classNames.trigger}>
               {trigger}
             </PrimitiveMenuTrigger>
           )}
+
           {triggerItem && (
             <PrimitiveMenuTriggerItem className={classNames.triggerItem}>
               {triggerItem}
             </PrimitiveMenuTriggerItem>
           )}
+
           <PrimitiveMenuPositioner className={classNames.positioner}>
             <PrimitiveMenuContent className={classNames.content}>
               {groups?.map(({ id, label, separator, items }) => (
@@ -93,27 +83,24 @@ const Menu = ({
                       {label}
                     </PrimitiveMenuItemGroupLabel>
                   )}
-                  {items.map(({ id, child, subMenu }) => {
-                    if (subMenu) {
-                      // !NB: don't forget to pass appropriate `key` prop to `Menu` component
-                      return child;
-                    }
-                    return (
-                      <PrimitiveMenuItem
-                        key={id}
-                        id={id}
-                        className={classNames.item}
-                        asChild
-                      >
-                        {child}
-                      </PrimitiveMenuItem>
-                    );
-                  })}
+
+                  {items.map(({ id, child }) => (
+                    <PrimitiveMenuItem
+                      key={id}
+                      id={id}
+                      className={classNames.item}
+                      asChild
+                    >
+                      {child}
+                    </PrimitiveMenuItem>
+                  ))}
+
                   {separator && (
                     <PrimitiveMenuSeparator className={classNames.separator} />
                   )}
                 </PrimitiveMenuItemGroup>
               ))}
+
               {/* forward nested context/state if utilized, otherwise directly render children */}
               {typeof children === "function" ? children(ctx) : children}
             </PrimitiveMenuContent>
