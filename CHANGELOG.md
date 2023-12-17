@@ -1,5 +1,15 @@
 # @animareflection/ui
 
+## 0.14.1
+
+### Patch Changes
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - **Breaking:** Removed `triggerVariant` prop from `Menu`
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - **Breaking:** Removed `subMenu` prop from `Menu`
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - Add `asChild` prop to `Menu` trigger
+
 ## 0.14.0
 
 ### Minor Changes
