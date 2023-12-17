@@ -19,7 +19,6 @@ import type { ReactElement, ReactNode } from "react";
 export interface MenuItemRecord {
   id: string;
   child: ReactElement;
-  subMenu?: boolean;
 }
 
 export interface MenuItemGroupRecord {
@@ -42,7 +41,6 @@ const Menu = ({
   children,
   trigger,
   triggerItem,
-
   groups,
   size,
   ...rest
@@ -85,27 +83,24 @@ const Menu = ({
                       {label}
                     </PrimitiveMenuItemGroupLabel>
                   )}
-                  {items.map(({ id, child, subMenu }) => {
-                    if (subMenu) {
-                      // !NB: don't forget to pass appropriate `key` prop to `Menu` component
-                      return child;
-                    }
-                    return (
-                      <PrimitiveMenuItem
-                        key={id}
-                        id={id}
-                        className={classNames.item}
-                        asChild
-                      >
-                        {child}
-                      </PrimitiveMenuItem>
-                    );
-                  })}
+
+                  {items.map(({ id, child }) => (
+                    <PrimitiveMenuItem
+                      key={id}
+                      id={id}
+                      className={classNames.item}
+                      asChild
+                    >
+                      {child}
+                    </PrimitiveMenuItem>
+                  ))}
+
                   {separator && (
                     <PrimitiveMenuSeparator className={classNames.separator} />
                   )}
                 </PrimitiveMenuItemGroup>
               ))}
+
               {/* forward nested context/state if utilized, otherwise directly render children */}
               {typeof children === "function" ? children(ctx) : children}
             </PrimitiveMenuContent>
