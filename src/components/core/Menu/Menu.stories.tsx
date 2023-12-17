@@ -43,7 +43,7 @@ const GROUP_TWO_ITEMS: MenuItemRecord[] = [
     child: (
       <Menu
         key="item-5"
-        positioning={{ placement: "right-start", gutter: -2 }}
+        positioning={{ placement: "right-start" }}
         triggerItem={<Text>Item 5</Text>}
         groups={[SUBMENU_GROUP]}
       />

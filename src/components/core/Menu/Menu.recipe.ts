@@ -3,11 +3,9 @@ import { defineSlotRecipe } from "@pandacss/dev";
 
 const itemStyle = {
   alignItems: "center",
-  borderRadius: "xs",
   cursor: "pointer",
   color: "fg.default",
   display: "flex",
-  mx: 1,
   fontWeight: "medium",
   textStyle: "sm",
   transitionDuration: "fast",
