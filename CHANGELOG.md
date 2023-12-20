@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.14.2
+
+### Patch Changes
+
+- [#184](https://github.com/animareflection/ui/pull/184) [`e640206`](https://github.com/animareflection/ui/commit/e6402061789d61e8eaa3828cb2eedc888ec2d76c) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix all `closeTrigger` recipe styles
+
 ## 0.14.1
 
 ### Patch Changes
