@@ -27,7 +27,7 @@ const Toast = ({ title, description, onClose, variant, ...rest }: Props) => {
           onClick={onClose}
           aria-label="Close Toast"
         >
-          <Icon h={4} w={4}>
+          <Icon size="sm">
             <FiX />
           </Icon>
         </panda.button>

@@ -6,6 +6,7 @@ export const toastRecipe = defineSlotRecipe({
   slots: ["closeTrigger", "title", "description"],
   base: {
     closeTrigger: {
+      display: "flex",
       position: "absolute",
       cursor: "pointer",
       color: "fg.muted",

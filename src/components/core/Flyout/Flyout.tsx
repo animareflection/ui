@@ -84,7 +84,7 @@ const Flyout = ({
               onClick={onClose}
               className={classNames.closeTrigger}
             >
-              <Icon className={classNames.closeTriggerIcon}>
+              <Icon color="fg.default">
                 <CloseIcon />
               </Icon>
             </PrimitiveFlyoutCloseTrigger>
