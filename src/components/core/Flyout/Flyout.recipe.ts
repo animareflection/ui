@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const flyoutRecipe = defineSlotRecipe({
   className: "flyout",
   description: "The styles for the Flyout component",
-  slots: [...popoverAnatomy.keys(), "closeTriggerIcon"],
+  slots: [...popoverAnatomy.keys()],
   base: {
     positioner: {
       position: "relative",
@@ -24,16 +24,18 @@ export const flyoutRecipe = defineSlotRecipe({
       },
     },
     closeTrigger: {
+      display: "flex",
       p: 2,
       position: "absolute",
       top: 2,
       right: 2,
       borderRadius: "md",
       cursor: "pointer",
-      backgroundColor: { base: "inherit", _hover: "bg.emphasized" },
-    },
-    closeTriggerIcon: {
-      color: "fg.default!",
+      bgColor: {
+        base: "inherit",
+        _hover: "bg.subtle",
+      },
+      _focus: { outline: "none" },
     },
     title: {
       p: 4,
