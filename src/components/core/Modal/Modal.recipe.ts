@@ -87,8 +87,8 @@ export const modalRecipe = defineSlotRecipe({
       cursor: "pointer",
       borderRadius: "md",
       pos: "absolute",
-      top: 2,
-      right: 2,
+      top: 3,
+      right: 3,
       p: 2,
       bgColor: {
         base: "inherit",

@@ -25,10 +25,10 @@ export const flyoutRecipe = defineSlotRecipe({
     },
     closeTrigger: {
       display: "flex",
-      p: 2,
       position: "absolute",
-      top: 2,
-      right: 2,
+      top: 3,
+      right: 3,
+      p: 2,
       borderRadius: "md",
       cursor: "pointer",
       bgColor: {
