@@ -83,12 +83,13 @@ export const modalRecipe = defineSlotRecipe({
       },
     },
     closeTrigger: {
+      display: "flex",
       cursor: "pointer",
       borderRadius: "md",
       pos: "absolute",
       top: 2,
       right: 2,
-      p: 3,
+      p: 2,
       bgColor: {
         base: "inherit",
         _hover: "bg.subtle",
