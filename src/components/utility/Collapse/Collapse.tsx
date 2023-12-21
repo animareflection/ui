@@ -41,8 +41,20 @@ const Collapse = ({
     onClose,
   });
 
-  const isHorizontal = collapseDirection == "horizontal";
+  const isHorizontal = collapseDirection === "horizontal";
   const defaultIcon = isHorizontal ? <FiChevronRight /> : <FiChevronDown />;
+
+  const selectedVariants = isHorizontal
+    ? {
+        hidden: { opacity: 0, width: 0 },
+        visible: { opacity: 1, width: "auto" },
+      }
+    : {
+        hidden: { opacity: 0, height: 0 },
+        visible: { opacity: 1, height: "auto" },
+      };
+
+  const handleToggle = () => onToggle();
 
   return (
     <Flex direction={isHorizontal ? "row-reverse" : "column"} gap={2} {...rest}>
@@ -52,29 +64,26 @@ const Collapse = ({
         display="flex"
         alignItems="center"
         placeSelf={isHorizontal ? "flex-start" : undefined}
-        onClick={() => onToggle()}
+        onClick={handleToggle}
         {...triggerProps}
       >
         {label}
-        <Icon transform={isOpen && !icon ? "rotate(-180deg)" : undefined}>
+        <Icon
+          transform={isOpen && !icon ? "rotate(-180deg)" : undefined}
+          transition="transform 400ms"
+          transformOrigin="center"
+        >
           {icon ?? defaultIcon}
         </Icon>
       </Button>
-      <AnimatePresence initial={isOpen}>
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             style={{ overflow: "hidden" }}
-            initial={isOpen ? "open" : "collapsed"}
-            animate="open"
-            exit="collapsed"
-            variants={{
-              open: isHorizontal
-                ? { opacity: 1, width: "auto" }
-                : { opacity: 1, height: "auto" },
-              collapsed: isHorizontal
-                ? { opacity: 0, width: 0 }
-                : { opacity: 0, height: 0 },
-            }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={selectedVariants}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             {children}
