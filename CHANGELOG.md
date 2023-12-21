@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.16.0
+
+### Minor Changes
+
+- [#188](https://github.com/animareflection/ui/pull/188) [`4c8e2cc`](https://github.com/animareflection/ui/commit/4c8e2cca9cff24867fa6912437646612a2e4ccf9) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add control for `Collapse` initial animation on mount
+
 ## 0.15.0
 
 ### Minor Changes
