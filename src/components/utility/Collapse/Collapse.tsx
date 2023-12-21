@@ -12,6 +12,7 @@ import type { ReactElement, ReactNode } from "react";
 
 export interface Props extends FlexProps {
   label?: string;
+  animateOnMount?: boolean;
   icon?: ReactElement;
   isOpen?: boolean;
   onOpen?: () => void;
@@ -26,6 +27,7 @@ export interface Props extends FlexProps {
  */
 const Collapse = ({
   label,
+  animateOnMount = false,
   icon,
   isOpen: isOpenProp,
   onOpen,
@@ -76,7 +78,7 @@ const Collapse = ({
           {icon ?? defaultIcon}
         </Icon>
       </Button>
-      <AnimatePresence>
+      <AnimatePresence initial={animateOnMount}>
         {isOpen && (
           <motion.div
             style={{ overflow: "hidden" }}
