@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.15.0
+
+### Minor Changes
+
+- [#186](https://github.com/animareflection/ui/pull/186) [`f728c98`](https://github.com/animareflection/ui/commit/f728c98c699e1c67e996292cfb2b2eb003165fd7) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Collapse` component animations for both open and closed states
+
 ## 0.14.2
 
 ### Patch Changes
