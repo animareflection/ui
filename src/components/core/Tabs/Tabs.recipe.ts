@@ -62,6 +62,7 @@ export const tabsRecipe = defineSlotRecipe({
         },
       },
       _disabled: {
+        color: "fg.disabled",
         cursor: "not-allowed",
         _hover: {
           color: "fg.subtle",
