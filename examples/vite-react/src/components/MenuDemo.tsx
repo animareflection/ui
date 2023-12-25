@@ -36,7 +36,6 @@ const GROUP_TWO_ITEMS: MenuItemRecord[] = [
   { id: "item-4", child: <Text>Item 4</Text> },
   {
     id: "item-5",
-    subMenu: true,
     child: (
       <Menu
         key="item-5"
