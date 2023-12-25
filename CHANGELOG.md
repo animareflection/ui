@@ -1,5 +1,17 @@
 # @animareflection/ui
 
+## 0.17.0
+
+### Minor Changes
+
+- [#193](https://github.com/animareflection/ui/pull/193) [`ba0eac3`](https://github.com/animareflection/ui/commit/ba0eac3c0fc6f21f8418b0658e1651d5faf7dccc) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Flyout` component trigger styles to allow more control downstream
+
+### Patch Changes
+
+- [#190](https://github.com/animareflection/ui/pull/190) [`f27dbfc`](https://github.com/animareflection/ui/commit/f27dbfcd90f8c2784893e1a3455db2f7814855b2) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update disabled tab trigger styles
+
+- [#193](https://github.com/animareflection/ui/pull/193) [`ba0eac3`](https://github.com/animareflection/ui/commit/ba0eac3c0fc6f21f8418b0658e1651d5faf7dccc) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove unnecessary `Portal` for `Flyout` component
+
 ## 0.16.0
 
 ### Minor Changes
