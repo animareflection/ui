@@ -39,7 +39,11 @@ const Flyout = ({ trigger, title, children, ...rest }: Props) => {
   return (
     <PrimitiveFlyout open={isOpen} onOpenChange={onToggle} {...rest}>
       {trigger && (
-        <PrimitiveFlyoutTrigger asChild onClick={onToggle}>
+        <PrimitiveFlyoutTrigger
+          asChild
+          className={classNames.trigger}
+          onClick={onToggle}
+        >
           {trigger}
         </PrimitiveFlyoutTrigger>
       )}

@@ -59,5 +59,8 @@ export const flyoutRecipe = defineSlotRecipe({
       borderColor: "border.default",
       borderLeftWidth: "1px",
     },
+    trigger: {
+      w: "fit-content",
+    },
   },
 });
