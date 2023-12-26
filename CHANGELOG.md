@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.18.0
+
+### Minor Changes
+
+- [#194](https://github.com/animareflection/ui/pull/194) [`d4f6e9d`](https://github.com/animareflection/ui/commit/d4f6e9de04948acebc91868dccdf9cfd5f3e9562) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update available props for `Flyout` to include `contentProps` for ease of overrides downstream
+
 ## 0.17.0
 
 ### Minor Changes
