@@ -15,19 +15,23 @@ import {
 import { flyout } from "generated/panda/recipes";
 import { useDisclosure, useIsClient } from "lib/hooks";
 
-import type { PrimitiveFlyoutProps } from "components/primitives";
+import type {
+  PrimitiveFlyoutProps,
+  PrimitiveFlyoutContentProps,
+} from "components/primitives";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveFlyoutProps {
   trigger?: ReactNode;
   title?: ReactNode;
+  contentProps?: PrimitiveFlyoutContentProps;
   children: ReactNode;
 }
 
 /**
  * Core UI flyout.
  */
-const Flyout = ({ trigger, title, children, ...rest }: Props) => {
+const Flyout = ({ trigger, title, contentProps, children, ...rest }: Props) => {
   const { isOpen, onClose, onToggle } = useDisclosure();
 
   const classNames = flyout();
@@ -49,7 +53,10 @@ const Flyout = ({ trigger, title, children, ...rest }: Props) => {
       )}
 
       <PrimitiveFlyoutPositioner className={classNames.positioner}>
-        <PrimitiveFlyoutContent className={classNames.content}>
+        <PrimitiveFlyoutContent
+          className={classNames.content}
+          {...contentProps}
+        >
           <PrimitiveFlyoutArrow className={classNames.arrow}>
             <PrimitiveFlyoutArrowTip className={classNames.arrowTip} />
           </PrimitiveFlyoutArrow>
