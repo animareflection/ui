@@ -23,7 +23,7 @@ export const modalRecipe = defineSlotRecipe({
         animation: "fade-out",
       },
     },
-    container: {
+    positioner: {
       alignItems: "center",
       display: "flex",
       inset: 0,
@@ -83,12 +83,13 @@ export const modalRecipe = defineSlotRecipe({
       },
     },
     closeTrigger: {
+      display: "flex",
       cursor: "pointer",
       borderRadius: "md",
       pos: "absolute",
-      top: 2,
-      right: 2,
-      p: 3,
+      top: 3,
+      right: 3,
+      p: 2,
       bgColor: {
         base: "inherit",
         _hover: "bg.subtle",

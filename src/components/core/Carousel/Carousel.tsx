@@ -6,71 +6,67 @@ import {
   PrimitiveCarouselControl,
   PrimitiveCarouselIndicator,
   PrimitiveCarouselIndicatorGroup,
-  PrimitiveCarouselNextSlideTrigger,
-  PrimitiveCarouselPrevSlideTrigger,
-  PrimitiveCarouselSlide,
-  PrimitiveCarouselSlideGroup,
+  PrimitiveCarouselNextTrigger,
+  PrimitiveCarouselPrevTrigger,
+  PrimitiveCarouselItem,
+  PrimitiveCarouselItemGroup,
   PrimitiveCarouselViewport,
 } from "components/primitives";
 import { carousel } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveCarouselProps } from "components/primitives";
 import type { CarouselVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveCarouselProps, CarouselVariantProps {
-  slides: ReactNode[];
+  items: ReactNode[];
 }
 
-const Carousel = ({ slides, size, ...rest }: Props) => {
+const Carousel = ({ items, size, ...rest }: Props) => {
   const classNames = carousel({ size });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveCarousel className={classNames.root} {...rest}>
       <PrimitiveCarouselViewport className={classNames.viewport}>
-        <PrimitiveCarouselSlideGroup className={classNames.slideGroup}>
-          {slides.map((slides, index) => (
-            <PrimitiveCarouselSlide
-              className={classNames.slide}
+        <PrimitiveCarouselItemGroup className={classNames.itemGroup}>
+          {items.map((item, index) => (
+            <PrimitiveCarouselItem
+              className={classNames.item}
               key={index}
               index={index}
             >
-              {slides}
-            </PrimitiveCarouselSlide>
+              {item}
+            </PrimitiveCarouselItem>
           ))}
-        </PrimitiveCarouselSlideGroup>
+        </PrimitiveCarouselItemGroup>
         <PrimitiveCarouselControl className={classNames.control}>
-          <PrimitiveCarouselPrevSlideTrigger
-            className={classNames.prevSlideTrigger}
-          >
+          <PrimitiveCarouselPrevTrigger className={classNames.prevTrigger}>
             <Icon>
               <FiChevronLeft />
             </Icon>
-          </PrimitiveCarouselPrevSlideTrigger>
+          </PrimitiveCarouselPrevTrigger>
           <PrimitiveCarouselIndicatorGroup
             className={classNames.indicatorGroup}
           >
-            {slides.map((_, index) => (
+            {items.map((_, index) => (
               <PrimitiveCarouselIndicator
                 key={index}
                 index={index}
                 className={classNames.indicator}
-                aria-label={`Goto slide ${index + 1}`}
+                aria-label={`Goto item ${index + 1}`}
               />
             ))}
           </PrimitiveCarouselIndicatorGroup>
-          <PrimitiveCarouselNextSlideTrigger
-            className={classNames.nextSlideTrigger}
-          >
+          <PrimitiveCarouselNextTrigger className={classNames.nextTrigger}>
             <Icon>
               <FiChevronRight />
             </Icon>
-          </PrimitiveCarouselNextSlideTrigger>
+          </PrimitiveCarouselNextTrigger>
         </PrimitiveCarouselControl>
       </PrimitiveCarouselViewport>
     </PrimitiveCarousel>

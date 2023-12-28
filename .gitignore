@@ -3,6 +3,7 @@ build
 coverage
 generated
 storybook-static
+.vercel
 
-.yarn/*
-!.yarn/releases
+.env*
+!.env*.template

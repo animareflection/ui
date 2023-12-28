@@ -62,9 +62,10 @@ export const tabsRecipe = defineSlotRecipe({
         },
       },
       _disabled: {
+        color: "fg.disabled",
         cursor: "not-allowed",
         _hover: {
-          color: "fg.subtle",
+          color: "fg.disabled",
         },
       },
     },
@@ -86,15 +87,6 @@ export const tabsRecipe = defineSlotRecipe({
     content: {
       mt: 5,
       color: "fg.default",
-    },
-  },
-  variants: {
-    size: {
-      sm: {
-        trigger: {
-          textStyle: "sm",
-        },
-      },
     },
   },
 });

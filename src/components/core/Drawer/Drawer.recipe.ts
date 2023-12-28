@@ -22,13 +22,9 @@ export const drawerRecipe = defineSlotRecipe({
         animation: "fade-out",
       },
     },
-    container: {
-      alignItems: "center",
+    positioner: {
       display: "flex",
-      top: 0,
-      bottom: 0,
-      right: 0,
-      justifyContent: "center",
+      inset: 0,
       position: "fixed",
       zIndex: "modal",
     },
@@ -36,7 +32,6 @@ export const drawerRecipe = defineSlotRecipe({
       background: "bg.default",
       boxShadow: "lg",
       height: "full",
-      width: { base: "full", sm: "sm" },
       overflowY: "auto",
       position: "relative",
       px: {
@@ -44,12 +39,6 @@ export const drawerRecipe = defineSlotRecipe({
         md: 6,
       },
       py: 6,
-      _open: {
-        animation: { base: "drawer-in-bottom", sm: "drawer-in-right" },
-      },
-      _closed: {
-        animation: { base: "drawer-out-bottom", sm: "drawer-out-right" },
-      },
     },
     title: {
       fontWeight: "bold",
@@ -61,52 +50,85 @@ export const drawerRecipe = defineSlotRecipe({
       textStyle: "sm",
     },
     trigger: {
-      color: "accent.fg",
-      bgColor: "accent.default",
-      w: "fit-content",
-      h: "fit-content",
       cursor: "pointer",
-      fontWeight: "bold",
-      p: 3,
-      borderRadius: "md",
       _focus: { outline: "none" },
-      _hover: {
-        bgColor: "accent.emphasized",
-      },
       _disabled: {
-        bgColor: "bg.disabled",
         cursor: "not-allowed",
-        _hover: {
-          bgColor: "bg.disabled",
-        },
       },
     },
     closeTrigger: {
+      display: "flex",
       cursor: "pointer",
       borderRadius: "md",
       pos: "absolute",
-      top: 2,
-      right: 2,
-      p: 3,
+      top: 3,
+      right: 3,
+      p: 2,
       bgColor: {
         base: "inherit",
         _hover: "bg.subtle",
       },
+      _focus: { outline: "none" },
     },
+  },
+  defaultVariants: {
+    placement: "right",
   },
   variants: {
     placement: {
-      left: {
-        container: {
-          left: 0,
-          right: "auto",
+      right: {
+        positioner: {
+          justifyContent: "flex-end",
         },
         content: {
+          width: { base: "full", sm: "sm" },
           _open: {
-            animation: { base: "drawer-in-bottom", sm: "drawer-in-left" },
+            animation: "drawer-in-right",
           },
           _closed: {
-            animation: { base: "drawer-out-bottom", sm: "drawer-out-left" },
+            animation: "drawer-out-right",
+          },
+        },
+      },
+      left: {
+        positioner: {
+          justifyContent: "flex-start",
+        },
+        content: {
+          width: { base: "full", sm: "sm" },
+          _open: {
+            animation: "drawer-in-left",
+          },
+          _closed: {
+            animation: "drawer-out-left",
+          },
+        },
+      },
+      bottom: {
+        positioner: {
+          alignItems: "flex-end",
+        },
+        content: {
+          width: "full",
+          _open: {
+            animation: "drawer-in-bottom",
+          },
+          _closed: {
+            animation: "drawer-out-bottom",
+          },
+        },
+      },
+      top: {
+        positioner: {
+          alignItems: "flex-start",
+        },
+        content: {
+          width: "full",
+          _open: {
+            animation: "drawer-in-top",
+          },
+          _closed: {
+            animation: "drawer-out-top",
           },
         },
       },

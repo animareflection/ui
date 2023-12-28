@@ -4,18 +4,14 @@ export const buttonRecipe = defineRecipe({
   className: "button",
   description: "The styles for the Button component",
   base: {
-    color: "accent.fg",
-    bgColor: "accent.default",
-    w: "fit-content",
-    h: "fit-content",
     cursor: "pointer",
     fontWeight: "bold",
-    p: 3,
     borderRadius: "md",
+    display: "inline-flex",
+    alignItems: "center",
+    color: "fg.default",
+    h: "fit-content",
     _focus: { outline: "none" },
-    _hover: {
-      bgColor: "accent.emphasized",
-    },
     _disabled: {
       bgColor: "bg.disabled",
       cursor: "not-allowed",
@@ -24,8 +20,26 @@ export const buttonRecipe = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
   variants: {
     variant: {
+      primary: {
+        color: "accent.fg",
+        bgColor: "accent.default",
+        _hover: {
+          bgColor: "accent.emphasized",
+        },
+        _disabled: {
+          bgColor: "bg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            bgColor: "bg.disabled",
+          },
+        },
+      },
       secondary: {
         borderWidth: "1px",
         borderColor: "border.emphasized",
@@ -85,6 +99,10 @@ export const buttonRecipe = defineRecipe({
       sm: {
         fontSize: "sm",
         p: 2.5,
+      },
+      md: {
+        fontSize: "md",
+        p: 3,
       },
       lg: {
         fontSize: "lg",

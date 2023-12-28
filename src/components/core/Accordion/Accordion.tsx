@@ -8,11 +8,11 @@ import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveAccordion,
   PrimitiveAccordionItem,
-  PrimitiveAccordionTrigger,
-  PrimitiveAccordionContent,
+  PrimitiveAccordionItemTrigger,
+  PrimitiveAccordionItemContent,
 } from "components/primitives";
 import { accordion } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveAccordionProps } from "components/primitives";
 import type { ReactElement, ReactNode } from "react";
@@ -36,12 +36,14 @@ export interface Props extends PrimitiveAccordionProps {
 const Accordion = ({ items, plusMinus, ...rest }: Props) => {
   const classNames = accordion();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveAccordion
+      lazyMount
+      unmountOnExit
       collapsible
       multiple
       className={classNames.root}
@@ -51,8 +53,8 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
         <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
-              <PrimitiveAccordionTrigger
-                className={classNames.trigger}
+              <PrimitiveAccordionItemTrigger
+                className={classNames.itemTrigger}
                 borderBottomRadius={isOpen ? "unset" : "md"}
               >
                 {triggerLabel ?? value}
@@ -60,8 +62,9 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                   transform={
                     isOpen && !plusMinus ? "rotate(-180deg)" : undefined
                   }
+                  transition="transform 300ms"
                   transformOrigin="center"
-                  color="accent.fg"
+                  color={isOpen ? "accent.fg" : "fg.default"}
                 >
                   {plusMinus ? (
                     isOpen ? (
@@ -73,14 +76,11 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                     icon ?? <ChevronDownIcon />
                   )}
                 </Icon>
-              </PrimitiveAccordionTrigger>
-              <PrimitiveAccordionContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
-                {content}
-              </PrimitiveAccordionContent>
+              </PrimitiveAccordionItemTrigger>
+              <PrimitiveAccordionItemContent className={classNames.itemContent}>
+                {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
+                <div>{content}</div>
+              </PrimitiveAccordionItemContent>
             </>
           )}
         </PrimitiveAccordionItem>

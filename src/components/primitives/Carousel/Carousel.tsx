@@ -1,10 +1,10 @@
 import {
   Carousel,
   CarouselControl,
-  CarouselNextSlideTrigger,
-  CarouselPrevSlideTrigger,
-  CarouselSlide,
-  CarouselSlideGroup,
+  CarouselNextTrigger,
+  CarouselPrevTrigger,
+  CarouselItem,
+  CarouselItemGroup,
   CarouselViewport,
   CarouselIndicator,
   CarouselIndicatorGroup,
@@ -12,56 +12,56 @@ import {
 
 import { panda } from "generated/panda/jsx";
 
-import type {
-  CarouselProps,
-  CarouselControlProps,
-  CarouselNextSlideTriggerProps,
-  CarouselPrevSlideTriggerProps,
-  CarouselSlideProps,
-  CarouselSlideGroupProps,
-  CarouselViewportProps,
-  CarouselIndicatorProps,
-  CarouselIndicatorGroupProps,
-} from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/jsx";
+import type { ComponentProps } from "react";
 
 /**
  * Core UI carousel primitives.
  */
-export type PrimitiveCarouselProps = CarouselProps;
+export type PrimitiveCarouselProps = ComponentProps<typeof PrimitiveCarousel>;
 const PrimitiveCarousel: PandaComponent<typeof Carousel> = panda(Carousel);
 
-export type PrimitiveCarouselControlProps = CarouselControlProps;
+export type PrimitiveCarouselControlProps = ComponentProps<
+  typeof PrimitiveCarouselControl
+>;
 export const PrimitiveCarouselControl = panda(CarouselControl);
 
-export type PrimitiveCarouselNextSlideTriggerProps =
-  CarouselNextSlideTriggerProps;
-export const PrimitiveCarouselNextSlideTrigger = panda(
-  CarouselNextSlideTrigger,
-);
+export type PrimitiveCarouselNextTriggerProps = ComponentProps<
+  typeof PrimitiveCarouselNextTrigger
+>;
+export const PrimitiveCarouselNextTrigger = panda(CarouselNextTrigger);
 
-export type PrimitiveCarouselPrevSlideTriggerProps =
-  CarouselPrevSlideTriggerProps;
-export const PrimitiveCarouselPrevSlideTrigger = panda(
-  CarouselPrevSlideTrigger,
-);
+export type PrimitiveCarouselPrevTriggerProps = ComponentProps<
+  typeof PrimitiveCarouselPrevTrigger
+>;
+export const PrimitiveCarouselPrevTrigger = panda(CarouselPrevTrigger);
 
-export type PrimitiveCarouselSlideProps = CarouselSlideProps;
-export const PrimitiveCarouselSlide: PandaComponent<typeof CarouselSlide> =
-  panda(CarouselSlide);
+export type PrimitiveCarouselItemProps = ComponentProps<
+  typeof PrimitiveCarouselItem
+>;
+export const PrimitiveCarouselItem: PandaComponent<typeof CarouselItem> =
+  panda(CarouselItem);
 
-export type PrimitiveCarouselSlideGroupProps = CarouselSlideGroupProps;
-export const PrimitiveCarouselSlideGroup = panda(CarouselSlideGroup);
+export type PrimitiveCarouselItemGroupProps = ComponentProps<
+  typeof PrimitiveCarouselItemGroup
+>;
+export const PrimitiveCarouselItemGroup = panda(CarouselItemGroup);
 
-export type PrimitiveCarouselViewportProps = CarouselViewportProps;
+export type PrimitiveCarouselViewportProps = ComponentProps<
+  typeof PrimitiveCarouselViewport
+>;
 export const PrimitiveCarouselViewport = panda(CarouselViewport);
 
-export type PrimitiveCarouselIndicatorProps = CarouselIndicatorProps;
+export type PrimitiveCarouselIndicatorProps = ComponentProps<
+  typeof PrimitiveCarouselIndicator
+>;
 export const PrimitiveCarouselIndicator: PandaComponent<
   typeof CarouselIndicator
 > = panda(CarouselIndicator);
 
-export type PrimitiveCarouselIndicatorGroupProps = CarouselIndicatorGroupProps;
+export type PrimitiveCarouselIndicatorGroupProps = ComponentProps<
+  typeof PrimitiveCarouselIndicatorGroup
+>;
 export const PrimitiveCarouselIndicatorGroup = panda(CarouselIndicatorGroup);
 
 export default PrimitiveCarousel;

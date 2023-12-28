@@ -15,12 +15,8 @@ export const radioGroupRecipe = defineSlotRecipe({
         _horizontal: "row",
       },
       size: "md",
-      gap: {
-        _vertical: "4",
-        _horizontal: "6",
-      },
     },
-    radioControl: {
+    itemControl: {
       background: "transparent",
       borderColor: "border.emphasized",
       borderRadius: "full",
@@ -28,8 +24,6 @@ export const radioGroupRecipe = defineSlotRecipe({
       transitionDuration: "normal",
       transitionProperty: "background",
       transitionTimingFunction: "default",
-      width: "5",
-      height: "5",
       _hover: {
         background: "bg.muted",
       },
@@ -38,8 +32,6 @@ export const radioGroupRecipe = defineSlotRecipe({
         borderColor: "border.accent",
         outlineColor: "bg.default",
         outlineStyle: "solid",
-        outlineWidth: "4px",
-        outlineOffset: "-5px",
         _hover: {
           background: "accent.default",
         },
@@ -54,67 +46,90 @@ export const radioGroupRecipe = defineSlotRecipe({
         },
       },
     },
-    radio: {
+    item: {
       alignItems: "center",
       cursor: "pointer",
       display: "flex",
       _disabled: {
         cursor: "not-allowed",
       },
-      gap: "3",
     },
-    radioLabel: {
+    label: {
       color: "fg.emphasized",
       fontWeight: "medium",
-      textStyle: "md",
       _disabled: {
         color: "fg.subtle",
       },
     },
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
       sm: {
         root: {
           gap: {
-            _vertical: "3",
-            _horizontal: "4",
+            _vertical: 3,
+            _horizontal: 4,
           },
         },
-        radio: {
-          gap: "2",
+        item: {
+          gap: 2,
         },
-        radioControl: {
-          width: "4",
-          height: "4",
+        itemControl: {
+          width: 4,
+          height: 4,
           _checked: {
             outlineWidth: "3px",
             outlineOffset: "-4px",
           },
         },
-        radioLabel: {
+        label: {
           textStyle: "sm",
+        },
+      },
+      md: {
+        root: {
+          gap: {
+            _vertical: 4,
+            _horizontal: 6,
+          },
+        },
+        item: {
+          gap: 3,
+        },
+        itemControl: {
+          width: 5,
+          height: 5,
+          _checked: {
+            outlineWidth: "4px",
+            outlineOffset: "-5px",
+          },
+        },
+        label: {
+          textStyle: "md",
         },
       },
       lg: {
         root: {
           gap: {
-            _vertical: "5",
-            _horizontal: "8",
+            _vertical: 5,
+            _horizontal: 8,
           },
         },
-        radio: {
-          gap: "4",
+        item: {
+          gap: 4,
         },
-        radioControl: {
-          width: "6",
-          height: "6",
+        itemControl: {
+          width: 6,
+          height: 6,
           _checked: {
             outlineWidth: "5px",
             outlineOffset: "-6px",
           },
         },
-        radioLabel: {
+        label: {
           textStyle: "lg",
         },
       },

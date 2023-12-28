@@ -7,11 +7,8 @@ export const avatarRecipe = defineSlotRecipe({
   slots: avatarAnatomy.keys(),
   base: {
     root: {
-      height: 10,
-      width: 10,
       m: "-1px",
       borderColor: "border.default",
-      borderRadius: "full",
       borderWidth: "1px",
       flexShrink: 0,
     },
@@ -28,8 +25,17 @@ export const avatarRecipe = defineSlotRecipe({
       objectFit: "cover",
     },
   },
+  defaultVariants: {
+    variant: "round",
+    size: "md",
+  },
   variants: {
     variant: {
+      round: {
+        root: {
+          borderRadius: "full",
+        },
+      },
       square: {
         root: {
           borderRadius: "lg",
@@ -53,6 +59,15 @@ export const avatarRecipe = defineSlotRecipe({
         },
         fallback: {
           textStyle: "sm",
+        },
+      },
+      md: {
+        root: {
+          height: 10,
+          width: 10,
+        },
+        fallback: {
+          textStyle: "md",
         },
       },
       lg: {

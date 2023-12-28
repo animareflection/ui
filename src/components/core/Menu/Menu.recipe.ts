@@ -3,13 +3,9 @@ import { defineSlotRecipe } from "@pandacss/dev";
 
 const itemStyle = {
   alignItems: "center",
-  borderRadius: "xs",
   cursor: "pointer",
   color: "fg.default",
   display: "flex",
-  h: 10,
-  px: 2.5,
-  mx: 1,
   fontWeight: "medium",
   textStyle: "sm",
   transitionDuration: "fast",
@@ -38,7 +34,6 @@ export const menuRecipe = defineSlotRecipe({
       borderBottomWidth: "1px",
       borderBottomColor: "border.default",
       color: "fg.default",
-      p: 1.5,
     },
     content: {
       background: "bg.default",
@@ -54,15 +49,10 @@ export const menuRecipe = defineSlotRecipe({
       outline: "none",
       py: 1,
       gap: 1,
-      minW: 44,
+      zIndex: "menu",
     },
     separator: {
       color: "bg.subtle",
-    },
-    trigger: {
-      _focus: {
-        outline: "none",
-      },
     },
     itemGroup: {
       display: "flex",
@@ -72,6 +62,15 @@ export const menuRecipe = defineSlotRecipe({
     item: itemStyle,
     optionItem: itemStyle,
     triggerItem: itemStyle,
+    positioner: {
+      zIndex: "menu",
+    },
+    trigger: {
+      w: "fit-content",
+    },
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -93,6 +92,26 @@ export const menuRecipe = defineSlotRecipe({
         triggerItem: {
           h: 9,
           px: 2,
+        },
+      },
+      md: {
+        itemGroupLabel: {
+          p: 1.5,
+        },
+        content: {
+          minW: 44,
+        },
+        item: {
+          h: 10,
+          px: 2.5,
+        },
+        optionItem: {
+          h: 10,
+          px: 2.5,
+        },
+        triggerItem: {
+          h: 10,
+          px: 2.5,
         },
       },
       lg: {

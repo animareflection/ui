@@ -1,18 +1,13 @@
 import { panda } from "generated/panda/jsx";
 import { button } from "generated/panda/recipes";
 
-import type { ButtonVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export type Props = ComponentProps<typeof panda.button> & ButtonVariantProps;
+export type Props = ComponentProps<typeof Button>;
 
 /**
  * Core UI button.
  */
-const Button = ({ variant, size, children, ...rest }: Props) => (
-  <panda.button className={button({ variant, size })} {...rest}>
-    {children}
-  </panda.button>
-);
+const Button = panda("button", button);
 
 export default Button;

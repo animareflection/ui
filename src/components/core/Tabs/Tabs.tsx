@@ -6,37 +6,39 @@ import {
   PrimitiveTabTrigger,
 } from "components/primitives";
 import { tabs as tabsRecipe } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveTabsProps } from "components/primitives";
-import type { TabsVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface TabRecord {
   value: string;
   trigger: ReactNode;
   disabled?: boolean;
-  lazyMount?: boolean;
-  unmountOnExit?: boolean;
   content: ReactNode;
 }
 
-export interface Props extends PrimitiveTabsProps, TabsVariantProps {
+export interface Props extends PrimitiveTabsProps {
   tabs: TabRecord[];
 }
 
 /**
  * Core UI tabs.
  */
-const Tabs = ({ tabs, size, ...rest }: Props) => {
-  const classNames = tabsRecipe({ size });
+const Tabs = ({ tabs, ...rest }: Props) => {
+  const classNames = tabsRecipe();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveTabs className={classNames.root} {...rest}>
+    <PrimitiveTabs
+      lazyMount
+      unmountOnExit
+      className={classNames.root}
+      {...rest}
+    >
       <PrimitiveTabList className={classNames.list}>
         {tabs.map(({ value, trigger, disabled }) => (
           <PrimitiveTabTrigger
@@ -51,12 +53,10 @@ const Tabs = ({ tabs, size, ...rest }: Props) => {
         ))}
         <PrimitiveTabIndicator className={classNames.indicator} />
       </PrimitiveTabList>
-      {tabs.map(({ value, content, lazyMount, unmountOnExit }) => (
+      {tabs.map(({ value, content }) => (
         <PrimitiveTabContent
           key={value}
           value={value}
-          lazyMount={lazyMount}
-          unmountOnExit={unmountOnExit}
           className={classNames.content}
         >
           {content}

@@ -1,6 +1,3 @@
-// TODO: update `Card` component so that `use client` is not needed
-"use client";
-
 import { Card, CardBody, CardFooter, CardHeader } from "@animareflection/ui";
 
 import { Wrapper } from "components";

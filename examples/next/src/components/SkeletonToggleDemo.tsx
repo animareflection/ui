@@ -18,7 +18,12 @@ const SkeletonToggleDemo = () => {
           minim veniam.
         </Text>
       </Skeleton>
-      <Button variant="ghost" p={2} onClick={() => setIsLoaded(!isLoaded)}>
+      <Button
+        w="fit-content"
+        variant="ghost"
+        p={2}
+        onClick={() => setIsLoaded(!isLoaded)}
+      >
         Toggle Skeleton
       </Button>
     </Wrapper>

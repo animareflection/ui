@@ -61,8 +61,8 @@ const semanticTokens = defineSemanticTokens({
       },
       disabled: {
         value: {
-          base: "{colors.neutral.200}",
-          _dark: "{colors.neutral.800}",
+          base: "{colors.neutral.300}",
+          _dark: "{colors.neutral.600}",
         },
       },
     },

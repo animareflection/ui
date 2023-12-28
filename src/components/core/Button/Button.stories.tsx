@@ -16,29 +16,30 @@ const ButtonTest = () => {
   );
 };
 
-export const Primary: Story = {
-  render: () => <Button>Click me 🏝️</Button>,
-};
-
-export const Secondary: Story = {
-  render: () => <Button variant="secondary">Click me 🏝️</Button>,
-};
-
-export const Ghost: Story = {
-  render: () => <Button variant="ghost">Click me 🏝️</Button>,
-};
-
-export const Round: Story = {
-  render: () => <Button variant="round">Click me 🏝️</Button>,
+export const Variants: Story = {
+  render: () => (
+    <Flex gap={2}>
+      <Button>Click me 🏝️</Button>
+      <Button variant="secondary">Click me 🏝️</Button>
+      <Button variant="ghost">Click me 🏝️</Button>
+      <Button variant="round">Click me 🏝️</Button>
+    </Flex>
+  ),
 };
 
 export const Sizes: Story = {
   render: () => (
     <Flex gap={2}>
-      <Button size="xs">Click me 🏝️</Button>
-      <Button size="sm">Click me 🏝️</Button>
-      <Button>Click me 🏝️</Button>
-      <Button size="lg">Click me 🏝️</Button>
+      <Button variant="primary" size="xs">
+        Click me 🏝️
+      </Button>
+      <Button variant="primary" size="sm">
+        Click me 🏝️
+      </Button>
+      <Button variant="primary">Click me 🏝️</Button>
+      <Button variant="primary" size="lg">
+        Click me 🏝️
+      </Button>
     </Flex>
   ),
 };

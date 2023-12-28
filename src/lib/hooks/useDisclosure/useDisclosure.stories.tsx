@@ -1,4 +1,4 @@
-import { Button, Modal, Text } from "components/core";
+import { Modal, Text } from "components/core";
 import { useDisclosure } from "lib/hooks";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -7,16 +7,15 @@ import type { ComponentType } from "react";
 type Story = StoryObj<typeof useDisclosure>;
 
 const DisclosureExample = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Modal
-      trigger={<Button>Open Modal</Button>}
+      trigger="Open Modal"
       title="Modal Title"
       description="Modal Description"
       open={isOpen}
-      onClose={onClose}
-      onOpen={onOpen}
+      onOpenChange={onToggle}
     >
       <Text mt={2}>{isOpen ? "Open" : "Closed"}</Text>
     </Modal>

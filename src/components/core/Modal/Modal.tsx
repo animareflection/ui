@@ -6,49 +6,56 @@ import {
   PrimitiveModal,
   PrimitiveModalBackdrop,
   PrimitiveModalCloseTrigger,
-  PrimitiveModalContainer,
   PrimitiveModalContent,
   PrimitiveModalDescription,
+  PrimitiveModalPositioner,
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
 } from "components/primitives";
 import { modal } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 export interface Props extends PrimitiveModalProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: string;
   description?: string;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
  * Core UI modal.
  */
-const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
+const Modal = ({
+  children,
+  trigger,
+  title,
+  description,
+  containerRef,
+  ...rest
+}: Props) => {
   const classNames = modal();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveModal {...rest}>
+    <PrimitiveModal lazyMount unmountOnExit {...rest}>
       {(ctx) => (
         <>
-          <PrimitiveModalTrigger className={classNames.trigger}>
-            {trigger}
-          </PrimitiveModalTrigger>
-          <Portal>
+          {trigger && (
+            <PrimitiveModalTrigger className={classNames.trigger}>
+              {trigger}
+            </PrimitiveModalTrigger>
+          )}
+
+          <Portal container={containerRef}>
             <PrimitiveModalBackdrop className={classNames.backdrop} />
-            <PrimitiveModalContainer className={classNames.container}>
-              <PrimitiveModalContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
+            <PrimitiveModalPositioner className={classNames.positioner}>
+              <PrimitiveModalContent className={classNames.content}>
                 {title && (
                   <PrimitiveModalTitle className={classNames.title}>
                     {title}
@@ -69,7 +76,7 @@ const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
                   </Icon>
                 </PrimitiveModalCloseTrigger>
               </PrimitiveModalContent>
-            </PrimitiveModalContainer>
+            </PrimitiveModalPositioner>
           </Portal>
         </>
       )}

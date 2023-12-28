@@ -1,5 +1,149 @@
 # @animareflection/ui
 
+## 0.18.0
+
+### Minor Changes
+
+- [#194](https://github.com/animareflection/ui/pull/194) [`d4f6e9d`](https://github.com/animareflection/ui/commit/d4f6e9de04948acebc91868dccdf9cfd5f3e9562) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update available props for `Flyout` to include `contentProps` for ease of overrides downstream
+
+## 0.17.0
+
+### Minor Changes
+
+- [#193](https://github.com/animareflection/ui/pull/193) [`ba0eac3`](https://github.com/animareflection/ui/commit/ba0eac3c0fc6f21f8418b0658e1651d5faf7dccc) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Flyout` component trigger styles to allow more control downstream
+
+### Patch Changes
+
+- [#190](https://github.com/animareflection/ui/pull/190) [`f27dbfc`](https://github.com/animareflection/ui/commit/f27dbfcd90f8c2784893e1a3455db2f7814855b2) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update disabled tab trigger styles
+
+- [#193](https://github.com/animareflection/ui/pull/193) [`ba0eac3`](https://github.com/animareflection/ui/commit/ba0eac3c0fc6f21f8418b0658e1651d5faf7dccc) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove unnecessary `Portal` for `Flyout` component
+
+## 0.16.0
+
+### Minor Changes
+
+- [#188](https://github.com/animareflection/ui/pull/188) [`4c8e2cc`](https://github.com/animareflection/ui/commit/4c8e2cca9cff24867fa6912437646612a2e4ccf9) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add control for `Collapse` initial animation on mount
+
+## 0.15.0
+
+### Minor Changes
+
+- [#186](https://github.com/animareflection/ui/pull/186) [`f728c98`](https://github.com/animareflection/ui/commit/f728c98c699e1c67e996292cfb2b2eb003165fd7) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Collapse` component animations for both open and closed states
+
+## 0.14.2
+
+### Patch Changes
+
+- [#184](https://github.com/animareflection/ui/pull/184) [`e640206`](https://github.com/animareflection/ui/commit/e6402061789d61e8eaa3828cb2eedc888ec2d76c) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix all `closeTrigger` recipe styles
+
+## 0.14.1
+
+### Patch Changes
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - **Breaking:** Removed `triggerVariant` prop from `Menu`
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - **Breaking:** Removed `subMenu` prop from `Menu`
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - Add `asChild` prop to `Menu` trigger
+
+## 0.14.0
+
+### Minor Changes
+
+- [#179](https://github.com/animareflection/ui/pull/179) [`69af1ea`](https://github.com/animareflection/ui/commit/69af1ea753fb81dc31c0413c4852b1af2d9f8ae2) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add contentProps to `Tooltip` component
+
+## 0.13.2
+
+### Patch Changes
+
+- [#177](https://github.com/animareflection/ui/pull/177) [`a8a2871`](https://github.com/animareflection/ui/commit/a8a2871ce478dbf2af5148f4ba91ad7fdc088ae6) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Change `Input` component to use a forwardRef
+
+## 0.13.1
+
+### Patch Changes
+
+- [#161](https://github.com/animareflection/ui/pull/161) [`f750579`](https://github.com/animareflection/ui/commit/f75057983f63a85daa7c74fe521298e3b2582e7e) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Accordion` component
+
+- [#171](https://github.com/animareflection/ui/pull/171) [`072e6d0`](https://github.com/animareflection/ui/commit/072e6d0904cdbb6eef0740fbaca43d3fdb0a9738) Thanks [@coopbri](https://github.com/coopbri)! - Change recipes to use Ark v1 slots
+
+  - Change `Carousel` `slides` prop to `items`
+
+- [#158](https://github.com/animareflection/ui/pull/158) [`165d9c5`](https://github.com/animareflection/ui/commit/165d9c5fd5c938176c01a427f9493e82970a7fa8) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add additional variants for components that leverage `defaultVariants`
+
+## 0.13.0
+
+### Minor Changes
+
+- [#157](https://github.com/animareflection/ui/pull/157) [`69a8838`](https://github.com/animareflection/ui/commit/69a88384d71dbc49a9b4006135218b7b3b98b737) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Alert` component
+
+- [#149](https://github.com/animareflection/ui/pull/149) [`ced2d60`](https://github.com/animareflection/ui/commit/ced2d608909b988e0f6aaf0ddecad25cec15fa8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `CopyToClipboard` component
+
+### Patch Changes
+
+- [#154](https://github.com/animareflection/ui/pull/154) [`52f1260`](https://github.com/animareflection/ui/commit/52f126072a1ba3024c75e08867dedeb139ec4c69) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Collapse` component
+
+- [#156](https://github.com/animareflection/ui/pull/156) [`6255f0a`](https://github.com/animareflection/ui/commit/6255f0a45055a77d5a344737b0a508a48053107f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove need for `use client` for `Card` component in downstream NextJS apps
+
+- [#156](https://github.com/animareflection/ui/pull/156) [`6255f0a`](https://github.com/animareflection/ui/commit/6255f0a45055a77d5a344737b0a508a48053107f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Allow `Card` to accept arbitrary children
+
+- [#152](https://github.com/animareflection/ui/pull/152) [`2342ed0`](https://github.com/animareflection/ui/commit/2342ed0d4cc9144ed433fea8f8a5ed339b1f2aee) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Tooltip` component
+
+- [#153](https://github.com/animareflection/ui/pull/153) [`6ce0f5a`](https://github.com/animareflection/ui/commit/6ce0f5af58f0a6a17645e59659ed1ae6a7c13d16) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Flyout` component
+
+- [#155](https://github.com/animareflection/ui/pull/155) [`a829b89`](https://github.com/animareflection/ui/commit/a829b894ca68821935eafbb5140d1ce3eb268b0c) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Drawer` component
+
+## 0.12.0
+
+### Minor Changes
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update all primitive component types using pattern `ComponentProps<typeof PRIMITIVE>`
+
+- [#147](https://github.com/animareflection/ui/pull/147) [`a5c5bf6`](https://github.com/animareflection/ui/commit/a5c5bf68029638f05c079c5db2a2c586ab1834aa) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `targetRef` prop for all components that use `Portal`
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove unnecessary `triggerProps` from `Tooltip` props
+
+- [#148](https://github.com/animareflection/ui/pull/148) [`f72cea7`](https://github.com/animareflection/ui/commit/f72cea70024625dce2164338cd43adcf5725658a) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Collapse` to accept controlled state props
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Change `content` prop to `tooltipContent` to avoid prop collision
+
+## 0.11.1
+
+### Patch Changes
+
+- [#144](https://github.com/animareflection/ui/pull/144) [`572766a`](https://github.com/animareflection/ui/commit/572766a1ad51d806a42a0af74fd00d2981be6b2e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix `className` omission issue for basic recipe components when used as child for `asChild` components
+
+## 0.11.0
+
+### Minor Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Button` recipe variants and default styles
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Menu` component
+
+### Patch Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add style prop back to the resolved image in the NextJS enhanced `Image` component
+
+- [#140](https://github.com/animareflection/ui/pull/140) [`17cf025`](https://github.com/animareflection/ui/commit/17cf02556f6f956b04a0169d3b4cc5012e9bb480) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Tooltip` component
+
+- [#141](https://github.com/animareflection/ui/pull/141) [`d0768ea`](https://github.com/animareflection/ui/commit/d0768ead72f9aa75849d47054206e333ec4c8f69) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `NumberInput` component
+
+## 0.10.0
+
+### Minor Changes
+
+- [#129](https://github.com/animareflection/ui/pull/129) [`95be098`](https://github.com/animareflection/ui/commit/95be098e814215598daccb30838de0a6dcabc7cb) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Avatar` component
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Make `trigger` prop optional in applicable components and conditionally render the trigger
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add more `Drawer` placements and add `contentProps` prop for override capability
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Modify `Input` to allow for customizable `containerProps` and conditionally render `label`
+
+### Patch Changes
+
+- [#134](https://github.com/animareflection/ui/pull/134) [`bb6795a`](https://github.com/animareflection/ui/commit/bb6795a06fef7a60c41e08b1b3db0df992f132af) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix `Banner` component styles
+
 ## 0.9.0
 
 ### Minor Changes

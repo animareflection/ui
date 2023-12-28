@@ -6,23 +6,28 @@ import {
   PrimitiveDrawer,
   PrimitiveDrawerBackdrop,
   PrimitiveDrawerCloseTrigger,
-  PrimitiveDrawerContainer,
+  PrimitiveDrawerPositioner,
   PrimitiveDrawerContent,
   PrimitiveDrawerDescription,
   PrimitiveDrawerTitle,
   PrimitiveDrawerTrigger,
 } from "components/primitives";
 import { drawer } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
-import type { PrimitiveDrawerProps } from "components/primitives";
+import type {
+  PrimitiveDrawerProps,
+  PrimitiveDrawerContentProps,
+} from "components/primitives";
 import type { DrawerVariantProps } from "generated/panda/recipes";
-import type { ReactNode } from "react";
+import type { RefObject, ReactNode } from "react";
 
 export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: string;
   description?: string;
+  contentProps?: PrimitiveDrawerContentProps;
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -34,28 +39,32 @@ const Drawer = ({
   trigger,
   title,
   description,
+  contentProps,
+  containerRef,
   ...rest
 }: Props) => {
   const classNames = drawer({ placement });
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveDrawer {...rest}>
+    <PrimitiveDrawer lazyMount unmountOnExit {...rest}>
       {(ctx) => (
         <>
-          <PrimitiveDrawerTrigger className={classNames.trigger}>
-            {trigger}
-          </PrimitiveDrawerTrigger>
-          <Portal>
+          {trigger && (
+            <PrimitiveDrawerTrigger asChild className={classNames.trigger}>
+              {trigger}
+            </PrimitiveDrawerTrigger>
+          )}
+
+          <Portal container={containerRef}>
             <PrimitiveDrawerBackdrop className={classNames.backdrop} />
-            <PrimitiveDrawerContainer className={classNames.container}>
+            <PrimitiveDrawerPositioner className={classNames.positioner}>
               <PrimitiveDrawerContent
-                lazyMount
-                unmountOnExit
                 className={classNames.content}
+                {...contentProps}
               >
                 {title && (
                   <PrimitiveDrawerTitle className={classNames.title}>
@@ -81,7 +90,7 @@ const Drawer = ({
                   </Icon>
                 </PrimitiveDrawerCloseTrigger>
               </PrimitiveDrawerContent>
-            </PrimitiveDrawerContainer>
+            </PrimitiveDrawerPositioner>
           </Portal>
         </>
       )}

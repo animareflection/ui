@@ -17,9 +17,7 @@ export const drawerState = async <R extends Renderer = ReactRenderer>({
 
   await sleep(100);
 
-  const openButton = canvas.getByRole("button", {
-    name: /open drawer/i,
-  });
+  const openButton = canvas.getByText("Open Drawer");
 
   await step("It should open drawer on trigger click", async () => {
     await userEvent.click(openButton);
@@ -39,8 +37,10 @@ export const drawerState = async <R extends Renderer = ReactRenderer>({
 
     await userEvent.click(closeButton);
 
-    const drawerTitle = screen.getByText("Drawer Title");
+    await sleep(1000);
 
-    await expect(drawerTitle).not.toBeVisible();
+    const drawerTitle = screen.queryByText("Drawer Title");
+
+    await expect(drawerTitle).toBeNull();
   });
 };

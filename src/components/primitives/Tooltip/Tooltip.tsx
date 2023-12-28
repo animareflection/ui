@@ -9,36 +9,37 @@ import {
 
 import { panda } from "generated/panda/jsx";
 
-import type {
-  TooltipProps,
-  TooltipArrowProps,
-  TooltipArrowTipProps,
-  TooltipContentProps,
-  TooltipPositionerProps,
-  TooltipTriggerProps,
-} from "@ark-ui/react";
-import type { HTMLPandaProps } from "generated/panda/jsx";
+import type { ComponentProps } from "react";
 
 /**
  * Core UI tooltip primitives.
  */
-export type PrimitiveTooltipProps = TooltipProps;
+export type PrimitiveTooltipProps = ComponentProps<typeof PrimitiveTooltip>;
 const PrimitiveTooltip = panda(Tooltip);
 
-export type PrimitiveTooltipArrowProps = TooltipArrowProps;
+export type PrimitiveTooltipArrowProps = ComponentProps<
+  typeof PrimitiveTooltipArrow
+>;
 export const PrimitiveTooltipArrow = panda(TooltipArrow);
 
-export type PrimitiveTooltipArrowTipProps = TooltipArrowTipProps;
+export type PrimitiveTooltipArrowTipProps = ComponentProps<
+  typeof PrimitiveTooltipArrowTip
+>;
 export const PrimitiveTooltipArrowTip = panda(TooltipArrowTip);
 
-export type PrimitiveTooltipContentProps = TooltipContentProps;
+export type PrimitiveTooltipContentProps = ComponentProps<
+  typeof PrimitiveTooltipContent
+>;
 export const PrimitiveTooltipContent = panda(TooltipContent);
 
-export type PrimitiveTooltipPositionerProps = TooltipPositionerProps;
+export type PrimitiveTooltipPositionerProps = ComponentProps<
+  typeof PrimitiveTooltipPositioner
+>;
 export const PrimitiveTooltipPositioner = panda(TooltipPositioner);
 
-export type PrimitiveTooltipTriggerProps = TooltipTriggerProps &
-  HTMLPandaProps<"button">;
+export type PrimitiveTooltipTriggerProps = ComponentProps<
+  typeof PrimitiveTooltipTrigger
+>;
 export const PrimitiveTooltipTrigger = panda(TooltipTrigger);
 
 export default PrimitiveTooltip;

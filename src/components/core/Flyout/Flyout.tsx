@@ -1,5 +1,3 @@
-import { Portal } from "@ark-ui/react";
-import { useState } from "react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
@@ -15,77 +13,75 @@ import {
   PrimitiveFlyoutTrigger,
 } from "components/primitives";
 import { flyout } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useDisclosure, useIsClient } from "lib/hooks";
 
 import type {
   PrimitiveFlyoutProps,
-  PrimitiveFlyoutTriggerProps,
+  PrimitiveFlyoutContentProps,
 } from "components/primitives";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveFlyoutProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: ReactNode;
+  contentProps?: PrimitiveFlyoutContentProps;
   children: ReactNode;
-  triggerProps?: PrimitiveFlyoutTriggerProps;
 }
 
 /**
  * Core UI flyout.
  */
-const Flyout = ({ trigger, title, children, triggerProps, ...rest }: Props) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const Flyout = ({ trigger, title, contentProps, children, ...rest }: Props) => {
+  const { isOpen, onClose, onToggle } = useDisclosure();
 
   const classNames = flyout();
 
-  const isMounted = useIsMounted();
+  const isClient = useIsClient();
 
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveFlyout
-      open={isOpen}
-      onClose={() => setIsOpen(false)}
-      portalled
-      {...rest}
-    >
-      <PrimitiveFlyoutTrigger
-        className={classNames.trigger}
-        onClick={() => setIsOpen(!isOpen)}
-        {...triggerProps}
-      >
-        {trigger}
-      </PrimitiveFlyoutTrigger>
+    <PrimitiveFlyout open={isOpen} onOpenChange={onToggle} {...rest}>
+      {trigger && (
+        <PrimitiveFlyoutTrigger
+          asChild
+          className={classNames.trigger}
+          onClick={onToggle}
+        >
+          {trigger}
+        </PrimitiveFlyoutTrigger>
+      )}
 
-      <Portal>
-        <PrimitiveFlyoutPositioner className={classNames.positioner}>
-          <PrimitiveFlyoutContent className={classNames.content}>
-            <PrimitiveFlyoutArrow className={classNames.arrow}>
-              <PrimitiveFlyoutArrowTip className={classNames.arrowTip} />
-            </PrimitiveFlyoutArrow>
-            {title && (
-              <PrimitiveFlyoutTitle className={classNames.title}>
-                {title}
-              </PrimitiveFlyoutTitle>
-            )}
-            <PrimitiveFlyoutDescription
-              className={classNames.description}
-              asChild
-            >
-              {children}
-            </PrimitiveFlyoutDescription>
+      <PrimitiveFlyoutPositioner className={classNames.positioner}>
+        <PrimitiveFlyoutContent
+          className={classNames.content}
+          {...contentProps}
+        >
+          <PrimitiveFlyoutArrow className={classNames.arrow}>
+            <PrimitiveFlyoutArrowTip className={classNames.arrowTip} />
+          </PrimitiveFlyoutArrow>
+          {title && (
+            <PrimitiveFlyoutTitle className={classNames.title}>
+              {title}
+            </PrimitiveFlyoutTitle>
+          )}
+          <PrimitiveFlyoutDescription
+            className={classNames.description}
+            asChild
+          >
+            {children}
+          </PrimitiveFlyoutDescription>
 
-            <PrimitiveFlyoutCloseTrigger
-              onClick={() => setIsOpen(false)}
-              className={classNames.closeTrigger}
-            >
-              <Icon className={classNames.closeTriggerIcon}>
-                <CloseIcon />
-              </Icon>
-            </PrimitiveFlyoutCloseTrigger>
-          </PrimitiveFlyoutContent>
-        </PrimitiveFlyoutPositioner>
-      </Portal>
+          <PrimitiveFlyoutCloseTrigger
+            onClick={onClose}
+            className={classNames.closeTrigger}
+          >
+            <Icon color="fg.default">
+              <CloseIcon />
+            </Icon>
+          </PrimitiveFlyoutCloseTrigger>
+        </PrimitiveFlyoutContent>
+      </PrimitiveFlyoutPositioner>
     </PrimitiveFlyout>
   );
 };
