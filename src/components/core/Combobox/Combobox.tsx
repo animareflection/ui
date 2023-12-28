@@ -39,11 +39,19 @@ export interface Props extends PrimitiveComboboxProps, ComboboxVariantProps {
     singular: string;
     plural: string;
   };
-  inputProps?: InputProps;
   items: Item[];
+  triggerEnabled?: boolean;
+  inputProps?: InputProps;
 }
 
-const Combobox = ({ label, items = [], inputProps, size, ...rest }: Props) => {
+const Combobox = ({
+  label,
+  items = [],
+  triggerEnabled = true,
+  inputProps,
+  size,
+  ...rest
+}: Props) => {
   const classNames = combobox({ size });
 
   const [filteredItems, setFilteredItems] = useState(items);
@@ -79,11 +87,13 @@ const Combobox = ({ label, items = [], inputProps, size, ...rest }: Props) => {
             className={input({ size, variant: inputProps?.variant }).input}
             placeholder={`Select a ${label.singular.toLowerCase()}...`}
             inputRightElement={
-              <PrimitiveComboboxTrigger asChild>
-                <Button variant="ghost" aria-label="open" size="xs">
-                  <BiExpandVertical />
-                </Button>
-              </PrimitiveComboboxTrigger>
+              triggerEnabled && (
+                <PrimitiveComboboxTrigger asChild>
+                  <Button variant="ghost" aria-label="open" size="xs">
+                    <BiExpandVertical />
+                  </Button>
+                </PrimitiveComboboxTrigger>
+              )
             }
             {...inputProps}
           />
