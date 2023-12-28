@@ -63,8 +63,10 @@ const Combobox = ({
       >
     >[0],
   ) => {
-    const filtered = items.filter((item) =>
-      item.label.toLowerCase().includes(evt.value.toLowerCase()),
+    const filtered = items.filter(
+      (item) =>
+        item.label.toLowerCase().includes(evt.value.toLowerCase()) ||
+        item.value.toLowerCase().includes(evt.value.toLowerCase()),
     );
 
     setFilteredItems(filtered.length ? filtered : items);
