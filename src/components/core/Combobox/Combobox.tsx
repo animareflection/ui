@@ -87,7 +87,11 @@ const Combobox = ({
         <PrimitiveComboboxInput asChild>
           <Input
             className={input({ size, variant: inputProps?.variant }).input}
-            placeholder={`Select a ${label.singular.toLowerCase()}...`}
+            placeholder={
+              inputProps?.placeholder
+                ? inputProps.placeholder
+                : `Select a ${label.singular.toLowerCase()}...`
+            }
             inputRightElement={
               triggerEnabled ? (
                 <PrimitiveComboboxTrigger asChild>
