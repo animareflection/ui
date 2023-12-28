@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BiCheck, BiExpandVertical } from "react-icons/bi";
 
 import Button from "components/core/Button/Button";
@@ -16,15 +17,22 @@ import {
   PrimitiveComboboxPositioner,
   PrimitiveComboboxTrigger,
 } from "components/primitives";
+import { Flex } from "generated/panda/jsx";
+import { combobox, input } from "generated/panda/recipes";
 
-import type { CollectionItem } from "@ark-ui/react";
-import type { ComboboxProps as ArkComboboxProps } from "@ark-ui/react/combobox";
 import type { Props as InputProps } from "components/core/Input/Input";
+import type { PrimitiveComboboxProps } from "components/primitives";
 import type { ComboboxVariantProps } from "generated/panda/recipes";
+import type { ComponentProps, ReactNode } from "react";
 
-export interface Props<T extends CollectionItem>
-  extends ArkComboboxProps<T>,
-    ComboboxVariantProps {
+interface Item {
+  label: string;
+  value: string;
+  icon?: ReactNode;
+  disabled?: boolean;
+}
+
+export interface Props extends PrimitiveComboboxProps, ComboboxVariantProps {
   label: {
     // TODO calculate ID from singular (add dashes, lowercase, etc.)
     id: string;
@@ -32,49 +40,85 @@ export interface Props<T extends CollectionItem>
     plural: string;
   };
   inputProps?: InputProps;
+  items: Item[];
 }
 
-const Combobox = ({
-  label,
-  items = [],
-  inputProps,
-  ...rest
-}: Props<CollectionItem>) => {
+const Combobox = ({ label, items = [], inputProps, size, ...rest }: Props) => {
+  const classNames = combobox({ size });
+
+  const [filteredItems, setFilteredItems] = useState(items);
+
+  const handleChange = (
+    evt: Parameters<
+      NonNullable<
+        ComponentProps<typeof PrimitiveCombobox>["onInputValueChange"]
+      >
+    >[0],
+  ) => {
+    const filtered = items.filter((item) =>
+      item.label.toLowerCase().includes(evt.value.toLowerCase()),
+    );
+
+    setFilteredItems(filtered.length ? filtered : items);
+  };
+
   return (
-    <PrimitiveCombobox width="2xs" items={items} {...rest}>
-      <PrimitiveComboboxLabel>{label.plural}</PrimitiveComboboxLabel>
+    <PrimitiveCombobox
+      onInputValueChange={handleChange}
+      items={filteredItems}
+      className={classNames.root}
+      {...rest}
+    >
+      <PrimitiveComboboxLabel className={classNames.label}>
+        {label.plural}
+      </PrimitiveComboboxLabel>
 
-      <PrimitiveComboboxControl>
-        <PrimitiveComboboxInput
-          asChild
-          placeholder={`Select a ${label.singular.toLowerCase()}...`}
-        >
-          <Input {...inputProps} />
+      <PrimitiveComboboxControl className={classNames.control}>
+        <PrimitiveComboboxInput asChild>
+          <Input
+            className={input({ size, variant: inputProps?.variant }).input}
+            placeholder={`Select a ${label.singular.toLowerCase()}...`}
+            inputRightElement={
+              <PrimitiveComboboxTrigger asChild>
+                <Button variant="ghost" aria-label="open" size="xs">
+                  <BiExpandVertical />
+                </Button>
+              </PrimitiveComboboxTrigger>
+            }
+            {...inputProps}
+          />
         </PrimitiveComboboxInput>
-
-        <PrimitiveComboboxTrigger asChild>
-          <Button variant="ghost" aria-label="open" size="xs">
-            <BiExpandVertical />
-          </Button>
-        </PrimitiveComboboxTrigger>
       </PrimitiveComboboxControl>
 
       <PrimitiveComboboxPositioner>
-        <PrimitiveComboboxContent>
-          <PrimitiveComboboxItemGroup id={label.id}>
-            <PrimitiveComboboxItemGroupLabel htmlFor={label.id}>
+        <PrimitiveComboboxContent className={classNames.content}>
+          <PrimitiveComboboxItemGroup
+            className={classNames.itemGroup}
+            id={label.id}
+          >
+            <PrimitiveComboboxItemGroupLabel
+              className={classNames.itemGroupLabel}
+              htmlFor={label.id}
+            >
               {label.plural}
             </PrimitiveComboboxItemGroupLabel>
 
-            {items.map((item) => (
-              // @ts-ignore upstream (Ark `CollectionItem`) type bug
-              <PrimitiveComboboxItem key={item.value} item={item}>
-                <PrimitiveComboboxItemText>
-                  {/* @ts-ignore upstream (Ark `CollectionItem`) type bug */}
-                  {item.label}
-                </PrimitiveComboboxItemText>
+            {filteredItems.map((item) => (
+              <PrimitiveComboboxItem
+                key={item.value}
+                className={classNames.item}
+                item={item}
+              >
+                <Flex align="center" gap={2}>
+                  {item.icon}
+                  <PrimitiveComboboxItemText className={classNames.itemText}>
+                    {item.label}
+                  </PrimitiveComboboxItemText>
+                </Flex>
 
-                <PrimitiveComboboxItemIndicator>
+                <PrimitiveComboboxItemIndicator
+                  className={classNames.itemIndicator}
+                >
                   <BiCheck />
                 </PrimitiveComboboxItemIndicator>
               </PrimitiveComboboxItem>

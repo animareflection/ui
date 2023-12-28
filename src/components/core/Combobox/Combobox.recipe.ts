@@ -1,9 +1,12 @@
 import { comboboxAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
+/**
+ * Combobox recipe.
+ */
 export const comboboxRecipe = defineSlotRecipe({
   className: "combobox",
-  description: "The styles for the Checkbox component",
+  description: "The styles for the Combobox component",
   slots: comboboxAnatomy.keys(),
   base: {
     root: {
@@ -20,22 +23,26 @@ export const comboboxRecipe = defineSlotRecipe({
       fontWeight: "medium",
     },
     trigger: {
-      bottom: 0,
       color: "fg.muted",
       position: "absolute",
       right: 0,
+      bottom: 0,
       top: 0,
     },
     content: {
       background: "bg.default",
       borderRadius: "sm",
+      borderWidth: "1px",
+      borderColor: "border.default",
       boxShadow: "lg",
-      display: "flex",
-      flexDirection: "column",
-      zIndex: "dropdown",
       _hidden: {
         display: "none",
       },
+      display: "flex",
+      flexDirection: "column",
+      outline: "none",
+      py: 1,
+      gap: 1,
       _open: {
         animation: "fadeIn 0.25s ease-out",
       },
@@ -49,6 +56,7 @@ export const comboboxRecipe = defineSlotRecipe({
       },
     },
     item: {
+      color: "fg.default",
       alignItems: "center",
       borderRadius: "xs",
       cursor: "pointer",
@@ -58,25 +66,30 @@ export const comboboxRecipe = defineSlotRecipe({
       transitionProperty: "background, color",
       transitionTimingFunction: "default",
       _hover: {
-        background: "bg.muted",
+        bgColor: "bg.muted",
       },
       _highlighted: {
-        background: "bg.muted",
+        bgColor: "bg.muted",
       },
       _disabled: {
         color: "fg.disabled",
         cursor: "not-allowed",
         _hover: {
-          background: "transparent",
+          bgColor: "transparent",
         },
       },
     },
     itemGroupLabel: {
       fontWeight: "semibold",
       textStyle: "sm",
+      display: "flex",
+      justifyContent: "center",
+      borderBottomWidth: "1px",
+      borderBottomColor: "border.default",
+      color: "fg.default",
     },
     itemIndicator: {
-      color: "colorPalette.default",
+      color: "accent.default",
     },
   },
   defaultVariants: {
@@ -96,6 +109,7 @@ export const comboboxRecipe = defineSlotRecipe({
         itemGroupLabel: {
           px: 2,
           py: 1.5,
+          mb: 0.5,
         },
         label: { textStyle: "sm" },
         trigger: { right: 2.5 },
@@ -112,6 +126,7 @@ export const comboboxRecipe = defineSlotRecipe({
         itemGroupLabel: {
           px: 2,
           py: 1.5,
+          mb: 1,
         },
         label: { textStyle: "sm" },
         trigger: { right: 3 },
@@ -128,6 +143,7 @@ export const comboboxRecipe = defineSlotRecipe({
         itemGroupLabel: {
           px: 2,
           py: 1.5,
+          mb: 1.5,
         },
         label: { textStyle: "sm" },
         trigger: { right: 3.5 },
