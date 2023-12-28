@@ -16,6 +16,7 @@ export const Default: Story = {
     size: "md",
     label: {
       id: "fruit",
+      display: true,
       singular: "Fruit",
       plural: "Fruit",
     },

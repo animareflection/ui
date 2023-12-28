@@ -36,6 +36,7 @@ export interface Props extends PrimitiveComboboxProps, ComboboxVariantProps {
   label: {
     // TODO calculate ID from singular (add dashes, lowercase, etc.)
     id: string;
+    display?: boolean;
     singular: string;
     plural: string;
   };
@@ -79,9 +80,11 @@ const Combobox = ({
       className={classNames.root}
       {...rest}
     >
-      <PrimitiveComboboxLabel className={classNames.label}>
-        {label.plural}
-      </PrimitiveComboboxLabel>
+      {label.display && (
+        <PrimitiveComboboxLabel className={classNames.label}>
+          {label.plural}
+        </PrimitiveComboboxLabel>
+      )}
 
       <PrimitiveComboboxControl className={classNames.control}>
         <PrimitiveComboboxInput asChild>
