@@ -13,7 +13,7 @@ const fruitBasket = [
 
 export const Default: Story = {
   args: {
-    size: "sm",
+    size: "md",
     label: {
       id: "fruit",
       singular: "Fruit",
@@ -32,6 +32,13 @@ const meta = {
   title: "Components/Core/Combobox",
   component: Combobox,
   tags: ["autodocs"],
+  argTypes: {
+    size: {
+      options: ["sm", "md", "lg"],
+      control: { type: "radio" },
+      defaultValue: "md",
+    },
+  },
 } satisfies Meta<typeof Combobox>;
 
 export default meta;
