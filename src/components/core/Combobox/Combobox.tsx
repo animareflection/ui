@@ -98,7 +98,7 @@ const Combobox = ({
             inputRightElement={
               triggerEnabled ? (
                 <PrimitiveComboboxTrigger asChild>
-                  <Button variant="ghost" aria-label="open" size="xs">
+                  <Button variant="ghost" aria-label="open options" size="xs">
                     <BiExpandVertical />
                   </Button>
                 </PrimitiveComboboxTrigger>

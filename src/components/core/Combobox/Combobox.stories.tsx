@@ -1,3 +1,4 @@
+import { comboboxState } from "./Combobox.spec";
 import { Combobox } from "components/core";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -27,6 +28,16 @@ export const Default: Story = {
       disabled: idx === 2,
     })),
   },
+};
+
+export const ComboboxState: Story = {
+  args: {
+    ...Default.args,
+    openOnClick: true,
+  },
+  play: comboboxState,
+  name: "[TEST] Combobox State",
+  tags: ["test"],
 };
 
 const meta = {
