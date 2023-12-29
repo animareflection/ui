@@ -37,6 +37,9 @@ export * from "./Slider/Slider";
 export { default as PrimitiveTabs } from "./Tabs/Tabs";
 export * from "./Tabs/Tabs";
 
+export { default as PrimitiveTextarea } from "./Textarea/Textarea";
+export * from "./Textarea/Textarea";
+
 export { default as PrimitiveToggle } from "./Toggle/Toggle";
 export * from "./Toggle/Toggle";
 
