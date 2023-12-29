@@ -11,7 +11,6 @@ import {
   PrimitiveAccordionItemTrigger,
   PrimitiveAccordionItemContent,
 } from "components/primitives";
-import { accordion } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveAccordionProps } from "components/primitives";
@@ -34,27 +33,17 @@ export interface Props extends PrimitiveAccordionProps {
  * Core UI accordion.
  */
 const Accordion = ({ items, plusMinus, ...rest }: Props) => {
-  const classNames = accordion();
-
   const isClient = useIsClient();
 
   if (!isClient) return null;
 
   return (
-    <PrimitiveAccordion
-      lazyMount
-      unmountOnExit
-      collapsible
-      multiple
-      className={classNames.root}
-      {...rest}
-    >
+    <PrimitiveAccordion lazyMount unmountOnExit collapsible multiple {...rest}>
       {items.map(({ id, value, triggerLabel, content, icon }) => (
         <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
               <PrimitiveAccordionItemTrigger
-                className={classNames.itemTrigger}
                 borderBottomRadius={isOpen ? "unset" : "md"}
               >
                 {triggerLabel ?? value}
@@ -77,7 +66,7 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                   )}
                 </Icon>
               </PrimitiveAccordionItemTrigger>
-              <PrimitiveAccordionItemContent className={classNames.itemContent}>
+              <PrimitiveAccordionItemContent>
                 {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
                 <div>{content}</div>
               </PrimitiveAccordionItemContent>
