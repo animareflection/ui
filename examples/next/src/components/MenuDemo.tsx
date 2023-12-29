@@ -21,7 +21,8 @@ const GROUP_ONE_ITEMS: MenuItemRecord[] = [
     id: "item-1",
     child: (
       <HStack justify="space-between">
-        Item 1
+        <Text>Item 1</Text>
+
         <Text color="fg.subtle" textStyle="xs">
           Ctrl+P
         </Text>
@@ -39,8 +40,8 @@ const GROUP_TWO_ITEMS: MenuItemRecord[] = [
     child: (
       <Menu
         key="item-5"
-        positioning={{ placement: "right-start", gutter: -2 }}
-        triggerItem="Item 5"
+        positioning={{ placement: "right-start", gutter: 0 }}
+        triggerItem={<Text>Item 5</Text>}
         groups={[SUBMENU_GROUP]}
       />
     ),

@@ -50,7 +50,9 @@ const Menu = ({ children, trigger, triggerItem, groups, ...rest }: Props) => {
           )}
 
           {triggerItem && (
-            <PrimitiveMenuTriggerItem>{triggerItem}</PrimitiveMenuTriggerItem>
+            <PrimitiveMenuTriggerItem asChild>
+              {triggerItem}
+            </PrimitiveMenuTriggerItem>
           )}
 
           <PrimitiveMenuPositioner>
