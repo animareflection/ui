@@ -37,10 +37,10 @@ export const comboboxRecipe = defineSlotRecipe({
       py: 1,
       gap: 1,
       _open: {
-        animation: "fadeIn 0.25s ease-out",
+        animation: "fade-in",
       },
       _closed: {
-        animation: "fadeOut 0.2s ease-out",
+        animation: "fade-out",
       },
       _focusVisible: {
         outlineOffset: "2px",
