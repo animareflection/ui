@@ -10,7 +10,7 @@ const fruitBasket = [
 ];
 
 const CheckboxDemo = () => (
-  <Wrapper title="Checkbox">
+  <Wrapper title="Combobox">
     <Combobox
       label={{
         id: "fruit",
