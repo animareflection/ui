@@ -3,8 +3,12 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const inputRecipe = defineSlotRecipe({
   className: "input",
   description: "The styles for the Input component",
-  slots: ["label", "input", "addon", "leftElement", "rightElement"],
+  slots: ["root", "label", "input", "addon", "leftElement", "rightElement"],
   base: {
+    root: {
+      display: "flex",
+      flexDirection: "column",
+    },
     input: {
       appearance: "none",
       color: "fg.default",
@@ -98,6 +102,7 @@ export const inputRecipe = defineSlotRecipe({
     },
     size: {
       "2xs": {
+        root: { gap: 0.5 },
         input: { px: 1.5, h: 7, minW: 7, fontSize: "xs" },
         label: { fontSize: "xs" },
         addon: { fontSize: "xs", px: 1.5 },
@@ -105,6 +110,7 @@ export const inputRecipe = defineSlotRecipe({
         rightElement: { fontSize: "xs" },
       },
       xs: {
+        root: { gap: 0.5 },
         input: { px: 2, h: 8, minW: 8, fontSize: "xs" },
         label: { fontSize: "xs" },
         addon: { fontSize: "xs", px: 2 },
@@ -112,6 +118,7 @@ export const inputRecipe = defineSlotRecipe({
         rightElement: { fontSize: "xs" },
       },
       sm: {
+        root: { gap: 1 },
         input: { px: 2.5, h: 9, minW: 9, fontSize: "sm" },
         label: { fontSize: "sm" },
         addon: { fontSize: "sm", px: 2.5 },
@@ -119,6 +126,7 @@ export const inputRecipe = defineSlotRecipe({
         rightElement: { fontSize: "sm" },
       },
       md: {
+        root: { gap: 1.5 },
         input: { px: 3, h: 10, minW: 10, fontSize: "md" },
         label: { fontSize: "md" },
         addon: { fontSize: "md", px: 3 },
@@ -126,6 +134,7 @@ export const inputRecipe = defineSlotRecipe({
         rightElement: { fontSize: "md" },
       },
       lg: {
+        root: { gap: 1.5 },
         input: { px: 3.5, h: 11, minW: 11, fontSize: "md" },
         label: { fontSize: "md" },
         addon: { fontSize: "md", px: 3.5 },
@@ -133,6 +142,7 @@ export const inputRecipe = defineSlotRecipe({
         rightElement: { fontSize: "md" },
       },
       xl: {
+        root: { gap: 1.5 },
         input: { px: 4, h: 12, minW: 12, fontSize: "lg" },
         label: { fontSize: "lg" },
         addon: { fontSize: "lg", px: 4 },

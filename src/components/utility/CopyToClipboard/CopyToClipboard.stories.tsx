@@ -11,7 +11,11 @@ export const Default: Story = {
   render: () => (
     <Flex align="center" gap={2}>
       <CopyToClipboard>Text to Copy</CopyToClipboard>
-      <Input placeholder="Paste text here..." />
+      <Input
+        inputProps={{
+          placeholder: "Paste text here...",
+        }}
+      />
     </Flex>
   ),
 };
@@ -25,7 +29,11 @@ export const CopyText: Story = {
       >
         0xBd...2cf8
       </CopyToClipboard>
-      <Input placeholder="Paste text here..." />
+      <Input
+        inputProps={{
+          placeholder: "Paste text here...",
+        }}
+      />
     </Flex>
   ),
 };
@@ -38,7 +46,11 @@ export const CustomButton: Story = {
       >
         Text to Copy
       </CopyToClipboard>
-      <Input placeholder="Paste text here..." />
+      <Input
+        inputProps={{
+          placeholder: "Paste text here...",
+        }}
+      />
     </Flex>
   ),
 };
@@ -54,7 +66,11 @@ export const CustomTooltip: Story = {
       >
         Text to Copy
       </CopyToClipboard>
-      <Input placeholder="Paste text here..." />
+      <Input
+        inputProps={{
+          placeholder: "Paste text here...",
+        }}
+      />
     </Flex>
   ),
 };

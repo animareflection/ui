@@ -13,6 +13,9 @@ export * from "./Checkbox/Checkbox";
 export { default as PrimitiveDrawer } from "./Drawer/Drawer";
 export * from "./Drawer/Drawer";
 
+export { default as PrimitiveInput } from "./Input/Input";
+export * from "./Input/Input";
+
 export { default as PrimitiveMenu } from "./Menu/Menu";
 export * from "./Menu/Menu";
 

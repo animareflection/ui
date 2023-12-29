@@ -1,38 +1,30 @@
-import { ark } from "@ark-ui/react";
 import { forwardRef } from "react";
 
-import { Flex, panda, Stack } from "generated/panda/jsx";
-import { input } from "generated/panda/recipes";
-import { createStyleContext } from "lib/util";
+import {
+  PrimitiveInput,
+  PrimitiveInputAddon,
+  PrimitiveInputInput,
+  PrimitiveInputLabel,
+  PrimitiveInputLeftElement,
+  PrimitiveInputRightElement,
+} from "components/primitives";
+import { Flex } from "generated/panda/jsx";
 
-import type { StackProps } from "generated/panda/jsx";
+import type {
+  PrimitiveInputProps,
+  PrimitiveInputInputProps,
+} from "components/primitives";
 import type { InputVariantProps } from "generated/panda/recipes";
-import type { ComponentProps, ReactNode, Ref } from "react";
+import type { ReactNode, Ref } from "react";
 
-export interface Props
-  extends ComponentProps<typeof InputInput>,
-    InputVariantProps {
+export interface Props extends PrimitiveInputProps, InputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
   inputLeftElement?: ReactNode;
   inputRightElement?: ReactNode;
-  containerProps?: StackProps;
+  inputProps?: PrimitiveInputInputProps;
 }
-
-const { withProvider, withContext } = createStyleContext(input);
-
-// TODO extract primitives, add prop interfaces, and export both (this entire component will be refactored)
-
-const InputLabel = withContext(panda(ark.label), "label");
-
-const InputAddon = withContext(panda.div, "addon");
-
-const InputLeftElement = withContext(panda.div, "leftElement");
-
-const InputInput = withProvider(panda(ark.input, input), "input");
-
-const InputRightElement = withContext(panda.div, "rightElement");
 
 /**
  * Core UI input.
@@ -45,25 +37,29 @@ const Input = forwardRef(
       rightAddon,
       inputLeftElement,
       inputRightElement,
-      containerProps,
+      inputProps,
       ...rest
     }: Props,
     ref: Ref<HTMLInputElement> | undefined,
   ) => (
-    <Stack gap={1.5} {...containerProps}>
-      {label && <InputLabel>{label}</InputLabel>}
+    <PrimitiveInput {...rest}>
+      {label && <PrimitiveInputLabel>{label}</PrimitiveInputLabel>}
 
       <Flex>
         {leftAddon && (
-          <InputAddon borderLeftRadius="sm">{leftAddon}</InputAddon>
+          <PrimitiveInputAddon borderLeftRadius="sm">
+            {leftAddon}
+          </PrimitiveInputAddon>
         )}
 
         <Flex pos="relative" w="100%" align="center">
           {inputLeftElement && (
-            <InputLeftElement>{inputLeftElement}</InputLeftElement>
+            <PrimitiveInputLeftElement>
+              {inputLeftElement}
+            </PrimitiveInputLeftElement>
           )}
 
-          <InputInput
+          <PrimitiveInputInput
             ref={ref}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}
             borderBottomLeftRadius={leftAddon ? 0 : "sm"}
@@ -71,19 +67,23 @@ const Input = forwardRef(
             borderBottomRightRadius={rightAddon ? 0 : "sm"}
             pl={inputLeftElement ? 10 : 3}
             pr={inputRightElement ? 10 : 3}
-            {...rest}
+            {...inputProps}
           />
 
           {inputRightElement && (
-            <InputRightElement>{inputRightElement}</InputRightElement>
+            <PrimitiveInputRightElement>
+              {inputRightElement}
+            </PrimitiveInputRightElement>
           )}
         </Flex>
 
         {rightAddon && (
-          <InputAddon borderRightRadius="sm">{rightAddon}</InputAddon>
+          <PrimitiveInputAddon borderRightRadius="sm">
+            {rightAddon}
+          </PrimitiveInputAddon>
         )}
       </Flex>
-    </Stack>
+    </PrimitiveInput>
   ),
 );
 

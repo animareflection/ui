@@ -6,7 +6,11 @@ const CopyToClipboardDemo = () => (
   <Wrapper title="Copy to Clipboard">
     <Flex align="center" gap={2}>
       <CopyToClipboard>Text to Copy</CopyToClipboard>
-      <Input placeholder="Paste text here..." />
+      <Input
+        inputProps={{
+          placeholder: "Paste text here...",
+        }}
+      />
     </Flex>
   </Wrapper>
 );
