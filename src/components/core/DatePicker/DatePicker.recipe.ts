@@ -54,6 +54,7 @@ export const datePickerRecipe = defineSlotRecipe({
     viewControl: {
       display: "flex",
       gap: 2,
+      alignItems: "center",
       justifyContent: "space-between",
     },
     table: {

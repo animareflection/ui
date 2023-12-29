@@ -158,7 +158,9 @@ const DatePicker = ({
                               className={classNames.tableCellTrigger}
                               asChild
                             >
-                              <Button variant="ghost">{day.day}</Button>
+                              <Button variant="ghost" justifyContent="center">
+                                {day.day}
+                              </Button>
                             </PrimitiveDatePickerTableCellTrigger>
                           </PrimitiveDatePickerTableCell>
                         ))}
@@ -227,7 +229,9 @@ const DatePicker = ({
                                 className={classNames.tableCellTrigger}
                                 asChild
                               >
-                                <Button variant="ghost">{month.label}</Button>
+                                <Button variant="ghost" justifyContent="center">
+                                  {month.label}
+                                </Button>
                               </PrimitiveDatePickerTableCellTrigger>
                             </PrimitiveDatePickerTableCell>
                           ))}
@@ -294,7 +298,9 @@ const DatePicker = ({
                               className={classNames.tableCellTrigger}
                               asChild
                             >
-                              <Button variant="ghost">{year.label}</Button>
+                              <Button variant="ghost" justifyContent="center">
+                                {year.label}
+                              </Button>
                             </PrimitiveDatePickerTableCellTrigger>
                           </PrimitiveDatePickerTableCell>
                         ))}
