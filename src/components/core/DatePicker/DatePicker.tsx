@@ -82,10 +82,8 @@ const DatePicker = ({
         </PrimitiveDatePickerTrigger>
 
         {clearTrigger && (
-          <PrimitiveDatePickerClearTrigger
-            asChild
-            className={classNames.clearTrigger}
-          >
+          <PrimitiveDatePickerClearTrigger className={classNames.clearTrigger}>
+            {/* ! NB: make sure not to pass a button here, as `PrimitiveDatePickerClearTrigger` is a button so DOM nesting validation would fail. `asChild` cannot be used on the clear trigger wrapper because it breaks the state (e.g. keeps the trigger visible at all times) */}
             {clearTrigger}
           </PrimitiveDatePickerClearTrigger>
         )}

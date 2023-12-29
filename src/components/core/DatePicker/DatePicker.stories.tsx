@@ -1,10 +1,10 @@
-import { FiCalendar as CalendarIcon } from "react-icons/fi";
+import { FiCalendar as CalendarIcon, FiX } from "react-icons/fi";
 
 import { datePickerState, rangeDatePickerState } from "./DatePicker.spec";
-import { DatePicker, Input } from "components/core";
+import { DatePicker, Input, Text } from "components/core";
 import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
-import { input } from "generated/panda/recipes";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { DatePickerProps } from "components/core";
@@ -16,9 +16,19 @@ const DatePickerTemplate = (props: Partial<DatePickerProps>) => (
     label="Date Picker"
     startOfWeek={1}
     clearTrigger={
-      <Button size="xs" variant="ghost">
-        Clear
-      </Button>
+      <Flex
+        gap={1}
+        justify="center"
+        css={{
+          "& *": { color: "accent.default" },
+        }}
+      >
+        <Icon w={4}>
+          <FiX />
+        </Icon>
+
+        <Text fontSize="sm">Clear</Text>
+      </Flex>
     }
     trigger={
       <Button size="xs">
@@ -27,14 +37,7 @@ const DatePickerTemplate = (props: Partial<DatePickerProps>) => (
         </Icon>
       </Button>
     }
-    input={
-      <Input
-        // TODO remove
-        className={input().input}
-        h={10}
-        placeholder="mm/dd/yyyy"
-      />
-    }
+    input={<Input h={10} placeholder="mm/dd/yyyy" />}
     {...props}
   />
 );
