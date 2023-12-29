@@ -10,16 +10,14 @@ export interface Props extends FlexProps, SkeletonVariantProps {
 /**
  * Core Skeleton component.
  */
-const Skeleton = ({ isLoaded, children, ...rest }: Props) => {
-  return (
-    <Flex {...rest}>
-      <panda.div
-        data-testid="skeleton"
-        visibility={isLoaded ? "hidden" : "visible"}
-      />
-      {children}
-    </Flex>
-  );
-};
+const Skeleton = ({ isLoaded, children, ...rest }: Props) => (
+  <Flex {...rest}>
+    <panda.div
+      data-testid="skeleton"
+      visibility={isLoaded ? "hidden" : "visible"}
+    />
+    {children}
+  </Flex>
+);
 
 export default Skeleton;
