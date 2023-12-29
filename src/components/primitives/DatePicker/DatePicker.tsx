@@ -1,149 +1,128 @@
+/**
+ * @file Date picker primitives.
+ */
+import { DatePickerView } from "@ark-ui/react";
 import {
   DatePicker,
-  DatePickerControl,
-  DatePickerInput,
-  DatePickerTrigger,
   DatePickerClearTrigger,
   DatePickerContent,
-  DatePickerYearSelect,
+  DatePickerControl,
+  DatePickerInput,
+  DatePickerLabel,
   DatePickerMonthSelect,
-  DatePickerPrevTrigger,
-  DatePickerViewTrigger,
   DatePickerNextTrigger,
-  DatePickerGrid,
-  DatePickerRowHeader,
-  DatePickerColumnHeader,
-  DatePickerRowGroup,
-  DatePickerRow,
-  DatePickerDayCell,
-  DatePickerDayCellTrigger,
-  DatePickerMonthCell,
-  DatePickerMonthCellTrigger,
-  DatePickerYearCell,
-  DatePickerYearCellTrigger,
   DatePickerPositioner,
-} from "@ark-ui/react";
+  DatePickerPrevTrigger,
+  DatePickerRangeText,
+  DatePickerTable,
+  DatePickerTableBody,
+  DatePickerTableCell,
+  DatePickerTableCellTrigger,
+  DatePickerTableHead,
+  DatePickerTableHeader,
+  DatePickerTableRow,
+  DatePickerTrigger,
+  DatePickerViewControl,
+  DatePickerViewTrigger,
+  DatePickerYearSelect,
+} from "@ark-ui/react/date-picker";
 
 import { panda } from "generated/panda/jsx";
 
-import type {
-  DatePickerProps,
-  DatePickerControlProps,
-  DatePickerInputProps,
-  DatePickerTriggerProps,
-  DatePickerClearTriggerProps,
-  DatePickerContentProps,
-  DatePickerYearSelectProps,
-  DatePickerMonthSelectProps,
-  DatePickerPrevTriggerProps,
-  DatePickerViewTriggerProps,
-  DatePickerNextTriggerProps,
-  DatePickerGridProps,
-  DatePickerRowHeaderProps,
-  DatePickerColumnHeaderProps,
-  DatePickerRowGroupProps,
-  DatePickerRowProps,
-  DatePickerDayCellProps,
-  DatePickerDayCellTriggerProps,
-  DatePickerMonthCellProps,
-  DatePickerMonthCellTriggerProps,
-  DatePickerYearCellProps,
-  DatePickerYearCellTriggerProps,
-  DatePickerPositionerProps,
-} from "@ark-ui/react";
-import type { PandaComponent } from "generated/panda/types/jsx";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI date picker primitives.
- */
-export type PrimitiveDatePickerProps = DatePickerProps;
-const PrimitiveDatePicker: PandaComponent<typeof DatePicker> =
-  panda(DatePicker);
+export interface PrimitiveDatePickerProps
+  extends ComponentProps<typeof PrimitiveDatePicker> {}
+const PrimitiveDatePicker = panda(DatePicker);
 
-export type PrimitiveDatePickerControlProps = DatePickerControlProps;
-export const PrimitiveDatePickerControl = panda(DatePickerControl);
-
-export type PrimitiveDatePickerInputProps = DatePickerInputProps;
-export const PrimitiveDatePickerInput = panda(DatePickerInput);
-
-export type PrimitiveDatePickerTriggerProps = DatePickerTriggerProps;
-export const PrimitiveDatePickerTrigger = panda(DatePickerTrigger);
-
-export type PrimitiveDatePickerClearTriggerProps = DatePickerClearTriggerProps;
+export interface PrimitiveDatePickerClearTriggerProps
+  extends ComponentProps<typeof PrimitiveDatePickerClearTrigger> {}
 export const PrimitiveDatePickerClearTrigger = panda(DatePickerClearTrigger);
 
-export type PrimitiveDatePickerContentProps = DatePickerContentProps;
+export interface PrimitiveDatePickerContentProps
+  extends ComponentProps<typeof PrimitiveDatePickerContent> {}
 export const PrimitiveDatePickerContent = panda(DatePickerContent);
 
-export type PrimitiveDatePickerYearSelectProps = DatePickerYearSelectProps;
-export const PrimitiveDatePickerYearSelect = panda(DatePickerYearSelect);
+export interface PrimitiveDatePickerControlProps
+  extends ComponentProps<typeof PrimitiveDatePickerControl> {}
+export const PrimitiveDatePickerControl = panda(DatePickerControl);
 
-export type PrimitiveDatePickerMonthSelectProps = DatePickerMonthSelectProps;
+export interface PrimitiveDatePickerInputProps
+  extends ComponentProps<typeof PrimitiveDatePickerInput> {}
+export const PrimitiveDatePickerInput = panda(DatePickerInput);
+
+export interface PrimitiveDatePickerLabelProps
+  extends ComponentProps<typeof PrimitiveDatePickerLabel> {}
+export const PrimitiveDatePickerLabel = panda(DatePickerLabel);
+
+export interface PrimitiveDatePickerMonthSelectProps
+  extends ComponentProps<typeof PrimitiveDatePickerMonthSelect> {}
 export const PrimitiveDatePickerMonthSelect = panda(DatePickerMonthSelect);
 
-export type PrimitiveDatePickerPrevTriggerProps = DatePickerPrevTriggerProps;
-export const PrimitiveDatePickerPrevTrigger: PandaComponent<
-  typeof DatePickerPrevTrigger
-> = panda(DatePickerPrevTrigger);
-
-export type PrimitiveDatePickerViewTriggerProps = DatePickerViewTriggerProps;
-export const PrimitiveDatePickerViewTrigger: PandaComponent<
-  typeof DatePickerViewTrigger
-> = panda(DatePickerViewTrigger);
-
-export type PrimitiveDatePickerNextTriggerProps = DatePickerNextTriggerProps;
+export interface PrimitiveDatePickerNextTriggerProps
+  extends ComponentProps<typeof PrimitiveDatePickerNextTrigger> {}
 export const PrimitiveDatePickerNextTrigger = panda(DatePickerNextTrigger);
 
-export type PrimitiveDatePickerGridProps = DatePickerGridProps;
-export const PrimitiveDatePickerGrid: PandaComponent<typeof DatePickerGrid> =
-  panda(DatePickerGrid);
-
-export type PrimitiveDatePickerRowHeaderProps = DatePickerRowHeaderProps;
-export const PrimitiveDatePickerRowHeader = panda(DatePickerRowHeader);
-
-export type PrimitiveDatePickerColumnHeaderProps = DatePickerColumnHeaderProps;
-export const PrimitiveDatePickerColumnHeader = panda(DatePickerColumnHeader);
-
-export type PrimitiveDatePickerRowGroupProps = DatePickerRowGroupProps;
-export const PrimitiveDatePickerRowGroup = panda(DatePickerRowGroup);
-
-export type PrimitiveDatePickerRowProps = DatePickerRowProps;
-export const PrimitiveDatePickerRow = panda(DatePickerRow);
-
-export type PrimitiveDatePickerDayCellProps = DatePickerDayCellProps;
-export const PrimitiveDatePickerDayCell: PandaComponent<
-  typeof DatePickerDayCell
-> = panda(DatePickerDayCell);
-
-export type PrimitiveDatePickerDayCellTriggerProps =
-  DatePickerDayCellTriggerProps;
-export const PrimitiveDatePickerDayCellTrigger = panda(
-  DatePickerDayCellTrigger,
-);
-
-export type PrimitiveDatePickerMonthCellProps = DatePickerMonthCellProps;
-export const PrimitiveDatePickerMonthCell: PandaComponent<
-  typeof DatePickerMonthCell
-> = panda(DatePickerMonthCell);
-
-export type PrimitiveDatePickerMonthCellTriggerProps =
-  DatePickerMonthCellTriggerProps;
-export const PrimitiveDatePickerMonthCellTrigger = panda(
-  DatePickerMonthCellTrigger,
-);
-
-export type PrimitiveDatePickerYearCellProps = DatePickerYearCellProps;
-export const PrimitiveDatePickerYearCell: PandaComponent<
-  typeof DatePickerYearCell
-> = panda(DatePickerYearCell);
-
-export type PrimitiveDatePickerYearCellTriggerProps =
-  DatePickerYearCellTriggerProps;
-export const PrimitiveDatePickerYearCellTrigger = panda(
-  DatePickerYearCellTrigger,
-);
-
-export type PrimitiveDatePickerPositionerProps = DatePickerPositionerProps;
+export interface PrimitiveDatePickerPositionerProps
+  extends ComponentProps<typeof PrimitiveDatePickerPositioner> {}
 export const PrimitiveDatePickerPositioner = panda(DatePickerPositioner);
+
+export interface PrimitiveDatePickerPrevTriggerProps
+  extends ComponentProps<typeof PrimitiveDatePickerPrevTrigger> {}
+export const PrimitiveDatePickerPrevTrigger = panda(DatePickerPrevTrigger);
+
+export interface PrimitiveDatePickerRangeTextProps
+  extends ComponentProps<typeof PrimitiveDatePickerRangeText> {}
+export const PrimitiveDatePickerRangeText = panda(DatePickerRangeText);
+
+export interface PrimitiveDatePickerTableProps
+  extends ComponentProps<typeof PrimitiveDatePickerTable> {}
+export const PrimitiveDatePickerTable = panda(DatePickerTable);
+
+export interface PrimitiveDatePickerTableBodyProps
+  extends ComponentProps<typeof PrimitiveDatePickerTableBody> {}
+export const PrimitiveDatePickerTableBody = panda(DatePickerTableBody);
+
+export interface PrimitiveDatePickerTableCellProps
+  extends ComponentProps<typeof PrimitiveDatePickerTableCell> {}
+export const PrimitiveDatePickerTableCell = panda(DatePickerTableCell);
+
+export interface PrimitiveDatePickerTableCellTriggerProps
+  extends ComponentProps<typeof PrimitiveDatePickerTableCellTrigger> {}
+export const PrimitiveDatePickerTableCellTrigger = panda(
+  DatePickerTableCellTrigger,
+);
+
+export interface PrimitiveDatePickerTableHeadProps
+  extends ComponentProps<typeof PrimitiveDatePickerTableHead> {}
+export const PrimitiveDatePickerTableHead = panda(DatePickerTableHead);
+
+export interface PrimitiveDatePickerTableHeaderProps
+  extends ComponentProps<typeof PrimitiveDatePickerTableHeader> {}
+export const PrimitiveDatePickerTableHeader = panda(DatePickerTableHeader);
+
+export interface PrimitiveDatePickerTableRowProps
+  extends ComponentProps<typeof PrimitiveDatePickerTableRow> {}
+export const PrimitiveDatePickerTableRow = panda(DatePickerTableRow);
+
+export interface PrimitiveDatePickerTriggerProps
+  extends ComponentProps<typeof PrimitiveDatePickerTrigger> {}
+export const PrimitiveDatePickerTrigger = panda(DatePickerTrigger);
+
+export interface PrimitiveDatePickerViewProps
+  extends ComponentProps<typeof PrimitiveDatePickerView> {}
+export const PrimitiveDatePickerView = panda(DatePickerView);
+
+export interface PrimitiveDatePickerViewControlProps
+  extends ComponentProps<typeof PrimitiveDatePickerViewControl> {}
+export const PrimitiveDatePickerViewControl = panda(DatePickerViewControl);
+
+export interface PrimitiveDatePickerViewTriggerProps
+  extends ComponentProps<typeof PrimitiveDatePickerViewTrigger> {}
+export const PrimitiveDatePickerViewTrigger = panda(DatePickerViewTrigger);
+
+export interface PrimitiveDatePickerYearSelectProps
+  extends ComponentProps<typeof PrimitiveDatePickerYearSelect> {}
+export const PrimitiveDatePickerYearSelect = panda(DatePickerYearSelect);
 
 export default PrimitiveDatePicker;

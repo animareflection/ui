@@ -1,236 +1,312 @@
-import { Portal } from "@ark-ui/react";
 import {
-  FiChevronLeft as ChevronLeft,
-  FiChevronRight as ChevronRight,
-  FiX,
+  FiChevronLeft as ChevronLeftIcon,
+  FiChevronRight as ChevronRightIcon,
 } from "react-icons/fi";
 
-import Button from "components/core/Button/Button";
-import Icon from "components/core/Icon/Icon";
+import Button from "../Button/Button";
+import Icon from "../Icon/Icon";
 import {
   PrimitiveDatePicker,
+  PrimitiveDatePickerClearTrigger,
+  PrimitiveDatePickerContent,
   PrimitiveDatePickerControl,
   PrimitiveDatePickerInput,
-  PrimitiveDatePickerTrigger,
-  PrimitiveDatePickerContent,
-  PrimitiveDatePickerPrevTrigger,
-  PrimitiveDatePickerViewTrigger,
+  PrimitiveDatePickerLabel,
   PrimitiveDatePickerNextTrigger,
-  PrimitiveDatePickerGrid,
-  PrimitiveDatePickerRowHeader,
-  PrimitiveDatePickerColumnHeader,
-  PrimitiveDatePickerRowGroup,
-  PrimitiveDatePickerRow,
-  PrimitiveDatePickerDayCell,
-  PrimitiveDatePickerDayCellTrigger,
-  PrimitiveDatePickerMonthCell,
-  PrimitiveDatePickerMonthCellTrigger,
-  PrimitiveDatePickerYearCell,
-  PrimitiveDatePickerYearCellTrigger,
   PrimitiveDatePickerPositioner,
-  PrimitiveDatePickerClearTrigger,
+  PrimitiveDatePickerPrevTrigger,
+  PrimitiveDatePickerRangeText,
+  PrimitiveDatePickerTable,
+  PrimitiveDatePickerTableBody,
+  PrimitiveDatePickerTableCell,
+  PrimitiveDatePickerTableCellTrigger,
+  PrimitiveDatePickerTableHead,
+  PrimitiveDatePickerTableHeader,
+  PrimitiveDatePickerTableRow,
+  PrimitiveDatePickerTrigger,
+  PrimitiveDatePickerView,
+  PrimitiveDatePickerViewControl,
+  PrimitiveDatePickerViewTrigger,
 } from "components/primitives";
-import { HStack, Stack } from "generated/panda/jsx";
 import { datePicker } from "generated/panda/recipes";
 
-import type { PrimitiveDatePickerProps } from "components/primitives";
+import type { PrimitiveDatePickerProps } from "components/primitives/DatePicker/DatePicker";
 import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveDatePickerProps {
+  /** Input label. */
+  label?: ReactNode;
+  /** Render to open date picker. */
   trigger: ReactNode;
+  /** Date input field. */
   input: ReactNode;
-  clearTrigger?: boolean;
+  /** Render to clear date input. */
+  clearTrigger?: ReactNode;
 }
 
 /**
- * Core UI date picker.
+ * Date picker.
  */
-const DatePicker = ({ trigger, input, clearTrigger, ...rest }: Props) => {
+const DatePicker = ({
+  label,
+  trigger,
+  input,
+  clearTrigger,
+  ...rest
+}: Props) => {
   const classNames = datePicker();
 
   return (
     <PrimitiveDatePicker
+      className={classNames.root}
       positioning={{ sameWidth: true }}
-      selectionMode="range"
       {...rest}
     >
-      {(api) => (
-        <>
-          <PrimitiveDatePickerControl>
-            <HStack w="fit">
-              <PrimitiveDatePickerInput asChild>
-                {input}
-              </PrimitiveDatePickerInput>
-              <PrimitiveDatePickerTrigger aria-label="calendar icon">
-                {trigger}
-              </PrimitiveDatePickerTrigger>
-              {clearTrigger && (
-                <PrimitiveDatePickerClearTrigger color="white">
-                  <Button size="xs" variant="secondary">
-                    <Icon h={5} w={5}>
-                      <FiX />
-                    </Icon>
-                  </Button>
-                </PrimitiveDatePickerClearTrigger>
-              )}
-            </HStack>
-          </PrimitiveDatePickerControl>
-          <Portal>
-            <PrimitiveDatePickerPositioner>
-              <PrimitiveDatePickerContent className={classNames.content}>
-                <Stack gap="3">
-                  <Stack justify="space-between" direction="row">
-                    <PrimitiveDatePickerPrevTrigger aria-label="Prev">
-                      <Button size="xs" variant="ghost">
-                        <Icon h={5} w={5}>
-                          <ChevronLeft />
-                        </Icon>
-                      </Button>
-                    </PrimitiveDatePickerPrevTrigger>
-                    <PrimitiveDatePickerViewTrigger aria-label="view trigger">
-                      <Button variant="ghost" size="xs" textStyle="sm">
-                        {api.view === "day" && api.visibleRangeText.start}
-                        {api.view === "month" && api.visibleRange.start.year}
-                        {api.view === "year" &&
-                          `${api.getDecade().start} - ${api.getDecade().end}`}
-                      </Button>
-                    </PrimitiveDatePickerViewTrigger>
-                    <PrimitiveDatePickerNextTrigger aria-label="Next">
-                      <Button size="xs" variant="ghost">
-                        <Icon h={5} w={5}>
-                          <ChevronRight />
-                        </Icon>
-                      </Button>
-                    </PrimitiveDatePickerNextTrigger>
-                  </Stack>
-                  {api.view === "day" && (
-                    <PrimitiveDatePickerGrid className={classNames.grid}>
-                      <PrimitiveDatePickerRowHeader
-                        className={classNames.rowHeader}
-                      >
-                        {api.weekDays.map((day, i) => (
-                          <PrimitiveDatePickerColumnHeader
-                            key={i}
-                            aria-label={day.long}
-                            className={classNames.columnHeader}
-                          >
-                            {day.narrow}
-                          </PrimitiveDatePickerColumnHeader>
-                        ))}
-                      </PrimitiveDatePickerRowHeader>
-                      <PrimitiveDatePickerRowGroup
-                        className={classNames.rowGroup}
-                      >
-                        {api.weeks.map((week, id) => (
-                          <PrimitiveDatePickerRow
-                            className={classNames.row}
-                            key={id}
-                          >
-                            {week.map((day, id) => (
-                              <PrimitiveDatePickerDayCell key={id} value={day}>
-                                <PrimitiveDatePickerDayCellTrigger
-                                  className={classNames.cellTrigger}
-                                >
-                                  <Button
-                                    variant="ghost"
-                                    justifyContent="center"
-                                    display="flex"
-                                    alignItems="center"
-                                    w="9"
-                                    h="9"
-                                  >
-                                    {day.day}
-                                  </Button>
-                                </PrimitiveDatePickerDayCellTrigger>
-                              </PrimitiveDatePickerDayCell>
-                            ))}
-                          </PrimitiveDatePickerRow>
-                        ))}
-                      </PrimitiveDatePickerRowGroup>
-                    </PrimitiveDatePickerGrid>
-                  )}
-                  {api.view === "month" && (
-                    <PrimitiveDatePickerGrid className={classNames.grid}>
-                      <PrimitiveDatePickerRowGroup
-                        className={classNames.rowGroup}
-                      >
-                        {api
-                          .getMonthsGrid({ columns: 4, format: "short" })
-                          .map((months, row) => (
-                            <PrimitiveDatePickerRow
-                              gap={1}
-                              className={classNames.row}
-                              key={row}
-                            >
-                              {months.map((month, index) => (
-                                <PrimitiveDatePickerMonthCell
-                                  key={index}
-                                  value={month.value}
-                                >
-                                  <PrimitiveDatePickerMonthCellTrigger
-                                    className={classNames.cellTrigger}
-                                  >
-                                    <Button
-                                      variant="ghost"
-                                      justifyContent="center"
-                                      display="flex"
-                                      alignItems="center"
-                                      w="16"
-                                      h="10"
-                                    >
-                                      {month.label}
-                                    </Button>
-                                  </PrimitiveDatePickerMonthCellTrigger>
-                                </PrimitiveDatePickerMonthCell>
-                              ))}
-                            </PrimitiveDatePickerRow>
-                          ))}
-                      </PrimitiveDatePickerRowGroup>
-                    </PrimitiveDatePickerGrid>
-                  )}
-                  {api.view === "year" && (
-                    <PrimitiveDatePickerGrid className={classNames.grid}>
-                      <PrimitiveDatePickerRowGroup
-                        className={classNames.rowGroup}
-                      >
-                        {api.getYearsGrid({ columns: 4 }).map((years, row) => (
-                          <PrimitiveDatePickerRow
-                            key={row}
-                            gap={1}
-                            className={classNames.row}
-                          >
-                            {years.map((year, index) => (
-                              <PrimitiveDatePickerYearCell
-                                key={index}
-                                value={year.value}
-                              >
-                                <PrimitiveDatePickerYearCellTrigger
-                                  className={classNames.cellTrigger}
-                                >
-                                  <Button
-                                    variant="ghost"
-                                    justifyContent="center"
-                                    display="flex"
-                                    alignItems="center"
-                                    w="16"
-                                    h="10"
-                                  >
-                                    {year.label}
-                                  </Button>
-                                </PrimitiveDatePickerYearCellTrigger>
-                              </PrimitiveDatePickerYearCell>
-                            ))}
-                          </PrimitiveDatePickerRow>
-                        ))}
-                      </PrimitiveDatePickerRowGroup>
-                    </PrimitiveDatePickerGrid>
-                  )}
-                </Stack>
-              </PrimitiveDatePickerContent>
-            </PrimitiveDatePickerPositioner>
-          </Portal>
-        </>
+      {label && (
+        <PrimitiveDatePickerLabel className={classNames.label}>
+          {label}
+        </PrimitiveDatePickerLabel>
       )}
+
+      <PrimitiveDatePickerControl className={classNames.control}>
+        <PrimitiveDatePickerInput className={classNames.input} asChild>
+          {input}
+        </PrimitiveDatePickerInput>
+
+        <PrimitiveDatePickerTrigger className={classNames.trigger} asChild>
+          {trigger}
+        </PrimitiveDatePickerTrigger>
+
+        {clearTrigger && (
+          <PrimitiveDatePickerClearTrigger className={classNames.clearTrigger}>
+            {clearTrigger}
+          </PrimitiveDatePickerClearTrigger>
+        )}
+      </PrimitiveDatePickerControl>
+
+      <PrimitiveDatePickerPositioner className={classNames.positioner}>
+        <PrimitiveDatePickerContent className={classNames.content}>
+          <PrimitiveDatePickerView className={classNames.view} view="day">
+            {(api) => (
+              <>
+                <PrimitiveDatePickerViewControl
+                  className={classNames.viewControl}
+                >
+                  <PrimitiveDatePickerPrevTrigger
+                    className={classNames.prevTrigger}
+                    asChild
+                  >
+                    <Icon w={5} h={5}>
+                      <ChevronLeftIcon />
+                    </Icon>
+                  </PrimitiveDatePickerPrevTrigger>
+
+                  <PrimitiveDatePickerViewTrigger
+                    className={classNames.viewTrigger}
+                    asChild
+                  >
+                    <Button variant="ghost" size="sm">
+                      <PrimitiveDatePickerRangeText
+                        className={classNames.rangeText}
+                      />
+                    </Button>
+                  </PrimitiveDatePickerViewTrigger>
+
+                  <PrimitiveDatePickerNextTrigger
+                    className={classNames.nextTrigger}
+                    asChild
+                  >
+                    <Icon w={5} h={5}>
+                      <ChevronRightIcon />
+                    </Icon>
+                  </PrimitiveDatePickerNextTrigger>
+                </PrimitiveDatePickerViewControl>
+
+                <PrimitiveDatePickerTable className={classNames.table}>
+                  <PrimitiveDatePickerTableHead
+                    className={classNames.tableHead}
+                  >
+                    <PrimitiveDatePickerTableRow
+                      className={classNames.tableRow}
+                    >
+                      {api.weekDays.map((weekDay, id) => (
+                        <PrimitiveDatePickerTableHeader
+                          className={classNames.tableHeader}
+                          key={id}
+                        >
+                          {weekDay.narrow}
+                        </PrimitiveDatePickerTableHeader>
+                      ))}
+                    </PrimitiveDatePickerTableRow>
+                  </PrimitiveDatePickerTableHead>
+
+                  <PrimitiveDatePickerTableBody
+                    className={classNames.tableBody}
+                  >
+                    {api.weeks.map((week, id) => (
+                      <PrimitiveDatePickerTableRow
+                        className={classNames.tableRow}
+                        key={id}
+                      >
+                        {week.map((day, id) => (
+                          <PrimitiveDatePickerTableCell
+                            className={classNames.tableCell}
+                            key={id}
+                            value={day}
+                          >
+                            <PrimitiveDatePickerTableCellTrigger
+                              className={classNames.tableCellTrigger}
+                              asChild
+                            >
+                              <Button variant="ghost">{day.day}</Button>
+                            </PrimitiveDatePickerTableCellTrigger>
+                          </PrimitiveDatePickerTableCell>
+                        ))}
+                      </PrimitiveDatePickerTableRow>
+                    ))}
+                  </PrimitiveDatePickerTableBody>
+                </PrimitiveDatePickerTable>
+              </>
+            )}
+          </PrimitiveDatePickerView>
+
+          <PrimitiveDatePickerView className={classNames.view} view="month">
+            {(api) => (
+              <>
+                <PrimitiveDatePickerViewControl
+                  className={classNames.viewControl}
+                >
+                  <PrimitiveDatePickerPrevTrigger
+                    className={classNames.prevTrigger}
+                    asChild
+                  >
+                    <Icon w={5} h={5}>
+                      <ChevronLeftIcon />
+                    </Icon>
+                  </PrimitiveDatePickerPrevTrigger>
+
+                  <PrimitiveDatePickerViewTrigger
+                    className={classNames.viewTrigger}
+                    asChild
+                  >
+                    <Button variant="ghost" size="sm">
+                      <PrimitiveDatePickerRangeText
+                        className={classNames.rangeText}
+                      />
+                    </Button>
+                  </PrimitiveDatePickerViewTrigger>
+
+                  <PrimitiveDatePickerNextTrigger
+                    className={classNames.nextTrigger}
+                    asChild
+                  >
+                    <Icon w={5} h={5}>
+                      <ChevronRightIcon />
+                    </Icon>
+                  </PrimitiveDatePickerNextTrigger>
+                </PrimitiveDatePickerViewControl>
+
+                <PrimitiveDatePickerTable className={classNames.table}>
+                  <PrimitiveDatePickerTableBody
+                    className={classNames.tableBody}
+                  >
+                    {api
+                      .getMonthsGrid({ columns: 4, format: "short" })
+                      .map((months, id) => (
+                        <PrimitiveDatePickerTableRow
+                          className={classNames.tableRow}
+                          key={id}
+                        >
+                          {months.map((month, id) => (
+                            <PrimitiveDatePickerTableCell
+                              className={classNames.tableCell}
+                              key={id}
+                              value={month.value}
+                            >
+                              <PrimitiveDatePickerTableCellTrigger
+                                className={classNames.tableCellTrigger}
+                                asChild
+                              >
+                                <Button variant="ghost">{month.label}</Button>
+                              </PrimitiveDatePickerTableCellTrigger>
+                            </PrimitiveDatePickerTableCell>
+                          ))}
+                        </PrimitiveDatePickerTableRow>
+                      ))}
+                  </PrimitiveDatePickerTableBody>
+                </PrimitiveDatePickerTable>
+              </>
+            )}
+          </PrimitiveDatePickerView>
+
+          <PrimitiveDatePickerView className={classNames.view} view="year">
+            {(api) => (
+              <>
+                <PrimitiveDatePickerViewControl
+                  className={classNames.viewControl}
+                >
+                  <PrimitiveDatePickerPrevTrigger
+                    className={classNames.prevTrigger}
+                    asChild
+                  >
+                    <Icon w={5} h={5}>
+                      <ChevronLeftIcon />
+                    </Icon>
+                  </PrimitiveDatePickerPrevTrigger>
+
+                  <PrimitiveDatePickerViewTrigger
+                    className={classNames.viewTrigger}
+                    asChild
+                  >
+                    <Button variant="ghost" size="sm">
+                      <PrimitiveDatePickerRangeText
+                        className={classNames.rangeText}
+                      />
+                    </Button>
+                  </PrimitiveDatePickerViewTrigger>
+
+                  <PrimitiveDatePickerNextTrigger
+                    className={classNames.nextTrigger}
+                    asChild
+                  >
+                    <Icon w={5} h={5}>
+                      <ChevronRightIcon />
+                    </Icon>
+                  </PrimitiveDatePickerNextTrigger>
+                </PrimitiveDatePickerViewControl>
+
+                <PrimitiveDatePickerTable className={classNames.table}>
+                  <PrimitiveDatePickerTableBody
+                    className={classNames.tableBody}
+                  >
+                    {api.getYearsGrid({ columns: 4 }).map((years, id) => (
+                      <PrimitiveDatePickerTableRow
+                        className={classNames.tableRow}
+                        key={id}
+                      >
+                        {years.map((year, id) => (
+                          <PrimitiveDatePickerTableCell
+                            className={classNames.tableCell}
+                            key={id}
+                            value={year.value}
+                          >
+                            <PrimitiveDatePickerTableCellTrigger
+                              className={classNames.tableCellTrigger}
+                              asChild
+                            >
+                              <Button variant="ghost">{year.label}</Button>
+                            </PrimitiveDatePickerTableCellTrigger>
+                          </PrimitiveDatePickerTableCell>
+                        ))}
+                      </PrimitiveDatePickerTableRow>
+                    ))}
+                  </PrimitiveDatePickerTableBody>
+                </PrimitiveDatePickerTable>
+              </>
+            )}
+          </PrimitiveDatePickerView>
+        </PrimitiveDatePickerContent>
+      </PrimitiveDatePickerPositioner>
     </PrimitiveDatePicker>
   );
 };
