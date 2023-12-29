@@ -4,11 +4,7 @@ import { Wrapper } from "components";
 
 const InputDemo = () => (
   <Wrapper title="Input">
-    <Input
-      inputProps={{
-        placeholder: "Placeholder",
-      }}
-    />
+    <Input placeholder="Placeholder" />
   </Wrapper>
 );
 

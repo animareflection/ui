@@ -17,13 +17,15 @@ import type {
 import type { InputVariantProps } from "generated/panda/recipes";
 import type { ReactNode, Ref } from "react";
 
-export interface Props extends PrimitiveInputProps, InputVariantProps {
+export interface Props
+  extends Omit<PrimitiveInputInputProps, "size">,
+    InputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
   inputLeftElement?: ReactNode;
   inputRightElement?: ReactNode;
-  inputProps?: PrimitiveInputInputProps;
+  containerProps?: Omit<PrimitiveInputProps, "size" | "variant">;
 }
 
 /**
@@ -37,12 +39,14 @@ const Input = forwardRef(
       rightAddon,
       inputLeftElement,
       inputRightElement,
-      inputProps,
+      containerProps,
+      size,
+      variant,
       ...rest
     }: Props,
     ref: Ref<HTMLInputElement> | undefined,
   ) => (
-    <PrimitiveInput {...rest}>
+    <PrimitiveInput size={size} variant={variant} {...containerProps}>
       {label && <PrimitiveInputLabel>{label}</PrimitiveInputLabel>}
 
       <Flex>
@@ -67,7 +71,7 @@ const Input = forwardRef(
             borderBottomRightRadius={rightAddon ? 0 : "sm"}
             pl={inputLeftElement ? 10 : 3}
             pr={inputRightElement ? 10 : 3}
-            {...inputProps}
+            {...rest}
           />
 
           {inputRightElement && (

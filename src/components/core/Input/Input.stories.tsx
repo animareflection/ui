@@ -11,9 +11,7 @@ export const Default: Story = {
     <Input
       label="Input Label"
       inputLeftElement="🏝️"
-      inputProps={{
-        placeholder: "Placeholder",
-      }}
+      placeholder="Placeholder"
     />
   ),
 };
@@ -21,35 +19,14 @@ export const Default: Story = {
 export const Variants: Story = {
   render: () => (
     <Flex direction="column" gap={2}>
-      <Input
-        inputProps={{
-          placeholder: "Default",
-        }}
-      />
-      <Input
-        variant="filled"
-        inputProps={{
-          placeholder: "Filled",
-        }}
-      />
-      <Input
-        variant="flushed"
-        inputProps={{
-          placeholder: "Flushed",
-        }}
-      />
-      <Input
-        variant="unstyled"
-        inputProps={{
-          placeholder: "Unstyled",
-        }}
-      />
+      <Input placeholder="Default" />
+      <Input variant="filled" placeholder="Filled" />
+      <Input variant="flushed" placeholder="Flushed" />
+      <Input variant="unstyled" placeholder="Unstyled" />
       <Input
         label="Addons"
         leftAddon="https://"
-        inputProps={{
-          placeholder: "mywebsite",
-        }}
+        placeholder="mywebsite"
         rightAddon=".com"
       />
     </Flex>
@@ -64,53 +41,41 @@ export const Sizes: Story = {
         inputRightElement="BEACH"
         label="Input Label"
         size="2xs"
-        inputProps={{
-          placeholder: "Placeholder",
-        }}
+        placeholder="Placeholder"
       />
       <Input
         inputLeftElement="🏝️"
         inputRightElement="BEACH"
         label="Input Label"
         size="xs"
-        inputProps={{
-          placeholder: "Placeholder",
-        }}
+        placeholder="Placeholder"
       />
       <Input
         inputLeftElement="🏝️"
         inputRightElement="BEACH"
         label="Input Label"
         size="sm"
-        inputProps={{
-          placeholder: "Placeholder",
-        }}
+        placeholder="Placeholder"
       />
       <Input
         inputLeftElement="🏝️"
         inputRightElement="BEACH"
         label="Input Label"
-        inputProps={{
-          placeholder: "Placeholder",
-        }}
+        placeholder="Placeholder"
       />
       <Input
         inputLeftElement="🏝️"
         inputRightElement="BEACH"
         label="Input Label"
         size="lg"
-        inputProps={{
-          placeholder: "Placeholder",
-        }}
+        placeholder="Placeholder"
       />
       <Input
         inputLeftElement="🏝️"
         inputRightElement="BEACH"
         label="Input Label"
         size="xl"
-        inputProps={{
-          placeholder: "Placeholder",
-        }}
+        placeholder="Placeholder"
       />
     </Flex>
   ),
