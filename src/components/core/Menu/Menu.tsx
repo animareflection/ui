@@ -9,7 +9,6 @@ import {
   PrimitiveMenuItemGroupLabel,
   PrimitiveMenuTriggerItem,
 } from "components/primitives";
-import { menu } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveMenuProps } from "components/primitives";
@@ -37,16 +36,7 @@ export interface Props extends PrimitiveMenuProps, MenuVariantProps {
 /**
  * Core UI menu.
  */
-const Menu = ({
-  children,
-  trigger,
-  triggerItem,
-  groups,
-  size,
-  ...rest
-}: Props) => {
-  const classNames = menu({ size });
-
+const Menu = ({ children, trigger, triggerItem, groups, ...rest }: Props) => {
   const isClient = useIsClient();
 
   if (!isClient) return null;
@@ -56,48 +46,30 @@ const Menu = ({
       {(ctx) => (
         <>
           {trigger && (
-            <PrimitiveMenuTrigger asChild className={classNames.trigger}>
-              {trigger}
-            </PrimitiveMenuTrigger>
+            <PrimitiveMenuTrigger asChild>{trigger}</PrimitiveMenuTrigger>
           )}
 
           {triggerItem && (
-            <PrimitiveMenuTriggerItem className={classNames.triggerItem}>
-              {triggerItem}
-            </PrimitiveMenuTriggerItem>
+            <PrimitiveMenuTriggerItem>{triggerItem}</PrimitiveMenuTriggerItem>
           )}
 
-          <PrimitiveMenuPositioner className={classNames.positioner}>
-            <PrimitiveMenuContent className={classNames.content}>
+          <PrimitiveMenuPositioner>
+            <PrimitiveMenuContent>
               {groups?.map(({ id, label, separator, items }) => (
-                <PrimitiveMenuItemGroup
-                  key={id}
-                  id={id}
-                  className={classNames.itemGroup}
-                >
+                <PrimitiveMenuItemGroup key={id} id={id}>
                   {label && (
-                    <PrimitiveMenuItemGroupLabel
-                      htmlFor={id}
-                      className={classNames.itemGroupLabel}
-                    >
+                    <PrimitiveMenuItemGroupLabel htmlFor={id}>
                       {label}
                     </PrimitiveMenuItemGroupLabel>
                   )}
 
                   {items.map(({ id, child }) => (
-                    <PrimitiveMenuItem
-                      key={id}
-                      id={id}
-                      className={classNames.item}
-                      asChild
-                    >
+                    <PrimitiveMenuItem key={id} id={id} asChild>
                       {child}
                     </PrimitiveMenuItem>
                   ))}
 
-                  {separator && (
-                    <PrimitiveMenuSeparator className={classNames.separator} />
-                  )}
+                  {separator && <PrimitiveMenuSeparator />}
                 </PrimitiveMenuItemGroup>
               ))}
 

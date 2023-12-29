@@ -8,7 +8,6 @@ import {
   PrimitiveTooltipPositioner,
   PrimitiveTooltipTrigger,
 } from "components/primitives";
-import { tooltip } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type {
@@ -37,15 +36,12 @@ const Tooltip = ({
   openDelay = 0,
   closeDelay = 0,
   bgColor = "bg.default",
-  variant,
   arrow = true,
   containerRef,
   contentProps,
   ...rest
 }: Props) => {
   const isClient = useIsClient();
-
-  const classNames = tooltip({ variant });
 
   if (!isClient) return null;
 
@@ -54,30 +50,19 @@ const Tooltip = ({
       {({ isOpen }) => (
         <>
           {trigger && (
-            <PrimitiveTooltipTrigger asChild className={classNames.trigger}>
-              {trigger}
-            </PrimitiveTooltipTrigger>
+            <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
           )}
 
           <Portal container={containerRef}>
-            <PrimitiveTooltipPositioner className={classNames.positioner}>
+            <PrimitiveTooltipPositioner>
               {isOpen && (
                 <>
                   {arrow && (
-                    <PrimitiveTooltipArrow
-                      bgColor={bgColor}
-                      className={classNames.arrow}
-                    >
-                      <PrimitiveTooltipArrowTip
-                        className={classNames.arrowTip}
-                      />
+                    <PrimitiveTooltipArrow bgColor={bgColor}>
+                      <PrimitiveTooltipArrowTip />
                     </PrimitiveTooltipArrow>
                   )}
-                  <PrimitiveTooltipContent
-                    bgColor={bgColor}
-                    className={classNames.content}
-                    {...contentProps}
-                  >
+                  <PrimitiveTooltipContent bgColor={bgColor} {...contentProps}>
                     {tooltipContent}
                   </PrimitiveTooltipContent>
                 </>

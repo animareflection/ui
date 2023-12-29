@@ -5,7 +5,6 @@ import {
 
 import Icon from "components/core/Icon/Icon";
 import { HStack, panda } from "generated/panda/jsx";
-import { stat } from "generated/panda/recipes";
 
 import type { StatVariantProps } from "generated/panda/recipes";
 
@@ -19,27 +18,16 @@ export interface Props extends StatVariantProps {
 /**
  * Core Stat component.
  */
-const Stat = ({
-  value,
-  label,
-  helpText,
-  variant,
-  size,
-  indicator,
-  orientation,
-  ...rest
-}: Props) => {
-  const classNames = stat({ variant, size, orientation });
-
+const Stat = ({ value, label, helpText, indicator, ...rest }: Props) => {
   const indicatorColor = indicator === "decrease" ? "red.500" : "green.500";
 
   const IndicatorIcon =
     indicator === "decrease" ? <TriangleDown /> : <TriangleUp />;
 
   return (
-    <panda.div className={classNames.root} {...rest}>
-      <panda.div className={classNames.label}>{label}</panda.div>
-      <panda.div className={classNames.value}>{value}</panda.div>
+    <panda.div {...rest}>
+      <panda.div>{label}</panda.div>
+      <panda.div>{value}</panda.div>
       <HStack alignItems="center" gap={1}>
         {indicator && (
           <Icon data-testid="indicator" h={3} w={3} color={indicatorColor}>
@@ -47,9 +35,7 @@ const Stat = ({
           </Icon>
         )}
 
-        {helpText && (
-          <panda.div className={classNames.helpText}>{helpText}</panda.div>
-        )}
+        {helpText && <panda.div>{helpText}</panda.div>}
       </HStack>
     </panda.div>
   );

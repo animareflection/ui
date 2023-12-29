@@ -33,33 +33,22 @@ const Input = forwardRef(
       rightAddon,
       inputLeftElement,
       inputRightElement,
-      variant,
-      size,
       containerProps,
       ...rest
     }: Props,
     ref: Ref<HTMLInputElement> | undefined,
   ) => {
-    const classNames = input({ size, variant });
-
     return (
       <Stack gap={1.5} {...containerProps}>
-        {label && <PandaLabel className={classNames.label}>{label}</PandaLabel>}
+        {label && <PandaLabel>{label}</PandaLabel>}
         <Flex>
           {leftAddon && (
-            <panda.div className={classNames.addon} borderLeftRadius="sm">
-              {leftAddon}
-            </panda.div>
+            <panda.div borderLeftRadius="sm">{leftAddon}</panda.div>
           )}
           <Flex pos="relative" w="100%">
-            {inputLeftElement && (
-              <panda.div className={classNames.leftElement}>
-                {inputLeftElement}
-              </panda.div>
-            )}
+            {inputLeftElement && <panda.div>{inputLeftElement}</panda.div>}
             <PandaInput
               ref={ref}
-              className={classNames.input}
               borderTopLeftRadius={leftAddon ? 0 : "sm"}
               borderBottomLeftRadius={leftAddon ? 0 : "sm"}
               borderTopRightRadius={rightAddon ? 0 : "sm"}
@@ -68,17 +57,11 @@ const Input = forwardRef(
               pr={inputRightElement ? 10 : 3}
               {...rest}
             />
-            {inputRightElement && (
-              <panda.div className={classNames.rightElement}>
-                {inputRightElement}
-              </panda.div>
-            )}
+            {inputRightElement && <panda.div>{inputRightElement}</panda.div>}
           </Flex>
 
           {rightAddon && (
-            <panda.div className={classNames.addon} borderRightRadius="sm">
-              {rightAddon}
-            </panda.div>
+            <panda.div borderRightRadius="sm">{rightAddon}</panda.div>
           )}
         </Flex>
       </Stack>

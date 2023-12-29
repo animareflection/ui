@@ -18,14 +18,12 @@ const PandaLabel = panda(ark.label);
 /**
  * Core UI textarea.
  */
-const Textarea = ({ label, size, variant, ...rest }: Props) => {
-  const classNames = textarea({ size, variant });
-
+const Textarea = ({ label, ...rest }: Props) => {
   return (
     <Stack gap={1.5}>
-      <PandaLabel className={classNames.label}>{label}</PandaLabel>
+      <PandaLabel>{label}</PandaLabel>
 
-      <PandaTextarea className={classNames.textarea} {...rest} />
+      <PandaTextarea {...rest} />
     </Stack>
   );
 };

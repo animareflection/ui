@@ -11,7 +11,6 @@ import {
   PrimitiveNumberInputScrubber,
 } from "components/primitives";
 import { Flex, panda } from "generated/panda/jsx";
-import { numberInput } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type {
@@ -38,8 +37,6 @@ export interface Props
  * Core UI number input.
  */
 const NumberInput = ({
-  size,
-  variant,
   label,
   leftAddon,
   rightAddon,
@@ -50,8 +47,6 @@ const NumberInput = ({
   inputProps,
   ...rest
 }: Props) => {
-  const classNames = numberInput({ size, variant });
-
   const isClient = useIsClient();
 
   if (!isClient) return null;
@@ -59,26 +54,13 @@ const NumberInput = ({
   return (
     <PrimitiveNumberInput {...rest}>
       <PrimitiveNumberInputScrubber />
-      {label && (
-        <PrimitiveNumberInputLabel className={classNames.label}>
-          {label}
-        </PrimitiveNumberInputLabel>
-      )}
+      {label && <PrimitiveNumberInputLabel>{label}</PrimitiveNumberInputLabel>}
       <Flex>
-        {leftAddon && (
-          <panda.div className={classNames.addon} borderLeftRadius="sm">
-            {leftAddon}
-          </panda.div>
-        )}
+        {leftAddon && <panda.div borderLeftRadius="sm">{leftAddon}</panda.div>}
         <Flex pos="relative" w="100%">
-          {inputLeftElement && (
-            <panda.div className={classNames.leftElement}>
-              {inputLeftElement}
-            </panda.div>
-          )}
+          {inputLeftElement && <panda.div>{inputLeftElement}</panda.div>}
           <PrimitiveNumberInputInput
             {...inputProps}
-            className={classNames.input}
             placeholder={placeholder}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}
             borderBottomLeftRadius={leftAddon ? 0 : "sm"}
@@ -87,30 +69,20 @@ const NumberInput = ({
             pl={inputLeftElement ? 10 : 3}
             pr={inputRightElement ? 10 : 3}
           />
-          {inputRightElement && (
-            <panda.div className={classNames.rightElement}>
-              {inputRightElement}
-            </panda.div>
-          )}
+          {inputRightElement && <panda.div>{inputRightElement}</panda.div>}
         </Flex>
         {rightAddon && (
-          <panda.div className={classNames.addon} borderRightRadius="sm">
-            {rightAddon}
-          </panda.div>
+          <panda.div borderRightRadius="sm">{rightAddon}</panda.div>
         )}
         {stepper && (
-          <PrimitiveNumberInputControl className={classNames.stepper}>
-            <PrimitiveNumberInputDecrementTrigger
-              className={classNames.decrementTrigger}
-            >
+          <PrimitiveNumberInputControl>
+            <PrimitiveNumberInputDecrementTrigger>
               <Icon>
                 <FiMinus />
               </Icon>
             </PrimitiveNumberInputDecrementTrigger>
             <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
-            <PrimitiveNumberInputIncrementTrigger
-              className={classNames.incrementTrigger}
-            >
+            <PrimitiveNumberInputIncrementTrigger>
               <Icon>
                 <FiPlus />
               </Icon>

@@ -4,7 +4,6 @@ import {
   PrimitiveRadioGroupItemControl,
   PrimitiveRadioGroupItemText,
 } from "components/primitives";
-import { radioGroup } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveRadioGroupProps } from "components/primitives";
@@ -29,18 +28,14 @@ const RadioGroup = ({
   items,
   defaultValue,
   orientation = "vertical",
-  size,
   ...rest
 }: Props) => {
-  const classNames = radioGroup({ size });
-
   const isClient = useIsClient();
 
   if (!isClient) return null;
 
   return (
     <PrimitiveRadioGroup
-      className={classNames.root}
       defaultValue={defaultValue}
       orientation={orientation}
       {...rest}
@@ -50,10 +45,9 @@ const RadioGroup = ({
           key={item.value}
           value={item.value}
           disabled={item.disabled}
-          className={classNames.item}
         >
-          <PrimitiveRadioGroupItemControl className={classNames.itemControl} />
-          <PrimitiveRadioGroupItemText className={classNames.label}>
+          <PrimitiveRadioGroupItemControl />
+          <PrimitiveRadioGroupItemText>
             {item.label}
           </PrimitiveRadioGroupItemText>
         </PrimitiveRadioGroupItem>
