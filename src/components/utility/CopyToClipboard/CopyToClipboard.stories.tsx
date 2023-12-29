@@ -19,10 +19,7 @@ export const Default: Story = {
 export const CopyText: Story = {
   render: () => (
     <Flex align="center" gap={2}>
-      <CopyToClipboard
-        color="fg.default"
-        copyText="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8"
-      >
+      <CopyToClipboard copyText="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8">
         0xBd...2cf8
       </CopyToClipboard>
       <Input placeholder="Paste text here..." />
@@ -47,7 +44,6 @@ export const CustomTooltip: Story = {
   render: () => (
     <Flex align="center" gap={2}>
       <CopyToClipboard
-        color="fg.default"
         tooltipProps={{
           bgColor: "brand.primary.500",
         }}

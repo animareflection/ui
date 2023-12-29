@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const flyoutRecipe = defineSlotRecipe({
   className: "flyout",
   description: "The styles for the Flyout component",
-  slots: popoverAnatomy.keys(),
+  slots: popoverAnatomy.extendWith("root").keys(),
   base: {
     positioner: {
       position: "relative",

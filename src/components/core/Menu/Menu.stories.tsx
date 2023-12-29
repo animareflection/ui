@@ -4,8 +4,11 @@ import { HStack } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { MenuItemRecord, MenuItemGroupRecord } from "components/core";
+import type { ConditionalValue } from "generated/panda/types";
 
 type Story = StoryObj<typeof Menu>;
+
+type ConditionalSize = ConditionalValue<"sm" | "md" | "lg"> | undefined;
 
 const SUBMENU_GROUP_ITEMS: MenuItemRecord[] = [
   { id: "item-7", child: <Text>Item 7</Text> },
@@ -36,12 +39,13 @@ const GROUP_ONE_ITEMS: MenuItemRecord[] = [
   { id: "item-3", child: <Text>Item 3</Text> },
 ];
 
-const GROUP_TWO_ITEMS: MenuItemRecord[] = [
+const GROUP_TWO_ITEMS = (size?: ConditionalSize): MenuItemRecord[] => [
   { id: "item-4", child: <Text>Item 4</Text> },
   {
     id: "item-5",
     child: (
       <Menu
+        size={size}
         key="item-5"
         positioning={{ placement: "right-start" }}
         triggerItem={<Text>Item 5</Text>}
@@ -52,7 +56,7 @@ const GROUP_TWO_ITEMS: MenuItemRecord[] = [
   { id: "item-6", child: <Text>Item 6</Text> },
 ];
 
-const GROUPS: MenuItemGroupRecord[] = [
+const GROUPS = (size?: ConditionalSize): MenuItemGroupRecord[] => [
   {
     id: "group-1",
     label: "Group 1",
@@ -61,11 +65,11 @@ const GROUPS: MenuItemGroupRecord[] = [
   {
     id: "group-2",
     label: "Group 2",
-    items: GROUP_TWO_ITEMS,
+    items: GROUP_TWO_ITEMS(size),
   },
 ];
 
-const WITH_CONTEXT_GROUPS: MenuItemGroupRecord[] = [
+const WITH_CONTEXT_GROUPS = (size?: ConditionalSize): MenuItemGroupRecord[] => [
   {
     id: "group-1",
     label: "Group 1",
@@ -74,24 +78,32 @@ const WITH_CONTEXT_GROUPS: MenuItemGroupRecord[] = [
   {
     id: "group-2",
     label: "Group 2",
-    items: GROUP_TWO_ITEMS,
+    items: GROUP_TWO_ITEMS(size),
     separator: true,
   },
 ];
 
 export const Default: Story = {
-  render: () => <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS} />,
+  render: () => <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS()} />,
 };
 
 export const Small: Story = {
   render: () => (
-    <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS} size="sm" />
+    <Menu
+      trigger={<Button>Open Menu</Button>}
+      groups={GROUPS("sm")}
+      size="sm"
+    />
   ),
 };
 
 export const Large: Story = {
   render: () => (
-    <Menu trigger={<Button>Open Menu</Button>} groups={GROUPS} size="lg" />
+    <Menu
+      trigger={<Button>Open Menu</Button>}
+      groups={GROUPS("lg")}
+      size="lg"
+    />
   ),
 };
 
@@ -107,7 +119,7 @@ export const MatchingWidth: Story = {
           Open Menu
         </Button>
       }
-      groups={GROUPS}
+      groups={GROUPS()}
     />
   ),
 };
@@ -117,7 +129,7 @@ export const WithContext: Story = {
     <Menu
       closeOnSelect={false}
       trigger={<Button>Open Menu</Button>}
-      groups={WITH_CONTEXT_GROUPS}
+      groups={WITH_CONTEXT_GROUPS()}
     >
       {({ close: onClose }) => (
         <Button borderRadius="unset" variant="ghost" w="full" onClick={onClose}>

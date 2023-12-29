@@ -10,8 +10,8 @@ export const Default: Story = {
   render: () => (
     <Input
       label="Input Label"
-      placeholder="Placeholder"
       inputLeftElement="🏝️"
+      placeholder="Placeholder"
     />
   ),
 };

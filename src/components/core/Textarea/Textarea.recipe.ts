@@ -3,8 +3,12 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const textareaRecipe = defineSlotRecipe({
   className: "textarea",
   description: "The styles for the Textarea component",
-  slots: ["label", "textarea"],
+  slots: ["root", "label", "textarea"],
   base: {
+    root: {
+      display: "flex",
+      flexDirection: "column",
+    },
     textarea: {
       color: "fg.default",
       appearance: "none",
@@ -77,22 +81,27 @@ export const textareaRecipe = defineSlotRecipe({
     },
     size: {
       xs: {
+        root: { gap: 0.5 },
         textarea: { p: 2, minW: 8, fontSize: "xs" },
         label: { fontSize: "xs" },
       },
       sm: {
+        root: { gap: 1 },
         textarea: { p: 2.5, minW: 9, fontSize: "sm" },
         label: { fontSize: "sm" },
       },
       md: {
+        root: { gap: 1.5 },
         textarea: { p: 3, minW: 10, fontSize: "md" },
         label: { fontSize: "md" },
       },
       lg: {
+        root: { gap: 1.5 },
         textarea: { p: 3.5, minW: 11, fontSize: "md" },
         label: { fontSize: "md" },
       },
       xl: {
+        root: { gap: 1.5 },
         textarea: { p: 4, minW: 12, fontSize: "lg" },
         label: { fontSize: "lg" },
       },

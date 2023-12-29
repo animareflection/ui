@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const drawerRecipe = defineSlotRecipe({
   className: "drawer",
   description: "The styles for the Drawer component",
-  slots: dialogAnatomy.keys(),
+  slots: dialogAnatomy.extendWith("root").keys(),
   base: {
     backdrop: {
       backdropFilter: "blur(4px)",

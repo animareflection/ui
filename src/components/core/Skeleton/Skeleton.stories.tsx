@@ -20,6 +20,7 @@ const SkeletonToggle = () => {
           minim veniam.
         </Text>
       </Skeleton>
+
       <Button
         data-testid="toggle"
         variant="ghost"
