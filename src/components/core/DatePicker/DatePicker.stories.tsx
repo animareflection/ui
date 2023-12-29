@@ -1,6 +1,6 @@
 import { FiCalendar as CalendarIcon } from "react-icons/fi";
 
-import { datePickerState } from "./DatePicker.spec";
+import { datePickerState, rangeDatePickerState } from "./DatePicker.spec";
 import { DatePicker, Input } from "components/core";
 import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
@@ -53,6 +53,13 @@ export const DatePickerState: Story = {
   ...Default,
   play: datePickerState,
   name: "[TEST] DatePicker State",
+  tags: ["test"],
+};
+
+export const RangeDatePickerState: Story = {
+  ...Range,
+  play: rangeDatePickerState,
+  name: "[TEST] Range DatePicker State",
   tags: ["test"],
 };
 

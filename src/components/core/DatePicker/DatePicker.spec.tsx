@@ -7,7 +7,7 @@ import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
 
 /**
- * DatePicker testing suite.
+ * `DatePicker` testing suite.
  */
 export const datePickerState = async <R extends Renderer = ReactRenderer>({
   canvasElement,
@@ -18,8 +18,6 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
   const triggerButton = await canvas.findByRole("button", {
     name: /Open date picker/i,
   });
-
-  const input = await canvas.findByRole("textbox");
 
   await step("Opens the date picker on trigger click", async () => {
     await userEvent.click(triggerButton);
@@ -72,6 +70,34 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
 
     await expect(yearCells.length).toBeGreaterThan(0);
   });
+};
+
+/**
+ * Range `DatePicker` testing suite.
+ */
+export const rangeDatePickerState = async <R extends Renderer = ReactRenderer>({
+  canvasElement,
+  step,
+}: PlayFunctionContext<R>) => {
+  const canvas = within(canvasElement as HTMLElement);
+
+  const triggerButton = await canvas.findByRole("button", {
+    name: /Open date picker/i,
+  });
+
+  const input = await canvas.findByRole("textbox");
+
+  await userEvent.click(triggerButton);
+
+  await sleep(1000);
+
+  const viewTrigger = await within(document.body).findByRole("button", {
+    name: /View trigger/i,
+  });
+
+  await userEvent.click(viewTrigger);
+
+  await userEvent.click(viewTrigger);
 
   await step("Selects a date", async () => {
     const yearTriggers = await within(document.body).findAllByRole("button", {
