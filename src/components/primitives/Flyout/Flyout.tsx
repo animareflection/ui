@@ -11,8 +11,12 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { flyout } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(flyout);
 
 /**
  * Core UI flyout primitives.

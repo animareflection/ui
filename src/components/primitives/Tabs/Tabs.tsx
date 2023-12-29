@@ -7,9 +7,13 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { tabs } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { PandaComponent } from "generated/panda/types/jsx";
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(tabs);
 
 /**
  * Core UI tabs primitives.

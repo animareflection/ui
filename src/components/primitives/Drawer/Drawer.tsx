@@ -10,8 +10,12 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { drawer } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(drawer);
 
 /**
  * Core UI drawer primitives.

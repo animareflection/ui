@@ -1,8 +1,12 @@
 import { Switch, SwitchControl, SwitchThumb, SwitchLabel } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { toggle } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(toggle);
 
 /**
  * Core UI toggle primitives.

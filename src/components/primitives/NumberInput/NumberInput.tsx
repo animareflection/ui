@@ -9,9 +9,13 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { numberInput } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { PandaComponent } from "generated/panda/types/jsx";
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(numberInput);
 
 /**
  * Core UI number input primitives.
