@@ -1,7 +1,14 @@
 "use client";
 
-import { Button, DatePicker, Icon, Input } from "@animareflection/ui";
-import { FiCalendar as CalendarIcon } from "react-icons/fi";
+import {
+  Button,
+  DatePicker,
+  Flex,
+  Icon,
+  Input,
+  Text,
+} from "@animareflection/ui";
+import { FiCalendar as CalendarIcon, FiX } from "react-icons/fi";
 import { input } from "generated/panda/recipes";
 
 import { Wrapper } from "components";
@@ -12,9 +19,19 @@ const DatePickerDemo = () => (
       label="Date Picker"
       startOfWeek={1}
       clearTrigger={
-        <Button size="xs" variant="ghost">
-          Clear
-        </Button>
+        <Flex
+          gap={1}
+          justify="center"
+          css={{
+            "& *": { color: "accent.default" },
+          }}
+        >
+          <Icon w={4}>
+            <FiX />
+          </Icon>
+
+          <Text fontSize="sm">Clear</Text>
+        </Flex>
       }
       trigger={
         <Button size="xs">
