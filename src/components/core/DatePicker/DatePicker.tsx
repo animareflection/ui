@@ -69,11 +69,15 @@ const DatePicker = ({
       )}
 
       <PrimitiveDatePickerControl className={classNames.control}>
-        <PrimitiveDatePickerInput className={classNames.input} asChild>
+        <PrimitiveDatePickerInput asChild className={classNames.input}>
           {input}
         </PrimitiveDatePickerInput>
 
-        <PrimitiveDatePickerTrigger className={classNames.trigger} asChild>
+        <PrimitiveDatePickerTrigger
+          asChild
+          className={classNames.trigger}
+          aria-label="Open date picker"
+        >
           {trigger}
         </PrimitiveDatePickerTrigger>
 
@@ -93,8 +97,9 @@ const DatePicker = ({
                   className={classNames.viewControl}
                 >
                   <PrimitiveDatePickerPrevTrigger
-                    className={classNames.prevTrigger}
                     asChild
+                    className={classNames.prevTrigger}
+                    aria-label="Previous month"
                   >
                     <Icon w={5} h={5}>
                       <ChevronLeftIcon />
@@ -102,8 +107,9 @@ const DatePicker = ({
                   </PrimitiveDatePickerPrevTrigger>
 
                   <PrimitiveDatePickerViewTrigger
-                    className={classNames.viewTrigger}
                     asChild
+                    className={classNames.viewTrigger}
+                    aria-label="View trigger"
                   >
                     <Button variant="ghost" size="sm">
                       <PrimitiveDatePickerRangeText
@@ -113,8 +119,9 @@ const DatePicker = ({
                   </PrimitiveDatePickerViewTrigger>
 
                   <PrimitiveDatePickerNextTrigger
-                    className={classNames.nextTrigger}
                     asChild
+                    className={classNames.nextTrigger}
+                    aria-label="Next month"
                   >
                     <Icon w={5} h={5}>
                       <ChevronRightIcon />
@@ -155,8 +162,8 @@ const DatePicker = ({
                             value={day}
                           >
                             <PrimitiveDatePickerTableCellTrigger
-                              className={classNames.tableCellTrigger}
                               asChild
+                              className={classNames.tableCellTrigger}
                             >
                               <Button variant="ghost" justifyContent="center">
                                 {day.day}
@@ -179,8 +186,9 @@ const DatePicker = ({
                   className={classNames.viewControl}
                 >
                   <PrimitiveDatePickerPrevTrigger
-                    className={classNames.prevTrigger}
                     asChild
+                    className={classNames.prevTrigger}
+                    aria-label="Previous year"
                   >
                     <Icon w={5} h={5}>
                       <ChevronLeftIcon />
@@ -188,8 +196,9 @@ const DatePicker = ({
                   </PrimitiveDatePickerPrevTrigger>
 
                   <PrimitiveDatePickerViewTrigger
-                    className={classNames.viewTrigger}
                     asChild
+                    className={classNames.viewTrigger}
+                    aria-label="View trigger"
                   >
                     <Button variant="ghost" size="sm">
                       <PrimitiveDatePickerRangeText
@@ -199,8 +208,9 @@ const DatePicker = ({
                   </PrimitiveDatePickerViewTrigger>
 
                   <PrimitiveDatePickerNextTrigger
-                    className={classNames.nextTrigger}
                     asChild
+                    className={classNames.nextTrigger}
+                    aria-label="Next year"
                   >
                     <Icon w={5} h={5}>
                       <ChevronRightIcon />
@@ -226,8 +236,8 @@ const DatePicker = ({
                               value={month.value}
                             >
                               <PrimitiveDatePickerTableCellTrigger
-                                className={classNames.tableCellTrigger}
                                 asChild
+                                className={classNames.tableCellTrigger}
                               >
                                 <Button variant="ghost" justifyContent="center">
                                   {month.label}
@@ -250,8 +260,9 @@ const DatePicker = ({
                   className={classNames.viewControl}
                 >
                   <PrimitiveDatePickerPrevTrigger
-                    className={classNames.prevTrigger}
                     asChild
+                    className={classNames.prevTrigger}
+                    aria-label="Previous decade"
                   >
                     <Icon w={5} h={5}>
                       <ChevronLeftIcon />
@@ -259,8 +270,9 @@ const DatePicker = ({
                   </PrimitiveDatePickerPrevTrigger>
 
                   <PrimitiveDatePickerViewTrigger
-                    className={classNames.viewTrigger}
                     asChild
+                    className={classNames.viewTrigger}
+                    aria-label="View trigger"
                   >
                     <Button variant="ghost" size="sm">
                       <PrimitiveDatePickerRangeText
@@ -270,8 +282,9 @@ const DatePicker = ({
                   </PrimitiveDatePickerViewTrigger>
 
                   <PrimitiveDatePickerNextTrigger
-                    className={classNames.nextTrigger}
                     asChild
+                    className={classNames.nextTrigger}
+                    aria-label="Next decade"
                   >
                     <Icon w={5} h={5}>
                       <ChevronRightIcon />
@@ -295,8 +308,8 @@ const DatePicker = ({
                             value={year.value}
                           >
                             <PrimitiveDatePickerTableCellTrigger
-                              className={classNames.tableCellTrigger}
                               asChild
+                              className={classNames.tableCellTrigger}
                             >
                               <Button variant="ghost" justifyContent="center">
                                 {year.label}
