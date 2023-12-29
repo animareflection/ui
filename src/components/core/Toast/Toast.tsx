@@ -15,21 +15,23 @@ export interface Props extends FlexProps, ToastVariantProps {
 /**
  * Core UI toast.
  */
-const Toast = ({ title, description, onClose, ...rest }: Props) => {
-  return (
-    <Flex direction="column" {...rest}>
-      {onClose && (
-        <panda.button onClick={onClose} aria-label="Close Toast">
-          <Icon size="sm">
-            <FiX />
-          </Icon>
-        </panda.button>
-      )}
+const Toast = ({ title, description, onClose, ...rest }: Props) => (
+  <Flex direction="column" {...rest}>
+    {onClose && (
+      <panda.button
+        onClick={onClose}
+        aria-label="Close Toast"
+        alignSelf="flex-end"
+      >
+        <Icon size="sm">
+          <FiX />
+        </Icon>
+      </panda.button>
+    )}
 
-      <panda.p>{title}</panda.p>
-      <panda.p>{description}</panda.p>
-    </Flex>
-  );
-};
+    <panda.p>{title}</panda.p>
+    <panda.p>{description}</panda.p>
+  </Flex>
+);
 
 export default Toast;
