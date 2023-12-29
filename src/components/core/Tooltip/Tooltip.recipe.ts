@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const tooltipRecipe = defineSlotRecipe({
   className: "tooltip",
   description: "The styles for the Tooltip component",
-  slots: tooltipAnatomy.keys(),
+  slots: tooltipAnatomy.extendWith("root").keys(),
   base: {
     trigger: {
       w: "fit-content",

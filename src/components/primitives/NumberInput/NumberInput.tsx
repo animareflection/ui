@@ -9,9 +9,13 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { numberInput } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { PandaComponent } from "generated/panda/types/jsx";
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(numberInput);
 
 /**
  * Core UI number input primitives.
@@ -19,41 +23,78 @@ import type { ComponentProps } from "react";
 export type PrimitiveNumberInputProps = ComponentProps<
   typeof PrimitiveNumberInput
 >;
-const PrimitiveNumberInput: PandaComponent<typeof NumberInput> =
-  panda(NumberInput);
+const PrimitiveNumberInput: PandaComponent<typeof NumberInput> = withProvider(
+  panda(NumberInput),
+  "root",
+);
 
 export type PrimitiveNumberInputControlProps = ComponentProps<
   typeof PrimitiveNumberInputControl
 >;
-export const PrimitiveNumberInputControl = panda(NumberInputControl);
+export const PrimitiveNumberInputControl = withContext(
+  panda(NumberInputControl),
+  "control",
+);
+
+export type PrimitiveNumberInputAddonProps = ComponentProps<
+  typeof PrimitiveNumberInputAddon
+>;
+export const PrimitiveNumberInputAddon = withContext(panda.div, "addon");
+
+export type PrimitiveNumberInputLeftElementProps = ComponentProps<
+  typeof PrimitiveNumberInputLeftElement
+>;
+export const PrimitiveNumberInputLeftElement = withContext(
+  panda.div,
+  "leftElement",
+);
+
+export type PrimitiveNumberInputRightElementProps = ComponentProps<
+  typeof PrimitiveNumberInputRightElement
+>;
+export const PrimitiveNumberInputRightElement = withContext(
+  panda.div,
+  "rightElement",
+);
 
 export type PrimitiveNumberInputDecrementTriggerProps = ComponentProps<
   typeof PrimitiveNumberInputDecrementTrigger
 >;
-export const PrimitiveNumberInputDecrementTrigger = panda(
-  NumberInputDecrementTrigger,
+export const PrimitiveNumberInputDecrementTrigger = withContext(
+  panda(NumberInputDecrementTrigger),
+  "decrementTrigger",
 );
 
 export type PrimitiveNumberInputIncrementTriggerProps = ComponentProps<
   typeof PrimitiveNumberInputIncrementTrigger
 >;
-export const PrimitiveNumberInputIncrementTrigger = panda(
-  NumberInputIncrementTrigger,
+export const PrimitiveNumberInputIncrementTrigger = withContext(
+  panda(NumberInputIncrementTrigger),
+  "incrementTrigger",
 );
 
 export type PrimitiveNumberInputInputProps = ComponentProps<
   typeof PrimitiveNumberInputInput
 >;
-export const PrimitiveNumberInputInput = panda(NumberInputInput);
+export const PrimitiveNumberInputInput = withContext(
+  panda(NumberInputInput),
+  "input",
+);
 
 export type PrimitiveNumberInputLabelProps = ComponentProps<
   typeof PrimitiveNumberInputLabel
 >;
-export const PrimitiveNumberInputLabel = panda(NumberInputLabel);
+export const PrimitiveNumberInputLabel = withContext(
+  panda(NumberInputLabel),
+  "label",
+);
 
 export type PrimitiveNumberInputScrubberProps = ComponentProps<
   typeof PrimitiveNumberInputScrubber
 >;
-export const PrimitiveNumberInputScrubber = panda(NumberInputScrubber);
+export const PrimitiveNumberInputScrubber = withContext(
+  panda(NumberInputScrubber),
+  "scrubber",
+);
 
 export default PrimitiveNumberInput;

@@ -16,6 +16,9 @@ export * from "./Combobox/Combobox";
 export { default as PrimitiveDrawer } from "./Drawer/Drawer";
 export * from "./Drawer/Drawer";
 
+export { default as PrimitiveInput } from "./Input/Input";
+export * from "./Input/Input";
+
 export { default as PrimitiveMenu } from "./Menu/Menu";
 export * from "./Menu/Menu";
 
@@ -36,6 +39,9 @@ export * from "./Slider/Slider";
 
 export { default as PrimitiveTabs } from "./Tabs/Tabs";
 export * from "./Tabs/Tabs";
+
+export { default as PrimitiveTextarea } from "./Textarea/Textarea";
+export * from "./Textarea/Textarea";
 
 export { default as PrimitiveToggle } from "./Toggle/Toggle";
 export * from "./Toggle/Toggle";

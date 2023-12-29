@@ -8,38 +8,54 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { tooltip } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(tooltip);
 
 /**
  * Core UI tooltip primitives.
  */
 export type PrimitiveTooltipProps = ComponentProps<typeof PrimitiveTooltip>;
-const PrimitiveTooltip = panda(Tooltip);
+const PrimitiveTooltip = withProvider(panda(Tooltip), "root");
 
 export type PrimitiveTooltipArrowProps = ComponentProps<
   typeof PrimitiveTooltipArrow
 >;
-export const PrimitiveTooltipArrow = panda(TooltipArrow);
+export const PrimitiveTooltipArrow = withContext(panda(TooltipArrow), "arrow");
 
 export type PrimitiveTooltipArrowTipProps = ComponentProps<
   typeof PrimitiveTooltipArrowTip
 >;
-export const PrimitiveTooltipArrowTip = panda(TooltipArrowTip);
+export const PrimitiveTooltipArrowTip = withContext(
+  panda(TooltipArrowTip),
+  "arrowTip",
+);
 
 export type PrimitiveTooltipContentProps = ComponentProps<
   typeof PrimitiveTooltipContent
 >;
-export const PrimitiveTooltipContent = panda(TooltipContent);
+export const PrimitiveTooltipContent = withContext(
+  panda(TooltipContent),
+  "content",
+);
 
 export type PrimitiveTooltipPositionerProps = ComponentProps<
   typeof PrimitiveTooltipPositioner
 >;
-export const PrimitiveTooltipPositioner = panda(TooltipPositioner);
+export const PrimitiveTooltipPositioner = withContext(
+  panda(TooltipPositioner),
+  "positioner",
+);
 
 export type PrimitiveTooltipTriggerProps = ComponentProps<
   typeof PrimitiveTooltipTrigger
 >;
-export const PrimitiveTooltipTrigger = panda(TooltipTrigger);
+export const PrimitiveTooltipTrigger = withContext(
+  panda(TooltipTrigger),
+  "trigger",
+);
 
 export default PrimitiveTooltip;

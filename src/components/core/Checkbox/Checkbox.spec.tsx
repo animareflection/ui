@@ -1,7 +1,7 @@
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 
-import { sleep } from "lib/utils";
+import { sleep } from "lib/util";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";

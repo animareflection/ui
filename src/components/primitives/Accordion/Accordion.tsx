@@ -6,30 +6,43 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { accordion } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { PandaComponent } from "generated/panda/types/jsx";
 import type { ComponentProps } from "react";
+
+const { withProvider, withContext } = createStyleContext(accordion);
 
 /**
  * Core UI accordion primitives.
  */
 export type PrimitiveAccordionProps = ComponentProps<typeof PrimitiveAccordion>;
-const PrimitiveAccordion: PandaComponent<typeof Accordion> = panda(Accordion);
+const PrimitiveAccordion: PandaComponent<typeof Accordion> = withProvider(
+  panda(Accordion),
+  "root",
+);
 
 export type PrimitiveAccordionItemProps = ComponentProps<
   typeof PrimitiveAccordionItem
 >;
 export const PrimitiveAccordionItem: PandaComponent<typeof AccordionItem> =
-  panda(AccordionItem);
+  withContext(panda(AccordionItem), "item");
 
 export type PrimitiveAccordionItemTriggerProps = ComponentProps<
   typeof PrimitiveAccordionItemTrigger
 >;
-export const PrimitiveAccordionItemTrigger = panda(AccordionItemTrigger);
+export const PrimitiveAccordionItemTrigger = withContext(
+  panda(AccordionItemTrigger),
+  "itemTrigger",
+);
 
 export type PrimitiveAccordionItemContentProps = ComponentProps<
   typeof PrimitiveAccordionItemContent
 >;
-export const PrimitiveAccordionItemContent = panda(AccordionItemContent);
+export const PrimitiveAccordionItemContent = withContext(
+  panda(AccordionItemContent),
+  "itemContent",
+);
 
 export default PrimitiveAccordion;
