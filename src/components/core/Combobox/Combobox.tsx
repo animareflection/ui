@@ -18,7 +18,6 @@ import {
   PrimitiveComboboxTrigger,
 } from "components/primitives";
 import { Flex } from "generated/panda/jsx";
-import { combobox, input } from "generated/panda/recipes";
 
 import type { Props as InputProps } from "components/core/Input/Input";
 import type { PrimitiveComboboxProps } from "components/primitives";
@@ -50,11 +49,8 @@ const Combobox = ({
   items = [],
   triggerEnabled = true,
   inputProps,
-  size,
   ...rest
 }: Props) => {
-  const classNames = combobox({ size });
-
   const [filteredItems, setFilteredItems] = useState(items);
 
   const handleChange = (
@@ -77,19 +73,15 @@ const Combobox = ({
     <PrimitiveCombobox
       onInputValueChange={handleChange}
       items={filteredItems}
-      className={classNames.root}
       {...rest}
     >
       {label.display && (
-        <PrimitiveComboboxLabel className={classNames.label}>
-          {label.plural}
-        </PrimitiveComboboxLabel>
+        <PrimitiveComboboxLabel>{label.plural}</PrimitiveComboboxLabel>
       )}
 
-      <PrimitiveComboboxControl className={classNames.control}>
+      <PrimitiveComboboxControl>
         <PrimitiveComboboxInput asChild>
           <Input
-            className={input({ size, variant: inputProps?.variant }).input}
             placeholder={
               inputProps?.placeholder
                 ? inputProps.placeholder
@@ -112,34 +104,22 @@ const Combobox = ({
       </PrimitiveComboboxControl>
 
       <PrimitiveComboboxPositioner>
-        <PrimitiveComboboxContent className={classNames.content}>
-          <PrimitiveComboboxItemGroup
-            className={classNames.itemGroup}
-            id={label.id}
-          >
-            <PrimitiveComboboxItemGroupLabel
-              className={classNames.itemGroupLabel}
-              htmlFor={label.id}
-            >
+        <PrimitiveComboboxContent>
+          <PrimitiveComboboxItemGroup id={label.id}>
+            <PrimitiveComboboxItemGroupLabel htmlFor={label.id}>
               {label.plural}
             </PrimitiveComboboxItemGroupLabel>
 
             {filteredItems.map((item) => (
-              <PrimitiveComboboxItem
-                key={item.value}
-                className={classNames.item}
-                item={item}
-              >
+              <PrimitiveComboboxItem key={item.value} item={item}>
                 <Flex align="center" gap={2}>
                   {item.icon}
-                  <PrimitiveComboboxItemText className={classNames.itemText}>
+                  <PrimitiveComboboxItemText>
                     {item.label}
                   </PrimitiveComboboxItemText>
                 </Flex>
 
-                <PrimitiveComboboxItemIndicator
-                  className={classNames.itemIndicator}
-                >
+                <PrimitiveComboboxItemIndicator>
                   <BiCheck />
                 </PrimitiveComboboxItemIndicator>
               </PrimitiveComboboxItem>

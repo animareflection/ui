@@ -22,13 +22,6 @@ export const comboboxRecipe = defineSlotRecipe({
       color: "fg.default",
       fontWeight: "medium",
     },
-    trigger: {
-      color: "fg.muted",
-      position: "absolute",
-      right: 0,
-      bottom: 0,
-      top: 0,
-    },
     content: {
       background: "bg.default",
       borderRadius: "sm",
@@ -112,7 +105,6 @@ export const comboboxRecipe = defineSlotRecipe({
           mb: 0.5,
         },
         label: { textStyle: "sm" },
-        trigger: { right: 2.5 },
       },
       md: {
         content: { p: 1, gap: 1 },
@@ -129,7 +121,6 @@ export const comboboxRecipe = defineSlotRecipe({
           mb: 1,
         },
         label: { textStyle: "sm" },
-        trigger: { right: 3 },
       },
       lg: {
         content: { p: 1.5, gap: 1 },
@@ -146,7 +137,6 @@ export const comboboxRecipe = defineSlotRecipe({
           mb: 1.5,
         },
         label: { textStyle: "sm" },
-        trigger: { right: 3.5 },
       },
     },
   },
