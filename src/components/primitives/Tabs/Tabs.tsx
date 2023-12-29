@@ -19,13 +19,16 @@ const { withProvider, withContext } = createStyleContext(tabs);
  * Core UI tabs primitives.
  */
 export type PrimitiveTabsProps = ComponentProps<typeof PrimitiveTabs>;
-const PrimitiveTabs: PandaComponent<typeof Tabs> = panda(Tabs);
+const PrimitiveTabs: PandaComponent<typeof Tabs> = withProvider(
+  panda(Tabs),
+  "root",
+);
 
 export type PrimitiveTabContentProps = ComponentProps<
   typeof PrimitiveTabContent
 >;
 export const PrimitiveTabContent: PandaComponent<typeof TabContent> =
-  withProvider(panda(TabContent), "root");
+  withContext(panda(TabContent), "content");
 
 export type PrimitiveTabIndicatorProps = ComponentProps<
   typeof PrimitiveTabIndicator
