@@ -21,8 +21,10 @@ const { withProvider, withContext } = createStyleContext(radioGroup);
 export type PrimitiveRadioGroupProps = ComponentProps<
   typeof PrimitiveRadioGroup
 >;
-const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> =
-  panda(RadioGroup);
+const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> = withProvider(
+  panda(RadioGroup),
+  "root",
+);
 
 export type PrimitiveRadioGroupItemControlProps = ComponentProps<
   typeof PrimitiveRadioGroupItemControl

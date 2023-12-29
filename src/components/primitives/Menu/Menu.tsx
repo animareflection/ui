@@ -27,7 +27,10 @@ const { withProvider, withContext } = createStyleContext(menu);
  * Core UI menu primitives.
  */
 export type PrimitiveMenuProps = ComponentProps<typeof PrimitiveMenu>;
-const PrimitiveMenu: PandaComponent<typeof Menu> = panda(Menu);
+const PrimitiveMenu: PandaComponent<typeof Menu> = withProvider(
+  panda(Menu),
+  "root",
+);
 
 export type PrimitiveMenuArrowProps = ComponentProps<typeof PrimitiveMenuArrow>;
 export const PrimitiveMenuArrow = panda(MenuArrow);

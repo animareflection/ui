@@ -13,7 +13,7 @@ const { withProvider, withContext } = createStyleContext(toggle);
  */
 export type PrimitiveToggleProps = ComponentProps<typeof PrimitiveToggle>;
 // NB: Using `Toggle` instead of `Switch` here to avoid recipe issues with `switch` being a reserved word.
-const PrimitiveToggle = panda(Switch);
+const PrimitiveToggle = withProvider(panda(Switch), "root");
 
 export type PrimitiveToggleControlProps = ComponentProps<
   typeof PrimitiveToggleControl

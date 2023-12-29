@@ -25,7 +25,7 @@ export type PrimitiveTabContentProps = ComponentProps<
   typeof PrimitiveTabContent
 >;
 export const PrimitiveTabContent: PandaComponent<typeof TabContent> =
-  panda(TabContent);
+  withProvider(panda(TabContent), "root");
 
 export type PrimitiveTabIndicatorProps = ComponentProps<
   typeof PrimitiveTabIndicator

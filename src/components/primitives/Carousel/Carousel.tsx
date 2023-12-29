@@ -23,7 +23,10 @@ const { withProvider, withContext } = createStyleContext(carousel);
  * Core UI carousel primitives.
  */
 export type PrimitiveCarouselProps = ComponentProps<typeof PrimitiveCarousel>;
-const PrimitiveCarousel: PandaComponent<typeof Carousel> = panda(Carousel);
+const PrimitiveCarousel: PandaComponent<typeof Carousel> = withProvider(
+  panda(Carousel),
+  "root",
+);
 
 export type PrimitiveCarouselControlProps = ComponentProps<
   typeof PrimitiveCarouselControl

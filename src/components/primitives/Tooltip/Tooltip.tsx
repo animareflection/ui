@@ -19,7 +19,7 @@ const { withProvider, withContext } = createStyleContext(tooltip);
  * Core UI tooltip primitives.
  */
 export type PrimitiveTooltipProps = ComponentProps<typeof PrimitiveTooltip>;
-const PrimitiveTooltip = panda(Tooltip);
+const PrimitiveTooltip = withProvider(panda(Tooltip), "root");
 
 export type PrimitiveTooltipArrowProps = ComponentProps<
   typeof PrimitiveTooltipArrow

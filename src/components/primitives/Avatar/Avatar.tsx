@@ -13,7 +13,10 @@ const { withProvider, withContext } = createStyleContext(avatar);
  * Core UI avatar primitives.
  */
 export type PrimitiveAvatarProps = ComponentProps<typeof PrimitiveAvatar>;
-const PrimitiveAvatar: PandaComponent<typeof Avatar> = panda(Avatar);
+const PrimitiveAvatar: PandaComponent<typeof Avatar> = withProvider(
+  panda(Avatar),
+  "root",
+);
 
 export type PrimitiveAvatarFallbackProps = ComponentProps<
   typeof PrimitiveAvatarFallback

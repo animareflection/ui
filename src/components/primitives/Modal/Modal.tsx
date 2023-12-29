@@ -21,7 +21,7 @@ const { withProvider, withContext } = createStyleContext(modal);
  * Core UI modal primitives.
  */
 export type PrimitiveModalProps = ComponentProps<typeof PrimitiveModal>;
-const PrimitiveModal = panda(Dialog);
+const PrimitiveModal = withProvider(panda(Dialog), "root");
 
 export type PrimitiveModalTriggerProps = ComponentProps<
   typeof PrimitiveModalTrigger

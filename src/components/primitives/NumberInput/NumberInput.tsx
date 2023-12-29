@@ -23,8 +23,10 @@ const { withProvider, withContext } = createStyleContext(numberInput);
 export type PrimitiveNumberInputProps = ComponentProps<
   typeof PrimitiveNumberInput
 >;
-const PrimitiveNumberInput: PandaComponent<typeof NumberInput> =
-  panda(NumberInput);
+const PrimitiveNumberInput: PandaComponent<typeof NumberInput> = withProvider(
+  panda(NumberInput),
+  "root",
+);
 
 export type PrimitiveNumberInputControlProps = ComponentProps<
   typeof PrimitiveNumberInputControl

@@ -12,7 +12,7 @@ const { withProvider, withContext } = createStyleContext(checkbox);
  * Core UI checkbox primitives.
  */
 export type PrimitiveCheckboxProps = ComponentProps<typeof PrimitiveCheckbox>;
-const PrimitiveCheckbox = panda(Checkbox);
+const PrimitiveCheckbox = withProvider(panda(Checkbox), "root");
 
 export type PrimitiveCheckboxControlProps = ComponentProps<
   typeof PrimitiveCheckboxControl

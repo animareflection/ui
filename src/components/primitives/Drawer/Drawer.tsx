@@ -21,7 +21,7 @@ const { withProvider, withContext } = createStyleContext(drawer);
  * Core UI drawer primitives.
  */
 export type PrimitiveDrawerProps = ComponentProps<typeof PrimitiveDrawer>;
-const PrimitiveDrawer = panda(Dialog);
+const PrimitiveDrawer = withProvider(panda(Dialog), "root");
 
 export type PrimitiveDrawerTriggerProps = ComponentProps<
   typeof PrimitiveDrawerTrigger

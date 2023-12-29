@@ -22,7 +22,7 @@ const { withProvider, withContext } = createStyleContext(flyout);
  * Core UI flyout primitives.
  */
 export type PrimitiveFlyoutProps = ComponentProps<typeof PrimitiveFlyout>;
-const PrimitiveFlyout = panda(Popover);
+const PrimitiveFlyout = withProvider(panda(Popover), "root");
 
 export type PrimitiveFlyoutArrowProps = ComponentProps<
   typeof PrimitiveFlyoutArrow

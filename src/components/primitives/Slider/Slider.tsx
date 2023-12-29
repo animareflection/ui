@@ -21,7 +21,7 @@ const { withProvider, withContext } = createStyleContext(slider);
  * Core UI slider primitives.
  */
 export type PrimitiveSliderProps = ComponentProps<typeof PrimitiveSlider>;
-const PrimitiveSlider = panda(Slider);
+const PrimitiveSlider = withProvider(panda(Slider), "root");
 
 export type PrimitiveSliderControlProps = ComponentProps<
   typeof PrimitiveSliderControl
