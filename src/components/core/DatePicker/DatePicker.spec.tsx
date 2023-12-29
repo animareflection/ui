@@ -16,7 +16,7 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
   const canvas = within(canvasElement as HTMLElement);
 
   const triggerButton = await canvas.findByRole("button", {
-    name: /calendar icon/i,
+    name: /Open date picker/i,
   });
 
   const input = await canvas.findByRole("textbox");
@@ -24,26 +24,28 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
   await step("Opens the date picker on trigger click", async () => {
     await userEvent.click(triggerButton);
 
-    const Prev = await within(document.body).findByRole("button", {
-      name: /Prev/i,
-    });
+    await sleep(1000);
+
+    const prevTrigger = await within(document.body).findByLabelText(
+      /Previous month/i,
+    );
 
     const viewTrigger = await within(document.body).findByRole("button", {
-      name: /view trigger/i,
+      name: /View trigger/i,
     });
 
-    const Next = await within(document.body).findByRole("button", {
-      name: /Next/i,
-    });
+    const nextTrigger = await within(document.body).findByLabelText(
+      /Next month/i,
+    );
 
-    await expect(Prev).toBeInTheDocument();
+    await expect(prevTrigger).toBeInTheDocument();
     await expect(viewTrigger).toBeInTheDocument();
-    await expect(Next).toBeInTheDocument();
+    await expect(nextTrigger).toBeInTheDocument();
   });
 
   await step("Navigates to month view", async () => {
     const viewTrigger = await within(document.body).findByRole("button", {
-      name: /view trigger/i,
+      name: /View trigger/i,
     });
 
     await userEvent.click(viewTrigger);
@@ -57,7 +59,7 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
 
   await step("Navigates to year view", async () => {
     const viewTrigger = await within(document.body).findByRole("button", {
-      name: /view trigger/i,
+      name: /View trigger/i,
     });
 
     await userEvent.click(viewTrigger);
@@ -92,7 +94,7 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
     await sleep(1000);
     await userEvent.click(someDateCell[0]);
 
-    await expect(input).toHaveValue("09/04/2023 - 09/04/2023"); // Adjust based on your date format
+    await expect(input).toHaveValue("09/04/2023 - 09/04/2023");
   });
 
   await step("Selects a date range", async () => {
@@ -109,6 +111,6 @@ export const datePickerState = async <R extends Renderer = ReactRenderer>({
     await userEvent.click(startRangeDate[0]);
     await userEvent.click(endRangeDate[0]);
 
-    await expect(input).toHaveValue("09/04/2023 - 09/14/2023"); // Adjust based on your date format
+    await expect(input).toHaveValue("09/04/2023 - 09/14/2023");
   });
 };
