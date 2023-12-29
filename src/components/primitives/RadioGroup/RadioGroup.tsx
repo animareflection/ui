@@ -29,22 +29,31 @@ const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> = withProvider(
 export type PrimitiveRadioGroupItemControlProps = ComponentProps<
   typeof PrimitiveRadioGroupItemControl
 >;
-export const PrimitiveRadioGroupItemControl = panda(RadioGroupItemControl);
+export const PrimitiveRadioGroupItemControl = withContext(
+  panda(RadioGroupItemControl),
+  "itemControl",
+);
 
 export type PrimitiveRadioGroupLabelProps = ComponentProps<
   typeof PrimitiveRadioGroupLabel
 >;
-export const PrimitiveRadioGroupLabel = panda(RadioGroupLabel);
+export const PrimitiveRadioGroupLabel = withContext(
+  panda(RadioGroupLabel),
+  "label",
+);
 
 export type PrimitiveRadioGroupItemProps = ComponentProps<
   typeof PrimitiveRadioGroupItem
 >;
 export const PrimitiveRadioGroupItem: PandaComponent<typeof RadioGroupItem> =
-  panda(RadioGroupItem);
+  withContext(panda(RadioGroupItem), "item");
 
 export type PrimitiveRadioGroupItemTextProps = ComponentProps<
   typeof RadioGroupItemText
 >;
-export const PrimitiveRadioGroupItemText = panda(RadioGroupItemText);
+export const PrimitiveRadioGroupItemText = withContext(
+  panda(RadioGroupItemText),
+  "itemText",
+);
 
 export default PrimitiveRadioGroup;

@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const modalRecipe = defineSlotRecipe({
   className: "modal",
   description: "The styles for the Modal component",
-  slots: dialogAnatomy.keys(),
+  slots: dialogAnatomy.extendWith("root").keys(),
   base: {
     backdrop: {
       backdropFilter: "blur(4px)",

@@ -18,16 +18,19 @@ const PrimitiveToggle = withProvider(panda(Switch), "root");
 export type PrimitiveToggleControlProps = ComponentProps<
   typeof PrimitiveToggleControl
 >;
-export const PrimitiveToggleControl = panda(SwitchControl);
+export const PrimitiveToggleControl = withContext(
+  panda(SwitchControl),
+  "control",
+);
 
 export type PrimitiveToggleThumbProps = ComponentProps<
   typeof PrimitiveToggleThumb
 >;
-export const PrimitiveToggleThumb = panda(SwitchThumb);
+export const PrimitiveToggleThumb = withContext(panda(SwitchThumb), "thumb");
 
 export type PrimitiveToggleLabelProps = ComponentProps<
   typeof PrimitiveToggleLabel
 >;
-export const PrimitiveToggleLabel = panda(SwitchLabel);
+export const PrimitiveToggleLabel = withContext(panda(SwitchLabel), "label");
 
 export default PrimitiveToggle;

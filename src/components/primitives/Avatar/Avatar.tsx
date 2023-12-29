@@ -21,11 +21,14 @@ const PrimitiveAvatar: PandaComponent<typeof Avatar> = withProvider(
 export type PrimitiveAvatarFallbackProps = ComponentProps<
   typeof PrimitiveAvatarFallback
 >;
-export const PrimitiveAvatarFallback = panda(AvatarFallback);
+export const PrimitiveAvatarFallback = withContext(
+  panda(AvatarFallback),
+  "fallback",
+);
 
 export type PrimitiveAvatarImageProps = ComponentProps<
   typeof PrimitiveAvatarImage
 >;
-export const PrimitiveAvatarImage = panda(AvatarImage);
+export const PrimitiveAvatarImage = withContext(panda(AvatarImage), "image");
 
 export default PrimitiveAvatar;

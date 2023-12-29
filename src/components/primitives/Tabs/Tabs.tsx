@@ -30,15 +30,18 @@ export const PrimitiveTabContent: PandaComponent<typeof TabContent> =
 export type PrimitiveTabIndicatorProps = ComponentProps<
   typeof PrimitiveTabIndicator
 >;
-export const PrimitiveTabIndicator = panda(TabIndicator);
+export const PrimitiveTabIndicator = withContext(
+  panda(TabIndicator),
+  "indicator",
+);
 
 export type PrimitiveTabListProps = ComponentProps<typeof PrimitiveTabList>;
-export const PrimitiveTabList = panda(TabList);
+export const PrimitiveTabList = withContext(panda(TabList), "list");
 
 export type PrimitiveTabTriggerProps = ComponentProps<
   typeof PrimitiveTabTrigger
 >;
 export const PrimitiveTabTrigger: PandaComponent<typeof TabTrigger> =
-  panda(TabTrigger);
+  withContext(panda(TabTrigger), "trigger");
 
 export default PrimitiveTabs;

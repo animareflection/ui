@@ -24,7 +24,7 @@ const itemStyle = {
 export const menuRecipe = defineSlotRecipe({
   className: "menu",
   description: "The styles for the Menu component",
-  slots: menuAnatomy.keys(),
+  slots: menuAnatomy.extendWith("root").keys(),
   base: {
     itemGroupLabel: {
       fontWeight: "semibold",

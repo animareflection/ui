@@ -17,11 +17,17 @@ const PrimitiveCheckbox = withProvider(panda(Checkbox), "root");
 export type PrimitiveCheckboxControlProps = ComponentProps<
   typeof PrimitiveCheckboxControl
 >;
-export const PrimitiveCheckboxControl = panda(CheckboxControl);
+export const PrimitiveCheckboxControl = withContext(
+  panda(CheckboxControl),
+  "control",
+);
 
 export type PrimitiveCheckboxLabelProps = ComponentProps<
   typeof PrimitiveCheckboxLabel
 >;
-export const PrimitiveCheckboxLabel = panda(CheckboxLabel);
+export const PrimitiveCheckboxLabel = withContext(
+  panda(CheckboxLabel),
+  "label",
+);
 
 export default PrimitiveCheckbox;

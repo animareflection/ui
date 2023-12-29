@@ -26,36 +26,42 @@ const PrimitiveSlider = withProvider(panda(Slider), "root");
 export type PrimitiveSliderControlProps = ComponentProps<
   typeof PrimitiveSliderControl
 >;
-export const PrimitiveSliderControl = panda(SliderControl);
+export const PrimitiveSliderControl = withContext(
+  panda(SliderControl),
+  "control",
+);
 
 export type PrimitiveSliderLabelProps = ComponentProps<
   typeof PrimitiveSliderLabel
 >;
-export const PrimitiveSliderLabel = panda(SliderLabel);
+export const PrimitiveSliderLabel = withContext(panda(SliderLabel), "label");
 
 export type PrimitiveSliderMarkerProps = ComponentProps<
   typeof PrimitiveSliderMarker
 >;
-export const PrimitiveSliderMarker = panda(SliderMarker);
+export const PrimitiveSliderMarker = withContext(panda(SliderMarker), "marker");
 
 export type PrimitiveSliderMarkerGroupProps = ComponentProps<
   typeof PrimitiveSliderMarkerGroup
 >;
-export const PrimitiveSliderMarkerGroup = panda(SliderMarkerGroup);
+export const PrimitiveSliderMarkerGroup = withContext(
+  panda(SliderMarkerGroup),
+  "markerGroup",
+);
 
 export type PrimitiveSliderRangeProps = ComponentProps<
   typeof PrimitiveSliderRange
 >;
-export const PrimitiveSliderRange = panda(SliderRange);
+export const PrimitiveSliderRange = withContext(panda(SliderRange), "range");
 
 export type PrimitiveSliderThumbProps = ComponentProps<
   typeof PrimitiveSliderThumb
 >;
-export const PrimitiveSliderThumb = panda(SliderThumb);
+export const PrimitiveSliderThumb = withContext(panda(SliderThumb), "thumb");
 
 export type PrimitiveSliderTrackProps = ComponentProps<
   typeof PrimitiveSliderTrack
 >;
-export const PrimitiveSliderTrack = panda(SliderTrack);
+export const PrimitiveSliderTrack = withContext(panda(SliderTrack), "track");
 
 export default PrimitiveSlider;

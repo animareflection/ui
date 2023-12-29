@@ -31,35 +31,49 @@ const PrimitiveNumberInput: PandaComponent<typeof NumberInput> = withProvider(
 export type PrimitiveNumberInputControlProps = ComponentProps<
   typeof PrimitiveNumberInputControl
 >;
-export const PrimitiveNumberInputControl = panda(NumberInputControl);
+export const PrimitiveNumberInputControl = withContext(
+  panda(NumberInputControl),
+  "control",
+);
 
 export type PrimitiveNumberInputDecrementTriggerProps = ComponentProps<
   typeof PrimitiveNumberInputDecrementTrigger
 >;
-export const PrimitiveNumberInputDecrementTrigger = panda(
-  NumberInputDecrementTrigger,
+export const PrimitiveNumberInputDecrementTrigger = withContext(
+  panda(NumberInputDecrementTrigger),
+  "decrementTrigger",
 );
 
 export type PrimitiveNumberInputIncrementTriggerProps = ComponentProps<
   typeof PrimitiveNumberInputIncrementTrigger
 >;
-export const PrimitiveNumberInputIncrementTrigger = panda(
-  NumberInputIncrementTrigger,
+export const PrimitiveNumberInputIncrementTrigger = withContext(
+  panda(NumberInputIncrementTrigger),
+  "incrementTrigger",
 );
 
 export type PrimitiveNumberInputInputProps = ComponentProps<
   typeof PrimitiveNumberInputInput
 >;
-export const PrimitiveNumberInputInput = panda(NumberInputInput);
+export const PrimitiveNumberInputInput = withContext(
+  panda(NumberInputInput),
+  "input",
+);
 
 export type PrimitiveNumberInputLabelProps = ComponentProps<
   typeof PrimitiveNumberInputLabel
 >;
-export const PrimitiveNumberInputLabel = panda(NumberInputLabel);
+export const PrimitiveNumberInputLabel = withContext(
+  panda(NumberInputLabel),
+  "label",
+);
 
 export type PrimitiveNumberInputScrubberProps = ComponentProps<
   typeof PrimitiveNumberInputScrubber
 >;
-export const PrimitiveNumberInputScrubber = panda(NumberInputScrubber);
+export const PrimitiveNumberInputScrubber = withContext(
+  panda(NumberInputScrubber),
+  "scrubber",
+);
 
 export default PrimitiveNumberInput;
