@@ -5,6 +5,7 @@ import { DatePicker, Input, Text } from "components/core";
 import Button from "components/core/Button/Button";
 import Icon from "components/core/Icon/Icon";
 import { Flex } from "generated/panda/jsx";
+import { input } from "generated/panda/recipes";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { DatePickerProps } from "components/core";
@@ -37,7 +38,14 @@ const DatePickerTemplate = (props: Partial<DatePickerProps>) => (
         </Icon>
       </Button>
     }
-    input={<Input h={10} placeholder="mm/dd/yyyy" />}
+    input={
+      <Input
+        // TODO remove, this will be improved once slot recipe classes are automatically picked up
+        className={input().input}
+        h={10}
+        placeholder="mm/dd/yyyy"
+      />
+    }
     {...props}
   />
 );
