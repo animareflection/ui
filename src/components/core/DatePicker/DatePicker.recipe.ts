@@ -1,86 +1,96 @@
 import { datePickerAnatomy } from "@ark-ui/anatomy";
 import { defineSlotRecipe } from "@pandacss/dev";
 
+/**
+ * Date picker style recipe.
+ */
 export const datePickerRecipe = defineSlotRecipe({
   className: "datePicker",
-  description: "The styles for the DatePicker component",
+  description: "Date picker styles",
   slots: datePickerAnatomy.keys(),
   base: {
-    cellTrigger: {
-      _disabled: {
-        color: "fg.disabled",
-        cursor: "not-allowed",
-        _hover: {
-          background: "transparent",
-          color: "fg.disabled",
+    root: {
+      colorPalette: "accent",
+      display: "flex",
+      flexDirection: "column",
+      gap: 1.5,
+    },
+    content: {
+      bgColor: "bg.default",
+      borderRadius: "md",
+      boxShadow: "lg",
+      display: "flex",
+      flexDirection: "column",
+      gap: 3,
+      p: 4,
+      width: "344px",
+      zIndex: "dropdown",
+      _open: {
+        animation: "fadeIn 0.25s ease-out",
+      },
+      _closed: {
+        animation: "fadeOut 0.2s ease-out",
+      },
+      _hidden: {
+        display: "none",
+      },
+    },
+    control: {
+      display: "flex",
+      flexDirection: "row",
+      gap: 2,
+    },
+    label: {
+      color: "fg.default",
+      fontWeight: "medium",
+      textStyle: "sm",
+    },
+    tableHeader: {
+      color: "fg.muted",
+      fontWeight: "semibold",
+      height: 10,
+      textStyle: "sm",
+    },
+    viewControl: {
+      display: "flex",
+      gap: 2,
+      justifyContent: "space-between",
+    },
+    table: {
+      width: "full",
+      borderCollapse: "separate",
+      borderSpacing: 1,
+      m: -1,
+    },
+    tableCell: {
+      textAlign: "center",
+    },
+    tableCellTrigger: {
+      width: "100%",
+      _today: {
+        _before: {
+          content: "'−'",
+          color: "colorPalette.default",
+          position: "absolute",
+          marginTop: 6,
         },
       },
       "&[data-in-range]": {
-        color: "fg.default",
-        background: "accent.subtle",
-        borderRadius: "md",
-        _hover: {
-          bgColor: "transparent",
-          color: "fg.emphasized",
-        },
+        bgColor: "bg.muted",
       },
       _selected: {
         _before: {
-          bgColor: "accent.subtle",
-          color: "fg.default",
+          color: "colorPalette.fg",
         },
       },
-      _focus: {
-        color: "fg.default",
-        background: "accent.subtle",
-        borderRadius: "md",
-      },
     },
-    content: {
-      background: "bg.default",
-      borderColor: "border.default",
-      borderRadius: "sm",
-      boxShadow: "sm",
-      borderWidth: "1px",
-      p: "4",
-      width: "fit-content",
-    },
-    grid: {
+    view: {
       display: "flex",
       flexDirection: "column",
-      gap: "1",
-      '&[data-type="day"] [data-part="row"]': {
-        gridTemplateColumns: "repeat(7, 1fr)",
+      gap: 3,
+      _hidden: {
+        display: "none",
       },
-      '&[data-type="month"] [data-part="row"]': {
-        gridTemplateColumns: "repeat(4, 1fr)",
-      },
-      '&[data-type="year"] [data-part="row"]': {
-        gridTemplateColumns: "repeat(4, 1fr)",
-      },
-    },
-    rowGroup: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "1",
-    },
-    row: {
-      display: "grid",
-      gap: "1",
-    },
-    rowHeader: {
-      display: "grid",
-      gridTemplateColumns: "repeat(7, 1fr)",
-    },
-    columnHeader: {
-      alignItems: "center",
-      color: "fg.subtle",
-      display: "inline-flex",
-      fontWeight: "semibold",
-      height: "10",
-      justifyContent: "center",
-      textStyle: "sm",
-      width: "10",
     },
   },
 });
