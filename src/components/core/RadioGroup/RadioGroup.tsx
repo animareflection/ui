@@ -1,3 +1,4 @@
+import Text from "components/core/Text/Text";
 import {
   PrimitiveRadioGroup,
   PrimitiveRadioGroupItem,
@@ -48,7 +49,7 @@ const RadioGroup = ({
         >
           <PrimitiveRadioGroupItemControl />
           <PrimitiveRadioGroupItemText>
-            {item.label}
+            <Text>{item.label}</Text>
           </PrimitiveRadioGroupItemText>
         </PrimitiveRadioGroupItem>
       ))}
