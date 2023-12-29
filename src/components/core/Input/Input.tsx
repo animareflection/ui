@@ -10,7 +10,7 @@ import type { InputVariantProps } from "generated/panda/recipes";
 import type { ComponentProps, ReactNode, Ref } from "react";
 
 export interface Props
-  extends ComponentProps<typeof PandaInput>,
+  extends ComponentProps<typeof InputRoot>,
     InputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
@@ -22,17 +22,17 @@ export interface Props
 
 const { withProvider, withContext } = createStyleContext(input);
 
-// TODO extract primitives (this entire component will be refactored)
+// TODO extract primitives, add prop interfaces, and export both (this entire component will be refactored)
 
-const PandaInput = withProvider(panda(ark.input, input), "input");
+const InputRoot = withProvider(panda(ark.input, input), "input");
 
-const PandaLabel = withContext(panda(ark.label), "label");
+const InputLabel = withContext(panda(ark.label), "label");
 
-const PandaInputAddon = withContext(panda.div, "addon");
+const InputAddon = withContext(panda.div, "addon");
 
-const PandaLeftElement = withContext(panda.div, "leftElement");
+const InputLeftElement = withContext(panda.div, "leftElement");
 
-const PandaRightElement = withContext(panda.div, "rightElement");
+const InputRightElement = withContext(panda.div, "rightElement");
 
 /**
  * Core UI input.
@@ -51,19 +51,19 @@ const Input = forwardRef(
     ref: Ref<HTMLInputElement> | undefined,
   ) => (
     <Stack gap={1.5} {...containerProps}>
-      {label && <PandaLabel>{label}</PandaLabel>}
+      {label && <InputLabel>{label}</InputLabel>}
 
       <Flex>
         {leftAddon && (
-          <PandaInputAddon borderLeftRadius="sm">{leftAddon}</PandaInputAddon>
+          <InputAddon borderLeftRadius="sm">{leftAddon}</InputAddon>
         )}
 
         <Flex pos="relative" w="100%" align="center">
           {inputLeftElement && (
-            <PandaLeftElement>{inputLeftElement}</PandaLeftElement>
+            <InputLeftElement>{inputLeftElement}</InputLeftElement>
           )}
 
-          <PandaInput
+          <InputRoot
             ref={ref}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}
             borderBottomLeftRadius={leftAddon ? 0 : "sm"}
@@ -74,12 +74,12 @@ const Input = forwardRef(
             {...rest}
           />
           {inputRightElement && (
-            <PandaRightElement>{inputRightElement}</PandaRightElement>
+            <InputRightElement>{inputRightElement}</InputRightElement>
           )}
         </Flex>
 
         {rightAddon && (
-          <PandaInputAddon borderRightRadius="sm">{rightAddon}</PandaInputAddon>
+          <InputAddon borderRightRadius="sm">{rightAddon}</InputAddon>
         )}
       </Flex>
     </Stack>

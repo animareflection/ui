@@ -1,3 +1,4 @@
+import { ark } from "@ark-ui/react";
 import {
   TbTriangleInvertedFilled as TriangleDown,
   TbTriangleFilled as TriangleUp,
@@ -5,8 +6,8 @@ import {
 
 import Icon from "components/core/Icon/Icon";
 import { HStack, panda } from "generated/panda/jsx";
-
-import type { StatVariantProps } from "generated/panda/recipes";
+import { stat, type StatVariantProps } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 export interface Props extends StatVariantProps {
   value: string;
@@ -14,6 +15,18 @@ export interface Props extends StatVariantProps {
   helpText?: string;
   indicator?: "increase" | "decrease";
 }
+
+const { withProvider, withContext } = createStyleContext(stat);
+
+// TODO extract primitives, add prop interfaces, and export both
+
+const StatRoot = withProvider(panda(ark.div), "root");
+
+const StatLabel = withContext(panda.div, "label");
+
+const StatValue = withContext(panda.div, "value");
+
+const StatHelpText = withContext(panda.div, "helpText");
 
 /**
  * Core Stat component.
@@ -25,9 +38,11 @@ const Stat = ({ value, label, helpText, indicator, ...rest }: Props) => {
     indicator === "decrease" ? <TriangleDown /> : <TriangleUp />;
 
   return (
-    <panda.div {...rest}>
-      <panda.div>{label}</panda.div>
-      <panda.div>{value}</panda.div>
+    <StatRoot {...rest}>
+      <StatLabel>{label}</StatLabel>
+
+      <StatValue>{value}</StatValue>
+
       <HStack alignItems="center" gap={1}>
         {indicator && (
           <Icon data-testid="indicator" h={3} w={3} color={indicatorColor}>
@@ -35,9 +50,9 @@ const Stat = ({ value, label, helpText, indicator, ...rest }: Props) => {
           </Icon>
         )}
 
-        {helpText && <panda.div>{helpText}</panda.div>}
+        {helpText && <StatHelpText>{helpText}</StatHelpText>}
       </HStack>
-    </panda.div>
+    </StatRoot>
   );
 };
 
