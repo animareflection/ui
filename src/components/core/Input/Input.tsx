@@ -10,7 +10,7 @@ import type { InputVariantProps } from "generated/panda/recipes";
 import type { ComponentProps, ReactNode, Ref } from "react";
 
 export interface Props
-  extends ComponentProps<typeof InputRoot>,
+  extends ComponentProps<typeof InputInput>,
     InputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
@@ -24,13 +24,13 @@ const { withProvider, withContext } = createStyleContext(input);
 
 // TODO extract primitives, add prop interfaces, and export both (this entire component will be refactored)
 
-const InputRoot = withProvider(panda(ark.input, input), "input");
-
 const InputLabel = withContext(panda(ark.label), "label");
 
 const InputAddon = withContext(panda.div, "addon");
 
 const InputLeftElement = withContext(panda.div, "leftElement");
+
+const InputInput = withProvider(panda(ark.input, input), "input");
 
 const InputRightElement = withContext(panda.div, "rightElement");
 
@@ -63,7 +63,7 @@ const Input = forwardRef(
             <InputLeftElement>{inputLeftElement}</InputLeftElement>
           )}
 
-          <InputRoot
+          <InputInput
             ref={ref}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}
             borderBottomLeftRadius={leftAddon ? 0 : "sm"}
@@ -73,6 +73,7 @@ const Input = forwardRef(
             pr={inputRightElement ? 10 : 3}
             {...rest}
           />
+
           {inputRightElement && (
             <InputRightElement>{inputRightElement}</InputRightElement>
           )}
