@@ -1,23 +1,31 @@
-import { Flex, panda } from "generated/panda/jsx";
+import { Box, Flex } from "generated/panda/jsx";
+import { skeleton, type SkeletonVariantProps } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
 import type { FlexProps } from "generated/panda/jsx";
-import type { SkeletonVariantProps } from "generated/panda/recipes";
 
 export interface Props extends FlexProps, SkeletonVariantProps {
+  /** Whether the content is loaded. */
   isLoaded?: boolean;
 }
+
+const { withProvider, withContext } = createStyleContext(skeleton);
+
+const SkeletonRoot = withProvider(Flex, "root");
+
+const SkeletonSkeleton = withContext(Box, "skeleton");
 
 /**
  * Core Skeleton component.
  */
 const Skeleton = ({ isLoaded, children, ...rest }: Props) => (
-  <Flex {...rest}>
-    <panda.div
+  <SkeletonRoot {...rest}>
+    <SkeletonSkeleton
       data-testid="skeleton"
       visibility={isLoaded ? "hidden" : "visible"}
     />
     {children}
-  </Flex>
+  </SkeletonRoot>
 );
 
 export default Skeleton;
