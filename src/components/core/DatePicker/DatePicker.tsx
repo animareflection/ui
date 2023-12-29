@@ -3,8 +3,8 @@ import {
   FiChevronRight as ChevronRightIcon,
 } from "react-icons/fi";
 
-import Button from "../Button/Button";
-import Icon from "../Icon/Icon";
+import Button from "components/core/Button/Button";
+import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveDatePicker,
   PrimitiveDatePickerClearTrigger,
@@ -82,7 +82,10 @@ const DatePicker = ({
         </PrimitiveDatePickerTrigger>
 
         {clearTrigger && (
-          <PrimitiveDatePickerClearTrigger className={classNames.clearTrigger}>
+          <PrimitiveDatePickerClearTrigger
+            asChild
+            className={classNames.clearTrigger}
+          >
             {clearTrigger}
           </PrimitiveDatePickerClearTrigger>
         )}
