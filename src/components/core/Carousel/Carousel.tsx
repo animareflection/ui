@@ -12,7 +12,6 @@ import {
   PrimitiveCarouselItemGroup,
   PrimitiveCarouselViewport,
 } from "components/primitives";
-import { carousel } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveCarouselProps } from "components/primitives";
@@ -23,46 +22,37 @@ export interface Props extends PrimitiveCarouselProps, CarouselVariantProps {
   items: ReactNode[];
 }
 
-const Carousel = ({ items, size, ...rest }: Props) => {
-  const classNames = carousel({ size });
-
+const Carousel = ({ items, ...rest }: Props) => {
   const isClient = useIsClient();
 
   if (!isClient) return null;
 
   return (
-    <PrimitiveCarousel className={classNames.root} {...rest}>
-      <PrimitiveCarouselViewport className={classNames.viewport}>
-        <PrimitiveCarouselItemGroup className={classNames.itemGroup}>
+    <PrimitiveCarousel {...rest}>
+      <PrimitiveCarouselViewport>
+        <PrimitiveCarouselItemGroup>
           {items.map((item, index) => (
-            <PrimitiveCarouselItem
-              className={classNames.item}
-              key={index}
-              index={index}
-            >
+            <PrimitiveCarouselItem key={index} index={index}>
               {item}
             </PrimitiveCarouselItem>
           ))}
         </PrimitiveCarouselItemGroup>
-        <PrimitiveCarouselControl className={classNames.control}>
-          <PrimitiveCarouselPrevTrigger className={classNames.prevTrigger}>
+        <PrimitiveCarouselControl>
+          <PrimitiveCarouselPrevTrigger>
             <Icon>
               <FiChevronLeft />
             </Icon>
           </PrimitiveCarouselPrevTrigger>
-          <PrimitiveCarouselIndicatorGroup
-            className={classNames.indicatorGroup}
-          >
+          <PrimitiveCarouselIndicatorGroup>
             {items.map((_, index) => (
               <PrimitiveCarouselIndicator
                 key={index}
                 index={index}
-                className={classNames.indicator}
                 aria-label={`Goto item ${index + 1}`}
               />
             ))}
           </PrimitiveCarouselIndicatorGroup>
-          <PrimitiveCarouselNextTrigger className={classNames.nextTrigger}>
+          <PrimitiveCarouselNextTrigger>
             <Icon>
               <FiChevronRight />
             </Icon>

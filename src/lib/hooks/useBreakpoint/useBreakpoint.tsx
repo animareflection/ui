@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { breakpoints } from "lib/panda";
-import { emToPx } from "lib/utils";
+import { emToPx } from "lib/util";
 
 import type { BreakpointToken } from "generated/panda/tokens";
 

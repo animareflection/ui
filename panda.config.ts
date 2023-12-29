@@ -3,7 +3,7 @@ import { defineConfig } from "@pandacss/dev";
 import { PREGENERATE_STATIC_CSS } from "lib/config/env";
 import { recipes, slotRecipes } from "lib/panda";
 import anirefPreset from "lib/panda/aniref.preset";
-import { mapArrayToObject } from "lib/utils";
+import { mapArrayToObject } from "lib/util";
 
 const recipeKeys = Object.keys(recipes);
 const slotRecipeKeys = Object.keys(slotRecipes);

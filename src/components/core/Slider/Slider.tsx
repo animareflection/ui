@@ -8,7 +8,6 @@ import {
   PrimitiveSliderThumb,
   PrimitiveSliderTrack,
 } from "components/primitives";
-import { slider } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveSliderProps } from "components/primitives";
@@ -30,37 +29,24 @@ export interface Props extends PrimitiveSliderProps {
  * Core UI slider.
  */
 const Slider = ({ label, markers, maxW, ...rest }: Props) => {
-  const classNames = slider();
-
   const isClient = useIsClient();
 
   if (!isClient) return null;
 
   return (
-    <PrimitiveSlider className={classNames.root} {...rest}>
-      {label && (
-        <PrimitiveSliderLabel className={classNames.label}>
-          {label}
-        </PrimitiveSliderLabel>
-      )}
-      <PrimitiveSliderControl className={classNames.control} maxW={maxW}>
-        <PrimitiveSliderTrack className={classNames.track} maxW={maxW}>
-          <PrimitiveSliderRange className={classNames.range} />
+    <PrimitiveSlider {...rest}>
+      {label && <PrimitiveSliderLabel>{label}</PrimitiveSliderLabel>}
+      <PrimitiveSliderControl maxW={maxW}>
+        <PrimitiveSliderTrack maxW={maxW}>
+          <PrimitiveSliderRange />
         </PrimitiveSliderTrack>
 
-        <PrimitiveSliderThumb index={0} className={classNames.thumb} />
+        <PrimitiveSliderThumb index={0} />
       </PrimitiveSliderControl>
       {markers && (
-        <PrimitiveSliderMarkerGroup
-          className={classNames.markerGroup}
-          maxW={maxW}
-        >
+        <PrimitiveSliderMarkerGroup maxW={maxW}>
           {markers.map(({ id, value, label }) => (
-            <PrimitiveSliderMarker
-              key={id}
-              value={value}
-              className={classNames.marker}
-            >
+            <PrimitiveSliderMarker key={id} value={value}>
               {label}
             </PrimitiveSliderMarker>
           ))}

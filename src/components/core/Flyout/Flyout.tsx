@@ -12,7 +12,6 @@ import {
   PrimitiveFlyoutTitle,
   PrimitiveFlyoutTrigger,
 } from "components/primitives";
-import { flyout } from "generated/panda/recipes";
 import { useDisclosure, useIsClient } from "lib/hooks";
 
 import type {
@@ -34,8 +33,6 @@ export interface Props extends PrimitiveFlyoutProps {
 const Flyout = ({ trigger, title, contentProps, children, ...rest }: Props) => {
   const { isOpen, onClose, onToggle } = useDisclosure();
 
-  const classNames = flyout();
-
   const isClient = useIsClient();
 
   if (!isClient) return null;
@@ -43,39 +40,22 @@ const Flyout = ({ trigger, title, contentProps, children, ...rest }: Props) => {
   return (
     <PrimitiveFlyout open={isOpen} onOpenChange={onToggle} {...rest}>
       {trigger && (
-        <PrimitiveFlyoutTrigger
-          asChild
-          className={classNames.trigger}
-          onClick={onToggle}
-        >
+        <PrimitiveFlyoutTrigger asChild onClick={onToggle}>
           {trigger}
         </PrimitiveFlyoutTrigger>
       )}
 
-      <PrimitiveFlyoutPositioner className={classNames.positioner}>
-        <PrimitiveFlyoutContent
-          className={classNames.content}
-          {...contentProps}
-        >
-          <PrimitiveFlyoutArrow className={classNames.arrow}>
-            <PrimitiveFlyoutArrowTip className={classNames.arrowTip} />
+      <PrimitiveFlyoutPositioner>
+        <PrimitiveFlyoutContent {...contentProps}>
+          <PrimitiveFlyoutArrow>
+            <PrimitiveFlyoutArrowTip />
           </PrimitiveFlyoutArrow>
-          {title && (
-            <PrimitiveFlyoutTitle className={classNames.title}>
-              {title}
-            </PrimitiveFlyoutTitle>
-          )}
-          <PrimitiveFlyoutDescription
-            className={classNames.description}
-            asChild
-          >
+          {title && <PrimitiveFlyoutTitle>{title}</PrimitiveFlyoutTitle>}
+          <PrimitiveFlyoutDescription asChild>
             {children}
           </PrimitiveFlyoutDescription>
 
-          <PrimitiveFlyoutCloseTrigger
-            onClick={onClose}
-            className={classNames.closeTrigger}
-          >
+          <PrimitiveFlyoutCloseTrigger onClick={onClose}>
             <Icon>
               <CloseIcon />
             </Icon>

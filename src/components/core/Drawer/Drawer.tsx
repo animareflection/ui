@@ -12,7 +12,6 @@ import {
   PrimitiveDrawerTitle,
   PrimitiveDrawerTrigger,
 } from "components/primitives";
-import { drawer } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type {
@@ -35,7 +34,6 @@ export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
  */
 const Drawer = ({
   children,
-  placement,
   trigger,
   title,
   description,
@@ -43,8 +41,6 @@ const Drawer = ({
   containerRef,
   ...rest
 }: Props) => {
-  const classNames = drawer({ placement });
-
   const isClient = useIsClient();
 
   if (!isClient) return null;
@@ -54,27 +50,16 @@ const Drawer = ({
       {(ctx) => (
         <>
           {trigger && (
-            <PrimitiveDrawerTrigger asChild className={classNames.trigger}>
-              {trigger}
-            </PrimitiveDrawerTrigger>
+            <PrimitiveDrawerTrigger asChild>{trigger}</PrimitiveDrawerTrigger>
           )}
 
           <Portal container={containerRef}>
-            <PrimitiveDrawerBackdrop className={classNames.backdrop} />
-            <PrimitiveDrawerPositioner className={classNames.positioner}>
-              <PrimitiveDrawerContent
-                className={classNames.content}
-                {...contentProps}
-              >
-                {title && (
-                  <PrimitiveDrawerTitle className={classNames.title}>
-                    {title}
-                  </PrimitiveDrawerTitle>
-                )}
+            <PrimitiveDrawerBackdrop />
+            <PrimitiveDrawerPositioner>
+              <PrimitiveDrawerContent {...contentProps}>
+                {title && <PrimitiveDrawerTitle>{title}</PrimitiveDrawerTitle>}
                 {description && (
-                  <PrimitiveDrawerDescription
-                    className={classNames.description}
-                  >
+                  <PrimitiveDrawerDescription>
                     {description}
                   </PrimitiveDrawerDescription>
                 )}
@@ -82,9 +67,7 @@ const Drawer = ({
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <PrimitiveDrawerCloseTrigger
-                  className={classNames.closeTrigger}
-                >
+                <PrimitiveDrawerCloseTrigger>
                   <Icon>
                     <CloseIcon />
                   </Icon>

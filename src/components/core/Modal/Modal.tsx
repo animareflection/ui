@@ -12,7 +12,6 @@ import {
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
 } from "components/primitives";
-import { modal } from "generated/panda/recipes";
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
@@ -36,8 +35,6 @@ const Modal = ({
   containerRef,
   ...rest
 }: Props) => {
-  const classNames = modal();
-
   const isClient = useIsClient();
 
   if (!isClient) return null;
@@ -46,23 +43,15 @@ const Modal = ({
     <PrimitiveModal lazyMount unmountOnExit {...rest}>
       {(ctx) => (
         <>
-          {trigger && (
-            <PrimitiveModalTrigger className={classNames.trigger}>
-              {trigger}
-            </PrimitiveModalTrigger>
-          )}
+          {trigger && <PrimitiveModalTrigger>{trigger}</PrimitiveModalTrigger>}
 
           <Portal container={containerRef}>
-            <PrimitiveModalBackdrop className={classNames.backdrop} />
-            <PrimitiveModalPositioner className={classNames.positioner}>
-              <PrimitiveModalContent className={classNames.content}>
-                {title && (
-                  <PrimitiveModalTitle className={classNames.title}>
-                    {title}
-                  </PrimitiveModalTitle>
-                )}
+            <PrimitiveModalBackdrop />
+            <PrimitiveModalPositioner>
+              <PrimitiveModalContent>
+                {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
                 {description && (
-                  <PrimitiveModalDescription className={classNames.description}>
+                  <PrimitiveModalDescription>
                     {description}
                   </PrimitiveModalDescription>
                 )}
@@ -70,7 +59,7 @@ const Modal = ({
                 {/* forward nested context/state if utilized, otherwise directly render children */}
                 {typeof children === "function" ? children(ctx) : children}
 
-                <PrimitiveModalCloseTrigger className={classNames.closeTrigger}>
+                <PrimitiveModalCloseTrigger>
                   <Icon>
                     <CloseIcon />
                   </Icon>

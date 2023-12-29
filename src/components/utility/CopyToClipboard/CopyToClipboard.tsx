@@ -48,6 +48,8 @@ const CopyToClipboard = ({
         p={0}
         w="fit-content"
         gap={1}
+        bgColor="transparent"
+        color="fg.default"
         {...rest}
       >
         {children}
