@@ -24,7 +24,7 @@ const TABS: TabRecord[] = [
 
 const TabsDemo = () => (
   <Wrapper title="Tabs">
-    <Tabs tabs={TABS} />
+    <Tabs defaultValue="tab-1" tabs={TABS} />
   </Wrapper>
 );
 
