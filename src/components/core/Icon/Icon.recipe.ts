@@ -8,6 +8,7 @@ export const iconRecipe = defineRecipe({
     flexShrink: 0,
     verticalAlign: "middle",
     lineHeight: "1em",
+    color: "fg.default",
   },
   defaultVariants: {
     size: "md",

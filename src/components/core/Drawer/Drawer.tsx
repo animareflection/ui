@@ -85,7 +85,7 @@ const Drawer = ({
                 <PrimitiveDrawerCloseTrigger
                   className={classNames.closeTrigger}
                 >
-                  <Icon color="fg.default">
+                  <Icon>
                     <CloseIcon />
                   </Icon>
                 </PrimitiveDrawerCloseTrigger>
