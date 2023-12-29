@@ -36,6 +36,27 @@ export const PrimitiveNumberInputControl = withContext(
   "control",
 );
 
+export type PrimitiveNumberInputAddonProps = ComponentProps<
+  typeof PrimitiveNumberInputAddon
+>;
+export const PrimitiveNumberInputAddon = withContext(panda.div, "addon");
+
+export type PrimitiveNumberInputLeftElementProps = ComponentProps<
+  typeof PrimitiveNumberInputLeftElement
+>;
+export const PrimitiveNumberInputLeftElement = withContext(
+  panda.div,
+  "leftElement",
+);
+
+export type PrimitiveNumberInputRightElementProps = ComponentProps<
+  typeof PrimitiveNumberInputRightElement
+>;
+export const PrimitiveNumberInputRightElement = withContext(
+  panda.div,
+  "rightElement",
+);
+
 export type PrimitiveNumberInputDecrementTriggerProps = ComponentProps<
   typeof PrimitiveNumberInputDecrementTrigger
 >;

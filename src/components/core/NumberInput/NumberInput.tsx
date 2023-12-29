@@ -3,11 +3,14 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveNumberInput,
+  PrimitiveNumberInputAddon,
   PrimitiveNumberInputControl,
   PrimitiveNumberInputDecrementTrigger,
   PrimitiveNumberInputIncrementTrigger,
   PrimitiveNumberInputInput,
   PrimitiveNumberInputLabel,
+  PrimitiveNumberInputLeftElement,
+  PrimitiveNumberInputRightElement,
   PrimitiveNumberInputScrubber,
 } from "components/primitives";
 import { Flex, panda } from "generated/panda/jsx";
@@ -56,9 +59,17 @@ const NumberInput = ({
       <PrimitiveNumberInputScrubber />
       {label && <PrimitiveNumberInputLabel>{label}</PrimitiveNumberInputLabel>}
       <Flex>
-        {leftAddon && <panda.div borderLeftRadius="sm">{leftAddon}</panda.div>}
+        {leftAddon && (
+          <PrimitiveNumberInputAddon borderLeftRadius="sm">
+            {leftAddon}
+          </PrimitiveNumberInputAddon>
+        )}
         <Flex pos="relative" w="100%">
-          {inputLeftElement && <panda.div>{inputLeftElement}</panda.div>}
+          {inputLeftElement && (
+            <PrimitiveNumberInputLeftElement>
+              {inputLeftElement}
+            </PrimitiveNumberInputLeftElement>
+          )}
           <PrimitiveNumberInputInput
             {...inputProps}
             placeholder={placeholder}
@@ -69,10 +80,16 @@ const NumberInput = ({
             pl={inputLeftElement ? 10 : 3}
             pr={inputRightElement ? 10 : 3}
           />
-          {inputRightElement && <panda.div>{inputRightElement}</panda.div>}
+          {inputRightElement && (
+            <PrimitiveNumberInputRightElement>
+              {inputRightElement}
+            </PrimitiveNumberInputRightElement>
+          )}
         </Flex>
         {rightAddon && (
-          <panda.div borderRightRadius="sm">{rightAddon}</panda.div>
+          <PrimitiveNumberInputAddon borderRightRadius="sm">
+            {rightAddon}
+          </PrimitiveNumberInputAddon>
         )}
         {stepper && (
           <PrimitiveNumberInputControl>
