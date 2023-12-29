@@ -26,10 +26,10 @@ export const datePickerRecipe = defineSlotRecipe({
       width: "344px",
       zIndex: "menu",
       _open: {
-        animation: "fadeIn 0.25s ease-out",
+        animation: "fade-in",
       },
       _closed: {
-        animation: "fadeOut 0.2s ease-out",
+        animation: "fade-out",
       },
       _hidden: {
         display: "none",
