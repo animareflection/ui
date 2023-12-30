@@ -31,27 +31,37 @@ interface Item {
   disabled?: boolean;
 }
 
-export interface Props extends PrimitiveComboboxProps, ComboboxVariantProps {
+interface Group {
   label: {
-    // TODO calculate ID from singular (add dashes, lowercase, etc.)
     id: string;
-    display?: boolean;
     singular: string;
     plural: string;
   };
   items: Item[];
+}
+
+export interface Props
+  extends Omit<PrimitiveComboboxProps, "items">,
+    ComboboxVariantProps {
+  groups: Group[];
+  label: {
+    singular: string;
+    plural: string;
+    display?: boolean;
+  };
   triggerEnabled?: boolean;
   inputProps?: InputProps;
 }
 
 const Combobox = ({
   label,
-  items = [],
+  groups = [],
   triggerEnabled = true,
   inputProps,
   ...rest
 }: Props) => {
-  const [filteredItems, setFilteredItems] = useState(items);
+  const allItems = groups.flatMap((group) => group.items);
+  const [filteredItems, setFilteredItems] = useState(allItems);
 
   const handleChange = (
     evt: Parameters<
@@ -60,13 +70,13 @@ const Combobox = ({
       >
     >[0],
   ) => {
-    const filtered = items.filter(
+    const filtered = allItems.filter(
       (item) =>
         item.label.toLowerCase().includes(evt.value.toLowerCase()) ||
         item.value.toLowerCase().includes(evt.value.toLowerCase()),
     );
 
-    setFilteredItems(filtered.length ? filtered : items);
+    setFilteredItems(filtered.length ? filtered : allItems);
   };
 
   return (
@@ -105,26 +115,37 @@ const Combobox = ({
 
       <PrimitiveComboboxPositioner>
         <PrimitiveComboboxContent>
-          <PrimitiveComboboxItemGroup id={label.id}>
-            <PrimitiveComboboxItemGroupLabel htmlFor={label.id}>
-              {label.plural}
-            </PrimitiveComboboxItemGroupLabel>
+          {groups.map(
+            (group) =>
+              group.items.some((item) => filteredItems.includes(item)) && (
+                <PrimitiveComboboxItemGroup
+                  key={group.label.id}
+                  id={group.label.id}
+                >
+                  <PrimitiveComboboxItemGroupLabel htmlFor={group.label.id}>
+                    {group.label.plural}
+                  </PrimitiveComboboxItemGroupLabel>
 
-            {filteredItems.map((item) => (
-              <PrimitiveComboboxItem key={item.value} item={item}>
-                <Flex align="center" gap={2}>
-                  {item.icon}
-                  <PrimitiveComboboxItemText>
-                    {item.label}
-                  </PrimitiveComboboxItemText>
-                </Flex>
+                  {group.items.map(
+                    (item) =>
+                      filteredItems.includes(item) && (
+                        <PrimitiveComboboxItem key={item.value} item={item}>
+                          <Flex align="center" gap={2}>
+                            {item.icon}
+                            <PrimitiveComboboxItemText>
+                              {item.label}
+                            </PrimitiveComboboxItemText>
+                          </Flex>
 
-                <PrimitiveComboboxItemIndicator>
-                  <BiCheck />
-                </PrimitiveComboboxItemIndicator>
-              </PrimitiveComboboxItem>
-            ))}
-          </PrimitiveComboboxItemGroup>
+                          <PrimitiveComboboxItemIndicator>
+                            <BiCheck />
+                          </PrimitiveComboboxItemIndicator>
+                        </PrimitiveComboboxItem>
+                      ),
+                  )}
+                </PrimitiveComboboxItemGroup>
+              ),
+          )}
         </PrimitiveComboboxContent>
       </PrimitiveComboboxPositioner>
     </PrimitiveCombobox>

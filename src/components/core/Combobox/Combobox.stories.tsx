@@ -12,12 +12,17 @@ const fruitBasket = [
   { label: "Grape", icon: "🍇" },
 ];
 
-export const Default: Story = {
-  args: {
-    size: "md",
+const vegetableBasket = [
+  { label: "Carrot", icon: "🥕" },
+  { label: "Broccoli", icon: "🥦" },
+  { label: "Corn", icon: "🌽" },
+  { label: "Cucumber", icon: "🥒" },
+];
+
+const groups = [
+  {
     label: {
       id: "fruit",
-      display: true,
       singular: "Fruit",
       plural: "Fruit",
     },
@@ -27,6 +32,31 @@ export const Default: Story = {
       value: label,
       disabled: idx === 2,
     })),
+  },
+  {
+    label: {
+      id: "vegetable",
+      singular: "Vegetable",
+      plural: "Vegetables",
+    },
+    items: vegetableBasket.map(({ label, icon }, idx) => ({
+      label,
+      icon,
+      value: label,
+      disabled: idx === 2,
+    })),
+  },
+];
+
+export const Default: Story = {
+  args: {
+    size: "md",
+    label: {
+      singular: "Fruit or Vegetable",
+      plural: "Fruit or Vegetables",
+      display: true,
+    },
+    groups,
   },
 };
 

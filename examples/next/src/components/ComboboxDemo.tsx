@@ -11,21 +11,51 @@ const fruitBasket = [
   { label: "Grape", icon: "🍇" },
 ];
 
+const vegetableBasket = [
+  { label: "Carrot", icon: "🥕" },
+  { label: "Broccoli", icon: "🥦" },
+  { label: "Corn", icon: "🌽" },
+  { label: "Cucumber", icon: "🥒" },
+];
+
+const groups = [
+  {
+    label: {
+      id: "fruit",
+      singular: "Fruit",
+      plural: "Fruit",
+    },
+    items: fruitBasket.map(({ label, icon }, idx) => ({
+      label,
+      icon,
+      value: label,
+      disabled: idx === 2,
+    })),
+  },
+  {
+    label: {
+      id: "vegetable",
+      singular: "Vegetable",
+      plural: "Vegetables",
+    },
+    items: vegetableBasket.map(({ label, icon }, idx) => ({
+      label,
+      icon,
+      value: label,
+      disabled: idx === 2,
+    })),
+  },
+];
+
 const CheckboxDemo = () => (
   <Wrapper title="Checkbox">
     <Combobox
       label={{
-        id: "fruit",
+        singular: "Fruit or Vegetable",
+        plural: "Fruit or Vegetables",
         display: true,
-        singular: "Fruit",
-        plural: "Fruit",
       }}
-      items={fruitBasket.map(({ label, icon }, idx) => ({
-        label,
-        icon,
-        value: label,
-        disabled: idx === 2,
-      }))}
+      groups={groups}
     />
   </Wrapper>
 );
