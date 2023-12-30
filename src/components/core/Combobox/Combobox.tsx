@@ -50,7 +50,7 @@ export interface Props
     display?: boolean;
   };
   triggerEnabled?: boolean;
-  inputProps?: InputProps;
+  inputProps?: Omit<InputProps, "size">;
 }
 
 const Combobox = ({
@@ -58,6 +58,7 @@ const Combobox = ({
   groups = [],
   triggerEnabled = true,
   inputProps,
+  size,
   ...rest
 }: Props) => {
   const allItems = groups.flatMap((group) => group.items);
@@ -83,6 +84,7 @@ const Combobox = ({
     <PrimitiveCombobox
       onInputValueChange={handleChange}
       items={filteredItems}
+      size={size}
       {...rest}
     >
       {label.display && (
@@ -100,7 +102,12 @@ const Combobox = ({
             inputRightElement={
               triggerEnabled ? (
                 <PrimitiveComboboxTrigger asChild>
-                  <Button variant="ghost" aria-label="open options" size="xs">
+                  <Button
+                    bgColor="transparent"
+                    color={{ base: "fg.default", _hover: "accent.default" }}
+                    size={size}
+                    aria-label="open options"
+                  >
                     <BiExpandVertical />
                   </Button>
                 </PrimitiveComboboxTrigger>
@@ -108,6 +115,7 @@ const Combobox = ({
                 inputProps?.inputRightElement
               )
             }
+            size={size}
             {...inputProps}
           />
         </PrimitiveComboboxInput>
