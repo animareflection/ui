@@ -45,8 +45,8 @@ const groups = [
   },
 ];
 
-const CheckboxDemo = () => (
-  <Wrapper title="Checkbox">
+const ComboboxDemo = () => (
+  <Wrapper title="Combobox">
     <Combobox
       label={{
         singular: "Fruit or Vegetable",
@@ -58,4 +58,4 @@ const CheckboxDemo = () => (
   </Wrapper>
 );
 
-export default CheckboxDemo;
+export default ComboboxDemo;

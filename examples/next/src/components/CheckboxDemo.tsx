@@ -9,7 +9,7 @@ const CheckboxDemo = () => {
   const [isChecked, setIsChecked] = useState(true);
 
   return (
-    <Wrapper title="Combobox">
+    <Wrapper title="Checkbox">
       <Checkbox
         checked={isChecked}
         defaultChecked
