@@ -61,11 +61,9 @@ const DatePicker = ({
     {label && <PrimitiveDatePickerLabel>{label}</PrimitiveDatePickerLabel>}
 
     <PrimitiveDatePickerControl>
-      {input || (
-        <PrimitiveDatePickerInput asChild>
-          <Input />
-        </PrimitiveDatePickerInput>
-      )}
+      <PrimitiveDatePickerInput asChild>
+        {input || <Input />}
+      </PrimitiveDatePickerInput>
 
       <PrimitiveDatePickerTrigger asChild aria-label="Open date picker">
         {trigger || (

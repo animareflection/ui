@@ -39,6 +39,7 @@ export const datePickerRecipe = defineSlotRecipe({
       display: "flex",
       flexDirection: "row",
       gap: 2,
+      h: 10,
     },
     label: {
       color: "fg.default",
@@ -87,6 +88,7 @@ export const datePickerRecipe = defineSlotRecipe({
     view: {
       display: "flex",
       flexDirection: "column",
+      alignItems: "center",
       gap: 3,
       _hidden: {
         display: "none",
