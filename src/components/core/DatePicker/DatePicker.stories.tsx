@@ -1,11 +1,5 @@
-import { FiCalendar as CalendarIcon, FiX } from "react-icons/fi";
-
 import { datePickerState, rangeDatePickerState } from "./DatePicker.spec";
-import { DatePicker, Input, Text } from "components/core";
-import Button from "components/core/Button/Button";
-import Icon from "components/core/Icon/Icon";
-import { Flex } from "generated/panda/jsx";
-import { input } from "generated/panda/recipes";
+import { DatePicker } from "components/core";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { DatePickerProps } from "components/core";
@@ -13,41 +7,7 @@ import type { DatePickerProps } from "components/core";
 type Story = StoryObj<typeof DatePicker>;
 
 const DatePickerTemplate = (props: Partial<DatePickerProps>) => (
-  <DatePicker
-    label="Date Picker"
-    startOfWeek={1}
-    clearTrigger={
-      <Flex
-        gap={1}
-        justify="center"
-        css={{
-          "& *": { color: "accent.default" },
-        }}
-      >
-        <Icon w={4}>
-          <FiX />
-        </Icon>
-
-        <Text fontSize="sm">Clear</Text>
-      </Flex>
-    }
-    trigger={
-      <Button size="xs">
-        <Icon color="bg.default" h={6} w={6}>
-          <CalendarIcon />
-        </Icon>
-      </Button>
-    }
-    input={
-      <Input
-        // TODO remove, this will be improved once slot recipe classes are automatically picked up
-        className={input().input}
-        h={10}
-        placeholder="mm/dd/yyyy"
-      />
-    }
-    {...props}
-  />
+  <DatePicker label="Date Picker" startOfWeek={1} {...props} />
 );
 
 export const Default: Story = {

@@ -15,9 +15,6 @@ export const datePickerRecipe = defineSlotRecipe({
       flexDirection: "column",
       gap: 1.5,
     },
-    clearTrigger: {
-      cursor: "pointer",
-    },
     content: {
       bgColor: "bg.default",
       borderRadius: "md",
@@ -71,6 +68,7 @@ export const datePickerRecipe = defineSlotRecipe({
     },
     tableCellTrigger: {
       width: "100%",
+      justifyContent: "center",
       _today: {
         _before: {
           content: "'−'",
