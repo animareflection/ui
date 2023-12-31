@@ -21,6 +21,7 @@ import {
   CheckboxDemo,
   CollapseDemo,
   CopyToClipboardDemo,
+  DatePickerDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -97,6 +98,7 @@ const App = () => (
       <ButtonDemo />
       <AvatarDemo />
       <AccordionDemo />
+      <DatePickerDemo />
       <DrawerDemo />
       <IconDemo />
       <MenuDemo />

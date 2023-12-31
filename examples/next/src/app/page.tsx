@@ -21,6 +21,7 @@ import {
   CheckboxDemo,
   CollapseDemo,
   CopyToClipboardDemo,
+  DatePickerDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -86,6 +87,7 @@ const HomePage = () => (
       <ButtonDemo />
       <AvatarDemo />
       <AccordionDemo />
+      <DatePickerDemo />
       <DrawerDemo />
       <IconDemo />
       <MenuDemo />

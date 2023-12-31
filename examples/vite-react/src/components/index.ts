@@ -10,6 +10,7 @@ export { default as CarouselDemo } from "./CarouselDemo";
 export { default as CheckboxDemo } from "./CheckboxDemo";
 export { default as CollapseDemo } from "./CollapseDemo";
 export { default as CopyToClipboardDemo } from "./CopyToClipboardDemo";
+export { default as DatePickerDemo } from "./DatePickerDemo";
 export { default as DrawerDemo } from "./DrawerDemo";
 export { default as FlyoutDemo } from "./FlyoutDemo";
 export { default as IconDemo } from "./IconDemo";

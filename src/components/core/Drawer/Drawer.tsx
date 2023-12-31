@@ -68,7 +68,7 @@ const Drawer = ({
                 {typeof children === "function" ? children(ctx) : children}
 
                 <PrimitiveDrawerCloseTrigger>
-                  <Icon color="fg.default">
+                  <Icon>
                     <CloseIcon />
                   </Icon>
                 </PrimitiveDrawerCloseTrigger>

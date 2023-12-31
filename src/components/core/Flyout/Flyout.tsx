@@ -56,7 +56,7 @@ const Flyout = ({ trigger, title, contentProps, children, ...rest }: Props) => {
           </PrimitiveFlyoutDescription>
 
           <PrimitiveFlyoutCloseTrigger onClick={onClose}>
-            <Icon color="fg.default">
+            <Icon>
               <CloseIcon />
             </Icon>
           </PrimitiveFlyoutCloseTrigger>

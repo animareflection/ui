@@ -71,6 +71,7 @@ const Collapse = ({
       >
         {label}
         <Icon
+          color="bg.default"
           transform={isOpen && !icon ? "rotate(-180deg)" : undefined}
           transition="transform 400ms"
           transformOrigin="center"

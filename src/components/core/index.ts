@@ -8,6 +8,7 @@ export { default as Button } from "./Button/Button";
 export { default as Card, CardHeader, CardBody, CardFooter } from "./Card/Card";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as Checkbox } from "./Checkbox/Checkbox";
+export { default as DatePicker } from "./DatePicker/DatePicker";
 export { default as Drawer } from "./Drawer/Drawer";
 export { default as Icon } from "./Icon/Icon";
 export { default as Image } from "./Image/Image";
@@ -50,6 +51,7 @@ export type {
 } from "./Card/Card";
 export type { Props as CarouselProps } from "./Carousel/Carousel";
 export type { Props as CheckboxProps } from "./Checkbox/Checkbox";
+export type { Props as DatePickerProps } from "./DatePicker/DatePicker";
 export type { Props as DrawerProps } from "./Drawer/Drawer";
 export type { Props as IconProps } from "./Icon/Icon";
 export type { Props as ImageProps } from "./Image/Image";
