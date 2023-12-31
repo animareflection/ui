@@ -68,7 +68,7 @@ const DatePicker = ({
       <PrimitiveDatePickerTrigger asChild aria-label="Open date picker">
         {trigger || (
           <Button variant="secondary" borderColor="fg.default">
-            <Icon w={4} h={4}>
+            <Icon w={3.5} h={3.5}>
               <CalendarIcon />
             </Icon>
           </Button>
