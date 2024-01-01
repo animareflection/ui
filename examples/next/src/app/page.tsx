@@ -20,6 +20,7 @@ import {
   CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
+  ComboboxDemo,
   CopyToClipboardDemo,
   DatePickerDemo,
   DrawerDemo,
@@ -116,6 +117,7 @@ const HomePage = () => (
       <StatDemo />
       <CopyToClipboardDemo />
       <AlertDemo />
+      <ComboboxDemo />
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">
           Hide below md breakpoint

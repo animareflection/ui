@@ -10,6 +10,9 @@ export * from "./Carousel/Carousel";
 export { default as PrimitiveCheckbox } from "./Checkbox/Checkbox";
 export * from "./Checkbox/Checkbox";
 
+export { default as PrimitiveCombobox } from "./Combobox/Combobox";
+export * from "./Combobox/Combobox";
+
 export { default as PrimitiveDatePicker } from "./DatePicker/DatePicker";
 export * from "./DatePicker/DatePicker";
 
