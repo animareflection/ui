@@ -25,6 +25,7 @@ const groups = [
       id: "fruit",
       singular: "Fruit",
       plural: "Fruit",
+      display: true,
     },
     items: fruitBasket.map(({ label, icon }, idx) => ({
       label,
@@ -38,6 +39,7 @@ const groups = [
       id: "vegetable",
       singular: "Vegetable",
       plural: "Vegetables",
+      display: true,
     },
     items: vegetableBasket.map(({ label, icon }, idx) => ({
       label,

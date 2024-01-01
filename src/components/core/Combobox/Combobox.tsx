@@ -36,6 +36,7 @@ interface Group {
     id: string;
     singular: string;
     plural: string;
+    display?: boolean;
   };
   items: Item[];
 }
@@ -132,9 +133,11 @@ const Combobox = ({
                   key={group.label.id}
                   id={group.label.id}
                 >
-                  <PrimitiveComboboxItemGroupLabel htmlFor={group.label.id}>
-                    {group.label.plural}
-                  </PrimitiveComboboxItemGroupLabel>
+                  {group.label.display && (
+                    <PrimitiveComboboxItemGroupLabel htmlFor={group.label.id}>
+                      {group.label.plural}
+                    </PrimitiveComboboxItemGroupLabel>
+                  )}
 
                   {group.items.map(
                     (item) =>
