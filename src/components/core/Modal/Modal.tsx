@@ -60,7 +60,7 @@ const Modal = ({
                 {typeof children === "function" ? children(ctx) : children}
 
                 <PrimitiveModalCloseTrigger>
-                  <Icon color="fg.default">
+                  <Icon>
                     <CloseIcon />
                   </Icon>
                 </PrimitiveModalCloseTrigger>

@@ -13,6 +13,9 @@ export * from "./Checkbox/Checkbox";
 export { default as PrimitiveCombobox } from "./Combobox/Combobox";
 export * from "./Combobox/Combobox";
 
+export { default as PrimitiveDatePicker } from "./DatePicker/DatePicker";
+export * from "./DatePicker/DatePicker";
+
 export { default as PrimitiveDrawer } from "./Drawer/Drawer";
 export * from "./Drawer/Drawer";
 

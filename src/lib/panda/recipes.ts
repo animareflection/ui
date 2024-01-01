@@ -9,6 +9,7 @@ import { cardRecipe } from "../../components/core/Card/Card.recipe";
 import { carouselRecipe } from "../../components/core/Carousel/Carousel.recipe";
 import { checkboxRecipe } from "../../components/core/Checkbox/Checkbox.recipe";
 import { comboboxRecipe } from "../../components/core/Combobox/Combobox.recipe";
+import { datePickerRecipe } from "../../components/core/DatePicker/DatePicker.recipe";
 import { drawerRecipe } from "../../components/core/Drawer/Drawer.recipe";
 import { flyoutRecipe } from "../../components/core/Flyout/Flyout.recipe";
 import { iconRecipe } from "../../components/core/Icon/Icon.recipe";
@@ -52,6 +53,7 @@ export const slotRecipes = {
   carousel: carouselRecipe,
   checkbox: checkboxRecipe,
   combobox: comboboxRecipe,
+  datePicker: datePickerRecipe,
   drawer: drawerRecipe,
   flyout: flyoutRecipe,
   input: inputRecipe,

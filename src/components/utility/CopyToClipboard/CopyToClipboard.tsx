@@ -54,7 +54,7 @@ const CopyToClipboard = ({
       >
         {children}
         {icon && (
-          <Icon>
+          <Icon color="bg.default">
             <ClipboardIcon />
           </Icon>
         )}
