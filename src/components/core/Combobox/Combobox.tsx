@@ -27,6 +27,7 @@ import type { ComponentProps, ReactNode } from "react";
 interface Item {
   label: string;
   value: string;
+  itemProps?: ComponentProps<typeof PrimitiveComboboxItem>;
   icon?: ReactNode;
   disabled?: boolean;
 }
@@ -36,6 +37,7 @@ interface Group {
     id: string;
     singular: string;
     plural: string;
+    labelProps?: ComponentProps<typeof PrimitiveComboboxItemGroupLabel>;
     display?: boolean;
   };
   items: Item[];
@@ -48,6 +50,7 @@ export interface Props
   label: {
     singular: string;
     plural: string;
+    labelProps?: ComponentProps<typeof PrimitiveComboboxLabel>;
     display?: boolean;
   };
   itemIndicator?: boolean;
@@ -91,7 +94,9 @@ const Combobox = ({
       {...rest}
     >
       {label.display && (
-        <PrimitiveComboboxLabel>{label.plural}</PrimitiveComboboxLabel>
+        <PrimitiveComboboxLabel {...label.labelProps}>
+          {label.plural}
+        </PrimitiveComboboxLabel>
       )}
 
       <PrimitiveComboboxControl>
@@ -134,7 +139,10 @@ const Combobox = ({
                   id={group.label.id}
                 >
                   {group.label.display && (
-                    <PrimitiveComboboxItemGroupLabel htmlFor={group.label.id}>
+                    <PrimitiveComboboxItemGroupLabel
+                      htmlFor={group.label.id}
+                      {...group.label.labelProps}
+                    >
                       {group.label.plural}
                     </PrimitiveComboboxItemGroupLabel>
                   )}
@@ -142,7 +150,11 @@ const Combobox = ({
                   {group.items.map(
                     (item) =>
                       filteredItems.includes(item) && (
-                        <PrimitiveComboboxItem key={item.value} item={item}>
+                        <PrimitiveComboboxItem
+                          key={item.value}
+                          item={item}
+                          {...item.itemProps}
+                        >
                           <Flex align="center" gap={2}>
                             {item.icon}
                             <PrimitiveComboboxItemText>
