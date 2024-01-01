@@ -49,6 +49,7 @@ export interface Props
     plural: string;
     display?: boolean;
   };
+  itemIndicator?: boolean;
   triggerEnabled?: boolean;
   inputProps?: Omit<InputProps, "size">;
 }
@@ -56,6 +57,7 @@ export interface Props
 const Combobox = ({
   label,
   groups = [],
+  itemIndicator = false,
   triggerEnabled = true,
   inputProps,
   size,
@@ -145,9 +147,11 @@ const Combobox = ({
                             </PrimitiveComboboxItemText>
                           </Flex>
 
-                          <PrimitiveComboboxItemIndicator>
-                            <BiCheck />
-                          </PrimitiveComboboxItemIndicator>
+                          {itemIndicator && (
+                            <PrimitiveComboboxItemIndicator>
+                              <BiCheck />
+                            </PrimitiveComboboxItemIndicator>
+                          )}
                         </PrimitiveComboboxItem>
                       ),
                   )}
