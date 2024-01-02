@@ -20,14 +20,22 @@ import {
 import { Flex } from "generated/panda/jsx";
 
 import type { Props as InputProps } from "components/core/Input/Input";
-import type { PrimitiveComboboxProps } from "components/primitives";
+import type {
+  PrimitiveComboboxContentProps,
+  PrimitiveComboboxControlProps,
+  PrimitiveComboboxItemGroupLabelProps,
+  PrimitiveComboboxItemProps,
+  PrimitiveComboboxLabelProps,
+  PrimitiveComboboxPositionerProps,
+  PrimitiveComboboxProps,
+} from "components/primitives";
 import type { ComboboxVariantProps } from "generated/panda/recipes";
-import type { ComponentProps, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface Item {
   label: string;
   value: string;
-  itemProps?: ComponentProps<typeof PrimitiveComboboxItem>;
+  itemProps?: PrimitiveComboboxItemProps;
   icon?: ReactNode;
   disabled?: boolean;
 }
@@ -37,7 +45,7 @@ interface Group {
     id: string;
     singular: string;
     plural: string;
-    labelProps?: ComponentProps<typeof PrimitiveComboboxItemGroupLabel>;
+    props?: PrimitiveComboboxItemGroupLabelProps;
     display?: boolean;
   };
   items: Item[];
@@ -50,12 +58,16 @@ export interface Props
   label: {
     singular: string;
     plural: string;
-    labelProps?: ComponentProps<typeof PrimitiveComboboxLabel>;
+    props?: PrimitiveComboboxLabelProps;
     display?: boolean;
   };
   itemIndicator?: boolean;
   triggerEnabled?: boolean;
   inputProps?: Omit<InputProps, "size">;
+  contentProps?: PrimitiveComboboxContentProps;
+  controlProps?: PrimitiveComboboxControlProps;
+  positionerProps?: PrimitiveComboboxPositionerProps;
+  itemGroupProps?: Omit<PrimitiveComboboxItemGroupLabelProps, "htmlFor">;
 }
 
 const Combobox = ({
@@ -64,6 +76,10 @@ const Combobox = ({
   itemIndicator = false,
   triggerEnabled = true,
   inputProps,
+  contentProps,
+  controlProps,
+  positionerProps,
+  itemGroupProps,
   size,
   ...rest
 }: Props) => {
@@ -72,9 +88,7 @@ const Combobox = ({
 
   const handleChange = (
     evt: Parameters<
-      NonNullable<
-        ComponentProps<typeof PrimitiveCombobox>["onInputValueChange"]
-      >
+      NonNullable<PrimitiveComboboxProps["onInputValueChange"]>
     >[0],
   ) => {
     const filtered = allItems.filter(
@@ -94,12 +108,12 @@ const Combobox = ({
       {...rest}
     >
       {label.display && (
-        <PrimitiveComboboxLabel {...label.labelProps}>
+        <PrimitiveComboboxLabel {...label.props}>
           {label.plural}
         </PrimitiveComboboxLabel>
       )}
 
-      <PrimitiveComboboxControl>
+      <PrimitiveComboboxControl {...controlProps}>
         <PrimitiveComboboxInput asChild>
           <Input
             placeholder={
@@ -129,19 +143,20 @@ const Combobox = ({
         </PrimitiveComboboxInput>
       </PrimitiveComboboxControl>
 
-      <PrimitiveComboboxPositioner>
-        <PrimitiveComboboxContent>
+      <PrimitiveComboboxPositioner {...positionerProps}>
+        <PrimitiveComboboxContent {...contentProps}>
           {groups.map(
             (group) =>
               group.items.some((item) => filteredItems.includes(item)) && (
                 <PrimitiveComboboxItemGroup
                   key={group.label.id}
                   id={group.label.id}
+                  {...itemGroupProps}
                 >
                   {group.label.display && (
                     <PrimitiveComboboxItemGroupLabel
                       htmlFor={group.label.id}
-                      {...group.label.labelProps}
+                      {...group.label.props}
                     >
                       {group.label.plural}
                     </PrimitiveComboboxItemGroupLabel>
@@ -157,6 +172,7 @@ const Combobox = ({
                         >
                           <Flex align="center" gap={2}>
                             {item.icon}
+
                             <PrimitiveComboboxItemText>
                               {item.label}
                             </PrimitiveComboboxItemText>
