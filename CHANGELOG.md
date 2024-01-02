@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.19.1
+
+### Patch Changes
+
+- [#200](https://github.com/animareflection/ui/pull/200) [`08ed1bf`](https://github.com/animareflection/ui/commit/08ed1bf6587822d1c03f25f6ba6c4be9f684145a) Thanks [@coopbri](https://github.com/coopbri)! - Add prop overrides to each major `Combobox` part
+
 ## 0.19.0
 
 ### Minor Changes
