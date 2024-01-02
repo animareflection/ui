@@ -1,5 +1,5 @@
 import { comboboxState } from "./Combobox.spec";
-import { Combobox } from "components/core";
+import { Combobox, Image } from "components/core";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -59,6 +59,28 @@ export const Default: Story = {
       display: true,
     },
     groups,
+  },
+};
+
+export const ImageIcons: Story = {
+  args: {
+    ...Default.args,
+    groups: [
+      {
+        label: {
+          id: "items",
+          singular: "Item",
+          plural: "Items",
+          display: true,
+        },
+        items: fruitBasket.map(({ label }, idx) => ({
+          label,
+          icon: <Image src="/img/logo.png" alt={label} w={4} h={4} />,
+          value: label,
+          disabled: idx === 2,
+        })),
+      },
+    ],
   },
 };
 
