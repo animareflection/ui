@@ -1,5 +1,17 @@
 # @animareflection/ui
 
+## 0.20.0
+
+### Minor Changes
+
+- [#202](https://github.com/animareflection/ui/pull/202) [`5dcc96e`](https://github.com/animareflection/ui/commit/5dcc96e5edc44e37e78e967a29c2b859582558eb) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Defined `layerStyles` in aniref preset to allow for prop use downstream
+
+### Patch Changes
+
+- [#202](https://github.com/animareflection/ui/pull/202) [`5dcc96e`](https://github.com/animareflection/ui/commit/5dcc96e5edc44e37e78e967a29c2b859582558eb) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Updated `Button` recipe styles for consistent sizing across variants
+
+- [#202](https://github.com/animareflection/ui/pull/202) [`5dcc96e`](https://github.com/animareflection/ui/commit/5dcc96e5edc44e37e78e967a29c2b859582558eb) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove variants from `Banner` recipe in favor of `defaultGradient` layer style
+
 ## 0.19.1
 
 ### Patch Changes
