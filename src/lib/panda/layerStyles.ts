@@ -1,14 +1,14 @@
 import { defineLayerStyles } from "@pandacss/dev";
 
 const layerStyles = defineLayerStyles({
-  gradientAccent: {
+  accentGradient: {
     description: "layer styles for gradient",
     value: {
       background:
         "linear-gradient(to right, token(colors.brand.secondary.500), token(colors.accent.default))",
     },
   },
-  gradientSubtle: {
+  subtleGradient: {
     description: "layer styles for gradient",
     value: {
       background: {
