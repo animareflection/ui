@@ -9,6 +9,7 @@ import {
   fonts,
   globalCss,
   keyframes,
+  layerStyles,
   recipes,
   semanticTokens,
   slotRecipes,
@@ -33,6 +34,7 @@ const anirefPreset = definePreset({
     extend: {
       breakpoints,
       keyframes,
+      layerStyles,
       recipes,
       semanticTokens,
       slotRecipes,
