@@ -18,6 +18,7 @@ const layerStyles = defineLayerStyles({
   gradient: {
     description: "layer styles for gradient",
     value: {
+      // TODO: update when colorPalette composition strategy is implemented (colorPalette.subtle)
       background: {
         base: "linear-gradient(to right, token(colors.brand.secondary.50), token(colors.brand.primary.50))",
         _dark:
