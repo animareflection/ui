@@ -1,10 +1,11 @@
 import { defineLayerStyles } from "@pandacss/dev";
 
 const layerStyles = defineLayerStyles({
-  accentGradient: {
+  defaultGradient: {
     description: "layer styles for accent gradient",
     value: {
       background:
+        // TODO update when colorPalette composition strategy is implemented
         "linear-gradient(to right, token(colors.brand.secondary.500), token(colors.accent.default))",
     },
   },
