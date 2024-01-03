@@ -4,6 +4,7 @@ export const buttonRecipe = defineRecipe({
   className: "button",
   description: "The styles for the Button component",
   base: {
+    borderWidth: "1px",
     cursor: "pointer",
     fontWeight: "bold",
     borderRadius: "md",
@@ -27,21 +28,24 @@ export const buttonRecipe = defineRecipe({
   variants: {
     variant: {
       primary: {
+        borderColor: "accent.default",
         color: "accent.fg",
         bgColor: "accent.default",
         _hover: {
           bgColor: "accent.emphasized",
+          borderColor: "accent.emphasized",
         },
         _disabled: {
+          borderColor: "border.disabled",
           bgColor: "bg.disabled",
           cursor: "not-allowed",
           _hover: {
+            borderColor: "border.disabled",
             bgColor: "bg.disabled",
           },
         },
       },
       secondary: {
-        borderWidth: "1px",
         borderColor: "border.emphasized",
         bgColor: "bg.default",
         color: "fg.emphasized",
@@ -53,7 +57,7 @@ export const buttonRecipe = defineRecipe({
           color: "fg.disabled",
           cursor: "not-allowed",
           _hover: {
-            background: "transparent",
+            background: "bg.default",
             borderColor: "border.disabled",
             color: "fg.disabled",
           },
@@ -61,17 +65,21 @@ export const buttonRecipe = defineRecipe({
       },
       ghost: {
         bgColor: "transparent",
+        borderColor: "transparent",
         color: "fg.emphasized",
         _hover: {
           color: "fg.default",
           background: "accent.subtle",
+          borderColor: "accent.subtle",
         },
         _disabled: {
+          borderColor: "border.disabled",
           color: "fg.disabled",
           cursor: "not-allowed",
           _hover: {
             background: "transparent",
             color: "fg.disabled",
+            borderColor: "border.disabled",
           },
         },
       },
@@ -79,14 +87,18 @@ export const buttonRecipe = defineRecipe({
         borderRadius: "full !important",
         color: "accent.fg",
         bgColor: "accent.default",
+        borderColor: "accent.default",
         _hover: {
           bgColor: "accent.emphasized",
+          borderColor: "accent.emphasized",
         },
         _disabled: {
+          borderColor: "border.disabled",
           bgColor: "bg.disabled",
           cursor: "not-allowed",
           _hover: {
             bgColor: "bg.disabled",
+            borderColor: "border.disabled",
           },
         },
       },
