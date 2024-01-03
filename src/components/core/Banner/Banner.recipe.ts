@@ -21,9 +21,7 @@ export const bannerRecipe = defineRecipe({
   variants: {
     variant: {
       gradient: {
-        bgGradient: "to-r",
-        gradientFrom: "brand.secondary.500",
-        gradientTo: "accent.default",
+        layerStyle: "gradientAccent",
       },
     },
   },
