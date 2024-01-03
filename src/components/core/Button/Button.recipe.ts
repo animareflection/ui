@@ -73,13 +73,13 @@ export const buttonRecipe = defineRecipe({
           borderColor: "accent.subtle",
         },
         _disabled: {
-          borderColor: "border.disabled",
+          borderColor: "transparent",
           color: "fg.disabled",
           cursor: "not-allowed",
           _hover: {
             background: "transparent",
             color: "fg.disabled",
-            borderColor: "border.disabled",
+            borderColor: "transparent",
           },
         },
       },
