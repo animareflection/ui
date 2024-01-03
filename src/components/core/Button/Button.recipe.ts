@@ -34,9 +34,11 @@ export const buttonRecipe = defineRecipe({
           bgColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         },
         _disabled: {
+          borderColor: "border.disabled",
           bgColor: "bg.disabled",
           cursor: "not-allowed",
           _hover: {
+            borderColor: "border.disabled",
             bgColor: "bg.disabled",
           },
         },
@@ -55,6 +57,7 @@ export const buttonRecipe = defineRecipe({
           cursor: "not-allowed",
           _hover: {
             background: "bg.default",
+            background: "bg.default",
             borderColor: "border.disabled",
             color: "fg.disabled",
           },
@@ -68,11 +71,13 @@ export const buttonRecipe = defineRecipe({
           background: { base: "colorPalette.50", _dark: "colorPalette.950" },
         },
         _disabled: {
+          borderColor: "transparent",
           color: "fg.disabled",
           cursor: "not-allowed",
           _hover: {
             background: "transparent",
             color: "fg.disabled",
+            borderColor: "transparent",
           },
         },
       },
@@ -84,10 +89,12 @@ export const buttonRecipe = defineRecipe({
           bgColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         },
         _disabled: {
+          borderColor: "border.disabled",
           bgColor: "bg.disabled",
           cursor: "not-allowed",
           _hover: {
             bgColor: "bg.disabled",
+            borderColor: "border.disabled",
           },
         },
       },
