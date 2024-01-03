@@ -21,7 +21,6 @@ const layerStyles = defineLayerStyles({
       background: {
         base: "linear-gradient(to right, token(colors.brand.secondary.50), token(colors.brand.primary.50))",
         _dark:
-          // TODO: add #05291d to UI color palette (secondary.950)
           "linear-gradient(to right, token(colors.brand.secondary.950), token(colors.brand.primary.950))",
       },
     },
