@@ -9,7 +9,7 @@ const layerStyles = defineLayerStyles({
       _hover: {
         backgroundColor: {
           base: "brand.secondary.50",
-          _dark: "#05291d", // TODO: add #05291d to UI color palette (secondary.950)
+          _dark: "brand.secondary.950",
         },
       },
     },
@@ -21,7 +21,7 @@ const layerStyles = defineLayerStyles({
         base: "linear-gradient(to right, token(colors.brand.secondary.50), token(colors.brand.primary.50))",
         _dark:
           // TODO: add #05291d to UI color palette (secondary.950)
-          "linear-gradient(to right, #05291d, token(colors.brand.primary.950))",
+          "linear-gradient(to right, token(colors.brand.secondary.950), token(colors.brand.primary.950))",
       },
     },
   },
