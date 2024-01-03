@@ -27,6 +27,7 @@ const colors = defineTokens.colors({
       700: { value: "#45d290" },
       800: { value: "#31cd84" },
       900: { value: "#28a369" },
+      950: { value: "#05291d" },
     },
     tertiary: {
       50: { value: "#ffdddf" },
