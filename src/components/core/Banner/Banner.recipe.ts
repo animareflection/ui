@@ -18,11 +18,4 @@ export const bannerRecipe = defineRecipe({
     background: "accent.default",
     color: "accent.fg",
   },
-  variants: {
-    variant: {
-      gradient: {
-        layerStyle: "defaultGradient",
-      },
-    },
-  },
 });

@@ -2,4 +2,4 @@
 "@animareflection/ui": patch
 ---
 
-Updated `Banner` recipe to use `defaultGradient` layer style for `gradient` variant
+Remove variants from `Banner` recipe in favor of `defaultGradient` layer style
