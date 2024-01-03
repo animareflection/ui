@@ -57,7 +57,6 @@ export const buttonRecipe = defineRecipe({
           cursor: "not-allowed",
           _hover: {
             background: "bg.default",
-            background: "bg.default",
             borderColor: "border.disabled",
             color: "fg.disabled",
           },
