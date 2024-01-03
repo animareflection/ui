@@ -1,6 +1,7 @@
 import { defineLayerStyles } from "@pandacss/dev";
 
 const layerStyles = defineLayerStyles({
+  // TODO: remove button layer style when colorPalette composition strategy is implemented
   button: {
     description: "layer styles for brand.secondary button",
     value: {
