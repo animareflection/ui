@@ -18,11 +18,49 @@ const ButtonTest = () => {
 
 export const Variants: Story = {
   render: () => (
-    <Flex gap={2}>
-      <Button>Click me 🏝️</Button>
-      <Button variant="secondary">Click me 🏝️</Button>
-      <Button variant="ghost">Click me 🏝️</Button>
-      <Button variant="round">Click me 🏝️</Button>
+    <Flex direction="column" gap={2}>
+      <Flex gap={2}>
+        <Button>Click me 🏝️</Button>
+        <Button variant="secondary">Click me 🏝️</Button>
+        <Button variant="ghost">Click me 🏝️</Button>
+        <Button variant="round">Click me 🏝️</Button>
+      </Flex>
+      <Flex gap={2}>
+        <Button colorPalette="brand.secondary">Click me 🏝️</Button>
+        <Button colorPalette="brand.secondary" variant="secondary">
+          Click me 🏝️
+        </Button>
+        <Button colorPalette="brand.secondary" variant="ghost">
+          Click me 🏝️
+        </Button>
+        <Button colorPalette="brand.secondary" variant="round">
+          Click me 🏝️
+        </Button>
+      </Flex>
+      <Flex gap={2}>
+        <Button colorPalette="brand.tertiary">Click me 🏝️</Button>
+        <Button colorPalette="brand.tertiary" variant="secondary">
+          Click me 🏝️
+        </Button>
+        <Button colorPalette="brand.tertiary" variant="ghost">
+          Click me 🏝️
+        </Button>
+        <Button colorPalette="brand.tertiary" variant="round">
+          Click me 🏝️
+        </Button>
+      </Flex>
+      <Flex gap={2}>
+        <Button colorPalette="brand.quaternary">Click me 🏝️</Button>
+        <Button colorPalette="brand.quaternary" variant="secondary">
+          Click me 🏝️
+        </Button>
+        <Button colorPalette="brand.quaternary" variant="ghost">
+          Click me 🏝️
+        </Button>
+        <Button colorPalette="brand.quaternary" variant="round">
+          Click me 🏝️
+        </Button>
+      </Flex>
     </Flex>
   ),
 };
@@ -51,7 +89,7 @@ export const OnClickEvent: Story = {
   tags: ["test"],
 };
 
-const meta = {
+const meta: Meta<typeof Button> = {
   title: "Components/Core/Button",
   component: Button,
   tags: ["autodocs"],
