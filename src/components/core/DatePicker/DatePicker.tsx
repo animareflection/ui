@@ -32,6 +32,7 @@ import {
   PrimitiveDatePickerViewControl,
   PrimitiveDatePickerViewTrigger,
 } from "components/primitives";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveDatePickerProps } from "components/primitives/DatePicker/DatePicker";
 import type { ReactNode } from "react";
@@ -56,223 +57,235 @@ const DatePicker = ({
   input,
   clearTrigger,
   ...rest
-}: Props) => (
-  <PrimitiveDatePicker positioning={{ sameWidth: true }} {...rest}>
-    {label && <PrimitiveDatePickerLabel>{label}</PrimitiveDatePickerLabel>}
+}: Props) => {
+  const isClient = useIsClient();
 
-    <PrimitiveDatePickerControl>
-      <PrimitiveDatePickerInput asChild>
-        {input || <Input />}
-      </PrimitiveDatePickerInput>
+  if (!isClient) return null;
 
-      <PrimitiveDatePickerTrigger asChild aria-label="Open date picker">
-        {trigger || (
-          <Button variant="secondary" borderColor="fg.default">
-            <Icon w={3.5} h={3.5}>
-              <CalendarIcon />
-            </Icon>
-          </Button>
-        )}
-      </PrimitiveDatePickerTrigger>
+  return (
+    <PrimitiveDatePicker positioning={{ sameWidth: true }} {...rest}>
+      {label && <PrimitiveDatePickerLabel>{label}</PrimitiveDatePickerLabel>}
 
-      <PrimitiveDatePickerClearTrigger>
-        {clearTrigger || (
-          <Button variant="ghost" size="sm" gap={1}>
-            <Icon w={4}>
-              <FiX />
-            </Icon>
+      <PrimitiveDatePickerControl>
+        <PrimitiveDatePickerInput asChild>
+          {input || <Input />}
+        </PrimitiveDatePickerInput>
 
-            <Text fontSize="sm">Clear</Text>
-          </Button>
-        )}
-      </PrimitiveDatePickerClearTrigger>
-    </PrimitiveDatePickerControl>
+        <PrimitiveDatePickerTrigger asChild aria-label="Open date picker">
+          {trigger || (
+            <Button variant="secondary" borderColor="fg.default">
+              <Icon w={3.5} h={3.5}>
+                <CalendarIcon />
+              </Icon>
+            </Button>
+          )}
+        </PrimitiveDatePickerTrigger>
 
-    <PrimitiveDatePickerPositioner>
-      <PrimitiveDatePickerContent>
-        <PrimitiveDatePickerView view="day">
-          {(api) => (
-            <>
-              <PrimitiveDatePickerViewControl>
-                <PrimitiveDatePickerPrevTrigger
-                  asChild
-                  aria-label="Previous month"
-                >
-                  <Button variant="ghost" size="sm">
-                    <Icon w={5} h={5}>
-                      <ChevronLeftIcon />
-                    </Icon>
-                  </Button>
-                </PrimitiveDatePickerPrevTrigger>
+        <PrimitiveDatePickerClearTrigger>
+          {clearTrigger || (
+            <Button variant="ghost" size="sm" gap={1}>
+              <Icon w={4}>
+                <FiX />
+              </Icon>
 
-                <PrimitiveDatePickerViewTrigger
-                  asChild
-                  aria-label="View trigger"
-                >
-                  <Button variant="ghost" size="sm">
-                    <PrimitiveDatePickerRangeText />
-                  </Button>
-                </PrimitiveDatePickerViewTrigger>
+              <Text fontSize="sm">Clear</Text>
+            </Button>
+          )}
+        </PrimitiveDatePickerClearTrigger>
+      </PrimitiveDatePickerControl>
 
-                <PrimitiveDatePickerNextTrigger asChild aria-label="Next month">
-                  <Button variant="ghost" size="sm">
-                    <Icon w={5} h={5}>
-                      <ChevronRightIcon />
-                    </Icon>
-                  </Button>
-                </PrimitiveDatePickerNextTrigger>
-              </PrimitiveDatePickerViewControl>
+      <PrimitiveDatePickerPositioner>
+        <PrimitiveDatePickerContent>
+          <PrimitiveDatePickerView view="day">
+            {(api) => (
+              <>
+                <PrimitiveDatePickerViewControl>
+                  <PrimitiveDatePickerPrevTrigger
+                    asChild
+                    aria-label="Previous month"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <Icon w={5} h={5}>
+                        <ChevronLeftIcon />
+                      </Icon>
+                    </Button>
+                  </PrimitiveDatePickerPrevTrigger>
 
-              <PrimitiveDatePickerTable>
-                <PrimitiveDatePickerTableHead>
-                  <PrimitiveDatePickerTableRow>
-                    {api.weekDays.map((weekDay, id) => (
-                      <PrimitiveDatePickerTableHeader key={id}>
-                        {weekDay.narrow}
-                      </PrimitiveDatePickerTableHeader>
-                    ))}
-                  </PrimitiveDatePickerTableRow>
-                </PrimitiveDatePickerTableHead>
+                  <PrimitiveDatePickerViewTrigger
+                    asChild
+                    aria-label="View trigger"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <PrimitiveDatePickerRangeText />
+                    </Button>
+                  </PrimitiveDatePickerViewTrigger>
 
-                <PrimitiveDatePickerTableBody>
-                  {api.weeks.map((week, id) => (
-                    <PrimitiveDatePickerTableRow key={id}>
-                      {week.map((day, id) => (
-                        <PrimitiveDatePickerTableCell key={id} value={day}>
-                          <PrimitiveDatePickerTableCellTrigger asChild>
-                            <Button variant="ghost">{day.day}</Button>
-                          </PrimitiveDatePickerTableCellTrigger>
-                        </PrimitiveDatePickerTableCell>
+                  <PrimitiveDatePickerNextTrigger
+                    asChild
+                    aria-label="Next month"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <Icon w={5} h={5}>
+                        <ChevronRightIcon />
+                      </Icon>
+                    </Button>
+                  </PrimitiveDatePickerNextTrigger>
+                </PrimitiveDatePickerViewControl>
+
+                <PrimitiveDatePickerTable>
+                  <PrimitiveDatePickerTableHead>
+                    <PrimitiveDatePickerTableRow>
+                      {api.weekDays.map((weekDay, id) => (
+                        <PrimitiveDatePickerTableHeader key={id}>
+                          {weekDay.narrow}
+                        </PrimitiveDatePickerTableHeader>
                       ))}
                     </PrimitiveDatePickerTableRow>
-                  ))}
-                </PrimitiveDatePickerTableBody>
-              </PrimitiveDatePickerTable>
-            </>
-          )}
-        </PrimitiveDatePickerView>
+                  </PrimitiveDatePickerTableHead>
 
-        <PrimitiveDatePickerView view="month">
-          {(api) => (
-            <>
-              <PrimitiveDatePickerViewControl>
-                <PrimitiveDatePickerPrevTrigger
-                  asChild
-                  aria-label="Previous year"
-                >
-                  <Button variant="ghost" size="sm">
-                    <Icon w={5} h={5}>
-                      <ChevronLeftIcon />
-                    </Icon>
-                  </Button>
-                </PrimitiveDatePickerPrevTrigger>
-
-                <PrimitiveDatePickerViewTrigger
-                  asChild
-                  aria-label="View trigger"
-                >
-                  <Button variant="ghost" size="sm">
-                    <PrimitiveDatePickerRangeText />
-                  </Button>
-                </PrimitiveDatePickerViewTrigger>
-
-                <PrimitiveDatePickerNextTrigger asChild aria-label="Next year">
-                  <Button variant="ghost" size="sm">
-                    <Icon w={5} h={5}>
-                      <ChevronRightIcon />
-                    </Icon>
-                  </Button>
-                </PrimitiveDatePickerNextTrigger>
-              </PrimitiveDatePickerViewControl>
-
-              <PrimitiveDatePickerTable>
-                <PrimitiveDatePickerTableBody>
-                  {api
-                    .getMonthsGrid({ columns: 4, format: "short" })
-                    .map((months, id) => (
+                  <PrimitiveDatePickerTableBody>
+                    {api.weeks.map((week, id) => (
                       <PrimitiveDatePickerTableRow key={id}>
-                        {months.map((month, id) => (
+                        {week.map((day, id) => (
+                          <PrimitiveDatePickerTableCell key={id} value={day}>
+                            <PrimitiveDatePickerTableCellTrigger asChild>
+                              <Button variant="ghost">{day.day}</Button>
+                            </PrimitiveDatePickerTableCellTrigger>
+                          </PrimitiveDatePickerTableCell>
+                        ))}
+                      </PrimitiveDatePickerTableRow>
+                    ))}
+                  </PrimitiveDatePickerTableBody>
+                </PrimitiveDatePickerTable>
+              </>
+            )}
+          </PrimitiveDatePickerView>
+
+          <PrimitiveDatePickerView view="month">
+            {(api) => (
+              <>
+                <PrimitiveDatePickerViewControl>
+                  <PrimitiveDatePickerPrevTrigger
+                    asChild
+                    aria-label="Previous year"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <Icon w={5} h={5}>
+                        <ChevronLeftIcon />
+                      </Icon>
+                    </Button>
+                  </PrimitiveDatePickerPrevTrigger>
+
+                  <PrimitiveDatePickerViewTrigger
+                    asChild
+                    aria-label="View trigger"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <PrimitiveDatePickerRangeText />
+                    </Button>
+                  </PrimitiveDatePickerViewTrigger>
+
+                  <PrimitiveDatePickerNextTrigger
+                    asChild
+                    aria-label="Next year"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <Icon w={5} h={5}>
+                        <ChevronRightIcon />
+                      </Icon>
+                    </Button>
+                  </PrimitiveDatePickerNextTrigger>
+                </PrimitiveDatePickerViewControl>
+
+                <PrimitiveDatePickerTable>
+                  <PrimitiveDatePickerTableBody>
+                    {api
+                      .getMonthsGrid({ columns: 4, format: "short" })
+                      .map((months, id) => (
+                        <PrimitiveDatePickerTableRow key={id}>
+                          {months.map((month, id) => (
+                            <PrimitiveDatePickerTableCell
+                              key={id}
+                              value={month.value}
+                            >
+                              <PrimitiveDatePickerTableCellTrigger asChild>
+                                <Button variant="ghost" justifyContent="center">
+                                  {month.label}
+                                </Button>
+                              </PrimitiveDatePickerTableCellTrigger>
+                            </PrimitiveDatePickerTableCell>
+                          ))}
+                        </PrimitiveDatePickerTableRow>
+                      ))}
+                  </PrimitiveDatePickerTableBody>
+                </PrimitiveDatePickerTable>
+              </>
+            )}
+          </PrimitiveDatePickerView>
+
+          <PrimitiveDatePickerView view="year">
+            {(api) => (
+              <>
+                <PrimitiveDatePickerViewControl>
+                  <PrimitiveDatePickerPrevTrigger
+                    asChild
+                    aria-label="Previous decade"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <Icon w={5} h={5}>
+                        <ChevronLeftIcon />
+                      </Icon>
+                    </Button>
+                  </PrimitiveDatePickerPrevTrigger>
+
+                  <PrimitiveDatePickerViewTrigger
+                    asChild
+                    aria-label="View trigger"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <PrimitiveDatePickerRangeText />
+                    </Button>
+                  </PrimitiveDatePickerViewTrigger>
+
+                  <PrimitiveDatePickerNextTrigger
+                    asChild
+                    aria-label="Next decade"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <Icon w={5} h={5}>
+                        <ChevronRightIcon />
+                      </Icon>
+                    </Button>
+                  </PrimitiveDatePickerNextTrigger>
+                </PrimitiveDatePickerViewControl>
+
+                <PrimitiveDatePickerTable>
+                  <PrimitiveDatePickerTableBody>
+                    {api.getYearsGrid({ columns: 4 }).map((years, id) => (
+                      <PrimitiveDatePickerTableRow key={id}>
+                        {years.map((year, id) => (
                           <PrimitiveDatePickerTableCell
                             key={id}
-                            value={month.value}
+                            value={year.value}
                           >
                             <PrimitiveDatePickerTableCellTrigger asChild>
                               <Button variant="ghost" justifyContent="center">
-                                {month.label}
+                                {year.label}
                               </Button>
                             </PrimitiveDatePickerTableCellTrigger>
                           </PrimitiveDatePickerTableCell>
                         ))}
                       </PrimitiveDatePickerTableRow>
                     ))}
-                </PrimitiveDatePickerTableBody>
-              </PrimitiveDatePickerTable>
-            </>
-          )}
-        </PrimitiveDatePickerView>
-
-        <PrimitiveDatePickerView view="year">
-          {(api) => (
-            <>
-              <PrimitiveDatePickerViewControl>
-                <PrimitiveDatePickerPrevTrigger
-                  asChild
-                  aria-label="Previous decade"
-                >
-                  <Button variant="ghost" size="sm">
-                    <Icon w={5} h={5}>
-                      <ChevronLeftIcon />
-                    </Icon>
-                  </Button>
-                </PrimitiveDatePickerPrevTrigger>
-
-                <PrimitiveDatePickerViewTrigger
-                  asChild
-                  aria-label="View trigger"
-                >
-                  <Button variant="ghost" size="sm">
-                    <PrimitiveDatePickerRangeText />
-                  </Button>
-                </PrimitiveDatePickerViewTrigger>
-
-                <PrimitiveDatePickerNextTrigger
-                  asChild
-                  aria-label="Next decade"
-                >
-                  <Button variant="ghost" size="sm">
-                    <Icon w={5} h={5}>
-                      <ChevronRightIcon />
-                    </Icon>
-                  </Button>
-                </PrimitiveDatePickerNextTrigger>
-              </PrimitiveDatePickerViewControl>
-
-              <PrimitiveDatePickerTable>
-                <PrimitiveDatePickerTableBody>
-                  {api.getYearsGrid({ columns: 4 }).map((years, id) => (
-                    <PrimitiveDatePickerTableRow key={id}>
-                      {years.map((year, id) => (
-                        <PrimitiveDatePickerTableCell
-                          key={id}
-                          value={year.value}
-                        >
-                          <PrimitiveDatePickerTableCellTrigger asChild>
-                            <Button variant="ghost" justifyContent="center">
-                              {year.label}
-                            </Button>
-                          </PrimitiveDatePickerTableCellTrigger>
-                        </PrimitiveDatePickerTableCell>
-                      ))}
-                    </PrimitiveDatePickerTableRow>
-                  ))}
-                </PrimitiveDatePickerTableBody>
-              </PrimitiveDatePickerTable>
-            </>
-          )}
-        </PrimitiveDatePickerView>
-      </PrimitiveDatePickerContent>
-    </PrimitiveDatePickerPositioner>
-  </PrimitiveDatePicker>
-);
+                  </PrimitiveDatePickerTableBody>
+                </PrimitiveDatePickerTable>
+              </>
+            )}
+          </PrimitiveDatePickerView>
+        </PrimitiveDatePickerContent>
+      </PrimitiveDatePickerPositioner>
+    </PrimitiveDatePicker>
+  );
+};
 
 export default DatePicker;
