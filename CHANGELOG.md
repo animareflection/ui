@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.21.1
+
+### Patch Changes
+
+- [#192](https://github.com/animareflection/ui/pull/192) [`4ae9da7`](https://github.com/animareflection/ui/commit/4ae9da7ee55c1c4cff14990152d11c23cebd82b0) Thanks [@renovate](https://github.com/apps/renovate)! - Add client check to `DatePicker` to prevent hydration issues
+
 ## 0.21.0
 
 ### Minor Changes
