@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  Button,
-  DatePicker,
-  Flex,
-  Icon,
-  Input,
-  Text,
-} from "@animareflection/ui";
-import { FiCalendar as CalendarIcon, FiX } from "react-icons/fi";
-import { input } from "generated/panda/recipes";
+import { DatePicker } from "@animareflection/ui";
 
 import { Wrapper } from "components";
 
