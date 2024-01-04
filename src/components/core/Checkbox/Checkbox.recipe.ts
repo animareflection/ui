@@ -32,10 +32,10 @@ export const checkboxRecipe = defineSlotRecipe({
         background: "bg.subtle",
       },
       _checked: {
-        background: "accent.default",
+        background: "colorPalette.500",
         borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         _hover: {
-          background: "accent.default",
+          background: "colorPalette.500",
         },
       },
     },

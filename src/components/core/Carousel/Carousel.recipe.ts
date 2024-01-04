@@ -54,7 +54,7 @@ export const carouselRecipe = defineSlotRecipe({
       background: "bg.emphasized",
       cursor: "pointer",
       _current: {
-        background: "accent.default",
+        background: "colorPalette.500",
       },
       _focusVisible: {
         outlineOffset: "2px",

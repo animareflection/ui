@@ -58,7 +58,7 @@ const keyframes = defineKeyframes({
     "100%": { background: "var(--colors-color-palette-950)" },
   },
   "skeleton-loading-light": {
-    "0%": { background: "var(--colors-bg-default)" },
+    "0%": { background: "var(--colors-bg-subtle)" },
     "100%": { background: "var(--colors-color-palette-50)" },
   },
 });
