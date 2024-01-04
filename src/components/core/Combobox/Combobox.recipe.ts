@@ -10,6 +10,7 @@ export const comboboxRecipe = defineSlotRecipe({
   slots: comboboxAnatomy.keys(),
   base: {
     root: {
+      colorPalette: "brand.primary",
       display: "flex",
       flexDirection: "column",
       gap: 1.5,
@@ -45,7 +46,10 @@ export const comboboxRecipe = defineSlotRecipe({
       _focusVisible: {
         outlineOffset: "2px",
         outline: "2px solid",
-        outlineColor: "border.outline",
+        outlineColor: {
+          base: "colorPalette.600",
+          _dark: "colorPalette.400",
+        },
       },
     },
     item: {
