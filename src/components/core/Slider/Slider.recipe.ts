@@ -6,9 +6,7 @@ export const sliderRecipe = defineSlotRecipe({
   description: "The styles for the Slider component",
   slots: sliderAnatomy.keys(),
   base: {
-    root: {
-      width: "full",
-    },
+    root: { colorPalette: "brand.primary", width: "full" },
     control: {
       position: "relative",
       display: "flex",
@@ -25,13 +23,13 @@ export const sliderRecipe = defineSlotRecipe({
       },
     },
     range: {
-      background: "accent.default",
+      background: "colorPalette.500",
       borderRadius: "sm",
       height: 2,
     },
     thumb: {
       background: "bg.default",
-      borderColor: "border.accent",
+      borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
       borderRadius: "full",
       borderWidth: "2px",
       boxShadow: "sm",
@@ -43,7 +41,7 @@ export const sliderRecipe = defineSlotRecipe({
       },
     },
     label: {
-      color: "fg.emphasized",
+      color: { base: "colorPalette.600", _dark: "colorPalette.400" },
       fontWeight: "semibold",
       textStyle: "sm",
     },

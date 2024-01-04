@@ -15,10 +15,17 @@ export interface Props
 /**
  * Core UI textarea.
  */
-const Textarea = ({ label, size, variant, ...rest }: Props) => {
+const Textarea = ({ label, size, variant, colorPalette, ...rest }: Props) => {
   return (
-    <PrimitiveTextarea size={size} variant={variant} gap={1.5}>
-      <PrimitiveTextareaLabel>{label}</PrimitiveTextareaLabel>
+    <PrimitiveTextarea
+      colorPalette={colorPalette}
+      size={size}
+      variant={variant}
+      gap={1.5}
+    >
+      <PrimitiveTextareaLabel colorPalette={colorPalette}>
+        {label}
+      </PrimitiveTextareaLabel>
 
       <PrimitiveTextareaTextarea {...rest} />
     </PrimitiveTextarea>

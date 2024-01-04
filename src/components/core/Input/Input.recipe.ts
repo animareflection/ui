@@ -6,13 +6,14 @@ export const inputRecipe = defineSlotRecipe({
   slots: ["root", "label", "input", "addon", "leftElement", "rightElement"],
   base: {
     root: {
+      colorPalette: "brand.primary",
       display: "flex",
       flexDirection: "column",
     },
     input: {
       appearance: "none",
       color: "fg.default",
-      caretColor: "accent.default",
+      caretColor: "colorPalette.500",
       outline: 0,
       position: "relative",
       transitionDuration: "normal",
@@ -25,7 +26,10 @@ export const inputRecipe = defineSlotRecipe({
       },
     },
     label: {
-      color: "fg.emphasized",
+      color: {
+        base: "colorPalette.600",
+        _dark: "colorPalette.400",
+      },
     },
     addon: {
       display: "flex",
@@ -60,7 +64,10 @@ export const inputRecipe = defineSlotRecipe({
           borderWidth: "1px",
           borderColor: "border.default",
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "sm",
           },
         },
@@ -71,7 +78,10 @@ export const inputRecipe = defineSlotRecipe({
           borderWidth: "0 0 1px",
           borderRadius: "0 !important",
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },
@@ -83,7 +93,10 @@ export const inputRecipe = defineSlotRecipe({
           borderColor: "border.default",
           _focus: {
             backgroundColor: "bg.default",
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "sm",
           },
         },
@@ -94,7 +107,10 @@ export const inputRecipe = defineSlotRecipe({
           borderWidth: 0,
           borderRadius: 0,
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },

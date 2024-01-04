@@ -4,6 +4,7 @@ export const badgeRecipe = defineRecipe({
   className: "badge",
   description: "The styles for the Badge component",
   base: {
+    colorPalette: "brand.primary",
     borderRadius: "full",
     w: "fit-content",
     fontWeight: "medium",
@@ -19,20 +20,20 @@ export const badgeRecipe = defineRecipe({
   variants: {
     variant: {
       primary: {
-        background: "accent.default",
+        background: "colorPalette.500",
         color: "accent.fg",
       },
       subtle: {
-        background: "accent.subtle",
-        borderColor: "border.accent",
+        background: { base: "colorPalette.50", _dark: "colorPalette.950" },
+        borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         borderWidth: "1px",
-        color: "fg.emphasized",
+        color: { base: "colorPalette.600", _dark: "colorPalette.400" },
       },
       outline: {
         background: "bg.subtle",
         borderWidth: "1px",
-        borderColor: "border.emphasized",
-        color: "fg.emphasized",
+        borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
+        color: { base: "colorPalette.600", _dark: "colorPalette.400" },
       },
     },
     size: {

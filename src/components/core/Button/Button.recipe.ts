@@ -4,7 +4,7 @@ export const buttonRecipe = defineRecipe({
   className: "button",
   description: "The styles for the Button component",
   base: {
-    borderWidth: "1px",
+    colorPalette: "brand.primary",
     cursor: "pointer",
     fontWeight: "bold",
     borderRadius: "md",
@@ -28,12 +28,10 @@ export const buttonRecipe = defineRecipe({
   variants: {
     variant: {
       primary: {
-        borderColor: "accent.default",
-        color: "accent.fg",
-        bgColor: "accent.default",
+        color: { base: "white", _dark: "colorPalette.950" },
+        bgColor: "colorPalette.500",
         _hover: {
-          bgColor: "accent.emphasized",
-          borderColor: "accent.emphasized",
+          bgColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         },
         _disabled: {
           borderColor: "border.disabled",
@@ -46,11 +44,12 @@ export const buttonRecipe = defineRecipe({
         },
       },
       secondary: {
-        borderColor: "border.emphasized",
+        borderWidth: "1px",
+        borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         bgColor: "bg.default",
-        color: "fg.emphasized",
+        color: { base: "colorPalette.600", _dark: "colorPalette.400" },
         _hover: {
-          background: "bg.subtle",
+          background: { base: "colorPalette.50", _dark: "colorPalette.950" },
         },
         _disabled: {
           borderColor: "border.disabled",
@@ -65,12 +64,10 @@ export const buttonRecipe = defineRecipe({
       },
       ghost: {
         bgColor: "transparent",
-        borderColor: "transparent",
-        color: "fg.emphasized",
+        color: { base: "colorPalette.600", _dark: "colorPalette.400" },
         _hover: {
           color: "fg.default",
-          background: "accent.subtle",
-          borderColor: "accent.subtle",
+          background: { base: "colorPalette.50", _dark: "colorPalette.950" },
         },
         _disabled: {
           borderColor: "transparent",
@@ -85,12 +82,10 @@ export const buttonRecipe = defineRecipe({
       },
       round: {
         borderRadius: "full !important",
-        color: "accent.fg",
-        bgColor: "accent.default",
-        borderColor: "accent.default",
+        color: { base: "white", _dark: "colorPalette.950" },
+        bgColor: "colorPalette.500",
         _hover: {
-          bgColor: "accent.emphasized",
-          borderColor: "accent.emphasized",
+          bgColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         },
         _disabled: {
           borderColor: "border.disabled",

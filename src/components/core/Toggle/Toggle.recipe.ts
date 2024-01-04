@@ -10,6 +10,7 @@ export const toggleRecipe = defineSlotRecipe({
       alignItems: "center",
       display: "flex",
       position: "relative",
+      colorPalette: "brand.primary",
     },
     control: {
       alignItems: "center",
@@ -22,7 +23,7 @@ export const toggleRecipe = defineSlotRecipe({
       transitionProperty: "background",
       transitionTimingFunction: "default",
       _checked: {
-        background: "accent.default",
+        background: "colorPalette.500",
       },
     },
     label: {

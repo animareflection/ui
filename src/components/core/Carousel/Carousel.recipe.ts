@@ -26,6 +26,9 @@ export const carouselRecipe = defineSlotRecipe({
   description: "The styles for the Carousel component",
   slots: carouselAnatomy.keys(),
   base: {
+    root: {
+      colorPalette: "brand.primary",
+    },
     viewport: {
       overflowX: "hidden",
       position: "relative",
@@ -51,12 +54,15 @@ export const carouselRecipe = defineSlotRecipe({
       background: "bg.emphasized",
       cursor: "pointer",
       _current: {
-        background: "accent.default",
+        background: "colorPalette.500",
       },
       _focusVisible: {
         outlineOffset: "2px",
         outline: "2px solid",
-        outlineColor: "border.outline",
+        outlineColor: {
+          base: "colorPalette.600",
+          _dark: "colorPalette.400",
+        },
       },
     },
     nextTrigger: triggerStyle,

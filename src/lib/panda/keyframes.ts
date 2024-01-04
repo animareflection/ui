@@ -54,12 +54,12 @@ const keyframes = defineKeyframes({
     "100%": { transform: "rotate(360deg)" },
   },
   "skeleton-loading-dark": {
-    "0%": { background: "#555555" },
-    "100%": { backgroundColor: "#333333" },
+    "0%": { background: "var(--colors-bg-default)" },
+    "100%": { background: "var(--colors-color-palette-950)" },
   },
   "skeleton-loading-light": {
-    "0%": { background: "#eeeeee" },
-    "100%": { backgroundColor: "#dddddd" },
+    "0%": { background: "var(--colors-bg-subtle)" },
+    "100%": { background: "var(--colors-color-palette-50)" },
   },
 });
 

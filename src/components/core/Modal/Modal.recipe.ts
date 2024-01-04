@@ -6,6 +6,9 @@ export const modalRecipe = defineSlotRecipe({
   description: "The styles for the Modal component",
   slots: dialogAnatomy.extendWith("root").keys(),
   base: {
+    root: {
+      colorPalette: "brand.primary",
+    },
     backdrop: {
       backdropFilter: "blur(4px)",
       background: {
@@ -62,8 +65,6 @@ export const modalRecipe = defineSlotRecipe({
       textStyle: "sm",
     },
     trigger: {
-      color: "accent.fg",
-      bgColor: "accent.default",
       w: "fit-content",
       h: "fit-content",
       cursor: "pointer",
@@ -72,7 +73,10 @@ export const modalRecipe = defineSlotRecipe({
       borderRadius: "md",
       _focus: { outline: "none" },
       _hover: {
-        bgColor: "accent.emphasized",
+        bgColor: {
+          base: "colorPalette.600",
+          _dark: "colorPalette.400",
+        },
       },
       _disabled: {
         bgColor: "bg.disabled",

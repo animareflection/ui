@@ -126,7 +126,7 @@ const Combobox = ({
                 <PrimitiveComboboxTrigger asChild>
                   <Button
                     bgColor="transparent"
-                    color={{ base: "fg.default", _hover: "accent.default" }}
+                    color={{ base: "fg.default", _hover: "colorPalette.500" }}
                     size={size}
                     aria-label="open options"
                   >

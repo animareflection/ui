@@ -10,7 +10,7 @@ const PandaSpinner = panda("svg", spinner);
 /**
  * Core Spinner component.
  */
-const Spinner = ({ ...props }: Props) => {
+const Spinner = ({ colorPalette = "brand.primary", ...rest }: Props) => {
   return (
     <PandaSpinner
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,8 @@ const Spinner = ({ ...props }: Props) => {
       viewBox="0 0 24 24"
       animation="infinite-spin"
       role="spinner"
-      {...props}
+      colorPalette={colorPalette}
+      {...rest}
     >
       <panda.path
         opacity="0.4"

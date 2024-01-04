@@ -9,7 +9,11 @@ import { HStack, panda } from "generated/panda/jsx";
 import { stat, type StatVariantProps } from "generated/panda/recipes";
 import { createStyleContext } from "lib/util";
 
-export interface Props extends StatVariantProps {
+import type { ComponentProps } from "react";
+
+export interface Props
+  extends ComponentProps<typeof StatRoot>,
+    StatVariantProps {
   value: string;
   label: string;
   helpText?: string;
@@ -32,7 +36,8 @@ const StatHelpText = withContext(panda.div, "helpText");
  * Core Stat component.
  */
 const Stat = ({ value, label, helpText, indicator, ...rest }: Props) => {
-  const indicatorColor = indicator === "decrease" ? "red.500" : "green.500";
+  const indicatorColor =
+    indicator === "decrease" ? "brand.tertiary.500" : "brand.secondary.500";
 
   const IndicatorIcon =
     indicator === "decrease" ? <TriangleDown /> : <TriangleUp />;
