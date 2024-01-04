@@ -6,6 +6,7 @@ export const textareaRecipe = defineSlotRecipe({
   slots: ["root", "label", "textarea"],
   base: {
     root: {
+      colorPalette: "brand.primary",
       display: "flex",
       flexDirection: "column",
     },
@@ -39,7 +40,10 @@ export const textareaRecipe = defineSlotRecipe({
           borderWidth: "1px",
           borderRadius: "sm",
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "sm",
           },
         },
@@ -50,7 +54,10 @@ export const textareaRecipe = defineSlotRecipe({
           borderWidth: "0 0 1px",
           borderRadius: "0 !important",
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },
@@ -62,7 +69,10 @@ export const textareaRecipe = defineSlotRecipe({
           borderRadius: "sm",
           _focus: {
             backgroundColor: "bg.default",
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "sm",
           },
         },
@@ -73,7 +83,10 @@ export const textareaRecipe = defineSlotRecipe({
           borderWidth: 0,
           borderRadius: 0,
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },

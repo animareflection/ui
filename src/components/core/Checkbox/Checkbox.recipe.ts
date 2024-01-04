@@ -7,6 +7,7 @@ export const checkboxRecipe = defineSlotRecipe({
   slots: checkboxAnatomy.keys(),
   base: {
     root: {
+      colorPalette: "brand.primary",
       w: "100%",
       alignItems: "center",
       display: "flex",
@@ -32,7 +33,7 @@ export const checkboxRecipe = defineSlotRecipe({
       },
       _checked: {
         background: "accent.default",
-        borderColor: "border.accent",
+        borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         _hover: {
           background: "accent.default",
         },

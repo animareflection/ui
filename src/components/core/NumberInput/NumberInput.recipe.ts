@@ -35,6 +35,7 @@ export const numberInputRecipe = defineSlotRecipe({
   ],
   base: {
     input: {
+      colorPalette: "brand.primary",
       appearance: "textfield",
       WebkitAppearance: "textfield",
       MozAppearance: "textfield",
@@ -103,7 +104,10 @@ export const numberInputRecipe = defineSlotRecipe({
           borderWidth: "1px",
           borderColor: "border.default",
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "sm",
           },
         },
@@ -114,7 +118,10 @@ export const numberInputRecipe = defineSlotRecipe({
           borderWidth: "0 0 1px",
           borderRadius: "0 !important",
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },
@@ -126,7 +133,10 @@ export const numberInputRecipe = defineSlotRecipe({
           borderColor: "border.default",
           _focus: {
             backgroundColor: "bg.default",
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "sm",
           },
         },
@@ -138,7 +148,10 @@ export const numberInputRecipe = defineSlotRecipe({
           borderColor: "border.default",
           borderRadius: 0,
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },
