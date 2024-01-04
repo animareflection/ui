@@ -13,7 +13,7 @@ export const inputRecipe = defineSlotRecipe({
     input: {
       appearance: "none",
       color: "fg.default",
-      caretColor: "accent.default",
+      caretColor: "colorPalette.500",
       outline: 0,
       position: "relative",
       transitionDuration: "normal",
@@ -26,7 +26,10 @@ export const inputRecipe = defineSlotRecipe({
       },
     },
     label: {
-      color: "fg.emphasized",
+      color: {
+        base: "colorPalette.600",
+        _dark: "colorPalette.400",
+      },
     },
     addon: {
       display: "flex",
