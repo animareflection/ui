@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["tinyurl.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "tinyurl.com",
+      },
+    ],
   },
 };
 
