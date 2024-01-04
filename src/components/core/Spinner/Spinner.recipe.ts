@@ -4,7 +4,7 @@ export const spinnerRecipe = defineRecipe({
   className: "spinner",
   description: "The styles for the Spinner component",
   base: {
-    color: "accent.default",
+    color: "colorPalette.500",
     animation: "infinite-spin",
   },
   defaultVariants: {
