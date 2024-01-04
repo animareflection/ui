@@ -25,7 +25,7 @@ export const textareaRecipe = defineSlotRecipe({
       },
     },
     label: {
-      color: "fg.emphasized",
+      color: { base: "colorPalette.600", _dark: "colorPalette.400" },
     },
   },
   defaultVariants: {
