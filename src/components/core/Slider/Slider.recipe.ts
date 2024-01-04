@@ -23,7 +23,7 @@ export const sliderRecipe = defineSlotRecipe({
       },
     },
     range: {
-      background: "accent.default",
+      background: "colorPalette.500",
       borderRadius: "sm",
       height: 2,
     },
@@ -41,7 +41,7 @@ export const sliderRecipe = defineSlotRecipe({
       },
     },
     label: {
-      color: "fg.emphasized",
+      color: { base: "colorPalette.600", _dark: "colorPalette.400" },
       fontWeight: "semibold",
       textStyle: "sm",
     },
