@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.21.0
+
+### Minor Changes
+
+- [#204](https://github.com/animareflection/ui/pull/204) [`0ea3c69`](https://github.com/animareflection/ui/commit/0ea3c699280036a74002c4e786a5637f4f35f59f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Replace recipe color keys with `colorPalette`
+
 ## 0.20.0
 
 ### Minor Changes
