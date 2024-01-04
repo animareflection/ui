@@ -8,6 +8,7 @@ export const statRecipe = defineSlotRecipe({
     root: {
       display: "flex",
       w: "fit",
+      colorPalette: "brand.primary",
     },
     helpText: {
       fontWeight: "light",
@@ -49,7 +50,7 @@ export const statRecipe = defineSlotRecipe({
       outline: {
         root: {
           bgColor: "transparent",
-          borderColor: "accent.default",
+          borderColor: "colorPalette.500",
           color: "fg.default",
           boxShadow: "sm",
           borderWidth: "1px",
@@ -58,7 +59,7 @@ export const statRecipe = defineSlotRecipe({
       },
       subtle: {
         root: {
-          bgColor: "bg.subtle",
+          bgColor: { base: "colorPalette.50", _dark: "colorPalette.950" },
           borderColor: "border.default",
           color: "fg.default",
           boxShadow: "sm",
