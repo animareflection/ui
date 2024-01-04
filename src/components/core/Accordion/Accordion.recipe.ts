@@ -7,6 +7,7 @@ export const accordionRecipe = defineSlotRecipe({
   slots: accordionAnatomy.keys(),
   base: {
     root: {
+      colorPalette: "brand.primary",
       width: "full",
       py: 1,
       borderRadius: "md",
@@ -26,7 +27,7 @@ export const accordionRecipe = defineSlotRecipe({
       transitionProperty: "background-color, color",
       transitionDuration: "300ms",
       _open: {
-        bgColor: "accent.default",
+        bgColor: "colorPalette.500",
         color: "accent.fg",
       },
       _closed: {
