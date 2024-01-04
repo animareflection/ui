@@ -86,7 +86,7 @@ export const comboboxRecipe = defineSlotRecipe({
       color: "fg.default",
     },
     itemIndicator: {
-      color: "accent.default",
+      color: "colorPalette.500",
     },
   },
   defaultVariants: {
