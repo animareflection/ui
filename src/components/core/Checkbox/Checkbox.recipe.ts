@@ -13,13 +13,13 @@ export const checkboxRecipe = defineSlotRecipe({
       display: "flex",
     },
     label: {
-      color: "fg.emphasized",
+      color: { base: "colorPalette.600", _dark: "colorPalette.400" },
       fontWeight: "medium",
       flex: 1,
     },
     control: {
       alignItems: "center",
-      borderColor: "border.emphasized",
+      borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
       borderWidth: "1px",
       color: "accent.fg",
       cursor: "pointer",
