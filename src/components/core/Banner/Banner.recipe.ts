@@ -4,6 +4,7 @@ export const bannerRecipe = defineRecipe({
   className: "banner",
   description: "The styles for the Banner component",
   base: {
+    colorPalette: "brand.primary",
     textStyle: "md",
     fontWeight: "bold",
     textAlign: "center",
@@ -15,7 +16,7 @@ export const bannerRecipe = defineRecipe({
     w: "full",
     position: "relative",
     p: 4,
-    background: "accent.default",
+    background: "colorPalette.500",
     color: "accent.fg",
   },
 });
