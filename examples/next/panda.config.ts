@@ -8,6 +8,7 @@ import { defineConfig } from "@pandacss/dev";
  */
 const pandaConfig = defineConfig({
   preflight: true,
+  jsxFramework: "react",
   presets: ["@pandacss/dev/presets", anirefPreset],
   include: ["src/**/*.{ts,tsx}"],
   outdir: "src/generated/panda",
