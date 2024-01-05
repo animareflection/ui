@@ -15,6 +15,7 @@ import { defineConfig } from "@pandacss/dev";
 
 const pandaConfig = defineConfig({
   preflight: true,
+  jsxFramework: "react",
   presets: ["@pandacss/dev/presets", anirefPreset],
   include: ["src/**/*.{ts,tsx}"],
   outdir: "src/generated/panda",
@@ -34,6 +35,8 @@ module.exports = {
 ```
 
 There is no need to install `postcss` as an explicit dependency in your project, the config will be picked up by the UI library bundle.
+
+You may want to customize the config snippets above to your liking. Treat them as a starting point.
 
 4. Create a CSS file and import it into your project. You can name the CSS file anything you want, just make sure you import it early in your project. For example:
 
