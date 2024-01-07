@@ -5,14 +5,9 @@ import { Button, Toast, Toaster } from "components/core";
 import { Flex, Grid } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
+import type { ToastT } from "sonner";
 
-type ToastPosition =
-  | "top-left"
-  | "top-center"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-center"
-  | "bottom-right";
+type Position = ToastT["position"];
 
 type Story = StoryObj<typeof Toaster>;
 
@@ -65,7 +60,7 @@ const promise = () => {
   );
 };
 
-const PositionTemplate = ({ position }: { position: ToastPosition }) => {
+const PositionTemplate = ({ position }: { position: Position }) => {
   const showToastPosition = () =>
     toast(<Toast title={`Position set to ${position}`} />, { position });
 
