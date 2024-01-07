@@ -10,7 +10,6 @@ export const toastRecipe = defineSlotRecipe({
       flexDirection: "column",
       borderRadius: "md",
       borderWidth: "1px",
-      borderColor: "border.default",
       boxShadow: "sm",
       minW: "300px",
       px: 5,
@@ -41,6 +40,7 @@ export const toastRecipe = defineSlotRecipe({
       unstyled: {
         root: {
           bgColor: "bg.default",
+          borderColor: "border.default",
         },
         closeTrigger: {
           color: "fg.muted",
@@ -55,6 +55,7 @@ export const toastRecipe = defineSlotRecipe({
       success: {
         root: {
           bgColor: { base: "green.50", _dark: "green.950" },
+          borderColor: { base: "green.200", _dark: "green.800" },
         },
         closeTrigger: {
           color: "green.500",
@@ -69,6 +70,7 @@ export const toastRecipe = defineSlotRecipe({
       error: {
         root: {
           bgColor: { base: "red.50", _dark: "red.950" },
+          borderColor: { base: "red.200", _dark: "red.800" },
         },
         closeTrigger: {
           color: "red.500",
@@ -83,6 +85,10 @@ export const toastRecipe = defineSlotRecipe({
       loading: {
         root: {
           bgColor: { base: "brand.primary.50", _dark: "brand.primary.950" },
+          borderColor: {
+            base: "brand.primary.200",
+            _dark: "brand.primary.800",
+          },
         },
         closeTrigger: {
           color: "brand.primary.500",
