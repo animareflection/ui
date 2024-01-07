@@ -1,11 +1,13 @@
-import { default as toast } from "react-hot-toast";
+import { toast } from "sonner";
 
 import { toastState } from "./Toast.spec";
 import { Button, Toast, Toaster } from "components/core";
 import { Flex, Grid } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import type { ToastPosition } from "react-hot-toast";
+import type { ToastT } from "sonner";
+
+type Position = ToastT["position"];
 
 type Story = StoryObj<typeof Toaster>;
 
@@ -18,7 +20,6 @@ const notify = () =>
       description="toast description"
       onClose={closeToast}
     />,
-    { icon: "🏝" },
   );
 const success = () =>
   toast.success(
@@ -59,12 +60,17 @@ const promise = () => {
   );
 };
 
-const PositionTemplate = ({ position }: { position: ToastPosition }) => {
+const PositionTemplate = ({ position }: { position: Position }) => {
   const showToastPosition = () =>
-    toast(`Position set to ${position}`, { position });
+    toast(<Toast title={`Position set to ${position}`} />, { position });
 
   return (
-    <Button variant="primary" minW={32} onClick={showToastPosition}>
+    <Button
+      justifyContent="center"
+      variant="primary"
+      minW={32}
+      onClick={showToastPosition}
+    >
       {position}
     </Button>
   );
@@ -119,7 +125,7 @@ export const ToastState: Story = {
   tags: ["test"],
 };
 
-const meta = {
+const meta: Meta<typeof Toaster> = {
   title: "Components/Core/Toaster",
   component: Toaster,
   tags: ["autodocs"],

@@ -46,6 +46,9 @@ export * from "./Tabs/Tabs";
 export { default as PrimitiveTextarea } from "./Textarea/Textarea";
 export * from "./Textarea/Textarea";
 
+export { default as PrimitiveToast } from "./Toast/Toast";
+export * from "./Toast/Toast";
+
 export { default as PrimitiveToggle } from "./Toggle/Toggle";
 export * from "./Toggle/Toggle";
 

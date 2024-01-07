@@ -1,12 +1,17 @@
 import { FiX } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
-import { Flex, panda } from "generated/panda/jsx";
+import {
+  PrimitiveToast,
+  PrimitiveToastClose,
+  PrimitiveToastDescription,
+  PrimitiveToastTitle,
+} from "components/primitives";
 
-import type { FlexProps } from "generated/panda/jsx";
+import type { PrimitiveToastProps } from "components/primitives";
 import type { ToastVariantProps } from "generated/panda/recipes";
 
-export interface Props extends FlexProps, ToastVariantProps {
+export interface Props extends PrimitiveToastProps, ToastVariantProps {
   title: string;
   description?: string;
   onClose?: () => void;
@@ -16,9 +21,9 @@ export interface Props extends FlexProps, ToastVariantProps {
  * Core UI toast.
  */
 const Toast = ({ title, description, onClose, ...rest }: Props) => (
-  <Flex direction="column" {...rest}>
+  <PrimitiveToast {...rest}>
     {onClose && (
-      <panda.button
+      <PrimitiveToastClose
         onClick={onClose}
         aria-label="Close Toast"
         alignSelf="flex-end"
@@ -26,12 +31,14 @@ const Toast = ({ title, description, onClose, ...rest }: Props) => (
         <Icon size="sm">
           <FiX />
         </Icon>
-      </panda.button>
+      </PrimitiveToastClose>
     )}
 
-    <panda.p>{title}</panda.p>
-    <panda.p>{description}</panda.p>
-  </Flex>
+    <PrimitiveToastTitle>{title}</PrimitiveToastTitle>
+    {description && (
+      <PrimitiveToastDescription>{description}</PrimitiveToastDescription>
+    )}
+  </PrimitiveToast>
 );
 
 export default Toast;
