@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.22.0
+
+### Minor Changes
+
+- [#209](https://github.com/animareflection/ui/pull/209) [`3aad5ce`](https://github.com/animareflection/ui/commit/3aad5ce6370839f3842140d152fb85127190bef6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Toast` components to use sonner
+
 ## 0.21.1
 
 ### Patch Changes
