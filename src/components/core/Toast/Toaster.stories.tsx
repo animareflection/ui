@@ -25,7 +25,6 @@ const notify = () =>
       description="toast description"
       onClose={closeToast}
     />,
-    { icon: "🏝" },
   );
 const success = () =>
   toast.success(
