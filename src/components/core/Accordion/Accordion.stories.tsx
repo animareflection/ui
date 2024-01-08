@@ -26,7 +26,6 @@ const ITEMS: AccordionItemRecord[] = [
     content: "Panel 3 content",
   },
 ];
-
 export const Default: Story = {
   render: () => <Accordion items={ITEMS} />,
 };
