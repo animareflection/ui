@@ -10,6 +10,7 @@ import {
   PrimitiveAccordionItem,
   PrimitiveAccordionItemTrigger,
   PrimitiveAccordionItemContent,
+  PrimitiveAccordionItemIndicator,
 } from "components/primitives";
 import { useIsClient } from "lib/hooks";
 
@@ -38,33 +39,26 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
   if (!isClient) return null;
 
   return (
-    <PrimitiveAccordion lazyMount unmountOnExit collapsible multiple {...rest}>
+    <PrimitiveAccordion present collapsible multiple {...rest}>
       {items.map(({ id, value, triggerLabel, content, icon }) => (
         <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
-              <PrimitiveAccordionItemTrigger
-                borderBottomRadius={isOpen ? "unset" : "md"}
-              >
+              <PrimitiveAccordionItemTrigger>
                 {triggerLabel ?? value}
-                <Icon
-                  transform={
-                    isOpen && !plusMinus ? "rotate(-180deg)" : undefined
-                  }
-                  transition="transform 300ms"
-                  transformOrigin="center"
-                  color={isOpen ? "accent.fg" : "fg.default"}
-                >
-                  {plusMinus ? (
-                    isOpen ? (
-                      <MinusIcon />
+                <PrimitiveAccordionItemIndicator>
+                  <Icon color="inherit">
+                    {plusMinus ? (
+                      isOpen ? (
+                        <MinusIcon />
+                      ) : (
+                        <PlusIcon />
+                      )
                     ) : (
-                      <PlusIcon />
-                    )
-                  ) : (
-                    icon ?? <ChevronDownIcon />
-                  )}
-                </Icon>
+                      icon ?? <ChevronDownIcon />
+                    )}
+                  </Icon>
+                </PrimitiveAccordionItemIndicator>
               </PrimitiveAccordionItemTrigger>
               <PrimitiveAccordionItemContent>
                 {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
