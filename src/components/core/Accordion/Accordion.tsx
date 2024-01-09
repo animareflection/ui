@@ -4,6 +4,7 @@ import {
   FiPlus as PlusIcon,
 } from "react-icons/fi";
 
+import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveAccordion,
   PrimitiveAccordionItem,
@@ -46,15 +47,17 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
               <PrimitiveAccordionItemTrigger>
                 {triggerLabel ?? value}
                 <PrimitiveAccordionItemIndicator>
-                  {plusMinus ? (
-                    isOpen ? (
-                      <MinusIcon />
+                  <Icon>
+                    {plusMinus ? (
+                      isOpen ? (
+                        <MinusIcon />
+                      ) : (
+                        <PlusIcon />
+                      )
                     ) : (
-                      <PlusIcon />
-                    )
-                  ) : (
-                    icon ?? <ChevronDownIcon />
-                  )}
+                      icon ?? <ChevronDownIcon />
+                    )}
+                  </Icon>
                 </PrimitiveAccordionItemIndicator>
               </PrimitiveAccordionItemTrigger>
               <PrimitiveAccordionItemContent>

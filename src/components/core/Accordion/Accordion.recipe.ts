@@ -32,7 +32,7 @@ export const accordionRecipe = defineSlotRecipe({
         borderBottomRadius: 0,
       },
       _closed: {
-        bgColor: "bg.subtle",
+        bgColor: "bg.muted",
         color: "fg.default",
         borderRadius: "md",
         transitionDelay: "300ms",
@@ -40,6 +40,7 @@ export const accordionRecipe = defineSlotRecipe({
       },
     },
     itemIndicator: {
+      display: "flex",
       transformOrigin: "center",
       transitionDuration: "normal",
       transitionProperty: "transform",
@@ -53,7 +54,7 @@ export const accordionRecipe = defineSlotRecipe({
       },
     },
     itemContent: {
-      backgroundColor: "bg.subtle",
+      backgroundColor: "bg.muted",
       color: "fg.default",
       px: 4,
       borderBottomRadius: "md",
@@ -64,7 +65,7 @@ export const accordionRecipe = defineSlotRecipe({
       transitionTimingFunction: "default",
       _open: {
         gridTemplateRows: "1fr",
-        bgColor: "bg.subtle",
+        bgColor: "bg.muted",
         py: 4,
       },
       _closed: {
