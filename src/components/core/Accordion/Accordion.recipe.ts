@@ -23,7 +23,7 @@ export const accordionRecipe = defineSlotRecipe({
       py: 3,
       justifyContent: "space-between",
       width: "full",
-      transitionProperty: "grid-template-rows, padding-bottom",
+      transitionProperty: "grid-template-rows",
       transitionDuration: "500ms",
       _open: {
         bgColor: "colorPalette.500",
