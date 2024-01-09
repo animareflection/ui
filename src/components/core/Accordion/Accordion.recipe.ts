@@ -69,7 +69,6 @@ export const accordionRecipe = defineSlotRecipe({
         py: 4,
       },
       _closed: {
-        gridTemplateRows: "0fr",
         py: 0,
       },
       "& > div": {
