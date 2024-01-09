@@ -35,7 +35,7 @@ export const accordionRecipe = defineSlotRecipe({
         bgColor: "bg.muted",
         color: "fg.default",
         borderRadius: "md",
-        transitionDelay: "slower",
+        transitionDelay: "slow",
         transitionProperty: "border-radius",
       },
     },
