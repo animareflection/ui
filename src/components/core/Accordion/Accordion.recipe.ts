@@ -23,8 +23,8 @@ export const accordionRecipe = defineSlotRecipe({
       py: 3,
       justifyContent: "space-between",
       width: "full",
-      transitionProperty: "grid-template-rows",
-      transitionDuration: "500ms",
+      transitionProperty: "background-color, color",
+      transitionDuration: "slowest",
       _open: {
         bgColor: "colorPalette.500",
         color: "accent.fg",
@@ -35,14 +35,14 @@ export const accordionRecipe = defineSlotRecipe({
         bgColor: "bg.muted",
         color: "fg.default",
         borderRadius: "md",
-        transitionDelay: "300ms",
+        transitionDelay: "slower",
         transitionProperty: "border-radius",
       },
     },
     itemIndicator: {
       display: "flex",
       transformOrigin: "center",
-      transitionDuration: "normal",
+      transitionDuration: "slowest",
       transitionProperty: "transform",
       transitionTimingFunction: "default",
       _open: {
@@ -61,7 +61,7 @@ export const accordionRecipe = defineSlotRecipe({
       display: "grid",
       gridTemplateRows: "0fr",
       transitionProperty: "all",
-      transitionDuration: "500ms",
+      transitionDuration: "slowest",
       transitionTimingFunction: "default",
       _open: {
         gridTemplateRows: "1fr",

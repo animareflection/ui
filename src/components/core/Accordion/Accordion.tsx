@@ -47,7 +47,7 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
               <PrimitiveAccordionItemTrigger>
                 {triggerLabel ?? value}
                 <PrimitiveAccordionItemIndicator>
-                  <Icon>
+                  <Icon color="inherit">
                     {plusMinus ? (
                       isOpen ? (
                         <MinusIcon />
