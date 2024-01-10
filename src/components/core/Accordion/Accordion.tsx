@@ -53,7 +53,7 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
                   }
                   transition="transform 300ms"
                   transformOrigin="center"
-                  color={isOpen ? "accent.fg" : "fg.default"}
+                  color="inherit"
                 >
                   {plusMinus ? (
                     isOpen ? (
