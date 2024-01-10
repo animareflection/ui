@@ -2,6 +2,7 @@ import {
   Accordion,
   AccordionItem,
   AccordionItemTrigger,
+  AccordionItemIndicator,
   AccordionItemContent,
 } from "@ark-ui/react";
 
@@ -37,9 +38,19 @@ export const PrimitiveAccordionItemTrigger = withContext(
   "itemTrigger",
 );
 
+export type PrimitiveAccordionItemIndicator = ComponentProps<
+  typeof PrimitiveAccordionItemIndicator
+>;
+
+export const PrimitiveAccordionItemIndicator = withContext(
+  panda(AccordionItemIndicator),
+  "itemIndicator",
+);
+
 export type PrimitiveAccordionItemContentProps = ComponentProps<
   typeof PrimitiveAccordionItemContent
 >;
+
 export const PrimitiveAccordionItemContent = withContext(
   panda(AccordionItemContent),
   "itemContent",

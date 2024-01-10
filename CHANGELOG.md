@@ -1,5 +1,17 @@
 # @animareflection/ui
 
+## 0.23.0
+
+### Minor Changes
+
+- [#211](https://github.com/animareflection/ui/pull/211) [`6425811`](https://github.com/animareflection/ui/commit/6425811f94d16490daaf91a5163835aff518b061) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add animations to `Accordion` component
+
+## 0.22.0
+
+### Minor Changes
+
+- [#209](https://github.com/animareflection/ui/pull/209) [`3aad5ce`](https://github.com/animareflection/ui/commit/3aad5ce6370839f3842140d152fb85127190bef6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Toast` components to use sonner
+
 ## 0.21.1
 
 ### Patch Changes
