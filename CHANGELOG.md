@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.23.1
+
+### Patch Changes
+
+- [#214](https://github.com/animareflection/ui/pull/214) [`3b1d1b9`](https://github.com/animareflection/ui/commit/3b1d1b950dea580499327d67b9be2b7f58e70d5c) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Updated default `Icon` colors for `Accordion`, `Banner`, and `Collapse` components
+
 ## 0.23.0
 
 ### Minor Changes
