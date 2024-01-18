@@ -52,15 +52,17 @@ interface Group {
 }
 
 export interface Props
-  extends Omit<PrimitiveComboboxProps, "items">,
+  extends Omit<PrimitiveComboboxProps, "items" | "content">,
     ComboboxVariantProps {
-  groups: Group[];
   label: {
     singular: string;
     plural: string;
     props?: PrimitiveComboboxLabelProps;
     display?: boolean;
   };
+  /** Custom content render override. */
+  content?: ReactNode;
+  groups: Group[];
   itemIndicator?: boolean;
   triggerEnabled?: boolean;
   inputProps?: Omit<InputProps, "size">;
@@ -72,6 +74,7 @@ export interface Props
 
 const Combobox = ({
   label,
+  content,
   groups = [],
   itemIndicator = false,
   triggerEnabled = true,
@@ -145,50 +148,51 @@ const Combobox = ({
 
       <PrimitiveComboboxPositioner {...positionerProps}>
         <PrimitiveComboboxContent {...contentProps}>
-          {groups.map(
-            (group) =>
-              group.items.some((item) => filteredItems.includes(item)) && (
-                <PrimitiveComboboxItemGroup
-                  key={group.label.id}
-                  id={group.label.id}
-                  {...itemGroupProps}
-                >
-                  {group.label.display && (
-                    <PrimitiveComboboxItemGroupLabel
-                      htmlFor={group.label.id}
-                      {...group.label.props}
-                    >
-                      {group.label.plural}
-                    </PrimitiveComboboxItemGroupLabel>
-                  )}
+          {content ||
+            groups.map(
+              (group) =>
+                group.items.some((item) => filteredItems.includes(item)) && (
+                  <PrimitiveComboboxItemGroup
+                    key={group.label.id}
+                    id={group.label.id}
+                    {...itemGroupProps}
+                  >
+                    {group.label.display && (
+                      <PrimitiveComboboxItemGroupLabel
+                        htmlFor={group.label.id}
+                        {...group.label.props}
+                      >
+                        {group.label.plural}
+                      </PrimitiveComboboxItemGroupLabel>
+                    )}
 
-                  {group.items.map(
-                    (item) =>
-                      filteredItems.includes(item) && (
-                        <PrimitiveComboboxItem
-                          key={item.value}
-                          item={item}
-                          {...item.itemProps}
-                        >
-                          <Flex align="center" gap={2}>
-                            {item.icon}
+                    {group.items.map(
+                      (item) =>
+                        filteredItems.includes(item) && (
+                          <PrimitiveComboboxItem
+                            key={item.value}
+                            item={item}
+                            {...item.itemProps}
+                          >
+                            <Flex align="center" gap={2}>
+                              {item.icon}
 
-                            <PrimitiveComboboxItemText>
-                              {item.label}
-                            </PrimitiveComboboxItemText>
-                          </Flex>
+                              <PrimitiveComboboxItemText>
+                                {item.label}
+                              </PrimitiveComboboxItemText>
+                            </Flex>
 
-                          {itemIndicator && (
-                            <PrimitiveComboboxItemIndicator>
-                              <BiCheck />
-                            </PrimitiveComboboxItemIndicator>
-                          )}
-                        </PrimitiveComboboxItem>
-                      ),
-                  )}
-                </PrimitiveComboboxItemGroup>
-              ),
-          )}
+                            {itemIndicator && (
+                              <PrimitiveComboboxItemIndicator>
+                                <BiCheck />
+                              </PrimitiveComboboxItemIndicator>
+                            )}
+                          </PrimitiveComboboxItem>
+                        ),
+                    )}
+                  </PrimitiveComboboxItemGroup>
+                ),
+            )}
         </PrimitiveComboboxContent>
       </PrimitiveComboboxPositioner>
     </PrimitiveCombobox>
