@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.23.2
+
+### Patch Changes
+
+- [#216](https://github.com/animareflection/ui/pull/216) [`626e464`](https://github.com/animareflection/ui/commit/626e46466db45699a1b47c4421fb86b8ee159684) Thanks [@coopbri](https://github.com/coopbri)! - Allow custom content override in `Combobox`
+
 ## 0.23.1
 
 ### Patch Changes
