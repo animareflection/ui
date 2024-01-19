@@ -54,7 +54,6 @@ const meta = {
   title: "Components/Utility/Show",
   component: Show,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } as Meta<typeof Show>;
 
 export default meta;

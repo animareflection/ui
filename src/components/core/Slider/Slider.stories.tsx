@@ -35,7 +35,6 @@ const meta = {
   title: "Components/Core/Slider",
   component: Slider,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Slider>;
 
 export default meta;

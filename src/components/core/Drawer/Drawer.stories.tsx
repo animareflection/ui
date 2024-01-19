@@ -96,7 +96,6 @@ const meta: Meta = {
   title: "Components/Core/Drawer",
   component: Drawer,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Drawer>;
 
 export default meta;

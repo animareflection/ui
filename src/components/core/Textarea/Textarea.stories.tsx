@@ -44,7 +44,6 @@ const meta = {
   title: "Components/Core/Textarea",
   component: Textarea,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Textarea>;
 
 export default meta;

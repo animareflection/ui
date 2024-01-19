@@ -81,7 +81,6 @@ const meta: Meta = {
   title: "Components/Core/Flyout",
   component: Flyout,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Flyout>;
 
 export default meta;

@@ -19,7 +19,6 @@ export const Default: Story = {
 const meta = {
   title: "Components/Core/Kbd",
   component: Kbd,
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Kbd>;
 
 export default meta;

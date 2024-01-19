@@ -52,7 +52,6 @@ const meta = {
   title: "Components/Core/Banner",
   component: Banner,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Banner>;
 
 export default meta;

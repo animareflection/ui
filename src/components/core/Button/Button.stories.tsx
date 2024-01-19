@@ -93,7 +93,6 @@ const meta: Meta<typeof Button> = {
   title: "Components/Core/Button",
   component: Button,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Button>;
 
 export default meta;

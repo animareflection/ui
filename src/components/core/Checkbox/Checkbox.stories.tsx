@@ -70,7 +70,6 @@ const meta: Meta = {
   title: "Components/Core/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;

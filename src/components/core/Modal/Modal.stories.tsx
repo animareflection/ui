@@ -44,7 +44,6 @@ const meta = {
   title: "Components/Core/Modal",
   component: Modal,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Modal>;
 
 export default meta;

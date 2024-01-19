@@ -99,7 +99,6 @@ const meta: Meta<typeof NumberInput> = {
   title: "Components/Core/NumberInput",
   component: NumberInput,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof NumberInput>;
 
 export default meta;
