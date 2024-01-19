@@ -55,7 +55,6 @@ const meta = {
   title: "Components/Core/Breadcrumb",
   component: Breadcrumb,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Breadcrumb>;
 
 export default meta;

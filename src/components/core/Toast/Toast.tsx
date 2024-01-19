@@ -18,7 +18,7 @@ export interface Props extends PrimitiveToastProps, ToastVariantProps {
 }
 
 /**
- * Core UI toast.
+ * Toast.
  */
 const Toast = ({ title, description, onClose, ...rest }: Props) => (
   <PrimitiveToast {...rest}>

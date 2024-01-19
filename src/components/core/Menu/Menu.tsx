@@ -34,7 +34,7 @@ export interface Props extends PrimitiveMenuProps, MenuVariantProps {
 }
 
 /**
- * Core UI menu.
+ * Menu.
  */
 const Menu = ({ children, trigger, triggerItem, groups, ...rest }: Props) => {
   const isClient = useIsClient();

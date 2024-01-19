@@ -23,7 +23,6 @@ const meta = {
   title: "Components/Core/Card",
   component: Card,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Card>;
 
 export default meta;

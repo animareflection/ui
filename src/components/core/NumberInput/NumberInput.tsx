@@ -37,7 +37,7 @@ export interface Props
 }
 
 /**
- * Core UI number input.
+ * Number input.
  */
 const NumberInput = ({
   label,

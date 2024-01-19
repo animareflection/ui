@@ -40,7 +40,6 @@ const meta = {
   title: "Components/Core/Tabs",
   component: Tabs,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Tabs>;
 
 export default meta;

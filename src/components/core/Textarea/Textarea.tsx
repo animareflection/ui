@@ -13,7 +13,7 @@ export interface Props
   label?: string;
 }
 /**
- * Core UI textarea.
+ * Textarea.
  */
 const Textarea = ({ label, size, variant, colorPalette, ...rest }: Props) => {
   return (

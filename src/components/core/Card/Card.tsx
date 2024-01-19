@@ -9,7 +9,7 @@ type Props = HTMLPandaProps<"div">;
 const { withProvider, withContext } = createStyleContext(card);
 
 /**
- * Core UI card.
+ * Card.
  */
 const Card = withProvider(
   ({ children, ...rest }: Props) => <panda.div {...rest}>{children}</panda.div>,

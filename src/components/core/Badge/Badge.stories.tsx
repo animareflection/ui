@@ -33,7 +33,6 @@ const meta = {
   title: "Components/Core/Badge",
   component: Badge,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Badge>;
 
 export default meta;

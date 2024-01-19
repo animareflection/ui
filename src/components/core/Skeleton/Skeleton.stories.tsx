@@ -64,7 +64,6 @@ const meta = {
   title: "Components/Core/Skeleton",
   component: Skeleton,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;

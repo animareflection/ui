@@ -1,3 +1,6 @@
+/**
+ * @file Tabs primitives.
+ */
 import {
   Tabs,
   TabContent,
@@ -15,9 +18,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(tabs);
 
-/**
- * Core UI tabs primitives.
- */
 export type PrimitiveTabsProps = ComponentProps<typeof PrimitiveTabs>;
 const PrimitiveTabs: PandaComponent<typeof Tabs> = withProvider(
   panda(Tabs),

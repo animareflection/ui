@@ -1,3 +1,6 @@
+/**
+ * @file Carousel primitives.
+ */
 import {
   Carousel,
   CarouselControl,
@@ -19,9 +22,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(carousel);
 
-/**
- * Core UI carousel primitives.
- */
 export type PrimitiveCarouselProps = ComponentProps<typeof PrimitiveCarousel>;
 const PrimitiveCarousel: PandaComponent<typeof Carousel> = withProvider(
   panda(Carousel),

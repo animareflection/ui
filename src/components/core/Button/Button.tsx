@@ -6,7 +6,7 @@ import type { ComponentProps } from "react";
 export type Props = ComponentProps<typeof Button>;
 
 /**
- * Core UI button.
+ * Button.
  */
 const Button = panda("button", button);
 
