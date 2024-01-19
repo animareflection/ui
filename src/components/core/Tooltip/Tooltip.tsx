@@ -24,7 +24,7 @@ export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
 }
 
 /**
- * Core UI tooltip.
+ * Tooltip.
  */
 const Tooltip = ({
   trigger,

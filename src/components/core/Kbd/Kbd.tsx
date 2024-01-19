@@ -7,7 +7,7 @@ export interface Props {
 }
 
 /**
- * Core UI Keyboard component.
+ * Keyboard.
  */
 const Kbd = ({ children }: Props) => (
   <panda.kbd

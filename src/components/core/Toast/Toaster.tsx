@@ -5,7 +5,7 @@ import type { ComponentProps } from "react";
 export interface Props extends ComponentProps<typeof SonnerToaster> {}
 
 /**
- * Core UI toaster.
+ * Toaster.
  */
 const Toaster = ({ ...props }: Props) => (
   <SonnerToaster

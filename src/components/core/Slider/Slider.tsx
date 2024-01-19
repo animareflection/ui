@@ -26,7 +26,7 @@ export interface Props extends PrimitiveSliderProps {
 }
 
 /**
- * Core UI slider.
+ * Slider.
  */
 const Slider = ({ label, markers, maxW, ...rest }: Props) => {
   const isClient = useIsClient();

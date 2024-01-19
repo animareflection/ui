@@ -1,3 +1,6 @@
+/**
+ * @file Number input primitives.
+ */
 import {
   NumberInput,
   NumberInputControl,
@@ -17,9 +20,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(numberInput);
 
-/**
- * Core UI number input primitives.
- */
 export type PrimitiveNumberInputProps = ComponentProps<
   typeof PrimitiveNumberInput
 >;

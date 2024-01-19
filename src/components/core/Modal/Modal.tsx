@@ -11,7 +11,6 @@ import {
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
 } from "components/primitives";
-// import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
 import type { ReactNode } from "react";
@@ -23,45 +22,39 @@ export interface Props extends PrimitiveModalProps {
 }
 
 /**
- * Core UI modal.
+ * Modal.
  */
-const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
-  // const isClient = useIsClient();
+const Modal = ({ children, trigger, title, description, ...rest }: Props) => (
+  <PrimitiveModal {...rest}>
+    {(ctx) => (
+      <>
+        {trigger && <PrimitiveModalTrigger>{trigger}</PrimitiveModalTrigger>}
 
-  // if (!isClient) return null;
+        <PrimitiveModalBackdrop />
 
-  return (
-    <PrimitiveModal {...rest}>
-      {(ctx) => (
-        <>
-          {trigger && <PrimitiveModalTrigger>{trigger}</PrimitiveModalTrigger>}
+        <PrimitiveModalPositioner>
+          <PrimitiveModalContent>
+            {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
 
-          <PrimitiveModalBackdrop />
+            {description && (
+              <PrimitiveModalDescription>
+                {description}
+              </PrimitiveModalDescription>
+            )}
 
-          <PrimitiveModalPositioner>
-            <PrimitiveModalContent>
-              {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
+            {/* forward nested context/state if utilized, otherwise directly render children */}
+            {typeof children === "function" ? children(ctx) : children}
 
-              {description && (
-                <PrimitiveModalDescription>
-                  {description}
-                </PrimitiveModalDescription>
-              )}
-
-              {/* forward nested context/state if utilized, otherwise directly render children */}
-              {typeof children === "function" ? children(ctx) : children}
-
-              <PrimitiveModalCloseTrigger>
-                <Icon>
-                  <CloseIcon />
-                </Icon>
-              </PrimitiveModalCloseTrigger>
-            </PrimitiveModalContent>
-          </PrimitiveModalPositioner>
-        </>
-      )}
-    </PrimitiveModal>
-  );
-};
+            <PrimitiveModalCloseTrigger>
+              <Icon>
+                <CloseIcon />
+              </Icon>
+            </PrimitiveModalCloseTrigger>
+          </PrimitiveModalContent>
+        </PrimitiveModalPositioner>
+      </>
+    )}
+  </PrimitiveModal>
+);
 
 export default Modal;

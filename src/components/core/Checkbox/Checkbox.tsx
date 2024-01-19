@@ -17,7 +17,7 @@ export interface Props
 }
 
 /**
- * Core UI checkbox.
+ * Checkbox.
  */
 const Checkbox = ({ label, ...rest }: Props) => {
   const isClient = useIsClient();

@@ -1,3 +1,6 @@
+/**
+ * @file Drawer primitives.
+ */
 import {
   Dialog,
   DialogBackdrop,
@@ -17,9 +20,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(drawer);
 
-/**
- * Core UI drawer primitives.
- */
 export type PrimitiveDrawerProps = ComponentProps<typeof PrimitiveDrawer>;
 const PrimitiveDrawer = withProvider(panda(Dialog), "root");
 

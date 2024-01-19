@@ -22,7 +22,7 @@ export interface Props extends PrimitiveTabsProps {
 }
 
 /**
- * Core UI tabs.
+ * Tabs.
  */
 const Tabs = ({ tabs, ...rest }: Props) => {
   const isClient = useIsClient();

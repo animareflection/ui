@@ -1,3 +1,6 @@
+/**
+ * @file Combobox primitives.
+ */
 import {
   Combobox,
   ComboboxClearTrigger,
@@ -22,9 +25,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(combobox);
 
-/**
- * Core UI combobox primitives.
- */
 export type PrimitiveComboboxProps = ComponentProps<typeof PrimitiveCombobox>;
 const PrimitiveCombobox = withProvider(panda(Combobox), "root");
 

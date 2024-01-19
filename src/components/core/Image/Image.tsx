@@ -6,7 +6,7 @@ import type { ComponentProps } from "react";
 export type Props = ComponentProps<typeof Image>;
 
 /**
- * Core UI image.
+ * Image.
  */
 const Image = panda("img", image);
 

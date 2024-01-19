@@ -6,7 +6,7 @@ import type { ComponentProps } from "react";
 export type Props = ComponentProps<typeof Text>;
 
 /**
- * Core UI text (typography).
+ * Text (typography).
  */
 const Text = panda("p", text);
 

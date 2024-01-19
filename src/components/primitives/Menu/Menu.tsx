@@ -1,3 +1,6 @@
+/**
+ * @file Menu primitives.
+ */
 import {
   Menu,
   MenuArrow,
@@ -23,9 +26,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(menu);
 
-/**
- * Core UI menu primitives.
- */
 export type PrimitiveMenuProps = ComponentProps<typeof PrimitiveMenu>;
 const PrimitiveMenu: PandaComponent<typeof Menu> = withProvider(
   panda(Menu),

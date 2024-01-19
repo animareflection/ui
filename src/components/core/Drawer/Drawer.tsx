@@ -27,7 +27,7 @@ export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
 }
 
 /**
- * Core UI drawer.
+ * Drawer.
  */
 const Drawer = ({
   children,

@@ -15,7 +15,7 @@ export interface Props extends ComponentProps<typeof PandaBanner> {
 const PandaBanner = panda("div", banner);
 
 /**
- * Core UI banner.
+ * Banner.
  */
 const Banner = ({ children, closable, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
