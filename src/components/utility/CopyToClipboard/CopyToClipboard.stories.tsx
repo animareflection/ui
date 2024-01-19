@@ -66,11 +66,6 @@ const meta = {
   title: "Components/Utility/CopyToClipboard",
   component: CopyToClipboard,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
-  // TODO: remove when portal issue / ref bug is fixed
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof CopyToClipboard>;
 
 export default meta;

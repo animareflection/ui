@@ -93,11 +93,6 @@ const meta: Meta = {
   title: "Components/Core/Tooltip",
   component: Tooltip,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
-  // TODO: remove when portal issue / ref bug is fixed
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;
