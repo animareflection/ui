@@ -25,10 +25,12 @@ export interface Props extends PrimitiveModalProps {
  * Modal.
  */
 const Modal = ({ children, trigger, title, description, ...rest }: Props) => (
-  <PrimitiveModal {...rest}>
+  <PrimitiveModal lazyMount unmountOnExit {...rest}>
     {(ctx) => (
       <>
-        {trigger && <PrimitiveModalTrigger>{trigger}</PrimitiveModalTrigger>}
+        {trigger && (
+          <PrimitiveModalTrigger asChild>{trigger}</PrimitiveModalTrigger>
+        )}
 
         <PrimitiveModalBackdrop />
 

@@ -5,7 +5,11 @@ import { Wrapper } from "components";
 const DrawerDemo = () => (
   <Wrapper title="Drawer">
     <Drawer
-      trigger={<Button variant="primary">Open Drawer</Button>}
+      trigger={
+        <Button variant="primary" w="fit-content">
+          Open Drawer
+        </Button>
+      }
       title="Drawer Title"
       description="Drawer Description"
     >
