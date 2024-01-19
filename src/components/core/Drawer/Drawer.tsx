@@ -28,6 +28,8 @@ export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
 
 /**
  * Drawer.
+ *
+ * **NOTE:** by default, the component is rendered lazily and unmounted on exit due to `lazyMount` and `unmountOnExit` being specified. To override these behaviors, pass `lazyMount={false}` and/or `unmountOnExit={false}`.
  */
 const Drawer = ({
   children,

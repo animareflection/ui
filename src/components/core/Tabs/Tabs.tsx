@@ -23,6 +23,8 @@ export interface Props extends PrimitiveTabsProps {
 
 /**
  * Tabs.
+ *
+ * **NOTE:** by default, the component is rendered lazily and unmounted on exit due to `lazyMount` and `unmountOnExit` being specified. To override these behaviors, pass `lazyMount={false}` and/or `unmountOnExit={false}`.
  */
 const Tabs = ({ tabs, ...rest }: Props) => {
   const isClient = useIsClient();

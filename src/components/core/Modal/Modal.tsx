@@ -23,6 +23,8 @@ export interface Props extends PrimitiveModalProps {
 
 /**
  * Modal.
+ *
+ * **NOTE:** by default, the component is rendered lazily and unmounted on exit due to `lazyMount` and `unmountOnExit` being specified. To override these behaviors, pass `lazyMount={false}` and/or `unmountOnExit={false}`.
  */
 const Modal = ({ children, trigger, title, description, ...rest }: Props) => (
   <PrimitiveModal lazyMount unmountOnExit {...rest}>
