@@ -29,10 +29,13 @@ const Banner = ({ children, closable, ...rest }: Props) => {
       </panda.div>
       {closable && (
         <Button
-          onClick={() => setIsOpen(false)}
+          size="xs"
           p={1}
-          opacity={{ _hover: 0.8 }}
+          display="flex"
+          bgColor="transparent"
+          onClick={() => setIsOpen(false)}
           aria-label="Close Banner"
+          _hover={{ opacity: 0.8 }}
         >
           <Icon color="inherit">
             <CloseIcon />
