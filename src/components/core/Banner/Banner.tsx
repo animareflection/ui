@@ -20,6 +20,8 @@ const PandaBanner = panda("div", banner);
 const Banner = ({ children, closable, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
+  const handleClose = () => setIsOpen(false);
+
   if (!isOpen) return null;
 
   return (
@@ -33,9 +35,9 @@ const Banner = ({ children, closable, ...rest }: Props) => {
           p={1}
           display="flex"
           bgColor="transparent"
-          onClick={() => setIsOpen(false)}
           aria-label="Close Banner"
           _hover={{ opacity: 0.8 }}
+          onClick={handleClose}
         >
           <Icon color="inherit">
             <CloseIcon />
