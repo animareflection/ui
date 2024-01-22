@@ -1,3 +1,6 @@
+/**
+ * @file Radio group primitives.
+ */
 import {
   RadioGroupItem,
   RadioGroupItemControl,
@@ -15,9 +18,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(radioGroup);
 
-/**
- * Core UI radio group primitives.
- */
 export type PrimitiveRadioGroupProps = ComponentProps<
   typeof PrimitiveRadioGroup
 >;

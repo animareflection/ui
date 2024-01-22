@@ -1,3 +1,6 @@
+/**
+ * @file Accordion primitives.
+ */
 import {
   Accordion,
   AccordionItem,
@@ -15,9 +18,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(accordion);
 
-/**
- * Core UI accordion primitives.
- */
 export type PrimitiveAccordionProps = ComponentProps<typeof PrimitiveAccordion>;
 const PrimitiveAccordion: PandaComponent<typeof Accordion> = withProvider(
   panda(Accordion),

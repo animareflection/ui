@@ -29,7 +29,7 @@ export interface Props
 }
 
 /**
- * Core UI input.
+ * Input.
  */
 const Input = forwardRef(
   (

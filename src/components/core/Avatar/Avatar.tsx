@@ -18,7 +18,7 @@ export interface Props
 }
 
 /**
- * Core UI avatar.
+ * Avatar.
  */
 const Avatar = ({ src, alt, fallback = "AR", ...rest }: Props) => {
   const isClient = useIsClient();

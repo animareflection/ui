@@ -31,7 +31,7 @@ export interface Props extends PrimitiveAccordionProps {
 }
 
 /**
- * Core UI accordion.
+ * Accordion.
  */
 const Accordion = ({ items, plusMinus, ...rest }: Props) => {
   const isClient = useIsClient();

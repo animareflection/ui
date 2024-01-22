@@ -12,7 +12,7 @@ import type { ToggleVariantProps } from "generated/panda/recipes";
 export type Props = PrimitiveToggleProps & ToggleVariantProps;
 
 /**
- * Core UI toggle.
+ * Toggle.
  */
 const Toggle = ({ label, ...rest }: Props) => {
   const isClient = useIsClient();

@@ -28,7 +28,7 @@ export interface Props {
 }
 
 /**
- * Core UI breadcrumb.
+ * Breadcrumb.
  */
 const Breadcrumb = ({ breadcrumbs, pathname, rootLabel, separator }: Props) => {
   const pathnameBreadcrumbs = usePathnameBreadcrumb({ pathname, rootLabel });

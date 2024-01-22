@@ -23,7 +23,7 @@ export interface Props
 }
 
 /**
- * Core UI radio group.
+ * Radio group.
  */
 const RadioGroup = ({
   items,

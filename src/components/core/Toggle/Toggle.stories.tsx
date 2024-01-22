@@ -47,7 +47,6 @@ const meta = {
   title: "Components/Core/Toggle",
   component: Toggle,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Toggle>;
 
 export default meta;

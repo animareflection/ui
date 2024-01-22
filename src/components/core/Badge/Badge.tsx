@@ -6,7 +6,7 @@ import type { ComponentProps } from "react";
 export type Props = ComponentProps<typeof Badge>;
 
 /**
- * Core UI badge.
+ * Badge.
  */
 const Badge = panda("div", badge);
 

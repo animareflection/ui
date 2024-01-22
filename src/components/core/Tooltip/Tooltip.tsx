@@ -1,5 +1,3 @@
-import { Portal } from "@ark-ui/react";
-
 import {
   PrimitiveTooltip,
   PrimitiveTooltipArrow,
@@ -8,7 +6,6 @@ import {
   PrimitiveTooltipPositioner,
   PrimitiveTooltipTrigger,
 } from "components/primitives";
-import { useIsClient } from "lib/hooks";
 
 import type {
   PrimitiveTooltipContentProps,
@@ -16,19 +13,18 @@ import type {
 } from "components/primitives";
 import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
-import type { ReactNode, RefObject } from "react";
+import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   trigger?: ReactNode;
   tooltipContent: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
   arrow?: boolean;
-  containerRef?: RefObject<HTMLElement>;
   contentProps?: PrimitiveTooltipContentProps;
 }
 
 /**
- * Core UI tooltip.
+ * Tooltip.
  */
 const Tooltip = ({
   trigger,
@@ -37,42 +33,34 @@ const Tooltip = ({
   closeDelay = 0,
   bgColor = "bg.default",
   arrow = true,
-  containerRef,
   contentProps,
   ...rest
-}: Props) => {
-  const isClient = useIsClient();
+}: Props) => (
+  <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
+    {({ isOpen }) => (
+      <>
+        {trigger && (
+          <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
+        )}
 
-  if (!isClient) return null;
-
-  return (
-    <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
-      {({ isOpen }) => (
-        <>
-          {trigger && (
-            <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
-          )}
-
-          <Portal container={containerRef}>
-            <PrimitiveTooltipPositioner>
-              {isOpen && (
-                <>
-                  {arrow && (
-                    <PrimitiveTooltipArrow bgColor={bgColor}>
-                      <PrimitiveTooltipArrowTip />
-                    </PrimitiveTooltipArrow>
-                  )}
-                  <PrimitiveTooltipContent bgColor={bgColor} {...contentProps}>
-                    {tooltipContent}
-                  </PrimitiveTooltipContent>
-                </>
+        <PrimitiveTooltipPositioner>
+          {isOpen && (
+            <>
+              {arrow && (
+                <PrimitiveTooltipArrow bgColor={bgColor}>
+                  <PrimitiveTooltipArrowTip />
+                </PrimitiveTooltipArrow>
               )}
-            </PrimitiveTooltipPositioner>
-          </Portal>
-        </>
-      )}
-    </PrimitiveTooltip>
-  );
-};
+
+              <PrimitiveTooltipContent bgColor={bgColor} {...contentProps}>
+                {tooltipContent}
+              </PrimitiveTooltipContent>
+            </>
+          )}
+        </PrimitiveTooltipPositioner>
+      </>
+    )}
+  </PrimitiveTooltip>
+);
 
 export default Tooltip;

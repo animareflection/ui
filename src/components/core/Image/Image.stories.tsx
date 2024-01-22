@@ -23,7 +23,6 @@ const meta = {
   title: "Components/Core/Image",
   component: Image,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } as Meta<typeof Image>;
 
 export default meta;

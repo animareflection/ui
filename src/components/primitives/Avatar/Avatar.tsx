@@ -1,3 +1,6 @@
+/**
+ * @file Avatar primitives.
+ */
 import { Avatar, AvatarFallback, AvatarImage } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
@@ -9,9 +12,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(avatar);
 
-/**
- * Core UI avatar primitives.
- */
 export type PrimitiveAvatarProps = ComponentProps<typeof PrimitiveAvatar>;
 const PrimitiveAvatar: PandaComponent<typeof Avatar> = withProvider(
   panda(Avatar),

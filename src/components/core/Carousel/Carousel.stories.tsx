@@ -60,7 +60,6 @@ const meta = {
   title: "Components/Core/Carousel",
   component: Carousel,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Carousel>;
 
 export default meta;

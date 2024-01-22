@@ -19,7 +19,6 @@ const meta: Meta<typeof Spinner> = {
   title: "Components/Core/Spinner",
   component: Spinner,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Spinner>;
 
 export default meta;

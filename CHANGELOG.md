@@ -1,5 +1,17 @@
 # @animareflection/ui
 
+## 0.23.3
+
+### Patch Changes
+
+- [#218](https://github.com/animareflection/ui/pull/218) [`778f339`](https://github.com/animareflection/ui/commit/778f339a879b13fb98a18a22de9b26209bda31fc) Thanks [@coopbri](https://github.com/coopbri)! - Remove portals from `Drawer`, `Modal`, and `Tooltip`
+
+## 0.23.2
+
+### Patch Changes
+
+- [#216](https://github.com/animareflection/ui/pull/216) [`626e464`](https://github.com/animareflection/ui/commit/626e46466db45699a1b47c4421fb86b8ee159684) Thanks [@coopbri](https://github.com/coopbri)! - Allow custom content override in `Combobox`
+
 ## 0.23.1
 
 ### Patch Changes

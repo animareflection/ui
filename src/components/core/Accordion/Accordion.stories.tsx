@@ -46,7 +46,6 @@ const meta = {
   title: "Components/Core/Accordion",
   component: Accordion,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Accordion>;
 
 export default meta;

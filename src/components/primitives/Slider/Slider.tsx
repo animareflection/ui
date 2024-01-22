@@ -1,3 +1,6 @@
+/**
+ * @file Slider primitives.
+ */
 import {
   Slider,
   SliderControl,
@@ -17,9 +20,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(slider);
 
-/**
- * Core UI slider primitives.
- */
 export type PrimitiveSliderProps = ComponentProps<typeof PrimitiveSlider>;
 const PrimitiveSlider = withProvider(panda(Slider), "root");
 

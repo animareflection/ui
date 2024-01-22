@@ -51,7 +51,6 @@ const meta = {
   title: "Hooks/useBreakpointValue",
   tags: ["autodocs"],
   component: useBreakpointValue,
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof useBreakpointValue>;
 
 export default meta;

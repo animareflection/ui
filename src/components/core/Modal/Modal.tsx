@@ -1,4 +1,3 @@
-import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
@@ -12,65 +11,54 @@ import {
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
 } from "components/primitives";
-import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
-import type { ReactNode, RefObject } from "react";
+import type { ReactNode } from "react";
 
 export interface Props extends PrimitiveModalProps {
   trigger?: ReactNode;
   title?: string;
   description?: string;
-  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
- * Core UI modal.
+ * Modal.
+ *
+ * **NOTE:** by default, the component is rendered lazily and unmounted on exit due to `lazyMount` and `unmountOnExit` being specified. To override these behaviors, pass `lazyMount={false}` and/or `unmountOnExit={false}`.
  */
-const Modal = ({
-  children,
-  trigger,
-  title,
-  description,
-  containerRef,
-  ...rest
-}: Props) => {
-  const isClient = useIsClient();
+const Modal = ({ children, trigger, title, description, ...rest }: Props) => (
+  <PrimitiveModal lazyMount unmountOnExit {...rest}>
+    {(ctx) => (
+      <>
+        {trigger && (
+          <PrimitiveModalTrigger asChild>{trigger}</PrimitiveModalTrigger>
+        )}
 
-  if (!isClient) return null;
+        <PrimitiveModalBackdrop />
 
-  return (
-    <PrimitiveModal lazyMount unmountOnExit {...rest}>
-      {(ctx) => (
-        <>
-          {trigger && <PrimitiveModalTrigger>{trigger}</PrimitiveModalTrigger>}
+        <PrimitiveModalPositioner>
+          <PrimitiveModalContent>
+            {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
 
-          <Portal container={containerRef}>
-            <PrimitiveModalBackdrop />
-            <PrimitiveModalPositioner>
-              <PrimitiveModalContent>
-                {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
-                {description && (
-                  <PrimitiveModalDescription>
-                    {description}
-                  </PrimitiveModalDescription>
-                )}
+            {description && (
+              <PrimitiveModalDescription>
+                {description}
+              </PrimitiveModalDescription>
+            )}
 
-                {/* forward nested context/state if utilized, otherwise directly render children */}
-                {typeof children === "function" ? children(ctx) : children}
+            {/* forward nested context/state if utilized, otherwise directly render children */}
+            {typeof children === "function" ? children(ctx) : children}
 
-                <PrimitiveModalCloseTrigger>
-                  <Icon>
-                    <CloseIcon />
-                  </Icon>
-                </PrimitiveModalCloseTrigger>
-              </PrimitiveModalContent>
-            </PrimitiveModalPositioner>
-          </Portal>
-        </>
-      )}
-    </PrimitiveModal>
-  );
-};
+            <PrimitiveModalCloseTrigger>
+              <Icon>
+                <CloseIcon />
+              </Icon>
+            </PrimitiveModalCloseTrigger>
+          </PrimitiveModalContent>
+        </PrimitiveModalPositioner>
+      </>
+    )}
+  </PrimitiveModal>
+);
 
 export default Modal;

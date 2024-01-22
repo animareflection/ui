@@ -1,3 +1,6 @@
+/**
+ * @file Toast primitives.
+ */
 import { panda } from "generated/panda/jsx";
 import { toast } from "generated/panda/recipes";
 import { createStyleContext } from "lib/util";
@@ -7,9 +10,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(toast);
 
-/**
- * Core UI toast primitives.
- */
 export type PrimitiveToastProps = ComponentProps<typeof PrimitiveToast>;
 const PrimitiveToast: PandaComponent<typeof panda.div> = withProvider(
   panda.div,

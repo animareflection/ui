@@ -1,3 +1,6 @@
+/**
+ * @file Tooltip primitives.
+ */
 import {
   Tooltip,
   TooltipArrow,
@@ -15,9 +18,6 @@ import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(tooltip);
 
-/**
- * Core UI tooltip primitives.
- */
 export type PrimitiveTooltipProps = ComponentProps<typeof PrimitiveTooltip>;
 const PrimitiveTooltip = withProvider(panda(Tooltip), "root");
 

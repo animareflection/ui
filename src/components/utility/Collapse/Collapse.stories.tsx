@@ -70,7 +70,6 @@ const meta = {
   title: "Components/Utility/Collapse",
   component: Collapse,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Collapse>;
 
 export default meta;

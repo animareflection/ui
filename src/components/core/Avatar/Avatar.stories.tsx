@@ -69,7 +69,6 @@ const meta = {
   title: "Components/Core/Avatar",
   component: Avatar,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Avatar>;
 
 export default meta;

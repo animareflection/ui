@@ -28,7 +28,7 @@ export interface Props extends PrimitiveFlyoutProps {
 }
 
 /**
- * Core UI flyout.
+ * Flyout.
  */
 const Flyout = ({ trigger, title, contentProps, children, ...rest }: Props) => {
   const { isOpen, onClose, onToggle } = useDisclosure();
