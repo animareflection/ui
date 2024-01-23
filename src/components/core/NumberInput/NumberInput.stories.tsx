@@ -25,7 +25,6 @@ export const Addons: Story = {
       max={5}
       step={0.1}
       stepper
-      disabled
     />
   ),
 };
