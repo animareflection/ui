@@ -94,13 +94,13 @@ const NumberInput = ({
         {stepper && (
           <PrimitiveNumberInputControl>
             <PrimitiveNumberInputDecrementTrigger>
-              <Icon>
+              <Icon color="inherit">
                 <FiMinus />
               </Icon>
             </PrimitiveNumberInputDecrementTrigger>
             <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
             <PrimitiveNumberInputIncrementTrigger>
-              <Icon>
+              <Icon color="inherit">
                 <FiPlus />
               </Icon>
             </PrimitiveNumberInputIncrementTrigger>
