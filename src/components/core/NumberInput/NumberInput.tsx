@@ -92,15 +92,21 @@ const NumberInput = ({
           </PrimitiveNumberInputAddon>
         )}
         {stepper && (
-          <PrimitiveNumberInputControl>
+          <PrimitiveNumberInputControl className="group">
             <PrimitiveNumberInputDecrementTrigger>
-              <Icon>
+              <Icon color="inherit">
                 <FiMinus />
               </Icon>
             </PrimitiveNumberInputDecrementTrigger>
-            <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
+            <panda.div
+              w="1px"
+              h="75%"
+              mx={0.5}
+              my="auto"
+              bgColor={{ base: "fg.default", _groupDisabled: "fg.disabled" }}
+            />
             <PrimitiveNumberInputIncrementTrigger>
-              <Icon>
+              <Icon color="inherit">
                 <FiPlus />
               </Icon>
             </PrimitiveNumberInputIncrementTrigger>
