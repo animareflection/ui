@@ -1,5 +1,17 @@
 # @animareflection/ui
 
+## 0.24.0
+
+### Minor Changes
+
+- [#222](https://github.com/animareflection/ui/pull/222) [`ae57729`](https://github.com/animareflection/ui/commit/ae57729fcf2162814a7327d830960aaa72c25020) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add variants for `Tabs` component
+
+### Patch Changes
+
+- [#224](https://github.com/animareflection/ui/pull/224) [`9aec3c8`](https://github.com/animareflection/ui/commit/9aec3c8153f7a8d72972094d6c57f8a9e07fc0be) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update default `Icon` color for increment and decrement triggers in `NumberInput`
+
+- [#222](https://github.com/animareflection/ui/pull/222) [`ae57729`](https://github.com/animareflection/ui/commit/ae57729fcf2162814a7327d830960aaa72c25020) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix `Tabs` indicator rendering issues
+
 ## 0.23.3
 
 ### Patch Changes
