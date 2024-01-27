@@ -99,7 +99,7 @@
     "eslint-plugin-testing-library": "^6.2.0",
     "eslint-plugin-typescript-sort-keys": "^3.1.0",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "framer-motion": "^10.18.0",
+    "framer-motion": "^11.0.0",
     "http-server": "^14.1.1",
     "husky": "^8.0.3",
     "jsonfile": "^6.1.0",
