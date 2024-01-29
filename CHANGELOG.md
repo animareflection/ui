@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.24.1
+
+### Patch Changes
+
+- [#226](https://github.com/animareflection/ui/pull/226) [`2336f51`](https://github.com/animareflection/ui/commit/2336f514f0a97991a1361be0a952c5412cf1e691) Thanks [@coopbri](https://github.com/coopbri)! - Revert Ark UI to v1.2 due to controlled component open state regression (https://github.com/chakra-ui/ark/issues/2090)
+
 ## 0.24.0
 
 ### Minor Changes
