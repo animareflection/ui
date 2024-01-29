@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { comboboxState } from "./Combobox.spec";
 import { Combobox, Image } from "components/core";
 
@@ -59,6 +61,31 @@ export const Default: Story = {
       display: true,
     },
     groups,
+  },
+};
+
+export const ControlledItems: Story = {
+  args: {
+    size: "md",
+    label: {
+      singular: "Fruit",
+      plural: "Fruit",
+      display: true,
+    },
+    groups: [groups[0]],
+  },
+  render: (args) => {
+    const allItems = args.groups.flatMap((group) => group.items);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [controlledItems, setControlledItems] = useState(allItems);
+
+    return (
+      <Combobox
+        {...args}
+        controlledItems={controlledItems}
+        setControlledItems={setControlledItems}
+      />
+    );
   },
 };
 
