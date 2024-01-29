@@ -93,6 +93,13 @@ const Combobox = ({
   const allItems = groups.flatMap((group) => group.items);
   const [filteredItems, setFilteredItems] = useState(allItems);
 
+  // We could throw an error here like so (for descriptiive runtime error purposes):
+  // if (controlledItems && !setControlledItems) {
+  //   throw new Error(
+  //     "You must provide a `setControlledItems` callback when using `controlledItems`.",
+  //   );
+  // }
+
   const handleChange = (
     evt: Parameters<
       NonNullable<PrimitiveComboboxProps["onInputValueChange"]>
