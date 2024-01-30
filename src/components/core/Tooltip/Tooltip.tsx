@@ -1,3 +1,5 @@
+import { Portal } from "@ark-ui/react";
+
 import {
   PrimitiveTooltip,
   PrimitiveTooltipArrow,
@@ -13,7 +15,7 @@ import type {
 } from "components/primitives";
 import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   trigger?: ReactNode;
@@ -21,6 +23,8 @@ export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
   bgColor?: JsxStyleProps["bgColor"];
   arrow?: boolean;
   contentProps?: PrimitiveTooltipContentProps;
+  /** Portal container ref to mount to. */
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -34,6 +38,7 @@ const Tooltip = ({
   bgColor = "bg.default",
   arrow = true,
   contentProps,
+  containerRef,
   ...rest
 }: Props) => (
   <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
@@ -43,21 +48,23 @@ const Tooltip = ({
           <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
         )}
 
-        <PrimitiveTooltipPositioner>
-          {isOpen && (
-            <>
-              {arrow && (
-                <PrimitiveTooltipArrow bgColor={bgColor}>
-                  <PrimitiveTooltipArrowTip />
-                </PrimitiveTooltipArrow>
-              )}
+        <Portal container={containerRef}>
+          <PrimitiveTooltipPositioner>
+            {isOpen && (
+              <>
+                {arrow && (
+                  <PrimitiveTooltipArrow bgColor={bgColor}>
+                    <PrimitiveTooltipArrowTip />
+                  </PrimitiveTooltipArrow>
+                )}
 
-              <PrimitiveTooltipContent bgColor={bgColor} {...contentProps}>
-                {tooltipContent}
-              </PrimitiveTooltipContent>
-            </>
-          )}
-        </PrimitiveTooltipPositioner>
+                <PrimitiveTooltipContent bgColor={bgColor} {...contentProps}>
+                  {tooltipContent}
+                </PrimitiveTooltipContent>
+              </>
+            )}
+          </PrimitiveTooltipPositioner>
+        </Portal>
       </>
     )}
   </PrimitiveTooltip>
