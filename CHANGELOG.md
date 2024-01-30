@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.24.2
+
+### Patch Changes
+
+- [#230](https://github.com/animareflection/ui/pull/230) [`bebbadd`](https://github.com/animareflection/ui/commit/bebbadd1f17f619edbfbbc0095a068df5b96d8ec) Thanks [@coopbri](https://github.com/coopbri)! - Add `Portal` to `Drawer`, `Modal`, and `Tooltip` to fix render overlay issues
+
 ## 0.24.1
 
 ### Patch Changes
