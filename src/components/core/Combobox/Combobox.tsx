@@ -62,7 +62,8 @@ export interface Props
   };
   /** Custom content render override. */
   content?: ReactNode;
-  groups: Group[];
+  /** Groups of items to display. */
+  groups?: Group[];
   itemIndicator?: boolean;
   triggerEnabled?: boolean;
   inputProps?: Omit<InputProps, "size">;
@@ -89,12 +90,8 @@ const Combobox = ({
   const allItems = groups.flatMap((group) => group.items);
   const [filteredItems, setFilteredItems] = useState(allItems);
 
-  // We could throw an error here like so (for descriptiive runtime error purposes):
-  // if (controlledItems && !setControlledItems) {
-  //   throw new Error(
-  //     "You must provide a `setControlledItems` callback when using `controlledItems`.",
-  //   );
-  // }
+  if (!content || !groups)
+    throw new Error("Either the `content` or `groups` prop must be provided.");
 
   const handleChange = (
     evt: Parameters<
