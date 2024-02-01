@@ -1,5 +1,13 @@
 # @animareflection/ui
 
+## 0.24.3
+
+### Patch Changes
+
+- [#232](https://github.com/animareflection/ui/pull/232) [`a2f415a`](https://github.com/animareflection/ui/commit/a2f415ab38cfc0951bdf48fb7eb795f0cddba039) Thanks [@coopbri](https://github.com/coopbri)! - Make `Combobox` `groups` prop optional
+
+- [#232](https://github.com/animareflection/ui/pull/232) [`a2f415a`](https://github.com/animareflection/ui/commit/a2f415ab38cfc0951bdf48fb7eb795f0cddba039) Thanks [@coopbri](https://github.com/coopbri)! - Throw error if `Combobox` is missing either `groups` or `content` props
+
 ## 0.24.2
 
 ### Patch Changes
