@@ -90,7 +90,7 @@ const Combobox = ({
   const allItems = groups.flatMap((group) => group.items);
   const [filteredItems, setFilteredItems] = useState(allItems);
 
-  if (!content || !groups)
+  if (!content && !groups.length)
     throw new Error("Either the `content` or `groups` prop must be provided.");
 
   const handleChange = (
