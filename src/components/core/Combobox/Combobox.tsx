@@ -60,11 +60,9 @@ export interface Props
     props?: PrimitiveComboboxLabelProps;
     display?: boolean;
   };
-  groups: Group[];
   /** Custom content render override. */
   content?: ReactNode;
-  controlledItems?: Item[];
-  setControlledItems?: (items: Item[]) => void;
+  groups: Group[];
   itemIndicator?: boolean;
   triggerEnabled?: boolean;
   inputProps?: Omit<InputProps, "size">;
@@ -81,8 +79,6 @@ const Combobox = ({
   itemIndicator = false,
   triggerEnabled = true,
   inputProps,
-  controlledItems,
-  setControlledItems,
   contentProps,
   controlProps,
   positionerProps,
@@ -111,15 +107,13 @@ const Combobox = ({
         item.value.toLowerCase().includes(evt.value.toLowerCase()),
     );
 
-    controlledItems
-      ? setControlledItems?.(filtered.length ? filtered : allItems)
-      : setFilteredItems(filtered.length ? filtered : allItems);
+    setFilteredItems(filtered.length ? filtered : allItems);
   };
 
   return (
     <PrimitiveCombobox
       onInputValueChange={handleChange}
-      items={controlledItems ? controlledItems : filteredItems}
+      items={filteredItems}
       size={size}
       {...rest}
     >
@@ -164,11 +158,7 @@ const Combobox = ({
           {content ||
             groups.map(
               (group) =>
-                group.items.some((item) =>
-                  controlledItems
-                    ? controlledItems.includes(item)
-                    : filteredItems.includes(item),
-                ) && (
+                group.items.some((item) => filteredItems.includes(item)) && (
                   <PrimitiveComboboxItemGroup
                     key={group.label.id}
                     id={group.label.id}
@@ -185,9 +175,7 @@ const Combobox = ({
 
                     {group.items.map(
                       (item) =>
-                        (controlledItems
-                          ? controlledItems.includes(item)
-                          : filteredItems.includes(item)) && (
+                        filteredItems.includes(item) && (
                           <PrimitiveComboboxItem
                             key={item.value}
                             item={item}
