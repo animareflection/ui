@@ -62,7 +62,8 @@ export interface Props
   };
   /** Custom content render override. */
   content?: ReactNode;
-  groups: Group[];
+  /** Groups of items to display. */
+  groups?: Group[];
   itemIndicator?: boolean;
   triggerEnabled?: boolean;
   inputProps?: Omit<InputProps, "size">;
@@ -88,6 +89,9 @@ const Combobox = ({
 }: Props) => {
   const allItems = groups.flatMap((group) => group.items);
   const [filteredItems, setFilteredItems] = useState(allItems);
+
+  if (!content && !groups.length)
+    throw new Error("Either the `content` or `groups` prop must be provided.");
 
   const handleChange = (
     evt: Parameters<
