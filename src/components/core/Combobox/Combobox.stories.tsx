@@ -1,5 +1,6 @@
 import { comboboxState } from "./Combobox.spec";
-import { Combobox, Image } from "components/core";
+import { Combobox, Image, Text } from "components/core";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -81,6 +82,27 @@ export const ImageIcons: Story = {
         })),
       },
     ],
+  },
+};
+
+/**
+ * Custom content can be passed to override the default content render.
+ */
+export const CustomContent: Story = {
+  args: {
+    ...Default.args,
+    content: (
+      <Flex direction="column">
+        <Text>All the fruit!</Text>
+
+        {fruitBasket.map(({ label, icon }) => (
+          <Flex key={label} align="center">
+            <Text>{icon}</Text>
+            <Text>{label}</Text>
+          </Flex>
+        ))}
+      </Flex>
+    ),
   },
 };
 
