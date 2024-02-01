@@ -1,3 +1,4 @@
+import { Portal } from "@ark-ui/react";
 import { FiX as CloseIcon } from "react-icons/fi";
 
 import Icon from "components/core/Icon/Icon";
@@ -17,13 +18,15 @@ import type {
   PrimitiveDrawerContentProps,
 } from "components/primitives";
 import type { DrawerVariantProps } from "generated/panda/recipes";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
   trigger?: ReactNode;
   title?: string;
   description?: string;
   contentProps?: PrimitiveDrawerContentProps;
+  /** Portal container ref to mount to. */
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
@@ -37,6 +40,7 @@ const Drawer = ({
   title,
   description,
   contentProps,
+  containerRef,
   ...rest
 }: Props) => (
   <PrimitiveDrawer lazyMount unmountOnExit {...rest}>
@@ -46,28 +50,30 @@ const Drawer = ({
           <PrimitiveDrawerTrigger asChild>{trigger}</PrimitiveDrawerTrigger>
         )}
 
-        <PrimitiveDrawerBackdrop />
+        <Portal container={containerRef}>
+          <PrimitiveDrawerBackdrop />
 
-        <PrimitiveDrawerPositioner>
-          <PrimitiveDrawerContent {...contentProps}>
-            {title && <PrimitiveDrawerTitle>{title}</PrimitiveDrawerTitle>}
+          <PrimitiveDrawerPositioner>
+            <PrimitiveDrawerContent {...contentProps}>
+              {title && <PrimitiveDrawerTitle>{title}</PrimitiveDrawerTitle>}
 
-            {description && (
-              <PrimitiveDrawerDescription>
-                {description}
-              </PrimitiveDrawerDescription>
-            )}
+              {description && (
+                <PrimitiveDrawerDescription>
+                  {description}
+                </PrimitiveDrawerDescription>
+              )}
 
-            {/* forward nested context/state if utilized, otherwise directly render children */}
-            {typeof children === "function" ? children(ctx) : children}
+              {/* forward nested context/state if utilized, otherwise directly render children */}
+              {typeof children === "function" ? children(ctx) : children}
 
-            <PrimitiveDrawerCloseTrigger>
-              <Icon>
-                <CloseIcon />
-              </Icon>
-            </PrimitiveDrawerCloseTrigger>
-          </PrimitiveDrawerContent>
-        </PrimitiveDrawerPositioner>
+              <PrimitiveDrawerCloseTrigger>
+                <Icon>
+                  <CloseIcon />
+                </Icon>
+              </PrimitiveDrawerCloseTrigger>
+            </PrimitiveDrawerContent>
+          </PrimitiveDrawerPositioner>
+        </Portal>
       </>
     )}
   </PrimitiveDrawer>
