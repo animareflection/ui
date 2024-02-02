@@ -1,5 +1,13 @@
 # @animareflection/ui
 
+## 0.24.4
+
+### Patch Changes
+
+- [#234](https://github.com/animareflection/ui/pull/234) [`37eb1b3`](https://github.com/animareflection/ui/commit/37eb1b3286d5d6ef025fabc4b5fe10a807303aee) Thanks [@coopbri](https://github.com/coopbri)! - Remove `Combobox` prop check assertion due to issues during Next.js hydration
+
+- [#220](https://github.com/animareflection/ui/pull/220) [`8eea622`](https://github.com/animareflection/ui/commit/8eea622f6660e651df844217a4c6acc2c77cba45) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Banner` close trigger styles
+
 ## 0.24.3
 
 ### Patch Changes
