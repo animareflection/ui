@@ -48,8 +48,8 @@ export const tabState = async <R extends Renderer = ReactRenderer>({
   await step("It should not show the tab panel when disabled", async () => {
     await userEvent.click(tab3);
 
-    const tab3Content = await canvas.findByText(/Tab 3 content/i);
-    await expect(tab3Content).not.toBeVisible();
+    const tab3Content = canvas.queryByText(/Tab 3 content/i);
+    await expect(tab3Content).toBeNull();
   });
 
   // TODO: Fix this test (flaky).

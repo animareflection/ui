@@ -1,56 +1,70 @@
-import { ark } from "@ark-ui/react";
+import { forwardRef } from "react";
 
-import { Flex, panda, Stack } from "generated/panda/jsx";
-import { input } from "generated/panda/recipes";
+import {
+  PrimitiveInput,
+  PrimitiveInputAddon,
+  PrimitiveInputInput,
+  PrimitiveInputLabel,
+  PrimitiveInputLeftElement,
+  PrimitiveInputRightElement,
+} from "components/primitives";
+import { Flex } from "generated/panda/jsx";
 
+import type {
+  PrimitiveInputProps,
+  PrimitiveInputInputProps,
+} from "components/primitives";
 import type { InputVariantProps } from "generated/panda/recipes";
-import type { ComponentProps, ReactNode } from "react";
+import type { ReactNode, Ref } from "react";
 
 export interface Props
-  extends ComponentProps<typeof PandaInput>,
+  extends Omit<PrimitiveInputInputProps, "size">,
     InputVariantProps {
   label?: string;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
   inputLeftElement?: ReactNode;
   inputRightElement?: ReactNode;
+  containerProps?: Omit<PrimitiveInputProps, "size" | "variant">;
 }
 
-const PandaInput = panda(ark.input, input);
-const PandaLabel = panda(ark.label);
-
 /**
- * Core UI input.
+ * Input.
  */
-const Input = ({
-  label,
-  leftAddon,
-  rightAddon,
-  inputLeftElement,
-  inputRightElement,
-  variant,
-  size,
-  ...rest
-}: Props) => {
-  const classNames = input({ size, variant });
+const Input = forwardRef(
+  (
+    {
+      label,
+      leftAddon,
+      rightAddon,
+      inputLeftElement,
+      inputRightElement,
+      containerProps,
+      size,
+      variant,
+      ...rest
+    }: Props,
+    ref: Ref<HTMLInputElement> | undefined,
+  ) => (
+    <PrimitiveInput size={size} variant={variant} {...containerProps}>
+      {label && <PrimitiveInputLabel>{label}</PrimitiveInputLabel>}
 
-  return (
-    <Stack gap={1.5}>
-      <PandaLabel className={classNames.label}>{label}</PandaLabel>
       <Flex>
         {leftAddon && (
-          <panda.div className={classNames.addon} borderLeftRadius="sm">
+          <PrimitiveInputAddon borderLeftRadius="sm">
             {leftAddon}
-          </panda.div>
+          </PrimitiveInputAddon>
         )}
-        <Flex pos="relative" w="100%">
+
+        <Flex pos="relative" w="100%" align="center">
           {inputLeftElement && (
-            <panda.div className={classNames.leftElement}>
+            <PrimitiveInputLeftElement>
               {inputLeftElement}
-            </panda.div>
+            </PrimitiveInputLeftElement>
           )}
-          <PandaInput
-            className={classNames.input}
+
+          <PrimitiveInputInput
+            ref={ref}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}
             borderBottomLeftRadius={leftAddon ? 0 : "sm"}
             borderTopRightRadius={rightAddon ? 0 : "sm"}
@@ -59,21 +73,24 @@ const Input = ({
             pr={inputRightElement ? 10 : 3}
             {...rest}
           />
+
           {inputRightElement && (
-            <panda.div className={classNames.rightElement}>
+            <PrimitiveInputRightElement>
               {inputRightElement}
-            </panda.div>
+            </PrimitiveInputRightElement>
           )}
         </Flex>
 
         {rightAddon && (
-          <panda.div className={classNames.addon} borderRightRadius="sm">
+          <PrimitiveInputAddon borderRightRadius="sm">
             {rightAddon}
-          </panda.div>
+          </PrimitiveInputAddon>
         )}
       </Flex>
-    </Stack>
-  );
-};
+    </PrimitiveInput>
+  ),
+);
+
+Input.displayName = "Input";
 
 export default Input;

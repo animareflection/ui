@@ -26,6 +26,9 @@ export const carouselRecipe = defineSlotRecipe({
   description: "The styles for the Carousel component",
   slots: carouselAnatomy.keys(),
   base: {
+    root: {
+      colorPalette: "brand.primary",
+    },
     viewport: {
       overflowX: "hidden",
       position: "relative",
@@ -42,30 +45,31 @@ export const carouselRecipe = defineSlotRecipe({
       position: "absolute",
       transform: "translateX(-50%)",
       zIndex: "docked",
-      gap: 2,
-      p: 2.5,
     },
     indicatorGroup: {
       display: "flex",
-      gap: 3,
     },
     indicator: {
       borderRadius: "full",
       background: "bg.emphasized",
       cursor: "pointer",
-      width: 2.5,
-      height: 2.5,
       _current: {
-        background: "accent.default",
+        background: "colorPalette.500",
       },
       _focusVisible: {
         outlineOffset: "2px",
         outline: "2px solid",
-        outlineColor: "border.outline",
+        outlineColor: {
+          base: "colorPalette.600",
+          _dark: "colorPalette.400",
+        },
       },
     },
-    nextSlideTrigger: triggerStyle,
-    prevSlideTrigger: triggerStyle,
+    nextTrigger: triggerStyle,
+    prevTrigger: triggerStyle,
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -80,6 +84,19 @@ export const carouselRecipe = defineSlotRecipe({
         indicator: {
           width: 2,
           height: 2,
+        },
+      },
+      md: {
+        control: {
+          gap: 2,
+          p: 2.5,
+        },
+        indicatorGroup: {
+          gap: 3,
+        },
+        indicator: {
+          width: 2.5,
+          height: 2.5,
         },
       },
     },

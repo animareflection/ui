@@ -1,62 +1,35 @@
 import { panda } from "generated/panda/jsx";
 import { card } from "generated/panda/recipes";
-import { getChildrenOnDisplayName } from "lib/utils";
+import { createStyleContext } from "lib/util";
 
 import type { HTMLPandaProps } from "generated/panda/jsx";
 
-const cardClasses = card();
-
 type Props = HTMLPandaProps<"div">;
 
+const { withProvider, withContext } = createStyleContext(card);
+
 /**
- * Core UI card.
+ * Card.
  */
-const Card = ({ children, ...rest }: Props) => {
-  const cardHeader = getChildrenOnDisplayName({
-    children,
-    displayName: "CardHeader",
-  });
-  const cardBody = getChildrenOnDisplayName({
-    children,
-    displayName: "CardBody",
-  });
-  const cardFooter = getChildrenOnDisplayName({
-    children,
-    displayName: "CardFooter",
-  });
-
-  return (
-    <panda.div className={cardClasses.root} {...rest}>
-      {cardHeader}
-      {cardBody}
-      {cardFooter}
-    </panda.div>
-  );
-};
-
-export const CardHeader = ({ children, ...rest }: Props) => (
-  <panda.div className={cardClasses.header} {...rest}>
-    {children}
-  </panda.div>
+const Card = withProvider(
+  ({ children, ...rest }: Props) => <panda.div {...rest}>{children}</panda.div>,
+  "root",
 );
 
-CardHeader.displayName = "CardHeader";
-
-export const CardBody = ({ children, ...rest }: Props) => (
-  <panda.div className={cardClasses.body} {...rest}>
-    {children}
-  </panda.div>
+export const CardHeader = withContext(
+  ({ children, ...rest }: Props) => <panda.div {...rest}>{children}</panda.div>,
+  "header",
 );
 
-CardBody.displayName = "CardBody";
-
-export const CardFooter = ({ children, ...rest }: Props) => (
-  <panda.div className={cardClasses.footer} {...rest}>
-    {children}
-  </panda.div>
+export const CardBody = withContext(
+  ({ children, ...rest }: Props) => <panda.div {...rest}>{children}</panda.div>,
+  "body",
 );
 
-CardFooter.displayName = "CardFooter";
+export const CardFooter = withContext(
+  ({ children, ...rest }: Props) => <panda.div {...rest}>{children}</panda.div>,
+  "footer",
+);
 
 export type {
   Props as CardProps,

@@ -1,5 +1,261 @@
 # @animareflection/ui
 
+## 0.24.3
+
+### Patch Changes
+
+- [#232](https://github.com/animareflection/ui/pull/232) [`a2f415a`](https://github.com/animareflection/ui/commit/a2f415ab38cfc0951bdf48fb7eb795f0cddba039) Thanks [@coopbri](https://github.com/coopbri)! - Make `Combobox` `groups` prop optional
+
+- [#232](https://github.com/animareflection/ui/pull/232) [`a2f415a`](https://github.com/animareflection/ui/commit/a2f415ab38cfc0951bdf48fb7eb795f0cddba039) Thanks [@coopbri](https://github.com/coopbri)! - Throw error if `Combobox` is missing either `groups` or `content` props
+
+## 0.24.2
+
+### Patch Changes
+
+- [#230](https://github.com/animareflection/ui/pull/230) [`bebbadd`](https://github.com/animareflection/ui/commit/bebbadd1f17f619edbfbbc0095a068df5b96d8ec) Thanks [@coopbri](https://github.com/coopbri)! - Add `Portal` to `Drawer`, `Modal`, and `Tooltip` to fix render overlay issues
+
+## 0.24.1
+
+### Patch Changes
+
+- [#226](https://github.com/animareflection/ui/pull/226) [`2336f51`](https://github.com/animareflection/ui/commit/2336f514f0a97991a1361be0a952c5412cf1e691) Thanks [@coopbri](https://github.com/coopbri)! - Revert Ark UI to v1.2 due to controlled component open state regression (https://github.com/chakra-ui/ark/issues/2090)
+
+## 0.24.0
+
+### Minor Changes
+
+- [#222](https://github.com/animareflection/ui/pull/222) [`ae57729`](https://github.com/animareflection/ui/commit/ae57729fcf2162814a7327d830960aaa72c25020) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add variants for `Tabs` component
+
+### Patch Changes
+
+- [#224](https://github.com/animareflection/ui/pull/224) [`9aec3c8`](https://github.com/animareflection/ui/commit/9aec3c8153f7a8d72972094d6c57f8a9e07fc0be) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update default `Icon` color for increment and decrement triggers in `NumberInput`
+
+- [#222](https://github.com/animareflection/ui/pull/222) [`ae57729`](https://github.com/animareflection/ui/commit/ae57729fcf2162814a7327d830960aaa72c25020) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix `Tabs` indicator rendering issues
+
+## 0.23.3
+
+### Patch Changes
+
+- [#218](https://github.com/animareflection/ui/pull/218) [`778f339`](https://github.com/animareflection/ui/commit/778f339a879b13fb98a18a22de9b26209bda31fc) Thanks [@coopbri](https://github.com/coopbri)! - Remove portals from `Drawer`, `Modal`, and `Tooltip`
+
+## 0.23.2
+
+### Patch Changes
+
+- [#216](https://github.com/animareflection/ui/pull/216) [`626e464`](https://github.com/animareflection/ui/commit/626e46466db45699a1b47c4421fb86b8ee159684) Thanks [@coopbri](https://github.com/coopbri)! - Allow custom content override in `Combobox`
+
+## 0.23.1
+
+### Patch Changes
+
+- [#214](https://github.com/animareflection/ui/pull/214) [`3b1d1b9`](https://github.com/animareflection/ui/commit/3b1d1b950dea580499327d67b9be2b7f58e70d5c) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Updated default `Icon` colors for `Accordion`, `Banner`, and `Collapse` components
+
+## 0.23.0
+
+### Minor Changes
+
+- [#211](https://github.com/animareflection/ui/pull/211) [`6425811`](https://github.com/animareflection/ui/commit/6425811f94d16490daaf91a5163835aff518b061) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add animations to `Accordion` component
+
+## 0.22.0
+
+### Minor Changes
+
+- [#209](https://github.com/animareflection/ui/pull/209) [`3aad5ce`](https://github.com/animareflection/ui/commit/3aad5ce6370839f3842140d152fb85127190bef6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Toast` components to use sonner
+
+## 0.21.1
+
+### Patch Changes
+
+- [#192](https://github.com/animareflection/ui/pull/192) [`4ae9da7`](https://github.com/animareflection/ui/commit/4ae9da7ee55c1c4cff14990152d11c23cebd82b0) Thanks [@renovate](https://github.com/apps/renovate)! - Add client check to `DatePicker` to prevent hydration issues
+
+## 0.21.0
+
+### Minor Changes
+
+- [#204](https://github.com/animareflection/ui/pull/204) [`0ea3c69`](https://github.com/animareflection/ui/commit/0ea3c699280036a74002c4e786a5637f4f35f59f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Replace recipe color keys with `colorPalette`
+
+## 0.20.0
+
+### Minor Changes
+
+- [#202](https://github.com/animareflection/ui/pull/202) [`5dcc96e`](https://github.com/animareflection/ui/commit/5dcc96e5edc44e37e78e967a29c2b859582558eb) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Defined `layerStyles` in aniref preset to allow for prop use downstream
+
+### Patch Changes
+
+- [#202](https://github.com/animareflection/ui/pull/202) [`5dcc96e`](https://github.com/animareflection/ui/commit/5dcc96e5edc44e37e78e967a29c2b859582558eb) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Updated `Button` recipe styles for consistent sizing across variants
+
+- [#202](https://github.com/animareflection/ui/pull/202) [`5dcc96e`](https://github.com/animareflection/ui/commit/5dcc96e5edc44e37e78e967a29c2b859582558eb) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove variants from `Banner` recipe in favor of `defaultGradient` layer style
+
+## 0.19.1
+
+### Patch Changes
+
+- [#200](https://github.com/animareflection/ui/pull/200) [`08ed1bf`](https://github.com/animareflection/ui/commit/08ed1bf6587822d1c03f25f6ba6c4be9f684145a) Thanks [@coopbri](https://github.com/coopbri)! - Add prop overrides to each major `Combobox` part
+
+## 0.19.0
+
+### Minor Changes
+
+- [#199](https://github.com/animareflection/ui/pull/199) [`d0aa643`](https://github.com/animareflection/ui/commit/d0aa643026be547fc6fa528e943316176d1f76c2) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Combobox` component
+
+- [#196](https://github.com/animareflection/ui/pull/196) [`1f075cf`](https://github.com/animareflection/ui/commit/1f075cf7e4f63ed7ae290e6e26cff17d5fa25444) Thanks [@coopbri](https://github.com/coopbri)! - Add `DatePicker` component
+
+### Patch Changes
+
+- [#197](https://github.com/animareflection/ui/pull/197) [`738d551`](https://github.com/animareflection/ui/commit/738d55174147bc5546b6dc368c318bfa19a6fbd3) Thanks [@coopbri](https://github.com/coopbri)! - Update default `CopyToClipboard` button styles
+
+- [#197](https://github.com/animareflection/ui/pull/197) [`738d551`](https://github.com/animareflection/ui/commit/738d55174147bc5546b6dc368c318bfa19a6fbd3) Thanks [@coopbri](https://github.com/coopbri)! - Set `Toast` close trigger position to top right
+
+- [#197](https://github.com/animareflection/ui/pull/197) [`738d551`](https://github.com/animareflection/ui/commit/738d55174147bc5546b6dc368c318bfa19a6fbd3) Thanks [@coopbri](https://github.com/coopbri)! - Fix `RadioGroup` label display on dark mode
+
+- [#197](https://github.com/animareflection/ui/pull/197) [`738d551`](https://github.com/animareflection/ui/commit/738d55174147bc5546b6dc368c318bfa19a6fbd3) Thanks [@coopbri](https://github.com/coopbri)! - Use `asChild` prop for `Menu` triggerItem
+
+- [#196](https://github.com/animareflection/ui/pull/196) [`1f075cf`](https://github.com/animareflection/ui/commit/1f075cf7e4f63ed7ae290e6e26cff17d5fa25444) Thanks [@coopbri](https://github.com/coopbri)! - Add `fg.default` base color to `Icon` recipe
+
+## 0.18.0
+
+### Minor Changes
+
+- [#194](https://github.com/animareflection/ui/pull/194) [`d4f6e9d`](https://github.com/animareflection/ui/commit/d4f6e9de04948acebc91868dccdf9cfd5f3e9562) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update available props for `Flyout` to include `contentProps` for ease of overrides downstream
+
+## 0.17.0
+
+### Minor Changes
+
+- [#193](https://github.com/animareflection/ui/pull/193) [`ba0eac3`](https://github.com/animareflection/ui/commit/ba0eac3c0fc6f21f8418b0658e1651d5faf7dccc) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Flyout` component trigger styles to allow more control downstream
+
+### Patch Changes
+
+- [#190](https://github.com/animareflection/ui/pull/190) [`f27dbfc`](https://github.com/animareflection/ui/commit/f27dbfcd90f8c2784893e1a3455db2f7814855b2) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update disabled tab trigger styles
+
+- [#193](https://github.com/animareflection/ui/pull/193) [`ba0eac3`](https://github.com/animareflection/ui/commit/ba0eac3c0fc6f21f8418b0658e1651d5faf7dccc) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove unnecessary `Portal` for `Flyout` component
+
+## 0.16.0
+
+### Minor Changes
+
+- [#188](https://github.com/animareflection/ui/pull/188) [`4c8e2cc`](https://github.com/animareflection/ui/commit/4c8e2cca9cff24867fa6912437646612a2e4ccf9) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add control for `Collapse` initial animation on mount
+
+## 0.15.0
+
+### Minor Changes
+
+- [#186](https://github.com/animareflection/ui/pull/186) [`f728c98`](https://github.com/animareflection/ui/commit/f728c98c699e1c67e996292cfb2b2eb003165fd7) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Collapse` component animations for both open and closed states
+
+## 0.14.2
+
+### Patch Changes
+
+- [#184](https://github.com/animareflection/ui/pull/184) [`e640206`](https://github.com/animareflection/ui/commit/e6402061789d61e8eaa3828cb2eedc888ec2d76c) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix all `closeTrigger` recipe styles
+
+## 0.14.1
+
+### Patch Changes
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - **Breaking:** Removed `triggerVariant` prop from `Menu`
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - **Breaking:** Removed `subMenu` prop from `Menu`
+
+- [#181](https://github.com/animareflection/ui/pull/181) [`8fa45df`](https://github.com/animareflection/ui/commit/8fa45df4d4293b09601f1eb5d02048edb5b75a45) Thanks [@coopbri](https://github.com/coopbri)! - Add `asChild` prop to `Menu` trigger
+
+## 0.14.0
+
+### Minor Changes
+
+- [#179](https://github.com/animareflection/ui/pull/179) [`69af1ea`](https://github.com/animareflection/ui/commit/69af1ea753fb81dc31c0413c4852b1af2d9f8ae2) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add contentProps to `Tooltip` component
+
+## 0.13.2
+
+### Patch Changes
+
+- [#177](https://github.com/animareflection/ui/pull/177) [`a8a2871`](https://github.com/animareflection/ui/commit/a8a2871ce478dbf2af5148f4ba91ad7fdc088ae6) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Change `Input` component to use a forwardRef
+
+## 0.13.1
+
+### Patch Changes
+
+- [#161](https://github.com/animareflection/ui/pull/161) [`f750579`](https://github.com/animareflection/ui/commit/f75057983f63a85daa7c74fe521298e3b2582e7e) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Accordion` component
+
+- [#171](https://github.com/animareflection/ui/pull/171) [`072e6d0`](https://github.com/animareflection/ui/commit/072e6d0904cdbb6eef0740fbaca43d3fdb0a9738) Thanks [@coopbri](https://github.com/coopbri)! - Change recipes to use Ark v1 slots
+
+  - Change `Carousel` `slides` prop to `items`
+
+- [#158](https://github.com/animareflection/ui/pull/158) [`165d9c5`](https://github.com/animareflection/ui/commit/165d9c5fd5c938176c01a427f9493e82970a7fa8) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add additional variants for components that leverage `defaultVariants`
+
+## 0.13.0
+
+### Minor Changes
+
+- [#157](https://github.com/animareflection/ui/pull/157) [`69a8838`](https://github.com/animareflection/ui/commit/69a88384d71dbc49a9b4006135218b7b3b98b737) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `Alert` component
+
+- [#149](https://github.com/animareflection/ui/pull/149) [`ced2d60`](https://github.com/animareflection/ui/commit/ced2d608909b988e0f6aaf0ddecad25cec15fa8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `CopyToClipboard` component
+
+### Patch Changes
+
+- [#154](https://github.com/animareflection/ui/pull/154) [`52f1260`](https://github.com/animareflection/ui/commit/52f126072a1ba3024c75e08867dedeb139ec4c69) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Collapse` component
+
+- [#156](https://github.com/animareflection/ui/pull/156) [`6255f0a`](https://github.com/animareflection/ui/commit/6255f0a45055a77d5a344737b0a508a48053107f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove need for `use client` for `Card` component in downstream NextJS apps
+
+- [#156](https://github.com/animareflection/ui/pull/156) [`6255f0a`](https://github.com/animareflection/ui/commit/6255f0a45055a77d5a344737b0a508a48053107f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Allow `Card` to accept arbitrary children
+
+- [#152](https://github.com/animareflection/ui/pull/152) [`2342ed0`](https://github.com/animareflection/ui/commit/2342ed0d4cc9144ed433fea8f8a5ed339b1f2aee) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Tooltip` component
+
+- [#153](https://github.com/animareflection/ui/pull/153) [`6ce0f5a`](https://github.com/animareflection/ui/commit/6ce0f5af58f0a6a17645e59659ed1ae6a7c13d16) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Flyout` component
+
+- [#155](https://github.com/animareflection/ui/pull/155) [`a829b89`](https://github.com/animareflection/ui/commit/a829b894ca68821935eafbb5140d1ce3eb268b0c) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Drawer` component
+
+## 0.12.0
+
+### Minor Changes
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update all primitive component types using pattern `ComponentProps<typeof PRIMITIVE>`
+
+- [#147](https://github.com/animareflection/ui/pull/147) [`a5c5bf6`](https://github.com/animareflection/ui/commit/a5c5bf68029638f05c079c5db2a2c586ab1834aa) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add `targetRef` prop for all components that use `Portal`
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Remove unnecessary `triggerProps` from `Tooltip` props
+
+- [#148](https://github.com/animareflection/ui/pull/148) [`f72cea7`](https://github.com/animareflection/ui/commit/f72cea70024625dce2164338cd43adcf5725658a) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Collapse` to accept controlled state props
+
+- [#143](https://github.com/animareflection/ui/pull/143) [`fafcc31`](https://github.com/animareflection/ui/commit/fafcc31f41398b64ff208e1a1ad98962a14d4aa6) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Change `content` prop to `tooltipContent` to avoid prop collision
+
+## 0.11.1
+
+### Patch Changes
+
+- [#144](https://github.com/animareflection/ui/pull/144) [`572766a`](https://github.com/animareflection/ui/commit/572766a1ad51d806a42a0af74fd00d2981be6b2e) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix `className` omission issue for basic recipe components when used as child for `asChild` components
+
+## 0.11.0
+
+### Minor Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Button` recipe variants and default styles
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update `Menu` component
+
+### Patch Changes
+
+- [#138](https://github.com/animareflection/ui/pull/138) [`8419421`](https://github.com/animareflection/ui/commit/8419421d8edc5565b8a268c9ce11927a79de0d8b) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add style prop back to the resolved image in the NextJS enhanced `Image` component
+
+- [#140](https://github.com/animareflection/ui/pull/140) [`17cf025`](https://github.com/animareflection/ui/commit/17cf02556f6f956b04a0169d3b4cc5012e9bb480) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `Tooltip` component
+
+- [#141](https://github.com/animareflection/ui/pull/141) [`d0768ea`](https://github.com/animareflection/ui/commit/d0768ead72f9aa75849d47054206e333ec4c8f69) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Update `NumberInput` component
+
+## 0.10.0
+
+### Minor Changes
+
+- [#129](https://github.com/animareflection/ui/pull/129) [`95be098`](https://github.com/animareflection/ui/commit/95be098e814215598daccb30838de0a6dcabc7cb) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Add `Avatar` component
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Make `trigger` prop optional in applicable components and conditionally render the trigger
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add more `Drawer` placements and add `contentProps` prop for override capability
+
+- [#135](https://github.com/animareflection/ui/pull/135) [`3740215`](https://github.com/animareflection/ui/commit/3740215001adcfdff293235b037e3ef0f605ff8f) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Modify `Input` to allow for customizable `containerProps` and conditionally render `label`
+
+### Patch Changes
+
+- [#134](https://github.com/animareflection/ui/pull/134) [`bb6795a`](https://github.com/animareflection/ui/commit/bb6795a06fef7a60c41e08b1b3db0df992f132af) Thanks [@Twonarly1](https://github.com/Twonarly1)! - Fix `Banner` component styles
+
 ## 0.9.0
 
 ### Minor Changes

@@ -3,8 +3,7 @@ import {
   PrimitiveCheckboxControl,
   PrimitiveCheckboxLabel,
 } from "components/primitives";
-import { checkbox } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveCheckboxProps } from "components/primitives";
 import type { CheckboxVariantProps } from "generated/panda/recipes";
@@ -18,20 +17,18 @@ export interface Props
 }
 
 /**
- * Core UI checkbox.
+ * Checkbox.
  */
-const Checkbox = ({ size, label, ...rest }: Props) => {
-  const classNames = checkbox({ size });
+const Checkbox = ({ label, ...rest }: Props) => {
+  const isClient = useIsClient();
 
-  const isMounted = useIsMounted();
-
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveCheckbox className={classNames.root} {...rest}>
+    <PrimitiveCheckbox {...rest}>
       {({ isChecked }) => (
         <>
-          <PrimitiveCheckboxControl className={classNames.control}>
+          <PrimitiveCheckboxControl>
             {isChecked && (
               <svg
                 viewBox="0 0 14 14"
@@ -48,11 +45,7 @@ const Checkbox = ({ size, label, ...rest }: Props) => {
               </svg>
             )}
           </PrimitiveCheckboxControl>
-          {label && (
-            <PrimitiveCheckboxLabel className={classNames.label}>
-              {label}
-            </PrimitiveCheckboxLabel>
-          )}
+          {label && <PrimitiveCheckboxLabel>{label}</PrimitiveCheckboxLabel>}
         </>
       )}
     </PrimitiveCheckbox>

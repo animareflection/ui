@@ -25,7 +25,7 @@ export const Closeable: Story = {
 export const Gradient: Story = {
   render: () => (
     <VStack position="absolute" inset={0}>
-      <Banner closable variant="gradient">
+      <Banner closable layerStyle="defaultGradient">
         Banner
       </Banner>
     </VStack>
@@ -35,7 +35,7 @@ export const Gradient: Story = {
 export const Stacked: Story = {
   render: () => (
     <VStack gap={0} position="absolute" inset={0}>
-      <Banner variant="gradient">Banner</Banner>
+      <Banner layerStyle="defaultGradient">Banner</Banner>
       <Banner>Banner</Banner>
     </VStack>
   ),
@@ -52,7 +52,6 @@ const meta = {
   title: "Components/Core/Banner",
   component: Banner,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Banner>;
 
 export default meta;

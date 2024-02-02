@@ -6,25 +6,24 @@ import Icon from "components/core/Icon/Icon";
 import { panda } from "generated/panda/jsx";
 import { banner } from "generated/panda/recipes";
 
-import type { BannerVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export interface Props
-  extends ComponentProps<typeof panda.div>,
-    BannerVariantProps {
+export interface Props extends ComponentProps<typeof PandaBanner> {
   closable?: boolean;
 }
 
+const PandaBanner = panda("div", banner);
+
 /**
- * Core UI banner.
+ * Banner.
  */
-const Banner = ({ children, variant, closable, ...rest }: Props) => {
+const Banner = ({ children, closable, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
   if (!isOpen) return null;
 
   return (
-    <panda.div className={banner({ variant })} {...rest}>
+    <PandaBanner {...rest}>
       <panda.div flex={1} p={2}>
         {children}
       </panda.div>
@@ -42,7 +41,7 @@ const Banner = ({ children, variant, closable, ...rest }: Props) => {
           </Icon>
         </Button>
       )}
-    </panda.div>
+    </PandaBanner>
   );
 };
 

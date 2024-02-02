@@ -7,16 +7,15 @@ import type { ComponentType } from "react";
 type Story = StoryObj<typeof useDisclosure>;
 
 const DisclosureExample = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Modal
-      trigger={<Button>Open Modal</Button>}
+      trigger={<Button w="fit-content">Open Modal</Button>}
       title="Modal Title"
       description="Modal Description"
       open={isOpen}
-      onClose={onClose}
-      onOpen={onOpen}
+      onOpenChange={onToggle}
     >
       <Text mt={2}>{isOpen ? "Open" : "Closed"}</Text>
     </Modal>
@@ -32,7 +31,6 @@ const meta = {
   tags: ["autodocs"],
   // NB: type coercion here to allow `useDisclosure` Storybook metadata to render (e.g. JSDoc, hook parameters)
   component: useDisclosure as unknown as ComponentType,
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof useDisclosure>;
 
 export default meta;

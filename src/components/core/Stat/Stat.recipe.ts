@@ -7,37 +7,41 @@ export const statRecipe = defineSlotRecipe({
   base: {
     root: {
       display: "flex",
-      flexDirection: "column",
-      alignItems: "start",
-      borderRadius: "md",
-      boxShadow: "sm",
-      bgColor: "bg.default",
-      borderWidth: "1px",
-      borderColor: "border.default",
-      color: "fg.default",
       w: "fit",
-      px: 4,
-      py: 2,
-      gap: 0,
+      colorPalette: "brand.primary",
     },
     helpText: {
-      textStyle: "sm",
       fontWeight: "light",
     },
     label: {
-      textStyle: "md",
       fontWeight: "normal",
     },
     value: {
-      textStyle: "lg",
       fontWeight: "bold",
     },
   },
+  defaultVariants: {
+    variant: "primary",
+    orientation: "horizontal",
+    size: "md",
+  },
   variants: {
     variant: {
+      primary: {
+        root: {
+          bgColor: "bg.default",
+          borderColor: "border.default",
+          color: "fg.default",
+          boxShadow: "sm",
+          borderWidth: "1px",
+          borderRadius: "md",
+        },
+      },
       unstyled: {
         root: {
           bgColor: "transparent",
+          borderColor: "border.default",
+          color: "fg.default",
           boxShadow: "none",
           borderWidth: 0,
           borderRadius: 0,
@@ -46,13 +50,21 @@ export const statRecipe = defineSlotRecipe({
       outline: {
         root: {
           bgColor: "transparent",
-          borderColor: "accent.default",
+          borderColor: "colorPalette.500",
+          color: "fg.default",
+          boxShadow: "sm",
+          borderWidth: "1px",
+          borderRadius: "md",
         },
       },
       subtle: {
         root: {
-          bgColor: "bg.subtle",
+          bgColor: { base: "colorPalette.50", _dark: "colorPalette.950" },
+          borderColor: "border.default",
+          color: "fg.default",
+          boxShadow: "sm",
           borderWidth: 0,
+          borderRadius: "md",
         },
       },
     },
@@ -78,6 +90,12 @@ export const statRecipe = defineSlotRecipe({
         helpText: { textStyle: "xs" },
         label: { textStyle: "sm" },
         value: { textStyle: "md" },
+      },
+      md: {
+        root: { px: 4, py: 2 },
+        helpText: { textStyle: "sm" },
+        label: { textStyle: "md" },
+        value: { textStyle: "lg" },
       },
       lg: {
         root: { px: 6, py: 3 },

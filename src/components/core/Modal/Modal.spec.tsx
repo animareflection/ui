@@ -1,7 +1,7 @@
 import { expect } from "@storybook/jest";
 import { screen, userEvent, within } from "@storybook/testing-library";
 
-import { sleep } from "lib/utils";
+import { sleep } from "lib/util";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
@@ -41,8 +41,10 @@ export const modalState = async <R extends Renderer = ReactRenderer>({
 
     await userEvent.click(closeButton);
 
-    const modalTitle = screen.getByText("Modal Title");
+    await sleep(1000);
 
-    await expect(modalTitle).not.toBeVisible();
+    const modalTitle = screen.queryByText("Modal Title");
+
+    await expect(modalTitle).toBeNull();
   });
 };

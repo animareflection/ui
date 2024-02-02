@@ -1,23 +1,33 @@
+/**
+ * @file Checkbox primitives.
+ */
 import { Checkbox, CheckboxControl, CheckboxLabel } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { checkbox } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  CheckboxProps,
-  CheckboxControlProps,
-  CheckboxLabelProps,
-} from "@ark-ui/react";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI checkbox primitives.
- */
-export type PrimitiveCheckboxProps = CheckboxProps;
-const PrimitiveCheckbox = panda(Checkbox);
+const { withProvider, withContext } = createStyleContext(checkbox);
 
-export type PrimitiveCheckboxControlProps = CheckboxControlProps;
-export const PrimitiveCheckboxControl = panda(CheckboxControl);
+export type PrimitiveCheckboxProps = ComponentProps<typeof PrimitiveCheckbox>;
+const PrimitiveCheckbox = withProvider(panda(Checkbox), "root");
 
-export type PrimitiveCheckboxLabelProps = CheckboxLabelProps;
-export const PrimitiveCheckboxLabel = panda(CheckboxLabel);
+export type PrimitiveCheckboxControlProps = ComponentProps<
+  typeof PrimitiveCheckboxControl
+>;
+export const PrimitiveCheckboxControl = withContext(
+  panda(CheckboxControl),
+  "control",
+);
+
+export type PrimitiveCheckboxLabelProps = ComponentProps<
+  typeof PrimitiveCheckboxLabel
+>;
+export const PrimitiveCheckboxLabel = withContext(
+  panda(CheckboxLabel),
+  "label",
+);
 
 export default PrimitiveCheckbox;

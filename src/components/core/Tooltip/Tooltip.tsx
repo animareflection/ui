@@ -8,75 +8,66 @@ import {
   PrimitiveTooltipPositioner,
   PrimitiveTooltipTrigger,
 } from "components/primitives";
-import { tooltip } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
 
 import type {
+  PrimitiveTooltipContentProps,
   PrimitiveTooltipProps,
-  PrimitiveTooltipTriggerProps,
 } from "components/primitives";
+import type { TooltipVariantProps } from "generated/panda/recipes";
 import type { JsxStyleProps } from "generated/panda/types";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
-export interface Props extends PrimitiveTooltipProps {
-  trigger: ReactNode;
-  content: ReactNode;
+export interface Props extends PrimitiveTooltipProps, TooltipVariantProps {
+  trigger?: ReactNode;
+  tooltipContent: ReactNode;
   bgColor?: JsxStyleProps["bgColor"];
-  triggerProps?: PrimitiveTooltipTriggerProps;
+  arrow?: boolean;
+  contentProps?: PrimitiveTooltipContentProps;
+  /** Portal container ref to mount to. */
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
- * Core UI tooltip.
+ * Tooltip.
  */
 const Tooltip = ({
   trigger,
-  content,
+  tooltipContent,
   openDelay = 0,
   closeDelay = 0,
   bgColor = "bg.default",
-  triggerProps,
+  arrow = true,
+  contentProps,
+  containerRef,
   ...rest
-}: Props) => {
-  const classNames = tooltip();
+}: Props) => (
+  <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
+    {({ isOpen }) => (
+      <>
+        {trigger && (
+          <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
+        )}
 
-  const isMounted = useIsMounted();
-
-  if (!isMounted) return null;
-
-  return (
-    <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
-      {({ isOpen }) => (
-        <>
-          <PrimitiveTooltipTrigger
-            className={classNames.trigger}
-            {...triggerProps}
-          >
-            {trigger}
-          </PrimitiveTooltipTrigger>
-          <Portal>
-            <PrimitiveTooltipPositioner className={classNames.positioner}>
-              {isOpen && (
-                <>
-                  <PrimitiveTooltipArrow
-                    bgColor={bgColor}
-                    className={classNames.arrow}
-                  >
-                    <PrimitiveTooltipArrowTip className={classNames.arrowTip} />
+        <Portal container={containerRef}>
+          <PrimitiveTooltipPositioner>
+            {isOpen && (
+              <>
+                {arrow && (
+                  <PrimitiveTooltipArrow bgColor={bgColor}>
+                    <PrimitiveTooltipArrowTip />
                   </PrimitiveTooltipArrow>
-                  <PrimitiveTooltipContent
-                    bgColor={bgColor}
-                    className={classNames.content}
-                  >
-                    {content}
-                  </PrimitiveTooltipContent>
-                </>
-              )}
-            </PrimitiveTooltipPositioner>
-          </Portal>
-        </>
-      )}
-    </PrimitiveTooltip>
-  );
-};
+                )}
+
+                <PrimitiveTooltipContent bgColor={bgColor} {...contentProps}>
+                  {tooltipContent}
+                </PrimitiveTooltipContent>
+              </>
+            )}
+          </PrimitiveTooltipPositioner>
+        </Portal>
+      </>
+    )}
+  </PrimitiveTooltip>
+);
 
 export default Tooltip;

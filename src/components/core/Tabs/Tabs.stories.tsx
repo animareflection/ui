@@ -1,5 +1,6 @@
 import { tabState } from "./Tabs.spec";
 import { Tabs } from "components/core";
+import { Flex } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import type { TabRecord } from "components/core";
@@ -29,6 +30,16 @@ export const Default: Story = {
   render: () => <Tabs defaultValue="tab-1" tabs={TABS} />,
 };
 
+export const Variants: Story = {
+  render: () => (
+    <Flex direction="column" gap={2}>
+      <Tabs defaultValue="tab-1" tabs={TABS} />
+      <Tabs defaultValue="tab-1" tabs={TABS} variant="enclosed" />
+      <Tabs defaultValue="tab-1" tabs={TABS} variant="outline" />
+    </Flex>
+  ),
+};
+
 export const TabState: Story = {
   ...Default,
   play: tabState,
@@ -40,7 +51,6 @@ const meta = {
   title: "Components/Core/Tabs",
   component: Tabs,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Tabs>;
 
 export default meta;

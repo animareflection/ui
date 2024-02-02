@@ -1,3 +1,6 @@
+/**
+ * @file Tooltip primitives.
+ */
 import {
   Tooltip,
   TooltipArrow,
@@ -8,37 +11,51 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { tooltip } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  TooltipProps,
-  TooltipArrowProps,
-  TooltipArrowTipProps,
-  TooltipContentProps,
-  TooltipPositionerProps,
-  TooltipTriggerProps,
-} from "@ark-ui/react";
-import type { HTMLPandaProps } from "generated/panda/jsx";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI tooltip primitives.
- */
-export type PrimitiveTooltipProps = TooltipProps;
-const PrimitiveTooltip = panda(Tooltip);
+const { withProvider, withContext } = createStyleContext(tooltip);
 
-export type PrimitiveTooltipArrowProps = TooltipArrowProps;
-export const PrimitiveTooltipArrow = panda(TooltipArrow);
+export type PrimitiveTooltipProps = ComponentProps<typeof PrimitiveTooltip>;
+const PrimitiveTooltip = withProvider(panda(Tooltip), "root");
 
-export type PrimitiveTooltipArrowTipProps = TooltipArrowTipProps;
-export const PrimitiveTooltipArrowTip = panda(TooltipArrowTip);
+export type PrimitiveTooltipArrowProps = ComponentProps<
+  typeof PrimitiveTooltipArrow
+>;
+export const PrimitiveTooltipArrow = withContext(panda(TooltipArrow), "arrow");
 
-export type PrimitiveTooltipContentProps = TooltipContentProps;
-export const PrimitiveTooltipContent = panda(TooltipContent);
+export type PrimitiveTooltipArrowTipProps = ComponentProps<
+  typeof PrimitiveTooltipArrowTip
+>;
+export const PrimitiveTooltipArrowTip = withContext(
+  panda(TooltipArrowTip),
+  "arrowTip",
+);
 
-export type PrimitiveTooltipPositionerProps = TooltipPositionerProps;
-export const PrimitiveTooltipPositioner = panda(TooltipPositioner);
+export type PrimitiveTooltipContentProps = ComponentProps<
+  typeof PrimitiveTooltipContent
+>;
+export const PrimitiveTooltipContent = withContext(
+  panda(TooltipContent),
+  "content",
+);
 
-export type PrimitiveTooltipTriggerProps = TooltipTriggerProps &
-  HTMLPandaProps<"button">;
-export const PrimitiveTooltipTrigger = panda(TooltipTrigger);
+export type PrimitiveTooltipPositionerProps = ComponentProps<
+  typeof PrimitiveTooltipPositioner
+>;
+export const PrimitiveTooltipPositioner = withContext(
+  panda(TooltipPositioner),
+  "positioner",
+);
+
+export type PrimitiveTooltipTriggerProps = ComponentProps<
+  typeof PrimitiveTooltipTrigger
+>;
+export const PrimitiveTooltipTrigger = withContext(
+  panda(TooltipTrigger),
+  "trigger",
+);
 
 export default PrimitiveTooltip;

@@ -32,13 +32,7 @@ const tsupConfig = defineTsupConfig({
   format: ["cjs", "esm"],
   // NB: `peerDeps`, among others, are excluded (marked external) by default
   // see https://tsup.egoist.dev/#excluding-packages
-  external: [
-    "@ark-ui/react",
-    "react-icons",
-    "next",
-    "framer-motion",
-    "react-hot-toast",
-  ],
+  external: ["@ark-ui/react", "react-icons", "next", "framer-motion", "sonner"],
   outDir: "build",
   esbuildOptions: (opt, _ctx) => {
     // https://esbuild.github.io/api/#resolve-extensions
@@ -55,10 +49,10 @@ const tsupConfig = defineTsupConfig({
   onSuccess: async () => {
     console.log("Generating type declarations...");
     // NB: below is used as alternative to `tsup` config `dts: true` option to avoid race condition with local package publish (at the cost of less concurrency)
-    spawnSync("yarn", ["tsup", "--dts-only"], spawnProcessOptions);
+    spawnSync("bun", ["tsup", "--dts-only"], spawnProcessOptions);
 
     console.log("Publishing local package...");
-    spawnSync("yarn", ["knit", "push"], spawnProcessOptions);
+    spawnSync("bun", ["knit", "push"], spawnProcessOptions);
   },
 });
 

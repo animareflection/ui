@@ -1,17 +1,16 @@
 import { panda } from "generated/panda/jsx";
 import { spinner } from "generated/panda/recipes";
 
-import type { SpinnerVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export type Props = ComponentProps<typeof PandaSpinner> & SpinnerVariantProps;
+export type Props = ComponentProps<typeof PandaSpinner>;
 
-const PandaSpinner = panda("svg");
+const PandaSpinner = panda("svg", spinner);
 
 /**
  * Core Spinner component.
  */
-const Spinner = ({ size, ...props }: Props) => {
+const Spinner = ({ colorPalette = "brand.primary", ...rest }: Props) => {
   return (
     <PandaSpinner
       xmlns="http://www.w3.org/2000/svg"
@@ -19,8 +18,8 @@ const Spinner = ({ size, ...props }: Props) => {
       viewBox="0 0 24 24"
       animation="infinite-spin"
       role="spinner"
-      className={spinner({ size })}
-      {...props}
+      colorPalette={colorPalette}
+      {...rest}
     >
       <panda.path
         opacity="0.4"

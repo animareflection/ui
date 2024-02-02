@@ -19,7 +19,7 @@ export const Default: Story = {
   render: () => (
     <panda.div w="600px">
       <Carousel
-        slides={IMAGE_SOURCES.map((src, index) => (
+        items={IMAGE_SOURCES.map((src, index) => (
           <Image
             key={index}
             src={src}
@@ -36,7 +36,7 @@ export const NextJSEnhanced: Story = {
   render: () => (
     <panda.div w="600px">
       <Carousel
-        slides={IMAGE_SOURCES.map((src, index) => (
+        items={IMAGE_SOURCES.map((src, index) => (
           <NextImage
             key={index}
             src={src}
@@ -60,7 +60,6 @@ const meta = {
   title: "Components/Core/Carousel",
   component: Carousel,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Carousel>;
 
 export default meta;

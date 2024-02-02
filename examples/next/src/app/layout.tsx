@@ -1,11 +1,12 @@
 import { ReactNode } from "react";
 
+import "main.css";
+
 interface Props {
   children: ReactNode;
 }
 
 import "main.css";
-import { BreadcrumbDemo } from "components/core";
 
 /**
  * Root application layout.

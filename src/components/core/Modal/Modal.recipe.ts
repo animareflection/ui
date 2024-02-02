@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const modalRecipe = defineSlotRecipe({
   className: "modal",
   description: "The styles for the Modal component",
-  slots: dialogAnatomy.keys(),
+  slots: dialogAnatomy.extendWith("root").keys(),
   base: {
     backdrop: {
       backdropFilter: "blur(4px)",
@@ -23,7 +23,7 @@ export const modalRecipe = defineSlotRecipe({
         animation: "fade-out",
       },
     },
-    container: {
+    positioner: {
       alignItems: "center",
       display: "flex",
       inset: 0,
@@ -61,34 +61,14 @@ export const modalRecipe = defineSlotRecipe({
       color: "fg.muted",
       textStyle: "sm",
     },
-    trigger: {
-      color: "accent.fg",
-      bgColor: "accent.default",
-      w: "fit-content",
-      h: "fit-content",
-      cursor: "pointer",
-      fontWeight: "bold",
-      p: 3,
-      borderRadius: "md",
-      _focus: { outline: "none" },
-      _hover: {
-        bgColor: "accent.emphasized",
-      },
-      _disabled: {
-        bgColor: "bg.disabled",
-        cursor: "not-allowed",
-        _hover: {
-          bgColor: "bg.disabled",
-        },
-      },
-    },
     closeTrigger: {
+      display: "flex",
       cursor: "pointer",
       borderRadius: "md",
       pos: "absolute",
-      top: 2,
-      right: 2,
-      p: 3,
+      top: 3,
+      right: 3,
+      p: 2,
       bgColor: {
         base: "inherit",
         _hover: "bg.subtle",

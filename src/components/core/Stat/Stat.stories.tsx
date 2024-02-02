@@ -89,7 +89,6 @@ const meta = {
   title: "Components/Core/Stat",
   component: Stat,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } as Meta<typeof Stat>;
 
 export default meta;

@@ -8,11 +8,11 @@ import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveAccordion,
   PrimitiveAccordionItem,
-  PrimitiveAccordionTrigger,
-  PrimitiveAccordionContent,
+  PrimitiveAccordionItemTrigger,
+  PrimitiveAccordionItemContent,
+  PrimitiveAccordionItemIndicator,
 } from "components/primitives";
-import { accordion } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveAccordionProps } from "components/primitives";
 import type { ReactElement, ReactNode } from "react";
@@ -31,56 +31,39 @@ export interface Props extends PrimitiveAccordionProps {
 }
 
 /**
- * Core UI accordion.
+ * Accordion.
  */
 const Accordion = ({ items, plusMinus, ...rest }: Props) => {
-  const classNames = accordion();
+  const isClient = useIsClient();
 
-  const isMounted = useIsMounted();
-
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveAccordion
-      collapsible
-      multiple
-      className={classNames.root}
-      {...rest}
-    >
+    <PrimitiveAccordion present collapsible multiple {...rest}>
       {items.map(({ id, value, triggerLabel, content, icon }) => (
         <PrimitiveAccordionItem key={id} value={value}>
           {({ isOpen }) => (
             <>
-              <PrimitiveAccordionTrigger
-                className={classNames.trigger}
-                borderBottomRadius={isOpen ? "unset" : "md"}
-              >
+              <PrimitiveAccordionItemTrigger>
                 {triggerLabel ?? value}
-                <Icon
-                  transform={
-                    isOpen && !plusMinus ? "rotate(-180deg)" : undefined
-                  }
-                  transformOrigin="center"
-                  color="accent.fg"
-                >
-                  {plusMinus ? (
-                    isOpen ? (
-                      <MinusIcon />
+                <PrimitiveAccordionItemIndicator>
+                  <Icon color="inherit">
+                    {plusMinus ? (
+                      isOpen ? (
+                        <MinusIcon />
+                      ) : (
+                        <PlusIcon />
+                      )
                     ) : (
-                      <PlusIcon />
-                    )
-                  ) : (
-                    icon ?? <ChevronDownIcon />
-                  )}
-                </Icon>
-              </PrimitiveAccordionTrigger>
-              <PrimitiveAccordionContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
-                {content}
-              </PrimitiveAccordionContent>
+                      icon ?? <ChevronDownIcon />
+                    )}
+                  </Icon>
+                </PrimitiveAccordionItemIndicator>
+              </PrimitiveAccordionItemTrigger>
+              <PrimitiveAccordionItemContent>
+                {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
+                <div>{content}</div>
+              </PrimitiveAccordionItemContent>
             </>
           )}
         </PrimitiveAccordionItem>

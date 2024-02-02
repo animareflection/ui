@@ -1,32 +1,34 @@
-import { ark } from "@ark-ui/react";
+import {
+  PrimitiveTextarea,
+  PrimitiveTextareaLabel,
+  PrimitiveTextareaTextarea,
+} from "components/primitives";
 
-import { panda, Stack } from "generated/panda/jsx";
-import { textarea } from "generated/panda/recipes";
-
+import type { PrimitiveTextareaTextareaProps } from "components/primitives";
 import type { TextareaVariantProps } from "generated/panda/recipes";
-import type { ComponentProps } from "react";
 
 export interface Props
-  extends ComponentProps<typeof PandaTextarea>,
+  extends PrimitiveTextareaTextareaProps,
     TextareaVariantProps {
   label?: string;
 }
-
-const PandaTextarea = panda(ark.textarea, textarea);
-const PandaLabel = panda(ark.label);
-
 /**
- * Core UI textarea.
+ * Textarea.
  */
-const Textarea = ({ label, size, variant, ...rest }: Props) => {
-  const classNames = textarea({ size, variant });
-
+const Textarea = ({ label, size, variant, colorPalette, ...rest }: Props) => {
   return (
-    <Stack gap={1.5}>
-      <PandaLabel className={classNames.label}>{label}</PandaLabel>
+    <PrimitiveTextarea
+      colorPalette={colorPalette}
+      size={size}
+      variant={variant}
+      gap={1.5}
+    >
+      <PrimitiveTextareaLabel colorPalette={colorPalette}>
+        {label}
+      </PrimitiveTextareaLabel>
 
-      <PandaTextarea className={classNames.textarea} {...rest} />
-    </Stack>
+      <PrimitiveTextareaTextarea {...rest} />
+    </PrimitiveTextarea>
   );
 };
 

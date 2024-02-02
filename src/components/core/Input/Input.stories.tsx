@@ -10,8 +10,8 @@ export const Default: Story = {
   render: () => (
     <Input
       label="Input Label"
-      placeholder="Placeholder"
       inputLeftElement="🏝️"
+      placeholder="Placeholder"
     />
   ),
 };
@@ -92,7 +92,6 @@ const meta: Meta<typeof Input> = {
   title: "Components/Core/Input",
   component: Input,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Input>;
 
 export default meta;

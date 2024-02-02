@@ -51,7 +51,6 @@ const meta: Meta<typeof RadioGroup> = {
   title: "Components/Core/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof RadioGroup>;
 
 export default meta;

@@ -3,8 +3,7 @@ import {
   PrimitiveAvatarFallback,
   PrimitiveAvatarImage,
 } from "components/primitives";
-import { avatar } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveAvatarProps } from "components/primitives";
 import type { AvatarVariantProps } from "generated/panda/recipes";
@@ -19,33 +18,17 @@ export interface Props
 }
 
 /**
- * Core UI avatar.
+ * Avatar.
  */
-const Avatar = ({
-  src,
-  alt,
-  fallback = "AR",
-  size,
-  variant,
-  ...rest
-}: Props) => {
-  const isMounted = useIsMounted();
+const Avatar = ({ src, alt, fallback = "AR", ...rest }: Props) => {
+  const isClient = useIsClient();
 
-  const classNames = avatar({ size, variant });
-
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveAvatar className={classNames.root} {...rest}>
-      <PrimitiveAvatarFallback className={classNames.fallback}>
-        {fallback}
-      </PrimitiveAvatarFallback>
-      <PrimitiveAvatarImage
-        objectFit="contain"
-        className={classNames.image}
-        src={src}
-        alt={alt}
-      />
+    <PrimitiveAvatar {...rest}>
+      <PrimitiveAvatarFallback>{fallback}</PrimitiveAvatarFallback>
+      <PrimitiveAvatarImage objectFit="contain" src={src} alt={alt} />
     </PrimitiveAvatar>
   );
 };

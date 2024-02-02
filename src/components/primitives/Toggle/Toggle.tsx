@@ -1,29 +1,36 @@
+/**
+ * @file Toggle primitives.
+ */
 import { Switch, SwitchControl, SwitchThumb, SwitchLabel } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { toggle } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  SwitchProps,
-  SwitchControlProps,
-  SwitchThumbProps,
-  SwitchLabelProps,
-} from "@ark-ui/react";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI toggle primitives.
- */
-export type PrimitiveToggleProps = SwitchProps;
+const { withProvider, withContext } = createStyleContext(toggle);
 
+export type PrimitiveToggleProps = ComponentProps<typeof PrimitiveToggle>;
 // NB: Using `Toggle` instead of `Switch` here to avoid recipe issues with `switch` being a reserved word.
-const PrimitiveToggle = panda(Switch);
+const PrimitiveToggle = withProvider(panda(Switch), "root");
 
-export type PrimitiveToggleControlProps = SwitchControlProps;
-export const PrimitiveToggleControl = panda(SwitchControl);
+export type PrimitiveToggleControlProps = ComponentProps<
+  typeof PrimitiveToggleControl
+>;
+export const PrimitiveToggleControl = withContext(
+  panda(SwitchControl),
+  "control",
+);
 
-export type PrimitiveToggleThumbProps = SwitchThumbProps;
-export const PrimitiveToggleThumb = panda(SwitchThumb);
+export type PrimitiveToggleThumbProps = ComponentProps<
+  typeof PrimitiveToggleThumb
+>;
+export const PrimitiveToggleThumb = withContext(panda(SwitchThumb), "thumb");
 
-export type PrimitiveToggleLabelProps = SwitchLabelProps;
-export const PrimitiveToggleLabel = panda(SwitchLabel);
+export type PrimitiveToggleLabelProps = ComponentProps<
+  typeof PrimitiveToggleLabel
+>;
+export const PrimitiveToggleLabel = withContext(panda(SwitchLabel), "label");
 
 export default PrimitiveToggle;

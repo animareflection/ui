@@ -1,3 +1,4 @@
+import { ark } from "@ark-ui/react";
 import {
   TbTriangleInvertedFilled as TriangleDown,
   TbTriangleFilled as TriangleUp,
@@ -5,41 +6,48 @@ import {
 
 import Icon from "components/core/Icon/Icon";
 import { HStack, panda } from "generated/panda/jsx";
-import { stat } from "generated/panda/recipes";
+import { stat, type StatVariantProps } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type { StatVariantProps } from "generated/panda/recipes";
+import type { ComponentProps } from "react";
 
-export interface Props extends StatVariantProps {
+export interface Props
+  extends ComponentProps<typeof StatRoot>,
+    StatVariantProps {
   value: string;
   label: string;
   helpText?: string;
   indicator?: "increase" | "decrease";
 }
 
+const { withProvider, withContext } = createStyleContext(stat);
+
+// TODO extract primitives, add prop interfaces, and export both
+
+const StatRoot = withProvider(panda(ark.div), "root");
+
+const StatLabel = withContext(panda.div, "label");
+
+const StatValue = withContext(panda.div, "value");
+
+const StatHelpText = withContext(panda.div, "helpText");
+
 /**
  * Core Stat component.
  */
-const Stat = ({
-  value,
-  label,
-  helpText,
-  variant,
-  size,
-  indicator,
-  orientation,
-  ...rest
-}: Props) => {
-  const classNames = stat({ variant, size, orientation });
-
-  const indicatorColor = indicator === "decrease" ? "red.500" : "green.500";
+const Stat = ({ value, label, helpText, indicator, ...rest }: Props) => {
+  const indicatorColor =
+    indicator === "decrease" ? "brand.tertiary.500" : "brand.secondary.500";
 
   const IndicatorIcon =
     indicator === "decrease" ? <TriangleDown /> : <TriangleUp />;
 
   return (
-    <panda.div className={classNames.root} {...rest}>
-      <panda.div className={classNames.label}>{label}</panda.div>
-      <panda.div className={classNames.value}>{value}</panda.div>
+    <StatRoot {...rest}>
+      <StatLabel>{label}</StatLabel>
+
+      <StatValue>{value}</StatValue>
+
       <HStack alignItems="center" gap={1}>
         {indicator && (
           <Icon data-testid="indicator" h={3} w={3} color={indicatorColor}>
@@ -47,11 +55,9 @@ const Stat = ({
           </Icon>
         )}
 
-        {helpText && (
-          <panda.div className={classNames.helpText}>{helpText}</panda.div>
-        )}
+        {helpText && <StatHelpText>{helpText}</StatHelpText>}
       </HStack>
-    </panda.div>
+    </StatRoot>
   );
 };
 

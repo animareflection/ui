@@ -3,39 +3,43 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import Icon from "components/core/Icon/Icon";
 import {
   PrimitiveNumberInput,
+  PrimitiveNumberInputAddon,
   PrimitiveNumberInputControl,
   PrimitiveNumberInputDecrementTrigger,
   PrimitiveNumberInputIncrementTrigger,
   PrimitiveNumberInputInput,
   PrimitiveNumberInputLabel,
+  PrimitiveNumberInputLeftElement,
+  PrimitiveNumberInputRightElement,
   PrimitiveNumberInputScrubber,
 } from "components/primitives";
 import { Flex, panda } from "generated/panda/jsx";
-import { numberInput } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
-import type { PrimitiveNumberInputProps } from "components/primitives";
+import type {
+  PrimitiveNumberInputInputProps,
+  PrimitiveNumberInputProps,
+} from "components/primitives";
 import type { NumberInputVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface Props
   extends PrimitiveNumberInputProps,
     NumberInputVariantProps {
-  label?: string;
+  label?: ReactNode;
   leftAddon?: ReactNode;
   rightAddon?: ReactNode;
   inputLeftElement?: ReactNode;
   inputRightElement?: ReactNode;
   stepper?: boolean;
   placeholder?: string;
+  inputProps?: PrimitiveNumberInputInputProps;
 }
 
 /**
- * Core UI number input.
+ * Number input.
  */
 const NumberInput = ({
-  size,
-  variant,
   label,
   leftAddon,
   rightAddon,
@@ -43,36 +47,31 @@ const NumberInput = ({
   inputRightElement,
   stepper,
   placeholder,
+  inputProps,
   ...rest
 }: Props) => {
-  const classNames = numberInput({ size, variant });
+  const isClient = useIsClient();
 
-  const isMounted = useIsMounted();
-
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveNumberInput {...rest}>
       <PrimitiveNumberInputScrubber />
-      {label && (
-        <PrimitiveNumberInputLabel className={classNames.label}>
-          {label}
-        </PrimitiveNumberInputLabel>
-      )}
+      {label && <PrimitiveNumberInputLabel>{label}</PrimitiveNumberInputLabel>}
       <Flex>
         {leftAddon && (
-          <panda.div className={classNames.addon} borderLeftRadius="sm">
+          <PrimitiveNumberInputAddon borderLeftRadius="sm">
             {leftAddon}
-          </panda.div>
+          </PrimitiveNumberInputAddon>
         )}
         <Flex pos="relative" w="100%">
           {inputLeftElement && (
-            <panda.div className={classNames.leftElement}>
+            <PrimitiveNumberInputLeftElement>
               {inputLeftElement}
-            </panda.div>
+            </PrimitiveNumberInputLeftElement>
           )}
           <PrimitiveNumberInputInput
-            className={classNames.input}
+            {...inputProps}
             placeholder={placeholder}
             borderTopLeftRadius={leftAddon ? 0 : "sm"}
             borderBottomLeftRadius={leftAddon ? 0 : "sm"}
@@ -82,30 +81,32 @@ const NumberInput = ({
             pr={inputRightElement ? 10 : 3}
           />
           {inputRightElement && (
-            <panda.div className={classNames.rightElement}>
+            <PrimitiveNumberInputRightElement>
               {inputRightElement}
-            </panda.div>
+            </PrimitiveNumberInputRightElement>
           )}
         </Flex>
         {rightAddon && (
-          <panda.div className={classNames.addon} borderRightRadius="sm">
+          <PrimitiveNumberInputAddon borderRightRadius="sm">
             {rightAddon}
-          </panda.div>
+          </PrimitiveNumberInputAddon>
         )}
         {stepper && (
-          <PrimitiveNumberInputControl className={classNames.stepper}>
-            <PrimitiveNumberInputDecrementTrigger
-              className={classNames.decrementTrigger}
-            >
-              <Icon>
+          <PrimitiveNumberInputControl className="group">
+            <PrimitiveNumberInputDecrementTrigger>
+              <Icon color="inherit">
                 <FiMinus />
               </Icon>
             </PrimitiveNumberInputDecrementTrigger>
-            <panda.div w="1px" h="75%" mx={0.5} my="auto" bgColor="gray.600" />
-            <PrimitiveNumberInputIncrementTrigger
-              className={classNames.incrementTrigger}
-            >
-              <Icon>
+            <panda.div
+              w="1px"
+              h="75%"
+              mx={0.5}
+              my="auto"
+              bgColor={{ base: "fg.default", _groupDisabled: "fg.disabled" }}
+            />
+            <PrimitiveNumberInputIncrementTrigger>
+              <Icon color="inherit">
                 <FiPlus />
               </Icon>
             </PrimitiveNumberInputIncrementTrigger>

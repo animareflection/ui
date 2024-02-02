@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const flyoutRecipe = defineSlotRecipe({
   className: "flyout",
   description: "The styles for the Flyout component",
-  slots: [...popoverAnatomy.keys(), "closeTriggerIcon"],
+  slots: popoverAnatomy.extendWith("root").keys(),
   base: {
     positioner: {
       position: "relative",
@@ -24,16 +24,18 @@ export const flyoutRecipe = defineSlotRecipe({
       },
     },
     closeTrigger: {
-      p: 2,
+      display: "flex",
       position: "absolute",
-      top: 2,
-      right: 2,
+      top: 3,
+      right: 3,
+      p: 2,
       borderRadius: "md",
       cursor: "pointer",
-      backgroundColor: { base: "inherit", _hover: "bg.emphasized" },
-    },
-    closeTriggerIcon: {
-      color: "fg.default!",
+      bgColor: {
+        base: "inherit",
+        _hover: "bg.subtle",
+      },
+      _focus: { outline: "none" },
     },
     title: {
       p: 4,
@@ -58,25 +60,7 @@ export const flyoutRecipe = defineSlotRecipe({
       borderLeftWidth: "1px",
     },
     trigger: {
-      color: "accent.fg",
-      bgColor: "accent.default",
-      cursor: "pointer",
-      fontWeight: "bold",
-      p: 3,
-      w: "fit-content!",
-      h: "fit-content!",
-      borderRadius: "md",
-      _focus: { outline: "none" },
-      _hover: {
-        bgColor: "accent.emphasized",
-      },
-      _disabled: {
-        bgColor: "bg.disabled",
-        cursor: "not-allowed",
-        _hover: {
-          bgColor: "bg.disabled",
-        },
-      },
+      w: "fit-content",
     },
   },
 });

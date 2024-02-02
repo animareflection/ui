@@ -1,5 +1,5 @@
 import { flyoutState } from "./Flyout.spec";
-import { Flyout, Text } from "components/core";
+import { Button, Flyout, Text } from "components/core";
 import { Flex, Grid } from "generated/panda/jsx";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -25,11 +25,7 @@ const FlyoutTemplate = ({ placement }: { placement: Placement }) => (
     positioning={{
       placement: placement,
     }}
-    trigger={
-      <Flex minW={24} w="100%" justify="center">
-        {placement}
-      </Flex>
-    }
+    trigger={<Button justifyContent="center">{placement}</Button>}
     title="Flyout Title"
   >
     <Text mt={2}>
@@ -42,7 +38,7 @@ const FlyoutTemplate = ({ placement }: { placement: Placement }) => (
 
 export const Default: Story = {
   render: () => (
-    <Flyout trigger="Open Flyout" title="Flyout Title">
+    <Flyout trigger={<Button>Open Flyout</Button>} title="Flyout Title">
       <Text mt={2}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -85,11 +81,6 @@ const meta: Meta = {
   title: "Components/Core/Flyout",
   component: Flyout,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
-  // TODO: remove when portal issue / ref bug is fixed
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Flyout>;
 
 export default meta;

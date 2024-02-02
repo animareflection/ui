@@ -7,6 +7,7 @@ export const accordionRecipe = defineSlotRecipe({
   slots: accordionAnatomy.keys(),
   base: {
     root: {
+      colorPalette: "brand.primary",
       width: "full",
       py: 1,
       borderRadius: "md",
@@ -14,35 +15,61 @@ export const accordionRecipe = defineSlotRecipe({
       flexDirection: "column",
       gap: 2,
     },
-    trigger: {
+    itemTrigger: {
       alignItems: "center",
       cursor: "pointer",
       display: "flex",
       px: 4,
       py: 3,
-      fontWeight: "bold",
       justifyContent: "space-between",
       width: "full",
-      color: "accent.fg",
-      bgColor: "accent.default",
-      borderRadius: "md",
+      transitionProperty: "background-color, color",
+      transitionDuration: "slowest",
+      _open: {
+        bgColor: "colorPalette.500",
+        color: "accent.fg",
+        borderTopRadius: "md",
+        borderBottomRadius: 0,
+      },
+      _closed: {
+        bgColor: "bg.muted",
+        color: "fg.default",
+        borderRadius: "md",
+        transitionDelay: "slow",
+        transitionProperty: "border-radius",
+      },
     },
-    content: {
+    itemIndicator: {
+      display: "flex",
+      transformOrigin: "center",
+      transitionDuration: "slowest",
+      transitionProperty: "transform",
+      transitionTimingFunction: "default",
+      _open: {
+        transform: "rotate(-180deg)",
+        color: "accent.fg",
+      },
+      _closed: {
+        color: "fg.default",
+      },
+    },
+    itemContent: {
       backgroundColor: "bg.muted",
       color: "fg.default",
-      borderBottomLeftRadius: "md",
-      borderBottomRightRadius: "md",
-      p: 4,
+      px: 4,
+      borderBottomRadius: "md",
       display: "grid",
       gridTemplateRows: "0fr",
-      transitionProperty: "grid-template-rows, padding",
-      transitionDuration: "normal",
+      transitionProperty: "all",
+      transitionDuration: "slowest",
       transitionTimingFunction: "default",
       _open: {
         gridTemplateRows: "1fr",
+        bgColor: "bg.muted",
+        py: 4,
       },
       _closed: {
-        p: 0,
+        py: 0,
       },
       "& > div": {
         overflow: "hidden",

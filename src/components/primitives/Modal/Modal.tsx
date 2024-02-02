@@ -1,8 +1,11 @@
+/**
+ * @file Modal primitives.
+ */
 import {
   Dialog,
   DialogBackdrop,
   DialogCloseTrigger,
-  DialogContainer,
+  DialogPositioner,
   DialogContent,
   DialogDescription,
   DialogTitle,
@@ -10,43 +13,67 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { modal } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  DialogBackdropProps,
-  DialogCloseTriggerProps,
-  DialogContainerProps,
-  DialogContentProps,
-  DialogDescriptionProps,
-  DialogProps,
-  DialogTitleProps,
-  DialogTriggerProps,
-} from "@ark-ui/react";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI modal primitives.
- */
-export type PrimitiveModalProps = DialogProps;
-const PrimitiveModal = panda(Dialog);
+const { withProvider, withContext } = createStyleContext(modal);
 
-export type PrimitiveModalTriggerProps = DialogTriggerProps;
-export const PrimitiveModalTrigger = panda(DialogTrigger);
+export type PrimitiveModalProps = ComponentProps<typeof PrimitiveModal>;
+const PrimitiveModal = withProvider(panda(Dialog), "root");
 
-export type PrimitiveModalBackdropProps = DialogBackdropProps;
-export const PrimitiveModalBackdrop = panda(DialogBackdrop);
+export type PrimitiveModalTriggerProps = ComponentProps<
+  typeof PrimitiveModalTrigger
+>;
+export const PrimitiveModalTrigger = withContext(
+  panda(DialogTrigger),
+  "trigger",
+);
 
-export type PrimitiveModalContainerProps = DialogContainerProps;
-export const PrimitiveModalContainer = panda(DialogContainer);
+export type PrimitiveModalBackdropProps = ComponentProps<
+  typeof PrimitiveModalBackdrop
+>;
+export const PrimitiveModalBackdrop = withContext(
+  panda(DialogBackdrop),
+  "backdrop",
+);
 
-export type PrimitiveModalContentProps = DialogContentProps;
-export const PrimitiveModalContent = panda(DialogContent);
+export type PrimitiveModalPositionerProps = ComponentProps<
+  typeof PrimitiveModalPositioner
+>;
+export const PrimitiveModalPositioner = withContext(
+  panda(DialogPositioner),
+  "positioner",
+);
 
-export type PrimitiveModalCloseTriggerProps = DialogCloseTriggerProps;
-export const PrimitiveModalCloseTrigger = panda(DialogCloseTrigger);
+export type PrimitiveModalContentProps = ComponentProps<
+  typeof PrimitiveModalContent
+>;
+export const PrimitiveModalContent = withContext(
+  panda(DialogContent),
+  "content",
+);
 
-export type PrimitiveModalTitleProps = DialogTitleProps;
-export const PrimitiveModalTitle = panda(DialogTitle);
+export type PrimitiveModalCloseTriggerProps = ComponentProps<
+  typeof PrimitiveModalCloseTrigger
+>;
+export const PrimitiveModalCloseTrigger = withContext(
+  panda(DialogCloseTrigger),
+  "closeTrigger",
+);
 
-export type PrimitiveModalDescriptionProps = DialogDescriptionProps;
-export const PrimitiveModalDescription = panda(DialogDescription);
+export type PrimitiveModalTitleProps = ComponentProps<
+  typeof PrimitiveModalTitle
+>;
+export const PrimitiveModalTitle = withContext(panda(DialogTitle), "title");
+
+export type PrimitiveModalDescriptionProps = ComponentProps<
+  typeof PrimitiveModalDescription
+>;
+export const PrimitiveModalDescription = withContext(
+  panda(DialogDescription),
+  "description",
+);
 
 export default PrimitiveModal;

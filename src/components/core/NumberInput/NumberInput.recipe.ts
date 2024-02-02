@@ -18,7 +18,7 @@ const stepperTriggerStyles = {
   h: "100%",
   color: {
     base: "fg.default",
-    _disabled: "fg.muted",
+    _disabled: "fg.disabled",
   },
   borderRadius: "sm",
 };
@@ -35,6 +35,7 @@ export const numberInputRecipe = defineSlotRecipe({
   ],
   base: {
     input: {
+      colorPalette: "brand.primary",
       appearance: "textfield",
       WebkitAppearance: "textfield",
       MozAppearance: "textfield",
@@ -42,14 +43,7 @@ export const numberInputRecipe = defineSlotRecipe({
         WebkitAppearance: "none",
       },
       color: "fg.default",
-      caretColor: "accent.default",
-      backgroundColor: "bg.default",
-      borderColor: "border.default",
-      borderWidth: "1px",
-      px: 3,
-      h: 10,
-      minW: 10,
-      fontSize: "md",
+      caretColor: "colorPalette.500",
       outline: 0,
       position: "relative",
       transitionDuration: "normal",
@@ -60,25 +54,20 @@ export const numberInputRecipe = defineSlotRecipe({
         opacity: 0.4,
         cursor: "not-allowed",
       },
-      _focus: {
-        borderColor: "border.accent",
-        boxShadow: "sm",
-      },
     },
     label: {
-      fontWeight: "md",
-      color: "fg.emphasized",
+      color: {
+        base: "colorPalette.600",
+        _dark: "colorPalette.400",
+      },
     },
     addon: {
-      fontSize: "md",
-      px: 3,
       display: "flex",
       alignItems: "center",
       backgroundColor: "border.default",
       color: "fg.default",
     },
-    stepper: {
-      fontSize: "md",
+    control: {
       display: "flex",
       alignItems: "center",
       backgroundColor: "border.default",
@@ -106,15 +95,36 @@ export const numberInputRecipe = defineSlotRecipe({
       color: "fg.subtle",
     },
   },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
   variants: {
     variant: {
+      primary: {
+        input: {
+          backgroundColor: "bg.default",
+          borderWidth: "1px",
+          borderColor: "border.default",
+          _focus: {
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
+            boxShadow: "sm",
+          },
+        },
+      },
       flushed: {
         input: {
           backgroundColor: "transparent",
           borderWidth: "0 0 1px",
           borderRadius: "0 !important",
           _focus: {
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },
@@ -122,9 +132,14 @@ export const numberInputRecipe = defineSlotRecipe({
       filled: {
         input: {
           backgroundColor: "border.default",
+          borderWidth: "1px",
+          borderColor: "border.default",
           _focus: {
             backgroundColor: "bg.default",
-            borderColor: "border.accent",
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "sm",
           },
         },
@@ -133,8 +148,13 @@ export const numberInputRecipe = defineSlotRecipe({
         input: {
           backgroundColor: "transparent",
           borderWidth: 0,
+          borderColor: "border.default",
           borderRadius: 0,
           _focus: {
+            borderColor: {
+              base: "colorPalette.600",
+              _dark: "colorPalette.400",
+            },
             boxShadow: "none",
           },
         },
@@ -145,7 +165,7 @@ export const numberInputRecipe = defineSlotRecipe({
         input: { px: 1.5, h: 7, minW: 7, fontSize: "xs" },
         label: { fontSize: "xs" },
         addon: { fontSize: "xs", px: 1.5 },
-        stepper: { fontSize: "xs" },
+        control: { fontSize: "xs" },
         leftElement: { fontSize: "xs" },
         rightElement: { fontSize: "xs" },
       },
@@ -153,7 +173,7 @@ export const numberInputRecipe = defineSlotRecipe({
         input: { px: 2, h: 8, minW: 8, fontSize: "xs" },
         label: { fontSize: "xs" },
         addon: { fontSize: "xs", px: 2 },
-        stepper: { fontSize: "xs" },
+        control: { fontSize: "xs" },
         leftElement: { fontSize: "xs" },
         rightElement: { fontSize: "xs" },
       },
@@ -161,15 +181,23 @@ export const numberInputRecipe = defineSlotRecipe({
         input: { px: 2.5, h: 9, minW: 9, fontSize: "sm" },
         label: { fontSize: "sm" },
         addon: { fontSize: "sm", px: 2.5 },
-        stepper: { fontSize: "sm" },
+        control: { fontSize: "sm" },
         leftElement: { fontSize: "sm" },
         rightElement: { fontSize: "sm" },
+      },
+      md: {
+        input: { px: 3, h: 10, minW: 10, fontSize: "md" },
+        label: { fontSize: "md" },
+        addon: { fontSize: "md", px: 3 },
+        control: { fontSize: "md" },
+        leftElement: { fontSize: "md" },
+        rightElement: { fontSize: "md" },
       },
       lg: {
         input: { px: 3.5, h: 11, minW: 11, fontSize: "md" },
         label: { fontSize: "md" },
         addon: { fontSize: "md", px: 3.5 },
-        stepper: { fontSize: "md" },
+        control: { fontSize: "md" },
         leftElement: { fontSize: "md" },
         rightElement: { fontSize: "md" },
       },
@@ -177,7 +205,7 @@ export const numberInputRecipe = defineSlotRecipe({
         input: { px: 4, h: 12, minW: 12, fontSize: "lg" },
         label: { fontSize: "lg" },
         addon: { fontSize: "lg", px: 4 },
-        stepper: { fontSize: "lg" },
+        control: { fontSize: "lg" },
         leftElement: { fontSize: "lg" },
         rightElement: { fontSize: "lg" },
       },

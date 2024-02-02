@@ -1,29 +1,59 @@
-import { Radio, RadioControl, RadioGroup, RadioLabel } from "@ark-ui/react";
+/**
+ * @file Radio group primitives.
+ */
+import {
+  RadioGroupItem,
+  RadioGroupItemControl,
+  RadioGroup,
+  RadioGroupLabel,
+  RadioGroupItemText,
+} from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { radioGroup } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  RadioProps,
-  RadioControlProps,
-  RadioGroupProps,
-  RadioLabelProps,
-} from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI radio group primitives.
- */
-export type PrimitiveRadioGroupProps = RadioGroupProps;
-const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> =
-  panda(RadioGroup);
+const { withProvider, withContext } = createStyleContext(radioGroup);
 
-export type PrimitiveRadioControlProps = RadioControlProps;
-export const PrimitiveRadioControl = panda(RadioControl);
+export type PrimitiveRadioGroupProps = ComponentProps<
+  typeof PrimitiveRadioGroup
+>;
+const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> = withProvider(
+  panda(RadioGroup),
+  "root",
+);
 
-export type PrimitiveRadioLabelProps = RadioLabelProps;
-export const PrimitiveRadioLabel = panda(RadioLabel);
+export type PrimitiveRadioGroupItemControlProps = ComponentProps<
+  typeof PrimitiveRadioGroupItemControl
+>;
+export const PrimitiveRadioGroupItemControl = withContext(
+  panda(RadioGroupItemControl),
+  "itemControl",
+);
 
-export type PrimitiveRadioProps = RadioProps;
-export const PrimitiveRadio = panda(Radio);
+export type PrimitiveRadioGroupLabelProps = ComponentProps<
+  typeof PrimitiveRadioGroupLabel
+>;
+export const PrimitiveRadioGroupLabel = withContext(
+  panda(RadioGroupLabel),
+  "label",
+);
+
+export type PrimitiveRadioGroupItemProps = ComponentProps<
+  typeof PrimitiveRadioGroupItem
+>;
+export const PrimitiveRadioGroupItem: PandaComponent<typeof RadioGroupItem> =
+  withContext(panda(RadioGroupItem), "item");
+
+export type PrimitiveRadioGroupItemTextProps = ComponentProps<
+  typeof RadioGroupItemText
+>;
+export const PrimitiveRadioGroupItemText = withContext(
+  panda(RadioGroupItemText),
+  "itemText",
+);
 
 export default PrimitiveRadioGroup;

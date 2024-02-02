@@ -6,87 +6,77 @@ import {
   PrimitiveDrawer,
   PrimitiveDrawerBackdrop,
   PrimitiveDrawerCloseTrigger,
-  PrimitiveDrawerContainer,
+  PrimitiveDrawerPositioner,
   PrimitiveDrawerContent,
   PrimitiveDrawerDescription,
   PrimitiveDrawerTitle,
   PrimitiveDrawerTrigger,
 } from "components/primitives";
-import { drawer } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
 
-import type { PrimitiveDrawerProps } from "components/primitives";
+import type {
+  PrimitiveDrawerProps,
+  PrimitiveDrawerContentProps,
+} from "components/primitives";
 import type { DrawerVariantProps } from "generated/panda/recipes";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 export interface Props extends PrimitiveDrawerProps, DrawerVariantProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: string;
   description?: string;
+  contentProps?: PrimitiveDrawerContentProps;
+  /** Portal container ref to mount to. */
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
- * Core UI drawer.
+ * Drawer.
+ *
+ * **NOTE:** by default, the component is rendered lazily and unmounted on exit due to `lazyMount` and `unmountOnExit` being specified. To override these behaviors, pass `lazyMount={false}` and/or `unmountOnExit={false}`.
  */
 const Drawer = ({
   children,
-  placement,
   trigger,
   title,
   description,
+  contentProps,
+  containerRef,
   ...rest
-}: Props) => {
-  const classNames = drawer({ placement });
+}: Props) => (
+  <PrimitiveDrawer lazyMount unmountOnExit {...rest}>
+    {(ctx) => (
+      <>
+        {trigger && (
+          <PrimitiveDrawerTrigger asChild>{trigger}</PrimitiveDrawerTrigger>
+        )}
 
-  const isMounted = useIsMounted();
+        <Portal container={containerRef}>
+          <PrimitiveDrawerBackdrop />
 
-  if (!isMounted) return null;
+          <PrimitiveDrawerPositioner>
+            <PrimitiveDrawerContent {...contentProps}>
+              {title && <PrimitiveDrawerTitle>{title}</PrimitiveDrawerTitle>}
 
-  return (
-    <PrimitiveDrawer {...rest}>
-      {(ctx) => (
-        <>
-          <PrimitiveDrawerTrigger className={classNames.trigger}>
-            {trigger}
-          </PrimitiveDrawerTrigger>
-          <Portal>
-            <PrimitiveDrawerBackdrop className={classNames.backdrop} />
-            <PrimitiveDrawerContainer className={classNames.container}>
-              <PrimitiveDrawerContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
-                {title && (
-                  <PrimitiveDrawerTitle className={classNames.title}>
-                    {title}
-                  </PrimitiveDrawerTitle>
-                )}
-                {description && (
-                  <PrimitiveDrawerDescription
-                    className={classNames.description}
-                  >
-                    {description}
-                  </PrimitiveDrawerDescription>
-                )}
+              {description && (
+                <PrimitiveDrawerDescription>
+                  {description}
+                </PrimitiveDrawerDescription>
+              )}
 
-                {/* forward nested context/state if utilized, otherwise directly render children */}
-                {typeof children === "function" ? children(ctx) : children}
+              {/* forward nested context/state if utilized, otherwise directly render children */}
+              {typeof children === "function" ? children(ctx) : children}
 
-                <PrimitiveDrawerCloseTrigger
-                  className={classNames.closeTrigger}
-                >
-                  <Icon color="fg.default">
-                    <CloseIcon />
-                  </Icon>
-                </PrimitiveDrawerCloseTrigger>
-              </PrimitiveDrawerContent>
-            </PrimitiveDrawerContainer>
-          </Portal>
-        </>
-      )}
-    </PrimitiveDrawer>
-  );
-};
+              <PrimitiveDrawerCloseTrigger>
+                <Icon>
+                  <CloseIcon />
+                </Icon>
+              </PrimitiveDrawerCloseTrigger>
+            </PrimitiveDrawerContent>
+          </PrimitiveDrawerPositioner>
+        </Portal>
+      </>
+    )}
+  </PrimitiveDrawer>
+);
 
 export default Drawer;

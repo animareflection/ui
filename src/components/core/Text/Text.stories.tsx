@@ -99,7 +99,6 @@ export const CodeFont: Story = {
 const meta = {
   title: "Components/Core/Text",
   component: Text,
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Text>;
 
 export default meta;

@@ -30,13 +30,14 @@ const TooltipTemplate = ({ placement }: { placement: Placement }) => (
         minW={32}
         bgColor="brand.primary.500"
         p={3}
+        textAlign="center"
         borderRadius="md"
         fontWeight="bold"
       >
         {placement}
       </Text>
     }
-    content="Tooltip Title"
+    tooltipContent="Tooltip Title"
   />
 );
 
@@ -44,7 +45,7 @@ export const Default: Story = {
   render: () => (
     <Tooltip
       trigger={<Text fontWeight="bold">Tooltip</Text>}
-      content="Tooltip Title"
+      tooltipContent="Tooltip Title"
     />
   ),
 };
@@ -70,6 +71,16 @@ export const Placement: Story = {
   ),
 };
 
+export const Variants: Story = {
+  render: () => (
+    <Tooltip
+      trigger={<Text fontWeight="bold">Rounded</Text>}
+      tooltipContent="Tooltip Title"
+      variant="rounded"
+    />
+  ),
+};
+
 export const TooltipState: Story = {
   ...Default,
   play: tooltipState,
@@ -82,11 +93,6 @@ const meta: Meta = {
   title: "Components/Core/Tooltip",
   component: Tooltip,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
-  // TODO: remove when portal issue / ref bug is fixed
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;

@@ -55,7 +55,6 @@ const meta = {
   title: "Components/Core/Icon",
   component: Icon,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Icon>;
 
 export default meta;

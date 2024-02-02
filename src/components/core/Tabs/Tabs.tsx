@@ -5,8 +5,7 @@ import {
   PrimitiveTabList,
   PrimitiveTabTrigger,
 } from "components/primitives";
-import { tabs as tabsRecipe } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveTabsProps } from "components/primitives";
 import type { TabsVariantProps } from "generated/panda/recipes";
@@ -16,8 +15,6 @@ export interface TabRecord {
   value: string;
   trigger: ReactNode;
   disabled?: boolean;
-  lazyMount?: boolean;
-  unmountOnExit?: boolean;
   content: ReactNode;
 }
 
@@ -26,39 +23,32 @@ export interface Props extends PrimitiveTabsProps, TabsVariantProps {
 }
 
 /**
- * Core UI tabs.
+ * Tabs.
+ *
+ * **NOTE:** by default, the component is rendered lazily and unmounted on exit due to `lazyMount` and `unmountOnExit` being specified. To override these behaviors, pass `lazyMount={false}` and/or `unmountOnExit={false}`.
  */
-const Tabs = ({ tabs, size, ...rest }: Props) => {
-  const classNames = tabsRecipe({ size });
+const Tabs = ({ tabs, ...rest }: Props) => {
+  const isClient = useIsClient();
 
-  const isMounted = useIsMounted();
-
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
-    <PrimitiveTabs className={classNames.root} {...rest}>
-      <PrimitiveTabList className={classNames.list}>
+    <PrimitiveTabs lazyMount unmountOnExit {...rest}>
+      <PrimitiveTabList>
         {tabs.map(({ value, trigger, disabled }) => (
           <PrimitiveTabTrigger
             flex={1}
             key={value}
             value={value}
             disabled={disabled}
-            className={classNames.trigger}
           >
             {trigger}
           </PrimitiveTabTrigger>
         ))}
-        <PrimitiveTabIndicator className={classNames.indicator} />
+        <PrimitiveTabIndicator />
       </PrimitiveTabList>
-      {tabs.map(({ value, content, lazyMount, unmountOnExit }) => (
-        <PrimitiveTabContent
-          key={value}
-          value={value}
-          lazyMount={lazyMount}
-          unmountOnExit={unmountOnExit}
-          className={classNames.content}
-        >
+      {tabs.map(({ value, content }) => (
+        <PrimitiveTabContent key={value} value={value}>
           {content}
         </PrimitiveTabContent>
       ))}

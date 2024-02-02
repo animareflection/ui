@@ -6,75 +6,71 @@ import {
   PrimitiveModal,
   PrimitiveModalBackdrop,
   PrimitiveModalCloseTrigger,
-  PrimitiveModalContainer,
   PrimitiveModalContent,
   PrimitiveModalDescription,
+  PrimitiveModalPositioner,
   PrimitiveModalTitle,
   PrimitiveModalTrigger,
 } from "components/primitives";
-import { modal } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
 
 import type { PrimitiveModalProps } from "components/primitives";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 
 export interface Props extends PrimitiveModalProps {
-  trigger: ReactNode;
+  trigger?: ReactNode;
   title?: string;
   description?: string;
+  /** Portal container ref to mount to. */
+  containerRef?: RefObject<HTMLElement>;
 }
 
 /**
- * Core UI modal.
+ * Modal.
+ *
+ * **NOTE:** by default, the component is rendered lazily and unmounted on exit due to `lazyMount` and `unmountOnExit` being specified. To override these behaviors, pass `lazyMount={false}` and/or `unmountOnExit={false}`.
  */
-const Modal = ({ children, trigger, title, description, ...rest }: Props) => {
-  const classNames = modal();
+const Modal = ({
+  children,
+  trigger,
+  title,
+  description,
+  containerRef,
+  ...rest
+}: Props) => (
+  <PrimitiveModal lazyMount unmountOnExit {...rest}>
+    {(ctx) => (
+      <>
+        {trigger && (
+          <PrimitiveModalTrigger asChild>{trigger}</PrimitiveModalTrigger>
+        )}
 
-  const isMounted = useIsMounted();
+        <Portal container={containerRef}>
+          <PrimitiveModalBackdrop />
 
-  if (!isMounted) return null;
+          <PrimitiveModalPositioner>
+            <PrimitiveModalContent>
+              {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
 
-  return (
-    <PrimitiveModal {...rest}>
-      {(ctx) => (
-        <>
-          <PrimitiveModalTrigger className={classNames.trigger}>
-            {trigger}
-          </PrimitiveModalTrigger>
-          <Portal>
-            <PrimitiveModalBackdrop className={classNames.backdrop} />
-            <PrimitiveModalContainer className={classNames.container}>
-              <PrimitiveModalContent
-                lazyMount
-                unmountOnExit
-                className={classNames.content}
-              >
-                {title && (
-                  <PrimitiveModalTitle className={classNames.title}>
-                    {title}
-                  </PrimitiveModalTitle>
-                )}
-                {description && (
-                  <PrimitiveModalDescription className={classNames.description}>
-                    {description}
-                  </PrimitiveModalDescription>
-                )}
+              {description && (
+                <PrimitiveModalDescription>
+                  {description}
+                </PrimitiveModalDescription>
+              )}
 
-                {/* forward nested context/state if utilized, otherwise directly render children */}
-                {typeof children === "function" ? children(ctx) : children}
+              {/* forward nested context/state if utilized, otherwise directly render children */}
+              {typeof children === "function" ? children(ctx) : children}
 
-                <PrimitiveModalCloseTrigger className={classNames.closeTrigger}>
-                  <Icon color="fg.default">
-                    <CloseIcon />
-                  </Icon>
-                </PrimitiveModalCloseTrigger>
-              </PrimitiveModalContent>
-            </PrimitiveModalContainer>
-          </Portal>
-        </>
-      )}
-    </PrimitiveModal>
-  );
-};
+              <PrimitiveModalCloseTrigger>
+                <Icon>
+                  <CloseIcon />
+                </Icon>
+              </PrimitiveModalCloseTrigger>
+            </PrimitiveModalContent>
+          </PrimitiveModalPositioner>
+        </Portal>
+      </>
+    )}
+  </PrimitiveModal>
+);
 
 export default Modal;

@@ -4,7 +4,7 @@ import { defineSlotRecipe } from "@pandacss/dev";
 export const tooltipRecipe = defineSlotRecipe({
   className: "tooltip",
   description: "The styles for the Tooltip component",
-  slots: tooltipAnatomy.keys(),
+  slots: tooltipAnatomy.extendWith("root").keys(),
   base: {
     trigger: {
       w: "fit-content",
@@ -12,6 +12,7 @@ export const tooltipRecipe = defineSlotRecipe({
     },
     positioner: {
       position: "relative",
+      zIndex: "menu",
     },
     content: {
       background: "bg.default",
@@ -34,6 +35,15 @@ export const tooltipRecipe = defineSlotRecipe({
       borderColor: "border.default",
       borderLeftWidth: "1px",
       rotate: "-45deg",
+    },
+  },
+  variants: {
+    variant: {
+      rounded: {
+        content: {
+          borderRadius: "full",
+        },
+      },
     },
   },
 });

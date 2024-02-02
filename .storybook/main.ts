@@ -1,6 +1,5 @@
 import path from "path";
 
-import type { AddonOptionsBabel } from "@storybook/addon-coverage";
 import type { StorybookConfig } from "@storybook/nextjs";
 
 /**
@@ -34,18 +33,12 @@ const storybookConfig: StorybookConfig = {
     check: true,
   },
   addons: [
-    "@storybook/addon-a11y",
+    // !NB: issue upstream. Tracking: https://github.com/storybookjs/storybook/issues/24273
+    // "@storybook/addon-a11y",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    {
-      name: "@storybook/addon-coverage",
-      options: {
-        istanbul: {
-          include: ["**/*.tsx", "**/*.stories.tsx"],
-        },
-      } as AddonOptionsBabel,
-    },
+    "@storybook/addon-coverage",
     "storybook-dark-mode",
   ],
   staticDirs: [

@@ -1,3 +1,6 @@
+/**
+ * @file Tabs primitives.
+ */
 import {
   Tabs,
   TabContent,
@@ -7,35 +10,41 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { tabs } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  TabsProps,
-  TabContentProps,
-  TabIndicatorProps,
-  TabListProps,
-  TabTriggerProps,
-} from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI tabs primitives.
- */
-export type PrimitiveTabsProps = TabsProps;
-const PrimitiveTabs: PandaComponent<typeof Tabs> = panda(Tabs);
+const { withProvider, withContext } = createStyleContext(tabs);
 
-export type PrimitiveTabContentProps = TabContentProps;
+export type PrimitiveTabsProps = ComponentProps<typeof PrimitiveTabs>;
+const PrimitiveTabs: PandaComponent<typeof Tabs> = withProvider(
+  panda(Tabs),
+  "root",
+);
+
+export type PrimitiveTabContentProps = ComponentProps<
+  typeof PrimitiveTabContent
+>;
 export const PrimitiveTabContent: PandaComponent<typeof TabContent> =
-  panda(TabContent);
+  withContext(panda(TabContent), "content");
 
-export type PrimitiveTabIndicatorProps = TabIndicatorProps;
-export const PrimitiveTabIndicator: PandaComponent<typeof TabIndicator> =
-  panda(TabIndicator);
+export type PrimitiveTabIndicatorProps = ComponentProps<
+  typeof PrimitiveTabIndicator
+>;
+export const PrimitiveTabIndicator = withContext(
+  panda(TabIndicator),
+  "indicator",
+);
 
-export type PrimitiveTabListProps = TabListProps;
-export const PrimitiveTabList: PandaComponent<typeof TabList> = panda(TabList);
+export type PrimitiveTabListProps = ComponentProps<typeof PrimitiveTabList>;
+export const PrimitiveTabList = withContext(panda(TabList), "list");
 
-export type PrimitiveTabTriggerProps = TabTriggerProps;
+export type PrimitiveTabTriggerProps = ComponentProps<
+  typeof PrimitiveTabTrigger
+>;
 export const PrimitiveTabTrigger: PandaComponent<typeof TabTrigger> =
-  panda(TabTrigger);
+  withContext(panda(TabTrigger), "trigger");
 
 export default PrimitiveTabs;

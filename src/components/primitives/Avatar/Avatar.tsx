@@ -1,24 +1,34 @@
+/**
+ * @file Avatar primitives.
+ */
 import { Avatar, AvatarFallback, AvatarImage } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { avatar } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  AvatarProps,
-  AvatarFallbackProps,
-  AvatarImageProps,
-} from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/types/jsx";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI avatar primitives.
- */
-export type PrimitiveAvatarProps = AvatarProps;
-const PrimitiveAvatar: PandaComponent<typeof Avatar> = panda(Avatar);
+const { withProvider, withContext } = createStyleContext(avatar);
 
-export type PrimitiveAvatarFallbackProps = AvatarFallbackProps;
-export const PrimitiveAvatarFallback = panda(AvatarFallback);
+export type PrimitiveAvatarProps = ComponentProps<typeof PrimitiveAvatar>;
+const PrimitiveAvatar: PandaComponent<typeof Avatar> = withProvider(
+  panda(Avatar),
+  "root",
+);
 
-export type PrimitiveAvatarImageProps = AvatarImageProps;
-export const PrimitiveAvatarImage = panda(AvatarImage);
+export type PrimitiveAvatarFallbackProps = ComponentProps<
+  typeof PrimitiveAvatarFallback
+>;
+export const PrimitiveAvatarFallback = withContext(
+  panda(AvatarFallback),
+  "fallback",
+);
+
+export type PrimitiveAvatarImageProps = ComponentProps<
+  typeof PrimitiveAvatarImage
+>;
+export const PrimitiveAvatarImage = withContext(panda(AvatarImage), "image");
 
 export default PrimitiveAvatar;

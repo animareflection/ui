@@ -4,18 +4,15 @@ export const buttonRecipe = defineRecipe({
   className: "button",
   description: "The styles for the Button component",
   base: {
-    color: "accent.fg",
-    bgColor: "accent.default",
-    w: "fit-content",
-    h: "fit-content",
+    colorPalette: "brand.primary",
     cursor: "pointer",
     fontWeight: "bold",
-    p: 3,
     borderRadius: "md",
+    display: "inline-flex",
+    alignItems: "center",
+    color: "fg.default",
+    h: "fit-content",
     _focus: { outline: "none" },
-    _hover: {
-      bgColor: "accent.emphasized",
-    },
     _disabled: {
       bgColor: "bg.disabled",
       cursor: "not-allowed",
@@ -24,22 +21,42 @@ export const buttonRecipe = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
   variants: {
     variant: {
+      primary: {
+        color: { base: "white", _dark: "colorPalette.950" },
+        bgColor: "colorPalette.500",
+        _hover: {
+          bgColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
+        },
+        _disabled: {
+          borderColor: "border.disabled",
+          bgColor: "bg.disabled",
+          cursor: "not-allowed",
+          _hover: {
+            borderColor: "border.disabled",
+            bgColor: "bg.disabled",
+          },
+        },
+      },
       secondary: {
         borderWidth: "1px",
-        borderColor: "border.emphasized",
+        borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         bgColor: "bg.default",
-        color: "fg.emphasized",
+        color: { base: "colorPalette.600", _dark: "colorPalette.400" },
         _hover: {
-          background: "bg.subtle",
+          background: { base: "colorPalette.50", _dark: "colorPalette.950" },
         },
         _disabled: {
           borderColor: "border.disabled",
           color: "fg.disabled",
           cursor: "not-allowed",
           _hover: {
-            background: "transparent",
+            background: "bg.default",
             borderColor: "border.disabled",
             color: "fg.disabled",
           },
@@ -47,32 +64,36 @@ export const buttonRecipe = defineRecipe({
       },
       ghost: {
         bgColor: "transparent",
-        color: "fg.emphasized",
+        color: { base: "colorPalette.600", _dark: "colorPalette.400" },
         _hover: {
           color: "fg.default",
-          background: "accent.subtle",
+          background: { base: "colorPalette.50", _dark: "colorPalette.950" },
         },
         _disabled: {
+          borderColor: "transparent",
           color: "fg.disabled",
           cursor: "not-allowed",
           _hover: {
             background: "transparent",
             color: "fg.disabled",
+            borderColor: "transparent",
           },
         },
       },
       round: {
         borderRadius: "full !important",
-        color: "accent.fg",
-        bgColor: "accent.default",
+        color: { base: "white", _dark: "colorPalette.950" },
+        bgColor: "colorPalette.500",
         _hover: {
-          bgColor: "accent.emphasized",
+          bgColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         },
         _disabled: {
+          borderColor: "border.disabled",
           bgColor: "bg.disabled",
           cursor: "not-allowed",
           _hover: {
             bgColor: "bg.disabled",
+            borderColor: "border.disabled",
           },
         },
       },
@@ -85,6 +106,10 @@ export const buttonRecipe = defineRecipe({
       sm: {
         fontSize: "sm",
         p: 2.5,
+      },
+      md: {
+        fontSize: "md",
+        p: 3,
       },
       lg: {
         fontSize: "lg",

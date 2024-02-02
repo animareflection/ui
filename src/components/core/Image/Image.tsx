@@ -1,18 +1,13 @@
 import { panda } from "generated/panda/jsx";
 import { image } from "generated/panda/recipes";
 
-import type { ImageVariantProps } from "generated/panda/recipes";
 import type { ComponentProps } from "react";
 
-export type Props = ComponentProps<typeof PandaImage> & ImageVariantProps;
-
-const PandaImage = panda("img");
+export type Props = ComponentProps<typeof Image>;
 
 /**
- * Core UI image.
+ * Image.
  */
-const Image = ({ layout, ...rest }: Props) => {
-  return <PandaImage className={image({ layout })} {...rest} />;
-};
+const Image = panda("img", image);
 
 export default Image;

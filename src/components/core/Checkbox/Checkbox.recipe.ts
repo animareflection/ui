@@ -7,31 +7,23 @@ export const checkboxRecipe = defineSlotRecipe({
   slots: checkboxAnatomy.keys(),
   base: {
     root: {
+      colorPalette: "brand.primary",
       w: "100%",
       alignItems: "center",
       display: "flex",
-      gap: 3,
     },
     label: {
-      color: "fg.emphasized",
+      color: { base: "colorPalette.600", _dark: "colorPalette.400" },
       fontWeight: "medium",
-      textStyle: "md",
       flex: 1,
     },
     control: {
       alignItems: "center",
-      borderColor: "border.emphasized",
+      borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
       borderWidth: "1px",
       color: "accent.fg",
       cursor: "pointer",
       display: "flex",
-      width: 5,
-      height: 5,
-      borderRadius: "xs",
-      "& svg": {
-        width: 3.5,
-        height: 3.5,
-      },
       justifyContent: "center",
       transitionDuration: "normal",
       transitionProperty: "border-color, background",
@@ -40,13 +32,16 @@ export const checkboxRecipe = defineSlotRecipe({
         background: "bg.subtle",
       },
       _checked: {
-        background: "accent.default",
-        borderColor: "border.accent",
+        background: "colorPalette.500",
+        borderColor: { base: "colorPalette.600", _dark: "colorPalette.400" },
         _hover: {
-          background: "accent.default",
+          background: "colorPalette.500",
         },
       },
     },
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -65,6 +60,23 @@ export const checkboxRecipe = defineSlotRecipe({
         },
         label: {
           textStyle: "sm",
+        },
+      },
+      md: {
+        root: {
+          gap: 3,
+        },
+        control: {
+          width: 5,
+          height: 5,
+          borderRadius: "xs",
+          "& svg": {
+            width: 3.5,
+            height: 3.5,
+          },
+        },
+        label: {
+          textStyle: "md",
         },
       },
       lg: {

@@ -1,67 +1,92 @@
+/**
+ * @file Carousel primitives.
+ */
 import {
   Carousel,
   CarouselControl,
-  CarouselNextSlideTrigger,
-  CarouselPrevSlideTrigger,
-  CarouselSlide,
-  CarouselSlideGroup,
+  CarouselNextTrigger,
+  CarouselPrevTrigger,
+  CarouselItem,
+  CarouselItemGroup,
   CarouselViewport,
   CarouselIndicator,
   CarouselIndicatorGroup,
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { carousel } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  CarouselProps,
-  CarouselControlProps,
-  CarouselNextSlideTriggerProps,
-  CarouselPrevSlideTriggerProps,
-  CarouselSlideProps,
-  CarouselSlideGroupProps,
-  CarouselViewportProps,
-  CarouselIndicatorProps,
-  CarouselIndicatorGroupProps,
-} from "@ark-ui/react";
 import type { PandaComponent } from "generated/panda/jsx";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI carousel primitives.
- */
-export type PrimitiveCarouselProps = CarouselProps;
-const PrimitiveCarousel: PandaComponent<typeof Carousel> = panda(Carousel);
+const { withProvider, withContext } = createStyleContext(carousel);
 
-export type PrimitiveCarouselControlProps = CarouselControlProps;
-export const PrimitiveCarouselControl = panda(CarouselControl);
-
-export type PrimitiveCarouselNextSlideTriggerProps =
-  CarouselNextSlideTriggerProps;
-export const PrimitiveCarouselNextSlideTrigger = panda(
-  CarouselNextSlideTrigger,
+export type PrimitiveCarouselProps = ComponentProps<typeof PrimitiveCarousel>;
+const PrimitiveCarousel: PandaComponent<typeof Carousel> = withProvider(
+  panda(Carousel),
+  "root",
 );
 
-export type PrimitiveCarouselPrevSlideTriggerProps =
-  CarouselPrevSlideTriggerProps;
-export const PrimitiveCarouselPrevSlideTrigger = panda(
-  CarouselPrevSlideTrigger,
+export type PrimitiveCarouselControlProps = ComponentProps<
+  typeof PrimitiveCarouselControl
+>;
+export const PrimitiveCarouselControl = withContext(
+  panda(CarouselControl),
+  "control",
 );
 
-export type PrimitiveCarouselSlideProps = CarouselSlideProps;
-export const PrimitiveCarouselSlide: PandaComponent<typeof CarouselSlide> =
-  panda(CarouselSlide);
+export type PrimitiveCarouselNextTriggerProps = ComponentProps<
+  typeof PrimitiveCarouselNextTrigger
+>;
+export const PrimitiveCarouselNextTrigger = withContext(
+  panda(CarouselNextTrigger),
+  "nextTrigger",
+);
 
-export type PrimitiveCarouselSlideGroupProps = CarouselSlideGroupProps;
-export const PrimitiveCarouselSlideGroup = panda(CarouselSlideGroup);
+export type PrimitiveCarouselPrevTriggerProps = ComponentProps<
+  typeof PrimitiveCarouselPrevTrigger
+>;
+export const PrimitiveCarouselPrevTrigger = withContext(
+  panda(CarouselPrevTrigger),
+  "prevTrigger",
+);
 
-export type PrimitiveCarouselViewportProps = CarouselViewportProps;
-export const PrimitiveCarouselViewport = panda(CarouselViewport);
+export type PrimitiveCarouselItemProps = ComponentProps<
+  typeof PrimitiveCarouselItem
+>;
+export const PrimitiveCarouselItem: PandaComponent<typeof CarouselItem> =
+  withContext(panda(CarouselItem), "item");
 
-export type PrimitiveCarouselIndicatorProps = CarouselIndicatorProps;
+export type PrimitiveCarouselItemGroupProps = ComponentProps<
+  typeof PrimitiveCarouselItemGroup
+>;
+export const PrimitiveCarouselItemGroup = withContext(
+  panda(CarouselItemGroup),
+  "itemGroup",
+);
+
+export type PrimitiveCarouselViewportProps = ComponentProps<
+  typeof PrimitiveCarouselViewport
+>;
+export const PrimitiveCarouselViewport = withContext(
+  panda(CarouselViewport),
+  "viewport",
+);
+
+export type PrimitiveCarouselIndicatorProps = ComponentProps<
+  typeof PrimitiveCarouselIndicator
+>;
 export const PrimitiveCarouselIndicator: PandaComponent<
   typeof CarouselIndicator
-> = panda(CarouselIndicator);
+> = withContext(panda(CarouselIndicator), "indicator");
 
-export type PrimitiveCarouselIndicatorGroupProps = CarouselIndicatorGroupProps;
-export const PrimitiveCarouselIndicatorGroup = panda(CarouselIndicatorGroup);
+export type PrimitiveCarouselIndicatorGroupProps = ComponentProps<
+  typeof PrimitiveCarouselIndicatorGroup
+>;
+export const PrimitiveCarouselIndicatorGroup = withContext(
+  panda(CarouselIndicatorGroup),
+  "indicatorGroup",
+);
 
 export default PrimitiveCarousel;

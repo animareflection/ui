@@ -20,9 +20,11 @@ const SkeletonToggle = () => {
           minim veniam.
         </Text>
       </Skeleton>
+
       <Button
         data-testid="toggle"
         variant="ghost"
+        w="fit-content"
         p={2}
         onClick={() => setIsLoaded(!isLoaded)}
       >
@@ -62,7 +64,6 @@ const meta = {
   title: "Components/Core/Skeleton",
   component: Skeleton,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;

@@ -1,3 +1,6 @@
+/**
+ * @file Flyout primitives.
+ */
 import {
   Popover,
   PopoverArrow,
@@ -11,47 +14,72 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { flyout } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  PopoverProps,
-  PopoverArrowProps,
-  PopoverArrowTipProps,
-  PopoverCloseTriggerProps,
-  PopoverContentProps,
-  PopoverDescriptionProps,
-  PopoverPositionerProps,
-  PopoverTitleProps,
-  PopoverTriggerProps,
-} from "@ark-ui/react";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI flyout primitives.
- */
-export type PrimitiveFlyoutProps = PopoverProps;
-const PrimitiveFlyout = panda(Popover);
+const { withProvider, withContext } = createStyleContext(flyout);
 
-export type PrimitiveFlyoutArrowProps = PopoverArrowProps;
-export const PrimitiveFlyoutArrow = panda(PopoverArrow);
+export type PrimitiveFlyoutProps = ComponentProps<typeof PrimitiveFlyout>;
+const PrimitiveFlyout = withProvider(panda(Popover), "root");
 
-export type PrimitiveFlyoutArrowTipProps = PopoverArrowTipProps;
-export const PrimitiveFlyoutArrowTip = panda(PopoverArrowTip);
+export type PrimitiveFlyoutArrowProps = ComponentProps<
+  typeof PrimitiveFlyoutArrow
+>;
+export const PrimitiveFlyoutArrow = withContext(panda(PopoverArrow), "arrow");
 
-export type PrimitiveFlyoutCloseTriggerProps = PopoverCloseTriggerProps;
-export const PrimitiveFlyoutCloseTrigger = panda(PopoverCloseTrigger);
+export type PrimitiveFlyoutArrowTipProps = ComponentProps<
+  typeof PrimitiveFlyoutArrowTip
+>;
+export const PrimitiveFlyoutArrowTip = withContext(
+  panda(PopoverArrowTip),
+  "arrowTip",
+);
 
-export type PrimitiveFlyoutContentProps = PopoverContentProps;
-export const PrimitiveFlyoutContent = panda(PopoverContent);
+export type PrimitiveFlyoutCloseTriggerProps = ComponentProps<
+  typeof PrimitiveFlyoutCloseTrigger
+>;
+export const PrimitiveFlyoutCloseTrigger = withContext(
+  panda(PopoverCloseTrigger),
+  "closeTrigger",
+);
 
-export type PrimitiveFlyoutDescriptionProps = PopoverDescriptionProps;
-export const PrimitiveFlyoutDescription = panda(PopoverDescription);
+export type PrimitiveFlyoutContentProps = ComponentProps<
+  typeof PrimitiveFlyoutContent
+>;
+export const PrimitiveFlyoutContent = withContext(
+  panda(PopoverContent),
+  "content",
+);
 
-export type PrimitiveFlyoutPositionerProps = PopoverPositionerProps;
-export const PrimitiveFlyoutPositioner = panda(PopoverPositioner);
+export type PrimitiveFlyoutDescriptionProps = ComponentProps<
+  typeof PrimitiveFlyoutDescription
+>;
+export const PrimitiveFlyoutDescription = withContext(
+  panda(PopoverDescription),
+  "description",
+);
 
-export type PrimitiveFlyoutTitleProps = PopoverTitleProps;
-export const PrimitiveFlyoutTitle = panda(PopoverTitle);
+export type PrimitiveFlyoutPositionerProps = ComponentProps<
+  typeof PrimitiveFlyoutPositioner
+>;
+export const PrimitiveFlyoutPositioner = withContext(
+  panda(PopoverPositioner),
+  "positioner",
+);
 
-export type PrimitiveFlyoutTriggerProps = PopoverTriggerProps;
-export const PrimitiveFlyoutTrigger = panda(PopoverTrigger);
+export type PrimitiveFlyoutTitleProps = ComponentProps<
+  typeof PrimitiveFlyoutTitle
+>;
+export const PrimitiveFlyoutTitle = withContext(panda(PopoverTitle), "title");
+
+export type PrimitiveFlyoutTriggerProps = ComponentProps<
+  typeof PrimitiveFlyoutTrigger
+>;
+export const PrimitiveFlyoutTrigger = withContext(
+  panda(PopoverTrigger),
+  "trigger",
+);
 
 export default PrimitiveFlyout;

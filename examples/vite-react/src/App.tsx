@@ -10,6 +10,7 @@ import {
 
 import {
   AccordionDemo,
+  AlertDemo,
   AvatarDemo,
   BadgeDemo,
   BannerDemo,
@@ -19,6 +20,9 @@ import {
   CarouselDemo,
   CheckboxDemo,
   CollapseDemo,
+  ComboboxDemo,
+  CopyToClipboardDemo,
+  DatePickerDemo,
   DrawerDemo,
   FlyoutDemo,
   IconDemo,
@@ -95,6 +99,7 @@ const App = () => (
       <ButtonDemo />
       <AvatarDemo />
       <AccordionDemo />
+      <DatePickerDemo />
       <DrawerDemo />
       <IconDemo />
       <MenuDemo />
@@ -121,6 +126,9 @@ const App = () => (
       <BreadcrumbDemo />
       <RadioGroupDemo />
       <StatDemo />
+      <CopyToClipboardDemo />
+      <AlertDemo />
+      <ComboboxDemo />
 
       <Hide below="md">
         <Text color="brand.primary.500" fontSize="3xl" fontWeight="bold">

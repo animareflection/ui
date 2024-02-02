@@ -8,9 +8,8 @@ export * from "generated/panda/css";
 export * from "generated/panda/jsx";
 export type { JsxStyleProps } from "generated/panda/types";
 
-// export backfill of react hot toast functions and types
-export { default as toast } from "react-hot-toast";
-export type { ToastPosition } from "react-hot-toast";
+// export backfill of sonner functions
+export { toast } from "sonner";
 
 // export Panda preset (to be used in downstream Panda configurations)
 export { default as anirefPreset } from "lib/panda/aniref.preset";

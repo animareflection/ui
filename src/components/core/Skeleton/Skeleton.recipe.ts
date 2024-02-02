@@ -7,6 +7,7 @@ export const skeletonRecipe = defineSlotRecipe({
   base: {
     root: {
       position: "relative",
+      colorPalette: "brand.primary",
     },
     skeleton: {
       position: "absolute",

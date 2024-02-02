@@ -1,4 +1,5 @@
 import { accordionRecipe } from "../../components/core/Accordion/Accordion.recipe";
+import { alertRecipe } from "../../components/core/Alert/Alert.recipe";
 import { avatarRecipe } from "../../components/core/Avatar/Avatar.recipe";
 import { badgeRecipe } from "../../components/core/Badge/Badge.recipe";
 import { bannerRecipe } from "../../components/core/Banner/Banner.recipe";
@@ -7,6 +8,8 @@ import { buttonRecipe } from "../../components/core/Button/Button.recipe";
 import { cardRecipe } from "../../components/core/Card/Card.recipe";
 import { carouselRecipe } from "../../components/core/Carousel/Carousel.recipe";
 import { checkboxRecipe } from "../../components/core/Checkbox/Checkbox.recipe";
+import { comboboxRecipe } from "../../components/core/Combobox/Combobox.recipe";
+import { datePickerRecipe } from "../../components/core/DatePicker/DatePicker.recipe";
 import { drawerRecipe } from "../../components/core/Drawer/Drawer.recipe";
 import { flyoutRecipe } from "../../components/core/Flyout/Flyout.recipe";
 import { iconRecipe } from "../../components/core/Icon/Icon.recipe";
@@ -43,14 +46,17 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion: accordionRecipe,
+  alert: alertRecipe,
   avatar: avatarRecipe,
-  carousel: carouselRecipe,
   breadcrumb: breadcrumbRecipe,
-  checkbox: checkboxRecipe,
   card: cardRecipe,
+  carousel: carouselRecipe,
+  checkbox: checkboxRecipe,
+  combobox: comboboxRecipe,
+  datePicker: datePickerRecipe,
   drawer: drawerRecipe,
-  input: inputRecipe,
   flyout: flyoutRecipe,
+  input: inputRecipe,
   menu: menuRecipe,
   modal: modalRecipe,
   numberInput: numberInputRecipe,

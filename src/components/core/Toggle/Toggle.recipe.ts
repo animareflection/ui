@@ -10,7 +10,7 @@ export const toggleRecipe = defineSlotRecipe({
       alignItems: "center",
       display: "flex",
       position: "relative",
-      gap: 3,
+      colorPalette: "brand.primary",
     },
     control: {
       alignItems: "center",
@@ -19,18 +19,15 @@ export const toggleRecipe = defineSlotRecipe({
       cursor: "pointer",
       display: "inline-flex",
       flexShrink: 0,
-      width: 9,
-      p: 0.5,
       transitionDuration: "normal",
       transitionProperty: "background",
       transitionTimingFunction: "default",
       _checked: {
-        background: "accent.default",
+        background: "colorPalette.500",
       },
     },
     label: {
       userSelect: "none",
-      textStyle: "md",
       fontWeight: "medium",
       color: "fg.default",
     },
@@ -38,8 +35,6 @@ export const toggleRecipe = defineSlotRecipe({
       background: "bg.default",
       borderRadius: "full",
       boxShadow: "xs",
-      height: 4,
-      width: 4,
       transitionDuration: "normal",
       transitionProperty: "transform, background",
       transitionTimingFunction: "default",
@@ -48,6 +43,9 @@ export const toggleRecipe = defineSlotRecipe({
         background: "bg.default",
       },
     },
+  },
+  defaultVariants: {
+    size: "md",
   },
   variants: {
     size: {
@@ -65,6 +63,22 @@ export const toggleRecipe = defineSlotRecipe({
         },
         label: {
           textStyle: "sm",
+        },
+      },
+      md: {
+        root: {
+          gap: 3,
+        },
+        control: {
+          width: 9,
+          p: 0.5,
+        },
+        thumb: {
+          width: 4,
+          height: 4,
+        },
+        label: {
+          textStyle: "md",
         },
       },
       lg: {

@@ -1,8 +1,11 @@
+/**
+ * @file Drawer primitives.
+ */
 import {
   Dialog,
   DialogBackdrop,
   DialogCloseTrigger,
-  DialogContainer,
+  DialogPositioner,
   DialogContent,
   DialogDescription,
   DialogTitle,
@@ -10,43 +13,67 @@ import {
 } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
+import { drawer } from "generated/panda/recipes";
+import { createStyleContext } from "lib/util";
 
-import type {
-  DialogBackdropProps,
-  DialogCloseTriggerProps,
-  DialogContainerProps,
-  DialogContentProps,
-  DialogDescriptionProps,
-  DialogProps,
-  DialogTitleProps,
-  DialogTriggerProps,
-} from "@ark-ui/react";
+import type { ComponentProps } from "react";
 
-/**
- * Core UI drawer primitives.
- */
-export type PrimitiveDrawerProps = DialogProps;
-const PrimitiveDrawer = panda(Dialog);
+const { withProvider, withContext } = createStyleContext(drawer);
 
-export type PrimitiveDrawerTriggerProps = DialogTriggerProps;
-export const PrimitiveDrawerTrigger = panda(DialogTrigger);
+export type PrimitiveDrawerProps = ComponentProps<typeof PrimitiveDrawer>;
+const PrimitiveDrawer = withProvider(panda(Dialog), "root");
 
-export type PrimitiveDrawerBackdropProps = DialogBackdropProps;
-export const PrimitiveDrawerBackdrop = panda(DialogBackdrop);
+export type PrimitiveDrawerTriggerProps = ComponentProps<
+  typeof PrimitiveDrawerTrigger
+>;
+export const PrimitiveDrawerTrigger = withContext(
+  panda(DialogTrigger),
+  "trigger",
+);
 
-export type PrimitiveDrawerContainerProps = DialogContainerProps;
-export const PrimitiveDrawerContainer = panda(DialogContainer);
+export type PrimitiveDrawerBackdropProps = ComponentProps<
+  typeof PrimitiveDrawerBackdrop
+>;
+export const PrimitiveDrawerBackdrop = withContext(
+  panda(DialogBackdrop),
+  "backdrop",
+);
 
-export type PrimitiveDrawerContentProps = DialogContentProps;
-export const PrimitiveDrawerContent = panda(DialogContent);
+export type PrimitiveDrawerPositionerProps = ComponentProps<
+  typeof PrimitiveDrawerPositioner
+>;
+export const PrimitiveDrawerPositioner = withContext(
+  panda(DialogPositioner),
+  "positioner",
+);
 
-export type PrimitiveDrawerCloseTriggerProps = DialogCloseTriggerProps;
-export const PrimitiveDrawerCloseTrigger = panda(DialogCloseTrigger);
+export type PrimitiveDrawerContentProps = ComponentProps<
+  typeof PrimitiveDrawerContent
+>;
+export const PrimitiveDrawerContent = withContext(
+  panda(DialogContent),
+  "content",
+);
 
-export type PrimitiveDrawerTitleProps = DialogTitleProps;
-export const PrimitiveDrawerTitle = panda(DialogTitle);
+export type PrimitiveDrawerCloseTriggerProps = ComponentProps<
+  typeof PrimitiveDrawerCloseTrigger
+>;
+export const PrimitiveDrawerCloseTrigger = withContext(
+  panda(DialogCloseTrigger),
+  "closeTrigger",
+);
 
-export type PrimitiveDrawerDescriptionProps = DialogDescriptionProps;
-export const PrimitiveDrawerDescription = panda(DialogDescription);
+export type PrimitiveDrawerTitleProps = ComponentProps<
+  typeof PrimitiveDrawerTitle
+>;
+export const PrimitiveDrawerTitle = withContext(panda(DialogTitle), "title");
+
+export type PrimitiveDrawerDescriptionProps = ComponentProps<
+  typeof PrimitiveDrawerDescription
+>;
+export const PrimitiveDrawerDescription = withContext(
+  panda(DialogDescription),
+  "description",
+);
 
 export default PrimitiveDrawer;

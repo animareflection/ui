@@ -1,7 +1,7 @@
 import { expect } from "@storybook/jest";
 import { userEvent, within } from "@storybook/testing-library";
 
-import { sleep } from "lib/utils";
+import { sleep } from "lib/util";
 
 import type { ReactRenderer } from "@storybook/react";
 import type { PlayFunctionContext, Renderer } from "@storybook/types";
@@ -22,36 +22,36 @@ export const carouselState = async <R extends Renderer = ReactRenderer>({
   const nextButton = canvas.getByLabelText(/next/i);
 
   await step(
-    "Previous slide button should be disabled when first slide is shown",
+    "Previous item button should be disabled when first item is shown",
     async () => {
       await expect(prevButton).toBeDisabled();
     },
   );
 
   await step(
-    "It should go to next slide on next slide button click",
+    "It should go to next item on next item button click",
     async () => {
       await userEvent.click(nextButton);
 
-      const indicator = canvas.getByLabelText(/goto slide 2/i);
+      const indicator = canvas.getByLabelText(/goto item 2/i);
 
       await expect(indicator).toHaveAttribute("data-current");
     },
   );
 
   await step(
-    "It should go to previous slide on previous slide button click",
+    "It should go to previous item on previous item button click",
     async () => {
       await userEvent.click(prevButton);
 
-      const indicator = canvas.getByLabelText(/goto slide 1/i);
+      const indicator = canvas.getByLabelText(/goto item 1/i);
 
       await expect(indicator).toHaveAttribute("data-current");
     },
   );
 
-  await step("It should go to slide on indicator click", async () => {
-    const indicator = canvas.getByLabelText(/goto slide 3/i);
+  await step("It should go to item on indicator click", async () => {
+    const indicator = canvas.getByLabelText(/goto item 3/i);
 
     await userEvent.click(indicator);
 
@@ -59,9 +59,9 @@ export const carouselState = async <R extends Renderer = ReactRenderer>({
   });
 
   await step(
-    "Next slide button should be disabled when last slide is shown",
+    "Next item button should be disabled when last item is shown",
     async () => {
-      const lastIndicator = canvas.getByLabelText(/goto slide 5/i);
+      const lastIndicator = canvas.getByLabelText(/goto item 5/i);
 
       await userEvent.click(lastIndicator);
 

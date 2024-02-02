@@ -1,11 +1,11 @@
+import Text from "components/core/Text/Text";
 import {
   PrimitiveRadioGroup,
-  PrimitiveRadioLabel,
-  PrimitiveRadio,
-  PrimitiveRadioControl,
+  PrimitiveRadioGroupItem,
+  PrimitiveRadioGroupItemControl,
+  PrimitiveRadioGroupItemText,
 } from "components/primitives";
-import { radioGroup } from "generated/panda/recipes";
-import { useIsMounted } from "lib/hooks";
+import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveRadioGroupProps } from "components/primitives";
 import type { RadioGroupVariantProps } from "generated/panda/recipes";
@@ -23,40 +23,35 @@ export interface Props
 }
 
 /**
- * Core UI radio group.
+ * Radio group.
  */
 const RadioGroup = ({
   items,
   defaultValue,
   orientation = "vertical",
-  size,
   ...rest
 }: Props) => {
-  const classNames = radioGroup({ size });
+  const isClient = useIsClient();
 
-  const isMounted = useIsMounted();
-
-  if (!isMounted) return null;
+  if (!isClient) return null;
 
   return (
     <PrimitiveRadioGroup
-      className={classNames.root}
       defaultValue={defaultValue}
       orientation={orientation}
       {...rest}
     >
       {items.map((item) => (
-        <PrimitiveRadio
+        <PrimitiveRadioGroupItem
           key={item.value}
           value={item.value}
           disabled={item.disabled}
-          className={classNames.radio}
         >
-          <PrimitiveRadioControl className={classNames.radioControl} />
-          <PrimitiveRadioLabel className={classNames.radioLabel}>
-            {item.label}
-          </PrimitiveRadioLabel>
-        </PrimitiveRadio>
+          <PrimitiveRadioGroupItemControl />
+          <PrimitiveRadioGroupItemText>
+            <Text>{item.label}</Text>
+          </PrimitiveRadioGroupItemText>
+        </PrimitiveRadioGroupItem>
       ))}
     </PrimitiveRadioGroup>
   );
