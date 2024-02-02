@@ -8,6 +8,8 @@ export const drawerRecipe = defineSlotRecipe({
   base: {
     backdrop: {
       backdropFilter: "blur(4px)",
+      height: "100vh",
+      width: "100vw",
       background: {
         base: "rgba(250, 250, 250, 0.8)",
         _dark: "rgba(10, 10, 10, 0.8)",
@@ -25,6 +27,8 @@ export const drawerRecipe = defineSlotRecipe({
     positioner: {
       display: "flex",
       inset: 0,
+      height: "100vh",
+      width: "100vw",
       position: "fixed",
       zIndex: "modal",
     },

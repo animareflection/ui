@@ -8,6 +8,8 @@ export const modalRecipe = defineSlotRecipe({
   base: {
     backdrop: {
       backdropFilter: "blur(4px)",
+      height: "100vh",
+      width: "100vw",
       background: {
         // TODO: replace when supported in Panda: bg.canvas/80
         base: "rgba(250, 250, 250, 0.8)",
@@ -27,6 +29,8 @@ export const modalRecipe = defineSlotRecipe({
       alignItems: "center",
       display: "flex",
       inset: 0,
+      height: "100vh",
+      width: "100vw",
       justifyContent: "center",
       position: "fixed",
       zIndex: "modal",
