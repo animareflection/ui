@@ -12,7 +12,6 @@ export const tooltipRecipe = defineSlotRecipe({
     },
     positioner: {
       position: "relative",
-      zIndex: "menu",
     },
     content: {
       background: "bg.default",
