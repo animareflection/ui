@@ -58,7 +58,7 @@ const NumberInput = ({
     <PrimitiveNumberInput {...rest}>
       <PrimitiveNumberInputScrubber />
       {label && <PrimitiveNumberInputLabel>{label}</PrimitiveNumberInputLabel>}
-      <Flex>
+      <Flex w="100%">
         {leftAddon && (
           <PrimitiveNumberInputAddon borderLeftRadius="sm">
             {leftAddon}
