@@ -62,7 +62,8 @@ export interface Props
   };
   /** Custom content render override. */
   content?: ReactNode;
-  groups: Group[];
+  /** Groups of items to display. */
+  groups?: Group[];
   itemIndicator?: boolean;
   triggerEnabled?: boolean;
   inputProps?: Omit<InputProps, "size">;

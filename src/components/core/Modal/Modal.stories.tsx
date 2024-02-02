@@ -18,7 +18,7 @@ const ControlledModal = () => {
 
       <Modal
         open={isOpen}
-        onOpenChange={({ open }) => (open ? setIsOpen(true) : setIsOpen(false))}
+        onOpenChange={({ open }) => setIsOpen(open)}
         title="Modal Title"
         description="Modal Description"
       >

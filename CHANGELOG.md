@@ -1,5 +1,37 @@
 # @animareflection/ui
 
+## 0.24.3
+
+### Patch Changes
+
+- [#232](https://github.com/animareflection/ui/pull/232) [`a2f415a`](https://github.com/animareflection/ui/commit/a2f415ab38cfc0951bdf48fb7eb795f0cddba039) Thanks [@coopbri](https://github.com/coopbri)! - Make `Combobox` `groups` prop optional
+
+- [#232](https://github.com/animareflection/ui/pull/232) [`a2f415a`](https://github.com/animareflection/ui/commit/a2f415ab38cfc0951bdf48fb7eb795f0cddba039) Thanks [@coopbri](https://github.com/coopbri)! - Throw error if `Combobox` is missing either `groups` or `content` props
+
+## 0.24.2
+
+### Patch Changes
+
+- [#230](https://github.com/animareflection/ui/pull/230) [`bebbadd`](https://github.com/animareflection/ui/commit/bebbadd1f17f619edbfbbc0095a068df5b96d8ec) Thanks [@coopbri](https://github.com/coopbri)! - Add `Portal` to `Drawer`, `Modal`, and `Tooltip` to fix render overlay issues
+
+## 0.24.1
+
+### Patch Changes
+
+- [#226](https://github.com/animareflection/ui/pull/226) [`2336f51`](https://github.com/animareflection/ui/commit/2336f514f0a97991a1361be0a952c5412cf1e691) Thanks [@coopbri](https://github.com/coopbri)! - Revert Ark UI to v1.2 due to controlled component open state regression (https://github.com/chakra-ui/ark/issues/2090)
+
+## 0.24.0
+
+### Minor Changes
+
+- [#222](https://github.com/animareflection/ui/pull/222) [`ae57729`](https://github.com/animareflection/ui/commit/ae57729fcf2162814a7327d830960aaa72c25020) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Add variants for `Tabs` component
+
+### Patch Changes
+
+- [#224](https://github.com/animareflection/ui/pull/224) [`9aec3c8`](https://github.com/animareflection/ui/commit/9aec3c8153f7a8d72972094d6c57f8a9e07fc0be) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update default `Icon` color for increment and decrement triggers in `NumberInput`
+
+- [#222](https://github.com/animareflection/ui/pull/222) [`ae57729`](https://github.com/animareflection/ui/commit/ae57729fcf2162814a7327d830960aaa72c25020) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix `Tabs` indicator rendering issues
+
 ## 0.23.3
 
 ### Patch Changes

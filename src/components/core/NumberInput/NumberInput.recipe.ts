@@ -18,7 +18,7 @@ const stepperTriggerStyles = {
   h: "100%",
   color: {
     base: "fg.default",
-    _disabled: "fg.muted",
+    _disabled: "fg.disabled",
   },
   borderRadius: "sm",
 };

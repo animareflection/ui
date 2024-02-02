@@ -8,6 +8,7 @@ import {
 import { useIsClient } from "lib/hooks";
 
 import type { PrimitiveTabsProps } from "components/primitives";
+import type { TabsVariantProps } from "generated/panda/recipes";
 import type { ReactNode } from "react";
 
 export interface TabRecord {
@@ -17,7 +18,7 @@ export interface TabRecord {
   content: ReactNode;
 }
 
-export interface Props extends PrimitiveTabsProps {
+export interface Props extends PrimitiveTabsProps, TabsVariantProps {
   tabs: TabRecord[];
 }
 
