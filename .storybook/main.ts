@@ -22,11 +22,7 @@ const storybookConfig: StorybookConfig = {
   // inject CSS into Storybook UI
   managerHead: (head) => `
   ${head}
-  <link rel="stylesheet" href=${
-    process.env.NODE_ENV === "production"
-      ? "./styles/main.css"
-      : "../src/lib/styles/main.css"
-  } />
+  <link rel="stylesheet" href="styles/main.css" />
 `,
   typescript: {
     // typecheck stories during Storybook build
