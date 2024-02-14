@@ -12,14 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
-      - name: Install dependencies
-        run: bun i
-      - run: bun run build
-      - uses: amondnet/vercel-action@v25
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          scope: ${{ secrets.VERCEL_ORG_ID}}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
-          vercel-args: --prod
+          bun-version: latest
+      - name: Install Railway CLI
+        run: bun i @railway/cli
+      - name: Deploy
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
