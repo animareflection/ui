@@ -2,7 +2,7 @@
  * @file Menu primitives.
  */
 import {
-  Menu,
+  MenuRoot,
   MenuArrow,
   MenuArrowTip,
   MenuContent,
@@ -21,16 +21,12 @@ import { panda } from "generated/panda/jsx";
 import { menu } from "generated/panda/recipes";
 import { createStyleContext } from "lib/util";
 
-import type { PandaComponent } from "generated/panda/jsx";
 import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(menu);
 
 export type PrimitiveMenuProps = ComponentProps<typeof PrimitiveMenu>;
-const PrimitiveMenu: PandaComponent<typeof Menu> = withProvider(
-  panda(Menu),
-  "root",
-);
+const PrimitiveMenu = withProvider(panda(MenuRoot), "root");
 
 export type PrimitiveMenuArrowProps = ComponentProps<typeof PrimitiveMenuArrow>;
 export const PrimitiveMenuArrow = withContext(panda(MenuArrow), "arrow");
@@ -57,16 +53,15 @@ export const PrimitiveMenuContextTrigger = withContext(
 );
 
 export type PrimitiveMenuItemProps = ComponentProps<typeof PrimitiveMenuItem>;
-export const PrimitiveMenuItem: PandaComponent<typeof MenuItem> = withContext(
-  panda(MenuItem),
-  "item",
-);
+export const PrimitiveMenuItem = withContext(panda(MenuItem), "item");
 
 export type PrimitiveMenuItemGroupProps = ComponentProps<
   typeof PrimitiveMenuItemGroup
 >;
-export const PrimitiveMenuItemGroup: PandaComponent<typeof MenuItemGroup> =
-  withContext(panda(MenuItemGroup), "itemGroup");
+export const PrimitiveMenuItemGroup = withContext(
+  panda(MenuItemGroup),
+  "itemGroup",
+);
 
 export type PrimitiveMenuItemGroupLabelProps = ComponentProps<
   typeof PrimitiveMenuItemGroupLabel
@@ -79,8 +74,10 @@ export const PrimitiveMenuItemGroupLabel = withContext(
 export type PrimitiveMenuOptionItemProps = ComponentProps<
   typeof PrimitiveMenuOptionItem
 >;
-export const PrimitiveMenuOptionItem: PandaComponent<typeof MenuOptionItem> =
-  withContext(panda(MenuOptionItem), "optionItem");
+export const PrimitiveMenuOptionItem = withContext(
+  panda(MenuOptionItem),
+  "optionItem",
+);
 
 export type PrimitiveMenuPositionerProps = ComponentProps<
   typeof PrimitiveMenuPositioner

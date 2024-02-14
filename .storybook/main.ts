@@ -39,7 +39,7 @@ const storybookConfig: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-coverage",
-    "storybook-dark-mode",
+    "@storybook/addon-themes",
   ],
   staticDirs: [
     "../public",

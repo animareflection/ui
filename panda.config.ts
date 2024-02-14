@@ -32,6 +32,12 @@ const pandaConfig = defineConfig({
         },
       }
     : {},
+  globalCss: {
+    body: {
+      bg: "bg.default",
+      color: "fg.default",
+    },
+  },
 });
 
 export default pandaConfig;

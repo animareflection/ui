@@ -2,7 +2,7 @@
  * @file Accordion primitives.
  */
 import {
-  Accordion,
+  AccordionRoot,
   AccordionItem,
   AccordionItemTrigger,
   AccordionItemIndicator,
@@ -13,22 +13,17 @@ import { panda } from "generated/panda/jsx";
 import { accordion } from "generated/panda/recipes";
 import { createStyleContext } from "lib/util";
 
-import type { PandaComponent } from "generated/panda/types/jsx";
 import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(accordion);
 
 export type PrimitiveAccordionProps = ComponentProps<typeof PrimitiveAccordion>;
-const PrimitiveAccordion: PandaComponent<typeof Accordion> = withProvider(
-  panda(Accordion),
-  "root",
-);
+const PrimitiveAccordion = withProvider(panda(AccordionRoot), "root");
 
 export type PrimitiveAccordionItemProps = ComponentProps<
   typeof PrimitiveAccordionItem
 >;
-export const PrimitiveAccordionItem: PandaComponent<typeof AccordionItem> =
-  withContext(panda(AccordionItem), "item");
+export const PrimitiveAccordionItem = withContext(panda(AccordionItem), "item");
 
 export type PrimitiveAccordionItemTriggerProps = ComponentProps<
   typeof PrimitiveAccordionItemTrigger

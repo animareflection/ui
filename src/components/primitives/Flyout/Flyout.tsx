@@ -2,7 +2,7 @@
  * @file Flyout primitives.
  */
 import {
-  Popover,
+  PopoverRoot,
   PopoverArrow,
   PopoverArrowTip,
   PopoverCloseTrigger,
@@ -22,7 +22,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(flyout);
 
 export type PrimitiveFlyoutProps = ComponentProps<typeof PrimitiveFlyout>;
-const PrimitiveFlyout = withProvider(panda(Popover), "root");
+const PrimitiveFlyout = withProvider(panda(PopoverRoot), "root");
 
 export type PrimitiveFlyoutArrowProps = ComponentProps<
   typeof PrimitiveFlyoutArrow

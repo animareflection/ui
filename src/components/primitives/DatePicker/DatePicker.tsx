@@ -3,7 +3,7 @@
  */
 import { DatePickerView } from "@ark-ui/react";
 import {
-  DatePicker,
+  DatePickerRoot,
   DatePickerClearTrigger,
   DatePickerContent,
   DatePickerControl,
@@ -37,7 +37,7 @@ const { withProvider, withContext } = createStyleContext(datePicker);
 
 export interface PrimitiveDatePickerProps
   extends ComponentProps<typeof PrimitiveDatePicker> {}
-const PrimitiveDatePicker = withProvider(panda(DatePicker), "root");
+const PrimitiveDatePicker = withProvider(panda(DatePickerRoot), "root");
 
 export interface PrimitiveDatePickerClearTriggerProps
   extends ComponentProps<typeof PrimitiveDatePickerClearTrigger> {}

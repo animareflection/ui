@@ -2,7 +2,7 @@
  * @file Tooltip primitives.
  */
 import {
-  Tooltip,
+  TooltipRoot,
   TooltipArrow,
   TooltipArrowTip,
   TooltipContent,
@@ -19,7 +19,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(tooltip);
 
 export type PrimitiveTooltipProps = ComponentProps<typeof PrimitiveTooltip>;
-const PrimitiveTooltip = withProvider(panda(Tooltip), "root");
+const PrimitiveTooltip = withProvider(panda(TooltipRoot), "root");
 
 export type PrimitiveTooltipArrowProps = ComponentProps<
   typeof PrimitiveTooltipArrow

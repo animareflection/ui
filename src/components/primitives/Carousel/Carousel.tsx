@@ -2,7 +2,7 @@
  * @file Carousel primitives.
  */
 import {
-  Carousel,
+  CarouselRoot,
   CarouselControl,
   CarouselNextTrigger,
   CarouselPrevTrigger,
@@ -17,16 +17,12 @@ import { panda } from "generated/panda/jsx";
 import { carousel } from "generated/panda/recipes";
 import { createStyleContext } from "lib/util";
 
-import type { PandaComponent } from "generated/panda/jsx";
 import type { ComponentProps } from "react";
 
 const { withProvider, withContext } = createStyleContext(carousel);
 
 export type PrimitiveCarouselProps = ComponentProps<typeof PrimitiveCarousel>;
-const PrimitiveCarousel: PandaComponent<typeof Carousel> = withProvider(
-  panda(Carousel),
-  "root",
-);
+const PrimitiveCarousel = withProvider(panda(CarouselRoot), "root");
 
 export type PrimitiveCarouselControlProps = ComponentProps<
   typeof PrimitiveCarouselControl
@@ -55,8 +51,7 @@ export const PrimitiveCarouselPrevTrigger = withContext(
 export type PrimitiveCarouselItemProps = ComponentProps<
   typeof PrimitiveCarouselItem
 >;
-export const PrimitiveCarouselItem: PandaComponent<typeof CarouselItem> =
-  withContext(panda(CarouselItem), "item");
+export const PrimitiveCarouselItem = withContext(panda(CarouselItem), "item");
 
 export type PrimitiveCarouselItemGroupProps = ComponentProps<
   typeof PrimitiveCarouselItemGroup
@@ -77,9 +72,10 @@ export const PrimitiveCarouselViewport = withContext(
 export type PrimitiveCarouselIndicatorProps = ComponentProps<
   typeof PrimitiveCarouselIndicator
 >;
-export const PrimitiveCarouselIndicator: PandaComponent<
-  typeof CarouselIndicator
-> = withContext(panda(CarouselIndicator), "indicator");
+export const PrimitiveCarouselIndicator = withContext(
+  panda(CarouselIndicator),
+  "indicator",
+);
 
 export type PrimitiveCarouselIndicatorGroupProps = ComponentProps<
   typeof PrimitiveCarouselIndicatorGroup

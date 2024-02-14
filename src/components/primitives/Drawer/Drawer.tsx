@@ -2,7 +2,7 @@
  * @file Drawer primitives.
  */
 import {
-  Dialog,
+  DialogRoot,
   DialogBackdrop,
   DialogCloseTrigger,
   DialogPositioner,
@@ -21,7 +21,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(drawer);
 
 export type PrimitiveDrawerProps = ComponentProps<typeof PrimitiveDrawer>;
-const PrimitiveDrawer = withProvider(panda(Dialog), "root");
+const PrimitiveDrawer = withProvider(panda(DialogRoot), "root");
 
 export type PrimitiveDrawerTriggerProps = ComponentProps<
   typeof PrimitiveDrawerTrigger

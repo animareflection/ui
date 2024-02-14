@@ -2,7 +2,7 @@
  * @file Slider primitives.
  */
 import {
-  Slider,
+  SliderRoot,
   SliderControl,
   SliderLabel,
   SliderMarker,
@@ -21,7 +21,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(slider);
 
 export type PrimitiveSliderProps = ComponentProps<typeof PrimitiveSlider>;
-const PrimitiveSlider = withProvider(panda(Slider), "root");
+const PrimitiveSlider = withProvider(panda(SliderRoot), "root");
 
 export type PrimitiveSliderControlProps = ComponentProps<
   typeof PrimitiveSliderControl

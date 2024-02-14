@@ -1,4 +1,6 @@
-import type { Preview } from "@storybook/react";
+import { withThemeByClassName } from "@storybook/addon-themes";
+
+import type { ReactRenderer, Preview } from "@storybook/react";
 
 import "lib/styles/main.css";
 
@@ -8,28 +10,25 @@ import "lib/styles/main.css";
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
-    backgrounds: {
-      default: "dark",
-      values: [
-        { name: "light", value: "#fdfdfd" },
-        { name: "dark", value: "#0a0a0a" },
-      ],
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
       },
     },
-    darkMode: {
-      default: true,
-      classTarget: "html",
-      stylePreview: true,
-    },
     nextjs: {
       appDirectory: true,
     },
   },
+  decorators: [
+    withThemeByClassName<ReactRenderer>({
+      themes: {
+        light: "",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+  ],
 };
 
 export default preview;
