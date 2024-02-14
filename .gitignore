@@ -3,7 +3,6 @@ build
 coverage
 generated
 storybook-static
-.vercel
 
 .env*
 !.env*.template
