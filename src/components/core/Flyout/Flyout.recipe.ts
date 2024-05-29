@@ -8,7 +8,7 @@ export const flyoutRecipe = defineSlotRecipe({
   base: {
     positioner: {
       position: "relative",
-      zIndex: "menu",
+      zIndex: "menu!",
     },
     content: {
       background: "bg.default",
