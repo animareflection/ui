@@ -8,6 +8,7 @@ export const flyoutRecipe = defineSlotRecipe({
   base: {
     positioner: {
       position: "relative",
+      zIndex: "menu",
     },
     content: {
       background: "bg.default",
@@ -15,6 +16,7 @@ export const flyoutRecipe = defineSlotRecipe({
       borderRadius: "md",
       borderWidth: "1px",
       borderColor: "border.default",
+      pt: 8,
       width: { base: "xs", sm: "sm" },
       _open: {
         animation: "fade-in",
