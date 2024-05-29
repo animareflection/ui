@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.24.5
+
+### Patch Changes
+
+- [#237](https://github.com/animareflection/ui/pull/237) [`9c34dc1`](https://github.com/animareflection/ui/commit/9c34dc1edf76cc8d71b6f3d901ddb0181f754ba0) Thanks [@coopbri](https://github.com/coopbri)! - Fix `Flyout` z-index and content going behind close trigger
+
 ## 0.24.4
 
 ### Patch Changes
