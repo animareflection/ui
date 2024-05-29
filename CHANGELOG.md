@@ -1,5 +1,11 @@
 # @animareflection/ui
 
+## 0.24.6
+
+### Patch Changes
+
+- [#239](https://github.com/animareflection/ui/pull/239) [`feacfd3`](https://github.com/animareflection/ui/commit/feacfd3ef2ce7c2c2bb7d731cd8e494382ce86cc) Thanks [@coopbri](https://github.com/coopbri)! - Add `!important` rule to `Flyout` z-index
+
 ## 0.24.5
 
 ### Patch Changes
