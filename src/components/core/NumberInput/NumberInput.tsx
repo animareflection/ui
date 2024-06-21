@@ -57,19 +57,23 @@ const NumberInput = ({
   return (
     <PrimitiveNumberInput {...rest}>
       <PrimitiveNumberInputScrubber />
+
       {label && <PrimitiveNumberInputLabel>{label}</PrimitiveNumberInputLabel>}
+
       <Flex>
         {leftAddon && (
           <PrimitiveNumberInputAddon borderLeftRadius="sm">
             {leftAddon}
           </PrimitiveNumberInputAddon>
         )}
+
         <Flex pos="relative" w="100%">
           {inputLeftElement && (
             <PrimitiveNumberInputLeftElement>
               {inputLeftElement}
             </PrimitiveNumberInputLeftElement>
           )}
+
           <PrimitiveNumberInputInput
             {...inputProps}
             placeholder={placeholder}
@@ -80,17 +84,20 @@ const NumberInput = ({
             pl={inputLeftElement ? 10 : 3}
             pr={inputRightElement ? 10 : 3}
           />
+
           {inputRightElement && (
             <PrimitiveNumberInputRightElement>
               {inputRightElement}
             </PrimitiveNumberInputRightElement>
           )}
         </Flex>
+
         {rightAddon && (
           <PrimitiveNumberInputAddon borderRightRadius="sm">
             {rightAddon}
           </PrimitiveNumberInputAddon>
         )}
+
         {stepper && (
           <PrimitiveNumberInputControl className="group">
             <PrimitiveNumberInputDecrementTrigger>
@@ -98,6 +105,7 @@ const NumberInput = ({
                 <FiMinus />
               </Icon>
             </PrimitiveNumberInputDecrementTrigger>
+
             <panda.div
               w="1px"
               h="75%"
@@ -105,6 +113,7 @@ const NumberInput = ({
               my="auto"
               bgColor={{ base: "fg.default", _groupDisabled: "fg.disabled" }}
             />
+
             <PrimitiveNumberInputIncrementTrigger>
               <Icon color="inherit">
                 <FiPlus />

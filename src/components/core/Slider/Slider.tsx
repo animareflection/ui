@@ -36,6 +36,7 @@ const Slider = ({ label, markers, maxW, ...rest }: Props) => {
   return (
     <PrimitiveSlider {...rest}>
       {label && <PrimitiveSliderLabel>{label}</PrimitiveSliderLabel>}
+
       <PrimitiveSliderControl maxW={maxW}>
         <PrimitiveSliderTrack maxW={maxW}>
           <PrimitiveSliderRange />
@@ -43,6 +44,7 @@ const Slider = ({ label, markers, maxW, ...rest }: Props) => {
 
         <PrimitiveSliderThumb index={0} />
       </PrimitiveSliderControl>
+
       {markers && (
         <PrimitiveSliderMarkerGroup maxW={maxW}>
           {markers.map(({ id, value, label }) => (

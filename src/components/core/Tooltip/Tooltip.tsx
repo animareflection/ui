@@ -1,4 +1,4 @@
-import { Portal } from "@ark-ui/react";
+import { Portal, TooltipContext } from "@ark-ui/react";
 
 import {
   PrimitiveTooltip,
@@ -42,15 +42,15 @@ const Tooltip = ({
   ...rest
 }: Props) => (
   <PrimitiveTooltip openDelay={openDelay} closeDelay={closeDelay} {...rest}>
-    {({ isOpen }) => (
-      <>
-        {trigger && (
-          <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
-        )}
+    {trigger && (
+      <PrimitiveTooltipTrigger asChild>{trigger}</PrimitiveTooltipTrigger>
+    )}
 
-        <Portal container={containerRef}>
-          <PrimitiveTooltipPositioner>
-            {isOpen && (
+    <Portal container={containerRef}>
+      <PrimitiveTooltipPositioner>
+        <TooltipContext>
+          {({ open }) =>
+            open && (
               <>
                 {arrow && (
                   <PrimitiveTooltipArrow bgColor={bgColor}>
@@ -62,11 +62,11 @@ const Tooltip = ({
                   {tooltipContent}
                 </PrimitiveTooltipContent>
               </>
-            )}
-          </PrimitiveTooltipPositioner>
-        </Portal>
-      </>
-    )}
+            )
+          }
+        </TooltipContext>
+      </PrimitiveTooltipPositioner>
+    </Portal>
   </PrimitiveTooltip>
 );
 

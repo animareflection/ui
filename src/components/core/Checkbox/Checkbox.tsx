@@ -1,3 +1,5 @@
+import { CheckboxContext } from "@ark-ui/react";
+
 import {
   PrimitiveCheckbox,
   PrimitiveCheckboxControl,
@@ -26,10 +28,10 @@ const Checkbox = ({ label, ...rest }: Props) => {
 
   return (
     <PrimitiveCheckbox {...rest}>
-      {({ isChecked }) => (
-        <>
-          <PrimitiveCheckboxControl>
-            {isChecked && (
+      <PrimitiveCheckboxControl>
+        <CheckboxContext>
+          {({ checked }) =>
+            checked && (
               <svg
                 viewBox="0 0 14 14"
                 fill="none"
@@ -43,11 +45,12 @@ const Checkbox = ({ label, ...rest }: Props) => {
                   strokeLinejoin="round"
                 />
               </svg>
-            )}
-          </PrimitiveCheckboxControl>
-          {label && <PrimitiveCheckboxLabel>{label}</PrimitiveCheckboxLabel>}
-        </>
-      )}
+            )
+          }
+        </CheckboxContext>
+      </PrimitiveCheckboxControl>
+
+      {label && <PrimitiveCheckboxLabel>{label}</PrimitiveCheckboxLabel>}
     </PrimitiveCheckbox>
   );
 };

@@ -80,7 +80,8 @@ export const WithContext: Story = {
       title="Drawer Title"
       description="Drawer Description"
     >
-      {({ isOpen }) => <Text mt={2}>Open: {String(isOpen)}</Text>}
+      {/* @ts-ignore TODO */}
+      {({ open }) => <Text mt={2}>Open: {String(open)}</Text>}
     </Drawer>
   ),
 };

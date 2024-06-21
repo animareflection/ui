@@ -19,6 +19,7 @@ import {
 } from "components/primitives";
 import { Flex } from "generated/panda/jsx";
 
+import type { ComboboxInputValueChangeDetails } from "@ark-ui/react";
 import type { Props as InputProps } from "components/core/Input/Input";
 import type {
   PrimitiveComboboxContentProps,
@@ -90,15 +91,11 @@ const Combobox = ({
   const allItems = groups.flatMap((group) => group.items);
   const [filteredItems, setFilteredItems] = useState(allItems);
 
-  const handleChange = (
-    evt: Parameters<
-      NonNullable<PrimitiveComboboxProps["onInputValueChange"]>
-    >[0],
-  ) => {
+  const handleChange = ({ inputValue }: ComboboxInputValueChangeDetails) => {
     const filtered = allItems.filter(
       (item) =>
-        item.label.toLowerCase().includes(evt.value.toLowerCase()) ||
-        item.value.toLowerCase().includes(evt.value.toLowerCase()),
+        item.label.toLowerCase().includes(inputValue.toLowerCase()) ||
+        item.value.toLowerCase().includes(inputValue.toLowerCase()),
     );
 
     setFilteredItems(filtered.length ? filtered : allItems);
@@ -159,10 +156,7 @@ const Combobox = ({
                     {...itemGroupProps}
                   >
                     {group.label.display && (
-                      <PrimitiveComboboxItemGroupLabel
-                        htmlFor={group.label.id}
-                        {...group.label.props}
-                      >
+                      <PrimitiveComboboxItemGroupLabel {...group.label.props}>
                         {group.label.plural}
                       </PrimitiveComboboxItemGroupLabel>
                     )}
