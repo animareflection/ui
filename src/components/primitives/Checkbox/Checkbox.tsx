@@ -1,7 +1,7 @@
 /**
  * @file Checkbox primitives.
  */
-import { Checkbox, CheckboxControl, CheckboxLabel } from "@ark-ui/react";
+import { CheckboxRoot, CheckboxControl, CheckboxLabel } from "@ark-ui/react";
 
 import { panda } from "generated/panda/jsx";
 import { checkbox } from "generated/panda/recipes";
@@ -12,7 +12,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(checkbox);
 
 export type PrimitiveCheckboxProps = ComponentProps<typeof PrimitiveCheckbox>;
-const PrimitiveCheckbox = withProvider(panda(Checkbox), "root");
+const PrimitiveCheckbox = withProvider(panda(CheckboxRoot), "root");
 
 export type PrimitiveCheckboxControlProps = ComponentProps<
   typeof PrimitiveCheckboxControl

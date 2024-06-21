@@ -4,7 +4,7 @@
 import {
   RadioGroupItem,
   RadioGroupItemControl,
-  RadioGroup,
+  RadioGroupRoot,
   RadioGroupLabel,
   RadioGroupItemText,
 } from "@ark-ui/react";
@@ -21,10 +21,7 @@ const { withProvider, withContext } = createStyleContext(radioGroup);
 export type PrimitiveRadioGroupProps = ComponentProps<
   typeof PrimitiveRadioGroup
 >;
-const PrimitiveRadioGroup: PandaComponent<typeof RadioGroup> = withProvider(
-  panda(RadioGroup),
-  "root",
-);
+const PrimitiveRadioGroup = withProvider(panda(RadioGroupRoot), "root");
 
 export type PrimitiveRadioGroupItemControlProps = ComponentProps<
   typeof PrimitiveRadioGroupItemControl

@@ -2,7 +2,7 @@
  * @file Accordion primitives.
  */
 import {
-  Accordion,
+  AccordionRoot,
   AccordionItem,
   AccordionItemTrigger,
   AccordionItemIndicator,
@@ -19,10 +19,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(accordion);
 
 export type PrimitiveAccordionProps = ComponentProps<typeof PrimitiveAccordion>;
-const PrimitiveAccordion: PandaComponent<typeof Accordion> = withProvider(
-  panda(Accordion),
-  "root",
-);
+const PrimitiveAccordion = withProvider(panda(AccordionRoot), "root");
 
 export type PrimitiveAccordionItemProps = ComponentProps<
   typeof PrimitiveAccordionItem

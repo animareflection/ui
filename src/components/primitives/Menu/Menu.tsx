@@ -2,7 +2,7 @@
  * @file Menu primitives.
  */
 import {
-  Menu,
+  MenuRoot,
   MenuArrow,
   MenuArrowTip,
   MenuContent,
@@ -10,7 +10,6 @@ import {
   MenuItem,
   MenuItemGroup,
   MenuItemGroupLabel,
-  MenuOptionItem,
   MenuPositioner,
   MenuSeparator,
   MenuTrigger,
@@ -27,8 +26,8 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(menu);
 
 export type PrimitiveMenuProps = ComponentProps<typeof PrimitiveMenu>;
-const PrimitiveMenu: PandaComponent<typeof Menu> = withProvider(
-  panda(Menu),
+const PrimitiveMenu: PandaComponent<typeof MenuRoot> = withProvider(
+  panda(MenuRoot),
   "root",
 );
 
@@ -75,12 +74,6 @@ export const PrimitiveMenuItemGroupLabel = withContext(
   panda(MenuItemGroupLabel),
   "itemGroupLabel",
 );
-
-export type PrimitiveMenuOptionItemProps = ComponentProps<
-  typeof PrimitiveMenuOptionItem
->;
-export const PrimitiveMenuOptionItem: PandaComponent<typeof MenuOptionItem> =
-  withContext(panda(MenuOptionItem), "optionItem");
 
 export type PrimitiveMenuPositionerProps = ComponentProps<
   typeof PrimitiveMenuPositioner

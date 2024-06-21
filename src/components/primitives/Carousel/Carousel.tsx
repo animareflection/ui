@@ -2,7 +2,7 @@
  * @file Carousel primitives.
  */
 import {
-  Carousel,
+  CarouselRoot,
   CarouselControl,
   CarouselNextTrigger,
   CarouselPrevTrigger,
@@ -23,10 +23,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(carousel);
 
 export type PrimitiveCarouselProps = ComponentProps<typeof PrimitiveCarousel>;
-const PrimitiveCarousel: PandaComponent<typeof Carousel> = withProvider(
-  panda(Carousel),
-  "root",
-);
+const PrimitiveCarousel = withProvider(panda(CarouselRoot), "root");
 
 export type PrimitiveCarouselControlProps = ComponentProps<
   typeof PrimitiveCarouselControl
