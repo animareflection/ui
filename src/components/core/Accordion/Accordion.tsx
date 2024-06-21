@@ -1,3 +1,4 @@
+import { AccordionContext } from "@ark-ui/react";
 import {
   FiChevronDown as ChevronDownIcon,
   FiMinus as MinusIcon,
@@ -39,33 +40,44 @@ const Accordion = ({ items, plusMinus, ...rest }: Props) => {
   if (!isClient) return null;
 
   return (
-    <PrimitiveAccordion present collapsible multiple {...rest}>
+    <PrimitiveAccordion
+      // present
+      collapsible
+      multiple
+      {...rest}
+    >
       {items.map(({ id, value, triggerLabel, content, icon }) => (
         <PrimitiveAccordionItem key={id} value={value}>
-          {({ isOpen }) => (
-            <>
-              <PrimitiveAccordionItemTrigger>
-                {triggerLabel ?? value}
-                <PrimitiveAccordionItemIndicator>
-                  <Icon color="inherit">
-                    {plusMinus ? (
-                      isOpen ? (
-                        <MinusIcon />
+          <PrimitiveAccordionItemTrigger>
+            {triggerLabel ?? value}
+
+            <PrimitiveAccordionItemIndicator>
+              <AccordionContext>
+                {({ value }) => (
+                  <>
+                    <Icon color="inherit">
+                      {plusMinus ? (
+                        value ? (
+                          <MinusIcon />
+                        ) : (
+                          <PlusIcon />
+                        )
                       ) : (
-                        <PlusIcon />
-                      )
-                    ) : (
-                      icon ?? <ChevronDownIcon />
-                    )}
-                  </Icon>
-                </PrimitiveAccordionItemIndicator>
-              </PrimitiveAccordionItemTrigger>
-              <PrimitiveAccordionItemContent>
-                {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
-                <div>{content}</div>
-              </PrimitiveAccordionItemContent>
-            </>
-          )}
+                        icon ?? <ChevronDownIcon />
+                      )}
+                    </Icon>
+
+                    {value}
+                  </>
+                )}
+              </AccordionContext>
+            </PrimitiveAccordionItemIndicator>
+          </PrimitiveAccordionItemTrigger>
+
+          <PrimitiveAccordionItemContent>
+            {/* NB: div wrapper enforces body content to collapse properly if, for example, a string is passed */}
+            <div>{content}</div>
+          </PrimitiveAccordionItemContent>
         </PrimitiveAccordionItem>
       ))}
     </PrimitiveAccordion>

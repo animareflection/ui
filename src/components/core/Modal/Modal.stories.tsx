@@ -59,7 +59,8 @@ export const WithContext: Story = {
       title="Modal Title"
       description="Modal Description"
     >
-      {({ isOpen }) => <Text mt={2}>Open: {String(isOpen)}</Text>}
+      {/* @ts-ignore TODO */}
+      {({ open }) => <Text mt={2}>Open: {String(open)}</Text>}
     </Modal>
   ),
 };

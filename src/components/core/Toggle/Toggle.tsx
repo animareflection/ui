@@ -24,6 +24,7 @@ const Toggle = ({ label, ...rest }: Props) => {
       <PrimitiveToggleControl>
         <PrimitiveToggleThumb />
       </PrimitiveToggleControl>
+
       {label && <PrimitiveToggleLabel>{label}</PrimitiveToggleLabel>}
     </PrimitiveToggle>
   );

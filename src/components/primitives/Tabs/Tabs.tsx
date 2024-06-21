@@ -2,7 +2,7 @@
  * @file Tabs primitives.
  */
 import {
-  Tabs,
+  TabsRoot,
   TabContent,
   TabIndicator,
   TabList,
@@ -19,10 +19,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(tabs);
 
 export type PrimitiveTabsProps = ComponentProps<typeof PrimitiveTabs>;
-const PrimitiveTabs: PandaComponent<typeof Tabs> = withProvider(
-  panda(Tabs),
-  "root",
-);
+const PrimitiveTabs = withProvider(panda(TabsRoot), "root");
 
 export type PrimitiveTabContentProps = ComponentProps<
   typeof PrimitiveTabContent

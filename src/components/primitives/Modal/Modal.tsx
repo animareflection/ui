@@ -2,7 +2,7 @@
  * @file Modal primitives.
  */
 import {
-  Dialog,
+  DialogRoot,
   DialogBackdrop,
   DialogCloseTrigger,
   DialogPositioner,
@@ -21,7 +21,7 @@ import type { ComponentProps } from "react";
 const { withProvider, withContext } = createStyleContext(modal);
 
 export type PrimitiveModalProps = ComponentProps<typeof PrimitiveModal>;
-const PrimitiveModal = withProvider(panda(Dialog), "root");
+const PrimitiveModal = withProvider(panda(DialogRoot), "root");
 
 export type PrimitiveModalTriggerProps = ComponentProps<
   typeof PrimitiveModalTrigger

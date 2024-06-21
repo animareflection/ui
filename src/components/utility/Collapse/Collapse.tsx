@@ -70,6 +70,7 @@ const Collapse = ({
         {...triggerProps}
       >
         {label}
+
         <Icon
           color="inherit"
           transform={isOpen && !icon ? "rotate(-180deg)" : undefined}
@@ -79,6 +80,7 @@ const Collapse = ({
           {icon ?? defaultIcon}
         </Icon>
       </Button>
+
       <AnimatePresence initial={animateOnMount}>
         {isOpen && (
           <motion.div

@@ -16,8 +16,8 @@ const storybookConfig: StorybookConfig = {
   },
   stories: [
     // NB: intentional pattern duplication (with capture group below) to ensure introduction page is loaded first
-    "../src/stories/introduction.stories.mdx",
-    "../src/**/*.stories.@(ts|tsx|mdx)",
+    "../src/stories/introduction.mdx",
+    "../src/**/*.stories.tsx",
   ],
   // inject CSS into Storybook UI
   managerHead: (head) => `

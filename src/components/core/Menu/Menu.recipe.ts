@@ -60,7 +60,6 @@ export const menuRecipe = defineSlotRecipe({
       gap: 1,
     },
     item: itemStyle,
-    optionItem: itemStyle,
     triggerItem: itemStyle,
     positioner: {
       zIndex: "menu",
@@ -85,10 +84,6 @@ export const menuRecipe = defineSlotRecipe({
           h: 9,
           px: 2,
         },
-        optionItem: {
-          h: 9,
-          px: 2,
-        },
         triggerItem: {
           h: 9,
           px: 2,
@@ -105,10 +100,6 @@ export const menuRecipe = defineSlotRecipe({
           h: 10,
           px: 2.5,
         },
-        optionItem: {
-          h: 10,
-          px: 2.5,
-        },
         triggerItem: {
           h: 10,
           px: 2.5,
@@ -122,10 +113,6 @@ export const menuRecipe = defineSlotRecipe({
           minW: 56,
         },
         item: {
-          h: 11,
-          px: 3,
-        },
-        optionItem: {
           h: 11,
           px: 3,
         },

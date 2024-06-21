@@ -44,38 +44,33 @@ const Drawer = ({
   ...rest
 }: Props) => (
   <PrimitiveDrawer lazyMount unmountOnExit {...rest}>
-    {(ctx) => (
-      <>
-        {trigger && (
-          <PrimitiveDrawerTrigger asChild>{trigger}</PrimitiveDrawerTrigger>
-        )}
-
-        <Portal container={containerRef}>
-          <PrimitiveDrawerBackdrop />
-
-          <PrimitiveDrawerPositioner>
-            <PrimitiveDrawerContent {...contentProps}>
-              {title && <PrimitiveDrawerTitle>{title}</PrimitiveDrawerTitle>}
-
-              {description && (
-                <PrimitiveDrawerDescription>
-                  {description}
-                </PrimitiveDrawerDescription>
-              )}
-
-              {/* forward nested context/state if utilized, otherwise directly render children */}
-              {typeof children === "function" ? children(ctx) : children}
-
-              <PrimitiveDrawerCloseTrigger>
-                <Icon>
-                  <CloseIcon />
-                </Icon>
-              </PrimitiveDrawerCloseTrigger>
-            </PrimitiveDrawerContent>
-          </PrimitiveDrawerPositioner>
-        </Portal>
-      </>
+    {trigger && (
+      <PrimitiveDrawerTrigger asChild>{trigger}</PrimitiveDrawerTrigger>
     )}
+
+    <Portal container={containerRef}>
+      <PrimitiveDrawerBackdrop />
+
+      <PrimitiveDrawerPositioner>
+        <PrimitiveDrawerContent {...contentProps}>
+          {title && <PrimitiveDrawerTitle>{title}</PrimitiveDrawerTitle>}
+
+          {description && (
+            <PrimitiveDrawerDescription>
+              {description}
+            </PrimitiveDrawerDescription>
+          )}
+
+          {children}
+
+          <PrimitiveDrawerCloseTrigger>
+            <Icon>
+              <CloseIcon />
+            </Icon>
+          </PrimitiveDrawerCloseTrigger>
+        </PrimitiveDrawerContent>
+      </PrimitiveDrawerPositioner>
+    </Portal>
   </PrimitiveDrawer>
 );
 

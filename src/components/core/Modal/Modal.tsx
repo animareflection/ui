@@ -38,38 +38,31 @@ const Modal = ({
   ...rest
 }: Props) => (
   <PrimitiveModal lazyMount unmountOnExit {...rest}>
-    {(ctx) => (
-      <>
-        {trigger && (
-          <PrimitiveModalTrigger asChild>{trigger}</PrimitiveModalTrigger>
-        )}
-
-        <Portal container={containerRef}>
-          <PrimitiveModalBackdrop />
-
-          <PrimitiveModalPositioner>
-            <PrimitiveModalContent>
-              {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
-
-              {description && (
-                <PrimitiveModalDescription>
-                  {description}
-                </PrimitiveModalDescription>
-              )}
-
-              {/* forward nested context/state if utilized, otherwise directly render children */}
-              {typeof children === "function" ? children(ctx) : children}
-
-              <PrimitiveModalCloseTrigger>
-                <Icon>
-                  <CloseIcon />
-                </Icon>
-              </PrimitiveModalCloseTrigger>
-            </PrimitiveModalContent>
-          </PrimitiveModalPositioner>
-        </Portal>
-      </>
+    {trigger && (
+      <PrimitiveModalTrigger asChild>{trigger}</PrimitiveModalTrigger>
     )}
+
+    <Portal container={containerRef}>
+      <PrimitiveModalBackdrop />
+
+      <PrimitiveModalPositioner>
+        <PrimitiveModalContent>
+          {title && <PrimitiveModalTitle>{title}</PrimitiveModalTitle>}
+
+          {description && (
+            <PrimitiveModalDescription>{description}</PrimitiveModalDescription>
+          )}
+
+          {children}
+
+          <PrimitiveModalCloseTrigger>
+            <Icon>
+              <CloseIcon />
+            </Icon>
+          </PrimitiveModalCloseTrigger>
+        </PrimitiveModalContent>
+      </PrimitiveModalPositioner>
+    </Portal>
   </PrimitiveModal>
 );
 

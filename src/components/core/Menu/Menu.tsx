@@ -43,44 +43,39 @@ const Menu = ({ children, trigger, triggerItem, groups, ...rest }: Props) => {
 
   return (
     <PrimitiveMenu {...rest}>
-      {(ctx) => (
-        <>
-          {trigger && (
-            <PrimitiveMenuTrigger asChild>{trigger}</PrimitiveMenuTrigger>
-          )}
+      {trigger && (
+        <PrimitiveMenuTrigger asChild>{trigger}</PrimitiveMenuTrigger>
+      )}
 
-          {triggerItem && (
-            <PrimitiveMenuTriggerItem asChild>
-              {triggerItem}
-            </PrimitiveMenuTriggerItem>
-          )}
+      {triggerItem && (
+        <PrimitiveMenuTriggerItem asChild>
+          {triggerItem}
+        </PrimitiveMenuTriggerItem>
+      )}
 
-          <PrimitiveMenuPositioner>
-            <PrimitiveMenuContent>
-              {groups?.map(({ id, label, separator, items }) => (
-                <PrimitiveMenuItemGroup key={id} id={id}>
-                  {label && (
-                    <PrimitiveMenuItemGroupLabel htmlFor={id}>
-                      {label}
-                    </PrimitiveMenuItemGroupLabel>
-                  )}
+      <PrimitiveMenuPositioner>
+        <PrimitiveMenuContent>
+          {groups?.map(({ id, label, separator, items }) => (
+            <PrimitiveMenuItemGroup key={id} id={id}>
+              {label && (
+                <PrimitiveMenuItemGroupLabel>
+                  {label}
+                </PrimitiveMenuItemGroupLabel>
+              )}
 
-                  {items.map(({ id, child }) => (
-                    <PrimitiveMenuItem key={id} id={id} asChild>
-                      {child}
-                    </PrimitiveMenuItem>
-                  ))}
-
-                  {separator && <PrimitiveMenuSeparator />}
-                </PrimitiveMenuItemGroup>
+              {items.map(({ id, child }) => (
+                <PrimitiveMenuItem key={id} value={id} asChild>
+                  {child}
+                </PrimitiveMenuItem>
               ))}
 
-              {/* forward nested context/state if utilized, otherwise directly render children */}
-              {typeof children === "function" ? children(ctx) : children}
-            </PrimitiveMenuContent>
-          </PrimitiveMenuPositioner>
-        </>
-      )}
+              {separator && <PrimitiveMenuSeparator />}
+            </PrimitiveMenuItemGroup>
+          ))}
+
+          {children}
+        </PrimitiveMenuContent>
+      </PrimitiveMenuPositioner>
     </PrimitiveMenu>
   );
 };

@@ -50,7 +50,9 @@ const Flyout = ({ trigger, title, contentProps, children, ...rest }: Props) => {
           <PrimitiveFlyoutArrow>
             <PrimitiveFlyoutArrowTip />
           </PrimitiveFlyoutArrow>
+
           {title && <PrimitiveFlyoutTitle>{title}</PrimitiveFlyoutTitle>}
+
           <PrimitiveFlyoutDescription asChild>
             {children}
           </PrimitiveFlyoutDescription>
